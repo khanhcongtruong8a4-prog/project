@@ -1,0 +1,146 @@
+IC2AI 2027 — CODEX PROJECT HANDOFF AND REVIEWER-ISSUE REMEDIATION
+Date: 2026-11-01
+Role: Senior robotics software engineer / control-simulation verification engineer
+Mission: Continue the existing research implementation; correct the defects identified in the independent Phase 1 read-only review; provide reproducible evidence and an honest gate decision.
+
+READ THIS FIRST
+===============
+You are joining an existing research effort, NOT starting a new project. Do not replace our model, optimization problem, control architecture, or experimental protocol with a generic robotic-arm example. Your first priority is to validate the exact Panda dynamics already implemented, resolve source-check and documentation defects, and prepare Protocol v1.1 for a genuine team decision. Do not advance to closed-loop or comparative simulation before its prescribed entry gates.
+
+The earlier eight "DO NOT write/execute code, simulate, configure software..." rules were imposed on the INDEPENDENT READ-ONLY REVIEWER. This is a CODEX ENGINEERING HANDOFF: you MAY inspect, edit and run code for the explicitly requested reproducibility/model-validation work. You must NOT invent results, approve yourself as a second human reviewer, or run Section IV comparison experiments before the gates. Do not rewrite the manuscript or modify the original Excel research master unless separately authorized. Preserve provenance, report failures faithfully, and keep any source changes small and reviewable.
+
+INPUTS TO LOAD (request missing files, never pretend they were supplied)
+======================================================================
+A. "Phase 1 Read-Only Verification Review (Full Package).docx" — MOST RECENT reviewer verdict and discrepancy register; it supersedes the earlier incomplete-file review.
+B. "IC2AI_2027_Phase1_Three_Actions_2026-11-01.zip" — nine-file code/manifest/protocol package. Inside:
+   README.md
+   model_manifest_v1.json
+   panda_dynamics.py
+   run_phase3a_tests.py
+   phase3a_test_report.json
+   phase3a_console_log.txt
+   model_check_summary.txt
+   Protocol_v1_1_DRAFT.txt
+   Protocol_v1_1_DRAFT.docx
+C. "Action_2026-10-31.docx" — Protocol v1.0; authoritative baseline on parameter conventions, source list, T04/T06/T17/T12/T13/T07/T22/T29, and numerical tolerances.
+D. "IC2AI_2027_Simulation_Research_Master.xlsx" — research task tracker and parameter registry; READ ONLY by default.
+E. "IC2AI_2027_Senior_Engineer_Model_and_Verification_Prompt_2026-10-31.txt" — complete mathematical framework and earlier uncertainty list.
+F. "IC2AI_2027_Simulation_Decision_Brief.docx" — original architecture and evidence-level decisions.
+G. If available, original manuscript LaTeX and PDFs in "Project.rar" — READ ONLY, used to keep equations and notation consistent.
+H. Earlier "IC2AI_2027_Section_IV_Action_Pack_2026-10-31.xlsx" is HISTORICAL. It contains proposals that conflict with the later Protocol v1.0 (e.g. first-link COM and disturbance); do not merge it into the selected model.
+
+Before acting: inventory the workspace, record missing inputs and baseline hashes, and read the reviewer report and original Protocol v1.0 in full. The manifest is a model-identity lock, NOT a complete signed experiment freeze.
+
+WHY WE HAVE BEEN DOING THIS (RESEARCH CONTEXT)
+=============================================
+The project is an IEEE IC2AI 2027 manuscript, "Planner-Filter Consistent Time-Energy Optimal Motion for Redundant Manipulators" (or the title found in the latest source). We study a redundant 7-DOF Franka Emika Panda moving to a task-space target while selecting its joint path and execution duration to trade off time and MODELED non-regenerative electrical energy. The central claim to test is consistency between:
+
+  (1) A free-final-time, time–energy-aware trajectory optimizer using B-spline/multiple-shooting or the exact transcription in the manuscript, full robot dynamics, task-space terminal goal and collision/physical safety constraints;
+  (2) A nominal Slotine–Li-style coupled-joint tracking controller with a momentum disturbance observer (DOB);
+  (3) A robust HOCBF/CBF quadratic-program safety filter acting on APPLIED joint torque;
+  (4) Time-varying position, velocity, disturbance, torque-residual and barrier margins incorporated into the planner, so the online safety filter should have near-zero intervention in nominal certified conditions.
+
+The intended paper experiments are: Scenario A, nominal planner/filter consistency; Scenario B, dynamic envelopes versus the manuscript's candidate-wise constant-envelope baseline, under fair identical settings; Scenario C, unreserved planner followed by the SAME safety filter. Optimization superiority, baseline failure, and certified safety are hypotheses to check, not predetermined results. Level 2 means NUMERICAL/SAMPLED evidence; Level 1 requires rigorous verified bounds, including a global positive m1 and ALL theorem hypotheses.
+
+SELECTED PHYSICAL MODEL (DO NOT SUBSTITUTE ANOTHER)
+==================================================
+Seven moving Panda rigid bodies using Gaz et al. (2019), the retrieved feasible inertial column and SMOOTH author friction model. Selected conventions:
+
+  q in R^7, gravity g_world=(0,0,-9.80665) m/s^2;
+  M(q) qdd + C(q,qd) qd + g(q) + F(qd) = tau_applied + d(t);
+  tau_ID = M(q) qdd + C(q,qd) qd + g(q) + F(qd);
+  C_ij(q,qd) = (1/2) sum_k [dM_ij/dq_k + dM_ik/dq_j - dM_jk/dq_i] qd_k;
+  Mdot(q)=C(q,qd)+C(q,qd)^T for THIS Christoffel convention.
+
+Current evaluator: CasADi auto-differentiation of one link-kinetic-energy/potential-energy model; NO rotor inertia, hand, payload or elastic states. COM tensors are signed, symmetrical and about each COM (not about the frame origin). The Gaz author's c_1z=0 is an AUTHOR CONVERSION CONVENTION, not a measured table value; joint-2 friction phi1=0.87224 Nm is the corrected author value. Gaz MDH link frames and old franka_ros joint-origin frames should coincide for the selected base/zero-offset policy, with +0.107 m fixed flange offset. Do not import FR3-specific geometry or substitute older ROS inertia values. The complete seven-link mass/COM/inertia and friction arrays are in model_manifest_v1.json and Protocol v1.0.
+
+Observer context: p=M(q)qd, d_hat=z+K_o p, initialize z(t0)=-K_o M(q0)qd0 when choosing d_hat(t0)=0. The selected proposed study disturbance is the smooth dual harmonic time-only torque in Protocol v1.1/v1.0:
+  d_i(t)=a_i[0.6 sin(omega(t-t_ref)+phi_i)+0.4 cos(2 omega(t-t_ref)+phi_i)],
+  a_i=0.02*tau_max,i, omega=1 rad/s, phi_i=2*pi*(i-1)/7;
+  |d_i|<=a_i, |d_dot_i|<=1.4*a_i*omega.
+This is a DESIGN CHOICE, not experimentally measured. Keep the global disturbance clock through replanning. DO NOT use the incompatible earlier 1%-cosine proposal.
+
+CURRENT STATE / TRUTHFUL EVIDENCE LABELS
+=======================================
+The previous assistant packaged the model manifest, evaluator, Phase-3a script, JSON result, console log and a Protocol v1.1 draft. The latest independent reviewer (2026-11-01) inspected them STATICALLY, did not run scripts, and did not recompute hashes. The reviewer found:
+  - Gaz constants, limits, MDH table and smooth friction SOURCE-VERIFIED by comparison to primary references.
+  - Manifest and code structure ARTIFACT-CONFIRMED, with four approval fields still null.
+  - Evaluator's Christoffel formulas/indices and column-major derivative reshape correct BY INSPECTION.
+  - The "19/19 PASS" is LOG-REPORTED only. It is NOT independently reproduced and is NOT Phase-3a completion.
+  - Three power/skew/Mdot consistency checks are structurally self-confirming because Mdot and C are constructed from the SAME dM/dq. The gravity gradient test also shares the same U; tests could pass with a wrong frame, COM or gravity choice.
+  - T04b "author-code" tests actually compare in-code constants with literal constants typed in the script. The T06a "independent NumPy" kinematics reuse common helpers and transcribed origins. These are NOT independent source byte checks or second-person verification.
+  - NO independent Pinocchio/RNEA inverse-dynamics agreement, no signed T04b/T06a, no completed v1.1 margin-mode decision, no A2 smoke test, no T27 accuracy check, no G2.5 screen, no certified m1, no paper-ready experimental evidence.
+
+LATEST GATES (do not exaggerate): A1 continue implementation = GO. A2 smoke test = CONDITIONAL GO, but may only be executed after independent dynamics/source checks and review. A3 numerical Scenarios A/B/C = NO-GO. Level 1 = NO-GO. Publication evidence = NO-GO.
+
+YOUR ASSIGNMENT — REMEDIATE IN THIS ORDER
+========================================
+
+P0. Reproducibility and transparent evidence labeling.
+  * Extract the ZIP without overwriting originals. Inspect the script, model, manifest and existing logs. Recompute baseline file hashes; record runtime, Python/library versions and exact commands in NEW run logs.
+  * Re-run the existing 19 model-only tests in YOUR environment, retaining pass/fail and measured diagnostics. Separate 'reproduced self-consistency' from 'external validation'. If something fails or dependencies are unavailable, record it; do not repair the results file to match the old claim.
+  * Correct misleading labels in test names, logs, summary and README: "compared with Gaz pinned MATLAB" and "independently implemented NumPy kinematic products" are NOT true of the previous tests. Reclassify the structurally tautological checks as useful internal implementation checks, not independent physical-model validation. Retain old evidence unchanged as historical records.
+  * Minor script hygiene: replace the hard-coded null maximum sampled joint-inertia eigenvalue with a genuinely calculated/reported value, or clearly label it not computed. Extend friction dissipation coverage to at least each joint's declared qd_max (2.61 rad/s for joints 5–7), with documented test grids.
+
+P1. Independent dynamics reference — HIGHEST TECHNICAL BLOCKER.
+  * Obtain the pinned Gaz and official franka_ros source files (if network access exists) and record actual commit IDs and checksums; otherwise report unavailable, not verified. Gaz author conversion script and friction code and pinned older franka_ros xacro are linked in the manifest.
+  * Build an INDEPENDENT robot representation with Pinocchio from an independently parsed URDF/Xacro and independently entered Gaz COM/inertia and kinematic source data; alternatively use a separately written, independently reviewed RNEA. Do not reuse panda_dynamics.py's transforms, kinetic-energy evaluator, dM/dq or CasADi M when forming the reference. Ensure same joint ordering, zero offsets, base frame, gravity, flange, inertia-about-COM convention, friction, no hand/payload/rotor conditions. Document every mapping and do not claim independence if the same implementation is imported into both sides.
+  * At the EXACT 22 reproducible configurations defined by seed 20261101 (zero algebraic pose, physical box midpoint, 20 fixed-seed interior poses in q_min+5%..q_max-5%), include controlled qd and qdd vectors. Compare independent FK, M(q), g(q), C(q,qd)qd, and inverse dynamics; optionally kinetic/potential energy. Note a library's raw C matrix need not match a chosen Christoffel convention, so compare Cqd and RNEA, not raw entries of C without a convention proof. Include gravity-sign and friction-on/off checks.
+  * Apply Protocol v1.0 Section 2.3 absolute-plus-relative tolerances: FK translation 1e-10 m, rotation 1e-10, M 1e-9 kg m^2, ID 1e-8 N m, each with the prescribed 1e-9 relative term. Preserve the original per-quantity convention and evaluate all required quantities with explicit suitable tolerances; do not quietly loosen thresholds. Report maximum errors, reference method, source hashes, q/qd/qdd seeds, and per-pose failures. Any actual frame/inertia discrepancy is a STOP before A2.
+  * The independent inverse-dynamics agreement is a technical check; a human dynamics reviewer must still inspect and sign acceptance. Never fill a human's signature field yourself.
+
+P2. T04b/T06a primary-source verification and review sheets (parallel with P1).
+  * Produce a 70-row Gaz inertial transcription comparison (7 x [mass, 3 COM, 6 signed COM inertia entries]) against supplement Tables VIII and IX, explicitly flagging c_1z asterisk and separate author-code zero convention; and a 21-row friction comparison (7 x 3) against Table I, author errata and pinned friction source. Record exact values, units, table/page/source, repository commit and digest, target-code field, equality/difference, and conflicts. Preserve signs in off-diagonal entries.
+  * For T06a, independently extract/parse official franka_ros Panda Xacro at commit ddd2fffd9de44b02ad15b4bbb2bfa2cec4d60d98. Compare all seven revolute-joint origins/axes and fixed flange to the MDH convention and current code; explicitly record the transformation and frame conventions, with zero offsets and base alignment.
+  * Prepare two evidence sheets with fields for SECOND-PERSON reviewer name/date/signature and discrepancy disposition. Automated comparisons and your own checks can support the review but are not a second-person sign-off. Keep acceptance 'PENDING SIGNATURE' until a qualified human signs.
+
+P3. Finalize the missing Protocol v1.1 DECISIONS as proposals, not fake approvals.
+  * Present a short, explicit decision memo choosing between M1 (GLOBAL, precomputed model/tube constants used consistently across candidates; reviewer recommends this) and M2 (candidate-local constants recomputed with a specified convergent/iterative scheme). In either case the time-varying envelopes/margins may remain time-dependent. Specify EXACTLY how the chosen constants enter the Stage-1 NLP and its feasible-set checks, their update frequency, circular-dependence handling, interpolation, sample-to-sample checks, and how identical evidence-level handling is applied to the constant-envelope baseline. Do not silently blend M1 and M2 or claim a numeric estimate is a verified interval enclosure.
+  * Add a METHOD-INDEPENDENT Scenario B target suite selected/frozen before testing either margin method. Retain the Scenario A T22 deterministic, proposal-conditioned task rule separately and clearly identify possible selection bias. No cherry-picking targets based on baseline failure or results. Freeze all seeds, multistarts and comparison metrics prior to A3.
+  * Add explicit integrator step h versus h/2 and CONTROL-PERIOD refinement testing, including criterion, documented units, solver accuracy, stage-gate pass/fail handling and how artifacts are retained. The v1.0 section 8.2 h/h2 comparison alone does NOT resolve control-period refinement.
+  * Preserve the proposed dual-harmonic disturbance, its analytic bounds, global clock and observer initialization; do not retroactively change experiment excitation. Resolve tracker IDs consistently: T10 DOB K_o gains, T11 Lambda/kappa, T14 HOCBF gains, T08 electrical literature audit, T09 modeled-energy wording and k_r sensitivity, T07 motor-data search.
+  * Issue Protocol v1.1 REDLINE/ADDENDUM and a proposed frozen-configuration manifest. Explicitly enumerate still-unselected gains, w_min, weights, reserves, T22/T29 settings, solver policy, sampling period, and electrical coefficients; do not invent values or claim approval. Leave sign-off blank for the team lead and controls reviewer. Do not edit the original v1.0 DOCX or research XLSX; write separate amended artifacts.
+
+P4. Independent checkpoint and execution gating (do not overrun scope).
+  * After P1/P2, issue a gate checklist saying whether independent model comparisons are reproducibly PASS, FAIL, or BLOCKED; whether T04b/T06a were source-cross-checked and PERSON-SIGNED; whether the v1.1 decisions were made and approved. Only IF primary and independent model checks PASS and the required independent review is recorded may you propose and, upon authorization consistent with the protocol, execute A2 smoke testing. A premature pipeline-shakedown run must be labeled SHAKEDOWN, excluded from reported evidence and not treated as A2.
+  * NO Scenarios A/B/C runs for Level 2 until: verified external ID agreement, signed T04b/T06a, passing A2 with integrator/control-period refinement, T27 solver accuracy, frozen choice of margin mode, positive G2.5 feasible tightening screen on frozen parameters, signed+hashed Protocol v1.1 including gains/solver/T22/T29/Scenario B suite, and T22 task frozen BEFORE baseline runs.
+  * NO Level 1 claims until verified outward-rounded interval global m1>0 and all other tube/trajectory, HOCBF and theorem conditions. The existing sampled min inertia eigenvalue ~0.003535 kg m^2 is NOT a certified m1. If G2.5 fails under one frozen configuration, diagnose that configuration and do not claim an impossibility theorem for all configurations.
+  * NO paper-result claims until appropriate evidence exists. Minor manuscript notes (source alpha_v>0 missing; comma after Eq. 13) go in an OUT-OF-SCOPE editorial memo only. Do not edit manuscript here.
+
+SOURCES TO PIN / VERIFY (do not use their mere URL presence as evidence)
+========================================================================
+Gaz source conversion:
+https://github.com/marcocognetti/FrankaEmikaPandaDynModel/blob/24d85ce4e648e2e894c832bfeee9b16711eb1a1a/matlab/ConvertDynPars2VREP/DynPars2VREP.m
+Gaz smooth friction:
+https://github.com/marcocognetti/FrankaEmikaPandaDynModel/blob/24d85ce4e648e2e894c832bfeee9b16711eb1a1a/matlab/dyn_model_panda/get_FrictionTorque.m
+Old official Panda Xacro:
+https://github.com/frankarobotics/franka_ros/blob/ddd2fffd9de44b02ad15b4bbb2bfa2cec4d60d98/franka_description/robots/common/franka_arm.xacro
+Official FER motor software metadata (gear ratios/rotor inertia; NOT k_r calibration):
+https://github.com/frankarobotics/franka_description/blob/7aeeddc449edf8d62b594f9e36a81da53e7796f9/robots/fer/dynamics.yaml
+Gaz main paper and supplement: follow pinned sources S03/S04 in Action_2026-10-31.docx.
+
+REQUIRED FINAL OUTPUT (PRODUCE FILES, NOT JUST A CHAT NARRATIVE)
+================================================================
+1. A concise README/implementation diary with commands, versions, source hashes, independent reference construction, and unchanged baseline identification.
+2. A new, machine-readable reproduction report for the original 19 checks, explicitly distinguishing self-consistency checks and independently verified checks.
+3. An external FK/dynamics comparison script plus per-case CSV/JSON diagnostics, or a detailed BLOCKED report naming the missing dependency/source instead of fabricated results.
+4. T04b 70+21 parameter provenance comparison, T06a Xacro/MDH comparison, and human-review signature sheets (unsigned until actually signed).
+5. Corrected/additional model tests and accurate test descriptions, preserving old original logs as historical evidence.
+6. A minimal Protocol v1.1 amendment and an unresolved-decision register covering M1/M2, Scenario B fairness, control-period refinement, missing frozen constants and human approval.
+7. A stage-gate matrix: A1, A2, A3, Level 1, publication, with GO/CONDITIONAL GO/NO-GO; evidence links and explicit blockers.
+8. A final change log identifying exactly which code/document files changed and why, and which reviewer objections are CLOSED, PARTIALLY RESOLVED, or OPEN.
+
+QUALITY AND HONESTY RULES
+=========================
+- Never translate "19 tests in a log" into "19 independently verified robot dynamics checks".
+- Never claim Gaz author-code byte-level comparison until remote/local pinned bytes are actually obtained and compared.
+- Never use the same M/dM/U/transforms on both sides of an allegedly independent reference test.
+- Never count a generated spreadsheet/CSV as a qualified second-person signature.
+- Do not silently change c_1z, phi1 joint 2, gravity, flange, payload policy, torque limits or model identity to make tests pass.
+- Do not manufacture motor R_i, k_t,i or k_r values; electrical objective remains MODELLED.
+- Do not lower the protocol's tolerances or adapt target/task choices after observing comparison outcomes.
+- Work on a new branch/directory and preserve original ZIP, model manifest v1, v1.0 protocol, workbook and historical reports.
+- If blocked, stop at the smallest truthful partial deliverable and list precise next human or technical actions.
+
+FINAL QUESTION TO ANSWER CLEARLY:
+"After the reviewer-identified issues are addressed with reproducible evidence, exactly which gates can now be approved, which remain blocked, and what is the smallest next authorized execution step?"

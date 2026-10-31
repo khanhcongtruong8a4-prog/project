@@ -1,0 +1,647 @@
+{
+  "audit_utc": "2026-10-31T19:22:08.350885+00:00",
+  "overall_pass": true,
+  "check_count": 158,
+  "checks": [
+    {
+      "check": "Latest model validation PASS",
+      "result": "PASS"
+    },
+    {
+      "check": "Latest run identity matches pointer",
+      "result": "PASS"
+    },
+    {
+      "check": "Every underlying command exited successfully",
+      "result": "PASS"
+    },
+    {
+      "check": "Validation did not modify protected files",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: src/panda_dynamics.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: src/reference_model.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: src/evidence_paths.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: tests/verify_primary_sources.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: tests/case_sets.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: tests/run_phase3a_tests.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: tests/compare_external_dynamics.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: tests/run_reproduction.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: tests/test_reference_sensitivity.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: tests/verify_integration.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: tests/review_checks.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: scripts/fetch_sources.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: scripts/verify_git_sources.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: scripts/run_validation.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: scripts/build_documents.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: scripts/package_release.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_dynamics.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/model_manifest_v1.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/Protocol_v1_1_DRAFT.docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/README.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/run_phase3a_tests.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/Protocol_v1_1_DRAFT.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/phase3a_console_log.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/phase3a_test_report.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/model_check_summary.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/reference_model_precise.xml",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/panda_dynamics.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/review_test_report.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/review_test_report.samples.npz",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/README.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/review.patch",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/validated_environment.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/requirements.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/REVIEW.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/reference_import_diagnostic.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/original_panda_dynamics.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/review_checks.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/package_manifest.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/input_manifest.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/run_checks.ps1",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/reference_model.xml",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: baseline/panda_review/supplied_phase3a_test_report.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: inputs/Protocol_v1_1_DRAFT_extracted.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: inputs/Action_2026-10-31.docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: inputs/Phase 1 Read-Only Verification Review (Full Package).txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: inputs/panda_review.zip",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: inputs/IC2AI_2027_Codex_Handoff_and_Reviewer_Remediation_Prompt.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: inputs/IC2AI_2027_Phase1_Three_Actions_2026-11-01.zip",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: inputs/Action_2026-10-31.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: inputs/Phase 1 Read-Only Verification Review (Full Package).docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_CHANGELOG.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_README.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_requirements.lock.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/COMPARISON.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_protocol/Protocol_v1_1_REMEDIATION_ADDENDUM.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_protocol/Protocol_v1_1_REMEDIATION_ADDENDUM.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_protocol/unresolved_decisions.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_protocol/Protocol_v1_1_REMEDIATION_ADDENDUM.docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_protocol/scenario_b_target_suite_PROPOSED.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_protocol/proposed_frozen_configuration.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/original_reproduction.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/REVIEWER_RESPONSE.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/preservation_check.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/stage_gates.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/external_cases.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/document_export.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/manifest_hash_claims.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/corrected_internal_tests.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/baseline_hashes.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/package_audit.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/source_git_verification.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/reference_sensitivity.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/OUT_OF_SCOPE_EDITORIAL_MEMO.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/external_dynamics.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/source_downloads.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/primary_source_checks.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/external_dynamics.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/verification_run.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/artifact_index.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/reviewer_issue_disposition.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/code_changes.patch",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/evaluator_semantics.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_reports/input_inventory.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/fetch_sources.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/panda_dynamics.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/prepare_scenario_b_suite.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/verify_primary_sources.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/run_phase3a_tests.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/run_all.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/compare_external_dynamics.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/verify_git_sources.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/run_reproduction.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/audit_package.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/reference_model.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/prepare_corrected_tests.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/test_reference_sensitivity.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/build_documents.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: historical/remediation_src/build_deliverables.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: sources/utils.xacro",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: sources/franka_ros_LICENSE",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: sources/get_FrictionTorque.m",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: sources/gaz_LICENSE",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: sources/gaz_README.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: sources/franka_arm.xacro",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: sources/DynPars2VREP.m",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: sources/supplement_layout.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: sources/franka_ros_NOTICE",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: sources/supplement.pdf",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: references/mujoco/initial_import_diagnostic.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: references/mujoco/reference_model.xml",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: protocol/Protocol_v1_1_REMEDIATION_ADDENDUM.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: protocol/Protocol_v1_1_REMEDIATION_ADDENDUM.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: protocol/unresolved_decisions.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: protocol/IMPORTED_REVIEW_NOTES.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: protocol/Protocol_v1_1_REMEDIATION_ADDENDUM.docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: protocol/scenario_b_target_suite_PROPOSED.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: protocol/proposed_frozen_configuration.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: reviews/README.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: review_sheets/HUMAN_REVIEW_SIGNATURES.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: review_sheets/T04b_inertial_70.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: review_sheets/T06a_link_parameter_mapping.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: review_sheets/HUMAN_REVIEW_SIGNATURES.docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: review_sheets/T06a_joint_frames_8.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: review_sheets/T04b_friction_21.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: provenance/runtime_from_phase1.patch",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: provenance/development_manifest.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: provenance/baseline_hashes.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: provenance/source_git_verification.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: provenance/preserved_files.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: provenance/source_downloads.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: provenance/runtime_from_panda_review.patch",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: provenance/input_inventory.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: pyproject.toml",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: requirements.lock.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: requirements-docs.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: README.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: INTEGRATION.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Validated file unchanged: CHANGELOG.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Development runtime identity current",
+      "result": "PASS"
+    },
+    {
+      "check": "Original 19 checks reproduced",
+      "result": "PASS"
+    },
+    {
+      "check": "Current 19 internal checks pass",
+      "result": "PASS"
+    },
+    {
+      "check": "Pinocchio 154-case checks pass",
+      "result": "PASS"
+    },
+    {
+      "check": "MuJoCo 58 groups on 154 cases pass",
+      "result": "PASS"
+    },
+    {
+      "check": "API 81 shape variants pass",
+      "result": "PASS"
+    },
+    {
+      "check": "API 51 invalid-input cases rejected",
+      "result": "PASS"
+    },
+    {
+      "check": "Integration and reference provenance pass",
+      "result": "PASS"
+    },
+    {
+      "check": "Five physical-model errors detected",
+      "result": "PASS"
+    },
+    {
+      "check": "Primary source comparisons pass",
+      "result": "PASS"
+    },
+    {
+      "check": "Unsigned review rows: T04b_inertial_70.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "Unsigned review rows: T04b_friction_21.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "Unsigned review rows: T06a_joint_frames_8.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "MuJoCo per-comparison diagnostics checksum",
+      "result": "PASS"
+    },
+    {
+      "check": "Proposed protocol references current runtime",
+      "result": "PASS"
+    },
+    {
+      "check": "No fabricated approval or A2 execution",
+      "result": "PASS"
+    }
+  ],
+  "validated_run": "runs/20261031T192052470653Z",
+  "gate_status": {
+    "A1": "GO",
+    "A2": "BLOCKED",
+    "A3": "NO-GO",
+    "Level_1": "NO-GO",
+    "publication_results": "NO-GO"
+  }
+}

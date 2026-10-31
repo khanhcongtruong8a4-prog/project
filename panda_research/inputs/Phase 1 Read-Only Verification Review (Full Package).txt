@@ -1,0 +1,107 @@
+Phase 1 Read-Only Verification Review (Full Package)
+Nov 1, 2026 · @Tiến
+Method: static reading only. No script was run and no hash was recomputed.
+Files examined: the complete zip (README.md, model_manifest_v1.json, panda_dynamics.py, run_phase3a_tests.py, phase3a_test_report.json, phase3a_console_log.txt, model_check_summary.txt, Protocol v1.1 in .txt and .docx form), plus earlier project materials (Protocol v1.0, the Gaz paper and supplement, the fork URDF and dynamics.yaml). panda_dynamics.py and the JSON report in the zip are byte-identical to the copies sent separately (compared with cmp).
+These findings supersede the earlier review that was done with missing files.
+1. Executive verdict
+Genuinely verified
+The model constants (masses, centres of mass, inertias, friction parameters, DH table, limits) match the primary sources (SOURCE-VERIFIED).
+The manifest declares a complete model identity (ARTIFACT-CONFIRMED).
+The evaluator code implements the manuscript equations correctly.
+Merely claimed
+The 19 test passes. The count is consistent across script, JSON and console log, but results are LOG-REPORTED, not reproduced.
+Comparison with the Gaz author code. The manifest states the source files were "NOT independently downloaded", and the two "T04b author-code" tests only compare code constants with literals typed into the test script.
+Confirmed weakness: the test script forms Ṁ from the same dM/dq used to build C. Three of the 19 tests are therefore algebraic identities that hold automatically. No external dynamics reference exists. Both T04b/T06a second-person sign-offs are absent.
+2. Three-action status
+Action
+Acceptance status
+Evidence inspected
+Verified facts
+Unverified claims
+Single next requirement
+1. Manifest and source checks
+CONDITIONALLY ACCEPTED
+Manifest, code constants, test script T04b/T06a blocks
+7 bodies, c₁z = 0 as author convention, COM tensors, Gaz sigmoid friction, modified-DH product, URDF identity, 0.107 m flange, gravity (0, 0, −9.80665) m/s², no rotor, no hand. Arrays match primary sources (SOURCE-VERIFIED). 22 poses from seed 20261101 (zero, midpoint, 20 random in [q_min + 5%, q_max − 5%]) (ARTIFACT-CONFIRMED).
+Comparison with author MATLAB code and official xacro bytes (not downloaded). Hashes recorded but not recomputed. All four approval fields null.
+Second person performs primary T04b/T06a checks as defined in §3 and signs them
+2. Evaluator and Phase-3a
+CONDITIONALLY ACCEPTED as implemented evaluator. NOT ACCEPTED as Phase-3a completion
+Code, script, JSON, console log
+Equations, Christoffel indices and column-major dM/dq reshape correct. 19 tests in script, 19 PASS lines, versions and seed recorded. Sampled min eigenvalue 0.003535 kg·m² consistent with λ_min ≤ M₇₇.
+Correctness of M and U against any independent reference (none exists)
+Independent inverse-dynamics reference
+3. Protocol v1.1
+CONDITIONALLY ACCEPTED. Prepared, mostly coherent, not approved
+v1.1 .txt and .docx against v1.0
+Disturbance unambiguous (dual-harmonic, 2% of τ_max, global clock, replaces the Pack's cosine). Task-ID fixes match tracker. Stop rules consistent with earlier gates. Decisions labeled proposed. Signature lines blank.
+How plan-dependent margins enter the NLP. Scenario B bias safeguard. Control-period refinement.
+Decide these three, then sign
+3. Discrepancy register
+BLOCKER
+No external dynamics reference (manifest independent_pinocchio_check: NOT_RUN, JSON). The script confirms Mdot = einsum('ijk,k->ij', dm, qd) uses the same dm that builds C, so "Mdot − C − Cᵀ zero", "skew power identity" and "inverse-dynamics power consistency" hold for any symmetric M and catch index errors only. "Gravity versus potential gradient" differentiates the same U. "Cq̇ versus finite-differenced Lagrange form" is a meaningful check of the C construction but still uses the same M. A wrong COM position, inertia frame or gravity sign would pass all 19 tests.
+T04b and T06a primary checks not performed (script T04b lines, manifest source_verification). The T04b tests abs(COM[0,2]) <= 0 and abs(PHI1[1] - 0.87224) <= 0 compare code constants with literals, yet their notes say "Compared with Gaz pinned MATLAB". The T06a test compares two transcriptions inside the code using shared rotation helpers. Intended definitions:
+T04b: a second person compares all 70 inertial values and 21 friction values with supplement Tables VIII, IX and I.
+T06a: a second person compares the URDF origin list in the code with the official xacro at commit ddd2fff.
+Margin evaluation inside the planner unspecified (v1.1 .txt §B2). "Numerically computed time-varying envelope/tube constants" does not say whether constants are global (mode M1) or recomputed around each candidate plan (mode M2), or how that loop works. Scenario A planner code cannot be written unambiguously.
+IMPORTANT
+Test notes overstate what was checked. "Compared with Gaz pinned MATLAB" (both T04b tests) and "independently implemented NumPy kinematic products" (T06a), which share rot_x, rot_z_np and the same translation formula. Reword the notes to match what the tests do.
+Two safeguards still missing from v1.1 (.txt and .docx §10). The method-independent Scenario B target suite and control-period refinement in T29. T22/T29 rules are stated unchanged, so the Scenario B selection bias remains.
+Run happened in another environment. Console log output path /mnt/data/IC2AI_2027_Phase1_v1/. Seed and versions recorded, so a team member should re-run locally and compare outputs.
+MINOR
+max_sampled_joint_inertia_eigenvalue is hard-coded to null in the script.
+Friction-dissipation test covers only ±2 rad/s, below q̇_max for joints 5-7 (2.61 rad/s). Harmless for the monotone sigmoid but the range could be widened.
+Manuscript items outside this package. α_v > 0 missing from the source, and the comma after equation (13) should be a period.
+4. Stage gates
+Gate
+Verdict
+Rationale
+A1 continue implementation
+GO
+Evaluator correct by inspection, coding not blocked by missing validations
+A2 closed-loop smoke test
+CONDITIONAL GO
+v1.1 §F already requires an independent model-check review, not yet done
+A3 Level-2 Scenarios A, B, C
+NO-GO
+Missing external ID check, primary T04b/T06a sign-off, A2, T27, G2.5, margin-mode decision and signed v1.1
+Level 1 claims
+NO-GO
+No verified m₁ or other bound exists
+Publication evidence
+NO-GO
+No closed-loop results
+5. Top three next actions
+#
+Action
+Owner role
+Artifact
+Acceptance evidence
+1
+External inverse-dynamics reference
+Dynamics reviewer who did not write panda_dynamics.py
+Pinocchio or a separately written RNEA from a parsed URDF with independently entered inertials
+M, g, Cq̇ and inverse dynamics agree at the same 22 seeded poses and velocities within Protocol §2.3 tolerances
+2
+Primary T04b/T06a checks (parallel with 1)
+Second reviewer
+Signed sheets for 70 + 21 values against the supplement and the code URDF list against the xacro at ddd2fff
+Zero mismatches with name and date. Misleading test notes corrected
+3
+v1.1 completion
+Team lead
+Revised v1.1 with margin mode (M1 recommended), Scenario B suite and control-period refinement
+Signed and hashed before A3
+6. Final answers
+Q1. Are the three actions complete as documented deliverables? Yes, now that the manifest and logs are present. All three are documented and none is approved.
+Q2. Are source data and test outcomes independently verified? Source data yes, the values match the primary sources. Test outcomes no. They are LOG-REPORTED, three are tautological by construction, and the two "author-code" tests compare constants with literals.
+Q3. Ready for a first smoke simulation? Only after next actions 1 and 2 pass, matching the v1.1 §F stop rule. Any earlier run is a labeled pipeline shakedown whose results are discarded.
+Q4. Smallest evidence package for a GO to Level 2
+External inverse-dynamics agreement
+Signed primary T04b/T06a checks
+A passing A2 smoke test including integrator and control-period refinement
+T27
+The margin-mode decision
+A positive G2.5 on the frozen configuration
+A signed, hashed v1.1 with frozen gains, solver settings, T22/T29 settings and the Scenario B suite
+The T22 task frozen before any baseline run

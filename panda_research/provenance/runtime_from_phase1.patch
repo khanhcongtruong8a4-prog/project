@@ -1,0 +1,118 @@
+--- baseline/panda_dynamics.py
++++ src/panda_dynamics.py
+@@ -46,6 +46,27 @@
+ TAUMAX = np.array([87,87,87,87,12,12,12])
+ 
+ 
++def _vector7(value, name):
++    """Accept flat, row, or column joint vectors; return a finite (7,) array."""
++    array = np.asarray(value, dtype=float)
++    if array.shape not in ((N,), (N, 1), (1, N)):
++        raise ValueError(f'{name} must have shape (7,), (7,1), or (1,7); got {array.shape}')
++    array = array.reshape(N)
++    if not np.all(np.isfinite(array)):
++        raise ValueError(f'{name} must contain only finite values')
++    return array
++
++
++def _finite_scalar(value, name, *, nonnegative=False):
++    array = np.asarray(value, dtype=float)
++    if array.ndim != 0 or not np.isfinite(array):
++        raise ValueError(f'{name} must be a finite scalar')
++    scalar = float(array)
++    if nonnegative and scalar < 0:
++        raise ValueError(f'{name} must be nonnegative')
++    return scalar
++
++
+ def inertia_tensor(six):
+     xx,xy,xz,yy,yz,zz = six
+     return np.array([[xx,xy,xz],[xy,yy,yz],[xz,yz,zz]], dtype=float)
+@@ -62,7 +83,8 @@
+ 
+ 
+ def mdh_fk_numpy(q):
+-    """Independent NumPy MDH product reference; returns 7 link poses and flange."""
++    """Internal NumPy MDH product (shared constants/helpers); returns 7 link poses and flange."""
++    q = _vector7(q, 'q')
+     R=np.eye(3); p=np.zeros(3); poses=[]
+     for i in range(N):
+         Rx=rot_x(ALPHA_DH[i]);
+@@ -74,7 +96,8 @@
+ 
+ 
+ def urdf_fk_numpy(q):
+-    """Separate source-level original-franka_ros URDF translation/rpy list."""
++    """In-code URDF-origin transcription; shares helpers, not source bytes."""
++    q = _vector7(q, 'q')
+     xyz=np.array([[0,0,0.333],[0,0,0],[0,-0.316,0],[0.0825,0,0],
+                   [-0.0825,0.384,0],[0,0,0],[0.088,0,0]],dtype=float)
+     rpy=np.array([0,-np.pi/2,np.pi/2,np.pi/2,-np.pi/2,np.pi/2,np.pi/2])
+@@ -86,7 +109,8 @@
+ 
+ 
+ def friction(qd):
+-    qd=np.asarray(qd,dtype=float)
++    """Gaz smooth friction for one joint-velocity vector; returns shape (7,)."""
++    qd = _vector7(qd, 'qd')
+     # tanh numerically stable equivalent to two logistic terms.
+     return 0.5*PHI1*(np.tanh(0.5*PHI2*(qd+PHI3))-np.tanh(0.5*PHI2*PHI3))
+ 
+@@ -129,9 +153,9 @@
+                 ['q'],['M','dM','g','U','flange'],{'cse':True})
+ 
+     def evaluate(self,q,qd=None,qdd=None):
+-        q=np.asarray(q,dtype=float).reshape(N)
++        q = _vector7(q, 'q')
+         if qd is None:qd=np.zeros(N)
+-        qd=np.asarray(qd,dtype=float).reshape(N)
++        qd = _vector7(qd, 'qd')
+         mat,dflat,gravity,U,flange=self._fun(q)
+         M=np.asarray(mat,dtype=float)
+         dflat=np.asarray(dflat,dtype=float)
+@@ -145,18 +169,34 @@
+         out={'M':M,'dM':dm,'C':C,'g':grav,'F':friction(qd),
+              'U':float(U),'flange':np.asarray(flange).reshape(3)}
+         if qdd is not None:
+-            qdd=np.asarray(qdd,dtype=float).reshape(N)
++            qdd = _vector7(qdd, 'qdd')
+             out['ID']=M@qdd+C@qd+grav+out['F']
+         return out
+ 
+     def acceleration(self,q,qd,tau,d=None):
++        """Solve M qdd + C qd + g + F = tau + d; return shape (7,).
++
++        This plant does not enforce torque or state limits. The controller and
++        simulation logger must check those constraints explicitly.
++        """
++        q = _vector7(q, 'q')
++        qd = _vector7(qd, 'qd')
++        tau = _vector7(tau, 'tau')
+         e=self.evaluate(q,qd)
+         if d is None:d=np.zeros(N)
+-        return np.linalg.solve(e['M'],np.asarray(tau)+np.asarray(d)-e['C']@qd-e['g']-e['F'])
++        d = _vector7(d, 'd')
++        return np.linalg.solve(e['M'],tau+d-e['C']@qd-e['g']-e['F'])
+ 
+ 
+ def dual_harmonic_disturbance(t, amplitude=0.02):
+-    """Protocol v1.0 proposed waveform, still awaiting team approval."""
++    """Protocol v1.1 development waveform at one scalar time in seconds.
++
++    amplitude is a nonnegative fraction of TAUMAX. The caller supplies the
++    global simulation clock, including through replanning. This function does
++    not supply the waveform to the disturbance observer.
++    """
++    t = _finite_scalar(t, 't')
++    amplitude = _finite_scalar(amplitude, 'amplitude', nonnegative=True)
+     phi=2*np.pi*np.arange(N)/N
+     a=amplitude*TAUMAX
+     phase=t  # t_ref = 0, omega = 1 s^-1
+@@ -164,5 +204,7 @@
+ 
+ 
+ def disturbance_bounds(amplitude=0.02):
++    """Analytic component bounds (N m, N m/s) for omega = 1 rad/s."""
++    amplitude = _finite_scalar(amplitude, 'amplitude', nonnegative=True)
+     a=amplitude*TAUMAX
+     return a,1.4*a

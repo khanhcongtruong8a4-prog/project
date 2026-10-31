@@ -1,0 +1,9 @@
+{
+  "export_utc": "2026-10-31T18:57:27.708125+00:00",
+  "python_docx_version": "1.2.0",
+  "files": [
+    "protocol/Protocol_v1_1_REMEDIATION_ADDENDUM.docx",
+    "review_sheets/HUMAN_REVIEW_SIGNATURES.docx"
+  ],
+  "rendered_layout_review": false
+}

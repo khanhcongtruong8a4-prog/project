@@ -1,0 +1,254 @@
+{
+  "manifest_version": "1.0",
+  "freeze_type": "selected model convention/source-code hash lock, NOT team approval or all-comparison parameter freeze",
+  "created_on": "2026-11-01",
+  "model_name": "Panda Gaz 2019 seven moving links, no payload/hand/rotor",
+  "published_parameter_interpretation": "Gaz recovered feasible column; COM-centered inertia tensors in Gaz modified-DH link frames",
+  "MDH_product": "Tx(a_i) Rx(alpha_i) Tz(d_i) Rz(q_i)",
+  "coordinate_frames": "Common base, zero joint offset, URDF body frame equals Gaz frame for links 1..7; flange = link7 Tz(0.107)",
+  "gravity_world_m_s2": [
+    0,
+    0,
+    -9.80665
+  ],
+  "plant_equals_model_plus_torque_disturbance": true,
+  "friction": "Gaz author sigmoid smooth formula; phi1 joint2 from author errata/code",
+  "link_masses_kg": [
+    4.970684,
+    0.646926,
+    3.228604,
+    3.587895,
+    1.225946,
+    1.666555,
+    0.735522
+  ],
+  "link_centres_m": [
+    [
+      0.003875,
+      0.002081,
+      0.0
+    ],
+    [
+      -0.003141,
+      -0.02872,
+      0.003495
+    ],
+    [
+      0.027518,
+      0.039252,
+      -0.066502
+    ],
+    [
+      -0.05317,
+      0.104419,
+      0.027454
+    ],
+    [
+      -0.011953,
+      0.041065,
+      -0.038437
+    ],
+    [
+      0.060149,
+      -0.014117,
+      -0.010517
+    ],
+    [
+      0.010517,
+      -0.004252,
+      0.061597
+    ]
+  ],
+  "link_com_inertia_kg_m2_signed_xx_xy_xz_yy_yz_zz": [
+    [
+      0.70337,
+      -0.000139,
+      0.006772,
+      0.70661,
+      0.019169,
+      0.009117
+    ],
+    [
+      0.007962,
+      -0.003925,
+      0.010254,
+      0.02811,
+      0.000704,
+      0.025995
+    ],
+    [
+      0.037242,
+      -0.004761,
+      -0.011396,
+      0.036155,
+      -0.012805,
+      0.01083
+    ],
+    [
+      0.025853,
+      0.007796,
+      -0.001332,
+      0.019552,
+      0.008641,
+      0.028323
+    ],
+    [
+      0.035549,
+      -0.002117,
+      -0.004037,
+      0.029474,
+      0.000229,
+      0.008627
+    ],
+    [
+      0.001964,
+      0.000109,
+      -0.001158,
+      0.004354,
+      0.000341,
+      0.005433
+    ],
+    [
+      0.012516,
+      -0.000428,
+      -0.001196,
+      0.010027,
+      -0.000741,
+      0.004815
+    ]
+  ],
+  "mdh_a_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0825,
+    -0.0825,
+    0.0,
+    0.088
+  ],
+  "mdh_alpha_rad": [
+    0.0,
+    -1.5707963267948966,
+    1.5707963267948966,
+    1.5707963267948966,
+    -1.5707963267948966,
+    1.5707963267948966,
+    1.5707963267948966
+  ],
+  "mdh_d_m": [
+    0.333,
+    0.0,
+    0.316,
+    0.0,
+    0.384,
+    0.0,
+    0.0
+  ],
+  "friction_phi1_Nm": [
+    0.54615,
+    0.87224,
+    0.64068,
+    1.2794,
+    0.83904,
+    0.30301,
+    0.56489
+  ],
+  "friction_phi2_s_per_rad": [
+    5.1181,
+    9.0657,
+    10.136,
+    5.5903,
+    8.3469,
+    17.133,
+    10.336
+  ],
+  "friction_phi3_rad_per_s": [
+    0.039533,
+    0.025882,
+    -0.04607,
+    0.036194,
+    0.026226,
+    -0.021047,
+    0.0035526
+  ],
+  "joint_limits_qmin_rad": [
+    -2.8973,
+    -1.7628,
+    -2.8973,
+    -3.0718,
+    -2.8973,
+    -0.0175,
+    -2.8973
+  ],
+  "joint_limits_qmax_rad": [
+    2.8973,
+    1.7628,
+    2.8973,
+    -0.0698,
+    2.8973,
+    3.7525,
+    2.8973
+  ],
+  "joint_speed_max_rad_s": [
+    2.175,
+    2.175,
+    2.175,
+    2.175,
+    2.61,
+    2.61,
+    2.61
+  ],
+  "joint_torque_max_Nm": [
+    87,
+    87,
+    87,
+    87,
+    12,
+    12,
+    12
+  ],
+  "rotor_inertia_in_selected_M": false,
+  "attachment_or_hand_in_selected_model": false,
+  "level1_certification_status": "NOT_RUN",
+  "independent_pinocchio_check": "NOT_RUN: pinocchio unavailable",
+  "observer_filter_planner_status": "NOT_IMPLEMENTED in this package",
+  "disturbance_policy": {
+    "status": "PROPOSED v1.1; needs team approval",
+    "type": "dual-harmonic time-only",
+    "amplitude_fraction_of_torque_limit": 0.02,
+    "omega_rad_s": 1,
+    "phase_i_rad": "2*pi*(i-1)/7",
+    "dbar_i": "a_i",
+    "dbar1_i": "1.4*a_i*omega"
+  },
+  "margin_policy": {
+    "status": "PROPOSED v1.1; needs team approval",
+    "G2.5": "point-evaluated optimistic diagnostic only",
+    "Level2": "sampled time-varying estimates",
+    "Level1": "verified interval enclosures and complete theorem conditions"
+  },
+  "approvals": {
+    "T06_second_reviewer": null,
+    "model_manifest_owner": null,
+    "disturbance_and_margin_team_decision": null,
+    "protocol_v1_1_signoff": null
+  },
+  "source_urls": {
+    "gaz_author_inertial_conversion": "https://github.com/marcocognetti/FrankaEmikaPandaDynModel/blob/24d85ce4e648e2e894c832bfeee9b16711eb1a1a/matlab/ConvertDynPars2VREP/DynPars2VREP.m",
+    "gaz_author_friction": "https://github.com/marcocognetti/FrankaEmikaPandaDynModel/blob/24d85ce4e648e2e894c832bfeee9b16711eb1a1a/matlab/dyn_model_panda/get_FrictionTorque.m",
+    "older_panda_urdf_joint_origins": "https://github.com/frankarobotics/franka_ros/blob/ddd2fffd9de44b02ad15b4bbb2bfa2cec4d60d98/franka_description/robots/common/franka_arm.xacro",
+    "fer_motor_software_metadata": "https://github.com/frankarobotics/franka_description/blob/7aeeddc449edf8d62b594f9e36a81da53e7796f9/robots/fer/dynamics.yaml",
+    "official_panda_limits": "https://frankarobotics.github.io/docs/robot_specifications.html"
+  },
+  "source_verification": "URLs inspected, but pinned remote source bytes were NOT independently downloaded/hashed in this environment.",
+  "input_file_sha256": {
+    "Action_2026-10-31.docx": "bc0140524fc9331ea14298c4979f308edc7a29f4a3508da4d9a6ab87019a2b19",
+    "IC2AI_2027_Section_IV_Action_Pack_2026-10-31.xlsx": "d06a4ea2256078276e4c3df72a08f6abb205c9359088cec78038fab3f798411f",
+    "IC2AI_2027_Simulation_Research_Master.xlsx": "66368deddc2bce7218ed3cf6000bc93b5709af1dd4fb1f6afcfbfd74c5fe2db0",
+    "CONDITIONAL GO to start implementat.txt": "4dd6a82658da30eadae3852958e1f17b60727d78865f1dbb3929cf17d988f902"
+  },
+  "module_sha256": "698a92efd624b603133cd5ea5a3fe31d0752d210ffe4291a02bab64a0d3cba1c",
+  "test_script_sha256": "3363b8de9558fcea94dfec7b1e031b3f523e202876c03c4f1a5893b9360a47c7",
+  "numerical_report_sha256": "f272b6f54660ee3a87500c26318bf57316fcc9a5a8447610b3271452768d8262",
+  "canonical_config_sha256": "44af364053400279a3a3fa17c7247e88fe7f4d273a8ef1223ea2420fb64618ae"
+}

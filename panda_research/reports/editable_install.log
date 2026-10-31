@@ -1,0 +1,20 @@
+Obtaining file:///workspace/project/panda_research
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: ic2ai-panda-research
+  Building editable for ic2ai-panda-research (pyproject.toml): started
+  Building editable for ic2ai-panda-research (pyproject.toml): finished with status 'done'
+  Created wheel for ic2ai-panda-research: filename=ic2ai_panda_research-1.2.0-0.editable-py3-none-any.whl size=1434 sha256=2217b4230639bdca88a14ec6690280f7a7eea55b4595be30f34f6c5276cb2cac
+  Stored in directory: /tmp/pip-ephem-wheel-cache-5o7gj2xc/wheels/ad/68/8a/473ff6b734560587abc9bd273f271fac360a451e9daa4d6171
+Successfully built ic2ai-panda-research
+Installing collected packages: ic2ai-panda-research
+Successfully installed ic2ai-panda-research-1.2.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: python -m pip install --upgrade pip

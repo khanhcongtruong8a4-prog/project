@@ -1,0 +1,46 @@
+IC2AI 2027 — MODEL CHECK SUMMARY — 2026-11-01
+
+ACTION 1: Model manifest v1 and T04b/T06a primary checks
+- Selected 7-body Gaz model recorded with all arrays, source refs, manifest hashes.
+- Gaz author conversion script: link 1 COM c_z is author-code zero (not a measured table value).
+- Gaz author friction function: joint 2 phi1 = 0.87224 Nm.
+- COM inertias are signed symmetric matrices about COM; no origin shift in code.
+- MDH Craig-style source transforms and older franka_ros Panda joint origins
+  agree numerically across 22 poses; link-frame maps are identity in selected
+  common base/joint-zero convention. Flange uses fixed +0.107 m z offset.
+- Source-level positive link body inertias and triangle inequalities checked.
+- T06 SECOND REVIEW, Gaz payload identification, external inverse dynamics
+  source-code cross-check, and independent library model comparison PENDING.
+- The primary checks did not find a frame error. They do NOT constitute sign-off.
+
+ACTION 2: Evaluator + Phase-3a tests
+- Single shared CasADi-derived M(q), dM/dq, U(q), g(q), flange FK.
+- Standard Christoffel C_ij = 1/2 sum_k(dM_ij/dq_k + dM_ik/dq_j - dM_jk/dq_i)*qdot_k.
+- Gaz smooth friction; ID = M*qdd+C*qdot+g+F.
+- Report: see exact per-check results phase3a_test_report.json.
+- INTERNAL NUMERICAL TESTS ONLY; NO continuous-time certificate.
+- Independent Pinocchio unavailable in this runtime, so independent RNEA/ID
+  comparison is pending, as is QP/controller smoke test A2.
+
+ACTION 3: Protocol v1.1 DRAFT — not team-approved
+- Disturbance proposal: 2% dual harmonic in Action_2026-10-31.docx.
+- Margin policy: G2.5 point-evaluated diagnostic; Level 2 sampled numerical;
+  Level 1 verified interval/hybrid certificate only.
+- Corrected v1.0 labels: observer K_o gain -> T10 (not T14);
+  T08 electrical literature, T09 energy wording/sensitivity; T14 HOCBF gains.
+- No user/team signatures were supplied; no comparative-run manifest is signed.
+
+READINESS
+A1 engineering implementation: CONTINUE, conditional on independent review.
+A2 smoke test: not yet executed; require model source/ID check and sign-off.
+A3 Scenario A/B/C Level 2: NO-GO pending A2, T27, G2.5 and signed protocol.
+Level 1: NO-GO pending outward-rounded M/Q bounds and all theorem hypotheses.
+
+NOTE: this record does not supersede the historical 31-Oct-2026 Protocol v1.0;
+Protocol_v1_1_DRAFT.txt states exact proposed amendments.
+
+REVIEWER SUMMARY SCOPE NOTE
+The uploaded 13-line reviewer verdict names T04b/T06a and Phase-3a but does not
+provide their complete subtest definitions. We operationalized them as Gaz-code
+transcription and MDH-vs-Xacro primary checks plus model dynamics identities.
+An independent reviewer must confirm that these cover their intended gates.
