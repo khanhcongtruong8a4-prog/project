@@ -1,0 +1,36 @@
+{
+  "purpose": "Deliberate isolated corruptions; NOT alternative physical models or experiment results",
+  "controls": [
+    {
+      "mutation": "mass_link2",
+      "max_ID_difference_Nm": 0.00198191460463093,
+      "detected": true,
+      "result": "PASS_DETECTED"
+    },
+    {
+      "mutation": "COM_link2",
+      "max_ID_difference_Nm": 7.564893660061411e-05,
+      "detected": true,
+      "result": "PASS_DETECTED"
+    },
+    {
+      "mutation": "inertia_sign_link2",
+      "max_ID_difference_Nm": 0.002943949068608731,
+      "detected": true,
+      "result": "PASS_DETECTED"
+    },
+    {
+      "mutation": "joint3_origin",
+      "max_ID_difference_Nm": 0.003138790392757329,
+      "detected": true,
+      "result": "PASS_DETECTED"
+    },
+    {
+      "mutation": "gravity_sign",
+      "max_ID_difference_Nm": 50.761039591964746,
+      "detected": true,
+      "result": "PASS_DETECTED"
+    }
+  ],
+  "overall_pass": true
+}

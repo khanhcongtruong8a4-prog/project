@@ -1,6 +1,6 @@
 # Combined Panda development status
 
-Development version: 1.2.0. Latest run: `runs/20261031T192052470653Z`.
+Dynamics baseline: 1.2.0; Action 3 extension: 1.2.1. Latest model run: `runs/20261101T152557061584Z`.
 Result: **PASS_MODEL_VALIDATION_ONLY**.
 Runtime code SHA256: `9a0f100459c93f59ba75133fc682f111505909627de3bf29bb0bf823b64f025d`.
 
@@ -24,14 +24,15 @@ The differing test/group counts are not counts of independent experiments.
 | Gate | Current state |
 | --- | --- |
 | A1 implementation | GO |
-| A2 closed-loop smoke | BLOCKED pending qualified model/source acceptance and approved smoke settings |
+| A2 closed-loop smoke | HOLD; see v1.2.1 policy and Action 3 report for current blockers |
 | A3 comparative scenarios | NO-GO |
 | Level 1 | NO-GO; verified global m1 and all theorem hypotheses remain pending |
 | Publication-result claims | NO-GO |
 
 The MuJoCo integration check is a plant-only DOP853 check, not a controller,
-observer, safety-filter or control-period refinement test. No A2/shakedown,
-A3 comparison, T27, G2.5 or interval certificate was executed. Human signatures
-remain pending. M1/Scenario B/refinement documents remain proposals. The
-workbook, full framework and decision brief are still required to resolve the
-remaining equation-level and frozen-configuration choices.
+observer, safety-filter or control-period refinement test. This runner validates
+the preserved numerical model only; Action 3 component results are separate in
+reports/ACTION3_REVIEW_HANDOFF.md. No official A2, A3 comparison, complete T27,
+G2.5 or interval certificate is claimed. Supplied v1.2.1 owner policy now governs
+gains/C1-C6 and includes the task workbook; it does not fill missing M1 bounds,
+approve the observer discretization or manufacture independent signatures.

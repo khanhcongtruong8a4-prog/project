@@ -1,4 +1,11 @@
-# Combined Panda research development — v1.2.0
+# Panda research development — v1.2.1 Action 3
+
+The combined v1.2.0 numerical model is preserved unchanged. The new
+`panda_closed_loop` package implements Action 3 components under the supplied
+v1.2.1 owner policy. Start with [ACTION3.md](ACTION3.md) and
+[the latest Action 3 handoff](reports/ACTION3_REVIEW_HANDOFF.md).
+Official A2 remains HOLD: M1 inputs and execution approvals are incomplete,
+and the approved initial midpoint hard-QP component fixture is infeasible.
 
 This is the combined development base for the selected **Gaz seven-body
 Franka Emika Panda model**. It brings together the validated single-vector API
@@ -14,7 +21,8 @@ and [integration notes](INTEGRATION.md) for what was combined.
 Tested on Linux x86-64 with Python 3.12.14. The full development environment
 contains NumPy 2.3.5, SciPy 1.17.0, CasADi 3.7.2, Pinocchio 3.8.0 and MuJoCo
 3.3.7. Poppler `pdftotext` must be available (`poppler-utils` on Debian/Ubuntu).
-No ROS, GPU, GUI or credentials are needed for these checks.
+No ROS, GPU, GUI or credentials are needed for these checks. Action 3 adds
+ProxQP via Proxsuite 0.7.2; it is pinned in the same lockfile.
 
 From this directory (`/workspace/project/panda_research` in the prepared cloud):
 
@@ -23,6 +31,8 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.lock.txt
 .venv/bin/python -m pip install --no-deps -e .
 .venv/bin/python scripts/run_validation.py
+# Action 3 focused tests + all baseline regression checks:
+.venv/bin/python scripts/action3.py validate
 ```
 
 On Windows, use `.venv\Scripts\python.exe` and install Poppler so `pdftotext`
@@ -111,19 +121,14 @@ and model-identity versions are distinct; the original manifest is unchanged.
 
 ## Research gates
 
-**A1 implementation: GO.** Required human model/source acceptance and approved
-smoke settings remain prerequisites for A2. A3 comparisons, Level 1 and
-publication-result claims remain NO-GO. The MuJoCo plant-only DOP853 check is
-not A2, RK4 held-control validation or control-period refinement. No controller,
-observer, HOCBF-QP, planner, comparative run, T27, G2.5 or interval certificate
-is claimed here. Sampled inertia eigenvalues do not establish global m1.
-
-M1, the method-independent Scenario B suite and refinement protocol remain
-**proposals**, with unknown gains/constants/solver settings and signatures
-explicitly pending. The complete mathematical framework, research registry and
-decision brief are still needed before resolving equation-level choices. Notes
-from the incoming review about manuscript/workbook conflicts are retained as
-leads, not silently adopted as verified source decisions.
+**A1 implementation: GO.** The supplied v1.2.1 policy supersedes the earlier
+C1-C6 proposals and specifies gains, reserves, disturbance and refinement.
+It records owner acceptance of model evidence, not independent signatures.
+Closed-loop components and focused fixtures are implemented, but official A2,
+A3 comparisons, complete T27, G2.5, Level 1 and publication claims remain blocked.
+See the current Action 3 handoff for the exact initial-QP and M1 blockers.
+Sampled inertia eigenvalues do not establish global m1. The original model,
+past proposals/evidence, manuscript and workbook have not been rewritten.
 
 Optional DOCX regeneration needs `requirements-docs.txt` and
 `python scripts/build_documents.py`; this exports unsigned protocol/review

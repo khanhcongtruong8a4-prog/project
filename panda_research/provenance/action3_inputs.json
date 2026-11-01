@@ -1,0 +1,102 @@
+{
+  "supplied_inputs_preserved": [
+    {
+      "file": "inputs/action3/Approved_Policy_v1.2.1_download.zip",
+      "sha256": "26f3b10e69fe1e683a01901d11e0d965b14700723839c7209e405a674b3be0f1"
+    },
+    {
+      "file": "inputs/action3/IC2AI_2027_Codex_Action3_Closed_Loop_Implementation_Prompt_v1.2.1.txt",
+      "sha256": "601f320c564d949817ac4028d3acea38c1b2ee440f9029464ae2368b0529c2e0"
+    },
+    {
+      "file": "inputs/action3/Project.rar",
+      "sha256": "28115fbf95860a6618e9bf0017b9bebef87557102f1c17d02876e5169a5099bb"
+    },
+    {
+      "file": "policy/v1.2.1/APPROVAL_RECORD.md",
+      "sha256": "eeddcaf7a402cbc13fff13b1223d95bc0c5cfb92869795f86613216cb6a98a3b"
+    },
+    {
+      "file": "policy/v1.2.1/APPROVED_POLICY_CONFIGURATION_v1.2.1.json",
+      "sha256": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530"
+    },
+    {
+      "file": "policy/v1.2.1/C1_C6_FINAL_DECISIONS.csv",
+      "sha256": "a0635b51e4633fbea90216990afaa66ac422867f1d94555cb87574cb4e38a48a"
+    },
+    {
+      "file": "policy/v1.2.1/FILE_SHA256_MANIFEST.json",
+      "sha256": "ba566d1c9e3b028205cb41ad34771c2ac6aaba2a18b7606a8f74dbaa2911c76d"
+    },
+    {
+      "file": "policy/v1.2.1/PREVIOUS_AUTOMATED_EVIDENCE_SNAPSHOT.json",
+      "sha256": "ce210fd60db3a75c7ef9e53807aa2a829b8b438819e7ae217f468778554c6df7"
+    },
+    {
+      "file": "policy/v1.2.1/PROTOCOL_v1.2.1_PROJECT_OWNER_APPROVED_ADDENDUM.md",
+      "sha256": "d44f2412cd950c0501a3bb9e3c4d32bee886782d830e116eeb5df8f0e4e31c0d"
+    },
+    {
+      "file": "policy/v1.2.1/READINESS_AND_NEXT_STEPS.md",
+      "sha256": "ceff493db58df01792a78fb2f3f4bc49c0219d9c059fd20b92b811c200be7516"
+    },
+    {
+      "file": "policy/v1.2.1/Referenced_Inputs/Tasks_2026.xlsx",
+      "sha256": "bdddc29df8ca30514b9b6f31fc96372b5460a1bf22e5c40011979bb73d9ad77a"
+    },
+    {
+      "file": "policy/v1.2.1/Referenced_Inputs/previous_C1_C6_proposals.csv",
+      "sha256": "970ddfc521008b3d49553cc01f2592d54888c1e0c72e966f9a763fe1594e092c"
+    },
+    {
+      "file": "policy/v1.2.1/Referenced_Inputs/previous_unsigned_signoff_template.md",
+      "sha256": "b2f15af7e3c0f5e3d798a1425ded62d2876df837418fda5062377790522a8447"
+    },
+    {
+      "file": "policy/v1.2.1/T29_approved_protocol_row_scales.csv",
+      "sha256": "519bf38459cd8b2b485aed428d201640801333311fef9444adf6ffef27241a31"
+    },
+    {
+      "file": "policy/v1.2.1/manuscript_source_hashes.json",
+      "sha256": "5d438a95640f4766f2bc5486ab24232846cb58fcdc6281af3dba45551c038f2c"
+    },
+    {
+      "file": "policy/v1.2.1/original_Tasks_2026_provenance.csv",
+      "sha256": "529357e5e31a6c462749ceb4052aaecc23fffab41aa481fdab4641004c751c0f"
+    },
+    {
+      "file": "sources/manuscript_v1.2.1/01_introduction.tex",
+      "sha256": "f855b384a19c209c42248ca08768080338a81f51544bf461c36c9d779fc35a68"
+    },
+    {
+      "file": "sources/manuscript_v1.2.1/02_mm&nc.tex",
+      "sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da"
+    },
+    {
+      "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+      "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba"
+    },
+    {
+      "file": "sources/manuscript_v1.2.1/fig/fig_0.png",
+      "sha256": "493a3f80a828715c0c7692718bae7b2bd09175e860c30497ba4dd395897636ba"
+    },
+    {
+      "file": "sources/manuscript_v1.2.1/fig/robotfig-crop.png",
+      "sha256": "c33175c8de0686f46dd161a200d326a263b3c463d3b62e6f3eda3e2ab391c11e"
+    },
+    {
+      "file": "sources/manuscript_v1.2.1/main.tex",
+      "sha256": "58c77edb80d60c98254cbdbdb22e01432c9b1accd8b144d370ded1d76d0fe199"
+    },
+    {
+      "file": "sources/manuscript_v1.2.1/ref.bib",
+      "sha256": "73baae9bffdf24debfe4a0db090a0404c0d5aadc939f1a13602627c32dbd0d4f"
+    },
+    {
+      "file": "inputs/action3/IC2AI_Panda_Combined_v1.2.0_2026-11-01.zip",
+      "sha256": "48cba1cc0d0c6d4fa4c7e6f325298244b0c26590cce0c90a24082b48e1041c8c"
+    }
+  ],
+  "canonical_equation_files_match_policy": true,
+  "archive_and_main_tex_mismatch_reported_not_repaired": true
+}

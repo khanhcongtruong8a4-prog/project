@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/workspace/project/panda_research/.venv/bin/python",
+    "/tmp/panda_action3_release_replay/panda_research/scripts/action3.py",
+    "validate"
+  ],
+  "exit_code": 0,
+  "scope": "Full replay from extracted release with installed pinned dependencies",
+  "result": {
+    "run_directory": "runs/action3/20261101T152831661291Z",
+    "status": "PASS_COMPONENTS_AND_REGRESSIONS_A2_HOLD",
+    "run_sha256": "9a26446837ae57fea98e54a7a357688e4cda3321e842db2a65ba5e703fceb365"
+  },
+  "local_import_probe": {
+    "exit_code": 0,
+    "stdout": "/tmp/panda_action3_release_replay/panda_research/src/panda_closed_loop/config.py\n/tmp/panda_action3_release_replay/panda_research/src/panda_dynamics.py\n",
+    "stderr": ""
+  }
+}

@@ -1,3 +1,20 @@
+# Action 3 development extension 1.2.1 — 1 November 2026
+
+- Added read-only typed v1.2.1 policy/source/workbook audit, preserving the
+  Project.rar and main.tex hash discrepancies while verifying the canonical
+  two equation files and all recorded source cells.
+- Added momentum observer/envelope, exact-sign Slotine-Li tracker, measured-state
+  fixture, translational flange derivatives, all 43 hard-QP rows, dense ProxQP,
+  explicit protective-stop semantics and held-torque coupled RK4 components.
+- Added numerical T28 raw-C reference from source-built Pinocchio M differences,
+  component/solver/geometry/observer tests and preserved full model regressions.
+- Recorded the approved initial midpoint hard-QP infeasibility; no tuning or
+  disturbance/bound reduction was used to obtain a passing physical run.
+- Added equation-to-code and M1 requirements registries, run-local snapshots,
+  full effective configuration, a deliberately refusing A2 command and handoff.
+- Preserved all original source/model/evidence/signature bytes. No official A2,
+  A3, complete T27, G2.5 or Level 1 run; no manuscript/workbook edits.
+
 # Combined release 1.2.0 — 1 November 2026
 
 - Adopted the newer validated numerical API; fixed vector broadcasting and

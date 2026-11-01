@@ -4,3 +4,4 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+!sources/manuscript_v1.2.1/fig/*.png

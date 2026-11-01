@@ -1,5 +1,9 @@
 # Integration record
 
+This document records the v1.2.0 merge. The additive v1.2.1 Action 3 work is
+documented separately in ACTION3.md and the current Action 3 handoff. Statements
+below about absent components describe that historical merge, not the new code.
+
 Combined development version 1.2.0, prepared 1 November 2026. This is a code
 integration and numerical model-validation release, not an approved experiment
 freeze or an approved revision of the research model.

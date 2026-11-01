@@ -1,0 +1,116 @@
+IC2AI 2027 — CODEX HANDOFF: ACTION 3
+Approved v1.2.1 policy -> closed-loop implementation and A2 entry package
+Prepared: 1 November 2026
+
+ROLE AND MISSION
+You are the implementation engineer for our ongoing IC2AI 2027 robotics research project. Continue the existing, source-validated 7-DOF Franka Emika Panda development package. Implement Action 3: integrate the disturbance observer, Slotine–Li nominal tracker, robust HOCBF-QP safety filter, and zero-order-hold RK4 execution loop; implement T28 raw-C consistency regression; and produce rigorous unit/integration evidence and a reproducible A2 readiness package.
+
+This is a CODING and VERIFICATION assignment, not a paper-writing assignment. You are authorized to write code and run focused tests for Action 3. You are NOT authorized to run official A2 smoke, A3 planner comparisons, G2.5 claims, Level 1 certification, or publication experiments merely because the software builds. If you conduct any exploratory pipeline shakedown, label it as such, preserve failures, and explicitly exclude it from A2/A3 evidence. Do not claim unperformed tests have passed.
+
+PROJECT BACKGROUND — WHY THE CODE EXISTS
+The manuscript studies planner-filter-consistent time–energy-optimal motion for a redundant manipulator. Stage 1 plans a free-duration, collision/constraint-aware trajectory with modeled non-regenerative electrical energy and time in the objective. Stage 2 tracks the planned trajectory under a momentum disturbance observer and Slotine–Li nominal control, then projects the nominal torque through a robust HOCBF-QP. Time-dependent tracking and uncertainty envelopes tighten the Stage-1 constraints so that a sufficiently well-certified nominal trajectory need not activate the filter. The proposed Section IV will eventually assess (A) nominal filter consistency, (B) dynamic versus candidate-wise constant envelopes, and (C) an unreserved planner under the same filter. Today we are building only the closed-loop execution components needed to approach A2; we are NOT implementing or claiming those final comparisons.
+
+REQUIRED INPUTS — INSPECT FIRST
+1. IC2AI_Panda_Combined_v1.2.0_2026-11-01.zip: active panda_research/src/panda_dynamics.py, validation tests, Pinocchio/MuJoCo reference evidence, integration instructions. Historical/baseline code is evidence, not the implementation entry point.
+2. IC2AI_2027_Approved_Policy_v1.2.1_2026-11-01.zip: APPROVED_POLICY_CONFIGURATION_v1.2.1.json; PROTOCOL_v1.2.1_PROJECT_OWNER_APPROVED_ADDENDUM.md; C1_C6_FINAL_DECISIONS.csv; APPROVAL_RECORD.md; READINESS_AND_NEXT_STEPS.md; original_Tasks_2026_provenance.csv; manuscript_source_hashes.json; T29_approved_protocol_row_scales.csv; embedded Tasks_2026.xlsx.
+3. Original Project.rar manuscript source, especially 02_mm&nc.tex and 03_contribution.tex (canonical frozen source hash), plus Protocol v1.0 (Action_2026-10-31.docx) and the previous independent verification review if available. The .tex equations prevail over any handoff paraphrase. If the manuscript source is absent or hash-mismatched, mark an equation-level blocker rather than improvising.
+4. Existing model verification evidence is project-owner ACCEPTED for proceeding. That does not create an independent second-person signature; leave signature fields unchanged.
+
+SOURCE PRECEDENCE / CHANGE CONTROL
+- Use approved v1.2.1 policy for C1–C6, gains, reserves, disturbance, refinement and task-source decisions. Earlier v1.1/M1 proposals are not more authoritative.
+- Use canonical hashed manuscript for controller, observer, barrier, tracking-margin and recovery equations. Do not silently change theory or notation. Flag any contradiction with the approved policy.
+- Use current v1.2.0 development runtime for robot dynamics; preserve 7 Gaz bodies, c1z=0 author convention, smooth Gaz friction, fixed flange TCP, no hand/payload/rotor inertia, base identity and gravity (0,0,-9.80665) m/s^2.
+- Do not overwrite/modify the manuscript, Tasks_2026.xlsx, original source archives, past validation logs or human-review records. Commit code changes as additive, auditable changes, with a manifest and hashes. Preserve earlier failures.
+- This request does NOT inherit the eight read-only rules that applied to independent senior reviewers; those rules are for reviewer audits, not Codex implementation. Maintain the separate review boundary.
+
+APPROVED CONFIGURATION TO LOAD, NOT REINVENT
+- Model: 7 DOF Gaz rigid link + smooth joint friction; q, qdot, qddot, tau, d in R^7.
+- Disturbance: globally clocked dual-harmonic time-only torque, amplitude a_i=0.02*tau_max_i; omega=1 rad/s; phase_i=2*pi*(i-1)/7; d_i(t)=a_i[0.6*sin(omega*t+phase_i)+0.4*cos(2*omega*t+phase_i)]. Analytic |d_i|<=a_i and |d_dot_i|<=1.4*a_i*omega. The controller/observer must NOT inspect the injected true d(t), only its published bounds.
+- Observer K_o = diag(20,...,20) s^-1. Tracker Lambda = diag(5,...,5) s^-1, kappa=10 s^-1. HOCBF gains alpha_1=alpha_2=alpha_v=5 s^-1, with dimensional checks against the original equations.
+- Robot torque and velocity bounds come from the selected FER/Panda source, not FR3; w_min=0.1*w(q0) using the initial physical-joint-box midpoint for q0. If w(q0) or the requested barrier is degenerate, fail with a clear diagnostic; do not silently repair it.
+- T16 reserves: delta_tau=0.0012 Nm; delta_v=0.0002175 rad/s; joint position-HOCBF reserves 1e-4*(qmax_i-qmin_i)/(1 s)^2; manipulability-HOCBF reserve 1e-4*w_min^2/(1 s)^2; velocity-barrier reserve delta_vB=0.0002175 rad/s^2. Distinguish the different units. Do not invent a separate scalar position reserve.
+- A2 numerical integration policy: ZOH applied torque during each Delta=1 ms control period, fixed-step RK4 h=0.25 ms (four substeps). Later validate Cartesian product Delta in {1,0.5} ms, h in {0.25,0.125} ms (always an integer number of RK4 steps per control period). Keep observer update and applied torque timing explicitly documented.
+- Approved diagnostic maximum filter intervention: max_t ||tau_star-u_nom||_2 <= 1e-6 Nm; this is a numerical diagnostic, not certified solver accuracy. T29 normalized residual definitions are from Protocol v1.0 section 8.1, not a fictitious original T29 worksheet.
+- QP initial candidate: dense ProxQP, with v1.2.1 settings; validation of numerical accuracy is pending T27. Do not change thresholds to force a pass.
+- C1: use common frozen M1 domain/tube constants; Level 2 evidence only until a complete Level 1 certificate exists. Several required domains/constants are NULL in the approved configuration; treat these as OPEN INPUTS / A2 BLOCKERS, not opportunities to fabricate bounds.
+- C2: future primary Scenario B requires ten identical cold starts per method; three cross-seeds are supplementary only. C5: honor |alpha_v-lambda_i|*chi_v from the canonical manuscript and per-barrier reserve interpretation. These are future planner-integration interfaces, not permission to run scenarios now.
+
+IMPLEMENTATION TASKS (IN DEPENDENCY ORDER)
+
+A. Establish an inspectable build and configuration contract
+   * Check exact source and policy hashes; load approved JSON read-only, validate array dimensions, units, required keys and status. Emit the full effective run configuration, dependency versions, seed and code/policy hashes in every result directory.
+   * Design independently testable modules/APIs for a reference trajectory provider, disturbance-bound provider, momentum observer, Slotine–Li nominal control, HOCBF barrier evaluator, hard safety QP, optional recovery handler, stepper and logger.
+   * Never silently replace a missing numerical constant. Surface missing M1 constants, velocity/acceleration domain, tube extension, derivative bound map, sample-grid policy or observer discretization as explicit blockers where necessary. Do not label partially implemented equations production-ready.
+
+B. Implement the momentum-based disturbance observer exactly
+   Plant dynamics: M(q) qddot + C(q,qdot) qdot + g(q) + F(qdot) = tau_applied + d(t).
+   Momentum p=M(q) qdot; estimate dhat=z+K_o p.
+   For the manuscript's Christoffel-consistent C with Mdot=C+C^T, use
+       zdot = -K_o [dhat + tau_applied + C(q,qdot)^T qdot - g(q) - F(qdot)].
+   The continuous ideal observer satisfies d(dhat)/dt = K_o(d-dhat); derived disturbance error is dtilde=d-dhat and dtilde_dot=dot d-K_o*dtilde.
+   Initialization: dhat(t0)=0, z(t0)=-K_o*M(q0)*qdot0; initial envelope varpi_i0=dbar_i. If a moving start is allowed, do NOT assume z0=0. Keep true d(t) private to the plant. Preserve the observer and global clock on replanning; do not reset varpi to zero.
+   At every control update, use the torque actually applied after filtering/recovery, not u_nom. Make the discrete observer-update method and its timing explicit; compare its behavior against an independent continuous-time reference during unit tests. Do not infer continuous-time envelopes from a discrete implementation without accounting for numerical/delay error.
+
+C. Implement Slotine–Li nominal tracking with exact error sign convention
+   e=q_p-q; edot=qdot_p-qdot; s=edot+Lambda*e;
+   qdot_r=qdot_p+Lambda*e; qddot_r=qddot_p+Lambda*edot;
+   u_nom=M(q)*qddot_r+C(q,qdot)*qdot_r+g(q)+F(qdot)+kappa*M(q)*s-dhat.
+   delta_tau=tau_applied-u_nom. Verify algebraic dimensions, torque sign, initial zero tracking error when reference is initialized from measured state, and residual/tracking identities against the manuscript. Do not silently introduce alternate controller forms or switch to SMC/ST-SMC.
+
+D. Implement robust HOCBF-QP, respecting relative degree and units
+   Define joint position barriers h_{i,+}=qmax_i-q_i and h_{i,-}=q_i-qmin_i; speed barriers h_{v,i,+}=qdotmax_i-qdot_i and h_{v,i,-}=qdotmax_i+qdot_i; manipulability h_man=det(J_v(q) J_v(q)^T)-w_min^2, with J_v the *3x7 translational flange Jacobian*.
+   For each position-level h_j(q), use the HOCBF form
+       H_j(q,qdot,a)=grad(h_j)^T*a + qdot^T*Hess(h_j)*qdot
+                       +(alpha_1+alpha_2)*grad(h_j)^T*qdot + alpha_1*alpha_2*h_j.
+   Predicted acceleration for a candidate command tau:
+       a_hat(tau)=solve(M, tau+dhat-[C(q,qdot)*qdot+g+F]).
+   Robust rows:
+       Psi_j(tau)=H_j(q,qdot,a_hat(tau))
+                  - sum_l |[grad(h_j)^T M^-1]_l| varpi_l(t) >= 0;
+       Xi_{i,+}(tau)=-a_hat_i(tau)+alpha_v*h_{v,i,+}
+                     -sum_l |[M^-1]_{il}| varpi_l(t) >= 0;
+       Xi_{i,-}(tau)=+a_hat_i(tau)+alpha_v*h_{v,i,-}
+                     -sum_l |[M^-1]_{il}| varpi_l(t) >= 0.
+   Minimize 0.5*||tau-u_nom||_2^2 subject to all robust rows and -tau_max <= tau <= tau_max. Build affine inequality matrices deterministically with positive row normalization from T29. Avoid explicit matrix inversion where numerical solves are available. Use the exact signed inequalities and log every raw and normalized slack, QP status, residual and applied torque. If the selected library's API or convention disagrees, record the discrepancy and resolve transparently.
+   The safe-set entry checks must include h_j>=0, psi_{1,j}=dot h_j+alpha_1*h_j>=0, speed and torque limits. Do not confuse slack > numerical tolerance with formal invariance. Never quietly drop the manipulability barrier to obtain feasibility.
+   Implement the manuscript recovery branch (soft QP / bounded braking) as a separate clearly flagged module ONLY if its required gains/weights and explicit semantics are available; otherwise leave it disabled with a safe fail-closed protective-stop request. Never treat the recovery branch as part of the certified nominal theorem.
+
+E. Implement the held-torque RK4 execution harness and tests
+   One control update at t_k: read q/qdot, compute observer state and dhat, compute u_nom, form hard QP, select actually applied tau (or explicitly stop), hold that tau constant through the entire Delta period, integrate the plant with fixed-step RK4 h. Plant disturbance is evaluated at each physical RK4 stage using the GLOBAL time; the observer gets no true-d input.
+   Define whether and how the observer z is integrated through the held-control interval, and make the chosen update an explicit documented numerical convention; preserve its actual applied-torque input. Do NOT update the controller or safety-QP inside RK4 substeps unless the approved control period calls for it. Confirm Delta/h is an integer and time alignment is exact within stated tolerances.
+   Log q, qdot, applied torque, u_nom, dhat, true d (for post-run truth diagnostics ONLY), observer error, analytic varpi, signed safety margins, raw QP residuals, initial HOCBF conditions, and terminal conditions. Separate model-only tests, component tests, pipeline shakedowns and officially authorized A2 results.
+   Add T28: compare the *raw* returned C-matrix against a Christoffel-consistent reference C at identical (q,qdot), not merely C*qdot (Pinocchio's conventional C may differ). Check Mdot=C+C^T and C*qdot; document the convention and any known nonuniqueness. If a library does not expose the needed raw C convention, implement a demonstrably independent numerical cross-check and report its limits.
+
+F. Focused tests required BEFORE proposing an A2 GO
+   1. Every new controller/observer/QP function is unit tested for shapes, units, invalid/nonfinite inputs, torque clipping, numerical guards and reproducible deterministic outputs.
+   2. Verify true disturbance injection is isolated from the observer/controller; check analytic amplitude/rate bounds, initial error bound at t0, preservation on replanning and applied-torque feedback after a nonzero filter intervention.
+   3. Verify tracking sign using independent finite-difference/reference identities; test stationary and moving starts; no perfect-tracking claim under nonzero disturbance.
+   4. Verify joint +/- barrier signs, HOCBF Hessians/gradients, manipulability Jacobian frame, robust margins and all affine QP rows by independent finite-difference torque perturbations. Include feasible, active and infeasible test fixtures, plus explicit safe-stop behavior; do not silently convert a hard QP to a soft one.
+   5. Verify torque is held over each Delta and RK4 stages evaluate disturbance at the proper times. Verify observer updates and numerical convergence against a separate high-accuracy reference; report BOTH integration-step and control-period sensitivity in the approved 2x2 grid when an authorized A2 protocol is executable. Tests may use simple synthetic/reference fixtures; never mislabel a fixture as a full A2 run.
+   6. Preserve/passing-recheck the established v1.2.0 dynamics/source/Pinocchio/MuJoCo tests. Keep a diff and report ALL regressions (even when a new test passes).
+   7. Respect T29 dimensionless row scaling, fixed primal/stationarity targets and the approved 1e-6 Nm diagnostic; no relaxed tolerances and no disappearance of negative physical slack values.
+
+M1 CONSTANTS AND THE A2 BLOCKER — DO NOT BYPASS
+The approved policy selects M1 common *frozen* domain/tube constants. It has null entries for actual constants and several domains. Build a machine-readable requirements registry listing every constant used by the manuscript's varpi -> tracking envelopes -> tubes -> dynamic margin / barrier construction, its formula, dependency, units, source equation, estimation/certification level, and explicit missing data. Implement only the equations whose inputs are traceably available. If constants are not available, keep nominal and robust filter *component-level* tests explicitly labeled, and fail any purported ready-to-execute A2 test that relies on missing bounds. Do not fill placeholders with zero or convenient samples, do not infer Level 1 certified suprema from sampled estimates, and do not create a new free optimization robustness variable.
+
+EXPECTED DELIVERABLES (IN ONE REVIEWABLE PACKAGE)
+- New, well-structured closed-loop source modules and tests extending the active panda_research project; make setup and invocation work on a fresh environment when dependencies are present.
+- Equation-to-code crosswalk keyed to exact manuscript equations and hashed source files; a typed configuration loader plus configuration provenance/units validator.
+- Minimal deterministic reference trajectory fixture initialized from measured state; NOT a fabricated optimized Stage-1 solution.
+- A2-ready command line / harness that preflights all blockers and refuses to label an unapproved test as official A2.
+- Raw-C T28 diagnostic and independent reference comparison, solver diagnostics, observer/tau timing record, robustness/soft-QP policy, and tests showing correct branches.
+- M1 requirements registry with open entries (no invented numerical constants), plus a T27/G2.5 dependency and gating checklist.
+- A new immutable test-run folder: exact commands, environment, seeds, test logs, error tables, failure outputs, hash manifest, README, change log, and explicit stage-gate report.
+- A concise REVIEW_HANDOFF.md giving each component PASS/FAIL/NOT_RUN/BLOCKED and the minimal human/theory decisions still needed. Do not write fake reviewer signatures or revise the manuscript/Excel sources.
+
+REQUIRED FINAL RESPONSE FORMAT
+1. Files changed/added, with paths and hashes.
+2. What was implemented, and equation-to-code mapping.
+3. What tests were ACTUALLY executed, per-test results and reproducibility instructions; report any unperformed tests as NOT_RUN.
+4. T28 outcome and any C-matrix convention limitation.
+5. Explicit missing M1 inputs and open numerical/approval decisions.
+6. Stage gates: A1, A2, A3, Level 1, publication, each marked GO / CONDITIONAL / NO-GO with concrete reasons. A1 remains permitted; A2 is currently HOLD unless all its documented gates are demonstrably satisfied and appropriately authorized.
+7. Exactly three prioritized next engineering or review actions, each with an owner role, artifact and objective acceptance criterion.
+
+NON-NEGOTIABLE ACCURACY / ETHICS
+Do not invent parameters, certification constants, successful tests, optimization outcomes, expert signatures or evidence. Do not conceal failed runs. No FR3/Panda substitution. Do not equate a project owner's acceptance of evidence with an independent external reviewer having independently repeated experiments. Do not call sampled Level 2 data a Level 1 proof. Do not rewrite manuscript equations to fit code or tune experiment conditions after inspecting outcomes. Complete as much of Action 3 as the available evidence allows and explicitly block everything else.
