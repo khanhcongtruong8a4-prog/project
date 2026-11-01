@@ -140,7 +140,7 @@ class Policy:
 
     def a2_blockers(self):
         raw = self.raw
-        blockers = ['OFFICIAL_A2_EXECUTION_NOT_AUTHORIZED', 'T27_COMPLETE_SOLVER_VALIDATION_NOT_RUN',
+        blockers = ['OFFICIAL_A2_EXECUTION_NOT_AUTHORIZED',
                     'FROZEN_REFERENCE_TASK_AND_TUBE_CHECKS_NOT_AVAILABLE', 'MANUSCRIPT_ARCHIVE_AND_MAIN_TEX_REVISION_UNCONFIRMED']
         for key in ['constant_values', 'equation_map', 'speed_domain', 'acceleration_domain', 'tube_extension', 'estimator_grid', 'estimator_seed', 'estimator_budget']:
             if raw['margin_mode'][key] is None:

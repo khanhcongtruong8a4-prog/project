@@ -1,6 +1,6 @@
 # Action 3 review handoff — v1.2.1
 
-Run: `runs/action3/20261101T152525555317Z`. Result: **PASS_COMPONENTS_AND_REGRESSIONS_A2_HOLD**.
+Run: `runs/action3/20261101T153729647277Z`. Result: **PASS_COMPONENTS_AND_REGRESSIONS_A2_HOLD**.
 All source/code/policy hashes, exact commands, effective configuration and logs
 are in this run. New source/test snapshots are retained. Original source
 archives, LaTeX, workbook, v1.2.0 evidence and human signatures were not edited.
@@ -10,7 +10,7 @@ archives, LaTeX, workbook, v1.2.0 evidence and human signatures were not edited.
 | Item | Result |
 | --- | --- |
 | Policy bytes, equation-source hashes, workbook cells | See source_audit.json; canonical equation files match |
-| Momentum observer, Slotine-Li, 43 robust rows, hard QP, RK4 and contracts | True; 18 tests executed |
+| Momentum observer, Slotine-Li, 43 robust rows, hard QP, RK4 and contracts | True; 19 tests executed |
 | T28 independent raw-C convention check | PASS (22 poses x 3 FD steps) |
 | Preserved source/Pinocchio/MuJoCo baseline regression | PASS |
 | Approved Panda initial midpoint hard-QP feasibility | FAIL_INFEASIBLE_WITH_APPROVED_INITIAL_VARPI |

@@ -24,6 +24,7 @@ from panda_closed_loop.stepper import HeldTorqueHarness, ExecutionState, HoldSch
 from panda_closed_loop.margins import disturbance_allowances, velocity_margin
 from panda_closed_loop.assembly import build_components
 from panda_closed_loop.logging import TraceLogger
+from panda_closed_loop.readiness import gates
 from reference_model import build_reference_urdf
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -99,6 +100,12 @@ class Action3Tests(unittest.TestCase):
         mismatches=[r['file'] for r in self.source_audit['manuscript'] if not r['matches']]
         self.assertEqual(set(mismatches),{'main.tex','Project.rar'})
         DIAGNOSTICS['source_audit']=self.source_audit
+
+    def test_gate_order_preserves_T27_and_G25_as_A3_requirements(self):
+        self.assertNotIn('T27_COMPLETE_SOLVER_VALIDATION_NOT_RUN',self.policy.a2_blockers())
+        self.assertNotIn('T27',self.policy.raw['gates']['A2'])
+        self.assertIn('T27',gates(self.policy)['A3']['reason'])
+        self.assertIn('G2.5',gates(self.policy)['A3']['reason'])
 
     def test_invalid_nonfinite_inputs_and_no_silent_defaults(self):
         observer=MomentumObserver(self.model,self.policy.ko)

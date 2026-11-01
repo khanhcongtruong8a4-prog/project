@@ -34,12 +34,14 @@ def main():
     shutil.copy2(run/'REVIEW_HANDOFF.md',ROOT/'REVIEW_HANDOFF.md')
     changes=[]
     # Audit the actual worktree relative to the accepted v1.2.0 commit.
-    for command in [['git','ls-files','--modified','-z'],['git','ls-files','--others','--exclude-standard','-z']]:
+    for command in [['git','diff','--relative','--name-only','--diff-filter=ACMRT','-z','671c4b654cda758f2710068ca8d1fd5339c527c1','--','.'],
+                    ['git','ls-files','--others','--exclude-standard','-z']]:
         output=subprocess.check_output(command,cwd=ROOT).split(b'\0')
         for name in output:
             if name:
                 p=ROOT/name.decode()
-                if p.is_file() and not any(x in p.parts for x in ['.venv','__pycache__']):
+                derived={'reports/action3_change_manifest.json','reports/action3_artifact_index.json','reports/action3_release_audit.json'}
+                if p.is_file() and str(p.relative_to(ROOT)) not in derived and not any(x in p.parts for x in ['.venv','__pycache__']):
                     changes.append({'path':str(p.relative_to(ROOT)),'sha256':sha(p),'bytes':p.stat().st_size})
     changes=list({x['path']:x for x in changes}.values())
     (ROOT/'reports/action3_change_manifest.json').write_text(json.dumps({'base_commit':'671c4b654cda758f2710068ca8d1fd5339c527c1',
