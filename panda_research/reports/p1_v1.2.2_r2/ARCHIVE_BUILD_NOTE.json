@@ -1,0 +1,19 @@
+{
+  "scope": "POST_TEST_REPORT_AND_CHECKSUM_BOOKKEEPING_ONLY",
+  "fresh_engineering_reproduction_pass": true,
+  "tested_preliminary_archive_sha256": "03a7bb7910b51948cdd67dbbc7d5bacd16b5ec469db47d70f6b6d5e465cb7ab3",
+  "tested_controller_and_test_source_hashes_match_current": true,
+  "later_additions": [
+    "fresh-engineering evidence copies",
+    "startup-alternative point lower limits",
+    "review checksum bookkeeping"
+  ],
+  "changed_parameters": false,
+  "official_A2_executed": false,
+  "independent_reviewer_signature": null,
+  "packaging_only_code_change_after_numeric_tests": {
+    "file": "scripts/p1_overlay_install.py",
+    "change": "Installer status now reports FAIL_FROZEN_CANDIDATE for the failed r2 manifest; controller, plant, clock, test and study inputs unchanged",
+    "verification": "Final archive installer roundtrip/status checks recorded separately"
+  }
+}

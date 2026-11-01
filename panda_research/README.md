@@ -1,13 +1,17 @@
-# Panda research development — v1.2.2 P1 proposal
+# Panda research development — v1.2.2 P1 review remediation r2
 
 The combined v1.2.0 numerical model is preserved unchanged. The new
 `panda_closed_loop` package implements Action 3 components under the supplied
 v1.2.1 owner policy. Start with [ACTION3.md](ACTION3.md) and
 [the latest Action 3 handoff](reports/ACTION3_REVIEW_HANDOFF.md).
-The current additive work is the [P1 feasibility review](reports/p1_v1.2.2/REVIEWER_ISSUE_RESPONSE.md)
-and [draft v1.2.2 policy](policy/v1.2.2-draft/PROPOSED_POLICY_CONFIGURATION_v1.2.2.json).
-Official A2 remains NO-GO. P1 has only static sampled evidence; physical prehold,
-execution decisions, independent review and build confirmation are outstanding.
+Current status is the [independent-review remediation](reports/p1_v1.2.2_r2/REVIEW_REMEDIATION.md)
+and [r2 draft policy](policy/v1.2.2-r2-draft/PROPOSED_POLICY_CONFIGURATION_v1.2.2_r2.json).
+The frozen applied-torque development hold fails its speed tolerance at joints
+3 and 7 after 1.25 ms in all four C4 cells. Signed execution and actual abort-state
+full-QP diagnostics are implemented; no valid zero-time endpoint is obtained.
+Official A2 remains NO-GO. A new startup decision, independent human review and
+build confirmation are outstanding. The previous [analytical review](reports/p1_v1.2.2/REVIEWER_ISSUE_RESPONSE.md)
+and its draft remain unchanged as history.
 Planner-only M1 inputs remain open for Stage-1 references and A3.
 
 This is the combined development base for the selected **Gaz seven-body
@@ -129,7 +133,7 @@ C1-C6 proposals and specifies gains, reserves, disturbance and refinement.
 It records owner acceptance of model evidence, not independent signatures.
 Closed-loop components and focused fixtures are implemented, but official A2,
 A3 comparisons, complete T27, G2.5, Level 1 and publication claims remain blocked.
-See the [A2 entry checklist](reports/p1_v1.2.2/A2_ENTRY_CHECKLIST.md) for current blockers.
+See the [r2 A2 entry checklist](reports/p1_v1.2.2_r2/A2_ENTRY_CHECKLIST.md) for current blockers.
 Sampled inertia eigenvalues do not establish global m1. The original model,
 past proposals/evidence, manuscript and workbook have not been rewritten.
 

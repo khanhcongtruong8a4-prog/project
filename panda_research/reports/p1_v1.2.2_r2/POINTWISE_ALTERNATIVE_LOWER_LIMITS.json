@@ -1,0 +1,13 @@
+{
+  "scope": "POINTWISE_NECESSARY_LOWER_LIMITS_ONLY_NOT_PROPOSED_GAINS_OR_APPROVAL",
+  "source_screen_sha256": "a35bc39435324f017f710691a181c970fc7bdeaa65015c99243456b330ee736a",
+  "initial_online_alpha_v_min_s_inverse": 43.832493194534834,
+  "initial_online_alpha1alpha2_min_s_inverse_squared": 32.90500559076149,
+  "initial_planner_factor_two_alpha_v_lower_s_inverse": 87.66508638906967,
+  "initial_planner_factor_two_alpha1alpha2_lower_s_inverse_squared": 65.81021118152297,
+  "observer_floor_planner_factor_two_alpha_v_lower_s_inverse": 6.136649047234877,
+  "initial_online_disturbance_amplitude_fraction_upper_at_point": 0.002281412548361915,
+  "full_planner_or_QP_feasibility_established": false,
+  "new_parameters_selected": false,
+  "missing": "M1 domain bounds and nonnegative beta/rho/tube terms; abs(alpha_v-Lambda)*chi_v becomes nonzero if gains change"
+}

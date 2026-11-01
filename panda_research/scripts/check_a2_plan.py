@@ -15,6 +15,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--policy',type=Path,default=ROOT/'policy/v1.2.2-draft/PROPOSED_POLICY_CONFIGURATION_v1.2.2.json')
     parser.add_argument('--screen',type=Path)
+    parser.add_argument('--preparation-summary',type=Path,help='Optional retained development hold summary, never an approval')
+    parser.add_argument('--clock-tests',type=Path,help='Retained signed-clock engineering test report')
     parser.add_argument('--output',type=Path)
     args=parser.parse_args()
     screen_path=args.screen
@@ -23,8 +25,15 @@ def main():
         screen_path=ROOT/pointer['run_directory']/'screen.json'
     screen=json.loads(screen_path.read_text())
     draft=json.loads(args.policy.read_text())
-    result=check_plan(draft,Policy.load(),screen)
+    preparation=None
+    if args.preparation_summary:
+        preparation={'summary':json.loads(args.preparation_summary.read_text())}
+        if args.clock_tests:preparation['clock_tests']=json.loads(args.clock_tests.read_text())
+    elif args.clock_tests:
+        raise ValueError('Clock tests alone cannot stand in for a prehold summary')
+    result=check_plan(draft,Policy.load(),screen,preparation)
     result.update(policy_sha256=digest(args.policy),screen_sha256=digest(screen_path))
+    if args.preparation_summary:result['preparation_summary_sha256']=digest(args.preparation_summary)
     if args.output:
         out=args.output.resolve()
         if not out.is_relative_to((ROOT/'runs').resolve()):

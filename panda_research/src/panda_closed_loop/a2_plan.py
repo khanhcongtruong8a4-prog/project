@@ -9,11 +9,19 @@ def quintic_reference_coefficients(q_start, qd_start, offset, duration):
     return np.vstack([q,T*v,np.zeros(7),10*dq-6*T*v,-15*dq+8*T*v,6*dq-3*T*v])
 
 
-def check_plan(draft, policy, screen=None):
+def check_plan(draft, policy, screen=None, preparation=None):
     items=[]
     def add(key,status,reason,required=True):
         items.append({'item':key,'status':status,'reason':reason,'required':required})
     pending='AWAITING HUMAN REVIEW'
+    prep=(preparation or {}).get('summary',{})
+    cells=prep.get('cells',[])
+    prep_tested=bool(cells)
+    expected_grid=policy.raw['integration']['validation_grid']
+    prep_pass=(prep.get('P1_numerical_hold')=='PASS' and
+        [c.get('grid') for c in cells]==expected_grid and
+        all(c.get('completed') and c.get('valid_zero_endpoint') for c in cells))
+    clock_tests=(preparation or {}).get('clock_tests',{})
     add('policy_v122_approval',pending,'DRAFT / OWNER APPROVAL PENDING; not a signed revision')
     reference=draft.get('A2_execution_reference',{})
     kind=reference.get('kind')
@@ -26,7 +34,8 @@ def check_plan(draft, policy, screen=None):
     else:
         complete=all(policy.raw['margin_mode'][k] is not None for k in ['constant_values','equation_map','speed_domain','acceleration_domain','tube_extension'])
         add('stage1_M1_inputs','PASS' if complete else 'FAIL','Tightened Stage-1 references need their actual M1 bounds/plan')
-    add('reference_initial_state_measured','NOT TESTED','Prehold endpoint has not been measured; never assume exact midpoint')
+    add('reference_initial_state_measured','PASS' if prep_pass else 'NOT TESTED',
+        'Completed measured zero-time endpoints available' if prep_pass else 'No valid completed prehold endpoint; abort states cannot replace q(0),qd(0)')
     add('reference_owner_controls_decision',pending,'Reference choice and new measured-endpoint start rule require approval')
     candidate=(screen or {}).get('P1_candidate',{})
     sampled=candidate.get('sampled_pair_screen_passed')
@@ -35,9 +44,16 @@ def check_plan(draft, policy, screen=None):
     qp=candidate.get('complete_QP_fixture',{}).get('numerical_pass')
     add('P1_complete_point_QP','PASS' if qp else 'NOT TESTED' if qp is None else 'FAIL',
         'Fixed midpoint/zero-velocity estimate fixtures; not physical prehold endpoints')
-    add('physical_prehold_dynamics','NOT TESTED','No prehold executed or validated; no clamp/reaction torque allowed')
-    add('hold_tracking_torque_end_conditions','NOT TESTED','Must verify declared q/qd tolerances, applied torque and final measured state')
-    add('signed_physical_prehold_clock','NOT TESTED','Execution adapters for negative preparation epochs are not implemented/approved')
+    hold_status=('PASS' if prep_pass else 'FAIL') if prep_tested else 'NOT TESTED'
+    add('physical_prehold_dynamics',hold_status,'Applied-torque model prehold checked; frozen acceptance failed' if prep_tested and not prep_pass else
+        'Numerical development hold only; no physical hardware or continuous ODE certification' if prep_pass else 'No prehold evidence supplied')
+    add('hold_tracking_torque_end_conditions',hold_status,'No tolerance relaxation or post-failure duration change; require a valid zero-time endpoint')
+    add('signed_physical_prehold_clock','PASS' if clock_tests.get('overall_pass') else 'NOT TESTED',
+        'Signed adapter continuity and applied-torque contracts have engineering unit evidence; policy approval remains separate')
+    if prep_tested:
+        add('continuous_true_ODE_neighborhood','NOT TESTED','Cubic numerical interpolation is not an ODE error enclosure; observed violations already reject this candidate')
+        add('actual_zero_endpoint_full_QP','PASS' if prep_pass else 'NOT TESTED','Only a completed valid t=0 endpoint can satisfy this gate; stopped states do not qualify')
+        add('prehold_failure_disposition',pending,'Theory/controls and owner must explicitly redesign/redeclare a candidate or choose an alternative; no automatic retuning')
     add('prehold_owner_theory_controls_decision',pending,'P1 is the explored proposal, not an approved startup change')
     grid=draft.get('integration',{}).get('validation_grid')
     expected=policy.raw['integration']['validation_grid']
@@ -73,6 +89,8 @@ def check_plan(draft, policy, screen=None):
     for role in ['controls_reviewer_signature','theory_reviewer_signature','written_A2_authorization']:
         add(role,pending,'No signature or written execution authority generated/inferred')
     return {'policy_status':'DRAFT_OWNER_APPROVAL_PENDING','reference_kind':kind,'items':items,
-            'official_A2':'NO-GO','A1_component_development':'GO','P1':'BLOCKED_UNVERIFIED_PHYSICAL_PREHOLD',
+            'official_A2':'NO-GO','A1_component_development':'GO',
+            'P1':('PASS_NUMERICAL_ONLY_POLICY_PENDING' if prep_pass else 'FAIL_PREDECLARED_TORQUE_HOLD') if prep_tested else 'BLOCKED_UNVERIFIED_PHYSICAL_PREHOLD',
             'A3':'NO-GO','Level_1':'NO-GO','publication':'NO-GO','execution_performed':False,
+            'development_prehold_evidence_supplied':prep_tested,
             'checker_scope':'Completeness and recorded evidence only; never authorizes a run'}

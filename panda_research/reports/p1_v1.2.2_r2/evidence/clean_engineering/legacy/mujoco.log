@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "checks": 58,
+  "poses": 154,
+  "failed": [],
+  "seconds": 13.917895776001387,
+  "report": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research/runs/20261101T175902847589Z/mujoco_validation.json"
+}

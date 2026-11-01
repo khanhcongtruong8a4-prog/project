@@ -1,0 +1,573 @@
+{
+  "scope": "FRESH_ENVIRONMENT_ENGINEERING_REPRODUCTION_NOT_INDEPENDENT_SIGNOFF_NOT_A2",
+  "start_utc": "2026-11-01T17:57:32.306955+00:00",
+  "fresh_venv": "/tmp/ic2ai-p1-r2-clean-venv",
+  "retained_directory": "/tmp/p1-r2-clean-replay-i1njqwm3",
+  "commands": [
+    {
+      "name": "fresh_r2_install",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/package/IC2AI_Panda_P1_Review_Remediation_v1.2.2_DRAFT_2026-11-02_r2/APPLY_OVERLAY.py",
+        "--baseline",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh_r2_install.log"
+    },
+    {
+      "name": "idempotent_repeat",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/package/IC2AI_Panda_P1_Review_Remediation_v1.2.2_DRAFT_2026-11-02_r2/APPLY_OVERLAY.py",
+        "--baseline",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/idempotent_repeat.log"
+    },
+    {
+      "name": "apply_previous_r1",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/r1_package/IC2AI_Panda_P1_Protocol_v1.2.2_DRAFT_2026-11-01/APPLY_OVERLAY.py",
+        "--baseline",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/upgrade/panda_research"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/apply_previous_r1.log"
+    },
+    {
+      "name": "upgrade_r1_to_r2",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/package/IC2AI_Panda_P1_Review_Remediation_v1.2.2_DRAFT_2026-11-02_r2/APPLY_OVERLAY.py",
+        "--baseline",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/upgrade/panda_research"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/upgrade_r1_to_r2.log"
+    },
+    {
+      "name": "conflict_refusal",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/package/IC2AI_Panda_P1_Review_Remediation_v1.2.2_DRAFT_2026-11-02_r2/APPLY_OVERLAY.py",
+        "--baseline",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/upgrade/panda_research"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/conflict_refusal.log"
+    },
+    {
+      "name": "editable_install",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--no-build-isolation",
+        "-e",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/editable_install.log"
+    },
+    {
+      "name": "signed_clock_and_hold_contracts",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "tests/test_preparation.py",
+        "--report",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research/runs/r2_clean_tests/preparation.json"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/signed_clock_and_hold_contracts.log"
+    },
+    {
+      "name": "existing_P1_static_contracts",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "tests/test_p1_feasibility.py",
+        "--report",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research/runs/r2_clean_tests/P1_static.json"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/existing_P1_static_contracts.log"
+    },
+    {
+      "name": "action3_full_validation",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "scripts/action3.py",
+        "validate"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/action3_full_validation.log"
+    },
+    {
+      "name": "frozen_prehold_counterexample",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "scripts/p1_prehold.py"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research",
+      "expected_exit_code": 3,
+      "actual_exit_code": 3,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/frozen_prehold_counterexample.log"
+    },
+    {
+      "name": "evidence_aware_A2_check",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "scripts/check_a2_plan.py",
+        "--policy",
+        "policy/v1.2.2-r2-draft/PROPOSED_POLICY_CONFIGURATION_v1.2.2_r2.json",
+        "--preparation-summary",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research/runs/p1_prehold/20261101T175924528797Z/summary.json",
+        "--clock-tests",
+        "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research/runs/r2_clean_tests/preparation.json"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/evidence_aware_A2_check.log"
+    },
+    {
+      "name": "dependency_check",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/dependency_check.log"
+    },
+    {
+      "name": "record_packages",
+      "command": [
+        "/tmp/ic2ai-p1-r2-clean-venv/bin/python",
+        "-m",
+        "pip",
+        "list",
+        "--format=json"
+      ],
+      "cwd": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "log": "/tmp/p1-r2-clean-replay-i1njqwm3/record_packages.log"
+    }
+  ],
+  "overall_pass": true,
+  "status": "PASS",
+  "independent_reviewer_signature": null,
+  "official_A2_executed": false,
+  "installer_fresh_upgrade_idempotence_and_no_write_conflict_checks": true,
+  "tested_source_hashes": {
+    "src/panda_dynamics.py": "9a0f100459c93f59ba75133fc682f111505909627de3bf29bb0bf823b64f025d",
+    "src/reference_model.py": "4f572a96fcb426c48cb08a9524d823721eba1f38da39da61291877af1c8277e0",
+    "src/evidence_paths.py": "bda16536c2694ced468bf1be27c3ae4b7ed47ffc6dfa197ea0378a1530694e23",
+    "src/panda_closed_loop/reference.py": "35017bc577309e3c46190972a8a69ff29baad49429964cbafd8277288497b141",
+    "src/panda_closed_loop/assembly.py": "456c44ea8f916273012cd596ce73248d3e7f3215475bc98472e53e665265ed2e",
+    "src/panda_closed_loop/contracts.py": "02a2f207c90b73b1d0beb0b87472cda6932dac871bdd8c5f9c7da37a74cbb755",
+    "src/panda_closed_loop/stepper.py": "0005b4bc0d985fb251671a0d967fdf6be293fc96cbc481cace14a36eb9fb5276",
+    "src/panda_closed_loop/a2_plan.py": "59c3fd7aacd310bc60fa07ba419a84c2fb1b583c9fa5899fd8a79e585625ac5b",
+    "src/panda_closed_loop/config.py": "a358d917a833bc1fc6eb2b49e1b193e3248b02169ef8f8c42fb000a3df222a2d",
+    "src/panda_closed_loop/qp.py": "e38299c944a2828318bca756ae3fd18582914348307825acfd842c0c551706c6",
+    "src/panda_closed_loop/controller.py": "2a54e64c98c2b99ef3c3a65f59aece0a969c42176d9529a5c1bc6abfbf168285",
+    "src/panda_closed_loop/barriers.py": "9ba94ab3ea4003971060a3b2dda0a5b07b626ff66ad851d7ae2e468fc759055e",
+    "src/panda_closed_loop/__init__.py": "2bcef4d1ef5e93d814ea0dc19dd5d5f5ecbaae476cf167f5b5d6aa85e6100c6f",
+    "src/panda_closed_loop/geometry.py": "b9849240516e2abb051834c6a79af1989af3387b199d54f6b804cbcc9a8e4676",
+    "src/panda_closed_loop/feasibility.py": "097c624ed99167eda18892460ea0f348f46b051319870e978cfd2c40ad30354a",
+    "src/panda_closed_loop/logging.py": "2c367f3cb33db16250b767aba5402c2e838a1df8646c426f8066ab340b549fa7",
+    "src/panda_closed_loop/preparation.py": "1f1ceaeeac9a8d186caed313f153e3e1692c3650de79b417b258ed6a0f6b7f22",
+    "src/panda_closed_loop/margins.py": "254e71b0cefa6780493fb78007b8764a13c38d098af1d520cd062eb45a8df928",
+    "src/panda_closed_loop/readiness.py": "86976257c70a98b15c7636cf574c6a87005f0e91b8a305b134d3def0533a85be",
+    "src/panda_closed_loop/observer.py": "3b9169493434a6d53f52e2a6552cfe7fca27a88dcb47be67c2e9109b8c3cdb48",
+    "scripts/fetch_sources.py": "39be29d9dd7c0241123197fa0922b19a5e91ee3e135854fed8aaffaf03265d60",
+    "scripts/p1_feasibility.py": "4680b0421ada32c77c1cd08877b9b976ff11d136ad3794009147eef5f6c7648a",
+    "scripts/build_p1_remediation.py": "a9d0818604edcb891362010ecf41c89aee3a24d56aaeea4f867cf82d74ff4951",
+    "scripts/p1_prehold.py": "b3bc12bb1dcc704bc4d698eabb03ccdce73b965607c273fe5706706d2d3be683",
+    "scripts/package_action3.py": "8ffce5e02317fc7a8fff770a4aade62a8f384e35fa5591f71e1730cd5a67da23",
+    "scripts/package_p1_review.py": "f9374f9cf716ce81a4d3321880380a12d3b73283a895f2ab0a385248bef891d2",
+    "scripts/action3.py": "a2740c6aa70431b3e6a0a7ff47fc07fa51368b16fa9d8f639cf5c6451afbbb2e",
+    "scripts/verify_p1.py": "63dffa496219b5065dc0c6f81769687e88e0979e91c5584bedadf6db98691b88",
+    "scripts/verify_git_sources.py": "6452e05276969df020f279986640ac12cadc4949c00911d1d97391cc6652514f",
+    "scripts/check_a2_plan.py": "387d2f63ac8b75fbd55feb1029d777c00832054ce193067678f46f49ffd2edd5",
+    "scripts/run_validation.py": "be492a8173a6e7822335ca0a048478781a21787814c2228070ddfbb727dd4fac",
+    "scripts/build_documents.py": "d0ecacab9f5f198a0850ce8ccabace01d855e6ce533103d3046975a2e36e9bd4",
+    "scripts/package_release.py": "dfb8550b99f174b7f445da29130750779d122e1e286271b9d4ed268b7405b612",
+    "scripts/p1_overlay_install.py": "ab0aa57854b9b561c81e029bc5a698d1aeda9b485863bded332025c8bedc5e76",
+    "scripts/package_p1_remediation.py": "27b65fdbc34589ad631444d66e4c9f4535c4a3f4393aad12e81ab42ee085a92e",
+    "scripts/build_p1_review.py": "efebd8350f3d543b49fdf69e8d3c9bf0d2f43779cf853ffc6fbefbe88d196f22",
+    "tests/verify_primary_sources.py": "a2a6aeaacc8174ec1dacc051d174bd39dbfb00590f386bd5890476936c887e6d",
+    "tests/test_action3.py": "c7e83e264370ba7bb8c762b588a82eadf151feaeab8c1498357c3801f66ac495",
+    "tests/test_t28_raw_c.py": "e2fcd776217dee530ae756e28727af999366797e32acf3e1f9c9041556872ca0",
+    "tests/case_sets.py": "26e1803b97c4a861e417304c550a2629dd8e5ca4cdf605181d9bc21c3c39f4cb",
+    "tests/run_phase3a_tests.py": "9090fa325fef2a3b6d17e98fbf4d64b8068c2675f5a4c8ec65295c6240e7af6d",
+    "tests/test_p1_feasibility.py": "3c339728d7febe21e5f8472e1de182776a30613ce3e9a7ac14d032819ea238e4",
+    "tests/compare_external_dynamics.py": "e34c8970c434ad4f4515c59d4e9df083554febd01c0d8af26bcd371dff4f7b25",
+    "tests/run_reproduction.py": "a7b726c833e5010faef02a9111a32d4819f067e3ac33844b40558732a488c8db",
+    "tests/test_preparation.py": "97ced1d6bbd9038e2a8a96570e8c77129971c944f07fc477004a19a3802d05f0",
+    "tests/test_reference_sensitivity.py": "62852157b45ccdf33baf1a654ed2b83bffaea47172ea37b9e6acc756b958eef4",
+    "tests/verify_integration.py": "9a870c2a03f834bbff96ee9918acfab19aac8d9093892da8638a617e31c3c81d",
+    "tests/review_checks.py": "cc0947b821bf9f556a860b442e9000d282653f76db0919b2083e54854c38fc92"
+  },
+  "finish_utc": "2026-11-01T17:59:59.043473+00:00",
+  "tested_archive_sha256": "03a7bb7910b51948cdd67dbbc7d5bacd16b5ec469db47d70f6b6d5e465cb7ab3",
+  "tested_archive_bytes": 1452693,
+  "preparation_contracts": {
+    "scope": "SYNTHETIC_DEVELOPMENT_CONTRACT_TESTS_NOT_PANDA_HOLD_OR_A2",
+    "tests_run": 13,
+    "overall_pass": true,
+    "checks": [
+      {
+        "test": "__main__.PreparationTests.test_abort_diagnostics_use_actual_state_elapsed_bound_and_all_43_rows",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_cubic_extrema_find_interior_violation_hidden_from_endpoints",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_declared_duration_must_align_without_silent_rounding",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_failed_prehold_evidence_cannot_leave_checklist_at_untested_or_GO",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_first_failed_substep_is_retained_without_zero_endpoint_or_retries",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_observer_uses_saturated_applied_torque_and_plant_is_not_clamped",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_original_nonnegative_execution_contract_is_preserved",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_plant_gets_original_negative_clock_without_phase_restart",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_rk4_extension_matches_step_endpoint_and_known_quadratic",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_signed_clock_and_state_reject_nonfinite_inputs",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_signed_epoch_envelope_continuity_through_zero",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_summary_PASS_does_not_hide_missing_completed_C4_endpoints",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.PreparationTests.test_zero_endpoint_transfer_preserves_measured_state_and_observer",
+        "result": "PASS"
+      }
+    ]
+  },
+  "P1_static_contracts": {
+    "scope": "NON_PLANT_STATIC_SCREEN_UNIT_TESTS_NOT_A2",
+    "tests_run": 15,
+    "overall_pass": true,
+    "checks": [
+      {
+        "test": "__main__.Screens.test_M1_flags_are_conditional_not_universal_A2_blockers",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_actual_position_and_velocity_row_sums_cancel_torque_bias_and_velocity",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_complete_draft_and_missing_or_nonfinite_fields",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_diagonal_fixture_exact_pair_thresholds_and_units",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_floor_failure_never_returns_a_fake_duration_or_fallback",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_invalid_nonfinite_bounds_are_rejected",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_lower_witness_is_not_routed_through_upper_bound_screen",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_nonoptimized_quintic_matches_measured_start_and_endpoint",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_plan_checker_does_not_equate_completeness_to_approval",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_planner_factor_two_and_missing_bounds_remain_blocked",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_screen_calls_neither_plant_acceleration_nor_disturbance_truth",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_shared_gain_duration_is_analytic_and_rounded_once",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_signed_clock_envelope_does_not_restart_at_zero",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_state_grid_is_fixed_and_no_favorable_state_selection",
+        "result": "PASS"
+      },
+      {
+        "test": "__main__.Screens.test_tolerance_accepted_solver_cannot_mask_a_negative_raw_fixture_slack",
+        "result": "PASS"
+      }
+    ]
+  },
+  "action3_components": 19,
+  "T28": true,
+  "action3_run": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research/runs/action3/20261101T175837874554Z",
+  "action3_status": "PASS_COMPONENTS_AND_REGRESSIONS_A2_HOLD",
+  "legacy_status": "PASS",
+  "fresh_prehold_summary": {
+    "scope": "DEVELOPMENT_PREHOLD_NOT_OFFICIAL_A2",
+    "frozen_plan_sha256": "11590d10a554d88907095d15a3fb13d0872d29c534eeffe70e0da2788b0d36d4",
+    "cells": [
+      {
+        "cell": 0,
+        "grid": {
+          "control_period_s": 0.001,
+          "rk4_step_s": 0.00025
+        },
+        "decision": "FAIL_PREDECLARED_HOLD",
+        "completed": false,
+        "failure": {
+          "reason": "PREDECLARED_HOLD_ACCEPTANCE_FAILURE",
+          "failed_checks": [
+            "qd_tolerance"
+          ],
+          "physical_t_s": -0.15475,
+          "q_violating_joints_1_based": [],
+          "qd_violating_joints_1_based": [
+            3,
+            7
+          ],
+          "no_further_torque_or_state_advance": true
+        },
+        "q_deviation_peak_rad": [
+          1.223454961178715e-05,
+          1.6186460786795872e-06,
+          1.2973252701474254e-05,
+          3.9929337880550975e-06,
+          6.49838630339576e-06,
+          1.1701971582178672e-05,
+          1.2907569144803057e-05
+        ],
+        "qd_peak_rad_s": [
+          0.019386256244691546,
+          0.0025704818910887305,
+          0.020561790527915902,
+          0.006332615961923089,
+          0.01029124468469798,
+          0.01853084475150625,
+          0.020239135951504676
+        ],
+        "record_file": "cell_0.json",
+        "valid_zero_endpoint": false,
+        "terminal_QP_status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+        "terminal_QP_strict_pass": false
+      },
+      {
+        "cell": 1,
+        "grid": {
+          "control_period_s": 0.001,
+          "rk4_step_s": 0.000125
+        },
+        "decision": "FAIL_PREDECLARED_HOLD",
+        "completed": false,
+        "failure": {
+          "reason": "PREDECLARED_HOLD_ACCEPTANCE_FAILURE",
+          "failed_checks": [
+            "qd_tolerance"
+          ],
+          "physical_t_s": -0.15475,
+          "q_violating_joints_1_based": [],
+          "qd_violating_joints_1_based": [
+            3,
+            7
+          ],
+          "no_further_torque_or_state_advance": true
+        },
+        "q_deviation_peak_rad": [
+          1.2234549560439456e-05,
+          1.6186460427271469e-06,
+          1.2973252769862773e-05,
+          3.992933639285212e-06,
+          6.4983860810227735e-06,
+          1.1701970804134376e-05,
+          1.2907553979215774e-05
+        ],
+        "qd_peak_rad_s": [
+          0.019386172474615528,
+          0.0025704750574658116,
+          0.020561719690872594,
+          0.006332586658756916,
+          0.010291163114997288,
+          0.01853070521008221,
+          0.020237200098582327
+        ],
+        "record_file": "cell_1.json",
+        "valid_zero_endpoint": false,
+        "terminal_QP_status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+        "terminal_QP_strict_pass": false
+      },
+      {
+        "cell": 2,
+        "grid": {
+          "control_period_s": 0.0005,
+          "rk4_step_s": 0.00025
+        },
+        "decision": "FAIL_PREDECLARED_HOLD",
+        "completed": false,
+        "failure": {
+          "reason": "PREDECLARED_HOLD_ACCEPTANCE_FAILURE",
+          "failed_checks": [
+            "qd_tolerance"
+          ],
+          "physical_t_s": -0.15475,
+          "q_violating_joints_1_based": [],
+          "qd_violating_joints_1_based": [
+            3,
+            7
+          ],
+          "no_further_torque_or_state_advance": true
+        },
+        "q_deviation_peak_rad": [
+          1.2287865693245138e-05,
+          1.6181446452221014e-06,
+          1.3021317887503909e-05,
+          4.008833142110646e-06,
+          6.562075882492661e-06,
+          1.1813135236016237e-05,
+          1.3452653365068787e-05
+        ],
+        "qd_peak_rad_s": [
+          0.01949233627065822,
+          0.002569437181066649,
+          0.020657496385473387,
+          0.006364119770656165,
+          0.010417793264506175,
+          0.018751487816349888,
+          0.021312908900270478
+        ],
+        "record_file": "cell_2.json",
+        "valid_zero_endpoint": false,
+        "terminal_QP_status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+        "terminal_QP_strict_pass": false
+      },
+      {
+        "cell": 3,
+        "grid": {
+          "control_period_s": 0.0005,
+          "rk4_step_s": 0.000125
+        },
+        "decision": "FAIL_PREDECLARED_HOLD",
+        "completed": false,
+        "failure": {
+          "reason": "PREDECLARED_HOLD_ACCEPTANCE_FAILURE",
+          "failed_checks": [
+            "qd_tolerance"
+          ],
+          "physical_t_s": -0.15475,
+          "q_violating_joints_1_based": [],
+          "qd_violating_joints_1_based": [
+            3,
+            7
+          ],
+          "no_further_torque_or_state_advance": true
+        },
+        "q_deviation_peak_rad": [
+          1.2287865643106683e-05,
+          1.6181446082074859e-06,
+          1.3021317962158503e-05,
+          4.008832989121913e-06,
+          6.562075658254561e-06,
+          1.1813134435323391e-05,
+          1.3452637577373747e-05
+        ],
+        "qd_peak_rad_s": [
+          0.019492252521714465,
+          0.0025694303746273814,
+          0.020657425502639486,
+          0.006364090591100437,
+          0.01041771179073609,
+          0.01875134896309821,
+          0.021310981552578382
+        ],
+        "record_file": "cell_3.json",
+        "valid_zero_endpoint": false,
+        "terminal_QP_status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+        "terminal_QP_strict_pass": false
+      }
+    ],
+    "P1_numerical_hold": "FAIL",
+    "P1_verified_startup": "NOT_APPROVED",
+    "A1": "GO",
+    "A2": "NO-GO",
+    "A3": "NO-GO",
+    "Level_1": "NO-GO",
+    "publication": "NO-GO",
+    "retuning_performed": false,
+    "duration_gains_disturbance_changed": false,
+    "continuous_true_ODE_proof": false,
+    "full_A2_execution_performed": false,
+    "independent_reviewer_signature": null
+  },
+  "prehold_data_directory": "/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research/runs/p1_prehold/20261101T175924528797Z",
+  "clean_environment_packages": "[{\"name\": \"absl-py\", \"version\": \"2.5.1\"}, {\"name\": \"casadi\", \"version\": \"3.7.2\"}, {\"name\": \"cmeel\", \"version\": \"0.61.0\"}, {\"name\": \"cmeel-assimp\", \"version\": \"6.0.5\"}, {\"name\": \"cmeel-boost\", \"version\": \"1.89.0\"}, {\"name\": \"cmeel-console-bridge\", \"version\": \"1.0.2.3\"}, {\"name\": \"cmeel-octomap\", \"version\": \"1.10.0\"}, {\"name\": \"cmeel-qhull\", \"version\": \"8.0.2.1\"}, {\"name\": \"cmeel-tinyxml2\", \"version\": \"10.0.0\"}, {\"name\": \"cmeel-urdfdom\", \"version\": \"4.0.1\"}, {\"name\": \"cmeel-zlib\", \"version\": \"1.3.2\"}, {\"name\": \"coal\", \"version\": \"3.0.2\"}, {\"name\": \"eigenpy\", \"version\": \"3.12.0\"}, {\"name\": \"etils\", \"version\": \"1.14.0\"}, {\"name\": \"fsspec\", \"version\": \"2026.9.0\"}, {\"name\": \"glfw\", \"version\": \"2.11.0\"}, {\"name\": \"ic2ai-panda-research\", \"version\": \"1.2.1\", \"editable_project_location\": \"/tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research\"}, {\"name\": \"libcoal\", \"version\": \"3.0.2\"}, {\"name\": \"libpinocchio\", \"version\": \"3.8.0\"}, {\"name\": \"mujoco\", \"version\": \"3.3.7\"}, {\"name\": \"numpy\", \"version\": \"2.3.5\"}, {\"name\": \"pin\", \"version\": \"3.8.0\"}, {\"name\": \"pip\", \"version\": \"25.0.1\"}, {\"name\": \"proxsuite\", \"version\": \"0.7.2\"}, {\"name\": \"PyOpenGL\", \"version\": \"3.1.10\"}, {\"name\": \"scipy\", \"version\": \"1.17.0\"}, {\"name\": \"setuptools\", \"version\": \"80.9.0\"}, {\"name\": \"typing_extensions\", \"version\": \"4.16.0\"}, {\"name\": \"wheel\", \"version\": \"0.45.1\"}, {\"name\": \"zipp\", \"version\": \"4.1.2\"}]\n",
+  "P1": "FAIL_FROZEN_CANDIDATE",
+  "A2": "NO-GO",
+  "A3": "NO-GO",
+  "Level_1": "NO-GO",
+  "publication": "NO-GO"
+}

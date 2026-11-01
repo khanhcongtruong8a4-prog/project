@@ -1,0 +1,233 @@
+cell,physical_time_s,family,component_1_based,slack,unit,scope
+0,-0.15475,position_and_manip_h,1,2.8973122345496116,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,2,1.7627983813539212,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,3,2.8972870267472985,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,4,1.5009960070662118,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,5,2.8973064983863033,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,6,1.8850117019715822,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,7,2.8973129075691446,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,8,2.8972877654503884,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,9,1.7628016186460786,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,10,2.8973129732527014,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,11,1.5010039929337882,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,12,2.8972935016136967,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,13,1.8849882980284178,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,14,2.8972870924308554,rad,actual simulated abort state; not physical time zero
+0,-0.15475,position_and_manip_h,15,0.022286053884006778,m^6,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,1,14.505947333404293,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,2,8.811421432647258,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,3,14.4658734241139,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,4,7.498647452676964,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,5,14.49682364366278,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,6,9.443589196089707,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,7,14.506801474264204,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,8,14.467052666595706,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,9,8.816578567352742,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,10,14.5071265758861,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,11,7.511352547323035,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,12,14.476176356337218,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,13,9.406410803910292,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,14,14.466198525735795,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,psi1,15,0.11134006643638439,m^6/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_upper,1,2.194386160656236,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_upper,2,2.1724295258776514,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_upper,3,2.1544382903774073,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_upper,4,2.168667417345905,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_upper,5,2.620291151731264,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_upper,6,2.628530686231797,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_upper,7,2.6302369364184814,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_lower,1,2.1556138393437636,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_lower,2,2.1775704741223483,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_lower,3,2.1955617096225923,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_lower,4,2.1813325826540946,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_lower,5,2.599708848268736,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_lower,6,2.5914693137682026,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,speed_lower,7,2.5897630635815183,rad/s,actual simulated abort state; not physical time zero
+0,-0.15475,torque_upper,1,87.02832406354558,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_upper,2,112.42123951784433,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_upper,3,87.01235489463596,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_upper,4,68.30289986761315,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_upper,5,11.313381136314057,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_upper,6,10.194908741892384,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_upper,7,12.011279022691683,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_lower,1,86.97167593645442,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_lower,2,61.57876048215567,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_lower,3,86.98764510536404,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_lower,4,105.69710013238685,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_lower,5,12.686618863685943,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_lower,6,13.805091258107616,N m,actual simulated abort state; not physical time zero
+0,-0.15475,torque_lower,7,11.988720977308317,N m,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,1,2.8973122345495606,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,2,1.7627983813539572,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,3,2.89728702674723,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,4,1.5009960070663606,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,5,2.8973064983860812,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,6,1.8850117019708041,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,7,2.8973129075539794,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,8,2.8972877654504394,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,9,1.7628016186460427,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,10,2.89731297325277,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,11,1.5010039929336394,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,12,2.8972935016139187,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,13,1.8849882980291959,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,14,2.8972870924460206,rad,actual simulated abort state; not physical time zero
+1,-0.15475,position_and_manip_h,15,0.022286053884010528,m^6,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,1,14.505947333411466,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,2,8.811421432638621,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,3,14.465873424145338,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,4,7.498647452642838,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,5,14.496823643685074,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,6,9.443589196278195,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,7,14.506801479065443,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,8,14.467052666588533,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,9,8.816578567361379,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,10,14.507126575854663,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,11,7.511352547357162,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,12,14.476176356314927,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,13,9.406410803721805,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,14,14.466198520934558,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,psi1,15,0.11134006643549556,m^6/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_upper,1,2.194386160663664,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_upper,2,2.1724295258688353,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_upper,3,2.154438290409187,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_upper,4,2.1686674173110347,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_upper,5,2.6202911517546683,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_upper,6,2.6285306864241753,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_upper,7,2.6302369412955446,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_lower,1,2.1556138393363358,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_lower,2,2.1775704741311643,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_lower,3,2.1955617095908124,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_lower,4,2.181332582688965,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_lower,5,2.5997088482453314,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_lower,6,2.5914693135758244,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,speed_lower,7,2.589763058704455,rad/s,actual simulated abort state; not physical time zero
+1,-0.15475,torque_upper,1,87.0283240635467,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_upper,2,112.42123951783142,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_upper,3,87.01235489467507,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_upper,4,68.30289986756634,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_upper,5,11.313381136342864,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_upper,6,10.194908742061058,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_upper,7,12.011279027959972,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_lower,1,86.9716759364533,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_lower,2,61.578760482168576,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_lower,3,86.98764510532493,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_lower,4,105.69710013243366,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_lower,5,12.686618863657136,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_lower,6,13.805091257938942,N m,actual simulated abort state; not physical time zero
+1,-0.15475,torque_lower,7,11.988720972040028,N m,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,1,2.8973122878656934,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,2,1.7627983818553548,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,3,2.8972869786821125,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,4,1.5009959911668578,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,5,2.8973065620758827,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,6,1.885011813135236,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,7,2.897313452653365,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,8,2.8972877121343066,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,9,1.762801618144645,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,10,2.8973130213178875,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,11,1.5010040088331422,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,12,2.8972934379241173,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,13,1.884988186864764,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,14,2.897286547346635,rad,actual simulated abort state; not physical time zero
+2,-0.15475,position_and_manip_h,15,0.022286053324672882,m^6,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,1,14.506053680035674,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,2,8.81142247983454,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,3,14.46577747797654,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,4,7.4986158692347535,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,5,14.496950510798978,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,6,9.443810395733582,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,7,14.507877981695795,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,8,14.466946319964327,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,9,8.81657752016546,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,10,14.507222522023461,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,11,7.511384130765246,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,12,14.476049489201023,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,13,9.406189604266418,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,14,14.465122018304204,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,psi1,15,0.11133895319810692,m^6/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_upper,1,2.1944922407072065,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_upper,2,2.1724305705577662,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_upper,3,2.154342584565977,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_upper,4,2.1686359134004647,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_upper,5,2.620417700419564,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_upper,6,2.628751330057402,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_upper,7,2.631310718428971,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_lower,1,2.155507759292793,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_lower,2,2.1775694294422334,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_lower,3,2.1956574154340225,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_lower,4,2.181364086599535,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_lower,5,2.599582299580436,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_lower,6,2.5912486699425976,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,speed_lower,7,2.5886892815710287,rad/s,actual simulated abort state; not physical time zero
+2,-0.15475,torque_upper,1,87.02829158123426,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_upper,2,112.42108834718447,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_upper,3,87.01215542792559,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_upper,4,68.30286661205017,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_upper,5,11.313565956764691,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_upper,6,10.19512447966438,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_upper,7,12.012768455963466,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_lower,1,86.97170841876574,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_lower,2,61.578911652815535,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_lower,3,86.98784457207441,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_lower,4,105.69713338794983,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_lower,5,12.686434043235309,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_lower,6,13.80487552033562,N m,actual simulated abort state; not physical time zero
+2,-0.15475,torque_lower,7,11.987231544036534,N m,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,1,2.897312287865643,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,2,1.7627983818553916,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,3,2.897286978682038,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,4,1.5009959911670108,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,5,2.8973065620756584,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,6,1.8850118131344353,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,7,2.8973134526375772,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,8,2.8972877121343568,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,9,1.7628016181446082,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,10,2.897313021317962,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,11,1.5010040088329892,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,12,2.8972934379243416,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,13,1.8849881868655647,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,14,2.8972865473624227,rad,actual simulated abort state; not physical time zero
+3,-0.15475,position_and_manip_h,15,0.022286053324676727,m^6,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,1,14.506053680042225,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,2,8.811422479824985,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,3,14.465777478013,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,4,7.498615869197073,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,5,14.496950510822034,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,6,9.443810395942117,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,7,14.507877987038524,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,8,14.466946319957776,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,9,8.816577520175013,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,10,14.507222521987,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,11,7.511384130802928,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,12,14.476049489177967,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,13,9.406189604057882,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,14,14.465122012961476,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,psi1,15,0.11133895319712409,m^6/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_upper,1,2.1944922407140073,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_upper,2,2.172430570548028,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_upper,3,2.154342584602812,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_upper,4,2.1686359133620186,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_upper,5,2.62041770044374,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_upper,6,2.62875133026994,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_upper,7,2.631310723850638,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_lower,1,2.1555077592859924,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_lower,2,2.177569429451972,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_lower,3,2.1956574153971875,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_lower,4,2.181364086637981,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_lower,5,2.5995822995562596,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_lower,6,2.5912486697300596,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,speed_lower,7,2.5886892761493616,rad/s,actual simulated abort state; not physical time zero
+3,-0.15475,torque_upper,1,87.02829158123485,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_upper,2,112.42108834716984,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_upper,3,87.01215542797247,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_upper,4,68.30286661199716,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_upper,5,11.313565956794752,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_upper,6,10.195124479855851,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_upper,7,12.012768461996334,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_lower,1,86.97170841876515,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_lower,2,61.578911652830165,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_lower,3,86.98784457202753,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_lower,4,105.69713338800284,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_lower,5,12.686434043205248,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_lower,6,13.804875520144149,N m,actual simulated abort state; not physical time zero
+3,-0.15475,torque_lower,7,11.987231538003666,N m,actual simulated abort state; not physical time zero

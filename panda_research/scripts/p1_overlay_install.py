@@ -23,6 +23,8 @@ def main():
     args=parser.parse_args()
     package=Path(__file__).resolve().parent;base=args.baseline.resolve()
     manifest=json.loads((package/'PACKAGE_MANIFEST.json').read_text())
+    backup_root=manifest.get('backup_directory','historical/p1_overlay_baseline')
+    safe(base,backup_root)
     for name,expected in manifest['package_files'].items():
         p=safe(package,name)
         if not p.is_file() or sha(p)!=expected:raise ValueError('Package hash mismatch: '+name)
@@ -35,23 +37,25 @@ def main():
         if target.exists():
             current=sha(target)
             if current==row['new_sha256']:continue
-            if row['baseline_sha256'] is None or current!=row['baseline_sha256']:
+            accepted=[row['baseline_sha256'],*row.get('accepted_previous_sha256',[])]
+            if current not in accepted:
                 raise ValueError('Local file differs; nothing was written: '+row['target'])
         elif row['baseline_sha256'] is not None:
             raise ValueError('Missing accepted file; nothing was written: '+row['target'])
         if target.exists():
-            backup=safe(base,'historical/p1_overlay_baseline/'+row['target'])
+            backup=safe(base,backup_root+'/'+row['target'])
             if backup.exists() and sha(backup)!=sha(target):raise ValueError('Backup conflict; nothing was written')
         pending.append((row,source,target))
     # Every package/baseline/conflict check completes before the first write.
     for row,source,target in pending:
         if target.exists():
-            backup=safe(base,'historical/p1_overlay_baseline/'+row['target'])
+            backup=safe(base,backup_root+'/'+row['target'])
             backup.parent.mkdir(parents=True,exist_ok=True)
             if not backup.exists():shutil.copy2(target,backup)
         target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source,target)
-    print(json.dumps({'installed_files':len(pending),'baseline_backups':'historical/p1_overlay_baseline',
-        'A2':'NO-GO','P1':'BLOCKED_UNVERIFIED_PHYSICAL_HOLD','execution_authorized':False},indent=2))
+    p1='FAIL_FROZEN_CANDIDATE' if manifest.get('status','').endswith('_P1_FAILED') else 'BLOCKED_UNVERIFIED_PHYSICAL_HOLD'
+    print(json.dumps({'installed_files':len(pending),'baseline_backups':backup_root,
+        'A2':'NO-GO','P1':p1,'execution_authorized':False},indent=2))
 
 
 if __name__=='__main__':main()

@@ -1,0 +1,195 @@
+{
+  "policy_status": "DRAFT_OWNER_APPROVAL_PENDING",
+  "reference_kind": "nonoptimized_measured_state",
+  "items": [
+    {
+      "item": "policy_v122_approval",
+      "status": "AWAITING HUMAN REVIEW",
+      "reason": "DRAFT / OWNER APPROVAL PENDING; not a signed revision",
+      "required": true
+    },
+    {
+      "item": "reference_fields",
+      "status": "PASS",
+      "reason": "Formula/initial/endpoint/duration/accuracy are proposed, not approved",
+      "required": true
+    },
+    {
+      "item": "planner_only_M1_inputs",
+      "status": "PASS",
+      "reason": "Not used by a non-optimized smoke reference; remain OPEN for A3/G2.5",
+      "required": false
+    },
+    {
+      "item": "reference_initial_state_measured",
+      "status": "NOT TESTED",
+      "reason": "No valid completed prehold endpoint; abort states cannot replace q(0),qd(0)",
+      "required": true
+    },
+    {
+      "item": "reference_owner_controls_decision",
+      "status": "AWAITING HUMAN REVIEW",
+      "reason": "Reference choice and new measured-endpoint start rule require approval",
+      "required": true
+    },
+    {
+      "item": "P1_sampled_pair_screen",
+      "status": "PASS",
+      "reason": "Numerical predeclared nodes only; no continuous-box enclosure",
+      "required": true
+    },
+    {
+      "item": "P1_complete_point_QP",
+      "status": "PASS",
+      "reason": "Fixed midpoint/zero-velocity estimate fixtures; not physical prehold endpoints",
+      "required": true
+    },
+    {
+      "item": "physical_prehold_dynamics",
+      "status": "FAIL",
+      "reason": "Applied-torque model prehold checked; frozen acceptance failed",
+      "required": true
+    },
+    {
+      "item": "hold_tracking_torque_end_conditions",
+      "status": "FAIL",
+      "reason": "No tolerance relaxation or post-failure duration change; require a valid zero-time endpoint",
+      "required": true
+    },
+    {
+      "item": "signed_physical_prehold_clock",
+      "status": "PASS",
+      "reason": "Signed adapter continuity and applied-torque contracts have engineering unit evidence; policy approval remains separate",
+      "required": true
+    },
+    {
+      "item": "continuous_true_ODE_neighborhood",
+      "status": "NOT TESTED",
+      "reason": "Cubic numerical interpolation is not an ODE error enclosure; observed violations already reject this candidate",
+      "required": true
+    },
+    {
+      "item": "actual_zero_endpoint_full_QP",
+      "status": "NOT TESTED",
+      "reason": "Only a completed valid t=0 endpoint can satisfy this gate; stopped states do not qualify",
+      "required": true
+    },
+    {
+      "item": "prehold_failure_disposition",
+      "status": "AWAITING HUMAN REVIEW",
+      "reason": "Theory/controls and owner must explicitly redesign/redeclare a candidate or choose an alternative; no automatic retuning",
+      "required": true
+    },
+    {
+      "item": "prehold_owner_theory_controls_decision",
+      "status": "AWAITING HUMAN REVIEW",
+      "reason": "P1 is the explored proposal, not an approved startup change",
+      "required": true
+    },
+    {
+      "item": "C4_grid",
+      "status": "PASS",
+      "reason": "Later approved C4 includes (Delta=.5ms,h=.25ms), m=2; supersedes old h=Delta/4 default",
+      "required": true
+    },
+    {
+      "item": "observer_method_fields",
+      "status": "PASS",
+      "reason": "Coupled-continuous RK4 and separate sampled sensitivity are explicitly proposed",
+      "required": true
+    },
+    {
+      "item": "sampled_observer_sensitivity_definition",
+      "status": "PASS",
+      "reason": "Sampled sensitivity must declare update, cadence, held-state rule and acceptance before execution",
+      "required": true
+    },
+    {
+      "item": "observer_execution_approval",
+      "status": "AWAITING HUMAN REVIEW",
+      "reason": "No physical sampled-observer bound inferred",
+      "required": true
+    },
+    {
+      "item": "infeasibility_semantics",
+      "status": "PASS",
+      "reason": "Proposed A2 FAIL / development NO-ADVANCE request; not safe hardware zero torque; no unapproved Kb/gamma",
+      "required": true
+    },
+    {
+      "item": "infeasibility_policy_approval",
+      "status": "AWAITING HUMAN REVIEW",
+      "reason": "Owner/controls must approve the proposed stop semantics",
+      "required": true
+    },
+    {
+      "item": "acceptance_metric_definitions",
+      "status": "PASS",
+      "reason": "Physical, observer, QP, refinement and terminal criteria must all be explicit; approvals are separate",
+      "required": true
+    },
+    {
+      "item": "approved_acceptance_thresholds_preserved",
+      "status": "PASS",
+      "reason": "Draft retains the approved v1.2.1 numerical thresholds",
+      "required": true
+    },
+    {
+      "item": "v121_parameters_preserved",
+      "status": "PASS",
+      "reason": "Unchanged baseline fields: gains/disturbance/reserves/energy/solver/M1",
+      "required": true
+    },
+    {
+      "item": "reference_numeric_fields",
+      "status": "PASS",
+      "reason": "Duration, seven offsets and terminal tolerance must be finite and correctly shaped",
+      "required": true
+    },
+    {
+      "item": "full_A2_refinement",
+      "status": "NOT TESTED",
+      "reason": "No official A2 or actual 2x2 closed-loop run executed",
+      "required": true
+    },
+    {
+      "item": "independent_clean_environment_rerun",
+      "status": "AWAITING HUMAN REVIEW",
+      "reason": "Controls reviewer must rerun scripts/action3.py validate; engineering reruns are not that signature",
+      "required": true
+    },
+    {
+      "item": "manuscript_build_revision",
+      "status": "AWAITING HUMAN REVIEW",
+      "reason": "02/03 equation hashes match; main.tex and Project.rar discrepancies need responsible confirmation",
+      "required": true
+    },
+    {
+      "item": "controls_reviewer_signature",
+      "status": "AWAITING HUMAN REVIEW",
+      "reason": "No signature or written execution authority generated/inferred",
+      "required": true
+    },
+    {
+      "item": "theory_reviewer_signature",
+      "status": "AWAITING HUMAN REVIEW",
+      "reason": "No signature or written execution authority generated/inferred",
+      "required": true
+    },
+    {
+      "item": "written_A2_authorization",
+      "status": "AWAITING HUMAN REVIEW",
+      "reason": "No signature or written execution authority generated/inferred",
+      "required": true
+    }
+  ],
+  "official_A2": "NO-GO",
+  "A1_component_development": "GO",
+  "P1": "FAIL_PREDECLARED_TORQUE_HOLD",
+  "A3": "NO-GO",
+  "Level_1": "NO-GO",
+  "publication": "NO-GO",
+  "execution_performed": false,
+  "development_prehold_evidence_supplied": true,
+  "checker_scope": "Completeness and recorded evidence only; never authorizes a run"
+}
