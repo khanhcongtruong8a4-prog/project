@@ -1,0 +1,223 @@
+{
+  "overall_pass": true,
+  "checks": [
+    {
+      "check": "Unchanged selected model constant: MASS",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: COM",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: INERTIA6",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: A_DH",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: ALPHA_DH",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: D_DH",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: FLANGE_Z",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: GRAVITY",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: PHI1",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: PHI2",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: PHI3",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: QMIN",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: QMAX",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: VMAX",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged selected model constant: TAUMAX",
+      "result": "PASS"
+    },
+    {
+      "check": "CasADi model-construction AST unchanged",
+      "result": "PASS"
+    },
+    {
+      "check": "Exact original protocol22 q/qd/qdd sequences",
+      "result": "PASS"
+    },
+    {
+      "check": "Exact supplied expanded132 sample sequences",
+      "result": "PASS"
+    },
+    {
+      "check": "Both engines use identical 154-case q",
+      "result": "PASS"
+    },
+    {
+      "check": "Both engines use identical 154-case qd",
+      "result": "PASS"
+    },
+    {
+      "check": "Both engines use identical 154-case qdd",
+      "result": "PASS"
+    },
+    {
+      "check": "Flat-vector numerical results preserved over all 154 cases",
+      "result": "PASS"
+    },
+    {
+      "check": "Independent MJCF constants/origin match pinned sources: link 1",
+      "result": "PASS"
+    },
+    {
+      "check": "Independent MJCF constants/origin match pinned sources: link 2",
+      "result": "PASS"
+    },
+    {
+      "check": "Independent MJCF constants/origin match pinned sources: link 3",
+      "result": "PASS"
+    },
+    {
+      "check": "Independent MJCF constants/origin match pinned sources: link 4",
+      "result": "PASS"
+    },
+    {
+      "check": "Independent MJCF constants/origin match pinned sources: link 5",
+      "result": "PASS"
+    },
+    {
+      "check": "Independent MJCF constants/origin match pinned sources: link 6",
+      "result": "PASS"
+    },
+    {
+      "check": "Independent MJCF constants/origin match pinned sources: link 7",
+      "result": "PASS"
+    },
+    {
+      "check": "MJCF fixed flange matches pinned Xacro",
+      "result": "PASS"
+    },
+    {
+      "check": "MJCF gravity matches selected convention",
+      "result": "PASS"
+    },
+    {
+      "check": "Scenario B is a proposal, with no method comparisons executed",
+      "result": "PASS"
+    },
+    {
+      "check": "Production source regeneration has been removed",
+      "result": "PASS"
+    }
+  ],
+  "flat_input_max_errors": {
+    "M": 0.0,
+    "dM": 0.0,
+    "C": 0.0,
+    "g": 0.0,
+    "F": 0.0,
+    "U": 0.0,
+    "flange": 0.0,
+    "ID": 0.0
+  },
+  "physical_model_constructor_unchanged": true,
+  "API_guards_intentionally_change_executable_code": true,
+  "MJCF_source_comparisons": [
+    {
+      "link": 1,
+      "errors": {
+        "mass_kg": 0.0,
+        "COM_m": 0.0,
+        "COM_inertia_kg_m2": 0.0,
+        "joint_origin_m": 0.0,
+        "joint_rotation": 0.0
+      }
+    },
+    {
+      "link": 2,
+      "errors": {
+        "mass_kg": 0.0,
+        "COM_m": 0.0,
+        "COM_inertia_kg_m2": 0.0,
+        "joint_origin_m": 0.0,
+        "joint_rotation": 2.220446049250313e-16
+      }
+    },
+    {
+      "link": 3,
+      "errors": {
+        "mass_kg": 0.0,
+        "COM_m": 0.0,
+        "COM_inertia_kg_m2": 0.0,
+        "joint_origin_m": 0.0,
+        "joint_rotation": 2.220446049250313e-16
+      }
+    },
+    {
+      "link": 4,
+      "errors": {
+        "mass_kg": 0.0,
+        "COM_m": 0.0,
+        "COM_inertia_kg_m2": 0.0,
+        "joint_origin_m": 0.0,
+        "joint_rotation": 2.220446049250313e-16
+      }
+    },
+    {
+      "link": 5,
+      "errors": {
+        "mass_kg": 0.0,
+        "COM_m": 0.0,
+        "COM_inertia_kg_m2": 0.0,
+        "joint_origin_m": 0.0,
+        "joint_rotation": 2.220446049250313e-16
+      }
+    },
+    {
+      "link": 6,
+      "errors": {
+        "mass_kg": 0.0,
+        "COM_m": 0.0,
+        "COM_inertia_kg_m2": 0.0,
+        "joint_origin_m": 0.0,
+        "joint_rotation": 2.220446049250313e-16
+      }
+    },
+    {
+      "link": 7,
+      "errors": {
+        "mass_kg": 0.0,
+        "COM_m": 0.0,
+        "COM_inertia_kg_m2": 0.0,
+        "joint_origin_m": 0.0,
+        "joint_rotation": 2.220446049250313e-16
+      }
+    }
+  ],
+  "human_acceptance": "PENDING SIGNATURE",
+  "closed_loop_A2": "NOT_RUN"
+}

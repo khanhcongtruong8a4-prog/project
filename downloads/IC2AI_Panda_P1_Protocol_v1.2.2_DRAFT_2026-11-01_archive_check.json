@@ -1,0 +1,69 @@
+{
+  "scope": "ENGINEERING_ARCHIVE_RELOCATION_NOT_INDEPENDENT_REVIEW_NOT_A2",
+  "overall_pass": true,
+  "archive": "IC2AI_Panda_P1_Protocol_v1.2.2_DRAFT_2026-11-01.zip",
+  "archive_sha256": "ff17fcac4e865825512d321350260b169d4b12065c5af10fcc40a82a91139f05",
+  "archive_bytes": 1167147,
+  "accepted_r2_sha256": "7b96c24e6a56dfbde805ba610d1564b4128c20fe291b01dce4663e2696122292",
+  "forbidden_members": [],
+  "unchanged_unrelated_baseline_files": true,
+  "first_install": {
+    "command": [
+      "/workspace/project/panda_research/.venv/bin/python",
+      "/tmp/p1-overlay-replay-uxo0d7za/package/IC2AI_Panda_P1_Protocol_v1.2.2_DRAFT_2026-11-01/APPLY_OVERLAY.py",
+      "--baseline",
+      "/tmp/p1-overlay-replay-uxo0d7za/baseline/panda_research"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"installed_files\": 86,\n  \"baseline_backups\": \"historical/p1_overlay_baseline\",\n  \"A2\": \"NO-GO\",\n  \"P1\": \"BLOCKED_UNVERIFIED_PHYSICAL_HOLD\",\n  \"execution_authorized\": false\n}\n",
+    "stderr": ""
+  },
+  "idempotent_second_install": {
+    "command": [
+      "/workspace/project/panda_research/.venv/bin/python",
+      "/tmp/p1-overlay-replay-uxo0d7za/package/IC2AI_Panda_P1_Protocol_v1.2.2_DRAFT_2026-11-01/APPLY_OVERLAY.py",
+      "--baseline",
+      "/tmp/p1-overlay-replay-uxo0d7za/baseline/panda_research"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"installed_files\": 0,\n  \"baseline_backups\": \"historical/p1_overlay_baseline\",\n  \"A2\": \"NO-GO\",\n  \"P1\": \"BLOCKED_UNVERIFIED_PHYSICAL_HOLD\",\n  \"execution_authorized\": false\n}\n",
+    "stderr": ""
+  },
+  "A2_plan_check": {
+    "command": [
+      "/workspace/project/panda_research/.venv/bin/python",
+      "/tmp/p1-overlay-replay-uxo0d7za/baseline/panda_research/scripts/check_a2_plan.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"output\": \"runs/p1_checklist/20261101T172550197481Z\",\n  \"official_A2\": \"NO-GO\",\n  \"incomplete_fields\": [],\n  \"execution_performed\": false\n}\n",
+    "stderr": ""
+  },
+  "relocated_static_screen": {
+    "command": [
+      "/workspace/project/panda_research/.venv/bin/python",
+      "/tmp/p1-overlay-replay-uxo0d7za/baseline/panda_research/scripts/p1_feasibility.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"run_directory\": \"runs/p1/20261101T172550443617Z\",\n  \"P1_overall\": \"BLOCKED_PHYSICAL_PREHOLD_NOT_VERIFIED\",\n  \"duration\": {\n    \"floor_fraction_upper\": 0.07,\n    \"k_s_inverse\": 20.0,\n    \"limiting_sample\": 122,\n    \"limiting_joint_1_based\": 3,\n    \"threshold_fraction\": 0.11208642691121815,\n    \"duration_selection\": \"single analytical rule, no retuning on QP results\",\n    \"status\": \"FINITE_ANALYTIC_THRESHOLD\",\n    \"critical_s\": 0.1547729649300053,\n    \"proposed_T_pre_s\": 0.156\n  },\n  \"candidate_status\": \"PASS_SAMPLED_STATIC_SCREENS_PHYSICAL_HOLD_BLOCKED\",\n  \"A2\": \"NO-GO\"\n}\n",
+    "stderr": ""
+  },
+  "conflict_refused_before_any_write": true,
+  "conflict_refusal": {
+    "command": [
+      "/workspace/project/panda_research/.venv/bin/python",
+      "/tmp/p1-overlay-replay-uxo0d7za/package/IC2AI_Panda_P1_Protocol_v1.2.2_DRAFT_2026-11-01/APPLY_OVERLAY.py",
+      "--baseline",
+      "/tmp/p1-overlay-replay-uxo0d7za/conflict/panda_research"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/p1-overlay-replay-uxo0d7za/package/IC2AI_Panda_P1_Protocol_v1.2.2_DRAFT_2026-11-01/APPLY_OVERLAY.py\", line 57, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/tmp/p1-overlay-replay-uxo0d7za/package/IC2AI_Panda_P1_Protocol_v1.2.2_DRAFT_2026-11-01/APPLY_OVERLAY.py\", line 39, in main\n    raise ValueError('Local file differs; nothing was written: '+row['target'])\nValueError: Local file differs; nothing was written: README.md\n"
+  },
+  "same_analytic_duration_and_baseline_pairs": true,
+  "full_QP_strict_pass_count": 129,
+  "static_replay_plant_integrations": 0,
+  "P1": "BLOCKED_PHYSICAL_PREHOLD_NOT_VERIFIED",
+  "A2": "NO-GO",
+  "independent_reviewer_signature": null,
+  "retained_replay_directory": "/tmp/p1-overlay-replay-uxo0d7za"
+}

@@ -1,6 +1,6 @@
 # Action 3 review handoff — v1.2.1
 
-Run: `runs/action3/20261101T153729647277Z`. Result: **PASS_COMPONENTS_AND_REGRESSIONS_A2_HOLD**.
+Run: `runs/action3/20261101T172354305225Z`. Result: **PASS_COMPONENTS_AND_REGRESSIONS_A2_HOLD**.
 All source/code/policy hashes, exact commands, effective configuration and logs
 are in this run. New source/test snapshots are retained. Original source
 archives, LaTeX, workbook, v1.2.0 evidence and human signatures were not edited.
@@ -29,7 +29,10 @@ rows require `abs(M^-1)@varpi0 <= alpha_v*vmax`. This necessary condition fails
 for joints 1,3,4,5,6,7. For joint 1 it is approximately 93.325 versus 10.875
 rad/s^2. ProxQP returns PRIMAL_INFEASIBLE. No torque is applied and no plant
 state is advanced. This is configuration/point-specific evidence, not a global
-impossibility theorem or a completed G2.5 screen. No gain/disturbance/bound was
+impossibility theorem or a completed G2.5 screen. The position pairs also fail
+for joints 1 and 3. The separate P1 static screen and draft policy are described
+in reports/p1_v1.2.2/REVIEWER_ISSUE_RESPONSE.md; they authorize no execution.
+No gain/disturbance/bound was
 retuned or replaced to obtain a pass. The passing unit test verifies detection
 and stop behavior; it does not label the infeasible configuration feasible.
 
@@ -56,8 +59,9 @@ and stop behavior; it does not label the infeasible configuration feasible.
   no fabricated safe torque. The torque-box projection alone is tested.
 - M1 domains/constants, derivative/tube bounds, estimator policy and discrete
   observer justification remain OPEN in M1_requirements.json. No null was
-  replaced by zero. Planner envelopes/reserves and energy comparisons are not
-  fabricated or used to clear A2.
+  replaced by zero. Planner-only constants are required for Stage-1 references
+  and A3, not unconditionally for a non-optimized A2 reference. The A2 reference
+  choice itself remains unapproved. No planner result is used to clear A2.
 - The source archive and main.tex differ from policy hashes. The two canonical
   equation files match. Manuscript build-revision acceptance remains open.
 - The T29 CSV's old NOT_APPROVED status is preserved; v1.2.1 C6 explicitly
@@ -86,6 +90,6 @@ or certification run was executed.
 
 | Priority | Owner | Artifact | Objective acceptance criterion |
 | --- | --- | --- | --- |
-| 1 | Controls lead + project owner | Versioned disposition of the midpoint speed-row contradiction | Show all paired robust speed rows admit an acceleration under an explicitly reviewed configuration, retaining valid initial observer bounds; no hidden retuning |
-| 2 | Theory/model-bounds lead | Completed hashed M1 domain/constant registry | Every used bound has domain, formula, units, provenance, estimator grid/seed/budget and honest evidence level; discrete observer assumptions explicitly resolved |
-| 3 | Numerical/experimental lead + independent reviewer | Approved execution conventions and complete A2/T27 entry plan | Inspect component/T28/regression evidence, resolve source revision and observer/hold/solver settings, record required reviews, then explicitly authorize the A2 refinement run; do not infer authorization from this package |
+| 1 | Theory lead + controls lead + project owner | Reviewed startup disposition and versioned policy | Resolve both online pair families, full QP and physical prehold validity under the same frozen values; P1 remains a proposal |
+| 2 | Project owner + controls lead | Frozen A2 reference, observer, failure semantics and metrics | Scope planner M1 to a Stage-1 reference, preserve all four C4 cells, and approve all proposed execution fields |
+| 3 | Independent controls reviewer + numerical lead + build owner | Clean-environment reproduction, build confirmation and written A2 authorization | Inspect component/T28/regression code, reproduce validate, confirm main.tex/Project.rar revision and record genuine signatures before a separately authorized A2 |

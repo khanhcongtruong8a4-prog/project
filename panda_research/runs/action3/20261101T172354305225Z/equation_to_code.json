@@ -1,0 +1,155 @@
+[
+  {
+    "file": "sources/manuscript_v1.2.1/02_mm&nc.tex",
+    "sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+    "label": "eq_dynamics",
+    "line_start": 15,
+    "line_end": 19,
+    "code": "src/panda_dynamics.py; panda_closed_loop.stepper.HeldTorqueHarness",
+    "status": "IMPLEMENTED_NUMERICAL"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/02_mm&nc.tex",
+    "sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+    "label": "eq_skew_property",
+    "line_start": 31,
+    "line_end": 34,
+    "code": "tests/test_t28_raw_c.py",
+    "status": "TESTED_NUMERICAL_NOT_GLOBAL"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/02_mm&nc.tex",
+    "sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+    "label": "eq_momentum",
+    "line_start": 43,
+    "line_end": 46,
+    "code": "tests/test_action3.py observer identity",
+    "status": "IMPLEMENTED_IDENTITY_TEST"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/02_mm&nc.tex",
+    "sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+    "label": "eq_observer",
+    "line_start": 49,
+    "line_end": 56,
+    "code": "panda_closed_loop.observer.MomentumObserver",
+    "status": "IMPLEMENTED_COMPONENT"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/02_mm&nc.tex",
+    "sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+    "label": "eq_obs_envelope",
+    "line_start": 59,
+    "line_end": 63,
+    "code": "panda_closed_loop.observer.ObserverEnvelope",
+    "status": "CONTINUOUS_IDEAL_FORMULA; DISCRETE_EXTENSION_UNAPPROVED"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/02_mm&nc.tex",
+    "sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+    "label": "eq_controller",
+    "line_start": 66,
+    "line_end": 74,
+    "code": "panda_closed_loop.controller.SlotineLiController",
+    "status": "IMPLEMENTED_COMPONENT"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/02_mm&nc.tex",
+    "sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+    "label": "eq_tracking",
+    "line_start": 77,
+    "line_end": 81,
+    "code": "tests/test_action3.py tracking identity",
+    "status": "TESTED_NUMERICAL_IDENTITY"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/02_mm&nc.tex",
+    "sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+    "label": "eq_hocbf",
+    "line_start": 136,
+    "line_end": 145,
+    "code": "panda_closed_loop.barriers.BarrierEvaluator",
+    "status": "IMPLEMENTED_COMPONENT"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/02_mm&nc.tex",
+    "sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+    "label": "eq_robust_cbf",
+    "line_start": 160,
+    "line_end": 172,
+    "code": "panda_closed_loop.barriers.BarrierEvaluator.rows",
+    "status": "IMPLEMENTED_43_AFFINE_ROWS"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/02_mm&nc.tex",
+    "sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+    "label": "eq_hard_qp",
+    "line_start": 174,
+    "line_end": 184,
+    "code": "panda_closed_loop.qp.HardSafetyQP",
+    "status": "IMPLEMENTED_COMPONENT; FULL_T27_NOT_RUN"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+    "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+    "label": "eq_envelopes",
+    "line_start": 14,
+    "line_end": 21,
+    "code": "M1 requirements registry",
+    "status": "BLOCKED_MISSING_DOMAIN_CONSTANTS"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+    "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+    "label": "eq_res_bound",
+    "line_start": 37,
+    "line_end": 46,
+    "code": "M1 requirements registry",
+    "status": "BLOCKED_MISSING_C_BOUNDS"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+    "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+    "label": "eq_beta_bounds",
+    "line_start": 65,
+    "line_end": 74,
+    "code": "M1 requirements registry",
+    "status": "BLOCKED_MISSING_DERIVATIVE_BOUNDS"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+    "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+    "label": "eq_margins",
+    "line_start": 82,
+    "line_end": 92,
+    "code": "panda_closed_loop.margins.velocity_margin and disturbance_allowances",
+    "status": "ALGEBRAIC_INTERFACES_ONLY; NO_JUSTIFIED_M1_NUMBERS"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+    "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+    "label": "eq_planner",
+    "line_start": 95,
+    "line_end": 108,
+    "code": "M1 registry and A2 preflight",
+    "status": "NOT_IMPLEMENTED_ACTION3_SCOPE"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+    "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+    "label": "eq_brake",
+    "line_start": 188,
+    "line_end": 193,
+    "code": "panda_closed_loop.qp.project_torque_box",
+    "status": "PROJECTION_ONLY; BRAKING_DISABLED_MISSING_KB"
+  },
+  {
+    "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+    "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+    "label": "eq_fallback",
+    "line_start": 196,
+    "line_end": 207,
+    "code": "QPResult + ProtectiveStop",
+    "status": "SOFT_QP_DISABLED_MISSING_KB_GAMMA; STOP_REQUEST_INSTEAD"
+  }
+]

@@ -1,0 +1,609 @@
+{
+  "schema": "M1-conditional-A2-scope-v1.2.2-draft",
+  "mode": "M1_COMMON_FROZEN_DOMAIN_CONSTANTS",
+  "A2_reference_kind": "nonoptimized_measured_state",
+  "scope_note": "Unapproved/unselected A2 reference is a decision gate; planner-only constants are not unconditional online-filter prerequisites.",
+  "domain_inputs": {
+    "proposed": "M1 common frozen domain/tube constants",
+    "approved": "M1_COMMON_FROZEN_DOMAIN_CONSTANTS",
+    "constant_values": null,
+    "equation_map": null,
+    "position_domain_extension_rad": 0.01,
+    "speed_domain": null,
+    "acceleration_domain": null,
+    "tube_extension": null,
+    "estimator_grid": null,
+    "estimator_seed": null,
+    "estimator_budget": null,
+    "update_frequency": "Once per frozen configuration; identical across candidates/methods",
+    "evidence_level": "LEVEL_2_SAMPLED_ESTIMATES_ONLY",
+    "constant_update_policy": "Compute once per fully specified pre-experiment configuration; never adapt after candidate screening; same for all methods",
+    "global_bound_certified": false,
+    "exact_formula_gate": "Trace every constant and margin back to hashed manuscript before implementation"
+  },
+  "known_inputs": {
+    "Ko_s_inverse": [
+      20.0,
+      20.0,
+      20.0,
+      20.0,
+      20.0,
+      20.0,
+      20.0
+    ],
+    "Lambda_s_inverse": [
+      5.0,
+      5.0,
+      5.0,
+      5.0,
+      5.0,
+      5.0,
+      5.0
+    ],
+    "kappa_s_inverse": 10,
+    "dbar": "0.02*taumax",
+    "dbar1": "1.4*dbar",
+    "q_extension_rad": 0.01
+  },
+  "entries": [
+    {
+      "name": "m1",
+      "shape": "positive scalar",
+      "units": "kg m^2",
+      "formula": "lower eigenvalue bound of M over declared Q; NOT sampled min",
+      "dependencies": [
+        "Q",
+        "estimator policy"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_envelopes",
+        "line_start": 14,
+        "line_end": 21
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "mbar_i",
+      "shape": [
+        7
+      ],
+      "units": "(kg m^2)^-1",
+      "formula": "sup_Q (M^-1)_ii",
+      "dependencies": [
+        "Q",
+        "estimator policy"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_envelopes",
+        "line_start": 14,
+        "line_end": 21
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "Nbar_Q_il",
+      "shape": [
+        7,
+        7
+      ],
+      "units": "(kg m^2)^-1",
+      "formula": "sup_Q abs((M^-1)_il)",
+      "dependencies": [
+        "Q",
+        "estimator policy"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_envelopes",
+        "line_start": 14,
+        "line_end": 21
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "nu_and_yb",
+      "shape": "scalar function of physical t",
+      "units": "sqrt(J)/s and sqrt(J)",
+      "formula": "nu=min(norm(varpi)/sqrt(m1),sqrt(varpi^T Nbar_Q varpi)); yb=convolution(exp(-kappa*t),nu)",
+      "dependencies": [
+        "varpi",
+        "m1",
+        "Nbar_Q_il"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_envelopes",
+        "line_start": 14,
+        "line_end": 21
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "chi_s_e_v",
+      "shape": [
+        3,
+        7
+      ],
+      "units": "rad/s; rad; rad/s",
+      "formula": "chi_s=sqrt(mbar)*yb; chi_e=convolution(exp(-Lambda*t),chi_s); chi_v=chi_s+Lambda*chi_e",
+      "dependencies": [
+        "mbar_i",
+        "nu_and_yb"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_envelopes",
+        "line_start": 14,
+        "line_end": 21
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "Tube_T_and_K",
+      "shape": "q/qd/a domain boxes",
+      "units": "rad; rad/s; rad/s^2",
+      "formula": "T: widths chi_e,chi_v around candidate; K: acceleration width Lambda*chi_v",
+      "dependencies": [
+        "chi_s_e_v",
+        "speed_domain",
+        "acceleration_domain",
+        "tube_extension"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_beta_bounds",
+        "line_start": 65,
+        "line_end": 74
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "Cbar_li",
+      "shape": [
+        7,
+        7
+      ],
+      "units": "N m s/rad",
+      "formula": "sup_T abs(C_li)",
+      "dependencies": [
+        "Tube_T_and_K",
+        "M1 common fixed domain"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_res_bound",
+        "line_start": 37,
+        "line_end": 46
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "rho_r_i",
+      "shape": [
+        7
+      ],
+      "units": "N m",
+      "formula": "exp(-kappa*t)*varpi0 + convolution(exp(-kappa*t), kappa*Cbar^T*chi_s+Ko*varpi+dbar1)",
+      "dependencies": [
+        "Cbar_li",
+        "chi_s_e_v",
+        "varpi"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_res_bound",
+        "line_start": 37,
+        "line_end": 46
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "Abar_jl",
+      "shape": [
+        15,
+        7
+      ],
+      "units": "h_j/(N m s^2)",
+      "formula": "sup_T abs(grad(h_j)^T M^-1)",
+      "dependencies": [
+        "Tube_T_and_K",
+        "M1 common fixed domain"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_margins",
+        "line_start": 82,
+        "line_end": 92
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "Nbar_il",
+      "shape": [
+        7,
+        7
+      ],
+      "units": "rad/(N m s^2)",
+      "formula": "sup_T abs(M^-1)",
+      "dependencies": [
+        "Tube_T_and_K",
+        "M1 common fixed domain"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_margins",
+        "line_start": 82,
+        "line_end": 92
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "Bbar_il",
+      "shape": [
+        7,
+        7
+      ],
+      "units": "s^-1",
+      "formula": "sup_T abs(M^-1 C)",
+      "dependencies": [
+        "Tube_T_and_K",
+        "M1 common fixed domain"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_margins",
+        "line_start": 82,
+        "line_end": 92
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "Dbar_jl",
+      "shape": [
+        15,
+        7
+      ],
+      "units": "h_j/(rad s)",
+      "formula": "sup_T abs(grad(h_j)^T M^-1 C)",
+      "dependencies": [
+        "Tube_T_and_K",
+        "M1 common fixed domain"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_margins",
+        "line_start": 82,
+        "line_end": 92
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "L_u_q",
+      "shape": [
+        7,
+        7
+      ],
+      "units": "(N m)/(rad)",
+      "formula": "componentwise sup_K abs(partial ID/partial q)",
+      "dependencies": [
+        "Tube_T_and_K",
+        "derivative equation map",
+        "M1 common fixed domain"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_beta_bounds",
+        "line_start": 65,
+        "line_end": 74
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "L_u_qd",
+      "shape": [
+        7,
+        7
+      ],
+      "units": "(N m)/(rad/s)",
+      "formula": "componentwise sup_K abs(partial ID/partial qd)",
+      "dependencies": [
+        "Tube_T_and_K",
+        "derivative equation map",
+        "M1 common fixed domain"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_beta_bounds",
+        "line_start": 65,
+        "line_end": 74
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "L_u_qdd",
+      "shape": [
+        7,
+        7
+      ],
+      "units": "(N m)/(rad/s^2)",
+      "formula": "componentwise sup_K abs(partial ID/partial qdd)",
+      "dependencies": [
+        "Tube_T_and_K",
+        "derivative equation map",
+        "M1 common fixed domain"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_beta_bounds",
+        "line_start": 65,
+        "line_end": 74
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "L_h_q",
+      "shape": [
+        15,
+        7
+      ],
+      "units": "(h_j/s^2)/(rad)",
+      "formula": "componentwise sup_K abs(partial H_j/partial q)",
+      "dependencies": [
+        "Tube_T_and_K",
+        "derivative equation map",
+        "M1 common fixed domain"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_beta_bounds",
+        "line_start": 65,
+        "line_end": 74
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "L_h_qd",
+      "shape": [
+        15,
+        7
+      ],
+      "units": "(h_j/s^2)/(rad/s)",
+      "formula": "componentwise sup_K abs(partial H_j/partial qd)",
+      "dependencies": [
+        "Tube_T_and_K",
+        "derivative equation map",
+        "M1 common fixed domain"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_beta_bounds",
+        "line_start": 65,
+        "line_end": 74
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "L_h_qdd",
+      "shape": [
+        15,
+        7
+      ],
+      "units": "(h_j/s^2)/(rad/s^2)",
+      "formula": "componentwise sup_K abs(partial H_j/partial qdd)",
+      "dependencies": [
+        "Tube_T_and_K",
+        "derivative equation map",
+        "M1 common fixed domain"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_beta_bounds",
+        "line_start": 65,
+        "line_end": 74
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "beta_u_and_beta_h",
+      "shape": [
+        7,
+        15
+      ],
+      "units": "N m; h_j/s^2",
+      "formula": "eq_beta_bounds with Lambda*chi_v acceleration segment",
+      "dependencies": [
+        "L_u_q",
+        "L_u_qd",
+        "L_u_qdd",
+        "L_h_q",
+        "L_h_qd",
+        "L_h_qdd",
+        "Cbar_li",
+        "chi_s_e_v"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_beta_bounds",
+        "line_start": 65,
+        "line_end": 74
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "b_u_plus_minus_h_vB",
+      "shape": "7+7+15+7",
+      "units": "N m; h_j/s^2; rad/s^2",
+      "formula": "eq_margins; velocity term is abs(alpha_v-Lambda)*chi_v",
+      "dependencies": [
+        "beta_u_and_beta_h",
+        "rho_r_i",
+        "Abar_jl",
+        "Nbar_il",
+        "Bbar_il",
+        "Dbar_jl",
+        "varpi",
+        "zeta_plus_minus"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_margins",
+        "line_start": 82,
+        "line_end": 92
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    },
+    {
+      "name": "residual_Lipschitz_La",
+      "shape": "one per tightened residual",
+      "units": "residual unit/s",
+      "formula": "g_a(tk) >= L_a*Delta_c/2 requires justified interval/sample handling",
+      "dependencies": [
+        "Tube_T_and_K",
+        "derivative bounds",
+        "candidate residuals",
+        "grid policy"
+      ],
+      "source": {
+        "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+        "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "label": "eq_planner",
+        "line_start": 95,
+        "line_end": 108
+      },
+      "value": null,
+      "status": "OPEN_MISSING_INPUT",
+      "required_for_A2_entry": false,
+      "required_for_A3_stage1": true,
+      "evidence_level": "Level 2 numerical estimate selected; no global interval certificate",
+      "estimation_method_grid_seed_budget": null
+    }
+  ],
+  "observer_discretization_error_allowance": {
+    "value": null,
+    "status": "OPEN_ENGINEERING_GATE",
+    "note": "No new theorem term invented. Continuous ideal envelope is not automatically a discrete/delayed observer certificate."
+  },
+  "online_filter_note": "Local exact-model rows + analytic varpi can be component-tested without filling M1 planner constants; this does not clear the A2 entry gate."
+}

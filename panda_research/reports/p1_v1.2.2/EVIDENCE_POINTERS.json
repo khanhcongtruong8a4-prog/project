@@ -1,0 +1,10 @@
+{
+  "static_screen_run": "runs/p1/20261101T171712576665Z",
+  "static_screen_sha256": "a35bc39435324f017f710691a181c970fc7bdeaa65015c99243456b330ee736a",
+  "predeclaration_sha256": "4f59db4cd77376ed78978fa2c0b5c0ab9644cf7b672ceff031fb3a76eeb9d936",
+  "policy_draft_sha256": "e665f6bf076f68e5463c5bdf56810c9714265b4699a7246fe780712e7b66d6d2",
+  "accepted_base_commit": "cea93d667350d56df7f7de2426f3679ee6eacce0",
+  "baseline_release_sha256": "7b96c24e6a56dfbde805ba610d1564b4128c20fe291b01dce4663e2696122292",
+  "verification_pointer": "reports/p1_verification_latest.json",
+  "official_A2_executed": false
+}

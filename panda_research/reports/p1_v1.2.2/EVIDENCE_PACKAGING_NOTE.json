@@ -1,0 +1,17 @@
+{
+  "scope": "SOURCE_AND_REPORT_OVERLAY_NOT_A2",
+  "static_screen": {
+    "run_directory": "runs/p1/20261101T171712576665Z",
+    "screen_sha256": "a35bc39435324f017f710691a181c970fc7bdeaa65015c99243456b330ee736a"
+  },
+  "verification": {
+    "run_directory": "runs/p1_verification/20261101T172241055607Z",
+    "verification_sha256": "a6e9dd701d8013862f11c7c8aaf18f1ce77954921033c0c9c4679a3fc129a1fa",
+    "overall_pass": true
+  },
+  "accepted_base_commit": "cea93d667350d56df7f7de2426f3679ee6eacce0",
+  "source_files_not_changed_after_verification": true,
+  "later_bookkeeping": "Review/report files, checksum manifest and portable report pointers are generated after verification. They are not tested controller parameters.",
+  "initial_to_final_screen": "Same frozen design and 0.156 s duration; strict raw-slack acceptance and extra planner diagnostic fields, no tuning",
+  "omitted": "No baseline model/source archive, old cumulative releases, virtualenv, caches or run-local disposable copies in this clean ZIP"
+}

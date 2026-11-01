@@ -202,7 +202,7 @@ class Action3Tests(unittest.TestCase):
         stationary=ctrl.command(q-.001*np.ones(7),v,ref.sample(3.),dhat)[0]
         self.assertNotEqual(float(np.linalg.norm(moving-stationary)),0.)
 
-    def test_all_43_affine_rows_against_independent_direct_equations(self):
+    def test_43_affine_row_assembly_signs_and_torque_perturbations(self):
         q=self.q0+.01;v=np.linspace(-.1,.1,7);dhat=np.linspace(-.05,.05,7)
         varpi=np.linspace(.01,.04,7);tau=self.model.evaluate(q,v)['g']+.1
         b=self.barrier;rows=b.rows(q,v,dhat,varpi)
@@ -222,7 +222,8 @@ class Action3Tests(unittest.TestCase):
         reserves=b.planner_reserves(self.policy)
         self.assertClose(reserves['joint_HOCBF_rad_s2'],1e-4*(QMAX-QMIN))
         self.assertAlmostEqual(reserves['velocity_CBF_rad_s2'],.0002175)
-        DIAGNOSTICS['affine_rows']={'count':43,'max_torque_finite_difference_error':float(np.max(abs(fd-rows.G))),
+        DIAGNOSTICS['affine_rows']={'count':43,'evidence_class':'INTERNAL_ASSEMBLY_AND_SIGN_CHECK; shared target M, gradients and Hessians, not independent dynamics validation',
+            'max_torque_finite_difference_error':float(np.max(abs(fd-rows.G))),
             'row_names':rows.names,'row_units':rows.units,'planner_reserves':reserves}
 
     def test_entry_conditions_include_psi1_velocity_manipulability_and_torque(self):

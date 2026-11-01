@@ -1,11 +1,14 @@
-# Panda research development — v1.2.1 Action 3
+# Panda research development — v1.2.2 P1 proposal
 
 The combined v1.2.0 numerical model is preserved unchanged. The new
 `panda_closed_loop` package implements Action 3 components under the supplied
 v1.2.1 owner policy. Start with [ACTION3.md](ACTION3.md) and
 [the latest Action 3 handoff](reports/ACTION3_REVIEW_HANDOFF.md).
-Official A2 remains HOLD: M1 inputs and execution approvals are incomplete,
-and the approved initial midpoint hard-QP component fixture is infeasible.
+The current additive work is the [P1 feasibility review](reports/p1_v1.2.2/REVIEWER_ISSUE_RESPONSE.md)
+and [draft v1.2.2 policy](policy/v1.2.2-draft/PROPOSED_POLICY_CONFIGURATION_v1.2.2.json).
+Official A2 remains NO-GO. P1 has only static sampled evidence; physical prehold,
+execution decisions, independent review and build confirmation are outstanding.
+Planner-only M1 inputs remain open for Stage-1 references and A3.
 
 This is the combined development base for the selected **Gaz seven-body
 Franka Emika Panda model**. It brings together the validated single-vector API
@@ -126,7 +129,7 @@ C1-C6 proposals and specifies gains, reserves, disturbance and refinement.
 It records owner acceptance of model evidence, not independent signatures.
 Closed-loop components and focused fixtures are implemented, but official A2,
 A3 comparisons, complete T27, G2.5, Level 1 and publication claims remain blocked.
-See the current Action 3 handoff for the exact initial-QP and M1 blockers.
+See the [A2 entry checklist](reports/p1_v1.2.2/A2_ENTRY_CHECKLIST.md) for current blockers.
 Sampled inertia eigenvalues do not establish global m1. The original model,
 past proposals/evidence, manuscript and workbook have not been rewritten.
 

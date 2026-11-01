@@ -1,0 +1,90 @@
+IC2AI 2027 — CODEX ENGINEERING HANDOFF
+A2 startup infeasibility, observer pre-settling review, and Protocol v1.2.2
+Prepared: 1 November 2026
+
+ROLE AND PRIMARY OBJECTIVE
+You are the implementation and verification engineer for our seven-DOF Franka Emika Panda study, “Planner-Filter Consistent Time-Energy Optimal Motion for Redundant Manipulators.” Continue the existing Action 3 r2 codebase. Your task is NOT to launch A2 or tune parameters until successful. It is to investigate and, if technically justified, prepare the smallest version-controlled policy amendment and reproducible screening evidence needed to enable a separate, independent A2 authorization.
+
+READ THESE INPUTS FIRST (in precedence order for decisions)
+1. “Action 3 r2 Review A2 Gate Decision.docx” — authoritative latest independent assessment, especially §§A, D, E, F.
+2. “IC2AI_Panda_Action3_v1.2.1_2026-11-01_r2.zip” — latest code, policy, logs and reviews.
+3. “Approved_Policy_v1.2.1_download.zip” or policy/v1.2.1 inside the Action 3 package — existing owner-approved choices.
+4. Canonical manuscript source 02_mm&nc.tex and 03_contribution.tex, original research protocol, and previously signed/owner-approved source records.
+
+PROJECT CONTEXT
+The framework combines free-final-time, non-regenerative modeled-electrical-energy planning; Slotine–Li nominal tracking; a momentum disturbance observer; an online robust HOCBF hard-QP; and time-varying margins meant to establish planner/filter consistency. The selected seven-link Panda plant uses Gaz et al. inertial and smooth-friction data, with no additional payload or reflected rotor inertia:
+  M(q) qdd + C(q,qd) qd + g(q) + F(qd) = tau + d(t).
+The observer is p=M(q)qd, dhat=z+K_o p, with the manuscript's applied-torque z-dot equation. The current component code integrates z with q and qd in RK4, applies a zero-order-held filtered torque, and updates the controller/QP once per control period.
+
+CURRENT EVIDENCE AND NON-NEGOTIABLE BASELINE
+- Action 3 r2 observer, Slotine–Li controller, 43 HOCBF/QP rows and held-torque RK4 match the manuscript by static review.
+- Its 19 component passes, T28 PASS and regression PASS remain LOG-REPORTED, not independently reproduced by the read-only reviewer.
+- At the approved midpoint q0, qdot0=0, dhat0=0, varpi0=dbar=0.02*tau_max, approved gains alpha_v=5 s^-1 and alpha_1*alpha_2=25 s^-2, the online hard-QP is mathematically infeasible at t0. This is not a solver defect.
+- A2 is NO-GO. A3, Level 1 and publication evidence remain NO-GO. The current package has never completed official A2.
+- Do not change approved parameters silently, infer independent signatures, or present development screens as official A2 results.
+
+A. FIRST IMPLEMENT AN EXPLICIT NECESSARY-CONDITION SCREEN (NO SIMULATION)
+Use the existing runtime model and exact manuscript inequalities. Do not rely on solver status alone. At a predeclared q, t, disturbance-error envelope varpi(t), and chosen initial window:
+  N(q) = M(q)^(-1)
+  B_i(q,t) = sum_l |N_il(q)| varpi_l(t).
+Check the paired ONLINE velocity-row necessary condition:
+  B_i(q,t) <= alpha_v * qdot_max,i  for every i.
+Check the paired ONLINE position-row necessary condition at the prescribed state:
+  B_i(q,t) <= alpha_1*alpha_2*(q_max,i - q_min,i)/2  for every i,
+using the exact manuscript paired-row derivation and accounting for any additional terms/conditions that do not cancel at the prescribed state. These pair tests are NECESSARY, not sufficient for full QP feasibility.
+
+For the separate Stage-1 PLANNER screening (not an A2 entry gate if A2 uses a non-optimized reference), use the manuscript's tightened planner pair inequalities, including the factor of two identified by the reviewer and the applicable M1 upper bounds Nbar. Do not replace Nbar by |N(q0)| as if that provided a certified planner bound. Report planner screening as BLOCKED/NOT YET ESTABLISHED when M1 data are absent.
+
+Report every joint's LHS, RHS, slack, units, source input and worst violation, and separate velocity from position and online filter from planner. Check prescribed time-window bounds, initial h and psi1 conditions, torque-box feasibility and manipulability conditions where applicable. After the necessary screens pass, test feasibility of the COMPLETE 43-row hard QP under the same proposed initial state/configuration. A passing pair screen alone is never a GO.
+
+B. PRIMARY CANDIDATE: P1 — PHYSICAL OBSERVER PRE-SETTLING
+Prefer exploring P1 before any gain changes, but treat it strictly as a proposed design amendment, NOT already approved or guaranteed feasible.
+- Specify a predeclared interval [-T_pre,0] before A2 begins, retaining one continuous disturbance clock; do NOT restart the disturbance phase or observer at t=0.
+- The robot must be kept near the declared start state by an actual applied-torque hold policy. An ideal kinematic clamp or unmodeled reaction torque is not acceptable, because it contaminates the disturbance-estimate interpretation. Declare and verify the holding dynamics, tracking tolerance, input limits and end-state conditions. If a physically consistent hold cannot be established, mark P1 BLOCKED.
+- The DOB must use the true APPLIED commanded torque, never privileged injected disturbance. No reset of z, dhat or propagated varpi at t=0. The pre-t0 phase is explicitly outside the A2 safety claim; do not quietly extend the certificate to it.
+- If at t=-T_pre dhat=0 and |d_i-dhat_i|<=dbar_i, use the manuscript's continuous ideal observer envelope, with the approved k_i and |d-dot_i|<=d1bar_i:
+    varpi_i(0) <= dbar_i*exp(-k_i*T_pre) + (d1bar_i/k_i)*(1-exp(-k_i*T_pre)).
+  Validate the assumptions for this formula and propagate bounds through the entire preparation and A2 windows. If initialization or model assumptions differ, derive/review the appropriate valid initial bound rather than simply reusing this expression.
+- Determine analytically what pre-settling duration or sufficient threshold is needed for BOTH paired online constraint families. Do not choose T_pre by trial-and-error simulation or post-hoc adjustment. Propose the duration and all tolerances in a draft decision record BEFORE any execution. If the pair conditions cannot be satisfied above the observer-error floor, say so.
+- Check that physical pre-hold motion or unmodeled torques do not invalidate the declared q0, the disturbance class, or the observer estimate. Compare the final measured state with the predeclared A2 initial-state rule, rather than asserting it equals q0.
+- For Stage 1 later, separately assess the tightened planner pair screen with M1. Do not claim P1 restores Stage-1 feasibility until this is demonstrated.
+
+C. CONTROLLED FALLBACK (DO NOT IMPLEMENT WITHOUT APPROVAL)
+If P1 is unworkable or its predeclared screen fails, prepare a transparent comparison of the reviewer's options:
+  P2: revise both alpha_v AND alpha_1*alpha_2, and check the resulting |alpha_v-lambda_i|*chi_v,i term and planner tightening;
+  P3: reduce disturbance amplitude only with scientific justification and a new policy;
+  P4: change the theory/HOCBF initialization with a new manuscript revision and independent theory review.
+Do not silently modify q0, disturbance, gains, reserves, observer bounds, solver tolerances or recovery semantics to make a test pass. DO NOT automatically switch to P2. Present any candidate changes as UNAPPROVED in versioned proposals and request human decision.
+
+D. PREPARE A COMPLETE DRAFT A2 EXECUTION POLICY (v1.2.2, NOT SIGNED)
+Recommend for explicit owner/controls-lead decision:
+  1. A2 starts from a predeclared NON-OPTIMIZED reference (Stage-1 planning is not part of the first smoke test). State reference formula, initial-state/endpoint rule, run duration and task-accuracy threshold as proposed choices if not already fixed; never invent approval.
+  2. Observer z is coupled-continuously integrated with plant q/qd in RK4 as currently implemented, with held applied torque, and a separately identified discrete-observer sensitivity test. State plainly that this choice does not establish a physical sampled-observer bound.
+  3. A hard-QP infeasibility is recorded as A2 FAIL and causes fail-closed NO-ADVANCE/NO-TORQUE in the DEVELOPMENT harness. Do NOT call zero torque intrinsically safe, and do NOT implement unapproved recovery K_b/gamma.
+  4. Preserve the owner-approved C4 two-factor 2x2 control-period/integrator-step refinement grid, including the later-approved cell that supersedes the T25 h=Delta/4 default; log each cell and the acceptance metrics.
+  5. Define which M1 constants A2 actually needs: the online filter needs its model and varpi(t); additional M1 planner/tube constants are required only if a Stage-1 tightened plan is used. Keep the full M1 registry open for A3/G2.5, but don't block a non-optimized A2 on unused planner-only values.
+  6. Preserve all approved v1.2.1 C1-C6 choices unless a separately versioned amendment expressly changes one.
+  7. Pin the exact canonical equation files and investigate the reported main.tex/Project.rar hash mismatch. Do not rewrite the manuscript or describe the entire manuscript build as accepted without the responsible review.
+  8. Predeclare the physical/slack, observer-envelope, numerical-solver, refinement and terminal task criteria; distinguish development checks, Level 2 sampled evidence and Level 1 certification.
+Prepare a diff from v1.2.1 to proposed v1.2.2 and SHA-256 manifest. The final policy file must say DRAFT / OWNER APPROVAL PENDING, with empty human review/signature fields.
+
+E. CODE QUALITY AND REPRODUCIBLE EVIDENCE
+Implement a deterministic, read-only feasibility-screen CLI/test utility plus an A2-policy completeness checker (source configuration is read-only). Check paired inequalities with exact formulas, units and no truth access; retain diagnostics for failure cases. Correct misleading test names about independence. Preserve original logs/artifacts. Do not use a hidden auto-tuning loop, random search for favorable q0, arbitrary zero replacements for missing bounds, or a force flag that bypasses the A2 gate.
+
+Permitted now: static inspection, code development, non-plant-screen unit tests, analytical/pointwise feasibility screens, and reproducibility checks. Do not start an official closed-loop A2 run, Stage-1 optimization, Scenarios A/B/C, Level 1 certification or paper experiments based on this task. Existing tests can be rerun for reproducibility, but identify them as development evidence.
+
+F. REQUIRED DELIVERABLES
+1. A concise REVIEWER_ISSUE_RESPONSE.md mapping findings E5-E12 and F1-F3 to file/line changes, evidence, and RESOLVED/PARTIAL/BLOCKED.
+2. The feasibility-screen module + automated tests, with per-joint velocity and position pair outputs, complete-QP result and separate planner-pair status.
+3. A P1 feasibility memorandum: declared pre-hold physics, analytic envelope, candidate T_pre criterion, end-state validity, constraints and failure modes; no claims of A2 success.
+4. Proposed Protocol v1.2.2 addendum, machine-readable policy draft, approved-v1.2.1-to-draft diff, and checksum manifest. Never forge signatures.
+5. A2_ENTRY_CHECKLIST.md: each item marked PASS, FAIL, NOT TESTED, AWAITING HUMAN REVIEW, with linked artifacts and explicit A2 NO-GO until all conditions hold.
+6. Three prioritized next human decisions/actions, with owner, artifact and acceptance criteria; include controls-review reproducibility of `python scripts/action3.py validate`, confirmation of manuscript build revision and written A2 authorization.
+7. A clean ZIP deliverable containing only source, tests, reports, policy draft and reproducibility instructions; preserve previous accepted release as immutable baseline.
+
+FINAL DECISION FORMAT
+- A1 component development: GO / HOLD with evidence.
+- P1 screen: PASS / FAIL / BLOCKED (not an A2 authorization).
+- Official A2: NO-GO unless all owner, controls-review, build and feasibility gates have been met and separately authorized. This task itself does not authorize A2.
+- A3 Level 2, Level 1, publication: still NO-GO absent their independent later gates.
+End by stating exactly what must happen NEXT to move official A2 from NO-GO to GO, without asserting that Codex can supply human signatures.

@@ -1,0 +1,52 @@
+{
+  "A1": {
+    "decision": "GO",
+    "reason": "Continue additive implementation and component verification"
+  },
+  "A2": {
+    "decision": "NO-GO (HOLD)",
+    "blockers": [
+      "OFFICIAL_A2_EXECUTION_NOT_AUTHORIZED",
+      "FROZEN_A2_REFERENCE_AND_ENTRY_CHECKS_NOT_AVAILABLE",
+      "MANUSCRIPT_ARCHIVE_AND_MAIN_TEX_REVISION_UNCONFIRMED",
+      "A2_REFERENCE_KIND_NOT_APPROVED",
+      "OBSERVER_DISCRETIZATION_POLICY_APPROVAL_MISSING",
+      "CONTROLS_REVIEW_NOT_RECORDED",
+      "APPROVED_MIDPOINT_HARD_QP_COMPONENT_INFEASIBLE"
+    ],
+    "executed": false
+  },
+  "A3": {
+    "decision": "NO-GO",
+    "reason": "A2, complete T27, positive G2.5 and frozen planner/task settings missing",
+    "executed": false
+  },
+  "Level_1": {
+    "decision": "NO-GO",
+    "reason": "No verified global m1, full bound suite or theorem hypotheses"
+  },
+  "publication": {
+    "decision": "NO-GO",
+    "reason": "No authorized comparative experiments"
+  },
+  "T27": {
+    "status": "COMPONENT_SOLVER_FIXTURES_ONLY; COMPLETE_PROTOCOL_NOT_RUN"
+  },
+  "G2.5": {
+    "status": "NOT_RUN; static point-specific speed-row contradiction is not a G2.5 screen"
+  },
+  "approvals": {
+    "project_owner": {
+      "status": "APPROVED_VIA_CHAT",
+      "date": "2026-11-01",
+      "scope": "T04b T06a T02 independent dynamics evidence; C1-C6; proposed config/protocol"
+    },
+    "independent_T04b_reviewer_signature": null,
+    "independent_T06a_reviewer_signature": null,
+    "independent_T02_reviewer_signature": null,
+    "independent_dynamics_reviewer_signature": null,
+    "controls_reviewer_signature": null,
+    "theory_reviewer_signature": null,
+    "T29_standalone_signature": null
+  }
+}

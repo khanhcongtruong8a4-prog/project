@@ -39,12 +39,16 @@ def equation_crosswalk():
     return records
 
 
-def m1_registry(policy):
+def m1_registry(policy, reference_kind=None):
+    if reference_kind not in [None, 'stage1_tightened', 'nonoptimized_measured_state']:
+        raise ValueError('Unrecognized A2 reference kind')
     data = []
     def add(name, shape, units, formula, dependencies, label, required=True):
         data.append({'name': name, 'shape': shape, 'units': units, 'formula': formula,
             'dependencies': dependencies, 'source': source_location(label, '03_contribution.tex'),
-            'value': None, 'status': 'OPEN_MISSING_INPUT', 'required_for_A2_entry': required,
+            'value': None, 'status': 'OPEN_MISSING_INPUT',
+            'required_for_A2_entry': None if reference_kind is None else reference_kind == 'stage1_tightened',
+            'required_for_A3_stage1': required,
             'evidence_level': 'Level 2 numerical estimate selected; no global interval certificate',
             'estimation_method_grid_seed_budget': None})
     add('m1', 'positive scalar', 'kg m^2', 'lower eigenvalue bound of M over declared Q; NOT sampled min', ['Q','estimator policy'], 'eq_envelopes')
@@ -68,7 +72,8 @@ def m1_registry(policy):
     add('beta_u_and_beta_h', [7,15], 'N m; h_j/s^2', 'eq_beta_bounds with Lambda*chi_v acceleration segment', ['L_u_q','L_u_qd','L_u_qdd','L_h_q','L_h_qd','L_h_qdd','Cbar_li','chi_s_e_v'],'eq_beta_bounds')
     add('b_u_plus_minus_h_vB', '7+7+15+7', 'N m; h_j/s^2; rad/s^2', 'eq_margins; velocity term is abs(alpha_v-Lambda)*chi_v', ['beta_u_and_beta_h','rho_r_i','Abar_jl','Nbar_il','Bbar_il','Dbar_jl','varpi','zeta_plus_minus'],'eq_margins')
     add('residual_Lipschitz_La', 'one per tightened residual', 'residual unit/s', 'g_a(tk) >= L_a*Delta_c/2 requires justified interval/sample handling', ['Tube_T_and_K','derivative bounds','candidate residuals','grid policy'],'eq_planner')
-    return {'schema':'Action3-M1-requirements-v1.2.1','mode':'M1_COMMON_FROZEN_DOMAIN_CONSTANTS',
+    return {'schema':'M1-conditional-A2-scope-v1.2.2-draft','mode':'M1_COMMON_FROZEN_DOMAIN_CONSTANTS',
+            'A2_reference_kind':reference_kind,'scope_note':'Unapproved/unselected A2 reference is a decision gate; planner-only constants are not unconditional online-filter prerequisites.',
             'domain_inputs':policy.raw['margin_mode'], 'known_inputs':{'Ko_s_inverse':policy.ko,'Lambda_s_inverse':policy.lambdas,
             'kappa_s_inverse':policy.kappa,'dbar':'0.02*taumax','dbar1':'1.4*dbar','q_extension_rad':.01},
             'entries':data,'observer_discretization_error_allowance':{'value':None,'status':'OPEN_ENGINEERING_GATE',

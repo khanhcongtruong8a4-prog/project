@@ -138,13 +138,23 @@ class Policy:
                 'T29_csv_legacy_status_note': 'CSV still says RECOVERED_FROM_PROTOCOL_NOT_APPROVED; supplied v1.2.1 C6 explicitly approves the protocol rule. Original CSV preserved.',
                 'human_signatures': self.raw['approvals']}
 
-    def a2_blockers(self):
+    def a2_blockers(self, reference_kind=None):
         raw = self.raw
         blockers = ['OFFICIAL_A2_EXECUTION_NOT_AUTHORIZED',
-                    'FROZEN_REFERENCE_TASK_AND_TUBE_CHECKS_NOT_AVAILABLE', 'MANUSCRIPT_ARCHIVE_AND_MAIN_TEX_REVISION_UNCONFIRMED']
-        for key in ['constant_values', 'equation_map', 'speed_domain', 'acceleration_domain', 'tube_extension', 'estimator_grid', 'estimator_seed', 'estimator_budget']:
-            if raw['margin_mode'][key] is None:
-                blockers.append('M1_MISSING_'+key.upper())
+                    'FROZEN_A2_REFERENCE_AND_ENTRY_CHECKS_NOT_AVAILABLE', 'MANUSCRIPT_ARCHIVE_AND_MAIN_TEX_REVISION_UNCONFIRMED']
+        if reference_kind not in [None, 'stage1_tightened', 'nonoptimized_measured_state']:
+            raise ValueError('Unrecognized A2 reference kind')
+        if reference_kind is None:
+            blockers.append('A2_REFERENCE_KIND_NOT_APPROVED')
+        elif reference_kind == 'stage1_tightened':
+            blockers.append('FROZEN_STAGE1_PLAN_AND_TUBE_CHECKS_NOT_AVAILABLE')
+            for key in ['constant_values', 'equation_map', 'speed_domain', 'acceleration_domain', 'tube_extension', 'estimator_grid', 'estimator_seed', 'estimator_budget']:
+                if raw['margin_mode'][key] is None:
+                    blockers.append('M1_MISSING_'+key.upper())
+        else:
+            # Model + analytic observer bound suffice for the online filter.
+            # A proposed reference choice does not approve it or authorize A2.
+            blockers.append('A2_NONOPTIMIZED_REFERENCE_POLICY_APPROVAL_MISSING')
         if raw['integration']['observer_update_semantics'] is None:
             blockers.append('OBSERVER_DISCRETIZATION_POLICY_APPROVAL_MISSING')
         if raw['approvals']['controls_reviewer_signature'] is None:
