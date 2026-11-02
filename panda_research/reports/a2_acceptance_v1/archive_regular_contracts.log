@@ -1,0 +1,27 @@
+test_arbitrary_and_partial_gzip_bytes_preserved_as_raw (__main__.RegularArchive.test_arbitrary_and_partial_gzip_bytes_preserved_as_raw) ... indexed original bytes source.zip RAW
+indexed original bytes partial.gz RAW
+packed raw files 2 original_bytes 25624 unique_inflated_bytes 25624 compressed_bytes 548
+restored exact original file source.zip
+restored exact original file partial.gz
+ok
+test_corrupt_packed_part_rejected (__main__.RegularArchive.test_corrupt_packed_part_rejected) ... indexed original bytes data.gz EXACT_GZIP_REPACK
+packed bad files 1 original_bytes 36 unique_inflated_bytes 800 compressed_bytes 224
+ok
+test_existing_different_source_is_never_replaced (__main__.RegularArchive.test_existing_different_source_is_never_replaced) ... indexed original bytes source.bin RAW
+packed safe files 1 original_bytes 8 unique_inflated_bytes 8 compressed_bytes 220
+ok
+test_gzip_header_name_time_and_original_bytes_are_reconstructed (__main__.RegularArchive.test_gzip_header_name_time_and_original_bytes_are_reconstructed) ... indexed original bytes old.gz EXACT_GZIP_REPACK
+packed first files 1 original_bytes 126 unique_inflated_bytes 11100 compressed_bytes 260
+restored exact original file old.gz
+ok
+test_identical_inflated_payload_is_shared_with_different_gzip_headers (__main__.RegularArchive.test_identical_inflated_payload_is_shared_with_different_gzip_headers) ... indexed original bytes a.gz EXACT_GZIP_REPACK
+indexed original bytes b.gz EXACT_GZIP_REPACK
+packed shared files 2 original_bytes 106 unique_inflated_bytes 1800 compressed_bytes 232
+restored exact original file a.gz
+restored exact original file b.gz
+ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.434s
+
+OK

@@ -1,0 +1,40 @@
+{
+  "original_A2": [
+    "/workspace/a2-verification-venv/bin/python",
+    "scripts/p1_r4.py",
+    "--contracts",
+    "/workspace/a2-acceptance-clean/panda_research/reports/a2_acceptance_v1/acceptance_v1_fresh/original_r4.json",
+    "--output",
+    "runs/p1_r4/acceptance_v1_fresh_original_r4"
+  ],
+  "E1": [
+    "/workspace/a2-verification-venv/bin/python",
+    "scripts/a2_extended_v4.py",
+    "--reference",
+    "E1",
+    "--contracts",
+    "/workspace/a2-acceptance-clean/panda_research/reports/a2_acceptance_v1/acceptance_v1_fresh/v4_gain.json",
+    "--output",
+    "runs/a2_extended_v4/acceptance_v1_fresh_E1"
+  ],
+  "E2": [
+    "/workspace/a2-verification-venv/bin/python",
+    "scripts/a2_extended_v4.py",
+    "--reference",
+    "E2",
+    "--contracts",
+    "/workspace/a2-acceptance-clean/panda_research/reports/a2_acceptance_v1/acceptance_v1_fresh/v4_gain.json",
+    "--output",
+    "runs/a2_extended_v4/acceptance_v1_fresh_E2"
+  ],
+  "E3": [
+    "/workspace/a2-verification-venv/bin/python",
+    "scripts/a2_extended_v4.py",
+    "--reference",
+    "E3",
+    "--contracts",
+    "/workspace/a2-acceptance-clean/panda_research/reports/a2_acceptance_v1/acceptance_v1_fresh/v4_gain.json",
+    "--output",
+    "runs/a2_extended_v4/acceptance_v1_fresh_E3"
+  ]
+}

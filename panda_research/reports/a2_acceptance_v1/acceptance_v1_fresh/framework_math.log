@@ -1,0 +1,25 @@
+test_AB2_affine_interval_average_after_bootstrap (__main__.AcceptanceMath.test_AB2_affine_interval_average_after_bootstrap) ... ok
+test_AB2_quadratic_mean_error_has_minus_five_twelfths_coefficient (__main__.AcceptanceMath.test_AB2_quadratic_mean_error_has_minus_five_twelfths_coefficient) ... ok
+test_bootstrap_impulse_error_scales_as_Delta_squared (__main__.AcceptanceMath.test_bootstrap_impulse_error_scales_as_Delta_squared) ... ok
+test_box_error_bound_equals_minimum_over_all_128_current_point_corners (__main__.AcceptanceMath.test_box_error_bound_equals_minimum_over_all_128_current_point_corners) ... ok
+test_exact_recorded_QP_optimum_on_active_v4_current_state_face (__main__.AcceptanceMath.test_exact_recorded_QP_optimum_on_active_v4_current_state_face) ... ok
+test_exact_recorded_QP_optimum_on_preserved_real_43_row_active_fixture (__main__.AcceptanceMath.test_exact_recorded_QP_optimum_on_preserved_real_43_row_active_fixture) ... FAIL
+test_gain10_speed_rows_match_direct_velocity_barrier_derivatives (__main__.AcceptanceMath.test_gain10_speed_rows_match_direct_velocity_barrier_derivatives) ... ok
+test_gain_change_preserves_model_and_every_other_gain (__main__.AcceptanceMath.test_gain_change_preserves_model_and_every_other_gain) ... ok
+test_guard_can_remove_boundary_only_feasibility_and_must_stop (__main__.AcceptanceMath.test_guard_can_remove_boundary_only_feasibility_and_must_stop) ... ok
+test_guarded_QP_is_unweighted_physical_torque_projection_with_mixed_limits (__main__.AcceptanceMath.test_guarded_QP_is_unweighted_physical_torque_projection_with_mixed_limits) ... ok
+test_observer_derivative_uses_exact_applied_torque_with_correct_sign (__main__.AcceptanceMath.test_observer_derivative_uses_exact_applied_torque_with_correct_sign) ... ok
+test_replay_digest_ignores_only_wall_time_and_detects_a_physical_change (__main__.AcceptanceMath.test_replay_digest_ignores_only_wall_time_and_detects_a_physical_change) ... ok
+
+======================================================================
+FAIL: test_exact_recorded_QP_optimum_on_preserved_real_43_row_active_fixture (__main__.AcceptanceMath.test_exact_recorded_QP_optimum_on_preserved_real_43_row_active_fixture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/a2-acceptance-clean/panda_research/tests/test_a2_acceptance_math.py", line 100, in test_exact_recorded_QP_optimum_on_preserved_real_43_row_active_fixture
+    self.assertFalse(r.stop_requested)
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 12 tests in 17.810s
+
+FAILED (failures=1)

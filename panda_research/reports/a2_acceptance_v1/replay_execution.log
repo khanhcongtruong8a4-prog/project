@@ -1,0 +1,9 @@
+contracts original_r4 all_pass True required_A2_scope True
+contracts guarded_QP all_pass True required_A2_scope True
+contracts v4_gain all_pass True required_A2_scope True
+contracts framework_math all_pass False required_A2_scope True
+physical original_A2 exit 0
+physical E1 exit 0
+physical E2 exit 0
+physical E3 exit 0
+Technical replay acceptance PASS
