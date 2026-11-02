@@ -1,0 +1,27 @@
+{
+  "overall_pass": true,
+  "tests_run": 4,
+  "checks": [
+    {
+      "test": "__main__.CandidateContracts.test_failed_final_query_cannot_fallback_to_verified_raw_query",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.CandidateContracts.test_inactive_affine_request_recovers_original_AB2",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.CandidateContracts.test_infeasible_raw_query_never_advances_history_or_returns_torque",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.CandidateContracts.test_moving_active_face_rejects_unsafe_unprojected_AB2",
+      "result": "PASS"
+    }
+  ],
+  "source_hashes": {
+    "src/panda_closed_loop/projected_feedback_ab2_v1.py": "353f4f917304439cb555ae4a737143bf677322ff1011143c19ac3df9b2987caf",
+    "tests/test_projected_feedback_v1.py": "9d4e9ed449f35263246b38955e8333690b71204af918be3ee82d139ceca08e8c"
+  },
+  "Level1": false
+}

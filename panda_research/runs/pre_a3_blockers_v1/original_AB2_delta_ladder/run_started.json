@@ -1,0 +1,10 @@
+{
+  "start_utc": "2026-11-02T15:44:30.129676+00:00",
+  "mode": "ladder",
+  "freeze_commit": "2ca4de7b4d1ecbd4c4b91d2dd15ae76852063b5d",
+  "predeclaration_sha256": "3339a2db984925c7e3600ba0bdbda2706d62b73ce4e754cc152ec3b6f1abe47e",
+  "policy": "LEGACY_ALPHA5_E3_DEVELOPMENT_ONLY",
+  "model_gains_guard_safety_constraints_thresholds_changed": false,
+  "official_A3": false,
+  "external_signatures": null
+}

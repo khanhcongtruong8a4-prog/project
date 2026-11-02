@@ -1,0 +1,79 @@
+{
+  "status": "FAIL_NECESSARY_LOWER_SCREEN",
+  "velocity": {
+    "lhs": [
+      26.748978077593648,
+      6.024876758184929,
+      40.455029510132604,
+      12.967124332067069,
+      31.422250264666292,
+      20.911382304572793,
+      29.5945469240261
+    ],
+    "rhs": [
+      21.75,
+      21.75,
+      21.75,
+      21.75,
+      26.099999999999998,
+      26.099999999999998,
+      26.099999999999998
+    ],
+    "slack": [
+      -4.998978077593648,
+      15.725123241815071,
+      -18.705029510132604,
+      8.782875667932931,
+      -5.322250264666295,
+      5.1886176954272045,
+      -3.4945469240261033
+    ],
+    "unit": "rad/s^2",
+    "source": "Caller-supplied M1 domain bound plus declared varpi/reserve",
+    "worst_violation": 18.705029510132604,
+    "violating_joints_1_based": [
+      1,
+      3,
+      5,
+      7
+    ]
+  },
+  "position": {
+    "lhs": [
+      26.749340037593647,
+      6.025011818184929,
+      40.455391470132604,
+      12.96720703206707,
+      31.422612224666292,
+      20.911541804572792,
+      29.5949088840261
+    ],
+    "rhs": [
+      72.4325,
+      44.07,
+      72.4325,
+      37.525000000000006,
+      72.4325,
+      47.125,
+      72.4325
+    ],
+    "slack": [
+      45.68315996240636,
+      38.04498818181507,
+      31.9771085298674,
+      24.557792967932937,
+      41.00988777533371,
+      26.213458195427208,
+      42.83759111597391
+    ],
+    "unit": "rad/s^2",
+    "source": "Caller-supplied M1 domain bound plus declared varpi/reserve",
+    "worst_violation": 0.0,
+    "violating_joints_1_based": []
+  },
+  "unit": "rad/s^2",
+  "factor_two_included": true,
+  "omitted_terms": "Nonnegative beta, Bbar*chi_s, Nbar*rho_r and other margin terms; passing is NOT sufficient",
+  "bound_validity": "Caller-supplied evidence not certified by this arithmetic function",
+  "full_planner_computed": false
+}
