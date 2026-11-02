@@ -1,0 +1,9 @@
+{
+  "scope": "REPORTING_TERMINOLOGY_ONLY_NO_NUMERICAL_OR_ACCEPTANCE_CHANGE",
+  "recorded_utc": "2026-11-02T10:14:57.203740+00:00",
+  "old_report_sha256": "8a85840fb2fef2593ce956400d30d20f642a6c0c4aeeeb0c57bce5a7b5a22d70",
+  "new_report_sha256": "4dbb4ccae71e03c807fa4227d0178fb21af9574bb2418e0a67f78e4131afeff3",
+  "why": "Avoid describing v4 alpha_v10 row values as the unchanged alpha_v5 constraints. Full new-gain disclosure and old-policy shadow negatives were already present.",
+  "all_CSV_and_raw_traces_unchanged": true,
+  "original_generated_report_preserved": "reports/a2_extended_v4/reporting_source_snapshot/A2_EXTENDED_RESULTS_before_scope_clarification.md"
+}
