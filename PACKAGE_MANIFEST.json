@@ -8215,6 +8215,10 @@
     "simulation.py": {
       "sha256": "7ba0ae181e98eea8ddadc5954e8be43d71fbb1ba520d80ee4bc614ec0ceb7e7e",
       "size": 3285
+    },
+    "STANDALONE_RECOVERY_VERIFICATION.json": {
+      "sha256": "65900da132ebb685a2fe771430e2b60ff3811968db276dc4b9575629956da92d",
+      "size": 1206
     }
   },
   "excludes_self_hash": true,

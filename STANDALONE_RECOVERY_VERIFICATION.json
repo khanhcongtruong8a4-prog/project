@@ -1,0 +1,25 @@
+{
+  "recorded_utc": "2026-11-02T13:32:03.922925+00:00",
+  "scope": "LOCAL_STANDALONE_RESTORE_FULL_HASH_AND_RUNTIME_INITIALIZATION; NO_NEW_PHYSICAL_REPLAY_OR_EXTERNAL_REVIEW",
+  "all_logical_source_and_evidence_files_verified": 2261,
+  "original_protected_files_verified": 2018,
+  "reconstructed_original_CTZ_files": 142,
+  "reconstructed_gzip_or_other_binary_files": 81,
+  "all_logical_file_SHA256_checks_pass": true,
+  "original_frozen_runner_checks_pass": true,
+  "v4_frozen_runner_checks_pass": true,
+  "canonical_model_source_audit_and_initialization_pass": true,
+  "actual_packaged_runtime_alpha_v": 10.0,
+  "bootstrap": {
+    "verified_protected_files": 2018,
+    "original_freeze_checks_pass": true,
+    "v4_freeze_checks_pass": true,
+    "recorded_original_runner_freeze_commit": "2998a5bf94bfbae6622fdfd5f8d70f041a04c3cc",
+    "recorded_v4_runner_freeze_commit": "2998a5bf94bfbae6622fdfd5f8d70f041a04c3cc",
+    "new_motion_executed": false,
+    "git_head": "2998a5bf94bfbae6622fdfd5f8d70f041a04c3cc",
+    "local_ZIP_input_staging_created": true,
+    "scope": "LOCAL_REPRODUCTION_METADATA_NOT_AN_EXTERNAL_SIGNATURE_OR_HISTORIC_COMMIT_RECONSTRUCTION"
+  },
+  "external_independent_signature": null
+}
