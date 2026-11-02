@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-11-02T09:15:51.398981+00:00",
+  "policy": {
+    "version": "A2_QP_NUMERICS_V2",
+    "variable": "y=tau/87 N m; isotropic Hessian I",
+    "constraint_scaling": "Euclidean unit normal in y, positive row scaling only",
+    "inward_guard_original_row_scale": 1e-08,
+    "guard_rule": "G tau+c >= 1e-8 * original row scale",
+    "eps_abs": 1e-12,
+    "eps_rel": 0.0,
+    "max_iter": 10000,
+    "check_duality_gap": true,
+    "eps_duality_gap_abs": 1e-12,
+    "eps_duality_gap_rel": 0.0,
+    "original_normalized_primal_target": 1e-09,
+    "original_scaled_stationarity_target": 1e-09,
+    "wall_budget_s": 15.0,
+    "retry": false,
+    "post_QP_projection": false
+  },
+  "results": [
+    {
+      "case": "E1_cell_1",
+      "pass": true,
+      "status": "QPSolverOutput.PROXQP_SOLVED",
+      "min_raw": 0.5604171505550154
+    },
+    {
+      "case": "E3_cell_0",
+      "pass": true,
+      "status": "QPSolverOutput.PROXQP_SOLVED",
+      "min_raw": 2.1760225621392237e-08
+    },
+    {
+      "case": "E3_cell_1",
+      "pass": true,
+      "status": "QPSolverOutput.PROXQP_SOLVED",
+      "min_raw": 2.213965366593129e-08
+    },
+    {
+      "case": "E3_cell_2",
+      "pass": true,
+      "status": "QPSolverOutput.PROXQP_SOLVED",
+      "min_raw": 2.171410073970037e-08
+    },
+    {
+      "case": "E3_cell_3",
+      "pass": true,
+      "status": "QPSolverOutput.PROXQP_SOLVED",
+      "min_raw": 2.069218574263232e-08
+    }
+  ],
+  "all_pass": true,
+  "new_motion_executed": false,
+  "source_sha256": {
+    "scripts/a2_qp_v2_development.py": "63f96217c0ac2d4505decda0e5b8be106dc647ff6fac49e4c0b8d52789f7df11",
+    "src/panda_closed_loop/a2_qp_v2.py": "79063e1d5589bd23879ef73d24e3c521bc34c87621da5f23d9c39b6f7900783b"
+  }
+}
