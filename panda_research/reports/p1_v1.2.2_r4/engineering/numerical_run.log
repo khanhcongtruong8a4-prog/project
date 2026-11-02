@@ -1,0 +1,23 @@
+cell 0: starting frozen P1-r3
+cell 0: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 0: ENGINEERING_ERROR
+cell 1: starting frozen P1-r3
+cell 1: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 1: ENGINEERING_ERROR
+cell 2: starting frozen P1-r3
+cell 2: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 2: ENGINEERING_ERROR
+cell 3: starting frozen P1-r3
+cell 3: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 3: ENGINEERING_ERROR
+cell 4: starting frozen P1-r3
+cell 4: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 4: ENGINEERING_ERROR
+cell 5: starting frozen P1-r3
+cell 5: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 5: ENGINEERING_ERROR
+cell 6: starting frozen P1-r3
+cell 6: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 6: ENGINEERING_ERROR
+Numerical A2 gate: HOLD
+Evidence: /workspace/project/panda_research/runs/p1_r4/frozen_9c94b06

@@ -60,12 +60,55 @@ def verify_regression_evidence():
     return bool(hashes) and all(digest(ROOT/n) == h for n, h in hashes.items())
 
 
+def load_saved_cell(out, index):
+    """Audit the serialized evidence boundary, not NumPy-containing objects."""
+    return json.loads((out/f'cell_{index}.json').read_text())
+
+
+def validate_reuse(source, plan):
+    """Allow audit repair without pretending that motion was rerun.
+
+    Only this runner's evidence-interface code and its tests may differ.
+    Every physical-model, controller, numerical-gate and plan byte must match
+    the actual execution's preserved inventory. Trace hashes are checked by
+    the same unchanged audit. Partial/missing grids cannot be reused.
+    """
+    source = source.resolve()
+    if not source.is_relative_to((ROOT/'runs/p1_r4').resolve()):
+        raise ValueError('Retained execution must be under runs/p1_r4')
+    start = json.loads((source/'run_started.json').read_text())
+    end = json.loads((source/'run_completed.json').read_text())
+    if not end['frozen_inputs_unchanged'] or start['plan_sha256'] != digest(ROOT/PLAN):
+        raise ValueError('Retained execution has changed inputs or a different plan')
+    old = json.loads((source/'source_snapshot'/FREEZE).read_text())
+    interface_files = {'scripts/p1_r4.py', 'tests/test_p1_r4.py'}
+    changed = [n for n, h in old['files'].items() if n not in interface_files and digest(ROOT/n) != h]
+    if changed:
+        raise ValueError('Retained physical/controller input differs: '+', '.join(changed))
+    if any(start['packages'].get(n) != v or importlib.metadata.version(n) != v
+           for n, v in plan['required_versions'].items()):
+        raise ValueError('Retained execution package versions differ')
+    for index, grid in enumerate(plan['C4_grid']):
+        if load_saved_cell(source, index)['grid'] != grid:
+            raise ValueError('Retained physical cell grid differs')
+    return {'source_run': str(source.relative_to(ROOT)), 'source_freeze_commit': start['freeze_commit'],
+            'source_started_sha256': digest(source/'run_started.json'),
+            'source_completed_sha256': digest(source/'run_completed.json'),
+            'matching_original_inputs': len(old['files'])-len(interface_files),
+            'allowed_evidence_interface_changes': sorted(interface_files),
+            'controller_model_plan_and_threshold_bytes_unchanged': True,
+            'physical_simulation_reexecuted': False}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path)
     parser.add_argument('--contracts', type=Path, required=True)
+    parser.add_argument('--reuse-executed-cells', type=Path,
+                        help='Requalify a complete identical-input execution after an evidence-interface repair')
     args = parser.parse_args()
     plan, freeze, commit = verify()
+    reuse = validate_reuse(args.reuse_executed_cells, plan) if args.reuse_executed_cells else None
     contracts = json.loads(args.contracts.read_text())
     contracts_pass = (contracts.get('overall_pass') is True and contracts.get('tests_run', 0) >= 12
                       and len(contracts.get('checks', [])) == contracts.get('tests_run')
@@ -86,7 +129,8 @@ def main():
                 'plan_sha256': digest(ROOT/PLAN), 'manifest_sha256': digest(ROOT/FREEZE),
                 'packages': {d.metadata['Name']: d.version for d in importlib.metadata.distributions()},
                 'prior_failures_preserved': True, 'independent_signatures': None,
-                'parameter_or_threshold_retuning_after_freeze': False}
+                'parameter_or_threshold_retuning_after_freeze': False,
+                'physical_execution_provenance': reuse or {'physical_simulation_reexecuted': True}}
     legacy.write(out/'run_started.json', metadata)
     legacy.write(out/'contracts.json', contracts)
     for n in freeze['new_files']+[FREEZE]:
@@ -113,7 +157,17 @@ def main():
                 # Each cell has fresh history; its own preparation swaps in the
                 # unchanged startup controller and does not consume this history.
                 local = replace(system, controller=AB2TorqueController(system.controller))
-                cell = legacy.run_cell(local, plan, index, out)
+                if reuse:
+                    source = args.reuse_executed_cells.resolve()
+                    cell = load_saved_cell(source, index)
+                    shutil.copy2(source/f'cell_{index}.json', out/f'cell_{index}.json')
+                    for phase in ['prehold', 'a2']:
+                        record = cell.get(phase, {}).get('trace')
+                        if record:
+                            shutil.copy2(source/record['file'], out/record['file'])
+                else:
+                    legacy.run_cell(local, plan, index, out)
+                cell = load_saved_cell(out, index)
                 if cell.get('a2', {}).get('completed'):
                     cell['audit'] = audit_cell(cell, out, system, plan)
                 else:

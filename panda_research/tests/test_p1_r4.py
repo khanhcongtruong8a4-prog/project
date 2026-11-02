@@ -6,6 +6,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'src'))
 import argparse
 import json
+import importlib.util
+import tempfile
 from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock
@@ -160,6 +162,27 @@ class R4Tests(unittest.TestCase):
         self.assertEqual(self.plan['fixed_acceptance_thresholds'], p['fixed_acceptance_thresholds'])
         for key in ['startup_controller', 'T_pre_s', 'q_radius_rad', 'qd_radius_rad_s', 'A2_reference']:
             self.assertEqual(self.plan[key], r3[key])
+
+    def test_auditor_input_is_read_from_saved_native_JSON_not_live_numpy_arrays(self):
+        spec = importlib.util.spec_from_file_location('r4_boundary_test', ROOT/'scripts/p1_r4.py')
+        runner = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(runner)
+        with tempfile.TemporaryDirectory() as directory:
+            out = Path(directory)
+            saved = {'cell': 0, 'endpoint': {'state': {'q': [1., 2.], 'qd': [3., 4.]}}}
+            (out/'cell_0.json').write_text(json.dumps(saved))
+            loaded = runner.load_saved_cell(out, 0)
+            self.assertEqual(loaded, saved)
+            self.assertIsInstance(loaded['endpoint']['state']['q'], list)
+            self.assertTrue(loaded['endpoint']['state'] == saved['endpoint']['state'])
+
+    def test_reuse_cannot_accept_missing_or_unverified_execution(self):
+        spec = importlib.util.spec_from_file_location('r4_reuse_test', ROOT/'scripts/p1_r4.py')
+        runner = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(runner)
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaises(ValueError):
+                runner.validate_reuse(Path(directory), self.plan)
 
 
 if __name__ == '__main__':
