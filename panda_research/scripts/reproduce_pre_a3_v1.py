@@ -95,7 +95,8 @@ def main():
         # A failed experiment is retained as a failure; this is a reproduction
         # success condition, never a promotion of the candidate to GO.
     else:
-        tests=[('candidate_contracts','tests/test_projected_feedback_v1.py'),('M1_contracts','tests/test_m1_common_v1.py')]
+        tests=[('candidate_contracts','tests/test_projected_feedback_v1.py'),('M1_contracts','tests/test_m1_common_v1.py'),
+               ('entry_gate_contracts','tests/test_pre_a3_entry_gate_v1.py')]
         jobs=[]
         for name,script in tests:
             command=[sys.executable,script,'--report',str(out/(name+'.json'))]

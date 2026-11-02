@@ -49,7 +49,7 @@ restoration uses the recorded zlib1.3.2; every restored byte SHA is checked.
     .venv/bin/python RUN_PRE_A3.py --restore --diagnose-legacy --prefix my_trace_diagnosis
     .venv/bin/python RUN_PRE_A3.py --run-dynamics --prefix my_six_cell_replay
 
-Numerical replay runs the 4 sampler contracts, 6 M1 contracts, 39 T27 fixtures,
+Numerical replay runs 4 sampler, 6 M1 and 4 entry-gate contracts, 39 T27 fixtures,
 rebuilds all 14 M1 tables from the fixed raw sampling protocol, reruns the
 1,212 G2.5 point checks, and confirms the technical planner stop. Reproducing
 NO-GO results is a successful reproduction, never a promotion to acceptance.
@@ -137,7 +137,7 @@ With Linux / Python3.12.14 and the unchanged pinned dependency versions:
     .venv/bin/python RUN_PRE_A3.py --verify-only
     .venv/bin/python RUN_PRE_A3.py --run-numerics --prefix my_numerical_replay
 
-The numerical command runs 10 contracts and 39 T27 fixtures, rebuilds all 14
+The numerical command runs 14 contracts and 39 T27 fixtures, rebuilds all 14
 M1 entries, reproduces the held-out failures and all 1,212 G2.5 point checks,
 and confirms the fail-closed planner gate. Reproducing a NO-GO is a successful
 reproduction, never a promotion of a failed experiment to acceptance.
