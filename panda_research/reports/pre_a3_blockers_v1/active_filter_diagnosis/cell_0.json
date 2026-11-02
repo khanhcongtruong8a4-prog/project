@@ -1,0 +1,163 @@
+{
+  "cell": 0,
+  "grid": {
+    "control_period_s": 0.001,
+    "rk4_step_s": 0.00025
+  },
+  "historical_metrics": {
+    "modeled_electrical_energy_J": 1.1728601593559442,
+    "duration_s": 1.0,
+    "maximum_intervention_Nm": 0.1307205788046316,
+    "minimum_normalized_raw_slack": 8.73546384652933e-09,
+    "max_normalized_primal": 0.0,
+    "max_scaled_stationarity": 9.850974203029494e-13,
+    "minimum_observer_envelope_slack_Nm": [
+      0.08381773572971588,
+      0.06510882583611029,
+      0.04476494629224412,
+      0.059373136781307206,
+      0.01053472401128542,
+      0.0073849941407709875,
+      0.006320713861519962
+    ],
+    "planned_terminal_error_m": 5.224785754028713e-17,
+    "actual_terminal_error_m": 0.0005238976899605198,
+    "target_flange_m": [
+      0.5819384670357847,
+      -3.701927171050292e-08,
+      0.6549019603587337
+    ],
+    "zero_intervention_diagnostic": false,
+    "control_updates_attempted": 1000,
+    "substeps_attempted": 4000,
+    "metrics_cover_completed_horizon": true,
+    "energy_scope": "EXECUTION_ONLY_RK4_SHARED_BUS_ELECTRICAL_MODEL_NO_TIME_PENALTY"
+  },
+  "positive_dual_active_rows": [
+    "v_lower_1",
+    "v_upper_3"
+  ],
+  "active_update_count": 386,
+  "transitions": [
+    {
+      "time": 0.02,
+      "previous_time": 0.019,
+      "from": [],
+      "to": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "time": 0.33,
+      "previous_time": 0.329,
+      "from": [
+        "v_upper_3"
+      ],
+      "to": [
+        "v_lower_1"
+      ]
+    },
+    {
+      "time": 0.406,
+      "previous_time": 0.405,
+      "from": [
+        "v_lower_1"
+      ],
+      "to": []
+    }
+  ],
+  "intervention_peak_time": 0.20600000000000002,
+  "quadratic_peak_diagnostic": {
+    "time": 0.20646656178125813,
+    "intervention": 0.1307218927217721,
+    "scope": "DIAGNOSTIC_ONLY_NOT_AN_ACCEPTANCE_METRIC_REPLACEMENT"
+  },
+  "max_AB2_sampling_correction_Nm": 0.04549774280923401,
+  "max_tau_minus_raw_Nm": 0.13096832374371203,
+  "raw_request_projection_diagnostic_failures": [],
+  "unactuated_AB2_after_filter_negative_raw_queries": 386,
+  "unactuated_AB2_after_filter_negative_raw_examples": [
+    {
+      "index": 20,
+      "time": 0.02,
+      "minimum_normalized_raw_slack": -0.0065246414530541344,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 21,
+      "time": 0.021,
+      "minimum_normalized_raw_slack": -0.011562606127921756,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 22,
+      "time": 0.022,
+      "minimum_normalized_raw_slack": -0.008723297944516832,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 23,
+      "time": 0.023,
+      "minimum_normalized_raw_slack": -0.008969443913749285,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 24,
+      "time": 0.024,
+      "minimum_normalized_raw_slack": -0.009205172653934545,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 25,
+      "time": 0.025,
+      "minimum_normalized_raw_slack": -0.009430952947008485,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 26,
+      "time": 0.026000000000000002,
+      "minimum_normalized_raw_slack": -0.00964722750005283,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 27,
+      "time": 0.027,
+      "minimum_normalized_raw_slack": -0.00985443118547233,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 28,
+      "time": 0.028,
+      "minimum_normalized_raw_slack": -0.01005298472907459,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 29,
+      "time": 0.029,
+      "minimum_normalized_raw_slack": -0.01024329812992981,
+      "rows": [
+        "v_upper_3"
+      ]
+    }
+  ],
+  "max_projection_AB2_commutator_Nm": 0.0019080356169856613,
+  "hypothetical_torque_actuated": false
+}

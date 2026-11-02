@@ -1,0 +1,45 @@
+{
+  "version": "PRE_A3_ACTIVE_FILTER_DEVELOPMENT_V1",
+  "frozen_utc": "2026-11-02T15:44:23.998579+00:00",
+  "handoff": "Current user direct message, confirmed by user",
+  "candidate_status": "DEVELOPMENT_NOT_ACCEPTED_BEFORE_OR_AFTER_UNLESS_ALL_ORIGINAL_C4_CRITERIA_PASS",
+  "candidate_sources_sha256": {
+    "src/panda_closed_loop/projected_feedback_ab2_v1.py": "353f4f917304439cb555ae4a737143bf677322ff1011143c19ac3df9b2987caf",
+    "src/panda_closed_loop/projected_feedback_audit_v1.py": "0097a998c4c56abc9c604dd2f325a35cc23f7da77634d1009625dbfb1c76c22c",
+    "scripts/run_projected_feedback_development_v1.py": "2985b412dc3d584efc8a0d427712652e26930c0a903a869a59ce30f4d493892e",
+    "tests/test_projected_feedback_v1.py": "9d4e9ed449f35263246b38955e8333690b71204af918be3ee82d139ceca08e8c"
+  },
+  "mathematical_derivation": "Continuous map sigma=P_C(r). Original AB2 approximates r average, not sigma average in an active region. Use u0=r0; uk=rk+0.5*(sigma_k-sigma_previous); apply P_Ck(uk). In inactive regions sigma=r, recovering original AB2. This is causal and consistent as Delta tends to zero; no second-order/stability theorem is claimed at moving active faces. The missing projected-feedback-history term is fixed at the AB2 coefficient 1/2, with no parameter search.",
+  "hard_constraint_obstruction": "For moving upper face tau<=b(t)=t and r>t, continuous sigma=t. Its next interval average t+Delta/2 violates current constraint. Thus a second-order interval-average claim cannot hold generally while retaining current-state ZOH constraints. Blind post-QP AB2 is never actuated.",
+  "algorithm": "sigma=current independently verified raw-feedback QP; u=rawr+half filtered-feedback difference; tau=independently verified final guarded QP. Endpoint result reused.",
+  "raw_feedback_QP_is_fallback": false,
+  "combined_kernel_queries_per_update": {
+    "bootstrap": 1,
+    "subsequent": 2
+  },
+  "combined_wall_budget_s": 15.0,
+  "original_QP_settings_guard_model_disturbance_controller_gains_constraints_thresholds_unchanged": true,
+  "candidate_experiment": {
+    "reference": "E3",
+    "alpha_v": 5,
+    "T_pre_s": 0.156,
+    "duration_s": 1.0,
+    "grid": "Original C4 from policy/a2_extended_v2/A2_EXTENDED_PREDECLARATION.json",
+    "acceptance": "Every original cell/raw sign/KKT/terminal/physical/DOB check and all original metric comparisons including diagonals. No tolerance or metric substitution."
+  },
+  "supplementary_ladder_grid": [
+    {
+      "control_period_s": 0.00025,
+      "rk4_step_s": 0.000125
+    },
+    {
+      "control_period_s": 0.000125,
+      "rk4_step_s": 6.25e-05
+    }
+  ],
+  "supplementary_ladder_scope": "Original AB2 nominal, alpha5, unchanged E3 and preparation; extra Delta convergence points only. They cannot replace the failed original C4 acceptance.",
+  "intended_final_policy": "Existing frozen alpha_v10 policy remains selected until a separate accepted version supersedes it.",
+  "official_A3_comparisons": false,
+  "Level1_claim": false,
+  "external_independent_signatures": null
+}
