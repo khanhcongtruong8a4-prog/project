@@ -1,0 +1,61 @@
+{
+  "scope": "A3_PREPARATION_DEVELOPMENT_CONTRACTS_NOT_OFFICIAL_COMPARISONS",
+  "tests_run": 13,
+  "overall_pass": true,
+  "checks": [
+    {
+      "test": "__main__.QPBoundsTests.test_actual_measured_endpoint_full_43_rows_and_active_face_oracle",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_bound_metadata_must_match_common_domain_evaluator_and_estimator",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_complete_caller_records_are_not_certification_or_official_approval",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_contradictory_halfspaces_are_infeasible_in_both_solvers",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_domain_is_explicit_immutable_and_hash_is_reproducible",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_full_Panda_initial_43_rows_are_infeasible_under_initial_bound",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_matched_row_rescaling_preserves_primal_problem",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_missing_bounds_never_become_zero_or_empty_approval",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_multiple_active_coupled_constraints_have_analytic_optimum",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_redundant_active_rows_do_not_require_unique_dual",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_screen_never_promotes_point_inverse_to_planner_bound",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_unconstrained_box_solution_matches_projection",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.QPBoundsTests.test_units_shape_and_mutation_guards_are_enforced",
+      "result": "PASS"
+    }
+  ],
+  "source_sha256": "bf00ad7d398cbb2e4f2402cd48737de57be2bef85aef24433074f366fd4b7494",
+  "test_sha256": "b22f6da5a19c24a9602c8ed56e9076dcb55e63fad71f85d0c9fbecd909593ab2"
+}

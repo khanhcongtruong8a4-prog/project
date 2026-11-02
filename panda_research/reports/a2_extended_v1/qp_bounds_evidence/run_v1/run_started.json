@@ -1,0 +1,33 @@
+{
+  "started_utc": "2026-11-02T08:30:34.669526+00:00",
+  "command": [
+    "/workspace/panda-venv/bin/python",
+    "scripts/a3_qp_bounds.py",
+    "--output",
+    "reports/a2_extended_v1/qp_bounds_evidence/run_v1"
+  ],
+  "cwd": "/workspace/a2-extended/panda_research",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commit_at_execution": "45d1adae85f4f2484202792041e080fa54e23962",
+  "source_hashes": {
+    "src/panda_closed_loop/a3_qp_bounds.py": "b7dfda37ccbb9d997e2518c5bd0744f0611a4e7d87454066b8e1fff58ef34f25",
+    "scripts/a3_qp_bounds.py": "37f00563fe7e640900dd92a196314e6caa76f0c2661c3656ad398f3d881ef6e7",
+    "src/panda_closed_loop/qp.py": "e38299c944a2828318bca756ae3fd18582914348307825acfd842c0c551706c6",
+    "src/panda_closed_loop/barriers.py": "9ba94ab3ea4003971060a3b2dda0a5b07b626ff66ad851d7ae2e468fc759055e",
+    "src/panda_closed_loop/feasibility.py": "097c624ed99167eda18892460ea0f348f46b051319870e978cfd2c40ad30354a",
+    "src/panda_dynamics.py": "9a0f100459c93f59ba75133fc682f111505909627de3bf29bb0bf823b64f025d",
+    "policy/v1.2.1/APPROVED_POLICY_CONFIGURATION_v1.2.1.json": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530"
+  },
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "casadi": "3.7.2",
+    "proxsuite": "0.7.2"
+  },
+  "scope": "READ_ONLY_DEVELOPMENT_PREPARATION_NO_A3_COMPARISON_NO_PLANT_ADVANCE",
+  "human_signatures": null,
+  "full_official_T27_authorized": false,
+  "full_official_G2_5_authorized": false,
+  "grid_rule": "Fixed synthetic matrices, retained original endpoints, qmid plus one-joint 10% range offsets; no RNG or result-guided replacement."
+}

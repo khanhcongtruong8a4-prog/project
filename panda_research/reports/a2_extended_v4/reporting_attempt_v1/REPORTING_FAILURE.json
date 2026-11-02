@@ -1,0 +1,8 @@
+{
+  "recorded_utc": "2026-11-02T10:07:54.433440+00:00",
+  "scope": "REPORTING_ONLY_NO_PHYSICS_OR_ACCEPTANCE_CHANGE",
+  "command": "python scripts/build_extended_results.py --version v4 --run-suffix c02f908",
+  "failure": "TypeError: str object is not callable at lines110-113: missing + before a conditional header string",
+  "scientific_inputs_edited": false,
+  "partial_derived_outputs_preserved": true
+}

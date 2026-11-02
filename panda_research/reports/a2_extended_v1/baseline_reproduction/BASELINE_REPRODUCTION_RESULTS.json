@@ -1,0 +1,120 @@
+{
+  "scope": "FRESH_CHECKOUT_FRESH_VENV_EXECUTED_LOCALLY_NOT_HUMAN_INDEPENDENT_SIGNOFF",
+  "source_commit": "45d1adae85f4f2484202792041e080fa54e23962",
+  "predeclared_rule_sha256": "cb7c5d5541c1778957563e5d31a825dfdc5e0ec21f61598db6345c2af0287133",
+  "baseline_full_checkout_and_original_raw_traces_accessible": true,
+  "source_verified_tracked_files": 1236,
+  "changed_tracked_files": [],
+  "contract_tests_run": 14,
+  "contract_tests_passed": true,
+  "fresh_full_seven_cell_command_exit": 0,
+  "fresh_numerical_gate": "GO",
+  "all_seven_exact_reproductions": true,
+  "per_cell": [
+    {
+      "cell": 0,
+      "grid_equal": true,
+      "metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true,
+      "new_hold_completed": true,
+      "new_actual_endpoint_QP_pass": true,
+      "new_A2_cell_completed": true,
+      "new_A2_cell_pass": true,
+      "new_trace_audit_pass": true
+    },
+    {
+      "cell": 1,
+      "grid_equal": true,
+      "metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true,
+      "new_hold_completed": true,
+      "new_actual_endpoint_QP_pass": true,
+      "new_A2_cell_completed": true,
+      "new_A2_cell_pass": true,
+      "new_trace_audit_pass": true
+    },
+    {
+      "cell": 2,
+      "grid_equal": true,
+      "metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true,
+      "new_hold_completed": true,
+      "new_actual_endpoint_QP_pass": true,
+      "new_A2_cell_completed": true,
+      "new_A2_cell_pass": true,
+      "new_trace_audit_pass": true
+    },
+    {
+      "cell": 3,
+      "grid_equal": true,
+      "metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true,
+      "new_hold_completed": true,
+      "new_actual_endpoint_QP_pass": true,
+      "new_A2_cell_completed": true,
+      "new_A2_cell_pass": true,
+      "new_trace_audit_pass": true
+    },
+    {
+      "cell": 4,
+      "grid_equal": true,
+      "metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true,
+      "new_hold_completed": true,
+      "new_actual_endpoint_QP_pass": true,
+      "new_A2_cell_completed": true,
+      "new_A2_cell_pass": true,
+      "new_trace_audit_pass": true
+    },
+    {
+      "cell": 5,
+      "grid_equal": true,
+      "metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true,
+      "new_hold_completed": true,
+      "new_actual_endpoint_QP_pass": true,
+      "new_A2_cell_completed": true,
+      "new_A2_cell_pass": true,
+      "new_trace_audit_pass": true
+    },
+    {
+      "cell": 6,
+      "grid_equal": true,
+      "metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true,
+      "new_hold_completed": true,
+      "new_actual_endpoint_QP_pass": true,
+      "new_A2_cell_completed": true,
+      "new_A2_cell_pass": true,
+      "new_trace_audit_pass": true
+    }
+  ],
+  "nonzero_numeric_differences": [],
+  "original_packages_vs_fresh_packages_differences": {
+    "pybullet": {
+      "recorded": "3.2.7",
+      "fresh": null
+    }
+  },
+  "baseline_runtime_status": "EXECUTED LOCALLY",
+  "source_inputs_status": "SOURCE VERIFIED",
+  "original_archived_logs_status": "LOG-REPORTED and raw evidence accessible",
+  "human_independent_review_status": "NOT VERIFIED; no human sign-off supplied",
+  "independent_controls_signature": null,
+  "independent_theory_signature": null,
+  "new_machine_reproduction": false,
+  "fresh_checkout": "/workspace/a2-baseline-clean",
+  "fresh_venv": "/workspace/a2-baseline-venv",
+  "fresh_raw_run": "/workspace/a2-baseline-clean/panda_research/runs/p1_r4/baseline_clean_reproduction_v1",
+  "fresh_run_started_sha256": "30ecbad956b38a757d8e887ba25d969b8871df457d46d06a260a0ca81c45a4cf",
+  "fresh_run_completed_sha256": "2d74c46d134794b19dee8cc29d252914897c16717dc604158a5988fe8e68e04e",
+  "fresh_summary_sha256": "6ba868d1fac9ef248e5bea739908fa107a85608f041b11515db335337219925f",
+  "fresh_gate_sha256": "8ee6060c2305e348883a5e5f9832c126ab7f3f7d4d97f654fc9234ebb28d55ac"
+}

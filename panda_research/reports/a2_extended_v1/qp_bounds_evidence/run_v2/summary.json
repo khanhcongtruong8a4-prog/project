@@ -1,0 +1,25 @@
+{
+  "T27": "PARTIAL_DEVELOPMENT_COVERAGE_OFFICIAL_GATE_OPEN",
+  "G2_5": "INCOMPLETE_PLANNER_M1_MISSING",
+  "M1": "INCOMPLETE_NO_OFFICIAL_COMMON_DOMAIN_OR_NUMBERS",
+  "fixture_count": 18,
+  "numeric_oracle_failures": [],
+  "strict_raw_boundary_rejections": [
+    "box_torque_active",
+    "coupled_two_active",
+    "coupled_rescaled_2pow40_span",
+    "redundant_active_faces",
+    "Panda_actual_43_single_active_face"
+  ],
+  "unresolved_solver_calls": [],
+  "expected_infeasibility_cross_checks_pass": true,
+  "screen_count": 20,
+  "filter_point_pass_count": 15,
+  "filter_point_fail_count": 3,
+  "filter_point_incomplete_count": 2,
+  "official_G2_5_positive": false,
+  "official_T27_complete": false,
+  "A3_comparisons_executed": false,
+  "human_signatures": null,
+  "all_original_source_hashes_unchanged": true
+}

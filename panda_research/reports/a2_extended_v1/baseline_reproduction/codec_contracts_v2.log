@@ -1,0 +1,19 @@
+test_changed_numeric_block_is_rejected_even_with_rewritten_ZIP_CRC (__main__.TraceArchiveTests.test_changed_numeric_block_is_rejected_even_with_rewritten_ZIP_CRC) ... ok
+test_changed_schema_canonical_checksum_is_rejected (__main__.TraceArchiveTests.test_changed_schema_canonical_checksum_is_rejected) ... ok
+test_exclusive_creation_does_not_replace_existing_evidence (__main__.TraceArchiveTests.test_exclusive_creation_does_not_replace_existing_evidence) ... ok
+test_expected_file_or_canonical_hash_mismatch_is_rejected (__main__.TraceArchiveTests.test_expected_file_or_canonical_hash_mismatch_is_rejected) ... ok
+test_mixed_scalar_types_large_integers_and_signed_zero (__main__.TraceArchiveTests.test_mixed_scalar_types_large_integers_and_signed_zero) ... ok
+test_nonfinite_values_are_rejected_before_archive_creation (__main__.TraceArchiveTests.test_nonfinite_values_are_rejected_before_archive_creation) ... ok
+test_numpy_values_and_tuples_normalize_without_precision_loss (__main__.TraceArchiveTests.test_numpy_values_and_tuples_normalize_without_precision_loss) ... ok
+test_pickle_object_array_is_never_loaded (__main__.TraceArchiveTests.test_pickle_object_array_is_never_loaded) ... ok
+test_ragged_lists_missing_keys_none_and_dictionary_order (__main__.TraceArchiveTests.test_ragged_lists_missing_keys_none_and_dictionary_order) ... ok
+test_rectangular_float_tensors_and_identical_columns (__main__.TraceArchiveTests.test_rectangular_float_tensors_and_identical_columns) ... ok
+test_repeated_string_enums_and_mixed_dictionary_schemas (__main__.TraceArchiveTests.test_repeated_string_enums_and_mixed_dictionary_schemas) ... ok
+test_representative_full_baseline_cell_zero_trace_roundtrip (__main__.TraceArchiveTests.test_representative_full_baseline_cell_zero_trace_roundtrip) ... ok
+test_root_scalars_empty_lists_and_empty_dicts (__main__.TraceArchiveTests.test_root_scalars_empty_lists_and_empty_dicts) ... ok
+test_uniform_integer_float_boolean_and_empty_matrices (__main__.TraceArchiveTests.test_uniform_integer_float_boolean_and_empty_matrices) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 5.319s
+
+OK

@@ -1,0 +1,69 @@
+{
+  "scope": "PRE_MOTION_ENGINEERING_CONTRACTS_NO_PANDA_EXTENDED_PLANT_RUN",
+  "tests_run": 14,
+  "overall_pass": true,
+  "checks": [
+    {
+      "test": "__main__.ExtendedTests.test_E1_joint_is_selected_from_frozen_geometry_before_motion",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_E3_is_C2_at_fixed_turn_and_reverses_direction",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_all_references_match_actual_initial_q_velocity_acceleration",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_amplitudes_are_the_fixed_joint_range_rule",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_bounded_service_preserves_production_QP_solution",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_declared_targets_and_stationary_terminal_reference",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_grid_thresholds_and_startup_are_original_unchanged",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_invalid_phase_boundaries_and_waypoints_are_rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_negative_raw_candidate_and_stage_slacks_are_not_tolerated_or_hidden",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_nonselected_coordinates_keep_measured_velocity_transients",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_reference_rejects_nonfinite_or_outside_horizon",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_single_and_coordinated_net_transfers_are_distinct",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_small_QP_correction_is_not_zero_continuous_correction",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.ExtendedTests.test_wall_timeout_is_unknown_and_never_a_fallback_torque",
+      "result": "PASS"
+    }
+  ],
+  "source_hashes": {
+    "src/panda_closed_loop/a2_extended.py": "482c3e225d99aea599cc48d466d7d644020e8ffc987259198d49c8c166b3ac5f",
+    "tests/test_a2_extended.py": "8b6bea88e5dad812d941ee21cfc6711185938b6164707d4770116f804ac0ed57",
+    "src/panda_closed_loop/trace_archive.py": "716004a277c19eb3e63439217b214b862cc56a3114340b66abb7c95493590ba3",
+    "policy/a2_extended_v1/A2_EXTENDED_PREDECLARATION.json": "14c0e0e3e2c42461c36dc2aa0aea5b2f25d174c42cf6f350cad9aa53d659e9e9"
+  }
+}

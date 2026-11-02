@@ -1,0 +1,6 @@
+{
+  "version": "v4",
+  "negative_count": 0,
+  "values": [],
+  "rule": "Every negative fails; rejected candidates are never described as applied torque."
+}

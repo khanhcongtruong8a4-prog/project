@@ -1,0 +1,618 @@
+[
+  {
+    "case": 0,
+    "bitwise_equal": true
+  },
+  {
+    "case": 1,
+    "bitwise_equal": true
+  },
+  {
+    "case": 2,
+    "bitwise_equal": true
+  },
+  {
+    "case": 3,
+    "bitwise_equal": true
+  },
+  {
+    "case": 4,
+    "bitwise_equal": true
+  },
+  {
+    "case": 5,
+    "bitwise_equal": true
+  },
+  {
+    "case": 6,
+    "bitwise_equal": true
+  },
+  {
+    "case": 7,
+    "bitwise_equal": true
+  },
+  {
+    "case": 8,
+    "bitwise_equal": true
+  },
+  {
+    "case": 9,
+    "bitwise_equal": true
+  },
+  {
+    "case": 10,
+    "bitwise_equal": true
+  },
+  {
+    "case": 11,
+    "bitwise_equal": true
+  },
+  {
+    "case": 12,
+    "bitwise_equal": true
+  },
+  {
+    "case": 13,
+    "bitwise_equal": true
+  },
+  {
+    "case": 14,
+    "bitwise_equal": true
+  },
+  {
+    "case": 15,
+    "bitwise_equal": true
+  },
+  {
+    "case": 16,
+    "bitwise_equal": true
+  },
+  {
+    "case": 17,
+    "bitwise_equal": true
+  },
+  {
+    "case": 18,
+    "bitwise_equal": true
+  },
+  {
+    "case": 19,
+    "bitwise_equal": true
+  },
+  {
+    "case": 20,
+    "bitwise_equal": true
+  },
+  {
+    "case": 21,
+    "bitwise_equal": true
+  },
+  {
+    "case": 22,
+    "bitwise_equal": true
+  },
+  {
+    "case": 23,
+    "bitwise_equal": true
+  },
+  {
+    "case": 24,
+    "bitwise_equal": true
+  },
+  {
+    "case": 25,
+    "bitwise_equal": true
+  },
+  {
+    "case": 26,
+    "bitwise_equal": true
+  },
+  {
+    "case": 27,
+    "bitwise_equal": true
+  },
+  {
+    "case": 28,
+    "bitwise_equal": true
+  },
+  {
+    "case": 29,
+    "bitwise_equal": true
+  },
+  {
+    "case": 30,
+    "bitwise_equal": true
+  },
+  {
+    "case": 31,
+    "bitwise_equal": true
+  },
+  {
+    "case": 32,
+    "bitwise_equal": true
+  },
+  {
+    "case": 33,
+    "bitwise_equal": true
+  },
+  {
+    "case": 34,
+    "bitwise_equal": true
+  },
+  {
+    "case": 35,
+    "bitwise_equal": true
+  },
+  {
+    "case": 36,
+    "bitwise_equal": true
+  },
+  {
+    "case": 37,
+    "bitwise_equal": true
+  },
+  {
+    "case": 38,
+    "bitwise_equal": true
+  },
+  {
+    "case": 39,
+    "bitwise_equal": true
+  },
+  {
+    "case": 40,
+    "bitwise_equal": true
+  },
+  {
+    "case": 41,
+    "bitwise_equal": true
+  },
+  {
+    "case": 42,
+    "bitwise_equal": true
+  },
+  {
+    "case": 43,
+    "bitwise_equal": true
+  },
+  {
+    "case": 44,
+    "bitwise_equal": true
+  },
+  {
+    "case": 45,
+    "bitwise_equal": true
+  },
+  {
+    "case": 46,
+    "bitwise_equal": true
+  },
+  {
+    "case": 47,
+    "bitwise_equal": true
+  },
+  {
+    "case": 48,
+    "bitwise_equal": true
+  },
+  {
+    "case": 49,
+    "bitwise_equal": true
+  },
+  {
+    "case": 50,
+    "bitwise_equal": true
+  },
+  {
+    "case": 51,
+    "bitwise_equal": true
+  },
+  {
+    "case": 52,
+    "bitwise_equal": true
+  },
+  {
+    "case": 53,
+    "bitwise_equal": true
+  },
+  {
+    "case": 54,
+    "bitwise_equal": true
+  },
+  {
+    "case": 55,
+    "bitwise_equal": true
+  },
+  {
+    "case": 56,
+    "bitwise_equal": true
+  },
+  {
+    "case": 57,
+    "bitwise_equal": true
+  },
+  {
+    "case": 58,
+    "bitwise_equal": true
+  },
+  {
+    "case": 59,
+    "bitwise_equal": true
+  },
+  {
+    "case": 60,
+    "bitwise_equal": true
+  },
+  {
+    "case": 61,
+    "bitwise_equal": true
+  },
+  {
+    "case": 62,
+    "bitwise_equal": true
+  },
+  {
+    "case": 63,
+    "bitwise_equal": true
+  },
+  {
+    "case": 64,
+    "bitwise_equal": true
+  },
+  {
+    "case": 65,
+    "bitwise_equal": true
+  },
+  {
+    "case": 66,
+    "bitwise_equal": true
+  },
+  {
+    "case": 67,
+    "bitwise_equal": true
+  },
+  {
+    "case": 68,
+    "bitwise_equal": true
+  },
+  {
+    "case": 69,
+    "bitwise_equal": true
+  },
+  {
+    "case": 70,
+    "bitwise_equal": true
+  },
+  {
+    "case": 71,
+    "bitwise_equal": true
+  },
+  {
+    "case": 72,
+    "bitwise_equal": true
+  },
+  {
+    "case": 73,
+    "bitwise_equal": true
+  },
+  {
+    "case": 74,
+    "bitwise_equal": true
+  },
+  {
+    "case": 75,
+    "bitwise_equal": true
+  },
+  {
+    "case": 76,
+    "bitwise_equal": true
+  },
+  {
+    "case": 77,
+    "bitwise_equal": true
+  },
+  {
+    "case": 78,
+    "bitwise_equal": true
+  },
+  {
+    "case": 79,
+    "bitwise_equal": true
+  },
+  {
+    "case": 80,
+    "bitwise_equal": true
+  },
+  {
+    "case": 81,
+    "bitwise_equal": true
+  },
+  {
+    "case": 82,
+    "bitwise_equal": true
+  },
+  {
+    "case": 83,
+    "bitwise_equal": true
+  },
+  {
+    "case": 84,
+    "bitwise_equal": true
+  },
+  {
+    "case": 85,
+    "bitwise_equal": true
+  },
+  {
+    "case": 86,
+    "bitwise_equal": true
+  },
+  {
+    "case": 87,
+    "bitwise_equal": true
+  },
+  {
+    "case": 88,
+    "bitwise_equal": true
+  },
+  {
+    "case": 89,
+    "bitwise_equal": true
+  },
+  {
+    "case": 90,
+    "bitwise_equal": true
+  },
+  {
+    "case": 91,
+    "bitwise_equal": true
+  },
+  {
+    "case": 92,
+    "bitwise_equal": true
+  },
+  {
+    "case": 93,
+    "bitwise_equal": true
+  },
+  {
+    "case": 94,
+    "bitwise_equal": true
+  },
+  {
+    "case": 95,
+    "bitwise_equal": true
+  },
+  {
+    "case": 96,
+    "bitwise_equal": true
+  },
+  {
+    "case": 97,
+    "bitwise_equal": true
+  },
+  {
+    "case": 98,
+    "bitwise_equal": true
+  },
+  {
+    "case": 99,
+    "bitwise_equal": true
+  },
+  {
+    "case": 100,
+    "bitwise_equal": true
+  },
+  {
+    "case": 101,
+    "bitwise_equal": true
+  },
+  {
+    "case": 102,
+    "bitwise_equal": true
+  },
+  {
+    "case": 103,
+    "bitwise_equal": true
+  },
+  {
+    "case": 104,
+    "bitwise_equal": true
+  },
+  {
+    "case": 105,
+    "bitwise_equal": true
+  },
+  {
+    "case": 106,
+    "bitwise_equal": true
+  },
+  {
+    "case": 107,
+    "bitwise_equal": true
+  },
+  {
+    "case": 108,
+    "bitwise_equal": true
+  },
+  {
+    "case": 109,
+    "bitwise_equal": true
+  },
+  {
+    "case": 110,
+    "bitwise_equal": true
+  },
+  {
+    "case": 111,
+    "bitwise_equal": true
+  },
+  {
+    "case": 112,
+    "bitwise_equal": true
+  },
+  {
+    "case": 113,
+    "bitwise_equal": true
+  },
+  {
+    "case": 114,
+    "bitwise_equal": true
+  },
+  {
+    "case": 115,
+    "bitwise_equal": true
+  },
+  {
+    "case": 116,
+    "bitwise_equal": true
+  },
+  {
+    "case": 117,
+    "bitwise_equal": true
+  },
+  {
+    "case": 118,
+    "bitwise_equal": true
+  },
+  {
+    "case": 119,
+    "bitwise_equal": true
+  },
+  {
+    "case": 120,
+    "bitwise_equal": true
+  },
+  {
+    "case": 121,
+    "bitwise_equal": true
+  },
+  {
+    "case": 122,
+    "bitwise_equal": true
+  },
+  {
+    "case": 123,
+    "bitwise_equal": true
+  },
+  {
+    "case": 124,
+    "bitwise_equal": true
+  },
+  {
+    "case": 125,
+    "bitwise_equal": true
+  },
+  {
+    "case": 126,
+    "bitwise_equal": true
+  },
+  {
+    "case": 127,
+    "bitwise_equal": true
+  },
+  {
+    "case": 128,
+    "bitwise_equal": true
+  },
+  {
+    "case": 129,
+    "bitwise_equal": true
+  },
+  {
+    "case": 130,
+    "bitwise_equal": true
+  },
+  {
+    "case": 131,
+    "bitwise_equal": true
+  },
+  {
+    "case": 132,
+    "bitwise_equal": true
+  },
+  {
+    "case": 133,
+    "bitwise_equal": true
+  },
+  {
+    "case": 134,
+    "bitwise_equal": true
+  },
+  {
+    "case": 135,
+    "bitwise_equal": true
+  },
+  {
+    "case": 136,
+    "bitwise_equal": true
+  },
+  {
+    "case": 137,
+    "bitwise_equal": true
+  },
+  {
+    "case": 138,
+    "bitwise_equal": true
+  },
+  {
+    "case": 139,
+    "bitwise_equal": true
+  },
+  {
+    "case": 140,
+    "bitwise_equal": true
+  },
+  {
+    "case": 141,
+    "bitwise_equal": true
+  },
+  {
+    "case": 142,
+    "bitwise_equal": true
+  },
+  {
+    "case": 143,
+    "bitwise_equal": true
+  },
+  {
+    "case": 144,
+    "bitwise_equal": true
+  },
+  {
+    "case": 145,
+    "bitwise_equal": true
+  },
+  {
+    "case": 146,
+    "bitwise_equal": true
+  },
+  {
+    "case": 147,
+    "bitwise_equal": true
+  },
+  {
+    "case": 148,
+    "bitwise_equal": true
+  },
+  {
+    "case": 149,
+    "bitwise_equal": true
+  },
+  {
+    "case": 150,
+    "bitwise_equal": true
+  },
+  {
+    "case": 151,
+    "bitwise_equal": true
+  },
+  {
+    "case": 152,
+    "bitwise_equal": true
+  },
+  {
+    "case": 153,
+    "bitwise_equal": true
+  }
+]

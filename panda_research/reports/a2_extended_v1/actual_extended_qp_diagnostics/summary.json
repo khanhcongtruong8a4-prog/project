@@ -1,0 +1,73 @@
+[
+  {
+    "reference": "E1",
+    "cell": 1,
+    "physical_t_s": 0.998,
+    "original_QP_status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+    "LP_status": 0,
+    "LP_raw_minimum": -6.572520305780927e-13,
+    "strict_witness_eta": 0.9650315709761329,
+    "strict_witness_minimum_raw": 0.6763288418978982,
+    "strict_witness_exact_recorded_coefficients": true,
+    "negative_rejected_candidate_rows": [],
+    "original_result_unchanged": "FAIL"
+  },
+  {
+    "reference": "E3",
+    "cell": 0,
+    "physical_t_s": 0.095,
+    "original_QP_status": "QPSolverOutput.PROXQP_SOLVED",
+    "LP_status": 0,
+    "LP_raw_minimum": -3.375077994860476e-14,
+    "strict_witness_eta": 0.9678549906279252,
+    "strict_witness_minimum_raw": 0.6736149866093438,
+    "strict_witness_exact_recorded_coefficients": true,
+    "negative_rejected_candidate_rows": [
+      "v_upper_3"
+    ],
+    "original_result_unchanged": "FAIL"
+  },
+  {
+    "reference": "E3",
+    "cell": 1,
+    "physical_t_s": 0.076,
+    "original_QP_status": "QPSolverOutput.PROXQP_SOLVED",
+    "LP_status": 0,
+    "LP_raw_minimum": -2.842170943040401e-14,
+    "strict_witness_eta": 0.9678925970164949,
+    "strict_witness_minimum_raw": 0.6733729390213874,
+    "strict_witness_exact_recorded_coefficients": true,
+    "negative_rejected_candidate_rows": [
+      "v_upper_3"
+    ],
+    "original_result_unchanged": "FAIL"
+  },
+  {
+    "reference": "E3",
+    "cell": 2,
+    "physical_t_s": 0.0925,
+    "original_QP_status": "QPSolverOutput.PROXQP_SOLVED",
+    "LP_status": 0,
+    "LP_raw_minimum": -1.2185807918285718e-12,
+    "strict_witness_eta": 0.9678647810158317,
+    "strict_witness_minimum_raw": 0.6736034486392888,
+    "strict_witness_exact_recorded_coefficients": true,
+    "negative_rejected_candidate_rows": [
+      "v_upper_3"
+    ],
+    "original_result_unchanged": "FAIL"
+  },
+  {
+    "reference": "E3",
+    "cell": 3,
+    "physical_t_s": 0.02,
+    "original_QP_status": "QPSolverOutput.PROXQP_MAX_ITER_REACHED",
+    "LP_status": 0,
+    "LP_raw_minimum": -1.3677947663381929e-13,
+    "strict_witness_eta": 0.7253550867512081,
+    "strict_witness_minimum_raw": 0.5366651643354232,
+    "strict_witness_exact_recorded_coefficients": true,
+    "negative_rejected_candidate_rows": [],
+    "original_result_unchanged": "FAIL"
+  }
+]
