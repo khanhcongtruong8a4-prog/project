@@ -9,7 +9,7 @@ import sys
 sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[1];REPO=ROOT.parent
 sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'scripts'))
-import argparse,hashlib,json,platform,re,subprocess
+import argparse,hashlib,importlib.metadata,json,platform,re,subprocess
 from datetime import datetime,timezone
 
 def load(p):return json.loads(Path(p).read_text())
@@ -18,6 +18,11 @@ def write(p,d):
 def sha(p):return hashlib.file_digest(Path(p).open('rb'),'sha256').hexdigest()
 
 def verify_package():
+    if list(sys.version_info[:3])!=[3,12,14]:raise ValueError('Use the recorded Python3.12.14 for exact reproduction')
+    for line in (ROOT/'requirements.lock.txt').read_text().splitlines():
+        if '==' in line:
+            name,version=line.split('==',1)
+            if importlib.metadata.version(name)!=version:raise ValueError('Pinned dependency differs: '+name)
     manifest=REPO/'PRE_A3_PACKAGE_MANIFEST.json'
     if manifest.exists():
         bad=[n for n,h in load(manifest)['files'].items() if sha(REPO/n)!=h['sha256']]
@@ -61,6 +66,7 @@ def main():
     out=ROOT/f'reports/pre_a3_blockers_v1/reproductions/{a.prefix}';out.mkdir(parents=True,exist_ok=False)
     started={'start_utc':datetime.now(timezone.utc).isoformat(),'command':[sys.executable,*sys.argv],'python':sys.version,
         'platform':platform.platform(),'source_root':str(ROOT),'scope':'LOCAL_REPRODUCTION_NOT_EXTERNAL_REVIEW',
+        'numerical_package_versions':{n:importlib.metadata.version(n) for n in ['numpy','scipy','casadi','proxsuite','pin','mujoco']},
         'official_A3':False,'external_signatures':None}
     write(out/'run_started.json',started)
     def run(name,command):
