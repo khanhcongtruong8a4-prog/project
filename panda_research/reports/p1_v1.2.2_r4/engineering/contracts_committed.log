@@ -1,0 +1,17 @@
+test_GO_has_explicit_numerical_scope_and_never_manufactures_signatures (__main__.R4Tests.test_GO_has_explicit_numerical_scope_and_never_manufactures_signatures) ... ok
+test_GO_requires_both_complete_cohorts_and_no_missing_engineering_fields (__main__.R4Tests.test_GO_requires_both_complete_cohorts_and_no_missing_engineering_fields) ... ok
+test_QP_failure_stops_without_retry_or_extra_state_advance (__main__.R4Tests.test_QP_failure_stops_without_retry_or_extra_state_advance) ... ok
+test_affine_torque_request_integral_is_exact_after_bootstrap (__main__.R4Tests.test_affine_torque_request_integral_is_exact_after_bootstrap) ... ok
+test_bootstrap_uses_only_current_request_and_fresh_cells_have_no_history (__main__.R4Tests.test_bootstrap_uses_only_current_request_and_fresh_cells_have_no_history) ... ok
+test_completed_prehold_without_endpoint_or_execution_cannot_be_GO (__main__.R4Tests.test_completed_prehold_without_endpoint_or_execution_cannot_be_GO) ... ok
+test_endpoint_QP_is_not_recomputed_or_consumed_twice (__main__.R4Tests.test_endpoint_QP_is_not_recomputed_or_consumed_twice) ... ok
+test_four_individual_passes_cannot_hide_refinement_failure (__main__.R4Tests.test_four_individual_passes_cannot_hide_refinement_failure) ... ok
+test_history_copies_inputs_and_diagnostics (__main__.R4Tests.test_history_copies_inputs_and_diagnostics) ... ok
+test_invalid_request_does_not_consume_history (__main__.R4Tests.test_invalid_request_does_not_consume_history) ... ok
+test_original_C4_thresholds_and_passing_startup_are_preserved (__main__.R4Tests.test_original_C4_thresholds_and_passing_startup_are_preserved) ... ok
+test_sampled_linear_feedback_converges_to_analytic_solution_at_second_order (__main__.R4Tests.test_sampled_linear_feedback_converges_to_analytic_solution_at_second_order) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.075s
+
+OK

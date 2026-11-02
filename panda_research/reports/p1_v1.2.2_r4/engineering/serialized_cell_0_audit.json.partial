@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "checks": {
+    "full_horizon_counts": true,
+    "actual_zero_state_and_first_QP_reuse": true,
+    "hold_windows_and_checks": true,
+    "hold_peaks": 

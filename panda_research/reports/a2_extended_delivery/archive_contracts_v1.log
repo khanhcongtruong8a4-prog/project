@@ -1,0 +1,23 @@
+test_corrupt_packed_part_rejected_before_restore (__main__.EvidenceArchiveTests.test_corrupt_packed_part_rejected_before_restore) ... indexed a.ctz
+packed one traces 1 unique_new_bytes 25663 compressed_bytes 584
+ok
+test_exact_container_metadata_comments_and_data (__main__.EvidenceArchiveTests.test_exact_container_metadata_comments_and_data) ... indexed run/a.ctz
+packed one traces 1 unique_new_bytes 25663 compressed_bytes 584
+restored exact run/a.ctz
+ok
+test_existing_different_evidence_never_overwritten (__main__.EvidenceArchiveTests.test_existing_different_evidence_never_overwritten) ... indexed a.ctz
+packed one traces 1 unique_new_bytes 25663 compressed_bytes 584
+ok
+test_global_dedup_across_segments_preserves_both_containers (__main__.EvidenceArchiveTests.test_global_dedup_across_segments_preserves_both_containers) ... indexed a.ctz
+packed one traces 1 unique_new_bytes 25663 compressed_bytes 584
+indexed b.ctz
+packed two traces 1 unique_new_bytes 0 compressed_bytes 108
+restored exact a.ctz
+restored exact b.ctz
+ok
+test_paths_cannot_escape_root (__main__.EvidenceArchiveTests.test_paths_cannot_escape_root) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.135s
+
+OK

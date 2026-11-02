@@ -1,0 +1,16 @@
+{
+  "status": "GO",
+  "scope": "USER_AUTHORIZED_LEVEL_2_A2_SIMULATION_ONLY",
+  "run_directory": "runs/p1_r4/fresh_2fe50b9",
+  "controller_freeze_commit": "52068ee",
+  "qualification_freeze_commit": "2fe50b9064461926cc07e8159abf2e0e2b6ba5f1",
+  "evidence_sha256": {
+    "summary.json": "fadafa71d6b2143f7f28b6ebd75603538c6ecb6c115387f437eeff52df562cdf",
+    "gate.json": "8ee6060c2305e348883a5e5f9832c126ab7f3f7d4d97f654fc9234ebb28d55ac",
+    "run_started.json": "d00b91e17a89d4d3e98de1d6dff706bcec8d607b268765f8b46c413a3d8a545b",
+    "run_completed.json": "5c1599c10b4719474783d8d76780838266efc7b9021105a86b89dbf61f586e04"
+  },
+  "independent_signatures": null,
+  "A3": "NO-GO",
+  "publication": "NO-GO"
+}

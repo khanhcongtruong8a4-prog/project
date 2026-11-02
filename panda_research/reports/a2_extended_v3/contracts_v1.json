@@ -1,0 +1,53 @@
+{
+  "scope": "PRE_MOTION_CAUSAL_INTERVAL_QP_CONTRACTS_NO_PANDA_MOTION",
+  "tests_run": 10,
+  "overall_pass": true,
+  "checks": [
+    {
+      "test": "__main__.IntervalQPTests.test_bootstrap_is_actual_tightened_43_or_fixture_rows",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.IntervalQPTests.test_changed_policy_or_row_identity_is_rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.IntervalQPTests.test_constant_rows_equal_fixed_tightening_objective",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.IntervalQPTests.test_final_current_hard_row_violation_stops_not_repaired",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.IntervalQPTests.test_immutable_reference_gain_grid_threshold_and_AB2_nominal",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.IntervalQPTests.test_moving_affine_face_exact_causal_interval_average",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.IntervalQPTests.test_read_only_audit_reconstructs_histories_rows_and_duals",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.IntervalQPTests.test_separate_actual_QP_and_current_raw_rows_retained",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.IntervalQPTests.test_separate_cells_have_fresh_history",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.IntervalQPTests.test_worker_history_matches_same_two_queries_direct",
+      "result": "PASS"
+    }
+  ],
+  "source_hashes": {
+    "src/panda_closed_loop/a2_qp_v3.py": "a6f9436da88156f5b3c97e4b9be796f7849e3600ef9c8c328d786c8db9a6e6b8",
+    "tests/test_a2_qp_v3.py": "37c4f22a4a4c879225451074c7a40f539bf732b0d30a99995b1d9e54f80f5455",
+    "scripts/a2_extended_v3.py": "80a3f57a2b2eaf2a300e8936eabf98a31a368b6c6d765b30d84dbb9aec988ae2",
+    "policy/a2_extended_v3/A2_EXTENDED_PREDECLARATION.json": "fdf300e88b14e4e02802c7e2406928a801c2bf77f3af877359a2a5e9cf54f650"
+  }
+}

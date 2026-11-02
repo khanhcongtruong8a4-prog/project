@@ -1,0 +1,31 @@
+{
+  "scope": "LOSSLESS_DELIVERY_ENCODING_ONLY_NO_SCIENTIFIC_CHANGE",
+  "tests_run": 5,
+  "overall_pass": true,
+  "checks": [
+    {
+      "test": "__main__.EvidenceArchiveTests.test_corrupt_packed_part_rejected_before_restore",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.EvidenceArchiveTests.test_exact_container_metadata_comments_and_data",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.EvidenceArchiveTests.test_existing_different_evidence_never_overwritten",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.EvidenceArchiveTests.test_global_dedup_across_segments_preserves_both_containers",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.EvidenceArchiveTests.test_paths_cannot_escape_root",
+      "result": "PASS"
+    }
+  ],
+  "source_hashes": {
+    "scripts/archive_evidence.py": "39b001e79c1c29d73941d3c9c251299825f9ab0ee5b1141c6016f1c2236c54c0",
+    "tests/test_evidence_archive.py": "8e8f450a0ec54ccd250baacdd30fd1a143122ac203f69efaf0297bb34ae10e4e"
+  }
+}

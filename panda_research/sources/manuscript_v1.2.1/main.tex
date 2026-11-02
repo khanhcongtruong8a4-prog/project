@@ -1,0 +1,35 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{mathtools,bm,graphicx,xcolor,tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+\title{Planner-Filter Consistent Time-Energy Optimal Motion for Redundant Manipulators}
+\author{
+Tien M. Lam$^{*}$,
+Khanh C. Truong$^{*}$,
+Thien D. Tran$^{*}$ 
+\thanks{Tien M. Lam, Khanh C. Truong, and Thien D. Tran are with the Vietnamese-German University, Vietnam. Emails \texttt{\{10225124,10225019,10226146\}@student.vgu.edu.vn}.}
+\thanks{$^{*}$These authors contributed equally.}
+}
+\maketitle
+\begin{abstract}
+A time-energy optimized robot trajectory may require torque corrections when disturbances, tracking errors, or safety filtering affect execution. This paper couples free-duration quintic B-spline planning with a momentum disturbance observer, Slotine-Li tracking, and a robust high-order control barrier function quadratic program (HOCBF-QP). Time-varying margins constructed from observer, tracking, and torque-residual envelopes tighten joint-position, joint-speed, torque, and manipulability constraints. Under validated uncertainty bounds, a verified tracking tube, and positive continuous-time reserves, the robust QP returns the nominal tracking torque unchanged while preserving all stated safety and actuator limits. For infeasible hard-QP instances, a braking-oriented soft-QP provides torque-bounded recovery and triggers replanning, without the consistency guarantee or barrier-invariance claim.
+\end{abstract}
+\begin{IEEEkeywords}
+Redundant manipulators, time-energy optimization, control barrier functions, disturbance observer, manipulability.
+\end{IEEEkeywords}
+\input{section/01_introduction}
+\input{section/02_mm&nc}
+\input{section/03_contribution}
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+\end{document}

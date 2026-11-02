@@ -1,0 +1,143 @@
+{
+  "start_utc": "2026-10-31T18:57:22.100339+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "executable": "/workspace/ic2ai_remediation/.venv/bin/python",
+  "commands": [
+    {
+      "command": [
+        "pdftotext",
+        "-layout",
+        "/workspace/ic2ai_remediation/sources/supplement.pdf",
+        "/workspace/ic2ai_remediation/sources/supplement_layout.txt"
+      ],
+      "cwd": "/workspace/ic2ai_remediation",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/workspace/ic2ai_remediation/.venv/bin/python",
+        "/workspace/ic2ai_remediation/src/run_reproduction.py"
+      ],
+      "cwd": "/workspace/ic2ai_remediation",
+      "started_utc": "2026-10-31T18:57:22.355793+00:00",
+      "finished_utc": "2026-10-31T18:57:23.257298+00:00",
+      "exit_code": 0,
+      "log": "logs/verified_run_reproduction.log"
+    },
+    {
+      "command": [
+        "/workspace/ic2ai_remediation/.venv/bin/python",
+        "/workspace/ic2ai_remediation/src/prepare_corrected_tests.py"
+      ],
+      "cwd": "/workspace/ic2ai_remediation",
+      "started_utc": "2026-10-31T18:57:23.257336+00:00",
+      "finished_utc": "2026-10-31T18:57:23.309262+00:00",
+      "exit_code": 0,
+      "log": "logs/verified_prepare_corrected_tests.log"
+    },
+    {
+      "command": [
+        "/workspace/ic2ai_remediation/.venv/bin/python",
+        "/workspace/ic2ai_remediation/src/run_phase3a_tests.py"
+      ],
+      "cwd": "/workspace/ic2ai_remediation",
+      "started_utc": "2026-10-31T18:57:23.309303+00:00",
+      "finished_utc": "2026-10-31T18:57:24.115248+00:00",
+      "exit_code": 0,
+      "log": "logs/verified_run_phase3a_tests.log"
+    },
+    {
+      "command": [
+        "/workspace/ic2ai_remediation/.venv/bin/python",
+        "/workspace/ic2ai_remediation/src/verify_primary_sources.py"
+      ],
+      "cwd": "/workspace/ic2ai_remediation",
+      "started_utc": "2026-10-31T18:57:24.115291+00:00",
+      "finished_utc": "2026-10-31T18:57:24.813111+00:00",
+      "exit_code": 0,
+      "log": "logs/verified_verify_primary_sources.log"
+    },
+    {
+      "command": [
+        "/workspace/ic2ai_remediation/.venv/bin/python",
+        "/workspace/ic2ai_remediation/src/compare_external_dynamics.py"
+      ],
+      "cwd": "/workspace/ic2ai_remediation",
+      "started_utc": "2026-10-31T18:57:24.813172+00:00",
+      "finished_utc": "2026-10-31T18:57:25.323751+00:00",
+      "exit_code": 0,
+      "log": "logs/verified_compare_external_dynamics.log"
+    },
+    {
+      "command": [
+        "/workspace/ic2ai_remediation/.venv/bin/python",
+        "/workspace/ic2ai_remediation/src/test_reference_sensitivity.py"
+      ],
+      "cwd": "/workspace/ic2ai_remediation",
+      "started_utc": "2026-10-31T18:57:25.323796+00:00",
+      "finished_utc": "2026-10-31T18:57:25.629722+00:00",
+      "exit_code": 0,
+      "log": "logs/verified_test_reference_sensitivity.log"
+    },
+    {
+      "command": [
+        "/workspace/ic2ai_remediation/.venv/bin/python",
+        "/workspace/ic2ai_remediation/src/prepare_scenario_b_suite.py"
+      ],
+      "cwd": "/workspace/ic2ai_remediation",
+      "started_utc": "2026-10-31T18:57:25.629805+00:00",
+      "finished_utc": "2026-10-31T18:57:26.740587+00:00",
+      "exit_code": 0,
+      "log": "logs/verified_prepare_scenario_b_suite.log"
+    },
+    {
+      "command": [
+        "/workspace/ic2ai_remediation/.venv/bin/python",
+        "-c",
+        "import sys, numpy as np\nsys.path.insert(0,'src')\nfrom compare_external_dynamics import sample_cases\nsys.path.insert(0,'runs/original')\nimport run_phase3a_tests as original\nfor a,b in zip(sample_cases(),(original.Q_CASES,original.QD_CASES,original.QDD_CASES)):\n    np.testing.assert_array_equal(a,np.asarray(b))\nprint('Exact original q/qd/qdd arrays match external 22 cases.')\n"
+      ],
+      "cwd": "/workspace/ic2ai_remediation",
+      "exit_code": 0,
+      "stdout": "Exact original q/qd/qdd arrays match external 22 cases.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/workspace/ic2ai_remediation/.venv/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/workspace/ic2ai_remediation",
+      "exit_code": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": "WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+    }
+  ],
+  "packages": {
+    "cmeel-assimp": "6.0.5",
+    "pin": "3.8.0",
+    "libpinocchio": "3.8.0",
+    "cmeel": "0.61.0",
+    "numpy": "2.3.5",
+    "casadi": "3.7.2",
+    "pip": "25.0.1",
+    "cmeel-tinyxml2": "10.0.0",
+    "scipy": "1.16.3",
+    "eigenpy": "3.12.0",
+    "libcoal": "3.0.2",
+    "cmeel-qhull": "8.0.2.1",
+    "cmeel-boost": "1.89.0",
+    "cmeel-console-bridge": "1.0.2.3",
+    "cmeel-zlib": "1.3.2",
+    "cmeel-urdfdom": "4.0.1",
+    "coal": "3.0.2",
+    "cmeel-octomap": "1.10.0"
+  },
+  "pdftotext_version": "pdftotext version 25.03.0\nCopyright 2005-2025 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC",
+  "status": "PASS_MODEL_EVIDENCE_WORKFLOW_ONLY",
+  "finish_utc": "2026-10-31T18:57:27.461729+00:00"
+}

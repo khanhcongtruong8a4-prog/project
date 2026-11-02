@@ -1,0 +1,7 @@
+{
+  "scope": "ARCHIVE RESTORE ONLY",
+  "original_gzip_byte_equality": true,
+  "source_sha256": "d564e458ee4a5e771a63e6b362939b014540de703aaa45219779eb90f2103389",
+  "restored_sha256": "d564e458ee4a5e771a63e6b362939b014540de703aaa45219779eb90f2103389",
+  "restored": "/tmp/a2_baseline_codec_restore_check/cell_0_a2_trace.json.gz"
+}

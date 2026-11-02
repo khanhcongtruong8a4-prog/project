@@ -1,0 +1,23 @@
+{
+  "version": "1.2.2-r3-numerical",
+  "status": "USER_AUTHORIZED_SIMULATION_AMENDMENT_NOT_INDEPENDENT_SIGNOFF",
+  "authorization": {
+    "user_request": "Continue from commit `9eb1cba` on branch `p1-v1.2.2`. Read `panda_research/reports/p1_v1.2.2_r2/REVIEW_REMEDIATION.md`. I authorize simulation development, versioned policy changes, and P1/A2 numerical testing. Implement and freeze the proposed sampled computed-torque P1-r3 controller before testing. Preserve previous failures and approved model parameters. Verify the actual endpoint QP and all four A2 cells; report results honestly without inventing independent signatures.",
+    "P1_A2_numerical_testing": true,
+    "scope": "Simulation development and versioned P1/A2 numerical execution. This records the user instruction, not an independent reviewer signature or a hardware authorization.",
+    "controls_reviewer_signature": null,
+    "theory_reviewer_signature": null,
+    "build_revision_confirmation": null
+  },
+  "base_policy": "policy/v1.2.1/APPROVED_POLICY_CONFIGURATION_v1.2.1.json",
+  "changes": [
+    "Replace preparation-only Slotine-Li command with frozen sampled computed torque",
+    "Execute proposed measured-state quintic reference with coupled continuous observer semantics, strict no-advance failure handling and all four C4 cells under numerical authority"
+  ],
+  "frozen_definition": "PREDECLARED_P1_R3_A2.json",
+  "all_other_base_policy_parameters_unchanged": true,
+  "human_signatures": null,
+  "build_revision_confirmation": null,
+  "A3": "NO-GO",
+  "publication": "NO-GO"
+}

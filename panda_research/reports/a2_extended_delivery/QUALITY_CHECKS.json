@@ -1,0 +1,66 @@
+{
+  "final_contract_suites": [
+    {
+      "workflow": "baseline_r4",
+      "tests": 14,
+      "passed": true,
+      "report": "reports/a2_extended_v1/baseline_reproduction/contracts_fresh.json"
+    },
+    {
+      "workflow": "extension_references",
+      "tests": 14,
+      "passed": true,
+      "report": "reports/a2_extended_v1/extended_contracts_v1.json"
+    },
+    {
+      "workflow": "lossless_CTZ",
+      "tests": 14,
+      "passed": true,
+      "report": "reports/a2_extended_v1/baseline_reproduction/codec_contracts_v2.json"
+    },
+    {
+      "workflow": "A3_QP_bound_APIs",
+      "tests": 15,
+      "passed": true,
+      "report": "reports/a2_extended_v1/qp_bounds_evidence/contracts_v3.json"
+    },
+    {
+      "workflow": "Stage1_scaffold",
+      "tests": 14,
+      "passed": true,
+      "report": "reports/a2_extended_v1/stage1/tests_dynamic.json"
+    },
+    {
+      "workflow": "v2_QP",
+      "tests": 14,
+      "passed": true,
+      "report": "reports/a2_extended_v2/contracts_v2.json"
+    },
+    {
+      "workflow": "v3_interval_QP",
+      "tests": 10,
+      "passed": true,
+      "report": "reports/a2_extended_v3/contracts_v1.json"
+    },
+    {
+      "workflow": "v4_gain_amendment",
+      "tests": 10,
+      "passed": true,
+      "report": "reports/a2_extended_v4/contracts_v1.json"
+    },
+    {
+      "workflow": "lossless_delivery",
+      "tests": 5,
+      "passed": true,
+      "report": "reports/a2_extended_delivery/archive_contracts_v1.json"
+    }
+  ],
+  "scientific_cell_tests": "12/12 v4 complete audits; all18 pairs /72 metrics PASS",
+  "whitespace_check": {
+    "passed": true,
+    "command": "git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --cached --check",
+    "note": "CSV standard CRLF preserved. Default Git check flagged CR line terminators; no scientific/report bytes were stripped to suppress it."
+  },
+  "preserved_development_failures": "v2 invalid exact-nonin-teger-scaling fixture; earlier QP interruption; v4 report-header formatting failure retained in original logs/snapshots",
+  "independent_human_signature": null
+}

@@ -1,0 +1,161 @@
+diff --git a/panda_research/README.md b/panda_research/README.md
+index fa11f5d..d9ee90f 100644
+--- a/panda_research/README.md
++++ b/panda_research/README.md
+@@ -1,11 +1,14 @@
+-# Panda research development — v1.2.1 Action 3
++# Panda research development — v1.2.2 P1 proposal
+ 
+ The combined v1.2.0 numerical model is preserved unchanged. The new
+ `panda_closed_loop` package implements Action 3 components under the supplied
+ v1.2.1 owner policy. Start with [ACTION3.md](ACTION3.md) and
+ [the latest Action 3 handoff](reports/ACTION3_REVIEW_HANDOFF.md).
+-Official A2 remains HOLD: M1 inputs and execution approvals are incomplete,
+-and the approved initial midpoint hard-QP component fixture is infeasible.
++The current additive work is the [P1 feasibility review](reports/p1_v1.2.2/REVIEWER_ISSUE_RESPONSE.md)
++and [draft v1.2.2 policy](policy/v1.2.2-draft/PROPOSED_POLICY_CONFIGURATION_v1.2.2.json).
++Official A2 remains NO-GO. P1 has only static sampled evidence; physical prehold,
++execution decisions, independent review and build confirmation are outstanding.
++Planner-only M1 inputs remain open for Stage-1 references and A3.
+ 
+ This is the combined development base for the selected **Gaz seven-body
+ Franka Emika Panda model**. It brings together the validated single-vector API
+@@ -126,7 +129,7 @@ C1-C6 proposals and specifies gains, reserves, disturbance and refinement.
+ It records owner acceptance of model evidence, not independent signatures.
+ Closed-loop components and focused fixtures are implemented, but official A2,
+ A3 comparisons, complete T27, G2.5, Level 1 and publication claims remain blocked.
+-See the current Action 3 handoff for the exact initial-QP and M1 blockers.
++See the [A2 entry checklist](reports/p1_v1.2.2/A2_ENTRY_CHECKLIST.md) for current blockers.
+ Sampled inertia eigenvalues do not establish global m1. The original model,
+ past proposals/evidence, manuscript and workbook have not been rewritten.
+ 
+diff --git a/panda_research/scripts/action3.py b/panda_research/scripts/action3.py
+index fd4acd2..fc66d73 100644
+--- a/panda_research/scripts/action3.py
++++ b/panda_research/scripts/action3.py
+@@ -73,7 +73,10 @@ rows require `abs(M^-1)@varpi0 <= alpha_v*vmax`. This necessary condition fails
+ for joints 1,3,4,5,6,7. For joint 1 it is approximately 93.325 versus 10.875
+ rad/s^2. ProxQP returns PRIMAL_INFEASIBLE. No torque is applied and no plant
+ state is advanced. This is configuration/point-specific evidence, not a global
+-impossibility theorem or a completed G2.5 screen. No gain/disturbance/bound was
++impossibility theorem or a completed G2.5 screen. The position pairs also fail
++for joints 1 and 3. The separate P1 static screen and draft policy are described
++in reports/p1_v1.2.2/REVIEWER_ISSUE_RESPONSE.md; they authorize no execution.
++No gain/disturbance/bound was
+ retuned or replaced to obtain a pass. The passing unit test verifies detection
+ and stop behavior; it does not label the infeasible configuration feasible.
+ 
+@@ -100,8 +103,9 @@ and stop behavior; it does not label the infeasible configuration feasible.
+   no fabricated safe torque. The torque-box projection alone is tested.
+ - M1 domains/constants, derivative/tube bounds, estimator policy and discrete
+   observer justification remain OPEN in M1_requirements.json. No null was
+-  replaced by zero. Planner envelopes/reserves and energy comparisons are not
+-  fabricated or used to clear A2.
++  replaced by zero. Planner-only constants are required for Stage-1 references
++  and A3, not unconditionally for a non-optimized A2 reference. The A2 reference
++  choice itself remains unapproved. No planner result is used to clear A2.
+ - The source archive and main.tex differ from policy hashes. The two canonical
+   equation files match. Manuscript build-revision acceptance remains open.
+ - The T29 CSV's old NOT_APPROVED status is preserved; v1.2.1 C6 explicitly
+@@ -130,9 +134,9 @@ or certification run was executed.
+ 
+ | Priority | Owner | Artifact | Objective acceptance criterion |
+ | --- | --- | --- | --- |
+-| 1 | Controls lead + project owner | Versioned disposition of the midpoint speed-row contradiction | Show all paired robust speed rows admit an acceleration under an explicitly reviewed configuration, retaining valid initial observer bounds; no hidden retuning |
+-| 2 | Theory/model-bounds lead | Completed hashed M1 domain/constant registry | Every used bound has domain, formula, units, provenance, estimator grid/seed/budget and honest evidence level; discrete observer assumptions explicitly resolved |
+-| 3 | Numerical/experimental lead + independent reviewer | Approved execution conventions and complete A2/T27 entry plan | Inspect component/T28/regression evidence, resolve source revision and observer/hold/solver settings, record required reviews, then explicitly authorize the A2 refinement run; do not infer authorization from this package |
++| 1 | Theory lead + controls lead + project owner | Reviewed startup disposition and versioned policy | Resolve both online pair families, full QP and physical prehold validity under the same frozen values; P1 remains a proposal |
++| 2 | Project owner + controls lead | Frozen A2 reference, observer, failure semantics and metrics | Scope planner M1 to a Stage-1 reference, preserve all four C4 cells, and approve all proposed execution fields |
++| 3 | Independent controls reviewer + numerical lead + build owner | Clean-environment reproduction, build confirmation and written A2 authorization | Inspect component/T28/regression code, reproduce validate, confirm main.tex/Project.rar revision and record genuine signatures before a separately authorized A2 |
+ '''
+     (out/'REVIEW_HANDOFF.md').write_text(text)
+     (ROOT/'reports/ACTION3_REVIEW_HANDOFF.md').write_text(text)
+diff --git a/panda_research/src/panda_closed_loop/config.py b/panda_research/src/panda_closed_loop/config.py
+index 34981a5..8b6f1a1 100644
+--- a/panda_research/src/panda_closed_loop/config.py
++++ b/panda_research/src/panda_closed_loop/config.py
+@@ -138,13 +138,23 @@ class Policy:
+                 'T29_csv_legacy_status_note': 'CSV still says RECOVERED_FROM_PROTOCOL_NOT_APPROVED; supplied v1.2.1 C6 explicitly approves the protocol rule. Original CSV preserved.',
+                 'human_signatures': self.raw['approvals']}
+ 
+-    def a2_blockers(self):
++    def a2_blockers(self, reference_kind=None):
+         raw = self.raw
+         blockers = ['OFFICIAL_A2_EXECUTION_NOT_AUTHORIZED',
+-                    'FROZEN_REFERENCE_TASK_AND_TUBE_CHECKS_NOT_AVAILABLE', 'MANUSCRIPT_ARCHIVE_AND_MAIN_TEX_REVISION_UNCONFIRMED']
+-        for key in ['constant_values', 'equation_map', 'speed_domain', 'acceleration_domain', 'tube_extension', 'estimator_grid', 'estimator_seed', 'estimator_budget']:
+-            if raw['margin_mode'][key] is None:
+-                blockers.append('M1_MISSING_'+key.upper())
++                    'FROZEN_A2_REFERENCE_AND_ENTRY_CHECKS_NOT_AVAILABLE', 'MANUSCRIPT_ARCHIVE_AND_MAIN_TEX_REVISION_UNCONFIRMED']
++        if reference_kind not in [None, 'stage1_tightened', 'nonoptimized_measured_state']:
++            raise ValueError('Unrecognized A2 reference kind')
++        if reference_kind is None:
++            blockers.append('A2_REFERENCE_KIND_NOT_APPROVED')
++        elif reference_kind == 'stage1_tightened':
++            blockers.append('FROZEN_STAGE1_PLAN_AND_TUBE_CHECKS_NOT_AVAILABLE')
++            for key in ['constant_values', 'equation_map', 'speed_domain', 'acceleration_domain', 'tube_extension', 'estimator_grid', 'estimator_seed', 'estimator_budget']:
++                if raw['margin_mode'][key] is None:
++                    blockers.append('M1_MISSING_'+key.upper())
++        else:
++            # Model + analytic observer bound suffice for the online filter.
++            # A proposed reference choice does not approve it or authorize A2.
++            blockers.append('A2_NONOPTIMIZED_REFERENCE_POLICY_APPROVAL_MISSING')
+         if raw['integration']['observer_update_semantics'] is None:
+             blockers.append('OBSERVER_DISCRETIZATION_POLICY_APPROVAL_MISSING')
+         if raw['approvals']['controls_reviewer_signature'] is None:
+diff --git a/panda_research/src/panda_closed_loop/readiness.py b/panda_research/src/panda_closed_loop/readiness.py
+index a7f0687..bc5293a 100644
+--- a/panda_research/src/panda_closed_loop/readiness.py
++++ b/panda_research/src/panda_closed_loop/readiness.py
+@@ -39,12 +39,16 @@ def equation_crosswalk():
+     return records
+ 
+ 
+-def m1_registry(policy):
++def m1_registry(policy, reference_kind=None):
++    if reference_kind not in [None, 'stage1_tightened', 'nonoptimized_measured_state']:
++        raise ValueError('Unrecognized A2 reference kind')
+     data = []
+     def add(name, shape, units, formula, dependencies, label, required=True):
+         data.append({'name': name, 'shape': shape, 'units': units, 'formula': formula,
+             'dependencies': dependencies, 'source': source_location(label, '03_contribution.tex'),
+-            'value': None, 'status': 'OPEN_MISSING_INPUT', 'required_for_A2_entry': required,
++            'value': None, 'status': 'OPEN_MISSING_INPUT',
++            'required_for_A2_entry': None if reference_kind is None else reference_kind == 'stage1_tightened',
++            'required_for_A3_stage1': required,
+             'evidence_level': 'Level 2 numerical estimate selected; no global interval certificate',
+             'estimation_method_grid_seed_budget': None})
+     add('m1', 'positive scalar', 'kg m^2', 'lower eigenvalue bound of M over declared Q; NOT sampled min', ['Q','estimator policy'], 'eq_envelopes')
+@@ -68,7 +72,8 @@ def m1_registry(policy):
+     add('beta_u_and_beta_h', [7,15], 'N m; h_j/s^2', 'eq_beta_bounds with Lambda*chi_v acceleration segment', ['L_u_q','L_u_qd','L_u_qdd','L_h_q','L_h_qd','L_h_qdd','Cbar_li','chi_s_e_v'],'eq_beta_bounds')
+     add('b_u_plus_minus_h_vB', '7+7+15+7', 'N m; h_j/s^2; rad/s^2', 'eq_margins; velocity term is abs(alpha_v-Lambda)*chi_v', ['beta_u_and_beta_h','rho_r_i','Abar_jl','Nbar_il','Bbar_il','Dbar_jl','varpi','zeta_plus_minus'],'eq_margins')
+     add('residual_Lipschitz_La', 'one per tightened residual', 'residual unit/s', 'g_a(tk) >= L_a*Delta_c/2 requires justified interval/sample handling', ['Tube_T_and_K','derivative bounds','candidate residuals','grid policy'],'eq_planner')
+-    return {'schema':'Action3-M1-requirements-v1.2.1','mode':'M1_COMMON_FROZEN_DOMAIN_CONSTANTS',
++    return {'schema':'M1-conditional-A2-scope-v1.2.2-draft','mode':'M1_COMMON_FROZEN_DOMAIN_CONSTANTS',
++            'A2_reference_kind':reference_kind,'scope_note':'Unapproved/unselected A2 reference is a decision gate; planner-only constants are not unconditional online-filter prerequisites.',
+             'domain_inputs':policy.raw['margin_mode'], 'known_inputs':{'Ko_s_inverse':policy.ko,'Lambda_s_inverse':policy.lambdas,
+             'kappa_s_inverse':policy.kappa,'dbar':'0.02*taumax','dbar1':'1.4*dbar','q_extension_rad':.01},
+             'entries':data,'observer_discretization_error_allowance':{'value':None,'status':'OPEN_ENGINEERING_GATE',
+diff --git a/panda_research/tests/test_action3.py b/panda_research/tests/test_action3.py
+index 99f5d8f..dbf94eb 100644
+--- a/panda_research/tests/test_action3.py
++++ b/panda_research/tests/test_action3.py
+@@ -202,7 +202,7 @@ class Action3Tests(unittest.TestCase):
+         stationary=ctrl.command(q-.001*np.ones(7),v,ref.sample(3.),dhat)[0]
+         self.assertNotEqual(float(np.linalg.norm(moving-stationary)),0.)
+ 
+-    def test_all_43_affine_rows_against_independent_direct_equations(self):
++    def test_43_affine_row_assembly_signs_and_torque_perturbations(self):
+         q=self.q0+.01;v=np.linspace(-.1,.1,7);dhat=np.linspace(-.05,.05,7)
+         varpi=np.linspace(.01,.04,7);tau=self.model.evaluate(q,v)['g']+.1
+         b=self.barrier;rows=b.rows(q,v,dhat,varpi)
+@@ -222,7 +222,8 @@ class Action3Tests(unittest.TestCase):
+         reserves=b.planner_reserves(self.policy)
+         self.assertClose(reserves['joint_HOCBF_rad_s2'],1e-4*(QMAX-QMIN))
+         self.assertAlmostEqual(reserves['velocity_CBF_rad_s2'],.0002175)
+-        DIAGNOSTICS['affine_rows']={'count':43,'max_torque_finite_difference_error':float(np.max(abs(fd-rows.G))),
++        DIAGNOSTICS['affine_rows']={'count':43,'evidence_class':'INTERNAL_ASSEMBLY_AND_SIGN_CHECK; shared target M, gradients and Hessians, not independent dynamics validation',
++            'max_torque_finite_difference_error':float(np.max(abs(fd-rows.G))),
+             'row_names':rows.names,'row_units':rows.units,'planner_reserves':reserves}
+ 
+     def test_entry_conditions_include_psi1_velocity_manipulability_and_torque(self):

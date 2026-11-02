@@ -1,0 +1,10 @@
+cell 0: FAIL_PREDECLARED_HOLD; terminal t=-0.154750000
+cell 1: FAIL_PREDECLARED_HOLD; terminal t=-0.154750000
+cell 2: FAIL_PREDECLARED_HOLD; terminal t=-0.154750000
+cell 3: FAIL_PREDECLARED_HOLD; terminal t=-0.154750000
+{
+  "run_directory": "runs/p1_prehold/20261101T175924528797Z",
+  "summary_sha256": "c13d2ca8982c7c2f285cd14f177a7734f8ffbe3263ee62bdb3139906f8a367ac",
+  "P1_numerical_hold": "FAIL",
+  "A2": "NO-GO"
+}

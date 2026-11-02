@@ -1,0 +1,20 @@
+test_M1_flags_are_conditional_not_universal_A2_blockers (__main__.Screens.test_M1_flags_are_conditional_not_universal_A2_blockers) ... ok
+test_actual_position_and_velocity_row_sums_cancel_torque_bias_and_velocity (__main__.Screens.test_actual_position_and_velocity_row_sums_cancel_torque_bias_and_velocity) ... ok
+test_complete_draft_and_missing_or_nonfinite_fields (__main__.Screens.test_complete_draft_and_missing_or_nonfinite_fields) ... ok
+test_diagonal_fixture_exact_pair_thresholds_and_units (__main__.Screens.test_diagonal_fixture_exact_pair_thresholds_and_units) ... ok
+test_floor_failure_never_returns_a_fake_duration_or_fallback (__main__.Screens.test_floor_failure_never_returns_a_fake_duration_or_fallback) ... ok
+test_invalid_nonfinite_bounds_are_rejected (__main__.Screens.test_invalid_nonfinite_bounds_are_rejected) ... ok
+test_lower_witness_is_not_routed_through_upper_bound_screen (__main__.Screens.test_lower_witness_is_not_routed_through_upper_bound_screen) ... ok
+test_nonoptimized_quintic_matches_measured_start_and_endpoint (__main__.Screens.test_nonoptimized_quintic_matches_measured_start_and_endpoint) ... ok
+test_plan_checker_does_not_equate_completeness_to_approval (__main__.Screens.test_plan_checker_does_not_equate_completeness_to_approval) ... ok
+test_planner_factor_two_and_missing_bounds_remain_blocked (__main__.Screens.test_planner_factor_two_and_missing_bounds_remain_blocked) ... ok
+test_screen_calls_neither_plant_acceleration_nor_disturbance_truth (__main__.Screens.test_screen_calls_neither_plant_acceleration_nor_disturbance_truth) ... ok
+test_shared_gain_duration_is_analytic_and_rounded_once (__main__.Screens.test_shared_gain_duration_is_analytic_and_rounded_once) ... ok
+test_signed_clock_envelope_does_not_restart_at_zero (__main__.Screens.test_signed_clock_envelope_does_not_restart_at_zero) ... ok
+test_state_grid_is_fixed_and_no_favorable_state_selection (__main__.Screens.test_state_grid_is_fixed_and_no_favorable_state_selection) ... ok
+test_tolerance_accepted_solver_cannot_mask_a_negative_raw_fixture_slack (__main__.Screens.test_tolerance_accepted_solver_cannot_mask_a_negative_raw_fixture_slack) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 62.042s
+
+OK

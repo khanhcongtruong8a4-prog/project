@@ -1,0 +1,15 @@
+test_bootstrap_is_actual_tightened_43_or_fixture_rows (__main__.IntervalQPTests.test_bootstrap_is_actual_tightened_43_or_fixture_rows) ... ok
+test_changed_policy_or_row_identity_is_rejected (__main__.IntervalQPTests.test_changed_policy_or_row_identity_is_rejected) ... ok
+test_constant_rows_equal_fixed_tightening_objective (__main__.IntervalQPTests.test_constant_rows_equal_fixed_tightening_objective) ... ok
+test_final_current_hard_row_violation_stops_not_repaired (__main__.IntervalQPTests.test_final_current_hard_row_violation_stops_not_repaired) ... ok
+test_immutable_reference_gain_grid_threshold_and_AB2_nominal (__main__.IntervalQPTests.test_immutable_reference_gain_grid_threshold_and_AB2_nominal) ... ok
+test_moving_affine_face_exact_causal_interval_average (__main__.IntervalQPTests.test_moving_affine_face_exact_causal_interval_average) ... ok
+test_read_only_audit_reconstructs_histories_rows_and_duals (__main__.IntervalQPTests.test_read_only_audit_reconstructs_histories_rows_and_duals) ... ok
+test_separate_actual_QP_and_current_raw_rows_retained (__main__.IntervalQPTests.test_separate_actual_QP_and_current_raw_rows_retained) ... ok
+test_separate_cells_have_fresh_history (__main__.IntervalQPTests.test_separate_cells_have_fresh_history) ... ok
+test_worker_history_matches_same_two_queries_direct (__main__.IntervalQPTests.test_worker_history_matches_same_two_queries_direct) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.223s
+
+OK

@@ -1,0 +1,8 @@
+cell,grid_equal,metrics_exact,measured_zero_state_exact,final_state_exact,new_hold_completed,new_actual_endpoint_QP_pass,new_A2_cell_completed,new_A2_cell_pass,new_trace_audit_pass
+0,True,True,True,True,True,True,True,True,True
+1,True,True,True,True,True,True,True,True,True
+2,True,True,True,True,True,True,True,True,True
+3,True,True,True,True,True,True,True,True,True
+4,True,True,True,True,True,True,True,True,True
+5,True,True,True,True,True,True,True,True,True
+6,True,True,True,True,True,True,True,True,True

@@ -1,0 +1,23 @@
+{
+  "cell": 1,
+  "source_cell": "runs/a2_extended_v2/E3_0391c5b/cell_1.json",
+  "source_cell_sha256": "443bbd247e80e063b868901cb6b505899bbead9859fd00a2a5fb70369fee3dc8",
+  "source_trace": {
+    "file": "cell_1_execution.ctz",
+    "sha256": "7f3482e60ac76619021a938f80cf88ee38aed4ef63c8c6d3fd4aa103278c9aaa",
+    "canonical_json_sha256": "99f7456b65a24cd45b92426daca30009c8230aa9e70e0ce68f550ef27f14b073",
+    "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+  },
+  "queries": 1000,
+  "expected_queries": 1000,
+  "passed": true,
+  "trace": {
+    "file": "cell_1_read_only_queries.ctz",
+    "sha256": "3d13fca5469630b6788764b7f54134198b1eaee8ab85b900f5de7e24c2106ab8",
+    "canonical_json_sha256": "a8181cbec8e825c61a0d8cfcbace0164290b307bef980a54f5dfeea2a46868c0",
+    "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+  },
+  "all_current_raw_rows_checked": true,
+  "new_motion_executed": false,
+  "torque_actuated": false
+}

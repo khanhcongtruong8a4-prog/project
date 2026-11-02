@@ -1,0 +1,255 @@
+Action 3 r2 Review: A2 Gate Decision
+Nov 1, 2026 · @Tiến
+How I reviewed it: I unpacked the 522-file package and read it. I compared files with cmp, searched text, and read the code and the manuscript sources. I ran no test or interpreter, recomputed no hash, and changed nothing.
+Evidence labels:
+STATICALLY VERIFIED: confirmed by reading code or text, or by byte comparison.
+LOG-REPORTED: reported by the package's run records, not reproduced.
+OWNER-APPROVED: recorded in the v1.2.1 approval record.
+NOT PROVIDED: the input does not exist in the package.
+Any number worked out by hand from logged values is marked hand arithmetic. It is not a new result and needs to be reproduced.
+A. Executive verdict
+r2 genuinely implements the Action 3 components, and they match the canonical manuscript equations (STATICALLY VERIFIED):
+The observer, Slotine-Li controller, 43 robust rows, hard QP and held-torque RK4 loop match 02_mm&nc.tex and 03_contribution.tex exactly.
+Those two files are byte-identical to the ones supplied earlier.
+The run's source snapshot is byte-identical to the current code.
+panda_dynamics.py is unchanged from v1.2.0.
+The T28 reference is genuinely independent: a Christoffel C built from finite-differenced Pinocchio mass matrices.
+The 19 passing tests, the T28 PASS and the regression PASS are LOG-REPORTED.
+The midpoint infeasibility is real, and it is a configuration-level contradiction, not a solver failure or a coding error.
+Adding the upper and lower robust speed rows cancels both torque and velocity. That leaves the requirement Σ_l |M⁻¹|_il ϖ_l ≤ α_v·q̇_max,i at every state.
+The robust term is exactly tight for the declared box bound on the disturbance-estimate error, and ϖ₀ = d̄ is the correct non-privileged initial bound.
+Two things the package does not report make it worse:
+the paired position rows impose a similar condition, which also fails, so raising α_v alone would not restore feasibility;
+the manuscript's own planner constraints need roughly twice the margin, so Scenario A planning at t₀ is infeasible too.
+Official A2: NO-GO. The approved v1.2.1 policy is internally incompatible at its own initial condition. A versioned policy or theory decision is required. Owner approval cannot override that.
+B. Evidence and discrepancy matrix
+ID
+Package claim
+Evidence
+Finding
+Status
+Next proof
+E1
+The run contains the actual Action 3 code
+runs/action3/20261101T153729647277Z/source_snapshot compared with src/ and tests/
+Byte-identical. Runtime unchanged from v1.2.0. Earlier runs kept as history (the _initial run and run 152525).
+VERIFIED STATICALLY
+—
+E2
+19 component tests pass
+component_tests.json: 19 names, all PASS
+Count matches. test_all_43_affine_rows_against_independent_direct_equations rebuilds rows from the same M, gradients and Hessians, so it checks assembly and signs, not independence.
+REPORTED ONLY
+Independent rerun; rename the test
+E3
+Implementation matches the equations
+observer.py:53-58, controller.py:24, barriers.py:61-70, qp.py:153-200 against eq_observer, eq_controller, eq_robust_cbf, eq_hard_qp
+Exact match, including e = q_p − q, +κMs, −d̂, the applied torque in ż, and the QP objective ½‖τ−u_nom‖² scaled by 87².
+VERIFIED STATICALLY
+Controls-reviewer sign-off
+E4
+T28 PASS
+tests/test_t28_raw_c.py, t28_raw_c.json
+Christoffel contraction index order correct. Reference uses no target derivatives. 66 comparisons. Only 22 states, all with q̇ drawn from 𝒩(0, 0.35).
+Method VERIFIED STATICALLY, result REPORTED ONLY
+Closes earlier finding F4 at Level 2
+E5
+Midpoint hard QP infeasible
+component_tests.json → PANDA_APPROVED_INITIAL_COMPONENT; barriers.py:67-70
+Proven algebraically (§D). The |M⁻¹|ϖ₀ values are LOG-REPORTED but depend only on M(q₀), which is validated externally.
+VERIFIED STATICALLY (logic)
+Codex reproduces it as a formal screen
+E6
+Only the speed rows are contradictory
+Same JSON; barriers.py:64-66
+Unreported. The q_upper and q_lower pair needs Σ|N|ϖ ≤ α₁α₂(q_max − q_min)/2. Hand arithmetic: reported values give 93.3 > 72.4 (joint 1) and 95.3 > 72.4 (joint 3).
+PARTIAL
+Add the position-pair screen
+E7
+The planner is not involved
+03_contribution.tex eq_margins (line 89), eq_planner
+Unreported. The planner pair needs 2α_v·q̇_max ≥ 2(b_vB + δ_vB) with b_vB ≥ 2Σ N̄ϖ, so α_v·q̇_max ≥ 2Σ N̄ϖ. Since N̄ ≥ |N(q₀)|, the reported values imply every joint fails at t₀ (hand arithmetic).
+PARTIAL
+Planner-level screen (needs N̄ from M1)
+E8
+All 21 M1 entries are required to enter A2
+M1_requirements.json: every required_for_A2_entry is true, while its own online_filter_note says otherwise
+Too broad. The online filter needs only the model and ϖ(t). Planner tube constants matter only if A2 uses a Stage-1 tightened plan.
+PARTIAL
+Owner fixes the A2 reference definition, then flag only what it uses
+E9
+Observer update convention is a component convention only
+stepper.py:47, 77-94; policy observer_update_semantics: null
+z is integrated continuously alongside q and q̇ inside the RK4 stages, matching the continuous-time eq_obs_envelope. Not approved.
+VERIFIED STATICALLY / approval NOT PROVIDED
+Owner approves it for A2, with the discrete version as sensitivity
+E10
+Hashes of main.tex and Project.rar differ
+source_audit.json lines 86–95
+Confirmed. The main.tex here also differs from the copy supplied earlier. Equation files match.
+REPORTED (hashes)
+Owner confirms the build revision
+E11
+C4 refinement grid
+C1_C6_FINAL_DECISIONS.csv C4; workbook T25 rule h = Δ/4
+The approved cell (Δ = 0.5 ms, h = 0.25 ms) has m = 2, below T25's h = Δ/4. C4 is the later approval and supersedes T25. Minor.
+OWNER-APPROVED
+Note it in the A2 plan
+E12
+Owner approvals
+APPROVAL_RECORD.md, stage_gates.json
+Owner approval only. Every independent signature is null.
+OWNER-APPROVED, not independently signed
+Controls reviewer and theory reviewer
+C. Component verification matrix
+Component
+Code-level status
+Numerical status
+Remaining
+Dynamics
+Unchanged from v1.2.0 (cmp)
+Regression LOG-REPORTED, run 20261101T153805083504Z
+—
+Observer
+Matches the manuscript, uses the applied torque, no truth input
+LOG-REPORTED, compared against an independent d̂ ODE
+Approval of the update convention; discrete-observer error allowance undefined
+Controller
+Matches eq_controller exactly
+LOG-REPORTED
+—
+43 QP rows
+Signs, units and scaling correct; 15 + 14 + 14 rows
+Finite-difference check LOG-REPORTED
+Position-pair and planner-pair screens missing
+Solver and diagnostics
+Rejects on primal or stationarity above 1e-9 or torque-box violation; no clipping
+Fixtures LOG-REPORTED
+Full T27 not run
+RK4 with hold
+Torque held; controller evaluated once per Δ; global-clock disturbance to the plant only; truth logged afterwards
+Timing fixture only (identity plant)
+2×2 refinement on the real plant
+Protective stop
+Raises before any torque or state change
+LOG-REPORTED
+Manuscript recovery path needs K_b and γ (NOT PROVIDED)
+T28
+Independent reference
+PASS, LOG-REPORTED
+Level 2 only
+Error envelopes and M1
+ϖ(t) analytic and correct
+—
+All tube and domain constants null
+Reproducibility
+Commands, hashes and snapshots retained
+NOT REPRODUCED
+Clean-environment rerun by a reviewer
+D. Midpoint QP infeasibility
+1. Validity. For row i:
+v_upper: −N_i(τ + b) + α_v(q̇_max − q̇_i) − Σ|N_il|ϖ_l ≥ 0
+v_lower: +N_i(τ + b) + α_v(q̇_max + q̇_i) − Σ|N_il|ϖ_l ≥ 0
+The sum, 2α_v·q̇_max − 2Σ|N_il|ϖ_l ≥ 0, contains neither τ, nor q̇, nor the controller or reference. So:
+no torque of any size satisfies both rows, and torque limits are irrelevant;
+ProxQP's PRIMAL_INFEASIBLE is the correct answer, not a convergence failure;
+the condition is not specific to q̇ = 0. It must hold at every state along a run, with ϖ(t).
+2. Root cause. The worst-case term Σ|N_il|ϖ_l is exactly tight for the box bound |d̃_l| ≤ ϖ_l. ϖ₀ = d̄ is the only bound available without truth, because d̂(t₀) = 0. What fails is the combination of:
+the approved α_v = 5 and α₁α₂ = 25;
+the full initial uncertainty, 2 % of τ_max;
+the large entries of M⁻¹ at the midpoint (wrist inertia and coupling into joints 1 and 3).
+The approved gains were selected (T14) without the G2.5 screen that would have exposed this.
+3. Scope. What has been demonstrated is the approved q₀, ϖ₀ and gains, at t₀. ϖ(t) decays toward d̄₁/K_o. From the workbook's T10 values that steady level is about 7 % of ϖ₀, with roughly 0.15 s to 95 % settling. So the contradiction may disappear later in a run. That is unproven. This is not a global impossibility result.
+4. Resolution paths. Each needs a versioned decision before any rerun. No option or value is chosen here.
+Option
+Evidence required
+Risk
+P1: settle the observer before motion. The observer runs over a predeclared stationary interval before t₀, so ϖ(t₀) < d̄ by eq_obs_envelope.
+The interval must keep the observer valid: the arm is held by the applied torque, not by a clamp, because a clamp's reaction torque would be absorbed into d̂. Same global disturbance clock. The pre-t₀ phase is declared outside the safety claim. A screen shows both pairs hold from t₀ onward.
+Changes how the experiment starts. Theory-owner review needed.
+P2: amend the gains. α_v and α₁α₂ raised so both filter pairs and both planner pairs hold with ϖ₀.
+A G2.5-style screen. The term |α_v−λ_i|χ_v becomes nonzero. The same values apply to all methods and are fixed before any run.
+Larger margins; planner feasibility uncertain.
+P3: reduce the disturbance amplitude.
+Scientific justification and a policy amendment
+Weakens the study
+P4: change the theory, for example a different class-K function or a defined initial relaxation
+A manuscript change, a new hash and theory review
+Slowest
+A different q₀
+Only by a rule fixed in advance
+Post-hoc selection risk; does not address the wrist inertia
+5. Fail-closed behaviour. Raising a protective stop with no torque and no state advance is appropriate fail-closed behaviour for development. It is not the manuscript's recovery semantics and implies nothing about physical safety. Official A2 must state which applies: a hard-QP infeasibility recorded as an A2 FAIL, or recovery enabled with approved K_b and γ.
+E. Stage-gate matrix
+Gate
+Verdict
+Basis
+A1: component development
+GO
+The code is sound and traceable to the manuscript.
+Development-only shakedown
+CONDITIONAL GO
+Needs separate owner authorization and a non-evidence label. Its values must never be promoted into policy without a predeclared screen. With the current configuration it cannot advance past t₀ anyway.
+Official A2
+NO-GO
+The approved configuration is infeasible at t₀. Also unapproved: observer semantics, the A2 reference definition, infeasibility handling, controls review and the build revision.
+T27 (solver accuracy)
+CONDITIONAL GO on predeclared synthetic and active-set fixtures
+Final acceptance needs QP rows from a feasible frozen configuration.
+G2.5
+GO for the filter-level pair screen at the current policy
+Expected to document the failure. The planner-level screen needs N̄ from M1.
+A3
+NO-GO
+Needs A2, T27, a positive G2.5, M1 and frozen tasks.
+Level 1
+NO-GO
+No verified m₁ or bounds.
+Publication
+NO-GO
+No authorized runs.
+F. Three next actions, in dependency order
+F1. Initial-feasibility disposition and policy v1.2.2.
+Owners: theory lead and controls lead decide. The project owner approves.
+Codex (separately authorized turn): a read-only feasibility-screen tool that evaluates:
+the filter speed pairs and position pairs with |N(q)| and ϖ(t);
+the planner pairs with the factor 2 and N̄, once N̄ exists;
+over a predeclared initial state and time window;
+with no tuning loop.
+Artifacts: a decision record choosing P1, P2, P3 or P4, with rationale written before any screen result; policy v1.2.2 with its hash; the screen report.
+Pass criterion: every pair satisfied for the predeclared window, without truth, using values identical for all methods.
+Status: A2 stays on HOLD.
+F2. Freeze the A2 execution definition.
+Owners: project owner and controls lead.
+Must fix:
+the A2 reference: a predeclared non-optimized reference, or a Stage-1 plan;
+approval of the coupled-continuous observer convention, with the discrete version as sensitivity;
+infeasibility handling: recorded FAIL, or recovery with K_b and γ;
+run duration and pass/fail metrics;
+the C4 grid.
+Codex: reduce required_for_A2_entry to the M1 items the chosen reference actually uses; rename the test noted in E2; add an A2-plan checker.
+Pass criterion: every A2 policy field non-null and hashed.
+Depends on: F1, for the start-up definition.
+F3. Independent review and authorization.
+Owners: independent controls reviewer and numerical lead.
+Work:
+check the component code and T28 against the manuscript;
+rerun scripts/action3.py validate in a clean environment and match the logged results;
+confirm the build revision for main.tex and Project.rar.
+Pass criterion: a signed controls_reviewer_signature in reviews/, then a written A2 authorization.
+Depends on: F1 and F2. A2 becomes GO only after this.
+G. Direct answers
+1. Is it a GO for official A2 today? NO. Under the approved policy, the hard safety QP has no feasible torque at the approved initial state, so A2 cannot legitimately start.
+2. What is the single most important blocker? The policy is internally inconsistent: with ϖ₀ = d̄, the gains α_v = 5 and α₁α₂ = 25 violate the paired-row necessary conditions in both the online filter and the planner at t₀.
+3. What is the shortest justified path to A2 GO? F1 → F2 → F3:
+a predeclared fix (P1 or P2 most likely) recorded as policy v1.2.2 and confirmed by a pair screen;
+a frozen A2 definition;
+an independent controls review and rerun;
+then the 2×2 A2 run.
+4. What should Codex do next, and what must human reviewers decide?
+Codex: build the read-only filter and planner pair-screen tool, scope the M1 flags correctly, and add the A2-plan checker. No gain or disturbance changes.
+Humans:
+choose among P1–P4;
+approve the observer convention, the A2 reference and the infeasibility semantics;
+confirm the manuscript build;
+sign the controls review.

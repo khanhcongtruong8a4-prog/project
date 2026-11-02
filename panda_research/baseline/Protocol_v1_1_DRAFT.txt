@@ -1,0 +1,116 @@
+IC2AI 2027 — SECTION IV SIMULATION PROTOCOL v1.1 (DRAFT AMENDMENT)
+Date: 2026-11-01 | Supersedes only the exact clauses listed below.
+Source baseline: Action_2026-10-31.docx, Protocol v1.0, dated 2026-10-31.
+STATUS: IMPLEMENTATION DECISIONS PROPOSED; TEAM SIGNATURES AND COMPARATIVE
+EXPERIMENT MANIFEST FREEZE STILL PENDING. DO NOT REPRESENT AS APPROVED.
+
+PURPOSE
+-------
+Resolve the reviewer-requested disturbance/margin policy and task-ID defects
+without silently changing the base protocol's Gaz model, trial task rules,
+acceptance thresholds, or its certification standards.
+
+A. SELECTED STUDY DISTURBANCE (T12/T13, PROVISIONAL FREEZE FOR MODEL DEVELOPMENT)
+---------------------------------------------------------------------------------
+Adopt the dual-harmonic smooth time-only torque in v1.0 Section 4, NOT the
+single cosine, 1%-limit proposal in the older action-pack workbook:
+
+ d_i(t) = a_i [0.6 sin(omega*(t-t_ref)+phi_i)
+                +0.4 cos(2*omega*(t-t_ref)+phi_i)],
+ a_i = 0.02*tau_max,i [N m],
+ omega = 1 rad/s, t_ref = 0 s, phi_i = 2*pi*(i-1)/7, i=1,...,7.
+
+ dbar_i = a_i,  dbar1_i = 1.4*a_i*omega,
+ including the 0.02 scaling in every bound.
+
+This is a designed excitation, not a manufacturer disturbance measurement.
+Use the same global time clock and phase across all methods and replans;
+never restart the disturbance at replanning. The controller sees only the
+analytic bounds, not the true waveform. Do not add undocumented noise or
+state-dependent mismatch to the primary model-equality study.
+
+Observer: p=M(q) qdot, dhat=z+K_o p, z(t0)=-K_o M(q0) qdot0 for dhat(t0)=0.
+Choose varpi_i0=dbar_i (safe without knowing the waveform at t0). Gain
+selection K_o remains T10. For replanning, retain z and the propagated bound.
+These are development defaults; team approval needed to freeze for A3.
+
+B. MARGIN MODE DECISION (PROPOSED TWO-EVIDENCE-LAYER POLICY)
+----------------------------------------------------------
+B1 -- Initial feasibility screen G2.5 only: evaluate optimistic local / point
+    values and proposed gains to see whether dynamic tightenings are physically
+    plausible. Mark estimates NON-CERTIFIED. A positive G2.5 is necessary to
+    justify investing in verified interval bounds; it does not certify anything.
+B2 -- Level 2 numerical comparisons: use numerically computed time-varying
+    envelope/tube constants with documented sampling/interpolation, same
+    method and time grid for all candidates, and label results SAMPLED.
+    The baseline uses the candidate-wise maxima of EVERY matching envelope
+    including chi_v, not independent arbitrary static reserves.
+B3 -- Level 1 proof attempts: require outward-rounded verified enclosures,
+    an independently checked positive global m1, verified tube/derivative/grid
+    bounds, all-time residuals, and theorem initial/regularity conditions.
+    Hybrid m1 certification via interval M-entry enclosures plus verified
+    spectral perturbation is first route. Only the certified margin evaluator
+    can support a Level-1 claim. The conservative 1/m1 inverse-entry bound is
+    allowed but may make the planner infeasible; no automatic relaxation.
+B4 -- The nominal plant and planner/controller evaluator MUST share exactly
+    the same mapped dynamics and friction. Reusing constants from a different
+    payload, rotor model, or frame map invalidates the proof assumptions.
+
+NO algorithm may switch among these modes silently during comparison.
+An evidence-level downgrade must be labeled and logged. The dynamic-vs-constant
+baseline comparison must use consistent same-mode evidence and identical
+model, task, solver policy, multistarts, disturbance and gains.
+
+C. TASK-ID ERRATA IN v1.0
+------------------------
+1. Section 5 ('Positive gains ... numerical tuning remains T14') is wrong for
+   observer K_o. Replace 'T14' with 'T10'. In the research master tracker:
+   T10 covers DOB gain selection K_o, T11 covers Lambda/kappa,
+   T14 covers HOCBF gains alpha_1, alpha_2, alpha_v.
+2. Section 6.1 ('k_r ... sensitivity study under T08') is imprecise.
+   T08 audits electrical-loss models in r2/r4; T09 owns modeled-energy
+   wording and representative k_r sensitivity reporting. Replace that
+   phrase with 'T08 source audit followed by T09 sensitivity protocol'.
+3. Preserve T07 as the search for motor data; gear ratio and motor inertia
+   from fer/dynamics.yaml do not establish R_i or k_t,i.
+
+D. DOCUMENTED MODEL-ONLY IMPLEMENTATION ON 2026-11-01
+----------------------------------------------------
+The seven-body Panda model has been implemented using a single CasADi AD
+source for M, dM/dq, g, U and flange FK; C is assembled from its AD derivatives.
+The included Phase-3a internal numerical checks were executed and their exact
+results are in phase3a_test_report.json. These are SELF-CONSISTENCY TESTS,
+not formal verification of Gaz-to-Pinocchio inverse dynamics or Level 1 bounds.
+The targeted source-level frame identity comparison uses separate NumPy MDH
+and older franka_ros Xacro-origin kinematic implementations over 22 poses.
+
+The strict manuscript equations are unchanged:
+ M(q) qdd + C(q,qd) qd + g(q) + F(qd) = tau_applied + d(t),
+ C_ij(q,qd) = 1/2 sum_k[ (dM_ij/dq_k)+(dM_ik/dq_j)
+                             -(dM_jk/dq_i)] qd_k,
+ Mdot(q) = C(q,qd) + C(q,qd)^T,
+ tau_ID = M qdd + C qd + g + F.
+
+E. NOT YET APPROVED, IMPLEMENTED OR CERTIFIED
+--------------------------------------------
+- T06 second-reviewer check of complete source-to-target transform manifest;
+  hardware payload/hand condition and independent Pinocchio inverse dynamics.
+- K_o, Lambda, kappa, alpha gains, w_min, reserves, all planner/NLP settings.
+- Numerically tested sample-hold DOB/controller/HOCBF-QP integration and A2.
+- Verified m1 branch-and-bound and all other T18-T21 certified bounds.
+- G2.5 feasibility screen, T27 solver accuracy, continuous-time residual checks.
+- T22/T29 approver signatures and frozen complete comparison manifest.
+- Published energy data k_r physical calibration (representative only).
+
+F. SIGN-OFF AND STOP RULES
+-------------------------
+Decision prepared: simulation engineering team __________________
+Independent T06 reviewer __________________  Date ____________
+Controls/optimization reviewer ______________ Date ____________
+Protocol v1.1 approver ______________________ Date ____________
+
+A1 model implementation may proceed conditionally. If the source-to-model
+checks uncover a real frame/inertial discrepancy, STOP and resolve before A2.
+A2 smoke testing requires all Phase-3a core model tests to pass plus independent
+model-check review. A3 comparison requires A2, T27, a positive G2.5, and a
+signed complete v1.1 manifest. Neither A3 nor Level 1 is presently GO.

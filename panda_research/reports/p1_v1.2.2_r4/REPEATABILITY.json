@@ -1,0 +1,50 @@
+{
+  "source_execution": "runs/p1_r4/frozen_9c94b06",
+  "fresh_execution": "runs/p1_r4/fresh_2fe50b9",
+  "all_checked_values_exact": true,
+  "cells": [
+    {
+      "cell": 0,
+      "all_cell_metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true
+    },
+    {
+      "cell": 1,
+      "all_cell_metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true
+    },
+    {
+      "cell": 2,
+      "all_cell_metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true
+    },
+    {
+      "cell": 3,
+      "all_cell_metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true
+    },
+    {
+      "cell": 4,
+      "all_cell_metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true
+    },
+    {
+      "cell": 5,
+      "all_cell_metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true
+    },
+    {
+      "cell": 6,
+      "all_cell_metrics_exact": true,
+      "measured_zero_state_exact": true,
+      "final_state_exact": true
+    }
+  ],
+  "independent_reviewer": null
+}

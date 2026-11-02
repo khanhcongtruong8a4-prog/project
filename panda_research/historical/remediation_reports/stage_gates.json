@@ -1,0 +1,44 @@
+[
+  {
+    "gate": "A1 implementation",
+    "verdict": "GO",
+    "evidence": [
+      "reports/original_reproduction.json",
+      "reports/external_dynamics.json"
+    ],
+    "remaining": "Continue model/verification implementation without claiming approval of experiments"
+  },
+  {
+    "gate": "A2 closed-loop smoke",
+    "verdict": "CONDITIONAL GO; CURRENTLY BLOCKED",
+    "evidence": [
+      "reports/primary_source_checks.json",
+      "review_sheets/HUMAN_REVIEW_SIGNATURES.md"
+    ],
+    "remaining": "Qualified signed T04b/T06a and dynamics review; approved complete smoke settings/controls plan. No A2 executed"
+  },
+  {
+    "gate": "A3 numerical Scenarios A/B/C",
+    "verdict": "NO-GO",
+    "evidence": [
+      "protocol/unresolved_decisions.csv"
+    ],
+    "remaining": "Signed source/model review, passing A2 with both refinements, T27, positive G2.5, approved M1, signed+hashed full v1.1, frozen T22 and Scenario B/shared solver settings"
+  },
+  {
+    "gate": "Level 1",
+    "verdict": "NO-GO",
+    "evidence": [
+      "protocol/Protocol_v1_1_REMEDIATION_ADDENDUM.md"
+    ],
+    "remaining": "Verified outward-rounded global m1>0, all tube/trajectory/HOCBF bounds and all theorem conditions"
+  },
+  {
+    "gate": "Publication-result evidence",
+    "verdict": "NO-GO",
+    "evidence": [
+      "reports/external_dynamics.json"
+    ],
+    "remaining": "No closed-loop/comparative results; present artifacts are model-validation evidence only"
+  }
+]

@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+!sources/manuscript_v1.2.1/fig/*.png

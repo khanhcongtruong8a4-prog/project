@@ -1,0 +1,155 @@
+{
+  "run_utc": "2026-10-31T19:20:53.474346+00:00",
+  "model": "Gaz author-code COM, MDH seven-body Panda without rotor/payload",
+  "scope": "ordinary numerical Phase-3a internal tests only",
+  "seed": 20261101,
+  "pose_count": 22,
+  "status": "PASS_INTERNAL_NUMERICAL_TESTS",
+  "overall_pass": true,
+  "min_sampled_joint_inertia_eigenvalue": 0.003534909045895529,
+  "max_sampled_joint_inertia_eigenvalue": null,
+  "independent_pinocchio_validation": "NOT_RUN: pinocchio unavailable; independent library ID remains pending",
+  "interval_certification": "NOT_RUN",
+  "closed_loop_simulation": "NOT_RUN",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "casadi": "3.7.2"
+  },
+  "checks": [
+    {
+      "test": "T04b author-code c1z convention",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": "Compared with Gaz pinned MATLAB DynPars2VREP.m (the source table prints asterisk, not measured zero)."
+    },
+    {
+      "test": "T04b author-code joint2 phi1",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": "Compared with pinned get_FrictionTorque.m, not rounded from incorrect alternate sources."
+    },
+    {
+      "test": "T04b body inertia SPD",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": "Floating point per-body physical plausibility only; NOT a global m1 certificate."
+    },
+    {
+      "test": "T04b positive principal triangle slack",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": "Minimum floating point slack: 1.714869647e-06 kg m^2."
+    },
+    {
+      "test": "T06a MDH vs pinned-URDF link and flange positions",
+      "result": "PASS",
+      "measured_max": 1.1102230246251565e-16,
+      "pass_threshold": 1e-12,
+      "notes": "22 poses, independently implemented NumPy kinematic products; conventions and model-level identity only."
+    },
+    {
+      "test": "T06a MDH vs pinned-URDF rotations",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 1e-12,
+      "notes": "22 poses; no hand/tool fixed transform added."
+    },
+    {
+      "test": "T06a CasADi AD flange FK vs NumPy MDH",
+      "result": "PASS",
+      "measured_max": 1.1102230246251565e-16,
+      "pass_threshold": 1e-11,
+      "notes": ""
+    },
+    {
+      "test": "Phase3a M symmetric",
+      "result": "PASS",
+      "measured_max": 5.551115123125783e-17,
+      "pass_threshold": 5e-12,
+      "notes": ""
+    },
+    {
+      "test": "Phase3a M positive definite on 22 checked poses",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": "Sampled min eigenvalue 0.003534909046 kg m^2; NOT a rigorous global bound."
+    },
+    {
+      "test": "Phase3a Mdot - C - CT zero",
+      "result": "PASS",
+      "measured_max": 2.220446049250313e-16,
+      "pass_threshold": 3e-10,
+      "notes": "Christoffel C constructed from CasADi auto-differentiated M."
+    },
+    {
+      "test": "Phase3a mechanical skew power identity",
+      "result": "PASS",
+      "measured_max": 1.4094669957665812e-16,
+      "pass_threshold": 1e-10,
+      "notes": ""
+    },
+    {
+      "test": "Phase3a gravity equals numeric potential gradient",
+      "result": "PASS",
+      "measured_max": 3.3302072210972256e-09,
+      "pass_threshold": 5e-08,
+      "notes": ""
+    },
+    {
+      "test": "Phase3a Cqdot vs independently finite-differenced Lagrange form",
+      "result": "PASS",
+      "measured_max": 1.1426493085053835e-10,
+      "pass_threshold": 5e-08,
+      "notes": ""
+    },
+    {
+      "test": "Phase3a q1 independence of M (sampled)",
+      "result": "PASS",
+      "measured_max": 1.3322676295501878e-15,
+      "pass_threshold": 1e-10,
+      "notes": ""
+    },
+    {
+      "test": "Phase3a inverse-dynamics power consistency",
+      "result": "PASS",
+      "measured_max": 3.552713678800501e-15,
+      "pass_threshold": 1e-10,
+      "notes": ""
+    },
+    {
+      "test": "Phase3a F(0)=0",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 1e-15,
+      "notes": ""
+    },
+    {
+      "test": "Phase3a friction dissipation on velocity grid",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": ""
+    },
+    {
+      "test": "T12 dual-harmonic magnitude bound (sampled check)",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 1e-12,
+      "notes": "Analytical dbar = a; numerical sampling is only corroboration."
+    },
+    {
+      "test": "T12 dual-harmonic derivative bound (sampled check)",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 1e-12,
+      "notes": "Analytical dbar1 = 1.4a; sampled test not proof by itself."
+    }
+  ]
+}

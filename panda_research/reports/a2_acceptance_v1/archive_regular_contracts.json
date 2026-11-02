@@ -1,0 +1,31 @@
+{
+  "scope": "STORAGE_ONLY_NO_EXPERIMENTAL_CHANGE",
+  "tests_run": 5,
+  "overall_pass": true,
+  "checks": [
+    {
+      "test": "__main__.RegularArchive.test_arbitrary_and_partial_gzip_bytes_preserved_as_raw",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.RegularArchive.test_corrupt_packed_part_rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.RegularArchive.test_existing_different_source_is_never_replaced",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.RegularArchive.test_gzip_header_name_time_and_original_bytes_are_reconstructed",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.RegularArchive.test_identical_inflated_payload_is_shared_with_different_gzip_headers",
+      "result": "PASS"
+    }
+  ],
+  "source_hashes": {
+    "scripts/archive_regular_evidence.py": "eb6e8dc8c135cfe1b9f03332d1ea066b2fe6177854cee849741486e4fb28af81",
+    "tests/test_regular_evidence_archive.py": "acee69b476ae3833fb12be8dce532125fd7463e51132f8efbfe516bc9e48c386"
+  }
+}

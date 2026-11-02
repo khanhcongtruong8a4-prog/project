@@ -1,0 +1,117 @@
+{
+  "created_utc": "2026-11-02T09:36:58.497379+00:00",
+  "policy": {
+    "version": "A2_CAUSAL_INTERVAL_QP_V3",
+    "row_sampler": "B0=B_current; Bk=B_current+0.5*(B_current-B_previous), B in {G,c}",
+    "nominal_sampler": "UNCHANGED_AB2_r; u0=r0; uk=rk+0.5*(rk-r_previous)",
+    "fixed_inward_reserve_original_row_scale": 0.1,
+    "roundoff_guard_original_row_scale": 1e-08,
+    "actual_solved_rows": "G_interval tau+c_interval-0.1*original_scale >= roundoff_guard*original_scale",
+    "mandatory_current_state_check": "All ORIGINAL G_current tau+c_current >=0 exactly in float arithmetic before application",
+    "history": "Fresh per cell; actual entrance QP is first query and reused for first application; one query per attempt; no future data",
+    "T29_scope": "Actual declared digital QP, recomputed with retained duals; current physical rows have a separate exact raw sign gate",
+    "reserve_status": "ENGINEERING_DESIGN_CONSTANT_NOT_CERTIFIED_M1_DRIFT_BOUND",
+    "retry": false,
+    "post_QP_projection": false
+  },
+  "results": [
+    {
+      "cell": 0,
+      "source_cell": "runs/a2_extended_v2/E3_0391c5b/cell_0.json",
+      "source_cell_sha256": "42b358a1f47403c8d381380b4a6922427c1cda4c6fbdad8dee975cd68f8bd5d4",
+      "source_trace": {
+        "file": "cell_0_execution.ctz",
+        "sha256": "dd740f247d7e7858b91d0f924237a7f2e9a5415f8100c4d4008bc5ac43a394f8",
+        "canonical_json_sha256": "682ab8652236ebc3261105bfbc8d8aac80dd156c8ae9a2cdcff3efea6423ebb4",
+        "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+      },
+      "queries": 1000,
+      "expected_queries": 1000,
+      "passed": true,
+      "trace": {
+        "file": "cell_0_read_only_queries.ctz",
+        "sha256": "2d27624f58c07202caa240b9e8e63918f3d44870c62bd63873c0606286e8c1c7",
+        "canonical_json_sha256": "e1b96a0f25cb2190b10ab51221cf07306eb1ce1920d8afd5a8dd1290c5895c79",
+        "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+      },
+      "all_current_raw_rows_checked": true,
+      "new_motion_executed": false,
+      "torque_actuated": false
+    },
+    {
+      "cell": 1,
+      "source_cell": "runs/a2_extended_v2/E3_0391c5b/cell_1.json",
+      "source_cell_sha256": "443bbd247e80e063b868901cb6b505899bbead9859fd00a2a5fb70369fee3dc8",
+      "source_trace": {
+        "file": "cell_1_execution.ctz",
+        "sha256": "7f3482e60ac76619021a938f80cf88ee38aed4ef63c8c6d3fd4aa103278c9aaa",
+        "canonical_json_sha256": "99f7456b65a24cd45b92426daca30009c8230aa9e70e0ce68f550ef27f14b073",
+        "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+      },
+      "queries": 1000,
+      "expected_queries": 1000,
+      "passed": true,
+      "trace": {
+        "file": "cell_1_read_only_queries.ctz",
+        "sha256": "3d13fca5469630b6788764b7f54134198b1eaee8ab85b900f5de7e24c2106ab8",
+        "canonical_json_sha256": "a8181cbec8e825c61a0d8cfcbace0164290b307bef980a54f5dfeea2a46868c0",
+        "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+      },
+      "all_current_raw_rows_checked": true,
+      "new_motion_executed": false,
+      "torque_actuated": false
+    },
+    {
+      "cell": 2,
+      "source_cell": "runs/a2_extended_v2/E3_0391c5b/cell_2.json",
+      "source_cell_sha256": "89c09b597cf5249267b50ef4bf9ef86ac1160906ff5c2c7bcb3cfd0a9676c012",
+      "source_trace": {
+        "file": "cell_2_execution.ctz",
+        "sha256": "72d05705d509aa91824233d2cf7a7ba999a764842f4216dde94564b86dcb2e00",
+        "canonical_json_sha256": "d14ecccb4a7f0111d888d2a6d0b15735ab72965d0880c73c8216e1be0fbf619c",
+        "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+      },
+      "queries": 2000,
+      "expected_queries": 2000,
+      "passed": true,
+      "trace": {
+        "file": "cell_2_read_only_queries.ctz",
+        "sha256": "a577fc1cac3d049ffd038f0c508198422f7348572524ce104ed0d96c093402fa",
+        "canonical_json_sha256": "69e13acb81e1f4a675287237564f3410e119d32ef788c268b9684dd87a879557",
+        "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+      },
+      "all_current_raw_rows_checked": true,
+      "new_motion_executed": false,
+      "torque_actuated": false
+    },
+    {
+      "cell": 3,
+      "source_cell": "runs/a2_extended_v2/E3_0391c5b/cell_3.json",
+      "source_cell_sha256": "8f94eb24f8a9c07ba4f4e7cf9c39c0a509e951d90810f349cc716f6c1a7feb34",
+      "source_trace": {
+        "file": "cell_3_execution.ctz",
+        "sha256": "531a90d6b5ffe3dfbd6c06af6dc09171e60aa8b5b2ad14a83955f4e878a810dd",
+        "canonical_json_sha256": "9f64ccfc91baf67936814e91261c545c61b699e5563d83e2d087ac66be14f2cc",
+        "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+      },
+      "queries": 2000,
+      "expected_queries": 2000,
+      "passed": true,
+      "trace": {
+        "file": "cell_3_read_only_queries.ctz",
+        "sha256": "c3f219882ad5c1ee620d525189a095e278880c26ada9bdedb2e5fd8acd895c54",
+        "canonical_json_sha256": "76713b5a7ed74433ef8ff2772c45a5f019ecc96eed294ce0b55cbbed6d1a1df5",
+        "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+      },
+      "all_current_raw_rows_checked": true,
+      "new_motion_executed": false,
+      "torque_actuated": false
+    }
+  ],
+  "all_pass": true,
+  "scope": "READ_ONLY_RETAINED_V2_MATRICES_NOT_V3_PLANT_OR_REFINEMENT_EVIDENCE",
+  "source_hashes": {
+    "scripts/a2_qp_v3_development.py": "611cddb521bd6d142a6b2a019de86ccefff0748580f40abf530440e983565bae",
+    "src/panda_closed_loop/a2_qp_v3.py": "a6f9436da88156f5b3c97e4b9be796f7849e3600ef9c8c328d786c8db9a6e6b8"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "status": "FROZEN_DEVELOPMENT_TEST_PLAN_NOT_POLICY_APPROVAL_NOT_A2",
+  "declared_before_any_development_plant_prehold_utc": "2026-11-01T17:44:13.893183+00:00",
+  "authority": {
+    "user_request": "Resolve the issues found given in .txt file.",
+    "interpretation": "Engineering remediation includes development-only model simulation of the already proposed P1 candidate. It does not approve startup policy or authorize official A2/hardware.",
+    "theory_controls_startup_selection": null,
+    "owner_policy_approval": null,
+    "written_A2_authorization": null
+  },
+  "accepted_P1_base_commit": "ae62987bb075589f69ca85d8f2615be560e99f2f",
+  "accepted_P1_zip_sha256": "ff17fcac4e865825512d321350260b169d4b12065c5af10fcc40a82a91139f05",
+  "original_predeclaration_sha256": "4f59db4cd77376ed78978fa2c0b5c0ab9644cf7b672ceff031fb3a76eeb9d936",
+  "independent_review_sha256": "fc8d435d45e4b648086f3c3fc51f5f8b3fae362202b4872da8a86431d61abc7d",
+  "candidate": "P1 existing projected Slotine-Li static-midpoint reference; no tuning",
+  "T_pre_s": 0.156,
+  "physical_interval_s": [
+    -0.156,
+    0.0
+  ],
+  "initial_state": "physical joint midpoint; qd=0; z=-Ko*M(q)*qd; dhat=0 at physical time -0.156",
+  "q_radius_rad": [
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01
+  ],
+  "qd_radius_rad_s": [
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.02
+  ],
+  "C4_grid": [
+    {
+      "control_period_s": 0.001,
+      "rk4_step_s": 0.00025
+    },
+    {
+      "control_period_s": 0.001,
+      "rk4_step_s": 0.000125
+    },
+    {
+      "control_period_s": 0.0005,
+      "rk4_step_s": 0.00025
+    },
+    {
+      "control_period_s": 0.0005,
+      "rk4_step_s": 0.000125
+    }
+  ],
+  "control": "Existing gains; static qmid reference. Update once per Delta, project command onto physical torque box, hold actual applied torque for all RK4 stages. DOB receives that exact applied torque.",
+  "clock": "One signed physical clock, disturbance evaluated at original physical t with t_ref=0; observer elapsed=t+T_pre; no reset at zero.",
+  "stop_criteria": {
+    "position": "abs(q-qmid)<=0.01 rad per joint throughout attempted hold",
+    "velocity": "abs(qd)<=0.02 rad/s per joint throughout attempted hold",
+    "torque": "abs(actual held tau)<=tau_max; no ideal clamp or reaction torque",
+    "state": "finite state and original physical h,psi1,speed,manipulability checks at retained stage/end samples",
+    "observer": "post-control diagnostic excess max(abs(d-dhat)-varpi)<=0 Nm at retained stages/end samples; no enlarged bounds",
+    "on_first_failure": "Stop that cell after retaining the first failed substep and dense-interpolant diagnostics; apply no additional torque or state update. Other predeclared C4 cells are independent numerical comparisons, never retuning.",
+    "duration_or_parameter_retry": false
+  },
+  "continuous_check": {
+    "method": "For every attempted RK4 substep, find all component extrema of its standard cubic continuous extension on theta in [0,1]; check q deviation and qd limits at endpoints and stationary roots. Also check RK4 stage samples.",
+    "claim": "Extrema of a numerical interpolant only. No verified ODE error enclosure, interval state box or continuous-time safety proof is inferred. An observed violation suffices to reject this development candidate."
+  },
+  "actual_endpoint": "At completed zero endpoint, or at actual simulated abort time, evaluate measured q,qd,z,dhat,varpi,h,psi1,speed,manipulability,previous applied torque and complete 43-row hard QP. Abort-time checks cannot qualify a missing zero endpoint.",
+  "motion_after_hold": false,
+  "official_A2_executed": false,
+  "forbidden": [
+    "parameter/gain/disturbance/threshold retuning",
+    "observer or waveform reset",
+    "kinematic clamp",
+    "unapproved recovery",
+    "Stage-1 optimization",
+    "official A2",
+    "A3 or publication run"
+  ]
+}

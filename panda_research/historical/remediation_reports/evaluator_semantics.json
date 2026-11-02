@@ -1,0 +1,6 @@
+{
+  "method": "AST comparison with docstrings removed; no other AST nodes removed",
+  "same_executable_AST": true,
+  "baseline_sha256": "698a92efd624b603133cd5ea5a3fe31d0752d210ffe4291a02bab64a0d3cba1c",
+  "working_sha256": "6d2c381ad278493fe941cd18df9fbebba9909e06dc90a14e6a41132c72239cf0"
+}

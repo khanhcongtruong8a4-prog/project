@@ -1,0 +1,54 @@
+IC2AI 2027 — Independent P1 review decision
+Date: 2026-11-02
+Input: IC2AI_Panda_P1_Protocol_v1.2.2_DRAFT_2026-11-01.zip
+
+DECISION
+The proposed P1 pre-settling analytical/static-screen method is ACCEPTED FOR DEVELOPMENT REVIEW ONLY.
+P1 AS A VERIFIED STARTUP PROCEDURE: NOT APPROVED.
+Protocol v1.2.2 for actual startup: NOT APPROVED.
+Official A2: NO-GO. A3 / Level 1 / publication evidence: NO-GO.
+
+INDEPENDENTLY CHECKED HERE
+- ZIP's included SHA256_MANIFEST.json: 65/65 listed files match their SHA-256 hashes.
+- Base Action 3 r2 archive SHA-256 matches the immutable base identifier declared in the P1 proposal.
+- The common-gain analytic observer envelope is correctly applied as
+  varpi(s) = dbar*[0.07+0.93 exp(-20 s)] under the stated assumptions.
+- Limiting sample ratio 0.112086426911 yields Tcritical = 0.154772964930 s;
+  the predeclared 1-ms round-up-plus-one-period rule yields Tpre=0.156 s.
+- Recomputed the displayed initial envelope ratio and report pair-slack arithmetic;
+  the recorded 129-node online checks are numerically self-consistent.
+- The saved reports show 129 solved midpoint/zero-velocity QP fixtures, but those
+  solver outcomes were not independently rerun here and are not real hold endpoints.
+- The planner lower-witness result at the observer floor remains a necessary-condition
+  failure for velocity joints 1 and 3 at the initial nominal configuration.
+
+BLOCKERS
+1. No actual applied-torque prehold was integrated or verified. The proposal's
+   |q-qmid|<=0.01 rad and |qdot|<=0.02 rad/s throughout preparation are unproven.
+2. Signed negative-physical-time execution support has not been implemented/validated.
+3. Continuous-state neighborhood verification and real measured-endpoint check are missing.
+4. The full 43-row QP was tested only in fixed midpoint/zero-speed fixtures, not at the
+   actual post-hold state; complete A2 controlled execution is untested.
+5. Policy v1.2.2 is a DRAFT. Observer semantics, startup, A2 reference and stop rules,
+   independent clean-environment reproduction, theory/controls signatures and manuscript
+   build revision confirmation are still pending.
+6. Planner M1 bounds are missing. Moreover, the observer error floor still defeats the
+   factor-two planner necessary speed condition at the nominal q for joints 1 and 3.
+   Pre-settling alone is not a solution for Stage-1 planning at that point.
+
+REQUIRED NEXT ACTIONS
+F1: Theory/controls leads choose and document P1 or an alternative in a versioned policy;
+    separately authorize development testing of a physically applied-torque hold (not an ideal
+    clamp), with frozen duration/gains/disturbance and explicit stop/acceptance criteria.
+    Implement a signed clock, preserve observer state and disturbance time, and test continuous
+    hold tolerances and the actual measured endpoint. No retrospective retuning.
+F2: At the actual endpoint, verify h, psi1, speed, manipulability, torque and full 43-row
+    hard-QP feasibility, then finalize the A2 nonoptimized reference, observer convention,
+    failure semantics, and approved C4 2x2 numerical-refinement plan.
+F3: Obtain independent numerical reproduction, controls/theory sign-off, manuscript build
+    confirmation and written A2 authorization. Keep planner M1/G2.5 and A3 gates separate.
+
+SCOPE NOTE
+The analytic duration, reported static QP fixtures, and checksum checks are not a proof of
+preparation-controller hold invariance, between-sample safety, full P1 validity or official A2.
+No official A2 or plant-prehold simulation was performed in this review.

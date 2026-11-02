@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "checks": 58,
+  "poses": 154,
+  "failed": [],
+  "seconds": 7.146400858999982,
+  "report": "/workspace/onboarding/r3-regression/panda_research/runs/20261102T043059598972Z/mujoco_validation.json"
+}

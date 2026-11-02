@@ -1,0 +1,40 @@
+{
+  "original_r4": {
+    "return_code": 0,
+    "report": "reports/a2_acceptance_v1/acceptance_v1_fresh/original_r4.json",
+    "tests_run": 14,
+    "passed": true,
+    "required_A2_scope_pass": true,
+    "diagnostic_failures_retained": []
+  },
+  "guarded_QP": {
+    "return_code": 0,
+    "report": "reports/a2_acceptance_v1/acceptance_v1_fresh/guarded_QP.json",
+    "tests_run": 14,
+    "passed": true,
+    "required_A2_scope_pass": true,
+    "diagnostic_failures_retained": []
+  },
+  "v4_gain": {
+    "return_code": 0,
+    "report": "reports/a2_acceptance_v1/acceptance_v1_fresh/v4_gain.json",
+    "tests_run": 10,
+    "passed": true,
+    "required_A2_scope_pass": true,
+    "diagnostic_failures_retained": []
+  },
+  "framework_math": {
+    "return_code": 1,
+    "report": "reports/a2_acceptance_v1/acceptance_v1_fresh/framework_math.json",
+    "tests_run": 12,
+    "passed": false,
+    "required_A2_scope_pass": true,
+    "diagnostic_failures_retained": [
+      {
+        "test": "__main__.AcceptanceMath.test_exact_recorded_QP_optimum_on_preserved_real_43_row_active_fixture",
+        "result": "FAIL",
+        "traceback": "Traceback (most recent call last):\n  File \"/workspace/a2-acceptance-clean/panda_research/tests/test_a2_acceptance_math.py\", line 100, in test_exact_recorded_QP_optimum_on_preserved_real_43_row_active_fixture\n    self.assertFalse(r.stop_requested)\nAssertionError: True is not false\n"
+      }
+    ]
+  }
+}

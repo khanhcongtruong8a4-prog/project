@@ -1,0 +1,15 @@
+{
+  "cell": 0,
+  "grid": {
+    "control_period_s": 0.001,
+    "rk4_step_s": 0.00025
+  },
+  "engineering_error": "Traceback (most recent call last):\n  File \"/workspace/project/panda_research/scripts/p1_r4.py\", line 118, in main\n    cell['audit'] = audit_cell(cell, out, system, plan)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/p1_r4.py\", line 83, in audit_cell\n    hold[-1]['state_after'] == endpoint['state'] == prep['state']\nValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\n",
+  "a2": {
+    "completed": false,
+    "passed": false
+  },
+  "audit": {
+    "passed": false
+  }
+}

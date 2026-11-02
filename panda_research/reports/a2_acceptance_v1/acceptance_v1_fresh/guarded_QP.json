@@ -1,0 +1,69 @@
+{
+  "scope": "PRE_MOTION_ANALYTIC_AND_RETAINED_MATRIX_QUALIFICATION_NOT_PANDA_MOTION",
+  "tests_run": 14,
+  "overall_pass": true,
+  "checks": [
+    {
+      "test": "__main__.NumericalQPTests.test_actual_five_failed_matrix_regressions",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_cold_repeat_is_exact",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_coupled_active_face_projection",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_equivalent_positive_row_scaling",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_infeasible_rows_stop_without_candidate",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_interior_objective_minimizer",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_lower_active_analytic_solution_and_strict_sign",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_new_motion_definitions_and_thresholds_equal_v1",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_original_T29_gradient_independently_recomputed",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_settings_are_frozen_no_retry_or_projection",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_timeout_is_unknown_with_no_actuation",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_upper_active_analytic_solution_and_strict_sign",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_worker_matches_direct_solution_and_diagnostics",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_zero_normal_infeasible_row_stops",
+      "result": "PASS"
+    }
+  ],
+  "source_hashes": {
+    "src/panda_closed_loop/a2_qp_v2.py": "6f64ce0de290117b6fc50bff88cc7f301d94cbce9c1893f0be21e81eb87f8e9d",
+    "tests/test_a2_qp_v2.py": "c8f5a3b8c20f59299eaff0a89886f542e1f384b5986b839f6db4d32dd1503e60",
+    "scripts/a2_extended_v2.py": "102a55fc29036aff65d9b3c6c48dd71bd9d7181d571af164da414b74ed1aa9e8",
+    "policy/a2_extended_v2/A2_EXTENDED_PREDECLARATION.json": "a8b05048bc1cf1032bd31c5c0a2a73b0e7d1b7297746390673acc093f2f0aae4"
+  }
+}

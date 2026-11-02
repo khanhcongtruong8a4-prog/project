@@ -1,0 +1,194 @@
+{
+  "scope": "DEVELOPMENT_PREHOLD_NOT_OFFICIAL_A2",
+  "frozen_plan_sha256": "11590d10a554d88907095d15a3fb13d0872d29c534eeffe70e0da2788b0d36d4",
+  "cells": [
+    {
+      "cell": 0,
+      "grid": {
+        "control_period_s": 0.001,
+        "rk4_step_s": 0.00025
+      },
+      "decision": "FAIL_PREDECLARED_HOLD",
+      "completed": false,
+      "failure": {
+        "reason": "PREDECLARED_HOLD_ACCEPTANCE_FAILURE",
+        "failed_checks": [
+          "qd_tolerance"
+        ],
+        "physical_t_s": -0.15475,
+        "q_violating_joints_1_based": [],
+        "qd_violating_joints_1_based": [
+          3,
+          7
+        ],
+        "no_further_torque_or_state_advance": true
+      },
+      "q_deviation_peak_rad": [
+        1.223454961178715e-05,
+        1.6186460786795872e-06,
+        1.2973252701474254e-05,
+        3.9929337880550975e-06,
+        6.49838630339576e-06,
+        1.1701971582178672e-05,
+        1.2907569144803057e-05
+      ],
+      "qd_peak_rad_s": [
+        0.019386256244691546,
+        0.0025704818910887305,
+        0.020561790527915902,
+        0.006332615961923089,
+        0.01029124468469798,
+        0.01853084475150625,
+        0.020239135951504676
+      ],
+      "record_file": "cell_0.json",
+      "valid_zero_endpoint": false,
+      "terminal_QP_status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+      "terminal_QP_strict_pass": false
+    },
+    {
+      "cell": 1,
+      "grid": {
+        "control_period_s": 0.001,
+        "rk4_step_s": 0.000125
+      },
+      "decision": "FAIL_PREDECLARED_HOLD",
+      "completed": false,
+      "failure": {
+        "reason": "PREDECLARED_HOLD_ACCEPTANCE_FAILURE",
+        "failed_checks": [
+          "qd_tolerance"
+        ],
+        "physical_t_s": -0.15475,
+        "q_violating_joints_1_based": [],
+        "qd_violating_joints_1_based": [
+          3,
+          7
+        ],
+        "no_further_torque_or_state_advance": true
+      },
+      "q_deviation_peak_rad": [
+        1.2234549560439456e-05,
+        1.6186460427271469e-06,
+        1.2973252769862773e-05,
+        3.992933639285212e-06,
+        6.4983860810227735e-06,
+        1.1701970804134376e-05,
+        1.2907553979215774e-05
+      ],
+      "qd_peak_rad_s": [
+        0.019386172474615528,
+        0.0025704750574658116,
+        0.020561719690872594,
+        0.006332586658756916,
+        0.010291163114997288,
+        0.01853070521008221,
+        0.020237200098582327
+      ],
+      "record_file": "cell_1.json",
+      "valid_zero_endpoint": false,
+      "terminal_QP_status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+      "terminal_QP_strict_pass": false
+    },
+    {
+      "cell": 2,
+      "grid": {
+        "control_period_s": 0.0005,
+        "rk4_step_s": 0.00025
+      },
+      "decision": "FAIL_PREDECLARED_HOLD",
+      "completed": false,
+      "failure": {
+        "reason": "PREDECLARED_HOLD_ACCEPTANCE_FAILURE",
+        "failed_checks": [
+          "qd_tolerance"
+        ],
+        "physical_t_s": -0.15475,
+        "q_violating_joints_1_based": [],
+        "qd_violating_joints_1_based": [
+          3,
+          7
+        ],
+        "no_further_torque_or_state_advance": true
+      },
+      "q_deviation_peak_rad": [
+        1.2287865693245138e-05,
+        1.6181446452221014e-06,
+        1.3021317887503909e-05,
+        4.008833142110646e-06,
+        6.562075882492661e-06,
+        1.1813135236016237e-05,
+        1.3452653365068787e-05
+      ],
+      "qd_peak_rad_s": [
+        0.01949233627065822,
+        0.002569437181066649,
+        0.020657496385473387,
+        0.006364119770656165,
+        0.010417793264506175,
+        0.018751487816349888,
+        0.021312908900270478
+      ],
+      "record_file": "cell_2.json",
+      "valid_zero_endpoint": false,
+      "terminal_QP_status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+      "terminal_QP_strict_pass": false
+    },
+    {
+      "cell": 3,
+      "grid": {
+        "control_period_s": 0.0005,
+        "rk4_step_s": 0.000125
+      },
+      "decision": "FAIL_PREDECLARED_HOLD",
+      "completed": false,
+      "failure": {
+        "reason": "PREDECLARED_HOLD_ACCEPTANCE_FAILURE",
+        "failed_checks": [
+          "qd_tolerance"
+        ],
+        "physical_t_s": -0.15475,
+        "q_violating_joints_1_based": [],
+        "qd_violating_joints_1_based": [
+          3,
+          7
+        ],
+        "no_further_torque_or_state_advance": true
+      },
+      "q_deviation_peak_rad": [
+        1.2287865643106683e-05,
+        1.6181446082074859e-06,
+        1.3021317962158503e-05,
+        4.008832989121913e-06,
+        6.562075658254561e-06,
+        1.1813134435323391e-05,
+        1.3452637577373747e-05
+      ],
+      "qd_peak_rad_s": [
+        0.019492252521714465,
+        0.0025694303746273814,
+        0.020657425502639486,
+        0.006364090591100437,
+        0.01041771179073609,
+        0.01875134896309821,
+        0.021310981552578382
+      ],
+      "record_file": "cell_3.json",
+      "valid_zero_endpoint": false,
+      "terminal_QP_status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+      "terminal_QP_strict_pass": false
+    }
+  ],
+  "P1_numerical_hold": "FAIL",
+  "P1_verified_startup": "NOT_APPROVED",
+  "A1": "GO",
+  "A2": "NO-GO",
+  "A3": "NO-GO",
+  "Level_1": "NO-GO",
+  "publication": "NO-GO",
+  "retuning_performed": false,
+  "duration_gains_disturbance_changed": false,
+  "continuous_true_ODE_proof": false,
+  "full_A2_execution_performed": false,
+  "independent_reviewer_signature": null
+}

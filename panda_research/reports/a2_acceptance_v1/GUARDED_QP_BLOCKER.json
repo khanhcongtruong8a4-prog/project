@@ -1,0 +1,17 @@
+{
+  "id": "GUARDED_QP_LEGACY_ALPHA5_ACTIVE_FACE_FALSE_INFEASIBILITY",
+  "status": "CONFIRMED_FAILED_NUMERICAL_PROBE_RETAINED",
+  "selected_protocols": "Original alpha5 A2 uses ORIGINAL solver; v4 uses alpha10 guarded solver. The failed hybrid is neither selected runtime.",
+  "solver_result": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+  "stop_requested": true,
+  "exact_represented_QP_optimum_exists": true,
+  "torque_actuated": false,
+  "affected_claim": "GENERAL_GUARDED_QP_DOMAIN_QUALIFICATION_AND_OFFICIAL_T27; NOT_RETROACTIVE_FAILURE_OF_THE_REPRODUCED_FIXED_CELLS",
+  "exact_remedies": [
+    "Keep the fail-closed stop and report solver failure/UNKNOWN unless an independently checked infeasibility certificate establishes an empty represented set.",
+    "Develop a separately versioned solver algorithm/initialization/status-verification implementation that completes this exact fixed feasible matrix. Keep H,g,C,b, guard, gains, references and acceptance thresholds unchanged.",
+    "Qualify it against the stored exact-rational optimum and active/scaled/redundant feasible/infeasible matrices, then repeat the unchanged frozen A2 suites before extending the accepted solver scope. Do not actuate the diagnostic witness as an undeclared fallback."
+  ],
+  "general_qualification_gate": "HOLD",
+  "production_v4_changed": false
+}

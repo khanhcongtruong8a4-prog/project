@@ -1,0 +1,214 @@
+{
+  "run_utc": "2026-11-01T15:25:58.803561+00:00",
+  "model": "Gaz author-code COM, MDH seven-body Panda without rotor/payload",
+  "scope": "ordinary numerical Phase-3a internal tests only",
+  "seed": 20261101,
+  "pose_count": 22,
+  "status": "PASS_INTERNAL_NUMERICAL_TESTS",
+  "overall_pass": true,
+  "min_sampled_joint_inertia_eigenvalue": 0.003534909045895529,
+  "max_sampled_joint_inertia_eigenvalue": 3.6736953640192103,
+  "friction_grid": {
+    "points_per_joint": 261,
+    "min_rad_s": [
+      -2.175,
+      -2.175,
+      -2.175,
+      -2.175,
+      -2.61,
+      -2.61,
+      -2.61
+    ],
+    "max_rad_s": [
+      2.175,
+      2.175,
+      2.175,
+      2.175,
+      2.61,
+      2.61,
+      2.61
+    ]
+  },
+  "independent_pinocchio_validation": "NOT_RUN_BY_THIS_SCRIPT: see the current run external_dynamics.json for the separately constructed reference",
+  "interval_certification": "NOT_RUN",
+  "closed_loop_simulation": "NOT_RUN",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "casadi": "3.7.2"
+  },
+  "checks": [
+    {
+      "test": "Internal literal regression: c1z convention",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": "Compares a code constant to a literal only; primary-source verification is a separate report. Table c1z is an asterisk.",
+      "evidence_class": "INTERNAL_LITERAL_REGRESSION",
+      "external_validation": false
+    },
+    {
+      "test": "Internal literal regression: joint2 phi1",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": "Compares a code constant to a literal only; does not read author MATLAB bytes.",
+      "evidence_class": "INTERNAL_LITERAL_REGRESSION",
+      "external_validation": false
+    },
+    {
+      "test": "T04b body inertia SPD",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": "Floating point per-body physical plausibility only; NOT a global m1 certificate.",
+      "evidence_class": "INTERNAL_NUMERICAL_OR_ANALYTIC_CORROBORATION",
+      "external_validation": false
+    },
+    {
+      "test": "T04b positive principal triangle slack",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": "Minimum floating point slack: 1.714869647e-06 kg m^2.",
+      "evidence_class": "INTERNAL_NUMERICAL_OR_ANALYTIC_CORROBORATION",
+      "external_validation": false
+    },
+    {
+      "test": "Internal MDH vs in-code URDF-origin positions",
+      "result": "PASS",
+      "measured_max": 1.1102230246251565e-16,
+      "pass_threshold": 1e-12,
+      "notes": "22 poses; common rotation helpers and transcribed constants. Not an independent source or dynamics check.",
+      "evidence_class": "INTERNAL_SHARED_KINEMATIC_IMPLEMENTATION",
+      "external_validation": false
+    },
+    {
+      "test": "Internal MDH vs in-code URDF-origin rotations",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 1e-12,
+      "notes": "22 poses; shared helpers; no hand/tool transform added.",
+      "evidence_class": "INTERNAL_SHARED_KINEMATIC_IMPLEMENTATION",
+      "external_validation": false
+    },
+    {
+      "test": "T06a CasADi AD flange FK vs NumPy MDH",
+      "result": "PASS",
+      "measured_max": 1.1102230246251565e-16,
+      "pass_threshold": 1e-11,
+      "notes": "",
+      "evidence_class": "INTERNAL_SHARED_KINEMATIC_IMPLEMENTATION",
+      "external_validation": false
+    },
+    {
+      "test": "Phase3a M symmetric",
+      "result": "PASS",
+      "measured_max": 5.551115123125783e-17,
+      "pass_threshold": 5e-12,
+      "notes": "",
+      "evidence_class": "INTERNAL_NUMERICAL_OR_ANALYTIC_CORROBORATION",
+      "external_validation": false
+    },
+    {
+      "test": "Phase3a M positive definite on 22 checked poses",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": "Sampled min eigenvalue 0.003534909046 kg m^2; NOT a rigorous global bound.",
+      "evidence_class": "INTERNAL_NUMERICAL_OR_ANALYTIC_CORROBORATION",
+      "external_validation": false
+    },
+    {
+      "test": "Phase3a Mdot - C - CT zero",
+      "result": "PASS",
+      "measured_max": 2.220446049250313e-16,
+      "pass_threshold": 3e-10,
+      "notes": "Internal indexing identity: Mdot and C use the same dM/dq; cannot validate physical parameters.",
+      "evidence_class": "INTERNAL_SHARED_DERIVATIVE_IDENTITY",
+      "external_validation": false
+    },
+    {
+      "test": "Phase3a mechanical skew power identity",
+      "result": "PASS",
+      "measured_max": 1.4094669957665812e-16,
+      "pass_threshold": 1e-10,
+      "notes": "Internal shared-derivative identity only.",
+      "evidence_class": "INTERNAL_SHARED_DERIVATIVE_IDENTITY",
+      "external_validation": false
+    },
+    {
+      "test": "Phase3a gravity equals numeric potential gradient",
+      "result": "PASS",
+      "measured_max": 3.3302072210972256e-09,
+      "pass_threshold": 5e-08,
+      "notes": "Finite difference of the same U; not independent gravity validation.",
+      "evidence_class": "INTERNAL_SHARED_MODEL_FINITE_DIFFERENCE",
+      "external_validation": false
+    },
+    {
+      "test": "Phase3a Cqdot vs finite-differenced same-model Lagrange form",
+      "result": "PASS",
+      "measured_max": 1.1426493085053835e-10,
+      "pass_threshold": 5e-08,
+      "notes": "",
+      "evidence_class": "INTERNAL_SHARED_MODEL_FINITE_DIFFERENCE",
+      "external_validation": false
+    },
+    {
+      "test": "Phase3a q1 independence of M (sampled)",
+      "result": "PASS",
+      "measured_max": 1.3322676295501878e-15,
+      "pass_threshold": 1e-10,
+      "notes": "",
+      "evidence_class": "INTERNAL_NUMERICAL_OR_ANALYTIC_CORROBORATION",
+      "external_validation": false
+    },
+    {
+      "test": "Phase3a inverse-dynamics power consistency",
+      "result": "PASS",
+      "measured_max": 3.552713678800501e-15,
+      "pass_threshold": 1e-10,
+      "notes": "Internal shared-M/shared-derivative identity only.",
+      "evidence_class": "INTERNAL_SHARED_DERIVATIVE_IDENTITY",
+      "external_validation": false
+    },
+    {
+      "test": "Phase3a F(0)=0",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 1e-15,
+      "notes": "",
+      "evidence_class": "INTERNAL_NUMERICAL_OR_ANALYTIC_CORROBORATION",
+      "external_validation": false
+    },
+    {
+      "test": "Phase3a friction dissipation on velocity grid",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 0.0,
+      "notes": "261 equally spaced velocities per joint, inclusive -VMAX..+VMAX; rad/s.",
+      "evidence_class": "INTERNAL_NUMERICAL_OR_ANALYTIC_CORROBORATION",
+      "external_validation": false
+    },
+    {
+      "test": "T12 dual-harmonic magnitude bound (sampled check)",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 1e-12,
+      "notes": "Analytical dbar = a; numerical sampling is only corroboration.",
+      "evidence_class": "INTERNAL_NUMERICAL_OR_ANALYTIC_CORROBORATION",
+      "external_validation": false
+    },
+    {
+      "test": "T12 dual-harmonic derivative bound (sampled check)",
+      "result": "PASS",
+      "measured_max": 0.0,
+      "pass_threshold": 1e-12,
+      "notes": "Analytical dbar1 = 1.4a; sampled test not proof by itself.",
+      "evidence_class": "INTERNAL_NUMERICAL_OR_ANALYTIC_CORROBORATION",
+      "external_validation": false
+    }
+  ]
+}

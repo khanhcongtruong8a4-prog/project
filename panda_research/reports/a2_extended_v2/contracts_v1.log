@@ -1,0 +1,38 @@
+test_actual_five_failed_matrix_regressions (__main__.NumericalQPTests.test_actual_five_failed_matrix_regressions) ... ok
+test_cold_repeat_is_exact (__main__.NumericalQPTests.test_cold_repeat_is_exact) ... ok
+test_coupled_active_face_projection (__main__.NumericalQPTests.test_coupled_active_face_projection) ... ok
+test_equivalent_positive_row_scaling (__main__.NumericalQPTests.test_equivalent_positive_row_scaling) ... FAIL
+test_infeasible_rows_stop_without_candidate (__main__.NumericalQPTests.test_infeasible_rows_stop_without_candidate) ... ok
+test_interior_objective_minimizer (__main__.NumericalQPTests.test_interior_objective_minimizer) ... ok
+test_lower_active_analytic_solution_and_strict_sign (__main__.NumericalQPTests.test_lower_active_analytic_solution_and_strict_sign) ... ok
+test_new_motion_definitions_and_thresholds_equal_v1 (__main__.NumericalQPTests.test_new_motion_definitions_and_thresholds_equal_v1) ... ok
+test_original_T29_gradient_independently_recomputed (__main__.NumericalQPTests.test_original_T29_gradient_independently_recomputed) ... ok
+test_settings_are_frozen_no_retry_or_projection (__main__.NumericalQPTests.test_settings_are_frozen_no_retry_or_projection) ... ok
+test_timeout_is_unknown_with_no_actuation (__main__.NumericalQPTests.test_timeout_is_unknown_with_no_actuation) ... ok
+test_upper_active_analytic_solution_and_strict_sign (__main__.NumericalQPTests.test_upper_active_analytic_solution_and_strict_sign) ... ok
+test_worker_matches_direct_solution_and_diagnostics (__main__.NumericalQPTests.test_worker_matches_direct_solution_and_diagnostics) ... ok
+test_zero_normal_infeasible_row_stops (__main__.NumericalQPTests.test_zero_normal_infeasible_row_stops) ... ok
+
+======================================================================
+FAIL: test_equivalent_positive_row_scaling (__main__.NumericalQPTests.test_equivalent_positive_row_scaling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/a2-extended/panda_research/tests/test_a2_qp_v2.py", line 67, in test_equivalent_positive_row_scaling
+    np.testing.assert_array_equal(a.applied,b.applied)
+  File "/workspace/panda-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 1054, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+  File "/workspace/panda-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 919, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 5 / 7 (71.4%)
+Max absolute difference among violations: 1.11022302e-16
+Max relative difference among violations: 1.11022304e-16
+ ACTUAL: array([1., 1., 1., 1., 1., 1., 1.])
+ DESIRED: array([1., 1., 1., 1., 1., 1., 1.])
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.235s
+
+FAILED (failures=1)

@@ -1,0 +1,19 @@
+{
+  "scope": "READ_ONLY_NEW_DIAGNOSIS_NO_PRODUCTION_QP_OR_PLANT_RERUN",
+  "started_utc": "2026-11-02T09:05:53.801922+00:00",
+  "command": [
+    "/workspace/panda-venv/bin/python",
+    "scripts/actual_extended_qp_diagnostics.py"
+  ],
+  "source_sha256": "d047071efd9123b4fdad69752f3a2d45766a683f0d64743f4f8f11de8e34e0de",
+  "frozen_input_count": 1224,
+  "frozen_manifest_sha256": "66a3f211453f584d2e60dcf01ffa7f48952b40568e4e8e6a2045bef7649752c6",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "casadi": "3.7.2",
+    "proxsuite": "0.7.2"
+  },
+  "production_settings_changed": false,
+  "human_signatures": null
+}

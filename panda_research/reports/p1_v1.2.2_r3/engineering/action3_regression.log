@@ -1,0 +1,9 @@
+component_tests: PASS
+T28_raw_C: PASS
+preserved_v120_regression: PASS
+A2_entry_refusal: PASS
+dependency_check: PASS
+{
+  "status": "PASS_COMPONENTS_AND_REGRESSIONS_A2_HOLD",
+  "run_directory": "runs/action3/20261102T043037378397Z"
+}

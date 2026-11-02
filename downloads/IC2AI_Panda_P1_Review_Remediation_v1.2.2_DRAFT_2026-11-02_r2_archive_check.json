@@ -1,0 +1,44 @@
+{
+  "scope": "FINAL_ARCHIVE_CHECK_NOT_A2_NOT_INDEPENDENT_REVIEW",
+  "overall_pass": true,
+  "archive": "IC2AI_Panda_P1_Review_Remediation_v1.2.2_DRAFT_2026-11-02_r2.zip",
+  "sha256": "51a8c001567a8d8080ee9da2fc5816d7c9b0e02944dc498de77f0a534dcc2218",
+  "bytes": 2174458,
+  "members": 206,
+  "package_file_hashes_checked": 205,
+  "policy_report_manifest_counts": {
+    "policy/v1.2.2-r2-draft/SHA256_MANIFEST.json": 81,
+    "policy/v1.2.2-draft/SHA256_MANIFEST.json": 65
+  },
+  "forbidden_members": [],
+  "fresh_install": {
+    "installed_files": 176,
+    "baseline_backups": "historical/p1_overlay_r2_baseline",
+    "A2": "NO-GO",
+    "P1": "FAIL_FROZEN_CANDIDATE",
+    "execution_authorized": false
+  },
+  "idempotent_second_install": {
+    "installed_files": 0,
+    "baseline_backups": "historical/p1_overlay_r2_baseline",
+    "A2": "NO-GO",
+    "P1": "FAIL_FROZEN_CANDIDATE",
+    "execution_authorized": false
+  },
+  "r1_upgrade": {
+    "installed_files": 94,
+    "baseline_backups": "historical/p1_overlay_r2_baseline",
+    "A2": "NO-GO",
+    "P1": "FAIL_FROZEN_CANDIDATE",
+    "execution_authorized": false
+  },
+  "conflict_refused_before_any_write": true,
+  "controller_clock_and_test_sources_match_fresh_numeric_reproduction": true,
+  "packaging_only_status_source_change_verified": [
+    "scripts/p1_overlay_install.py"
+  ],
+  "frozen_P1": "FAIL",
+  "A2": "NO-GO",
+  "independent_reviewer_signature": null,
+  "retained_directory": "/tmp/p1-r2-final-archive-vev7tlwf"
+}

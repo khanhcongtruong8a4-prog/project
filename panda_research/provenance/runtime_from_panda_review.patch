@@ -1,0 +1,20 @@
+--- baseline/panda_review/panda_dynamics.py
++++ src/panda_dynamics.py
+@@ -83,7 +83,7 @@
+ 
+ 
+ def mdh_fk_numpy(q):
+-    """Independent NumPy MDH product reference; returns 7 link poses and flange."""
++    """Internal NumPy MDH product (shared constants/helpers); returns 7 link poses and flange."""
+     q = _vector7(q, 'q')
+     R=np.eye(3); p=np.zeros(3); poses=[]
+     for i in range(N):
+@@ -96,7 +96,7 @@
+ 
+ 
+ def urdf_fk_numpy(q):
+-    """Separate source-level original-franka_ros URDF translation/rpy list."""
++    """In-code URDF-origin transcription; shares helpers, not source bytes."""
+     q = _vector7(q, 'q')
+     xyz=np.array([[0,0,0.333],[0,0,0],[0,-0.316,0],[0.0825,0,0],
+                   [-0.0825,0.384,0],[0,0,0],[0.088,0,0]],dtype=float)

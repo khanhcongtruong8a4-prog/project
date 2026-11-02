@@ -1,0 +1,9 @@
+{
+  "output": "runs/p1_checklist/20261101T175958614352Z",
+  "official_A2": "NO-GO",
+  "incomplete_fields": [
+    "physical_prehold_dynamics",
+    "hold_tracking_torque_end_conditions"
+  ],
+  "execution_performed": false
+}

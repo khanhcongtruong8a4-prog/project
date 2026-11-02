@@ -1,0 +1,9 @@
+E3 cell 0: P1 starts
+E3 cell 0: FAIL_NUMERICAL_CELL; t=0.095000; audit=False
+E3 cell 1: P1 starts
+E3 cell 1: FAIL_NUMERICAL_CELL; t=0.076000; audit=False
+E3 cell 2: P1 starts
+E3 cell 2: FAIL_NUMERICAL_CELL; t=0.092500; audit=False
+E3 cell 3: P1 starts
+E3 cell 3: FAIL_NUMERICAL_CELL; t=0.020000; audit=False
+Evidence: /workspace/a2-extended/panda_research/runs/a2_extended_v1/E3_e4267be

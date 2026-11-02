@@ -1,0 +1,23 @@
+test_all_43_affine_rows_against_independent_direct_equations (__main__.Action3Tests.test_all_43_affine_rows_against_independent_direct_equations) ... ok
+test_approved_panda_initial_component_is_infeasible_and_stops (__main__.Action3Tests.test_approved_panda_initial_component_is_infeasible_and_stops) ... ok
+test_approved_two_factor_grid_is_implemented_as_timing_fixture_only (__main__.Action3Tests.test_approved_two_factor_grid_is_implemented_as_timing_fixture_only) ... ok
+test_canonical_velocity_cancellation_and_one_sided_allowances (__main__.Action3Tests.test_canonical_velocity_cancellation_and_one_sided_allowances) ... ok
+test_coupled_observer_rk4_against_independent_dhat_ode (__main__.Action3Tests.test_coupled_observer_rk4_against_independent_dhat_ode) ... ok
+test_entry_conditions_include_psi1_velocity_manipulability_and_torque (__main__.Action3Tests.test_entry_conditions_include_psi1_velocity_manipulability_and_torque) ... ok
+test_flange_jacobian_world_frame_and_manipulability_derivatives (__main__.Action3Tests.test_flange_jacobian_world_frame_and_manipulability_derivatives) ... ok
+test_invalid_nonfinite_inputs_and_no_silent_defaults (__main__.Action3Tests.test_invalid_nonfinite_inputs_and_no_silent_defaults) ... ok
+test_observer_identity_applied_torque_feedback_and_no_truth_argument (__main__.Action3Tests.test_observer_identity_applied_torque_feedback_and_no_truth_argument) ... ok
+test_observer_moving_initialization_bound_and_replan (__main__.Action3Tests.test_observer_moving_initialization_bound_and_replan) ... ok
+test_policy_assembly_and_disabled_recovery_do_not_clear_A2 (__main__.Action3Tests.test_policy_assembly_and_disabled_recovery_do_not_clear_A2) ... ok
+test_policy_byte_hash_units_and_source_cells (__main__.Action3Tests.test_policy_byte_hash_units_and_source_cells) ... ok
+test_qp_feasible_zero_intervention_active_and_infeasible_fixtures (__main__.Action3Tests.test_qp_feasible_zero_intervention_active_and_infeasible_fixtures) ... ok
+test_solver_failure_requests_stop_and_repeat_solves_are_deterministic (__main__.Action3Tests.test_solver_failure_requests_stop_and_repeat_solves_are_deterministic) ... ok
+test_trace_logger_preserves_negative_samples_and_never_overwrites (__main__.Action3Tests.test_trace_logger_preserves_negative_samples_and_never_overwrites) ... ok
+test_tracking_sign_initialization_and_differential_identity (__main__.Action3Tests.test_tracking_sign_initialization_and_differential_identity) ... ok
+test_truth_injection_does_not_enter_the_control_update (__main__.Action3Tests.test_truth_injection_does_not_enter_the_control_update) ... ok
+test_zoh_rk4_stage_times_applied_feedback_and_replan (__main__.Action3Tests.test_zoh_rk4_stage_times_applied_feedback_and_replan) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 28.788s
+
+OK
