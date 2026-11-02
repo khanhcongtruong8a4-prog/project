@@ -1,0 +1,63 @@
+{
+  "verified_utc": "2026-11-02T16:54:19.599981+00:00",
+  "scientific_source_commit": "b4a105a788fd848648e3c8c7060d18326101f679",
+  "artifact_commit": "a17e7c4f2f3f00a7030e2a09f235e534840b39d6",
+  "small_numerical_zip": {
+    "url": "https://raw.githubusercontent.com/khanhcongtruong8a4-prog/project/a17e7c4f2f3f00a7030e2a09f235e534840b39d6/NUMERICAL_REPRODUCTION.zip",
+    "HTTP": 200,
+    "bytes": 11029144,
+    "MiB": 10.518211364746094,
+    "sha256": "34f1d0ec59990d52b38abaf16a5acce3334a9f98b7761172c30d4557fd504112",
+    "ZIP_CRC_pass": true,
+    "actual_extracted_numerical_reproduction": {
+      "reproduction_passed": true,
+      "exit_codes": {
+        "candidate_contracts": 0,
+        "M1_contracts": 0,
+        "entry_gate_contracts": 0,
+        "T27": 0,
+        "M1_registry": 0,
+        "G2_5": 0
+      },
+      "comparison": {
+        "all_14_registry_entries_exact": true,
+        "training_and_heldout_grid_sha256_exact": true,
+        "heldout_exceedances_exact": true,
+        "T27_39_pass": true,
+        "G2_5_NO_GO_reproduced": true,
+        "all_1212_filter_point_solves_pass": true,
+        "planner_entry_gate_stops_before_solve": true
+      },
+      "finish_utc": "2026-11-02T16:44:02.540992+00:00",
+      "active_filter_candidate_adopted": false,
+      "G2_5_and_A3_readiness": "NO-GO",
+      "Level1": false,
+      "human_independent_signatures": null
+    },
+    "contract_counts": {
+      "candidate_contracts": 4,
+      "M1_contracts": 6,
+      "entry_gate_contracts": 4
+    }
+  },
+  "new_work_evidence_zip": {
+    "url": "https://github.com/khanhcongtruong8a4-prog/project/archive/a17e7c4f2f3f00a7030e2a09f235e534840b39d6.zip",
+    "HTTP": 200,
+    "bytes": 178424917,
+    "MiB": 170.1592607498169,
+    "sha256": "9738d83e7c9915d7f840b7313f5c94279a31cdd678a7a95fe552264ffebd35b6",
+    "all_physical_file_SHA_and_CRC_pass": true,
+    "physical_files": 356,
+    "restored_logical_files_SHA_pass": 363,
+    "exact_CTZ_containers_restored": 16,
+    "source_model_assembly_and_solver_build_checks_pass": true
+  },
+  "full_earlier_history": "Preserved separately at immutable c271e443d33fe2a9f77a40eea9c79173c5609655 archive, SHA256 65f808db22ec0be1e34854345cb17fdd8c129378ba276b3fd8ee99f59e65cbbc. Not duplicated in compact task ZIP.",
+  "new_six_cell_simulations_executed_in_source_checkout": true,
+  "another_extracted_six_cell_physical_run_claimed": false,
+  "new_19_cell_physical_rerun_claimed": false,
+  "verification_scope": "AUTOMATED_LOCAL_SAME_HOST_NOT_EXTERNAL_HUMAN_REVIEW",
+  "official_A3_experiments": false,
+  "Level1": false,
+  "external_signatures": null
+}
