@@ -63,7 +63,7 @@
     "upper_components_total": 875,
     "sampled_maxima_not_certified_upper_bounds": true,
     "Level1_certified": false,
-    "remedy": "Qualify every upper coefficient on the fixed common domain using analytic/interval enclosures or verified remainder bounds; close the domain/tube and continuous residual-grid hypotheses. Adding heldout samples or changing a metadata label does not provide this verification."
+    "remedy": "For numerical qualification, close the failed held-out checks and declared domain/tube coverage. Rigorous domain-bound/theorem claims additionally require analytic/interval enclosures or verified remainders for every upper coefficient and residual grid bound. More samples or metadata changes alone do not establish global certification. Numerical A3 gates and Level1 certification are distinct."
   },
   "planner_disposition": {
     "G2_5": "NO-GO",

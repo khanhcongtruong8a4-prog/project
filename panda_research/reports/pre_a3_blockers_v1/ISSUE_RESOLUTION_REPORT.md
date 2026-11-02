@@ -116,10 +116,12 @@ inequality-residual Lipschitz estimates are supplied with their chain-rule
 and Markov provenance. Their grid reserves remain estimates; no continuous
 feasibility certificate is inferred from them.
 
-The exact remedy for bound qualification is analytic/interval enclosure or
-verified remainder control for every upper coefficient on the frozen common
-domain, with validated tube/domain coverage and residual grid bounds. More
-samples or a status-label change alone do not supply those guarantees.
+Finite numerical qualification must first close the failed held-out checks
+and the declared domain/tube coverage checks. Rigorous domain-bound claims
+additionally need analytic/interval enclosure or verified remainder control
+for every upper coefficient and the residual grid bounds. More samples or a
+status-label change alone do not establish those global guarantees. Numerical
+qualification and Level 1 certification remain separate gates.
 
 ## Full G2.5 and the entry contradiction
 
