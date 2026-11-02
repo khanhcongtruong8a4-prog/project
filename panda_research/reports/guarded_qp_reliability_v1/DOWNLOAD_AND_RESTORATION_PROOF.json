@@ -1,0 +1,53 @@
+{
+  "verified_utc": "2026-11-02T14:55:27.000206+00:00",
+  "artifact_commit": "c271e443d33fe2a9f77a40eea9c79173c5609655",
+  "scientific_source_commit": "9d3a3bc440de15b92977c8710f92eb39c61d7fd3",
+  "scope": "AUTOMATED_LOCAL_PACKAGE_AND_TRANSPORT_VERIFICATION_NOT_EXTERNAL_REVIEW",
+  "small_zip": {
+    "url": "https://raw.githubusercontent.com/khanhcongtruong8a4-prog/project/c271e443d33fe2a9f77a40eea9c79173c5609655/QP_REPRODUCTION.zip",
+    "HTTP": 200,
+    "bytes": 10066557,
+    "MiB": 9.60021686553955,
+    "sha256": "48bd60815b7b7227545fcf573a666d50e5eecb365d30c515bfbece8b5eda41e0",
+    "ZIP_CRC_pass": true,
+    "extracted_QP_reproduction_pass": true,
+    "fixtures": 39,
+    "full_trajectory_history_in_small_zip": false
+  },
+  "complete_zip": {
+    "url": "https://github.com/khanhcongtruong8a4-prog/project/archive/c271e443d33fe2a9f77a40eea9c79173c5609655.zip",
+    "HTTP": 200,
+    "bytes": 688136739,
+    "MiB": 656.2583341598511,
+    "sha256": "65f808db22ec0be1e34854345cb17fdd8c129378ba276b3fd8ee99f59e65cbbc",
+    "ZIP_CRC_checked_during_SHA_streaming": true,
+    "physical_file_set_exact": true,
+    "physical_file_count": 2258,
+    "all_physical_file_SHA256_match": true,
+    "logical_files_after_standalone_restoration": 2505,
+    "encoded_regular_files_restored": 95,
+    "CTZ_files_restored": 174,
+    "standalone_full_frozen_input_verification_exit": 0,
+    "original_runner_checks_not_disabled": true,
+    "local_staging_metadata_not_historical_commit_reconstruction": true
+  },
+  "restored_model_endpoint_proof": {
+    "passed": true,
+    "checks": {
+      "loaded_from_restored_source": true,
+      "bundled_backend_used": true,
+      "old_alpha5": true,
+      "v4_alpha10": true,
+      "actual_endpoint_43_rows": true,
+      "actual_endpoint_G_exact": true,
+      "actual_endpoint_c_exact": true,
+      "endpoint_accepted": true,
+      "endpoint_tau_exact": true,
+      "no_torque_actuated": true
+    },
+    "source_module": "/workspace/outputs/guarded-qp-complete-package-check/panda_research/src/panda_closed_loop/a2_qp_reliable_v1.py",
+    "backend_directory": "/workspace/outputs/guarded-qp-complete-package-check/panda_research/native/build_guarded_qp_v1",
+    "scope": "LOCAL_STANDALONE_RESTORATION_AND_ENDPOINT_REPLAY_NOT_EXTERNAL_REVIEW"
+  },
+  "external_independent_signatures": null
+}
