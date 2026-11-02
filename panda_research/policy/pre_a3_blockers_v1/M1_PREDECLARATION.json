@@ -1,0 +1,125 @@
+{
+  "version": "M1_NUMERICAL_DEVELOPMENT_PREDECLARATION_V1",
+  "freeze_utc": "2026-11-02T15:59:17.977697+00:00",
+  "source_sha256": {
+    "src/panda_closed_loop/m1_common_domain_v1.py": "f394d234717cdde415fa404d863e7cb73569316d8df259508183dcb604e4e5ca",
+    "src/panda_closed_loop/m1_margins_v1.py": "c73e023d9ff7982aadd919fcbfdc3a3e9b6a886b2f167f999eaa9d48862258af",
+    "scripts/build_m1_registry_v1.py": "4b6e8fad8f909a332129a63d24319cb9b9c1929844a7a1fdf0383783afc7ceba",
+    "scripts/screen_g25_final_policy_v1.py": "7a1cc40e35ba4444331b17e69e0ce300a86dc21566eca462c54fc1fefd924079",
+    "tests/test_m1_common_v1.py": "155b6cfe989f41a4589f5e485a0afaffe89221f4fda1eb7d83026cf2ab63e617"
+  },
+  "common_domain": {
+    "version": "M1_FIXED_PERIODIC_COEFFICIENT_DOMAIN_V1",
+    "q_phase_lower": [
+      -4.0,
+      -4.0,
+      -4.0,
+      -4.0,
+      -4.0,
+      -4.0,
+      -4.0
+    ],
+    "q_phase_upper": [
+      4.0,
+      4.0,
+      4.0,
+      4.0,
+      4.0,
+      4.0,
+      4.0
+    ],
+    "v_lower": [
+      -2.175,
+      -2.175,
+      -2.175,
+      -2.175,
+      -2.61,
+      -2.61,
+      -2.61
+    ],
+    "v_upper": [
+      2.175,
+      2.175,
+      2.175,
+      2.175,
+      2.61,
+      2.61,
+      2.61
+    ],
+    "a_lower": [
+      -454307.51500000054,
+      -276417.9150000003,
+      -454307.51500000054,
+      -235367.67500000028,
+      -454309.6900000005,
+      -295581.05000000034,
+      -454309.6900000005
+    ],
+    "a_upper": [
+      454307.51500000054,
+      276417.9150000003,
+      454307.51500000054,
+      235367.67500000028,
+      454309.6900000005,
+      295581.05000000034,
+      454309.6900000005
+    ],
+    "physical_q_lower_unchanged": [
+      -2.8973,
+      -1.7628,
+      -2.8973,
+      -3.0718,
+      -2.8973,
+      -0.0175,
+      -2.8973
+    ],
+    "physical_q_upper_unchanged": [
+      2.8973,
+      1.7628,
+      2.8973,
+      -0.0698,
+      2.8973,
+      3.7525,
+      2.8973
+    ],
+    "physical_safety_constraints_never_wrap_q": true,
+    "position_extension_rad_retained": 0.01,
+    "periodic_cover": "The phase box [-4,4]^7 contains [-pi,pi]^7. All 14 coefficient targets are 2pi-periodic in q or constant (joint H derivatives). This bounds coefficient functions; it changes no physical joint limit.",
+    "conditional_T_and_K_coverage": "Any feasible tightened plan has |vp|+chi_v+delta_v<=vmax, hence its T velocities are physical and chi_v<=vmax. Markov bounds on every degree-five span plus Lambda*vmax cover qr_ddot in K. A failing tightened-speed screen never establishes coverage or planner feasibility.",
+    "Markov_ap_upper": [
+      454296.6400000005,
+      276407.04000000027,
+      454296.6400000005,
+      235356.80000000025,
+      454296.6400000005,
+      295568.0000000003,
+      454296.6400000005
+    ],
+    "Markov_jerk_upper": [
+      53425284.86400008,
+      32505467.904000044,
+      53425284.86400008,
+      27677959.68000004,
+      53425284.86400008,
+      34758796.80000006,
+      53425284.86400008
+    ],
+    "Tmin_unchanged": 0.5,
+    "exact_min_knot_span": "321685687669321/2251799813685248",
+    "Markov_derivation": "On [-1,1], ||p2||<=200||p|| and ||p3||<=840||p|| for degree5. Rescale a span and center q: ap<=400*width/L^2; jerk<=3360*width/L^3.",
+    "sampler": "Sobol 21D scrambled, source-fixed before sampling",
+    "seed": 20271102,
+    "Sobol_training_power": 9,
+    "Sobol_holdout_power": 8,
+    "training_anchors": "Four previously measured v4 C4 starts and original physical midpoint, each a=0; included before tests, not chosen for success."
+  },
+  "final_policy": "Existing alpha_v10 policy; lambda=5, kappa=10, Ko=20, alpha1=alpha2=5, disturbance and all physical bounds unchanged.",
+  "estimate_method": "First 512 points of fixed Sobol(21, scramble, seed20271102) power10 set, plus four previously measured C4 starts and physical midpoint; next256 points held out. Final tables retain training extrema even when holdout exceeds. No inflation factor or sampled minimum promoted to certified bound.",
+  "inertia_lower_bound": "Exact rational body inertia SPD/inverse-trace lemma and kinematic energy proof, divided by4; selected ideal model only, full floating evaluation not Level1.",
+  "AD_validation": "Central finite differences step1e-6; rtol3e-5 atol2e-7, new derivative diagnostic only; existing experimental thresholds unchanged.",
+  "domain_rationale": "Global periodic coefficient cover [-4,4]^7 (physical limits unchanged); physical velocity box conditional on tightened speed feasibility; augmented acceleration from Markov degree5 bounds using unchanged Tmin and knot spans plus Lambda*vmax.",
+  "G2_5_screen": "12 unchanged E1/E2/E3 reference/C4-start cases, 101 nodes on original .01s NLP initial grid. Evaluate complete margins, including rho_r(0)=varpi0 and factor-two terms; 43 filter constraints, torque reserves, speed, position/manipulability h, HOCBF, velocity CBF; source-derived residual Lipschitz estimates remain uncertified.",
+  "fixed_start_impossibility_witness": "Exact inverse of represented M and rational speed-pair Farkas weights1/2+1/2; not an exact nonlinear model or Level1 certificate.",
+  "do_not_call_official_A3_solvers": true,
+  "no_human_verification_signatures_invented": true
+}
