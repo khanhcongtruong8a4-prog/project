@@ -1,0 +1,12 @@
+C4 start 0 E1 filter pass 101 / 101 planner nodes pass False
+C4 start 0 E2 filter pass 101 / 101 planner nodes pass False
+C4 start 0 E3 filter pass 101 / 101 planner nodes pass False
+C4 start 1 E1 filter pass 101 / 101 planner nodes pass False
+C4 start 1 E2 filter pass 101 / 101 planner nodes pass False
+C4 start 1 E3 filter pass 101 / 101 planner nodes pass False
+C4 start 2 E1 filter pass 101 / 101 planner nodes pass False
+C4 start 2 E2 filter pass 101 / 101 planner nodes pass False
+C4 start 2 E3 filter pass 101 / 101 planner nodes pass False
+C4 start 3 E1 filter pass 101 / 101 planner nodes pass False
+C4 start 3 E2 filter pass 101 / 101 planner nodes pass False
+C4 start 3 E3 filter pass 101 / 101 planner nodes pass False

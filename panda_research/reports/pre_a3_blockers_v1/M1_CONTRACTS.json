@@ -1,0 +1,37 @@
+{
+  "overall_pass": true,
+  "tests_run": 6,
+  "checks": [
+    {
+      "test": "__main__.M1Checks.test_actual_start_has_exact_represented_pair_obstruction",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.M1Checks.test_full_margin_keeps_nonzero_rho_initial_and_factor_two",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.M1Checks.test_inertia_lower_bound_is_analytic_not_a_sampled_minimum",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.M1Checks.test_markov_constants_for_degree_five_are_exact",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.M1Checks.test_registry_cannot_promote_samples_or_supply_missing_zeros",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.M1Checks.test_source_AD_derivatives_match_model_and_HOCBF_finite_differences",
+      "result": "PASS"
+    }
+  ],
+  "source_hashes": {
+    "src/panda_closed_loop/m1_common_domain_v1.py": "f394d234717cdde415fa404d863e7cb73569316d8df259508183dcb604e4e5ca",
+    "src/panda_closed_loop/m1_margins_v1.py": "c73e023d9ff7982aadd919fcbfdc3a3e9b6a886b2f167f999eaa9d48862258af",
+    "tests/test_m1_common_v1.py": "155b6cfe989f41a4589f5e485a0afaffe89221f4fda1eb7d83026cf2ab63e617"
+  },
+  "synthetic_bounds_not_robot_registry": true,
+  "Level1": false
+}

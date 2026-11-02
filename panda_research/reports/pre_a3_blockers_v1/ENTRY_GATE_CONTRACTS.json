@@ -1,0 +1,30 @@
+{
+  "overall_pass": true,
+  "tests_run": 4,
+  "checks": [
+    {
+      "test": "__main__.EntryGateContracts.test_actual_start_stops_for_mathematical_pair_infeasibility",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.EntryGateContracts.test_certified_use_requires_a_separate_qualified_bound_suite",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.EntryGateContracts.test_synthetic_finite_gate_pass_is_not_level1_or_full_A3",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.EntryGateContracts.test_synthetic_zero_varpi_entry_does_not_hide_failed_finite_audit",
+      "result": "PASS"
+    }
+  ],
+  "source_hashes": {
+    "src/panda_closed_loop/pre_a3_entry_gate_v1.py": "7b34f45d32dd00d6b5d23082ecf255e0774e353c9fb77b86f0841b9eb309d871",
+    "tests/test_pre_a3_entry_gate_v1.py": "c194e08db07cb3a61ca31a13bdeec374385f9494c0c37f91d1a5858ddff1bfbb"
+  },
+  "synthetic_unit_fixtures_not_experimental_evidence": true,
+  "original_registry_or_experimental_bound_modified": false,
+  "official_A3_executed": false,
+  "Level1": false
+}

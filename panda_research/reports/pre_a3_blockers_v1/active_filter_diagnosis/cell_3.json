@@ -1,0 +1,175 @@
+{
+  "cell": 3,
+  "grid": {
+    "control_period_s": 0.0005,
+    "rk4_step_s": 0.000125
+  },
+  "historical_metrics": {
+    "modeled_electrical_energy_J": 1.172440490707468,
+    "duration_s": 1.0,
+    "maximum_intervention_Nm": 0.1292103066362374,
+    "minimum_normalized_raw_slack": 8.81960435718015e-09,
+    "max_normalized_primal": 0.0,
+    "max_scaled_stationarity": 9.863833924997345e-13,
+    "minimum_observer_envelope_slack_Nm": [
+      0.0838177551284969,
+      0.06510884786524167,
+      0.04476494934977879,
+      0.059373140873536984,
+      0.010534726458910449,
+      0.007385012117100832,
+      0.006320713751371285
+    ],
+    "planned_terminal_error_m": 5.940386319393238e-17,
+    "actual_terminal_error_m": 0.0005235622900108145,
+    "target_flange_m": [
+      0.58193846674274,
+      -3.6936069357116846e-08,
+      0.6549019603605852
+    ],
+    "zero_intervention_diagnostic": false,
+    "control_updates_attempted": 2000,
+    "substeps_attempted": 8000,
+    "metrics_cover_completed_horizon": true,
+    "energy_scope": "EXECUTION_ONLY_RK4_SHARED_BUS_ELECTRICAL_MODEL_NO_TIME_PENALTY"
+  },
+  "positive_dual_active_rows": [
+    "v_lower_1",
+    "v_upper_3"
+  ],
+  "active_update_count": 765,
+  "transitions": [
+    {
+      "time": 0.02,
+      "previous_time": 0.0195,
+      "from": [],
+      "to": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "time": 0.3295,
+      "previous_time": 0.329,
+      "from": [
+        "v_upper_3"
+      ],
+      "to": [
+        "v_upper_3",
+        "v_lower_1"
+      ]
+    },
+    {
+      "time": 0.33,
+      "previous_time": 0.3295,
+      "from": [
+        "v_upper_3",
+        "v_lower_1"
+      ],
+      "to": [
+        "v_lower_1"
+      ]
+    },
+    {
+      "time": 0.4025,
+      "previous_time": 0.402,
+      "from": [
+        "v_lower_1"
+      ],
+      "to": []
+    }
+  ],
+  "intervention_peak_time": 0.20600000000000002,
+  "quadratic_peak_diagnostic": {
+    "time": 0.20613973914634262,
+    "intervention": 0.1292104244055361,
+    "scope": "DIAGNOSTIC_ONLY_NOT_AN_ACCEPTANCE_METRIC_REPLACEMENT"
+  },
+  "max_AB2_sampling_correction_Nm": 0.02281700577679673,
+  "max_tau_minus_raw_Nm": 0.1289616890318633,
+  "raw_request_projection_diagnostic_failures": [],
+  "unactuated_AB2_after_filter_negative_raw_queries": 765,
+  "unactuated_AB2_after_filter_negative_raw_examples": [
+    {
+      "index": 40,
+      "time": 0.02,
+      "minimum_normalized_raw_slack": -0.0001770359232256757,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 41,
+      "time": 0.0205,
+      "minimum_normalized_raw_slack": -0.00501751895036435,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 42,
+      "time": 0.021,
+      "minimum_normalized_raw_slack": -0.005107806071884802,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 43,
+      "time": 0.021500000000000002,
+      "minimum_normalized_raw_slack": -0.004383319065321635,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 44,
+      "time": 0.022,
+      "minimum_normalized_raw_slack": -0.004446584659845027,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 45,
+      "time": 0.0225,
+      "minimum_normalized_raw_slack": -0.004508486637800812,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 46,
+      "time": 0.023,
+      "minimum_normalized_raw_slack": -0.004569056280050112,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 47,
+      "time": 0.0235,
+      "minimum_normalized_raw_slack": -0.0046283246946574015,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 48,
+      "time": 0.024,
+      "minimum_normalized_raw_slack": -0.004686314259996267,
+      "rows": [
+        "v_upper_3"
+      ]
+    },
+    {
+      "index": 49,
+      "time": 0.0245,
+      "minimum_normalized_raw_slack": -0.004743062117214798,
+      "rows": [
+        "v_upper_3"
+      ]
+    }
+  ],
+  "max_projection_AB2_commutator_Nm": 0.0014348027005071794,
+  "hypothetical_torque_actuated": false
+}

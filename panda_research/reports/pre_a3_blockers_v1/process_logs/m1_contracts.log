@@ -1,0 +1,11 @@
+test_actual_start_has_exact_represented_pair_obstruction (__main__.M1Checks.test_actual_start_has_exact_represented_pair_obstruction) ... ok
+test_full_margin_keeps_nonzero_rho_initial_and_factor_two (__main__.M1Checks.test_full_margin_keeps_nonzero_rho_initial_and_factor_two) ... ok
+test_inertia_lower_bound_is_analytic_not_a_sampled_minimum (__main__.M1Checks.test_inertia_lower_bound_is_analytic_not_a_sampled_minimum) ... ok
+test_markov_constants_for_degree_five_are_exact (__main__.M1Checks.test_markov_constants_for_degree_five_are_exact) ... ok
+test_registry_cannot_promote_samples_or_supply_missing_zeros (__main__.M1Checks.test_registry_cannot_promote_samples_or_supply_missing_zeros) ... ok
+test_source_AD_derivatives_match_model_and_HOCBF_finite_differences (__main__.M1Checks.test_source_AD_derivatives_match_model_and_HOCBF_finite_differences) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 12.093s
+
+OK
