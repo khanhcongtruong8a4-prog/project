@@ -1,0 +1,115 @@
+{
+  "version": "GUARDED_QP_RELIABILITY_V1",
+  "scope": "TARGETED_SOLVER_QUALIFICATION_NO_FRAMEWORK_OR_EXPERIMENT_REDESIGN",
+  "pre_test_status": "FROZEN_BEFORE_T27_AND_DYNAMIC_REPLAY",
+  "implementation_sha256": {
+    "native/guarded_qp_reliability_v1.cpp": "d1ae06f55bb24e5ebdddc7a17cc1a0e65c43a1027d9e45cb3f6df36f66dbc1e4",
+    "scripts/build_guarded_qp_reliability.py": "58fde0b3d3a05227d0bb5c0e7b56022ef3a246495f802fe6771fb81e3c68ddcc",
+    "scripts/diagnose_guarded_qp_reliability.py": "c0f58226978d86f2ec773de335eb38a483325233613abd2a099cd6b40fdc97b6",
+    "scripts/qualify_guarded_qp_reliability.py": "51acd61a0df463bb2cf537477bee233cd6b735fe2dd07a3430e8db9f9b6cced7",
+    "scripts/replay_guarded_qp_reliability.py": "9e1e4f049d56845f45920327fa1eac1563d2acba2835591a33a7ed6efcb09ad7",
+    "src/panda_closed_loop/guarded_qp_native_v1.py": "4b68680ebc8bc262c16df174763ac79d67e36e10a7472bc31fdb0e10596ffa2d",
+    "src/panda_closed_loop/guarded_qp_qualification_v1.py": "9f70f4f92dbc26cb8e798db7e7a0a49dce4d4c88e3e6d5802f82168ecacd88bb",
+    "src/panda_closed_loop/a2_qp_reliable_v1.py": "981260f6648cd2d30d094554579d1c104407c51b61da9f8e6e5d0343cde94cb7",
+    "tests/test_guarded_qp_reliable_math.py": "ae65c0e76428cade1ad83a373e6b9d9a637fb03dec1c003512303be99ae3f1e4"
+  },
+  "tested_backend_sha256": "3370c29e2c3e42db44bc7cfed1d385ebc6680a519a1501693c223575122fc8c1",
+  "algorithmic_correction": "dense utils.hpp: support u*z_positive + l*z_negative (negative_part returns min(z,0)); ordinary and box branches",
+  "original_solver_settings_and_initialization_unchanged": true,
+  "additional_fail_closed_check": "Existing dual-sign and guarded-complementarity audit targets also gate return of torque before application",
+  "physical_model_controller_observer_barriers_reference_guard_gains_changed": false,
+  "preserve_all_previous_source_and_failures": true,
+  "witness_or_independent_solver_fallback_in_runtime": false,
+  "counterexample_investigation_before_freeze": "READ_ONLY_DIAGNOSIS_NO_ACTUATION; exact arithmetic plus SLSQP and native unpatched/patched builds",
+  "contract_suites": [
+    [
+      "original_r4",
+      "test_p1_r4.py",
+      14
+    ],
+    [
+      "guarded_v2_preserved",
+      "test_a2_qp_v2.py",
+      14
+    ],
+    [
+      "v4_gain_preserved",
+      "test_a2_policy_v4.py",
+      10
+    ],
+    [
+      "corrected_math",
+      "test_guarded_qp_reliable_math.py",
+      12
+    ]
+  ],
+  "T27_suite": {
+    "original_fixtures": 18,
+    "positive_rescaling_cases": 4,
+    "nominal_one_millinewton_metre_coordinate_perturbations": 14,
+    "zero_normal_sign_cases": 3,
+    "total": 39,
+    "original_T29_primal_stationarity": 1e-09,
+    "all_raw_rows_nonnegative_no_epsilon": true,
+    "oracle_physical_optimum_error_Nm": 1e-07,
+    "exact_KKT_or_Farkas_required": true,
+    "independent_SLSQP_scaled_optimum_error": 1e-09,
+    "no_actuation": true
+  },
+  "motion_replays": {
+    "original_A2": {
+      "cells": 7,
+      "backend": "ORIGINAL_HardSafetyQP_UNMODIFIED",
+      "policy": "policy/v1.2.2-r4/PREDECLARED_A2_R4.json"
+    },
+    "A2_Extended_v4": {
+      "cells": 12,
+      "backend": "CORRECTED_GUARDED_SINGLE_COLD_SOLVE",
+      "policy": "policy/a2_extended_v4/A2_EXTENDED_PREDECLARATION.json",
+      "references": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "alpha_v": 10
+    },
+    "active_filter_refinement": {
+      "cells": 4,
+      "backend": "CORRECTED_GUARDED_SINGLE_COLD_SOLVE",
+      "policy": "policy/a2_extended_v2/A2_EXTENDED_PREDECLARATION.json",
+      "reference": "E3",
+      "alpha_v": 5,
+      "reason": "Re-evaluate previously observed active-filter refinement failure under its original fixed settings; no threshold/parameter changes"
+    }
+  },
+  "dynamic_acceptance": "Every actual endpoint QP, full horizon, raw sign, torque box, both recomputed KKT scalings, every original refinement edge/diagonal and original terminal targets must pass. Earlier failures remain failures.",
+  "replay_comparison": {
+    "original_A2": "EXACT physical/scientific replay excluding original declared walltime only",
+    "corrected_v4": "Record full scientific digests and exact-match flags; do not require bit identity of a newly compiled solver. Also compare physical trace fields at absolute tolerance 1e-8 and relative tolerance 1e-10; tau absolute ceiling 1e-7 Nm. Metrics must meet unchanged original refinement thresholds.",
+    "new_diagnostic_fields_declared": [
+      "solver",
+      "backend_correction",
+      "iterations",
+      "duality_gap",
+      "dual_original",
+      "dual_scaled",
+      "complementarity",
+      "guarded_complementarity",
+      "normalized_primal",
+      "scaled_stationarity",
+      "guarded_normalized_primal",
+      "guarded_scaled_stationarity",
+      "solve_runtime_s"
+    ]
+  },
+  "decisions_separate": [
+    "A2_SELECTED_FROZEN_SCOPE",
+    "GENERAL_GUARDED_QP_QUALIFICATION",
+    "T27_FINITE_NUMERICAL_REGRESSION",
+    "A3_READINESS"
+  ],
+  "external_independent_signatures": null,
+  "user_consultation_authorization_is_not_external_verification_evidence": true,
+  "official_A3_comparisons_permitted": false,
+  "Level1_claim_permitted": false
+}
