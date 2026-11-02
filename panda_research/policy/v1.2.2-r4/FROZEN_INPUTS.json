@@ -1,12 +1,13 @@
 {
-  "status": "FROZEN_BEFORE_R4_TESTING",
+  "status": "FROZEN_WITH_SYNTHETIC_FIXTURE_CORRECTION_BEFORE_FIRST_R4_PANDA_RUN",
   "base_commit": "e5ced13",
   "new_files": [
     "src/panda_closed_loop/p1_r4.py",
     "scripts/p1_r4.py",
     "tests/test_p1_r4.py",
     "policy/v1.2.2-r4/DESIGN.md",
-    "policy/v1.2.2-r4/PREDECLARED_A2_R4.json"
+    "policy/v1.2.2-r4/PREDECLARED_A2_R4.json",
+    "policy/v1.2.2-r4/TEST_FIXTURE_AMENDMENT.md"
   ],
   "preserved_prior_tracked_count": 1052,
   "files": {
@@ -1061,11 +1062,13 @@
     "tests/test_action3.py": "c7e83e264370ba7bb8c762b588a82eadf151feaeab8c1498357c3801f66ac495",
     "tests/test_p1_feasibility.py": "3c339728d7febe21e5f8472e1de182776a30613ce3e9a7ac14d032819ea238e4",
     "tests/test_p1_r3.py": "3c011180015a1125057f102d04673028493aaba426c2662c8c94ca87667c5082",
-    "tests/test_p1_r4.py": "e9e4f4aca0e82b9d79ccc7e88530bf966d676958635d11d825b6667ed165ff4a",
+    "tests/test_p1_r4.py": "500e2bad0dbeb6046a1d3154ee90c25e42a58f672135e8f734b4cd5c54012e7f",
     "tests/test_preparation.py": "97ced1d6bbd9038e2a8a96570e8c77129971c944f07fc477004a19a3802d05f0",
     "tests/test_reference_sensitivity.py": "62852157b45ccdf33baf1a654ed2b83bffaea47172ea37b9e6acc756b958eef4",
     "tests/test_t28_raw_c.py": "e2fcd776217dee530ae756e28727af999366797e32acf3e1f9c9041556872ca0",
     "tests/verify_integration.py": "9a870c2a03f834bbff96ee9918acfab19aac8d9093892da8638a617e31c3c81d",
-    "tests/verify_primary_sources.py": "a2a6aeaacc8174ec1dacc051d174bd39dbfb00590f386bd5890476936c887e6d"
-  }
+    "tests/verify_primary_sources.py": "a2a6aeaacc8174ec1dacc051d174bd39dbfb00590f386bd5890476936c887e6d",
+    "policy/v1.2.2-r4/TEST_FIXTURE_AMENDMENT.md": "ffb07d103cd259a853145b534741e673d698c57a1f22c657c0baea3c589ce17a"
+  },
+  "previous_freeze_commit": "52068ee"
 }

@@ -96,7 +96,9 @@ class R4Tests(unittest.TestCase):
     def test_endpoint_QP_is_not_recomputed_or_consumed_twice(self):
         system = fixture()
         system.controller = AB2TorqueController(system.controller)
-        ref = QuinticMeasuredReference(np.zeros(7), np.zeros(7), np.full(7, 1e-5), .004)
+        # Keep this history/endpoint test inside the synthetic 1 N m box.
+        # The Panda reference remains the independently frozen 0.01 rad task.
+        ref = QuinticMeasuredReference(np.zeros(7), np.zeros(7), np.full(7, 1e-7), .004)
         _, endpoint = strict_qp_check(system, state(), envelope(), ref)
         self.assertEqual(system.controller.updates, 1)
         out = run_a2_cell(system, state(), HoldSchedule(.001, .00025), envelope(), ref,
