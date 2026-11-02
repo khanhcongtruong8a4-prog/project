@@ -1,0 +1,345 @@
+{
+  "name": "outside_physical_torque_box",
+  "G": [
+    [
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "c": [
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0,
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0,
+    -13.0
+  ],
+  "scales": [
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0,
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0,
+    1.0
+  ],
+  "row_names": [
+    "box_upper_1",
+    "box_upper_2",
+    "box_upper_3",
+    "box_upper_4",
+    "box_upper_5",
+    "box_upper_6",
+    "box_upper_7",
+    "box_lower_1",
+    "box_lower_2",
+    "box_lower_3",
+    "box_lower_4",
+    "box_lower_5",
+    "box_lower_6",
+    "box_lower_7",
+    "synthetic_0"
+  ],
+  "nominal": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "oracle": {
+    "feasible": false,
+    "passed": true,
+    "LP_status": 2,
+    "exact_certificate": {
+      "passed": true,
+      "support_indices": [
+        6,
+        14
+      ],
+      "exact_dual": [
+        "1/2",
+        "1/2"
+      ],
+      "exact_support": "-207062078751193/36028797018963968",
+      "scope": "EXACT_BINARY64_GUARDED_QP_FARKAS_CERTIFICATE"
+    }
+  },
+  "query": {
+    "applied": null,
+    "status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+    "stop_requested": true,
+    "diagnostics": {
+      "solver": "ProxQP 0.7.2+guarded-support-sign-v1",
+      "settings": {
+        "version": "A2_QP_NUMERICS_V2",
+        "variable": "y=tau/87 N m; isotropic Hessian I",
+        "constraint_scaling": "Euclidean unit normal in y, positive row scaling only",
+        "inward_guard_original_row_scale": 1e-08,
+        "guard_rule": "G tau+c >= 1e-8 * original row scale",
+        "eps_abs": 1e-12,
+        "eps_rel": 0.0,
+        "max_iter": 10000,
+        "check_duality_gap": true,
+        "eps_duality_gap_abs": 1e-12,
+        "eps_duality_gap_rel": 0.0,
+        "original_normalized_primal_target": 1e-09,
+        "original_scaled_stationarity_target": 1e-09,
+        "wall_budget_s": 15.0,
+        "retry": false,
+        "post_QP_projection": false
+      },
+      "backend_correction": {
+        "version": "GUARDED_QP_RELIABILITY_V1",
+        "library_sha256": "3370c29e2c3e42db44bc7cfed1d385ebc6680a519a1501693c223575122fc8c1",
+        "patch_sha256": "17bfb8591a02d624f870cb8766ac0d36040649ad3f75f05855814c06cf5913a5",
+        "settings_and_initialization_unchanged": true
+      },
+      "row_names": [
+        "box_upper_1",
+        "box_upper_2",
+        "box_upper_3",
+        "box_upper_4",
+        "box_upper_5",
+        "box_upper_6",
+        "box_upper_7",
+        "box_lower_1",
+        "box_lower_2",
+        "box_lower_3",
+        "box_lower_4",
+        "box_lower_5",
+        "box_lower_6",
+        "box_lower_7",
+        "synthetic_0"
+      ],
+      "row_units": [
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI"
+      ],
+      "row_scales": [
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0,
+        1.0
+      ],
+      "row_scaling_denominator": [
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0
+      ],
+      "inward_guard_raw": [
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07,
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07,
+        1e-08
+      ],
+      "recovery": "DISABLED",
+      "replan_requested": true,
+      "cold_solves": 1,
+      "post_solve_repair": false,
+      "iterations": 5,
+      "duality_gap": -0.0014820243556545147
+    }
+  },
+  "physical_error_vs_exact_Nm": null,
+  "passed": true,
+  "wall_s": 0.007037474002572708,
+  "torque_actuated": false
+}
