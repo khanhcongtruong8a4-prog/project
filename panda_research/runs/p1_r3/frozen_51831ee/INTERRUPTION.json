@@ -1,0 +1,10 @@
+{
+  "status": "ENGINEERING_INTERRUPTION_NO_COMPLETED_P1_OR_A2_RESULT",
+  "reason": "Original interpreted geometry cost 0.17-0.21 s per call; switch to an explicitly frozen scalar-expression backend after bitwise regression, no retuning.",
+  "signals": "SIGINT was translated by CasADi into the retained cell_0 DM_full exception; SIGTERM then ended the process, exit 143.",
+  "completed_cells": 0,
+  "measured_zero_endpoint_available": false,
+  "partial_state_not_promoted_to_endpoint": true,
+  "controller_or_test_values_changed": false,
+  "original_frozen_inputs_restored_and_unchanged": true
+}

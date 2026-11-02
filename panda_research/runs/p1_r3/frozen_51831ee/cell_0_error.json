@@ -1,0 +1,13 @@
+{
+  "cell": 0,
+  "grid": {
+    "control_period_s": 0.001,
+    "rk4_step_s": 0.00025
+  },
+  "engineering_error": "Traceback (most recent call last):\n  File \"/workspace/project/panda_research/scripts/p1_r3.py\", line 157, in main\n    cells.append(run_cell(system, plan, index, out))\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/scripts/p1_r3.py\", line 85, in run_cell\n    result = runner.run()\n             ^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/preparation.py\", line 153, in run\n    physical=sys.barriers.entry_conditions(q,v,tau)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/barriers.py\", line 81, in entry_conditions\n    h, gradient, _ = self.position_data(q)\n                     ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/barriers.py\", line 45, in position_data\n    k = self.geometry.evaluate(q)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/geometry.py\", line 22, in evaluate\n    result = {'f': np.asarray(f).reshape(3), 'Jv': np.asarray(j), 'W': float(w),\n                   ^^^^^^^^^^^^^\n  File \"/workspace/panda-venv/lib/python3.12/site-packages/casadi/casadi.py\", line 11250, in __array__\n    return self.__array_custom__(*args,**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/panda-venv/lib/python3.12/site-packages/casadi/casadi.py\", line 11271, in __array_custom__\n    return self.full()\n           ^^^^^^^^^^^\n  File \"/workspace/panda-venv/lib/python3.12/site-packages/casadi/casadi.py\", line 11151, in full\n    return _casadi.DM_full(self, *args)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNotImplementedError: Wrong number or type of arguments for function 'DM_full'.\n  Prototype:\nfull(self)\n  You have: \n\n",
+  "a2": {
+    "completed": false,
+    "passed": false,
+    "status": "ENGINEERING_ERROR"
+  }
+}

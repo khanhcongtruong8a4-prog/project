@@ -1,0 +1,12 @@
+{
+  "status": "PASS_AUTOMATED_SOURCE_CROSSCHECK",
+  "inertial_rows": 70,
+  "friction_rows": 21,
+  "joint_frame_rows": 8,
+  "inertial_mismatches": [],
+  "friction_mismatches": [],
+  "human_T04b": "PENDING SIGNATURE",
+  "human_T06a": "PENDING SIGNATURE",
+  "erratum_webpage": "NOT_RETRIEVED; revised Table I and pinned friction code checked directly",
+  "overall_pass": true
+}

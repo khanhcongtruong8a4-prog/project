@@ -1,0 +1,20 @@
+PASS | T04b author-code c1z convention                                   | 0 <= 0
+PASS | T04b author-code joint2 phi1                                      | 0 <= 0
+PASS | T04b body inertia SPD                                             | 0 <= 0
+PASS | T04b positive principal triangle slack                            | 0 <= 0
+PASS | T06a MDH vs pinned-URDF link and flange positions                 | 1.1102e-16 <= 1e-12
+PASS | T06a MDH vs pinned-URDF rotations                                 | 0 <= 1e-12
+PASS | T06a CasADi AD flange FK vs NumPy MDH                             | 1.1102e-16 <= 1e-11
+PASS | Phase3a M symmetric                                               | 5.5511e-17 <= 5e-12
+PASS | Phase3a M positive definite on 22 checked poses                   | 0 <= 0
+PASS | Phase3a Mdot - C - CT zero                                        | 2.2204e-16 <= 3e-10
+PASS | Phase3a mechanical skew power identity                            | 1.4095e-16 <= 1e-10
+PASS | Phase3a gravity equals numeric potential gradient                 | 3.3302e-09 <= 5e-08
+PASS | Phase3a Cqdot vs independently finite-differenced Lagrange form   | 1.1426e-10 <= 5e-08
+PASS | Phase3a q1 independence of M (sampled)                            | 1.3323e-15 <= 1e-10
+PASS | Phase3a inverse-dynamics power consistency                        | 3.5527e-15 <= 1e-10
+PASS | Phase3a F(0)=0                                                    | 0 <= 1e-15
+PASS | Phase3a friction dissipation on velocity grid                     | 0 <= 0
+PASS | T12 dual-harmonic magnitude bound (sampled check)                 | 0 <= 1e-12
+PASS | T12 dual-harmonic derivative bound (sampled check)                | 0 <= 1e-12
+OVERALL: PASS_INTERNAL_NUMERICAL_TESTS RESULT FILE: /workspace/onboarding/r3-regression/panda_research/runs/20261102T043059598972Z/original/phase3a_test_report.json

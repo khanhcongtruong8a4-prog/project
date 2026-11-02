@@ -1,0 +1,16 @@
+geometry equivalence: 22/154 bitwise PASS
+geometry equivalence: 44/154 bitwise PASS
+geometry equivalence: 66/154 bitwise PASS
+geometry equivalence: 88/154 bitwise PASS
+geometry equivalence: 110/154 bitwise PASS
+geometry equivalence: 132/154 bitwise PASS
+geometry equivalence: 154/154 bitwise PASS
+cell 0: starting frozen P1-r3
+cell 0: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 1: starting frozen P1-r3
+cell 1: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 2: starting frozen P1-r3
+cell 2: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 3: starting frozen P1-r3
+cell 3: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+Evidence: /workspace/project/panda_research/runs/p1_r3/expanded_a7891c3
