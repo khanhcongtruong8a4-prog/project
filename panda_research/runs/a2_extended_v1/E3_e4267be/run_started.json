@@ -1,0 +1,94 @@
+{
+  "start_utc": "2026-11-02T08:49:11.201325+00:00",
+  "scope": "PREDECLARED_DEVELOPMENT_A2_EXTENDED_NOT_A3",
+  "reference_id": "E3",
+  "definition": {
+    "duration_s": 1.0,
+    "normalized_boundaries": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "waypoint_offsets_rad": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.115892,
+        0.0,
+        -0.115892,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "description": "j3(+) andj5(-) outbound followed by a return to actual initial q; zero reference velocity/acceleration at the fixed .5s turning point; mathematically C2."
+  },
+  "command": [
+    "/workspace/panda-venv/bin/python",
+    "scripts/a2_extended.py",
+    "--reference",
+    "E3",
+    "--contracts",
+    "reports/a2_extended_v1/extended_contracts_v1.json",
+    "--output",
+    "runs/a2_extended_v1/E3_e4267be"
+  ],
+  "cwd": "/workspace/a2-extended/panda_research",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "packages": {
+    "libcoal": "3.0.2",
+    "cmeel": "0.61.0",
+    "cmeel-boost": "1.89.0",
+    "typing_extensions": "4.16.0",
+    "eigenpy": "3.12.0",
+    "casadi": "3.7.2",
+    "cmeel-urdfdom": "4.0.1",
+    "cmeel-console-bridge": "1.0.2.3",
+    "absl-py": "2.5.1",
+    "proxsuite": "0.7.2",
+    "numpy": "2.3.5",
+    "cmeel-qhull": "8.0.2.1",
+    "pip": "25.0.1",
+    "pybullet": "3.2.7",
+    "scipy": "1.17.0",
+    "pin": "3.8.0",
+    "glfw": "2.11.0",
+    "zipp": "4.1.2",
+    "etils": "1.14.0",
+    "coal": "3.0.2",
+    "PyOpenGL": "3.1.10",
+    "setuptools": "80.9.0",
+    "mujoco": "3.3.7",
+    "cmeel-tinyxml2": "10.0.0",
+    "cmeel-octomap": "1.10.0",
+    "libpinocchio": "3.8.0",
+    "cmeel-assimp": "6.0.5",
+    "ic2ai-panda-research": "1.2.1",
+    "fsspec": "2026.9.0",
+    "cmeel-zlib": "1.3.2"
+  },
+  "freeze_commit": "e4267bed10a6fcd32c68718d680a400995aa1678",
+  "plan_sha256": "14c0e0e3e2c42461c36dc2aa0aea5b2f25d174c42cf6f350cad9aa53d659e9e9",
+  "input_manifest_sha256": "66a3f211453f584d2e60dcf01ffa7f48952b40568e4e8e6a2045bef7649752c6",
+  "physical_runs_executed_here": true,
+  "human_signatures": null,
+  "retuning": false
+}

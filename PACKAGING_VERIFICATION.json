@@ -1,0 +1,13 @@
+{
+  "recorded_utc": "2026-11-02T10:21:17.263019+00:00",
+  "scope": "DELIVERY_PACKAGING_CHECKS_NOT_INDEPENDENT_SCIENTIFIC_REVIEW",
+  "packaged_runtime_initialization_executed_locally": true,
+  "packaged_policy_alpha_v_s_inverse": 10.0,
+  "source_audit_during_packaged_initialization_passed": true,
+  "CTZ_original_byte_reconstructions_verified": 118,
+  "restoration_proof": "panda_research/reports/a2_extended_delivery/RESTORE_FINAL.json",
+  "restoration_proof_sha256": "5c4e6ec778013f071263af256e22be9951f3b667bce334262b9f6016d8861563",
+  "numerical_gate": "GO",
+  "numerical_proof": "panda_research/reports/a2_extended_delivery/NUMERICAL_GO.json",
+  "no_external_signatures_invented": true
+}

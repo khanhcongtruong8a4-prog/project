@@ -1,0 +1,221 @@
+\section{Dynamic Margins and Planner-Filter Consistency}
+\subsection{Tracking and Residual Envelopes}
+
+The plan starts at the measured state, hence $\bm e(t_0)=\dot{\bm e}(t_0)=\bm s(t_0)=\bm0$. Choose $\bar m_i\ge\sup_{\bm q\in\mathcal Q}[\bm M(\bm q)^{-1}]_{ii}$ and $\bar N^{\mathcal Q}_{il}\ge\sup_{\bm q\in\mathcal Q}|[\bm M(\bm q)^{-1}]_{il}|$. For nominal execution, define
+\[
+\begin{aligned}
+\nu(t)&=\min\left\{\frac{\|\bm\varpi(t)\|}{\sqrt{m_1}},
+\sqrt{\bm\varpi(t)^\top\bar{\bm N}^{\mathcal Q}\bm\varpi(t)}\right\},\\
+y_b(t)&=\int_{t_0}^{t}e^{-\kappa(t-\sigma)}\nu(\sigma)d\sigma.
+\end{aligned}
+\]
+
+For $\Delta\bm\tau=\bm0$ and $\bm q\in\mathcal Q$, the bound $|\tilde d_l|\le\varpi_l$ gives $\tilde{\bm d}^\top\bm M(\bm q)^{-1}\tilde{\bm d}\le\bm\varpi^\top\bar{\bm N}^{\mathcal Q}\bm\varpi$ and $\|\bm M(\bm q)^{-1/2}\tilde{\bm d}\|\le\|\bm\varpi\|/\sqrt{m_1}$. Hence the inertia-weighted forcing term in the proof of Theorem 1 is bounded by $\nu$. Comparison with $y(t_0)=0$ gives $y\le y_b$. Since $s_i^2\le[\bm M(\bm q)^{-1}]_{ii}\bm s^\top\bm M(\bm q)\bm s$ and $\dot e_i=-\lambda_ie_i+s_i$, the componentwise envelopes are
+\begin{equation}
+\begin{aligned}
+\chi_{s,i}&=\sqrt{\bar m_i}\,y_b,\\
+\chi_{e,i}&=\int_{t_0}^{t}e^{-\lambda_i(t-\sigma)}\chi_{s,i}(\sigma)d\sigma,\\
+\chi_{v,i}&=\chi_{s,i}+\lambda_i\chi_{e,i}.
+\end{aligned}
+\label{eq_envelopes}
+\end{equation}
+
+Define $\mathcal T(t)=\{(\bm q,\dot{\bm q})\mid |q_i-q_{p,i}|\le\chi_{e,i},\ |\dot q_i-\dot q_{p,i}|\le\chi_{v,i},\ \forall i\}$, giving $|s_i|\le\chi_{s,i}$ and $|\dot e_i|\le\chi_{v,i}$ during nominal execution in $\mathcal Q$.
+
+Let $\bm r=\kappa\bm M(\bm q)\bm s+\tilde{\bm d}$. With $\Delta\bm\tau=\bm0$, Property 2 and \eqref{eq_tracking} give
+\[
+\begin{aligned}
+\dot{\bm r}&=\kappa(\bm C(\bm q,\dot{\bm q})+\bm C(\bm q,\dot{\bm q})^\top)\bm s
+-\kappa(\bm C(\bm q,\dot{\bm q})+\kappa\bm M(\bm q))\bm s\\
+&\quad-\kappa\tilde{\bm d}+\dot{\tilde{\bm d}}\\
+&=-\kappa\bm r+\kappa\bm C(\bm q,\dot{\bm q})^\top\bm s
+-\bm K_o\tilde{\bm d}+\dot{\bm d}.
+\end{aligned}
+\]
+
+With $\bar C_{li}(t)\ge\sup_{\mathcal T(t)}|C_{li}|$, evaluated at $\sigma$ inside integrals, the bounds $|[\bm C(\bm q,\dot{\bm q})^\top\bm s]_i|\le\sum_l\bar C_{li}\chi_{s,l}$, $|\tilde d_i|\le\varpi_i$, $|\dot d_i|\le\bar d_{1,i}$, and $\bm r(t_0)=\tilde{\bm d}(t_0)$ give, by variation of constants,
+\begin{equation}
+\begin{aligned}
+\rho_{r,i}(t)={}&e^{-\kappa(t-t_0)}\varpi_{i0}\\
+&+\int_{t_0}^{t}e^{-\kappa(t-\sigma)}
+\bigg(\kappa\sum_l\bar C_{li}\chi_{s,l}\\
+&\qquad\quad+k_i\varpi_i+\bar d_{1,i}\bigg)d\sigma
+\ge|r_i(t)|.
+\end{aligned}
+\label{eq_res_bound}
+\end{equation}
+
+\subsection{Certified Margins and Tightened Planner}
+
+The free-duration quintic B-spline $\bm q_p(t)=\sum_k\bm c_kB_{k,5}((t-t_0)/T)$ satisfies $\bm f(\bm q_p(t_0+T))=\bm x_{\rm des}$. Its planned torque is
+\begin{equation}
+\bm\tau_p=\bm M(\bm q_p)\ddot{\bm q}_p
++\bm C(\bm q_p,\dot{\bm q}_p)\dot{\bm q}_p
++\bm g(\bm q_p)+\bm F(\dot{\bm q}_p)-\hat{\bm d}(t_0).
+\label{eq_tau_p}
+\end{equation}
+
+To bound variations in inverse dynamics and the barrier functions, use the acceleration-augmented box
+\[
+\mathcal K(t)=\mathcal T(t)\times
+\{\bm a\mid|a_l-\ddot q_{p,l}(t)|\le\lambda_l\chi_{v,l}(t),\ \forall l\}.
+\]
+
+The box contains the segment from the planned triple $(\bm q_p,\dot{\bm q}_p,\ddot{\bm q}_p)$ to $(\bm q,\dot{\bm q},\ddot{\bm q}_r)$. Take $\bar A_{jl},\bar N_{il},\bar B_{il},\bar D_{jl}$ as bounds on the absolute entries of $\nabla h_j^\top\bm M(\bm q)^{-1}$, $\bm M(\bm q)^{-1}$, $\bm M(\bm q)^{-1}\bm C(\bm q,\dot{\bm q})$, and $\nabla h_j^\top\bm M(\bm q)^{-1}\bm C(\bm q,\dot{\bm q})$, respectively, on $\mathcal T(t)$. Let $L^q_{u,il},L^{\dot q}_{u,il},L^{\ddot q}_{u,il}$ and $L^q_{h,jl},L^{\dot q}_{h,jl},L^{\ddot q}_{h,jl}$ bound the respective componentwise first derivatives of inverse dynamics and $\mathcal H_j$ on $\mathcal K(t)$. The mean-value inequality gives
+\begin{equation}
+\begin{aligned}
+\beta_{u,i}&=\sum_l\left[L^q_{u,il}\chi_{e,l}
++(L^{\dot q}_{u,il}+\lambda_lL^{\ddot q}_{u,il})\chi_{v,l}
++\bar C_{il}\chi_{s,l}\right],\\
+\beta_{h,j}&=\sum_l\left[L^q_{h,jl}\chi_{e,l}
++(L^{\dot q}_{h,jl}+\lambda_lL^{\ddot q}_{h,jl})\chi_{v,l}\right].
+\end{aligned}
+\label{eq_beta_bounds}
+\end{equation}
+
+With $\eta_i(t)=\varpi_{i0}+\bar d_{1,i}(t-t_0)$, the one-sided disturbance allowances are
+\[
+\zeta_i^\pm(t)=\min\{\eta_i(t),\max(0,\bar d_i\pm\hat d_i(t_0))\}.
+\]
+
+They satisfy $\hat d_i(t_0)-d_i(t)\le\zeta_i^+$ and $d_i(t)-\hat d_i(t_0)\le\zeta_i^-$. The margins are
+\begin{equation}
+\begin{aligned}
+b_{u,i}^\pm&=\beta_{u,i}+\rho_{r,i}+\zeta_i^\pm,\\
+b_{h,j}&=\beta_{h,j}+\sum_l\left(
+\bar D_{jl}\chi_{s,l}+\bar A_{jl}\rho_{r,l}+2\bar A_{jl}\varpi_l\right),\\
+b_{vB,i}&=|\alpha_v-\lambda_i|\chi_{v,i}
++\sum_l\left(\bar B_{il}\chi_{s,l}
++\bar N_{il}\rho_{r,l}+2\bar N_{il}\varpi_l\right).
+\end{aligned}
+\label{eq_margins}
+\end{equation}
+
+For $\psi^p_{2,j}=\mathcal H_j(\bm q_p,\dot{\bm q}_p,\ddot{\bm q}_p)$ and $\xi^p_{i,\pm}=\mp\ddot q_{p,i}+\alpha_v(\dot q_{\max,i}\mp\dot q_{p,i})$, the planner is
+\begin{equation}
+\begin{aligned}
+\min_{T,\{\bm c_k\}}\quad &E_{\rm el}+w_tT\\
+\mathrm{s.t.}\quad&\bm f(\bm q_p(t_0+T))=\bm x_{\rm des},\\
+&\bm q_p(t_0)=\bm q(t_0),\ \dot{\bm q}_p(t_0)=\dot{\bm q}(t_0),\\
+&\dot{\bm q}_p(t_0+T)=\ddot{\bm q}_p(t_0+T)=\bm0,\\
+&\tau_{p,i}+b_{u,i}^++\delta_\tau\le\tau_{\max,i},\\
+&-\tau_{p,i}+b_{u,i}^-+\delta_\tau\le\tau_{\max,i},\\
+&|\dot q_{p,i}|+\chi_{v,i}+\delta_v\le\dot q_{\max,i},\\
+&\psi^p_{2,j}\ge b_{h,j}+\delta_h,\quad
+\xi^p_{i,\pm}\ge b_{vB,i}+\delta_{vB}.
+\end{aligned}
+\label{eq_planner}
+\end{equation}
+
+Here $E_{\rm el}=\int_{t_0}^{t_0+T}\phi_\epsilon(\sum_i[\tau_{p,i}\dot q_{p,i}+k_{r,i}\tau_{p,i}^2])dt$, with $\phi_\epsilon(z)=\tfrac12(z+\sqrt{z^2+\epsilon^2})$, $\epsilon>0$, $T>0$, time weight $w_t\ge0$, and copper-loss coefficients $k_{r,i}\ge0$, approximates non-regenerative electrical energy \cite{r2,r4}. Positive reserves ensure strict feasibility rather than additional disturbance tolerance.
+
+The bounds follow the acyclic order $\bm\varpi\to y_b\to\mathcal T\to\mathcal K\to\rho_r,\beta_u,\beta_h\to b$. Certified derivative constants may use global analytical bounds or, when higher derivatives exist, planned-point derivatives plus verified second-derivative bounds times the widths of $\mathcal K$. The constraints must hold for all $t\in\mathcal I=[t_0,t_0+T]$. For each tightened constraint residual $g_a(t)$, including its reserve, a verified Lipschitz constant $L_a$ on $\mathcal I$ and grid nodes $t_k$ that include both endpoints with spacing at most $\Delta_c$ make $g_a(t_k)\ge L_a\Delta_c/2$ sufficient for $g_a\ge0$ on $\mathcal I$.
+
+\begin{remark}
+For each candidate plan, replacing every dynamic margin in
+\eqref{eq_planner}, including $\chi_{v,i}$, by its maximum over
+that plan's duration only tightens the constraints. Thus
+$\mathcal F_C\subseteq\mathcal F_D$ and
+$\inf_{\mathcal F_D}J\le\inf_{\mathcal F_C}J$ for
+$J=E_{\rm el}+w_tT$, where $\mathcal F_C$ uses these
+candidate-wise constant envelopes. This does not guarantee
+strict improvement or a better local optimizer solution.
+\end{remark}
+
+\subsection{Planner-Filter Consistency}
+
+\begin{theorem}\label{thm_consistency}
+Let Assumption 1 hold and let the executed closed-loop state be absolutely continuous on $\mathcal I$. Suppose $h_j(t_0)\ge0$, $\dot h_j(t_0)+\alpha_1h_j(t_0)\ge0$, and $h_{v,i,\pm}(t_0)\ge0$. Assume the constants in \eqref{eq_envelopes}-\eqref{eq_margins} are valid bounds on their stated domains, which lie in the smooth model region, and the continuous-time plan satisfies \eqref{eq_planner} with strictly positive reserves. Then $\bm\tau^*=\bm u_{\rm nom}$ on $\mathcal I$, and the executed motion respects the torque, joint-speed, joint-position, and manipulability limits.
+\end{theorem}
+
+\begin{proof}
+Let $t_1=\inf\{t\in\mathcal I\mid\Delta\bm\tau(t)\ne\bm0\ \text{or}\ \bm q(t)\notin\mathcal Q\}$, with $t_1=t_0+T$ if the set is empty. The observer envelope \eqref{eq_obs_envelope} holds in every mode because \eqref{eq_observer} uses the applied torque. On $[t_0,t_1)$, $\bm\tau^*=\bm u_{\rm nom}$ and $\bm q\in\mathcal Q$, so \eqref{eq_iss} with $\Delta\bm\tau=\bm0$, \eqref{eq_envelopes}, and \eqref{eq_res_bound} hold and $(\bm q,\dot{\bm q})\in\mathcal T(t)$. These closed inequalities extend to $t_1$ by continuity. If $t_1=t_0$, they hold because $\bm e=\dot{\bm e}=\bm s=\bm0$ and $\bm r=\tilde{\bm d}$ at $t_0$.
+
+On $[t_0,t_1]$, the identities
+\[
+\begin{aligned}
+\bm u_{\rm nom}&=\mathrm{ID}(\bm q,\dot{\bm q},\ddot{\bm q}_r)
++\bm C(\bm q,\dot{\bm q})\bm s+\bm r-\bm d,\\
+\ddot{\hat{\bm q}}(\bm u_{\rm nom})&=\ddot{\bm q}_r
++\bm M(\bm q)^{-1}\bm C(\bm q,\dot{\bm q})\bm s+\bm M(\bm q)^{-1}(\bm r-\tilde{\bm d})
+\end{aligned}
+\]
+
+support the comparison inequalities. Subtracting \eqref{eq_tau_p} from the first identity gives
+\[
+\bm u_{\rm nom}-\bm\tau_p=\Delta\mathrm{ID}+\bm C(\bm q,\dot{\bm q})\bm s+\bm r+\hat{\bm d}(t_0)-\bm d,
+\]
+
+where $\Delta\mathrm{ID}=\mathrm{ID}(\bm q,\dot{\bm q},\ddot{\bm q}_r)-\mathrm{ID}(\bm q_p,\dot{\bm q}_p,\ddot{\bm q}_p)$. The mean-value bound on $\mathcal K$ and $|[\bm C(\bm q,\dot{\bm q})\bm s]_i|\le\sum_l\bar C_{il}\chi_{s,l}$ bound the first two terms by $\beta_{u,i}$, $|r_i|\le\rho_{r,i}$ bounds the third, and $\zeta_i^\pm$ bounds the last, so $-b_{u,i}^-\le u_{{\rm nom},i}-\tau_{p,i}\le b_{u,i}^+$.
+
+Writing $D_j=\nabla h_j^\top\bm M(\bm q)^{-1}\bm C(\bm q,\dot{\bm q})$, the second identity yields
+\[
+\begin{aligned}
+\Psi_j(\bm u_{\rm nom})={}&
+\mathcal H_j(\bm q,\dot{\bm q},\ddot{\bm q}_r)
++D_j\bm s\\
+&+A_j(\bm r-\tilde{\bm d})
+-\sum_l|A_{jl}|\varpi_l.
+\end{aligned}
+\]
+
+Similarly, $\Xi_{i,\pm}(\bm u_{\rm nom})$ equals $\xi^p_{i,\pm}\pm(\alpha_v-\lambda_i)\dot e_i\mp[\bm M(\bm q)^{-1}(\bm C(\bm q,\dot{\bm q})\bm s+\bm r-\tilde{\bm d})]_i-\sum_l|N_{il}|\varpi_l$.
+
+Thus the mean-value bounds on $\mathcal K$ and \eqref{eq_margins} imply
+$\Psi_j(\bm u_{\rm nom})\ge\psi^p_{2,j}-b_{h,j}$ and
+$\Xi_{i,\pm}(\bm u_{\rm nom})\ge\xi^p_{i,\pm}-b_{vB,i}$.
+Applying \eqref{eq_planner} gives, on $[t_0,t_1]$,
+\[
+\begin{aligned}
+\tau_{\max,i}-u_{{\rm nom},i}&\ge\delta_\tau,\quad
+\tau_{\max,i}+u_{{\rm nom},i}\ge\delta_\tau,\\
+\Psi_j(\bm u_{\rm nom})&\ge\delta_h,\quad
+\Xi_{i,\pm}(\bm u_{\rm nom})\ge\delta_{vB}.
+\end{aligned}
+\]
+
+For any applied torque, $\ddot{\bm q}=\ddot{\hat{\bm q}}(\bm\tau^*)+\bm M(\bm q)^{-1}\tilde{\bm d}$ and $|\tilde d_l|\le\varpi_l$ give $\mathcal H_j(\bm q,\dot{\bm q},\ddot{\bm q})\ge\Psi_j(\bm\tau^*)$ and $\dot h_{v,i,\pm}+\alpha_vh_{v,i,\pm}\ge\Xi_{i,\pm}(\bm\tau^*)$. On $[t_0,t_1)$, $\bm\tau^*=\bm u_{\rm nom}$, so both right sides are positive. With $\psi_{1,j}=\dot h_j+\alpha_1h_j$, \eqref{eq_hocbf} gives $\mathcal H_j=\dot\psi_{1,j}+\alpha_2\psi_{1,j}$, and scalar comparison from the initial conditions yields $\psi_{1,j}\ge0$, $h_j\ge0$, and $h_{v,i,\pm}\ge0$ on $[t_0,t_1]$ \cite{r7,r8}. Hence $\bm q(t_1)$ lies in the joint-limit box, which lies in the interior of $\mathcal Q$.
+
+Suppose $t_1<t_0+T$. Let $\mathcal O$ be the set of times and closed-loop states $(\bm q,\dot{\bm q},\bm z)$ at which $\bm u_{\rm nom}$ satisfies every hard-QP constraint strictly. Under Assumption 1, $\bm u_{\rm nom}$ and the constraint functions are continuous, so $\mathcal O$ is relatively open, and the inequalities above place the state at $t_1$ in $\mathcal O$. On $\mathcal O$, the hard QP is feasible and its unique minimizer is $\bm u_{\rm nom}$. Since the executed state is continuous, it stays in $\mathcal O$, with $\bm q$ in $\mathcal Q$, on $[t_1,t_2)$ for some $t_2>t_1$. Hence $\Delta\bm\tau=\bm0$ and $\bm q\in\mathcal Q$ there, which contradicts the definition of $t_1$. Therefore $t_1=t_0+T$, so $\bm\tau^*=\bm u_{\rm nom}$ and the barrier conclusions hold on $\mathcal I$. The QP enforces the torque limits directly, and the speed row of \eqref{eq_planner} also gives $|\dot q_i|\le\dot q_{\max,i}-\delta_v$.
+\end{proof}
+
+
+
+\subsection{Braking and Soft-QP Recovery}
+\label{subsec_recovery}
+
+If the hard QP is infeasible, retain the torque box $\mathcal U=\{\bm\tau\mid|\tau_i|\le\tau_{\max,i}\}$ and braking reference
+\begin{equation}
+\bm\tau_{\rm br}=\operatorname{proj}_{\mathcal U}
+(\bm g(\bm q)+\bm F(\dot{\bm q})-\hat{\bm d}-\bm K_b\dot{\bm q}),
+\quad\bm K_b\succ\bm0.
+\label{eq_brake}
+\end{equation}
+
+The soft QP retains the torque box and relaxes only the CBF tests.
+\begin{equation}
+\begin{aligned}
+\min_{\bm\tau\in\mathcal U,\,\bm\varepsilon\ge\bm0}\quad
+&\tfrac12\|\bm\tau-\bm\tau_{\rm br}\|^2
++\tfrac12\sum_j\gamma_j\varepsilon_j^2
++\tfrac{\gamma_v}{2}\sum_{i,\pm}\varepsilon_{v,i,\pm}^2\\
+\mathrm{s.t.}\quad
+&\Psi_j(\bm\tau)+\varepsilon_j\ge0,\quad
+\Xi_{i,\pm}(\bm\tau)+\varepsilon_{v,i,\pm}\ge0.
+\end{aligned}
+\label{eq_fallback}
+\end{equation}
+
+Here $\gamma_j,\gamma_v>0$. Hard-QP infeasibility triggers recovery and a replan request. If the soft QP fails numerically, apply $\bm\tau_{\rm br}$ and request a protective stop. Torque limits remain hard, but relaxed barriers do not ensure invariance. If the unprojected braking command is applied directly, $V_k=\frac12\dot{\bm q}^\top\bm M(\bm q)\dot{\bm q}$ satisfies $\dot V_k=-\dot{\bm q}^\top\bm K_b\dot{\bm q}+\dot{\bm q}^\top\tilde{\bm d}$ and decreases whenever $\|\dot{\bm q}\|>\|\bm\varpi\|/\lambda_{\min}(\bm K_b)$. This dissipation claim does not extend to general soft-QP commands or saturated braking.
+
+\begin{remark}
+A feasible replan at $t_0'$ initialized from the measured state
+resets $\bm e$, $\dot{\bm e}$, and $\bm s$ to zero while retaining
+$\hat{\bm d}(t_0')$. The observer envelope may restart with
+$\varpi_i(t_0')$ if the prior bounds held, or with
+$\bar d_i+|\hat d_i(t_0')|$ when $|d_i(t_0')|\le\bar d_i$.
+The consistency guarantee restarts only when the disturbance,
+initial barrier, and tightened planning conditions hold for
+the new feasible trajectory. Replanning does not retroactively
+certify earlier violations or relaxed soft-QP barriers.
+\end{remark}

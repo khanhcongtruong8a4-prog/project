@@ -1,0 +1,504 @@
+{
+  "reference_id": "E3",
+  "cell": 3,
+  "grid": {
+    "control_period_s": 0.0005,
+    "rk4_step_s": 0.000125
+  },
+  "prefix_data_audit_status": "PASS",
+  "checks": {
+    "prehold_complete_count": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "prehold_original_initialization": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "prehold_state_continuity": {
+      "evaluations": 1248,
+      "failed": 0
+    },
+    "prehold_record_times": {
+      "evaluations": 1248,
+      "failed": 0
+    },
+    "prehold_permitted_controller_and_actual_projection": {
+      "evaluations": 312,
+      "failed": 0
+    },
+    "prehold_ZOH_mapping": {
+      "evaluations": 1248,
+      "failed": 0
+    },
+    "prehold_record_samples_match_states": {
+      "evaluations": 1248,
+      "failed": 0
+    },
+    "prehold_held_input_at_each_sample": {
+      "evaluations": 6240,
+      "failed": 0
+    },
+    "prehold_estimate_from_logged_q_qd_z": {
+      "evaluations": 6240,
+      "failed": 0
+    },
+    "prehold_original_signed_waveform_and_varpi": {
+      "evaluations": 6240,
+      "failed": 0
+    },
+    "prehold_observer_slack_arithmetic": {
+      "evaluations": 6240,
+      "failed": 0
+    },
+    "prehold_observer_raw_nonnegative": {
+      "evaluations": 6240,
+      "failed": 0
+    },
+    "prehold_physical_slack_arithmetic": {
+      "evaluations": 6240,
+      "failed": 0
+    },
+    "prehold_physical_raw_nonnegative": {
+      "evaluations": 6240,
+      "failed": 0
+    },
+    "prehold_RK4_stage_and_endpoint_arithmetic": {
+      "evaluations": 6240,
+      "failed": 0,
+      "max_absolute_reconstruction_error": 0.0
+    },
+    "prehold_RK4_times": {
+      "evaluations": 1248,
+      "failed": 0
+    },
+    "prehold_cubic_extrema_reconstruction": {
+      "evaluations": 1248,
+      "failed": 0
+    },
+    "prehold_declared_windows": {
+      "evaluations": 1248,
+      "failed": 0
+    },
+    "measured_zero_transfer_no_reset": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "first_QP_reuses_actual_endpoint_solve": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "reference_fixed_from_actual_endpoint": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "actual_reference_and_digital_history": {
+      "evaluations": 41,
+      "failed": 0
+    },
+    "update_actual_observer_and_original_bound": {
+      "evaluations": 41,
+      "failed": 0
+    },
+    "all_43_current_state_G_c_scales_names_units": {
+      "evaluations": 41,
+      "failed": 0
+    },
+    "solver_settings_unchanged": {
+      "evaluations": 41,
+      "failed": 0
+    },
+    "available_candidate_raw_slacks_exact": {
+      "evaluations": 40,
+      "failed": 0
+    },
+    "all_applied_QPs_strict_raw_and_reported_T29": {
+      "evaluations": 40,
+      "failed": 0
+    },
+    "rejected_candidate_not_applied_or_strictly_accepted": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "one_final_rejected_update_and_no_retry": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "whole_applied_intervals_only_before_QP_stop": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "execution_ZOH_period_mapping": {
+      "evaluations": 160,
+      "failed": 0
+    },
+    "execution_state_continuity": {
+      "evaluations": 160,
+      "failed": 0
+    },
+    "execution_held_input_at_each_sample": {
+      "evaluations": 800,
+      "failed": 0
+    },
+    "execution_estimate_from_logged_q_qd_z": {
+      "evaluations": 800,
+      "failed": 0
+    },
+    "execution_original_signed_waveform_and_varpi": {
+      "evaluations": 800,
+      "failed": 0
+    },
+    "execution_observer_slack_arithmetic": {
+      "evaluations": 800,
+      "failed": 0
+    },
+    "execution_observer_raw_nonnegative": {
+      "evaluations": 800,
+      "failed": 0
+    },
+    "execution_physical_slack_arithmetic": {
+      "evaluations": 800,
+      "failed": 0
+    },
+    "execution_physical_raw_nonnegative": {
+      "evaluations": 800,
+      "failed": 0
+    },
+    "execution_RK4_stage_and_endpoint_arithmetic": {
+      "evaluations": 800,
+      "failed": 0,
+      "max_absolute_reconstruction_error": 0.0
+    },
+    "execution_RK4_times": {
+      "evaluations": 160,
+      "failed": 0
+    },
+    "execution_cubic_extrema_reconstruction": {
+      "evaluations": 160,
+      "failed": 0
+    },
+    "execution_RK4_energy_increment": {
+      "evaluations": 160,
+      "failed": 0,
+      "max_absolute_reconstruction_error": 0.0
+    },
+    "no_state_advance_after_rejected_QP": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "partial_scientific_failure_preserved": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "prefix_metrics_arithmetic": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "abort_distance_field_arithmetic_NOT_terminal_accuracy": {
+      "evaluations": 1,
+      "failed": 0
+    },
+    "applied_prefix_all_three_difference_statistics": {
+      "evaluations": 3,
+      "failed": 0
+    },
+    "reported_negative_candidates_preserved": {
+      "evaluations": 1,
+      "failed": 0
+    }
+  },
+  "scientific_cell_outcome": "FAIL_UNCHANGED",
+  "completed_horizon": false,
+  "executed_prefix_s": 0.02,
+  "declared_horizon_s": 1.0,
+  "prehold_substeps_audited": 1248,
+  "execution_substeps_audited": 160,
+  "applied_QP_updates_audited": 40,
+  "rejected_updates": [
+    {
+      "update": 40,
+      "t_s": 0.02,
+      "status": "QPSolverOutput.PROXQP_MAX_ITER_REACHED",
+      "strict_pass": false,
+      "candidate_retained": false,
+      "sampling_u_minus_r_2norm_Nm": 0.017255282111493412,
+      "candidate_tau_minus_u_2norm_Nm": null,
+      "candidate_tau_minus_r_2norm_Nm": null,
+      "candidate_NOT_APPLIED": true
+    }
+  ],
+  "retained_negative_candidate_rows": [],
+  "unavailable_solution_data": [
+    {
+      "update": 40,
+      "t_s": 0.02,
+      "status": "QPSolverOutput.PROXQP_MAX_ITER_REACHED",
+      "candidate_and_raw_solution_slacks": "NOT_RETAINED_UNAVAILABLE",
+      "no_infeasibility_or_negative_row_inferred_from_absence": true
+    }
+  ],
+  "reported_KKT_scope": "Reported stationarity/complementarity/duality metrics checked where available; dual vectors are not retained, so no independent stationarity reconstruction is claimed.",
+  "sampler_applied_prefix": {
+    "definition": "7-joint Euclidean norm at applied control updates; Delta-weighted RMS over those fixed hold intervals.",
+    "not_continuous_r_between_updates": true,
+    "statistics": {
+      "u_minus_r": {
+        "samples": 40,
+        "max_2norm_Nm": 0.021851940508461166,
+        "RMS_2norm_Nm": 0.01935477377266177,
+        "time_weighted_RMS_2norm_Nm": 0.01935477377266177,
+        "component_max_abs_Nm": [
+          0.015755948780587836,
+          0.0004861204525532514,
+          0.015125298965831813,
+          0.00022570129963739305,
+          0.0005378941031688456,
+          0.00020250357104867334,
+          0.0003817276499437361
+        ],
+        "component_RMS_Nm": [
+          0.013809510202361628,
+          0.00036880909592361,
+          0.013542801873733152,
+          0.0002074265792898226,
+          0.00039054803752998845,
+          0.00019853676328805946,
+          0.00035527822839110344
+        ]
+      },
+      "tau_minus_u": {
+        "samples": 40,
+        "max_2norm_Nm": 3.805478154823547e-09,
+        "RMS_2norm_Nm": 3.5677596873930842e-09,
+        "time_weighted_RMS_2norm_Nm": 3.567759687393084e-09,
+        "component_max_abs_Nm": [
+          1.1102230246251565e-16,
+          1.4210854715202004e-14,
+          2.220446049250313e-16,
+          7.105427357601002e-15,
+          3.3306690738754696e-16,
+          3.80547815481691e-09,
+          2.7755575615628914e-17
+        ],
+        "component_RMS_Nm": [
+          3.3278896460987305e-17,
+          6.1019861296492435e-15,
+          7.265416651526966e-17,
+          3.0250266941902737e-15,
+          1.382216518795857e-16,
+          3.5677596873865793e-09,
+          1.5974533408876414e-17
+        ]
+      },
+      "tau_minus_r": {
+        "samples": 40,
+        "max_2norm_Nm": 0.02185194047518578,
+        "RMS_2norm_Nm": 0.019354773736619642,
+        "time_weighted_RMS_2norm_Nm": 0.019354773736619642,
+        "component_max_abs_Nm": [
+          0.015755948780587836,
+          0.00048612045256390957,
+          0.01512529896583159,
+          0.00022570129963739305,
+          0.0005378941031688456,
+          0.00020250023410417484,
+          0.00038172764994376385
+        ],
+        "component_RMS_Nm": [
+          0.013809510202361621,
+          0.000368809095923921,
+          0.013542801873733128,
+          0.00020742657928822576,
+          0.0003905480375299423,
+          0.00019853324961724469,
+          0.00035527822839110783
+        ]
+      }
+    }
+  },
+  "prefix_energy_J": 0.021274943368063886,
+  "abort_distance_to_declared_final_target_m": 3.2090050867153696e-05,
+  "terminal_accuracy_at_T": "NOT_EVALUATED_INCOMPLETE_HORIZON",
+  "minimum_raw_slacks": {
+    "prehold": {
+      "observer": [
+        0.1156841999118371,
+        0.15192796309021472,
+        0.16721833397840014,
+        0.11946060967074214,
+        0.017554712301824787,
+        0.025485464031806127,
+        0.01901419712566347
+      ],
+      "physical": {
+        "position_and_manip_h": [
+          2.897295101170492,
+          1.7627965171540643,
+          2.8972720461843426,
+          1.500991320901171,
+          2.8973,
+          1.8849990484143302,
+          2.89729720875745,
+          2.8972736090018696,
+          1.7627998590748153,
+          2.897295085508672,
+          1.5009995342369404,
+          2.8972855920418854,
+          1.8849741781732583,
+          2.897269136020906,
+          0.022285985103260658
+        ],
+        "psi1": [
+          14.48590861769579,
+          8.812625533533705,
+          14.475421615535973,
+          7.501586909742183,
+          14.486244293964848,
+          9.424504073748887,
+          14.485810163418181,
+          14.47604231312793,
+          8.813934599963037,
+          14.485881056534641,
+          7.504832384131079,
+          14.480892971697413,
+          9.41491096123587,
+          14.474814893487796,
+          0.1113814176953634
+        ],
+        "speed_upper": [
+          2.1742829006380657,
+          2.173629856271234,
+          2.163956451546917,
+          2.171597632824973,
+          2.6096748988235965,
+          2.609380116839787,
+          2.6091629963274103
+        ],
+        "speed_lower": [
+          2.164575194004716,
+          2.174917865392185,
+          2.17424780777801,
+          2.1747907331509344,
+          2.604410553509681,
+          2.5999426097512224,
+          2.5983512915049185
+        ],
+        "torque_upper": [
+          87.0,
+          112.38051979598237,
+          87.0,
+          68.13514578987461,
+          11.139399738700314,
+          9.963606288669933,
+          11.888426394523352
+        ],
+        "torque_lower": [
+          86.30429433315965,
+          60.009722352602836,
+          85.63349419140627,
+          105.58686197819199,
+          12.696253232663446,
+          13.816989646041222,
+          12.008966778754363
+        ]
+      }
+    },
+    "execution": {
+      "observer": [
+        0.10098178506327243,
+        0.14964936813355773,
+        0.12598177810804817,
+        0.09513637306941983,
+        0.016612034172151426,
+        0.021594935779870563,
+        0.014352933417384629
+      ],
+      "physical": {
+        "position_and_manip_h": [
+          2.8967758606437943,
+          1.762800140924585,
+          2.897304914479713,
+          1.5010004657613607,
+          2.8973003622406344,
+          1.8848797766007597,
+          2.896988581590121,
+          2.8973048988180765,
+          1.7627824831702428,
+          2.896842565035102,
+          1.5009446486186482,
+          2.8972060835642983,
+          1.8850009515814101,
+          2.897302791234597,
+          0.022286116505277922
+        ],
+        "psi1": [
+          14.43378587429639,
+          8.814004551139833,
+          14.486555826812335,
+          7.505011918205036,
+          14.486486037913151,
+          9.412299393809636,
+          14.454689906874004,
+          14.486554024282853,
+          8.812158398972617,
+          14.44403912710052,
+          7.499252312180366,
+          14.473947763674701,
+          9.425033210610563,
+          14.48654790583085,
+          0.11143072115706695
+        ],
+        "speed_upper": [
+          2.124906571063516,
+          2.1750038465169075,
+          2.1750312544137698,
+          2.1750095893982326,
+          2.6099842217792864,
+          2.5979005107884117,
+          2.579746998628049
+        ],
+        "speed_lower": [
+          2.1750295301924707,
+          2.1732459831214026,
+          2.1348263019250093,
+          2.169529069087125,
+          2.5979173457964575,
+          2.610028452703512,
+          2.610033949657863
+        ],
+        "torque_upper": [
+          86.51827472472527,
+          113.58938337489299,
+          86.80884186850054,
+          68.19196372157022,
+          11.163848582713193,
+          10.006513002779256,
+          11.90224601481758
+        ],
+        "torque_lower": [
+          86.38159135582389,
+          60.381689890776514,
+          86.1109648257033,
+          105.79143919827743,
+          12.805648058344879,
+          13.977606786059514,
+          12.069386696777109
+        ]
+      }
+    }
+  },
+  "physical_slack_units": {
+    "position_and_manip_h": "first14 rad; last m^6",
+    "psi1": "first14 rad/s; last m^6/s",
+    "speed_upper": "rad/s",
+    "speed_lower": "rad/s",
+    "torque_upper": "N m",
+    "torque_lower": "N m",
+    "observer": "N m"
+  },
+  "direction_reversal_executed": false,
+  "new_motion_performed": false,
+  "QP_resolves_performed": false,
+  "true_ODE_continuous_certificate": false,
+  "independent_reviewer_signature": null
+}

@@ -1,0 +1,28 @@
+{
+  "Full Framework Certified Time-Varying Safety Margins for Time\u2013Energy Optimal Motion of Redundant Manipulators.pdf": {
+    "sha256": "46d3489c793d0eddc4fcf0d62a7ec252e4a18a85d3e56b1754945ba56ef97c05",
+    "bytes": 827192,
+    "pdf_pages": 28
+  },
+  "_IC2AI_2027__Path_optimization (6).pdf": {
+    "sha256": "3f42d0f57522b2351a50312d022c9602d71e41ee8791bad33bccb3a858af7f74",
+    "bytes": 404358,
+    "pdf_pages": 4
+  },
+  "phase3a_test_report.json": {
+    "sha256": "f272b6f54660ee3a87500c26318bf57316fcc9a5a8447610b3271452768d8262",
+    "bytes": 4823
+  },
+  "panda_dynamics.py": {
+    "sha256": "698a92efd624b603133cd5ea5a3fe31d0752d210ffe4291a02bab64a0d3cba1c",
+    "bytes": 6660
+  },
+  "Protocol_v1_1_DRAFT (2).docx": {
+    "sha256": "df70db2398aa91f45a2701497faa7fe7d4e15621835850ae9563a1e73c391fd9",
+    "bytes": 35582
+  },
+  "Tasks_2026.xlsx": {
+    "sha256": "bdddc29df8ca30514b9b6f31fc96372b5460a1bf22e5c40011979bb73d9ad77a",
+    "bytes": 130863
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "version": "v1",
+  "negative_count": 3,
+  "values": [
+    {
+      "reference": "E3",
+      "cell": 0,
+      "t_s": 0.095,
+      "kind": "QP_RAW",
+      "row": "v_upper_3",
+      "value": -1.0658141036401503e-14,
+      "torque_applied": false
+    },
+    {
+      "reference": "E3",
+      "cell": 1,
+      "t_s": 0.076,
+      "kind": "QP_RAW",
+      "row": "v_upper_3",
+      "value": -1.425179974035018e-10,
+      "torque_applied": false
+    },
+    {
+      "reference": "E3",
+      "cell": 2,
+      "t_s": 0.0925,
+      "kind": "QP_RAW",
+      "row": "v_upper_3",
+      "value": -7.105427357601002e-15,
+      "torque_applied": false
+    }
+  ],
+  "rule": "Every negative fails; rejected candidates are never described as applied torque."
+}

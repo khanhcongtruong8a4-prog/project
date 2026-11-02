@@ -1,0 +1,70 @@
+{
+  "scope": "PRE_MOTION_ANALYTIC_AND_RETAINED_MATRIX_QUALIFICATION_NOT_PANDA_MOTION",
+  "tests_run": 14,
+  "overall_pass": false,
+  "checks": [
+    {
+      "test": "__main__.NumericalQPTests.test_actual_five_failed_matrix_regressions",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_cold_repeat_is_exact",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_coupled_active_face_projection",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_equivalent_positive_row_scaling",
+      "result": "FAIL",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/a2-extended/panda_research/tests/test_a2_qp_v2.py\", line 67, in test_equivalent_positive_row_scaling\n    np.testing.assert_array_equal(a.applied,b.applied)\n  File \"/workspace/panda-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py\", line 1054, in assert_array_equal\n    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,\n  File \"/workspace/panda-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py\", line 919, in assert_array_compare\n    raise AssertionError(msg)\nAssertionError: \nArrays are not equal\n\nMismatched elements: 5 / 7 (71.4%)\nMax absolute difference among violations: 1.11022302e-16\nMax relative difference among violations: 1.11022304e-16\n ACTUAL: array([1., 1., 1., 1., 1., 1., 1.])\n DESIRED: array([1., 1., 1., 1., 1., 1., 1.])\n"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_infeasible_rows_stop_without_candidate",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_interior_objective_minimizer",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_lower_active_analytic_solution_and_strict_sign",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_new_motion_definitions_and_thresholds_equal_v1",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_original_T29_gradient_independently_recomputed",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_settings_are_frozen_no_retry_or_projection",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_timeout_is_unknown_with_no_actuation",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_upper_active_analytic_solution_and_strict_sign",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_worker_matches_direct_solution_and_diagnostics",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.NumericalQPTests.test_zero_normal_infeasible_row_stops",
+      "result": "PASS"
+    }
+  ],
+  "source_hashes": {
+    "src/panda_closed_loop/a2_qp_v2.py": "79063e1d5589bd23879ef73d24e3c521bc34c87621da5f23d9c39b6f7900783b",
+    "tests/test_a2_qp_v2.py": "25727c70b345161ad7172af7e70bc6e329118f7ff839fbd104ea12d3e351d320",
+    "scripts/a2_extended_v2.py": "b4c1ab68d214eb4b67f151ffb0dfdd9aba1a8daa6f94e8058d9a749e234e0609",
+    "policy/a2_extended_v2/A2_EXTENDED_PREDECLARATION.json": "a8b05048bc1cf1032bd31c5c0a2a73b0e7d1b7297746390673acc093f2f0aae4"
+  }
+}

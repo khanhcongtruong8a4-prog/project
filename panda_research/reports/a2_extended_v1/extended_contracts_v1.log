@@ -1,0 +1,19 @@
+test_E1_joint_is_selected_from_frozen_geometry_before_motion (__main__.ExtendedTests.test_E1_joint_is_selected_from_frozen_geometry_before_motion) ... ok
+test_E3_is_C2_at_fixed_turn_and_reverses_direction (__main__.ExtendedTests.test_E3_is_C2_at_fixed_turn_and_reverses_direction) ... ok
+test_all_references_match_actual_initial_q_velocity_acceleration (__main__.ExtendedTests.test_all_references_match_actual_initial_q_velocity_acceleration) ... ok
+test_amplitudes_are_the_fixed_joint_range_rule (__main__.ExtendedTests.test_amplitudes_are_the_fixed_joint_range_rule) ... ok
+test_bounded_service_preserves_production_QP_solution (__main__.ExtendedTests.test_bounded_service_preserves_production_QP_solution) ... ok
+test_declared_targets_and_stationary_terminal_reference (__main__.ExtendedTests.test_declared_targets_and_stationary_terminal_reference) ... ok
+test_grid_thresholds_and_startup_are_original_unchanged (__main__.ExtendedTests.test_grid_thresholds_and_startup_are_original_unchanged) ... ok
+test_invalid_phase_boundaries_and_waypoints_are_rejected (__main__.ExtendedTests.test_invalid_phase_boundaries_and_waypoints_are_rejected) ... ok
+test_negative_raw_candidate_and_stage_slacks_are_not_tolerated_or_hidden (__main__.ExtendedTests.test_negative_raw_candidate_and_stage_slacks_are_not_tolerated_or_hidden) ... ok
+test_nonselected_coordinates_keep_measured_velocity_transients (__main__.ExtendedTests.test_nonselected_coordinates_keep_measured_velocity_transients) ... ok
+test_reference_rejects_nonfinite_or_outside_horizon (__main__.ExtendedTests.test_reference_rejects_nonfinite_or_outside_horizon) ... ok
+test_single_and_coordinated_net_transfers_are_distinct (__main__.ExtendedTests.test_single_and_coordinated_net_transfers_are_distinct) ... ok
+test_small_QP_correction_is_not_zero_continuous_correction (__main__.ExtendedTests.test_small_QP_correction_is_not_zero_continuous_correction) ... ok
+test_wall_timeout_is_unknown_and_never_a_fallback_torque (__main__.ExtendedTests.test_wall_timeout_is_unknown_and_never_a_fallback_torque) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 7.955s
+
+OK

@@ -1,0 +1,7 @@
+{
+  "status": "INTERRUPTED_UNBOUNDED_DEVELOPMENT_FIXTURE_RUNTIME",
+  "reason": "A read-only solver call consumed more than three minutes without returning. No fixture outputs had yet been emitted. This attempt is not counted as a completed T27/G2.5 result.",
+  "source_snapshot_preserved": true,
+  "model_gains_and_solver_tolerances_changed": false,
+  "next_instrumentation": "Explicit per-fixture subprocess timeout and exclusive per-case records"
+}

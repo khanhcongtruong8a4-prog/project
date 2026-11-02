@@ -1,0 +1,252 @@
+IC2AI 2027 — CODEX HANDOFF: A2-EXTENDED VALIDATION + PARALLEL A3 PREPARATION
+Date: 2 November 2026
+Role: Robotics controls and numerical simulation implementation engineer
+Input baseline: A2.zip (original r4 numerical A2 record); approved policy v1.2.1;
+              versioned P1 / A2 v1.2.2-r4 amendments; canonical manuscript;
+              independent reviewer reports (if provided).
+
+MISSION
+Continue our seven-DOF Franka Emika Panda research project from its existing
+implementation. Widen the numerical A2 smoke-test scope in a LIMITED,
+PREDECLARED way without overwriting or retrospectively reinterpreting the
+original 0.25-second A2 result. In parallel, build the prerequisites for the
+Stage 1 planner and A3 comparisons, but do not execute official A3 comparisons
+or claim Level 1 certification or publication-ready evidence.
+
+We want (i) an independently REPRODUCIBLE baseline, (ii) a small yet meaningful
+A2-Extended validation set of THREE fixed non-optimized joint-space references,
+approximately 1 second each, and (iii) a traceable A3 readiness assessment.
+Do not expand A2 indefinitely; its purpose is component/closed-loop validation.
+
+SCIENTIFIC CONTEXT AND FROZEN ARCHITECTURE
+The joint dynamics are:
+    M(q) qdd + C(q,qd) qd + g(q) + F(qd) = tau + d(t).
+The model is the Gaz-based seven-body Panda model with the source-checked
+inertias, smooth friction and frame conventions already frozen. We employ a
+momentum-based disturbance observer, Slotine-Li continuous nominal controller,
+43-row robust HOCBF-QP filter, zero-order-held applied torque, and RK4 plant /
+observer integration. The research objective is planner-filter-consistent
+free-final-time trajectory optimization minimizing weighted time plus modeled
+non-regenerative electrical energy, with dynamic safety-margin tightening.
+
+Historical stages:
+A1: dynamics and components implemented; numerical validation packages exist.
+A2: a narrow numerical GO is reported for one fixed, non-optimized 0.25-second
+    reference in the original pinned r4 checkout, with seven refinement cells.
+    Independent human signatures and complete externally reproduced raw traces
+    have NOT been established by the compact A2.zip alone.
+A3: time-energy planning Scenarios A/B/C are not yet authorized.
+Level 1: full continuous-time interval certification not established.
+
+IMPORTANT DIGITAL-SAMPLER DISTINCTION
+The continuous Slotine-Li request r_k is not the same as the digital request
+presented to the QP. The r4 policy defines:
+    u_0 = r_0,
+    u_k = r_k + 0.5 (r_k - r_(k-1)) for k >= 1,
+    tau_k = QP(q_k, qd_k, observer_k, u_k).
+Only tau_k is applied and held, and exactly tau_k feeds the observer.
+The existing reports claim max |u-r| about 2.81e-3 N m and max |tau-u|
+about 3.81e-9 N m in the original short test. These are BASELINE REPORTED
+values, not new results or bounds. Always report three separate quantities:
+    (1) digital sampling correction: u - r,
+    (2) filter intervention: tau - u,
+    (3) total applied-vs-continuous difference: tau - r.
+Do not conclude 'zero intervention from the continuous Slotine-Li request'
+solely because ||tau-u|| is small. Do not change the continuous-time theorem or
+claim digital implementation inherits its guarantees without new analysis.
+
+WORKSTREAM 0 — PRESERVE AND REPRODUCE THE ORIGINAL A2 BASELINE
+0.1 Inventory the checked-out repository, Git commit, input manifests, policy
+    amendment, test seeds, dependencies, original 0.25-second reference, P1
+    prehold conditions, original C4 and finer refinement cells, and gate rules.
+0.2 Do not change baseline source, parameters, results, thresholds, hashes or
+    historical failed r2/r3 traces. Work in a NEW branch/worktree and output
+    directory. Make a complete immutable baseline copy or record hashes.
+0.3 If the ORIGINAL FULL CHECKOUT and raw traces are accessible, execute the
+    documented clean-environment reproduction (or arrange a separately
+    provisioned clean checkout), confirm exact or tolerance-defined agreement
+    with the recorded seven-cell outcomes, and archive commands/logs/traces.
+    If only compact A2.zip is available, explicitly report which raw-trace,
+    Git-integrity and complete-gate checks cannot be reproduced; do NOT claim
+    successful clean-checkout reproduction from summary JSON alone.
+0.4 Output a BASELINE_REPRODUCTION.md that distinguishes code-inspected,
+    log-reported, locally reproduced and INDEPENDENTLY human-reviewed findings.
+    Human reviewer signature fields must remain blank until real sign-off.
+
+WORKSTREAM 1 — A2-EXTENDED: PREDECLARED SMALL TEST SUITE
+1.1 Create a versioned A2_EXTENDED_PREDECLARATION.json + DESIGN.md and save
+    their SHA-256 digests BEFORE running any A2-Extended motion. Clearly mark
+    this as a proposed A2 extension, not a retroactive amendment to the original
+    A2 numerical GO. Keep original policies intact.
+1.2 Use THREE different, fixed, non-optimized references of nominal duration
+    1.0 s each. Recommended suite design:
+    E1: single-joint smooth position transfer (a benign tracking baseline),
+    E2: coordinated multiple-joint position transfer (tests coupling),
+    E3: direction-reversing or two-phase smooth joint motion with continuous
+        position and velocity and a clearly defined acceleration profile
+        (tests observer/filter dynamics), without switching the disturbance.
+    All are non-optimized; none is a Stage 1 NLP solution.
+1.3 Choose *exact* joint indices, amplitudes, signs, profiles, endpoint
+    conditions and duration via a documented deterministic rule using the
+    frozen joint limits, geometry and approved initial pose. Define the rule
+    and all its constants BEFORE qualification tests. Prefer quintic
+    smoothstep or piecewise quintic trajectories with consistent derivatives.
+    Start each reference at the ACTUAL post-P1 state in each cell; do not
+    substitute nominal midpoint or zero velocity for the observed endpoint.
+    Confirm whether a piecewise profile is twice continuously differentiable.
+    Record why each trajectory exercises a distinct behavior. Avoid trivial
+    motions but do not claim that a chosen reference is guaranteed feasible.
+    If any reference fails predeclared feasibility/safety screening, retain
+    FAIL with full evidence. DO NOT replace it using results-guided search or
+    silently reduce its amplitude or extend its duration. Any amendment must
+    have a new version/hash, clear scientific rationale and separate runs.
+1.4 Preserve the same physical model, gains, P1 preparation procedure,
+    observer initialization and propagation, disturbance amplitude/waveform
+    and global clock, all 43 robust QP rows, solver tolerances, hard
+    fail-closed behavior, safety reserves, digital sampling policy and energy
+    model unless a separately approved amendment is essential. Prehold is
+    rerun separately for each grid cell; state and observer transfer at t=0
+    without an artificial reset. The reference is recalculated consistently
+    from the actual endpoint as the baseline requires.
+1.5 The original two-factor 2x2 C4 control-period/integration-step grid is
+    mandatory for EACH of E1, E2 and E3:
+        (Delta, h) in milliseconds:
+        (1,0.25), (1,0.125), (0.5,0.25), (0.5,0.125).
+    Keep the originally approved refinement tolerances, raw-violation rule
+    and two-axis comparisons unchanged; include both diagonal comparisons
+    if required by the current signed r4 policy. Optionally run the separately
+    predeclared finer cohort ONLY after recording that it is confirmatory,
+    never as an unannounced substitute for an unsuccessful C4 grid.
+1.6 Before running the suite, inspect/freeze A2-Extended entrance gates:
+    initial h and psi1, position/velocity/manipulability limits, residual
+    observer-error bound, necessary paired speed/position conditions and the
+    FULL initial 43-row QP with actual post-prehold state. Use only permitted
+    state/observer signals, not true disturbance, for control decisions.
+    Document the exact separate acceptance criteria and the treatment of
+    a QP infeasibility (FAIL, with no hidden fallback or post-QP clipping).
+1.7 Run the suite only after the predeclaration is committed. Save for EVERY
+    reference AND grid cell: P1 hold trace; actual endpoint; applied torque;
+    continuous r, digital u, final tau; disturbance-truth ONLY in analysis
+    logs; z and dhat; q, qd, reference and tracking errors; all raw 43-row
+    QP slacks; scaled KKT metrics; observer-bound slacks; physical position,
+    velocity, torque and manipulability slacks; electrical energy/time;
+    terminal Cartesian error; and error/sampling diagnostics.
+    Save full raw traces (or lossless compressed form), CSV/JSON summaries,
+    software and machine details, source hashes, fixed seeds, run commands,
+    unexpected failures and protective-stop events.
+1.8 Evaluate both one-axis refinement directions and relevant diagonals.
+    Check not merely the final sample but every scheduled update and all
+    retained RK4 stages/endpoints as required by the adopted numerical audit.
+    Negative unnormalized safety/envelope slacks must be reported explicitly.
+    The printed GO/FAIL label must be recomputed from evidence, not hard-coded.
+1.9 Clearly distinguish local numerical consistency from all-time safety,
+    independently reproduced results and the continuous-time theorem. A
+    longer run is not a mathematical certificate.
+1.10 The A2-Extended outcome can be PASS, PARTIAL or FAIL for the frozen test
+    suite; all three are legitimate scientific results. Never tune acceptance
+    thresholds or change the cases to force PASS.
+
+WORKSTREAM 2 — DIGITAL-CONTROLLER INTERPRETATION
+2.1 Produce a concise SAMPLER_THEORY_SCOPE.md:
+    - exact location of u_k definition and original r_k,
+    - whether 0.5*(r_k-r_(k-1)) is used as a causal sampling correction,
+    - measured ||tau-u||, ||u-r|| and ||tau-r|| (max/RMS, appropriate norms),
+    - whether original zero-intervention language refers to QP input u or
+      continuous controller output r, and which claim the data support,
+    - what assumptions would be needed to transfer continuous-time results
+      to the sampled-data implementation (do not assert such a proof exists).
+2.2 Ask for a real theory/controls reviewer decision on whether this correction
+    is an admissible digital realization for the A2 interpretation and the
+    eventual Section IV claims. Maintain blank sign-off fields otherwise.
+2.3 If evidence suggests a mismatch, flag it as a blocker to *publication
+    interpretation*, not a reason to erase an otherwise valid numerical run.
+    Do not silently rewrite the manuscript or declare a new stability theorem.
+
+WORKSTREAM 3 — PARALLEL A3 PREPARATION ONLY (NO A3 COMPARISONS)
+3.1 T27: implement/review active-set and synthetic feasible/infeasible QP
+    accuracy fixtures, scaling, solver residuals, precision, and time-step
+    consistency. Report genuinely executed tests and outstanding official T27
+    gate conditions, using representative full HOCBF matrices where possible.
+3.2 G2.5: build a deterministic read-only feasibility screening tool for
+    BOTH filter-level and planner-level paired velocity/position constraints,
+    using actual error-envelope bounds and the planner factor-of-two effect.
+    Include torque and manipulability feasibility checks as required. If
+    M1 inverse bounds are unavailable, mark planner checks INCOMPLETE; do not
+    replace them with point inverse estimates while calling them verified.
+3.3 M1: inventory required common-domain derivative/inertia/tube/barrier
+    bounds; identify domain definitions and which constants are missing,
+    unverified, or sampled Level 2 estimates. Define implementable bound
+    computation APIs and provenance. Do not invent certified constants.
+    Do not switch to candidate-dependent M2 or local Taylor as the official
+    baseline without a versioned policy decision.
+3.4 Stage 1 NLP: implement a modular scaffold for free-time quintic/B-spline
+    trajectory representation, modeled nonregenerative energy with its
+    approved smoothing and k_r coefficients, task-space terminal constraints,
+    dynamics, joint/torque/manipulability constraints, and reserved margins.
+    The scaffolding may be unit-tested, but do NOT execute official Scenario
+    A/B/C comparisons or report optimality until A3 gates are met.
+3.5 Draft a reproducible A3_STAGE_GATE.md that lists blockers separately:
+    independent A2 acceptance; sampler interpretation; T27; positive G2.5;
+    usable M1 numerical margins; complete Stage 1 solver validation;
+    predeclared T22 tasks, Scenario B method-independent target suite,
+    equal 10-cold-start protocol, approved remaining solver/design settings,
+    signed/hashed final comparison manifest.
+3.6 The main paper's planner-filter consistency claim must not be inferred
+    from A2-Extended non-optimized tracking. Keep A2-Extended strictly separate
+    from any evidence for the free-final-time planner.
+
+WORKSTREAM 4 — QUALITY, CHANGE CONTROL, AND REPORTING
+4.1 No modification to original primary-source Gaz files, original archived
+    A2 baseline, signed policy documents, manuscript .tex, or research XLSX.
+    Changes to future experimental policy require a NEW amendment with a
+    timestamp, hash, exact differences and approval status, never retroactive
+    edits or fabricated signatures.
+4.2 Fix genuine discovered defects, keep failing fixture logs intact, and
+    explain whether a fix changes physics, control policy, test instrumentation
+    or reporting only. Never replace earlier failures with successful logs.
+4.3 Distinguish verification statuses: SOURCE VERIFIED / STATICALLY CHECKED /
+    EXECUTED LOCALLY / INDEPENDENTLY REPRODUCED / HUMAN APPROVED /
+    LOG-REPORTED / NOT VERIFIED. Human approval cannot be self-issued.
+4.4 Codex is authorized to write code, run DEVELOPMENT validations and run
+    NEW predeclared A2-Extended *numerical* experiments, subject to the
+    existing safety/approval gate descriptions. It is NOT authorized to
+    redefine the original A2 baseline outcome, approve independent signatures,
+    run official A3 comparisons, make Level 1 certification claims, or change
+    publication statements. If any mandatory approval is missing for an
+    official experiment, provide executable tests and HOLD that experiment.
+4.5 Keep technical conclusions specific to simulation, not hardware safety.
+    Sampled constraint checks do not prove between-sample guarantees.
+
+DELIVERABLES — COMPLETE ZIP AND SHORT FINAL REPORT
+A. A2_EXTENDED_PREDECLARATION.json and DESIGN.md with SHA-256 and exact fixed
+   E1/E2/E3 trajectories, grid, acceptance criteria and revision history.
+B. All code, unit tests, simulation run instructions, independent baseline
+   reproduction notes, solver environments, executed/log-reported status.
+C. A2_EXTENDED_RESULTS.md, per-reference/per-cell tables, complete raw-trace
+   audit files, nonnegative/negative slack reports, and repeatability/refinement
+   summaries. Preserve FAILED and aborted cells.
+D. SAMPLER_THEORY_SCOPE.md with separate u-r, tau-u and tau-r accounting,
+   theoretical limitation and unsigned independent-review request.
+E. T27_STATUS.md, G2_5_SCREEN_REPORT.md, M1_REQUIREMENTS.md, A3_STAGE_GATE.md
+   and a modular Stage 1 solver scaffold (as feasible).
+F. SOURCE_MANIFEST.json, CHANGELOG.md, exact run/reproduction commands,
+   hashes, dependency lock and reviewer-input checklist.
+G. One ZIP containing all new code and evidence WITHOUT silently overwriting
+   immutable baseline files.
+
+FINAL RESPONSE FORMAT
+1. Baseline A2: what is independently reproduced, only reported, or blocked.
+2. A2-Extended: E1/E2/E3 PASS/PARTIAL/FAIL and all refinement results.
+3. Digital sampler: numerical differences and claim scope, with review status.
+4. T27/G2.5/M1/Stage 1: completed, partial, blocked, next test.
+5. Exactly THREE highest-priority remaining actions (owner, artifact, pass
+   criterion); separated by whether needed for independent A2 acceptance,
+   expanded A2 evaluation, or subsequent A3 readiness.
+6. Explicit GO / CONDITIONAL GO / NO-GO for: (i) existing narrow A2 numerical
+   test, (ii) A2 independent acceptance, (iii) A2-Extended, (iv) A3 readiness,
+   (v) Level 1 certification. Give evidence-based rationale for each.
+
+OPERATING PRINCIPLE
+Make the new scope more informative, not more favorable. Preserve the prior
+narrow A2 evidence, permit negative findings, and do not confuse additional
+smoke tests with proof of optimized planner-filter consistency.

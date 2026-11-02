@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-01",
+  "status": "AUTOMATED_CROSSCHECK_COMPLETE_INDEPENDENT_PERSON_SIGNATURE_PENDING",
+  "MATLAB_parameter_values_checked": 91,
+  "MATLAB_to_runtime_mismatches": 0,
+  "manifest_mismatches": [],
+  "author_value_exception": "Published Table VIII prints * for c1z. Author MATLAB assigns 0.0. Not independently measured.",
+  "friction_exception": "Revised supplement and author code joint2 phi1 = 0.87224 N m",
+  "T06a_joint_or_flange_rows_existing": 8,
+  "T06a_numeric_frame_discrepancies_gt_1e-12": [],
+  "official_FER_joint_limit_rows_checked": 28,
+  "source_hash_checks": [
+    {
+      "file": "franka_arm.xacro",
+      "expected_sha256": "5250eceb90296803ae32cd86189edeba4ab977cdfadfdddeb5a44860f4b9ec4e",
+      "actual_sha256": "5250eceb90296803ae32cd86189edeba4ab977cdfadfdddeb5a44860f4b9ec4e",
+      "match": true,
+      "pinned_git_commit": "ddd2fffd9de44b02ad15b4bbb2bfa2cec4d60d98"
+    },
+    {
+      "file": "utils.xacro",
+      "expected_sha256": "f0124cd8ccb470b94be7c8da5e2dacf69671ec22c385013d34c9bed5409eca9b",
+      "actual_sha256": "f0124cd8ccb470b94be7c8da5e2dacf69671ec22c385013d34c9bed5409eca9b",
+      "match": true,
+      "pinned_git_commit": "ddd2fffd9de44b02ad15b4bbb2bfa2cec4d60d98"
+    },
+    {
+      "file": "franka_ros_LICENSE",
+      "expected_sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+      "actual_sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+      "match": true,
+      "pinned_git_commit": "ddd2fffd9de44b02ad15b4bbb2bfa2cec4d60d98"
+    },
+    {
+      "file": "franka_ros_NOTICE",
+      "expected_sha256": "6cca4487ef999bd2ea289695d206a57e4fa7322bdcb2e4ecd6a9a62ea02c5936",
+      "actual_sha256": "6cca4487ef999bd2ea289695d206a57e4fa7322bdcb2e4ecd6a9a62ea02c5936",
+      "match": true,
+      "pinned_git_commit": "ddd2fffd9de44b02ad15b4bbb2bfa2cec4d60d98"
+    },
+    {
+      "file": "DynPars2VREP.m",
+      "expected_sha256": "e866f432b41cdbb2b6d173d22a9297853c9112e46490b1b71f4127e67f2a8846",
+      "actual_sha256": "e866f432b41cdbb2b6d173d22a9297853c9112e46490b1b71f4127e67f2a8846",
+      "match": true,
+      "pinned_git_commit": "24d85ce4e648e2e894c832bfeee9b16711eb1a1a"
+    },
+    {
+      "file": "get_FrictionTorque.m",
+      "expected_sha256": "97d6d2c05c7dc93483af62ffb42d0e23a296743079a35927e8b1b7bd11ffcc26",
+      "actual_sha256": "97d6d2c05c7dc93483af62ffb42d0e23a296743079a35927e8b1b7bd11ffcc26",
+      "match": true,
+      "pinned_git_commit": "24d85ce4e648e2e894c832bfeee9b16711eb1a1a"
+    },
+    {
+      "file": "supplement.pdf",
+      "expected_sha256": "c42b37a03d7ce748723504215977b8a0e239cdb46b2900c29db3bd7723d90964",
+      "actual_sha256": "c42b37a03d7ce748723504215977b8a0e239cdb46b2900c29db3bd7723d90964",
+      "match": true,
+      "pinned_git_commit": "24d85ce4e648e2e894c832bfeee9b16711eb1a1a"
+    },
+    {
+      "file": "gaz_README.txt",
+      "expected_sha256": "f657f559296b74f0c0608d3684581af4ebcd7e4b9114a4b484b1f013f9b4bbb9",
+      "actual_sha256": "f657f559296b74f0c0608d3684581af4ebcd7e4b9114a4b484b1f013f9b4bbb9",
+      "match": true,
+      "pinned_git_commit": "24d85ce4e648e2e894c832bfeee9b16711eb1a1a"
+    },
+    {
+      "file": "gaz_LICENSE",
+      "expected_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "actual_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "match": true,
+      "pinned_git_commit": "24d85ce4e648e2e894c832bfeee9b16711eb1a1a"
+    }
+  ],
+  "limits_source": "https://frankarobotics.github.io/docs/robot_specifications.html",
+  "independent_human_signatures": null,
+  "qualified_second_person_approval": null,
+  "notes": "Numerical source/code consistency is not an independent human sign-off, physical identification, or global interval certificate."
+}

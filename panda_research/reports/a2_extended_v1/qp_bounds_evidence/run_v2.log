@@ -1,0 +1,64 @@
+box_interior: QPSolverOutput.PROXQP_SOLVED; strict_raw=True
+box_torque_active: NUMERICAL_OR_TORQUE_LIMIT_REJECTION; strict_raw=False
+coupled_two_active: QPSolverOutput.PROXQP_SOLVED; strict_raw=False
+coupled_rescaled_2pow40_span: QPSolverOutput.PROXQP_SOLVED; strict_raw=False
+redundant_active_faces: QPSolverOutput.PROXQP_SOLVED; strict_raw=False
+contradictory_halfspaces: QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE; strict_raw=False
+outside_physical_torque_box: QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE; strict_raw=False
+Panda_original_initial_43_infeasible: QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE; strict_raw=False
+actual_r4_endpoint_cell_0: QPSolverOutput.PROXQP_SOLVED; strict_raw=True
+Panda_actual_43_single_active_face: QPSolverOutput.PROXQP_SOLVED; strict_raw=False
+Panda_43_float32_inputs_float64_solver: QPSolverOutput.PROXQP_SOLVED; strict_raw=True
+same_43_matrix_schedule_0.001_0.00025: QPSolverOutput.PROXQP_SOLVED; strict_raw=True
+same_43_matrix_schedule_0.001_0.000125: QPSolverOutput.PROXQP_SOLVED; strict_raw=True
+same_43_matrix_schedule_0.0005_0.00025: QPSolverOutput.PROXQP_SOLVED; strict_raw=True
+same_43_matrix_schedule_0.0005_0.000125: QPSolverOutput.PROXQP_SOLVED; strict_raw=True
+actual_r4_endpoint_cell_2: QPSolverOutput.PROXQP_SOLVED; strict_raw=True
+actual_r4_endpoint_cell_3: QPSolverOutput.PROXQP_SOLVED; strict_raw=True
+actual_r4_endpoint_cell_6: QPSolverOutput.PROXQP_SOLVED; strict_raw=True
+screen original_initial_midpoint: FAIL_POINT_SCREEN
+screen actual_r4_endpoint_cell_0: PASS_POINT_ONLY
+screen actual_r4_endpoint_cell_2: PASS_POINT_ONLY
+screen actual_r4_endpoint_cell_3: PASS_POINT_ONLY
+screen actual_r4_endpoint_cell_6: PASS_POINT_ONLY
+screen fixed_qmid_joint_1_-1_10pct_range: PASS_POINT_ONLY
+screen fixed_qmid_joint_1_+1_10pct_range: PASS_POINT_ONLY
+screen fixed_qmid_joint_2_-1_10pct_range: PASS_POINT_ONLY
+screen fixed_qmid_joint_2_+1_10pct_range: PASS_POINT_ONLY
+screen fixed_qmid_joint_3_-1_10pct_range: FAIL_POINT_SCREEN
+screen fixed_qmid_joint_3_+1_10pct_range: FAIL_POINT_SCREEN
+screen fixed_qmid_joint_4_-1_10pct_range: PASS_POINT_ONLY
+screen fixed_qmid_joint_4_+1_10pct_range: PASS_POINT_ONLY
+screen fixed_qmid_joint_5_-1_10pct_range: INCOMPLETE_QP_NO_CLASSIFICATION
+screen fixed_qmid_joint_5_+1_10pct_range: INCOMPLETE_QP_NO_CLASSIFICATION
+screen fixed_qmid_joint_6_-1_10pct_range: PASS_POINT_ONLY
+screen fixed_qmid_joint_6_+1_10pct_range: PASS_POINT_ONLY
+screen fixed_qmid_joint_7_-1_10pct_range: PASS_POINT_ONLY
+screen fixed_qmid_joint_7_+1_10pct_range: PASS_POINT_ONLY
+screen midpoint_asymptotic_observer_floor: PASS_POINT_ONLY
+{
+  "output": "reports/a2_extended_v1/qp_bounds_evidence/run_v2",
+  "T27": "PARTIAL_DEVELOPMENT_COVERAGE_OFFICIAL_GATE_OPEN",
+  "G2_5": "INCOMPLETE_PLANNER_M1_MISSING",
+  "M1": "INCOMPLETE_NO_OFFICIAL_COMMON_DOMAIN_OR_NUMBERS",
+  "fixture_count": 18,
+  "numeric_oracle_failures": [],
+  "strict_raw_boundary_rejections": [
+    "box_torque_active",
+    "coupled_two_active",
+    "coupled_rescaled_2pow40_span",
+    "redundant_active_faces",
+    "Panda_actual_43_single_active_face"
+  ],
+  "unresolved_solver_calls": [],
+  "expected_infeasibility_cross_checks_pass": true,
+  "screen_count": 20,
+  "filter_point_pass_count": 15,
+  "filter_point_fail_count": 3,
+  "filter_point_incomplete_count": 2,
+  "official_G2_5_positive": false,
+  "official_T27_complete": false,
+  "A3_comparisons_executed": false,
+  "human_signatures": null,
+  "all_original_source_hashes_unchanged": true
+}
