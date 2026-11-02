@@ -1,0 +1,263 @@
+{
+  "audit_utc": "2026-10-31T18:58:41.153703+00:00",
+  "overall_pass": true,
+  "check_count": 64,
+  "checks": [
+    {
+      "check": "Original 19 checks reproduced with actual exit status zero",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical pass/fail outcomes agree",
+      "result": "PASS"
+    },
+    {
+      "check": "All original checks explicitly classified internal",
+      "result": "PASS"
+    },
+    {
+      "check": "Corrected 19 checks pass",
+      "result": "PASS"
+    },
+    {
+      "check": "Maximum eigenvalue computed and positive",
+      "result": "PASS"
+    },
+    {
+      "check": "Full-limit friction grid inclusive for each joint",
+      "result": "PASS"
+    },
+    {
+      "check": "22 exact external cases and case digest",
+      "result": "PASS"
+    },
+    {
+      "check": "594 external quantity/pose comparisons completed",
+      "result": "PASS"
+    },
+    {
+      "check": "External numeric diagnostics independently re-evaluated from stored component values",
+      "result": "PASS"
+    },
+    {
+      "check": "Raw C matrices not compared",
+      "result": "PASS"
+    },
+    {
+      "check": "T04b_inertial_70.csv exact row count",
+      "result": "PASS"
+    },
+    {
+      "check": "T04b_inertial_70.csv reviewer fields blank",
+      "result": "PASS"
+    },
+    {
+      "check": "T04b_friction_21.csv exact row count",
+      "result": "PASS"
+    },
+    {
+      "check": "T04b_friction_21.csv reviewer fields blank",
+      "result": "PASS"
+    },
+    {
+      "check": "T06a_joint_frames_8.csv exact row count",
+      "result": "PASS"
+    },
+    {
+      "check": "T06a_joint_frames_8.csv reviewer fields blank",
+      "result": "PASS"
+    },
+    {
+      "check": "Primary source comparisons pass",
+      "result": "PASS"
+    },
+    {
+      "check": "Five deliberately corrupted models detected",
+      "result": "PASS"
+    },
+    {
+      "check": "Physical model executable AST unchanged",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged baseline Protocol_v1_1_DRAFT.docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged baseline Protocol_v1_1_DRAFT.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged baseline README.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged baseline model_check_summary.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged baseline model_manifest_v1.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged baseline panda_dynamics.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged baseline phase3a_console_log.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged baseline phase3a_test_report.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged baseline run_phase3a_tests.py",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged input copy IC2AI_2027_Codex_Handoff_and_Reviewer_Remediation_Prompt.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged original attachment IC2AI_2027_Codex_Handoff_and_Reviewer_Remediation_Prompt.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged input copy IC2AI_2027_Phase1_Three_Actions_2026-11-01.zip",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged original attachment IC2AI_2027_Phase1_Three_Actions_2026-11-01.zip",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged input copy Action_2026-10-31.docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged original attachment Action_2026-10-31.docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged input copy Phase 1 Read-Only Verification Review (Full Package).docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Unchanged original attachment Phase 1 Read-Only Verification Review (Full Package).docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Manifest module_sha256",
+      "result": "PASS"
+    },
+    {
+      "check": "Manifest test_script_sha256",
+      "result": "PASS"
+    },
+    {
+      "check": "Manifest numerical_report_sha256",
+      "result": "PASS"
+    },
+    {
+      "check": "Original protocol matches manifest input hash",
+      "result": "PASS"
+    },
+    {
+      "check": "Original approvals remain null",
+      "result": "PASS"
+    },
+    {
+      "check": "All nine pinned source and attribution files verified",
+      "result": "PASS"
+    },
+    {
+      "check": "Pinned source franka_arm.xacro",
+      "result": "PASS"
+    },
+    {
+      "check": "Pinned source utils.xacro",
+      "result": "PASS"
+    },
+    {
+      "check": "Pinned source franka_ros_LICENSE",
+      "result": "PASS"
+    },
+    {
+      "check": "Pinned source franka_ros_NOTICE",
+      "result": "PASS"
+    },
+    {
+      "check": "Pinned source DynPars2VREP.m",
+      "result": "PASS"
+    },
+    {
+      "check": "Pinned source get_FrictionTorque.m",
+      "result": "PASS"
+    },
+    {
+      "check": "Pinned source supplement.pdf",
+      "result": "PASS"
+    },
+    {
+      "check": "Pinned source gaz_README.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Pinned source gaz_LICENSE",
+      "result": "PASS"
+    },
+    {
+      "check": "Proposed freeze unapproved and incomplete",
+      "result": "PASS"
+    },
+    {
+      "check": "Scenario B proposal hash fixed before comparative runs",
+      "result": "PASS"
+    },
+    {
+      "check": "No A2 performed",
+      "result": "PASS"
+    },
+    {
+      "check": "All model-workflow commands succeeded",
+      "result": "PASS"
+    },
+    {
+      "check": "Valid DOCX archive protocol/Protocol_v1_1_REMEDIATION_ADDENDUM.docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Valid DOCX archive review_sheets/HUMAN_REVIEW_SIGNATURES.docx",
+      "result": "PASS"
+    },
+    {
+      "check": "Required deliverable README.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Required deliverable CHANGELOG.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Required deliverable reports/REVIEWER_RESPONSE.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Required deliverable reports/reviewer_issue_disposition.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "Required deliverable protocol/unresolved_decisions.csv",
+      "result": "PASS"
+    },
+    {
+      "check": "Required deliverable reports/stage_gates.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Required deliverable requirements.lock.txt",
+      "result": "PASS"
+    }
+  ]
+}

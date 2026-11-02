@@ -1,0 +1,78 @@
+{
+  "scope": "LOSSLESS_ENGINEERING_CODEC_NOT_NEW_PHYSICS",
+  "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1",
+  "tests_run": 14,
+  "overall_pass": true,
+  "checks": [
+    {
+      "test": "__main__.TraceArchiveTests.test_changed_numeric_block_is_rejected_even_with_rewritten_ZIP_CRC",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_changed_schema_canonical_checksum_is_rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_exclusive_creation_does_not_replace_existing_evidence",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_expected_file_or_canonical_hash_mismatch_is_rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_mixed_scalar_types_large_integers_and_signed_zero",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_nonfinite_values_are_rejected_before_archive_creation",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_numpy_values_and_tuples_normalize_without_precision_loss",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_pickle_object_array_is_never_loaded",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_ragged_lists_missing_keys_none_and_dictionary_order",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_rectangular_float_tensors_and_identical_columns",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_repeated_string_enums_and_mixed_dictionary_schemas",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_representative_full_baseline_cell_zero_trace_roundtrip",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_root_scalars_empty_lists_and_empty_dicts",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.TraceArchiveTests.test_uniform_integer_float_boolean_and_empty_matrices",
+      "result": "PASS"
+    }
+  ],
+  "representative_measurements": {
+    "source": "/workspace/a2-baseline-clean/panda_research/runs/p1_r4/baseline_clean_reproduction_v1/cell_0_a2_trace.json.gz",
+    "original_gzip_bytes": 3574226,
+    "original_JSON_bytes": 17471899,
+    "CTZ_bytes": 2817736,
+    "ratio_vs_original_gzip": 0.7883485823224384,
+    "encode_plus_verified_reads_s": 4.537843269999939,
+    "original_gzip_sha256": "d564e458ee4a5e771a63e6b362939b014540de703aaa45219779eb90f2103389",
+    "original_JSON_sha256": "8b823b445a138e6e6efd943d01a5716157afc8a6b71251e1a1c7fb4f5f5a924a",
+    "canonical_json_sha256": "822543cd880b2829c553a7559d7b4e2c8b9717c8d64025d7411e1bf890f36026",
+    "exact_original_JSON_byte_reconstruction": true
+  },
+  "source_sha256": "716004a277c19eb3e63439217b214b862cc56a3114340b66abb7c95493590ba3",
+  "test_sha256": "54e512f408fa76ac93f0f0ea97dd207d7be8cb5cee09b5f48bcf71dac5317d39"
+}

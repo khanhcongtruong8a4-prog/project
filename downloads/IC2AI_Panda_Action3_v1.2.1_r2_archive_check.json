@@ -1,0 +1,19 @@
+{
+  "scope": "R2 path/config/entry-guard smoke; full component/regression replay performed in working checkout; earlier r1 full relocation replay preserved",
+  "checks": [
+    {
+      "mode": "preflight",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"status\": \"COMPONENT_INPUTS_AVAILABLE_A2_HOLD\",\n  \"run_directory\": \"runs/action3/20261101T153930888022Z\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "mode": "a2",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "{\n  \"status\": \"REFUSED_OFFICIAL_A2\",\n  \"run_directory\": \"runs/action3/20261101T153931406296Z\"\n}\n",
+      "stderr": ""
+    }
+  ]
+}

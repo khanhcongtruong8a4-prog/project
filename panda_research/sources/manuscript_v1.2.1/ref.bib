@@ -1,0 +1,245 @@
+% =====================================================================
+%  refs.bib  --  references for Sections I--II
+%  Sources: team sheet "Reference-V2.xlsx" (entries marked [sheet]) and
+%  classics named in the text (marked [classic]); other sources noted per entry. Volume, issue and
+%  page data were checked against Crossref by DOI.
+%  Journal names use IEEE abbreviations, as expected by IEEEtran.bst.
+% =====================================================================
+
+% 18 entries; with T11 (senior's paper, to be added) the paper cites 19.
+
+% electrical model: servo-drive and inverter losses, coupled DC bus
+@inproceedings{r2,
+  author    = {C. Hansen and J. {\"O}ltjen and D. Meike and T. Ortmaier},
+  title     = {Enhanced approach for energy-efficient trajectory generation of industrial robots},
+  booktitle = {Proc. IEEE Int. Conf. Autom. Sci. Eng. (CASE)},
+  pages     = {1--7},
+  year      = {2012},
+  doi       = {10.1109/CoASE.2012.6386343}
+}
+
+% review: classifies proxy costs (torque^2, mechanical work) vs. electrical
+@article{r1,
+  author  = {G. Carabin and E. Wehrle and R. Vidoni},
+  title   = {A review on energy-saving optimization methods for robotic and automatic systems},
+  journal = {Robotics},
+  volume  = {6},
+  number  = {4},
+  pages   = {39},
+  year    = {2017},
+  doi     = {10.3390/robotics6040039}
+}
+
+% functional redundancy (UR5); non-regenerative electrical model; fixed
+% duration; rest-to-rest; final orientation optimized; manipulability benchmark
+@article{r4,
+  author  = {P. Boscariol and R. Caracciolo and D. Richiedei and A. Trevisani},
+  title   = {Energy optimization of functionally redundant robots through motion design},
+  journal = {Appl. Sci.},
+  volume  = {10},
+  number  = {9},
+  pages   = {3022},
+  year    = {2020},
+  doi     = {10.3390/app10093022}
+}
+
+% 7-DOF Panda (+ linear axis); mechanical energy; fixed duration and
+% waypoint poses; redundant joints optimized at waypoints
+@article{r5,
+  author  = {G. Fabris and L. Scalera and A. Gasparetto},
+  title   = {The impact of kinematic redundancy on the energetic performance of robotic manipulators},
+  journal = {Robotics},
+  volume  = {15},
+  number  = {3},
+  pages   = {51},
+  year    = {2026},
+  doi     = {10.3390/robotics15030051}
+}
+
+% [classic] manipulability
+@article{r6,
+  author  = {T. Yoshikawa},
+  title   = {Manipulability of robotic mechanisms},
+  journal = {Int. J. Robot. Res.},
+  volume  = {4},
+  number  = {2},
+  pages   = {3--9},
+  year    = {1985},
+  doi     = {10.1177/027836498500400201}
+}
+
+@inproceedings{r14,
+  author    = {V. Kurtz and P. M. Wensing and H. Lin},
+  title     = {Control barrier functions for singularity avoidance in passivity-based manipulator control},
+  booktitle = {Proc. 60th IEEE Conf. Decis. Control (CDC)},
+  pages     = {6125--6130},
+  year      = {2021},
+  doi       = {10.1109/CDC45484.2021.9683597}
+}
+
+% [classic] Slotine--Li controller
+@article{r18,
+  author  = {J.-J. E. Slotine and W. Li},
+  title   = {On the adaptive control of robot manipulators},
+  journal = {Int. J. Robot. Res.},
+  volume  = {6},
+  number  = {3},
+  pages   = {49--59},
+  year    = {1987},
+  doi     = {10.1177/027836498700600303}
+}
+
+% [classic] momentum observer
+@inproceedings{r17,
+  author    = {A. {De Luca} and A. Albu-Sch{\"a}ffer and S. Haddadin and G. Hirzinger},
+  title     = {Collision detection and safe reaction with the {DLR-III} lightweight manipulator arm},
+  booktitle = {Proc. IEEE/RSJ Int. Conf. Intell. Robots Syst. (IROS)},
+  pages     = {1623--1630},
+  year      = {2006},
+  doi       = {10.1109/IROS.2006.282053}
+}
+
+% [classic] CBF-QP safety filter
+@article{r7,
+  author  = {A. D. Ames and X. Xu and J. W. Grizzle and P. Tabuada},
+  title   = {Control barrier function based quadratic programs for safety critical systems},
+  journal = {IEEE Trans. Autom. Control},
+  volume  = {62},
+  number  = {8},
+  pages   = {3861--3876},
+  year    = {2017},
+  doi     = {10.1109/TAC.2016.2638961}
+}
+
+% [classic] high-order CBF
+@inproceedings{r8,
+  author    = {W. Xiao and C. Belta},
+  title     = {Control barrier functions for systems with high relative degree},
+  booktitle = {Proc. IEEE 58th Conf. Decis. Control (CDC)},
+  pages     = {474--479},
+  year      = {2019},
+  doi       = {10.1109/CDC40024.2019.9029455}
+}
+
+% sheet #3
+@article{r13,
+  author  = {S. Zhang and D.-H. Zhai and Y. Xiong and Y. Xia},
+  title   = {Prescribed-time safety control for unknown systems and its application to robotic manipulator},
+  journal = {IEEE Trans. Autom. Sci. Eng.},
+  volume  = {22},
+  pages   = {9923--9933},
+  year    = {2025},
+  doi     = {10.1109/TASE.2024.3514680}
+}
+
+% sheet #1
+@article{r9,
+  author  = {J. Sun and J. Yang and Z. Zeng},
+  title   = {Safety-critical control with control barrier function based on disturbance observer},
+  journal = {IEEE Trans. Autom. Control},
+  volume  = {69},
+  number  = {7},
+  pages   = {4750--4756},
+  year    = {2024},
+  doi     = {10.1109/TAC.2024.3352707}
+}
+
+% sheet #2
+@article{r10,
+  author  = {E. Da{\c{s}} and J. W. Burdick},
+  title   = {Robust control barrier functions using uncertainty estimation with application to mobile robots},
+  journal = {IEEE Trans. Autom. Control},
+  volume  = {70},
+  number  = {7},
+  pages   = {4766--4773},
+  year    = {2025},
+  doi     = {10.1109/TAC.2025.3538742}
+}
+
+% sheet #7
+@article{r11,
+  author  = {Q. Nguyen and K. Sreenath},
+  title   = {Robust safety-critical control for dynamic robotics},
+  journal = {IEEE Trans. Autom. Control},
+  volume  = {67},
+  number  = {3},
+  pages   = {1073--1088},
+  year    = {2022},
+  doi     = {10.1109/TAC.2021.3059156}
+}
+
+% sheet #20
+@article{r12,
+  author  = {D. Zeng and Y. Jiang and Y. Wang and H. Zhang and Y. Feng},
+  title   = {Robust adaptive control barrier functions for input-affine systems: {Application} to uncertain manipulator safety constraints},
+  journal = {IEEE Control Syst. Lett.},
+  volume  = {8},
+  pages   = {279--284},
+  year    = {2024},
+  doi     = {10.1109/LCSYS.2023.3329518}
+}
+
+% sheet #16
+@article{r15,
+  author  = {M. K{\"o}gel and M. Ibrahim and C. Kallies and R. Findeisen},
+  title   = {Safe hierarchical model predictive control and planning for autonomous systems},
+  journal = {Int. J. Robust Nonlinear Control},
+  volume  = {35},
+  number  = {7},
+  pages   = {2658--2676},
+  year    = {2025},
+  doi     = {10.1002/rnc.6808}
+}
+
+% redundant SCARA + linear axis; electrical model; fixed via-points, prescribed T
+@article{r3,
+  author  = {P. Boscariol and D. Richiedei},
+  title   = {Trajectory design for energy savings in redundant robotic cells},
+  journal = {Robotics},
+  volume  = {8},
+  number  = {1},
+  pages   = {15},
+  year    = {2019},
+  doi     = {10.3390/robotics8010015}
+}
+
+% sheet #23
+@article{r16,
+  author  = {H. Huang and W. He and J. Li and B. Xu and C. Yang and W. Zhang},
+  title   = {Disturbance observer-based fault-tolerant control for robotic systems with guaranteed prescribed performance},
+  journal = {IEEE Trans. Cybern.},
+  volume  = {52},
+  number  = {2},
+  pages   = {772--783},
+  year    = {2022},
+  doi     = {10.1109/TCYB.2019.2921254}
+}
+
+% ---------------------------------------------------------------------
+% T11: senior's SCARA paper (disturbance observer + high-order CBF filter;
+% observer compensation smooths the controller--filter interaction;
+% dissipative braking fallback). Cited in Sec. I and Sec. II-D.
+% Fill in, remove the leading "%" signs, and put an at-sign in front of
+% "ARTICLE" (or "MISC"). Until then T11 prints as [?]. BibTeX reads an
+% at-sign even inside a comment, so the template is written without one.
+% For double-blind review, the citing text already refers to it in the
+% third person ("Earlier work ...").
+% ---------------------------------------------------------------------
+%ARTICLE{T11,
+%  author  = {A. Author and B. Author},
+%  title   = {...},
+%  journal = {...},
+%  volume  = {...},
+%  number  = {...},
+%  pages   = {...--...},
+%  year    = {...},
+%  doi     = {...}
+%}
+%
+% If it is not yet published, use instead:
+%MISC{T11,
+%  author = {A. Author and B. Author},
+%  title  = {...},
+%  note   = {submitted to ...},
+%  year   = {2026}
+%}

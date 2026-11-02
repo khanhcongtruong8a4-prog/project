@@ -1,0 +1,20 @@
+{
+  "scope": "STAGE1_ADDITIVE_DEVELOPMENT_SCAFFOLD_NO_A3_SOLVE",
+  "files": {
+    "src/panda_closed_loop/stage1_scaffold.py": "bdfc73a136c70d8139bef2dd20abef1a8bb4d9ae1ef45a77f0b21d540aa3d1a6",
+    "tests/test_stage1_scaffold.py": "7a8c4a7b7ebc3e98ac20f2668f6bd947062f7f08d70d24966eaa6bc38c53db5a",
+    "scripts/stage1_scaffold_check.py": "8bec28a8cf2fc6692ba96382ee8792cf16f7525ef74b6f99985032706124b37c",
+    "reports/a2_extended_v1/STAGE1_SCAFFOLD.md": "e78752b5a92eb5a345993616537b5675ce95d757e8ab4c8ffcd590db3d85b0d1",
+    "reports/a2_extended_v1/A3_STAGE_GATE.md": "0bf15ad953befee3649de4e576ffd72cd74e09a0e21e629e41eb413f88ab36a6",
+    "reports/a2_extended_v1/stage1/readiness.json": "1bb96bbeb3c2e11a42e8b6fa07ef7ee894763e625efd96c7416eb473ad20af0d",
+    "reports/a2_extended_v1/stage1/readiness_final.json": "b5460813ce27c5d110495e6db90f4352e790e1f3cf1635d1c25ca88b9d2c2ce0",
+    "reports/a2_extended_v1/stage1/tests_dynamic.json": "a8be80bad5280e49504d7d69d4ae60ba2acaa0ea78318bd2f16324696c3c9522",
+    "reports/a2_extended_v1/stage1/tests_dynamic.log": "3f34cc601399c7b371f0fb2ca89fdd4265da580c0b1d622c7a1e460134d1d6aa",
+    "reports/a2_extended_v1/stage1/tests_initial.json": "e6fb98b1f3211d70f9e3247fadcadaefae646148f0bbb64326348b5053a000cb",
+    "reports/a2_extended_v1/stage1/tests_initial.log": "8bbd759399263acfea94ff8e943a9a38d699d55a1e2bcdb2702ca4332150e043"
+  },
+  "tests_run": 14,
+  "tests_passed": true,
+  "official_solver_executed": false,
+  "human_signature": null
+}

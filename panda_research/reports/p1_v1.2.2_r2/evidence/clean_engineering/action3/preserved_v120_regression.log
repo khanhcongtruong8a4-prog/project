@@ -1,0 +1,10 @@
+source_pdf_extraction: PASS
+original_reproduction: PASS
+internal_checks: PASS
+primary_sources: PASS
+pinocchio: PASS
+model_error_detection: PASS
+mujoco: PASS
+integration: PASS
+dependency_check: PASS
+Evidence: /tmp/p1-r2-clean-replay-i1njqwm3/fresh/panda_research/runs/20261101T175902847589Z

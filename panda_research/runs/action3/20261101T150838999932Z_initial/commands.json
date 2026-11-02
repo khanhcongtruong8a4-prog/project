@@ -1,0 +1,20 @@
+[
+  {
+    "command": [
+      "/workspace/project/panda_research/.venv/bin/python",
+      "/workspace/project/panda_research/tests/test_action3.py",
+      "--report",
+      "/workspace/project/panda_research/runs/action3/20261101T150838999932Z_initial/test_action3.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "/workspace/project/panda_research/.venv/bin/python",
+      "/workspace/project/panda_research/tests/test_t28_raw_c.py",
+      "--report",
+      "/workspace/project/panda_research/runs/action3/20261101T150838999932Z_initial/test_t28_raw_c.json"
+    ],
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,19 @@
+test_actual_five_failed_matrix_regressions (__main__.NumericalQPTests.test_actual_five_failed_matrix_regressions) ... ok
+test_cold_repeat_is_exact (__main__.NumericalQPTests.test_cold_repeat_is_exact) ... ok
+test_coupled_active_face_projection (__main__.NumericalQPTests.test_coupled_active_face_projection) ... ok
+test_equivalent_positive_row_scaling (__main__.NumericalQPTests.test_equivalent_positive_row_scaling) ... ok
+test_infeasible_rows_stop_without_candidate (__main__.NumericalQPTests.test_infeasible_rows_stop_without_candidate) ... ok
+test_interior_objective_minimizer (__main__.NumericalQPTests.test_interior_objective_minimizer) ... ok
+test_lower_active_analytic_solution_and_strict_sign (__main__.NumericalQPTests.test_lower_active_analytic_solution_and_strict_sign) ... ok
+test_new_motion_definitions_and_thresholds_equal_v1 (__main__.NumericalQPTests.test_new_motion_definitions_and_thresholds_equal_v1) ... ok
+test_original_T29_gradient_independently_recomputed (__main__.NumericalQPTests.test_original_T29_gradient_independently_recomputed) ... ok
+test_settings_are_frozen_no_retry_or_projection (__main__.NumericalQPTests.test_settings_are_frozen_no_retry_or_projection) ... ok
+test_timeout_is_unknown_with_no_actuation (__main__.NumericalQPTests.test_timeout_is_unknown_with_no_actuation) ... ok
+test_upper_active_analytic_solution_and_strict_sign (__main__.NumericalQPTests.test_upper_active_analytic_solution_and_strict_sign) ... ok
+test_worker_matches_direct_solution_and_diagnostics (__main__.NumericalQPTests.test_worker_matches_direct_solution_and_diagnostics) ... ok
+test_zero_normal_infeasible_row_stops (__main__.NumericalQPTests.test_zero_normal_infeasible_row_stops) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.206s
+
+OK

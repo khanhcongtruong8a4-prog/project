@@ -1,0 +1,66 @@
+{
+  "created_date": "2026-11-01",
+  "package_status": "PROJECT_OWNER_POLICY_APPROVED_NOT_A2_AUTHORIZED",
+  "files": [
+    {
+      "file": "APPROVAL_RECORD.md",
+      "sha256": "eeddcaf7a402cbc13fff13b1223d95bc0c5cfb92869795f86613216cb6a98a3b",
+      "size_bytes": 1639
+    },
+    {
+      "file": "APPROVED_POLICY_CONFIGURATION_v1.2.1.json",
+      "sha256": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530",
+      "size_bytes": 12176
+    },
+    {
+      "file": "C1_C6_FINAL_DECISIONS.csv",
+      "sha256": "a0635b51e4633fbea90216990afaa66ac422867f1d94555cb87574cb4e38a48a",
+      "size_bytes": 2313
+    },
+    {
+      "file": "PREVIOUS_AUTOMATED_EVIDENCE_SNAPSHOT.json",
+      "sha256": "ce210fd60db3a75c7ef9e53807aa2a829b8b438819e7ae217f468778554c6df7",
+      "size_bytes": 3802
+    },
+    {
+      "file": "PROTOCOL_v1.2.1_PROJECT_OWNER_APPROVED_ADDENDUM.md",
+      "sha256": "d44f2412cd950c0501a3bb9e3c4d32bee886782d830e116eeb5df8f0e4e31c0d",
+      "size_bytes": 5251
+    },
+    {
+      "file": "READINESS_AND_NEXT_STEPS.md",
+      "sha256": "ceff493db58df01792a78fb2f3f4bc49c0219d9c059fd20b92b811c200be7516",
+      "size_bytes": 1655
+    },
+    {
+      "file": "Referenced_Inputs/Tasks_2026.xlsx",
+      "sha256": "bdddc29df8ca30514b9b6f31fc96372b5460a1bf22e5c40011979bb73d9ad77a",
+      "size_bytes": 130863
+    },
+    {
+      "file": "Referenced_Inputs/previous_C1_C6_proposals.csv",
+      "sha256": "970ddfc521008b3d49553cc01f2592d54888c1e0c72e966f9a763fe1594e092c",
+      "size_bytes": 2059
+    },
+    {
+      "file": "Referenced_Inputs/previous_unsigned_signoff_template.md",
+      "sha256": "b2f15af7e3c0f5e3d798a1425ded62d2876df837418fda5062377790522a8447",
+      "size_bytes": 2488
+    },
+    {
+      "file": "T29_approved_protocol_row_scales.csv",
+      "sha256": "519bf38459cd8b2b485aed428d201640801333311fef9444adf6ffef27241a31",
+      "size_bytes": 586
+    },
+    {
+      "file": "manuscript_source_hashes.json",
+      "sha256": "5d438a95640f4766f2bc5486ab24232846cb58fcdc6281af3dba45551c038f2c",
+      "size_bytes": 967
+    },
+    {
+      "file": "original_Tasks_2026_provenance.csv",
+      "sha256": "529357e5e31a6c462749ceb4052aaecc23fffab41aa481fdab4641004c751c0f",
+      "size_bytes": 7412
+    }
+  ]
+}

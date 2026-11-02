@@ -1,0 +1,6 @@
+E1 1 {'reason': 'HARD_QP_FAILURE_NO_ADVANCE', 'physical_t_s': 0.998, 'status': 'QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE', 'no_additional_torque_applied': True} LP= 0 strict recorded-coefficient witness= True
+E3 0 {'reason': 'HARD_QP_FAILURE_NO_ADVANCE', 'physical_t_s': 0.095, 'status': 'QPSolverOutput.PROXQP_SOLVED', 'no_additional_torque_applied': True} LP= 0 strict recorded-coefficient witness= True
+E3 1 {'reason': 'HARD_QP_FAILURE_NO_ADVANCE', 'physical_t_s': 0.076, 'status': 'QPSolverOutput.PROXQP_SOLVED', 'no_additional_torque_applied': True} LP= 0 strict recorded-coefficient witness= True
+E3 2 {'reason': 'HARD_QP_FAILURE_NO_ADVANCE', 'physical_t_s': 0.0925, 'status': 'QPSolverOutput.PROXQP_SOLVED', 'no_additional_torque_applied': True} LP= 0 strict recorded-coefficient witness= True
+E3 3 {'reason': 'HARD_QP_FAILURE_NO_ADVANCE', 'physical_t_s': 0.02, 'status': 'QPSolverOutput.PROXQP_MAX_ITER_REACHED', 'no_additional_torque_applied': True} LP= 0 strict recorded-coefficient witness= True
+/workspace/a2-extended/panda_research/reports/a2_extended_v1/ACTUAL_EXTENDED_QP_DIAGNOSTICS.md

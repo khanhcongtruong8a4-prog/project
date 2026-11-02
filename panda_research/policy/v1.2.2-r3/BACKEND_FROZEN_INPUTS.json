@@ -1,0 +1,10 @@
+{
+  "status": "FROZEN_BEFORE_EXPANDED_BACKEND_TESTS",
+  "original_controller_freeze_commit": "51831ee",
+  "acceptance": "All five original geometry outputs bitwise equal on the exact 154 regression configurations before any cell. Same expression, no model/controller/plan changes.",
+  "files": {
+    "scripts/p1_r3_expanded.py": "01b08f32c11822dd5ed98e69eaa1d875dc6e4b6699f693d6adb3a4dca59fb459",
+    "policy/v1.2.2-r3/BACKEND_AMENDMENT.md": "f25a5cfc22dc15b0abde0fa0d3d704644a584a04b585181749c8424e29856a9b",
+    "policy/v1.2.2-r3/FROZEN_INPUTS.json": "459e9f346bb4b9fdb0b7196bf59b17bde4cb3c31622d43246742df60c23886aa"
+  }
+}

@@ -1,0 +1,13 @@
+id,reviewer_issue,disposition,evidence,remaining_or_resolution
+R01,No external dynamics reference,CLOSED TECHNICAL; HUMAN ACCEPTANCE PENDING,reports/external_dynamics.json,594 quantity/pose comparisons pass; source-built Pinocchio CRBA/RNEA; no raw C equality claim
+R02,T04b primary source/signature missing,PARTIALLY RESOLVED,review_sheets/T04b_inertial_70.csv; review_sheets/T04b_friction_21.csv,"70+21 rows source-crosschecked, no mismatch; c1z exception explicit; qualified signature absent; erratum webpage not retrieved"
+R03,T06a primary Xacro/signature missing,PARTIALLY RESOLVED,review_sheets/T06a_joint_frames_8.csv,"All origins/axes, actual target literal origins/rolls, MDH maps and flange checked; human signature pending"
+R04,Margin mode and NLP coupling unspecified,PARTIALLY RESOLVED,protocol/Protocol_v1_1_REMEDIATION_ADDENDUM.md section 2,"M1 proposed; update/dependency/feasible-set policy explicit; exact missing-framework equations, constants and approval remain open"
+R05,Misleading test notes/internal identities,CLOSED IN WORKING COPIES,reports/code_changes.patch; reports/original_reproduction.json,"Names/notes corrected, internal evidence classes explicit; original historical files unchanged; separate external evidence added"
+R06,Scenario B selection bias safeguard,PARTIALLY RESOLVED,protocol/scenario_b_target_suite_PROPOSED.json,64 method-independent targets fixed as a proposal before methods run; T22 selection bias disclosed; team approval/shared settings remain open
+R07,Control-period refinement missing,PARTIALLY RESOLVED,protocol/Protocol_v1_1_REMEDIATION_ADDENDUM.md section 4,"Integrator AND control-period refinement specified with unchanged thresholds; values, approval and A2 execution pending"
+R08,19/19 only historical/log-reported,CLOSED: REPRODUCED INTERNAL CHECKS,reports/original_reproduction.json,"Original copied source reproduced 19/19 on recorded current runtime, historical pass/fail agrees; still not independently validating robot dynamics"
+R09,Maximum sampled eigenvalue hard-coded null,CLOSED,reports/corrected_internal_tests.json,Actual largest sampled eigenvalue 3.67369536401921 kg m^2 reported; no global certificate
+R10,Friction grid below declared joint speeds,CLOSED,reports/corrected_internal_tests.json,"261 inclusive velocities per joint from -VMAX to +VMAX, including +/-2.61 rad/s for joints 5-7"
+R11,Manuscript alpha_v/comma corrections,OPEN / OUT OF SCOPE,reports/OUT_OF_SCOPE_EDITORIAL_MEMO.md,Manuscript not supplied; no manuscript edits
+R12,Unsigned protocol and experiment freeze,OPEN,protocol/proposed_frozen_configuration.json; protocol/unresolved_decisions.csv,"All unknown values and human approvals explicitly null; no A2/A3, T27 or G2.5 run"

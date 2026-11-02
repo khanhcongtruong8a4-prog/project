@@ -1,0 +1,142 @@
+{
+  "status": "PASS_EXTERNAL_NUMERICAL_REFERENCE",
+  "pose_count": 154,
+  "checks": 4158,
+  "summary": {
+    "FK_link1_translation": {
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "failed_pose_indices": []
+    },
+    "FK_link1_rotation": {
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "failed_pose_indices": []
+    },
+    "FK_link2_translation": {
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "failed_pose_indices": []
+    },
+    "FK_link2_rotation": {
+      "max_absolute_error": 1.6081226496766364e-16,
+      "max_tolerance_ratio": 1.6081226496766328e-06,
+      "failed_pose_indices": []
+    },
+    "FK_link3_translation": {
+      "max_absolute_error": 8.326672684688674e-17,
+      "max_tolerance_ratio": 7.016609515630985e-07,
+      "failed_pose_indices": []
+    },
+    "FK_link3_rotation": {
+      "max_absolute_error": 2.7755575615628914e-16,
+      "max_tolerance_ratio": 1.727092664680322e-06,
+      "failed_pose_indices": []
+    },
+    "FK_link4_translation": {
+      "max_absolute_error": 1.1102230246251565e-16,
+      "max_tolerance_ratio": 7.536212807099205e-07,
+      "failed_pose_indices": []
+    },
+    "FK_link4_rotation": {
+      "max_absolute_error": 4.440892098500626e-16,
+      "max_tolerance_ratio": 2.9755791578250347e-06,
+      "failed_pose_indices": []
+    },
+    "FK_link5_translation": {
+      "max_absolute_error": 2.220446049250313e-16,
+      "max_tolerance_ratio": 1.278552144823317e-06,
+      "failed_pose_indices": []
+    },
+    "FK_link5_rotation": {
+      "max_absolute_error": 6.661338147750939e-16,
+      "max_tolerance_ratio": 4.1803450729174684e-06,
+      "failed_pose_indices": []
+    },
+    "FK_link6_translation": {
+      "max_absolute_error": 2.220446049250313e-16,
+      "max_tolerance_ratio": 1.278552144823317e-06,
+      "failed_pose_indices": []
+    },
+    "FK_link6_rotation": {
+      "max_absolute_error": 6.245004513516506e-16,
+      "max_tolerance_ratio": 4.0727579233051e-06,
+      "failed_pose_indices": []
+    },
+    "FK_link7_translation": {
+      "max_absolute_error": 2.220446049250313e-16,
+      "max_tolerance_ratio": 1.3395609154812153e-06,
+      "failed_pose_indices": []
+    },
+    "FK_link7_rotation": {
+      "max_absolute_error": 6.800116025829084e-16,
+      "max_tolerance_ratio": 6.3113771373439595e-06,
+      "failed_pose_indices": []
+    },
+    "FK_link8_translation": {
+      "max_absolute_error": 3.3306690738754696e-16,
+      "max_tolerance_ratio": 1.9258229877275677e-06,
+      "failed_pose_indices": []
+    },
+    "FK_link8_rotation": {
+      "max_absolute_error": 6.800116025829084e-16,
+      "max_tolerance_ratio": 6.3113771373439595e-06,
+      "failed_pose_indices": []
+    },
+    "AD_flange_translation": {
+      "max_absolute_error": 3.3306690738754696e-16,
+      "max_tolerance_ratio": 1.8674647153721868e-06,
+      "failed_pose_indices": []
+    },
+    "M": {
+      "max_absolute_error": 2.220446049250313e-15,
+      "max_tolerance_ratio": 5.9539388588668e-07,
+      "failed_pose_indices": []
+    },
+    "g": {
+      "max_absolute_error": 2.1316282072803006e-14,
+      "max_tolerance_ratio": 1.1654069691181976e-06,
+      "failed_pose_indices": []
+    },
+    "Cqd": {
+      "max_absolute_error": 2.1316282072803006e-14,
+      "max_tolerance_ratio": 1.703085051958313e-06,
+      "failed_pose_indices": []
+    },
+    "friction": {
+      "max_absolute_error": 2.220446049250313e-16,
+      "max_tolerance_ratio": 2.1404714616335004e-08,
+      "failed_pose_indices": []
+    },
+    "ID_friction_off": {
+      "max_absolute_error": 3.552713678800501e-14,
+      "max_tolerance_ratio": 1.064210119608774e-06,
+      "failed_pose_indices": []
+    },
+    "ID_friction_on": {
+      "max_absolute_error": 3.552713678800501e-14,
+      "max_tolerance_ratio": 1.039378809017296e-06,
+      "failed_pose_indices": []
+    },
+    "kinetic_energy_extra": {
+      "max_absolute_error": 7.105427357601002e-15,
+      "max_tolerance_ratio": 7.768870315970268e-07,
+      "failed_pose_indices": []
+    },
+    "potential_energy_extra": {
+      "max_absolute_error": 2.842170943040401e-14,
+      "max_tolerance_ratio": 3.591179205000033e-07,
+      "failed_pose_indices": []
+    },
+    "reversed_gravity_sign": {
+      "max_absolute_error": 2.1316282072803006e-14,
+      "max_tolerance_ratio": 1.1654069691181976e-06,
+      "failed_pose_indices": []
+    },
+    "zero_gravity": {
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "failed_pose_indices": []
+    }
+  }
+}

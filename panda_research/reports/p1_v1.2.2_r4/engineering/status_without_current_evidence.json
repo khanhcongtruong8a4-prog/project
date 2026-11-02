@@ -1,0 +1,5 @@
+{
+  "status": "HOLD",
+  "scope": "NUMERICAL_A2",
+  "integrity_error": "[Errno 2] No such file or directory: '/workspace/project/panda_research/reports/a2_current.json'"
+}

@@ -1,0 +1,11 @@
+{
+  "run_directory": "runs/p1_r3/expanded_a7891c3",
+  "summary_sha256": "94244372dfea0241a42df92156dda4989015afa8a7c2640939332a61fbe251c5",
+  "freeze_commit": "51831ee5ace0af4f9f04114b5b8a5d56820cc531",
+  "backend_amendment_commit": "a7891c38da0769d278137a1dca207a3c10b15a19",
+  "P1_numerical_hold": "PASS",
+  "A2_numerical": "FAIL",
+  "evidence_audit": "PASS",
+  "independent_signature": null,
+  "A3": "NO-GO"
+}

@@ -1,0 +1,66 @@
+{
+  "started_utc": "2026-11-02T08:38:31.420067+00:00",
+  "command": [
+    "/workspace/panda-venv/bin/python",
+    "scripts/a3_qp_bounds.py",
+    "--output",
+    "reports/a2_extended_v1/qp_bounds_evidence/run_v2"
+  ],
+  "cwd": "/workspace/a2-extended/panda_research",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commit_at_execution": "45d1adae85f4f2484202792041e080fa54e23962",
+  "source_hashes": {
+    "src/panda_closed_loop/a3_qp_bounds.py": "326acd8a9f7b20a06ba1f8d6d6b5fda2b362a4a4dd01228130fe0cc70cb20fd8",
+    "scripts/a3_qp_bounds.py": "efadabf048b28033a23f0dca52727c0340f5b891f2e3e6ed99650fcdde919979",
+    "src/panda_closed_loop/qp.py": "e38299c944a2828318bca756ae3fd18582914348307825acfd842c0c551706c6",
+    "src/panda_closed_loop/barriers.py": "9ba94ab3ea4003971060a3b2dda0a5b07b626ff66ad851d7ae2e468fc759055e",
+    "src/panda_closed_loop/feasibility.py": "097c624ed99167eda18892460ea0f348f46b051319870e978cfd2c40ad30354a",
+    "src/panda_dynamics.py": "9a0f100459c93f59ba75133fc682f111505909627de3bf29bb0bf823b64f025d",
+    "policy/v1.2.1/APPROVED_POLICY_CONFIGURATION_v1.2.1.json": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530"
+  },
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "casadi": "3.7.2",
+    "proxsuite": "0.7.2"
+  },
+  "scope": "READ_ONLY_DEVELOPMENT_PREPARATION_NO_A3_COMPARISON_NO_PLANT_ADVANCE",
+  "human_signatures": null,
+  "full_official_T27_authorized": false,
+  "full_official_G2_5_authorized": false,
+  "development_per_QP_wall_budget_s": 15.0,
+  "wall_budget_scope": "Diagnostic subprocess only; solver tolerances and production control are unchanged. TIMEOUT means UNKNOWN, not infeasible.",
+  "grid_rule": "Fixed synthetic matrices, retained original endpoints, qmid plus one-joint 10% range offsets; no RNG or result-guided replacement.",
+  "finished_utc": "2026-11-02T08:39:18.789150+00:00",
+  "documents": [
+    "reports/a2_extended_v1/T27_STATUS.md",
+    "reports/a2_extended_v1/G2_5_SCREEN_REPORT.md",
+    "reports/a2_extended_v1/M1_REQUIREMENTS.md"
+  ],
+  "summary": {
+    "T27": "PARTIAL_DEVELOPMENT_COVERAGE_OFFICIAL_GATE_OPEN",
+    "G2_5": "INCOMPLETE_PLANNER_M1_MISSING",
+    "M1": "INCOMPLETE_NO_OFFICIAL_COMMON_DOMAIN_OR_NUMBERS",
+    "fixture_count": 18,
+    "numeric_oracle_failures": [],
+    "strict_raw_boundary_rejections": [
+      "box_torque_active",
+      "coupled_two_active",
+      "coupled_rescaled_2pow40_span",
+      "redundant_active_faces",
+      "Panda_actual_43_single_active_face"
+    ],
+    "unresolved_solver_calls": [],
+    "expected_infeasibility_cross_checks_pass": true,
+    "screen_count": 20,
+    "filter_point_pass_count": 15,
+    "filter_point_fail_count": 3,
+    "filter_point_incomplete_count": 2,
+    "official_G2_5_positive": false,
+    "official_T27_complete": false,
+    "A3_comparisons_executed": false,
+    "human_signatures": null,
+    "all_original_source_hashes_unchanged": true
+  }
+}

@@ -1,0 +1,724 @@
+{
+  "run_utc": "2026-10-31T18:41:10.664216+00:00",
+  "scope": "model-level numerical validation and plant-only integration",
+  "overall_pass": true,
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "casadi": "3.7.2",
+    "mujoco": "3.3.7",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "seed": 20261101,
+  "pose_count": 132,
+  "pose_policy": "zero (algebraic only), midpoint, all-lower, all-upper, then seeded physical-box interiors",
+  "checks": {
+    "API: acceleration shape variants": {
+      "passed": true,
+      "atol": 1e-10,
+      "rtol": 0.0,
+      "max_absolute_error": 7.993605777301127e-15,
+      "max_tolerance_ratio": 7.993605777301127e-05,
+      "comparisons": 81
+    },
+    "API: friction shape variants": {
+      "passed": true,
+      "atol": 1e-15,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 3
+    },
+    "API: FK shape variants": {
+      "passed": true,
+      "atol": 1e-14,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 3
+    },
+    "API: reject malformed and nonfinite inputs": {
+      "passed": true,
+      "rejected": 51,
+      "cases": 51
+    },
+    "Regression: original broadcasting defect reproduced": {
+      "passed": true
+    },
+    "Reference: compiled COM tensors match independent XML constants": {
+      "passed": true,
+      "atol": 5e-15,
+      "rtol": 0.0,
+      "max_absolute_error": 3.3306690738754696e-16,
+      "max_tolerance_ratio": 0.06661338147750939,
+      "comparisons": 7
+    },
+    "Reference: exactly seven frictionless hinge coordinates": {
+      "passed": true
+    },
+    "Body tensor 1: SPD": {
+      "passed": true,
+      "eigenvalues": [
+        0.008524556277543014,
+        0.7034354292338563,
+        0.7071370144886007
+      ]
+    },
+    "Body tensor 2: SPD": {
+      "passed": true,
+      "eigenvalues": [
+        0.002734250497989517,
+        0.02830010693683385,
+        0.03103264256517664
+      ]
+    },
+    "Body tensor 3: SPD": {
+      "passed": true,
+      "eigenvalues": [
+        0.001246354440723819,
+        0.04147925727066559,
+        0.041501388288610566
+      ]
+    },
+    "Body tensor 4: SPD": {
+      "passed": true,
+      "eigenvalues": [
+        0.010620083333833179,
+        0.028148276242039763,
+        0.034959640424127046
+      ]
+    },
+    "Body tensor 5: SPD": {
+      "passed": true,
+      "eigenvalues": [
+        0.008034370472607985,
+        0.028853091260661556,
+        0.036762538266730434
+      ]
+    },
+    "Body tensor 6: SPD": {
+      "passed": true,
+      "eigenvalues": [
+        0.0015978650692349981,
+        0.004310373704197245,
+        0.005842761226567755
+      ]
+    },
+    "Body tensor 7: SPD": {
+      "passed": true,
+      "eigenvalues": [
+        0.004518029980919308,
+        0.010105477144356218,
+        0.012734492874724472
+      ]
+    },
+    "Body inertia principal triangle inequalities": {
+      "passed": true,
+      "minimum_slack": 1.7148696467260416e-06
+    },
+    "Flat-input behavior preserved: M": {
+      "passed": true,
+      "atol": 1e-14,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 132
+    },
+    "Flat-input behavior preserved: dM": {
+      "passed": true,
+      "atol": 1e-14,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 132
+    },
+    "Flat-input behavior preserved: C": {
+      "passed": true,
+      "atol": 1e-14,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 132
+    },
+    "Flat-input behavior preserved: g": {
+      "passed": true,
+      "atol": 1e-14,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 132
+    },
+    "Flat-input behavior preserved: F": {
+      "passed": true,
+      "atol": 1e-14,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 132
+    },
+    "Flat-input behavior preserved: U": {
+      "passed": true,
+      "atol": 1e-14,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 132
+    },
+    "Flat-input behavior preserved: flange": {
+      "passed": true,
+      "atol": 1e-14,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 132
+    },
+    "Flat-input behavior preserved: ID": {
+      "passed": true,
+      "atol": 1e-14,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 132
+    },
+    "M symmetry": {
+      "passed": true,
+      "atol": 5e-12,
+      "rtol": 0.0,
+      "max_absolute_error": 2.220446049250313e-16,
+      "max_tolerance_ratio": 4.440892098500626e-05,
+      "comparisons": 132
+    },
+    "Full C convention: Mdot = C + CT": {
+      "passed": true,
+      "atol": 3e-10,
+      "rtol": 0.0,
+      "max_absolute_error": 1.7763568394002505e-15,
+      "max_tolerance_ratio": 5.921189464667502e-06,
+      "comparisons": 132
+    },
+    "Skew power identity": {
+      "passed": true,
+      "atol": 1e-09,
+      "rtol": 0.0,
+      "max_absolute_error": 1.2434497875801753e-14,
+      "max_tolerance_ratio": 1.2434497875801753e-05,
+      "comparisons": 132
+    },
+    "Forward/inverse dynamics and disturbance sign": {
+      "passed": true,
+      "atol": 1e-10,
+      "rtol": 0.0,
+      "max_absolute_error": 6.838973831690964e-14,
+      "max_tolerance_ratio": 0.0006838973831690964,
+      "comparisons": 132
+    },
+    "q1 invariance of M": {
+      "passed": true,
+      "atol": 1e-10,
+      "rtol": 0.0,
+      "max_absolute_error": 1.7763568394002505e-15,
+      "max_tolerance_ratio": 1.7763568394002505e-05,
+      "comparisons": 132
+    },
+    "Inverse-dynamics mechanical power": {
+      "passed": true,
+      "atol": 1e-09,
+      "rtol": 0.0,
+      "max_absolute_error": 2.842170943040401e-14,
+      "max_tolerance_ratio": 2.8421709430404004e-05,
+      "comparisons": 132
+    },
+    "MuJoCo: mass matrix": {
+      "passed": true,
+      "atol": 1e-09,
+      "rtol": 1e-09,
+      "max_absolute_error": 5.329070518200751e-15,
+      "max_tolerance_ratio": 2.0529247377954543e-06,
+      "comparisons": 132
+    },
+    "MuJoCo: kinetic energy": {
+      "passed": true,
+      "atol": 1e-09,
+      "rtol": 1e-09,
+      "max_absolute_error": 1.5987211554602254e-14,
+      "max_tolerance_ratio": 2.023827581279608e-06,
+      "comparisons": 132
+    },
+    "MuJoCo: potential energy": {
+      "passed": true,
+      "atol": 1e-08,
+      "rtol": 1e-09,
+      "max_absolute_error": 4.263256414560601e-14,
+      "max_tolerance_ratio": 5.169878373213086e-07,
+      "comparisons": 132
+    },
+    "MuJoCo: Coriolis-centrifugal plus gravity": {
+      "passed": true,
+      "atol": 1e-08,
+      "rtol": 1e-09,
+      "max_absolute_error": 4.973799150320701e-14,
+      "max_tolerance_ratio": 1.4809737338627867e-06,
+      "comparisons": 132
+    },
+    "MuJoCo: flange FK": {
+      "passed": true,
+      "atol": 1e-10,
+      "rtol": 1e-09,
+      "max_absolute_error": 7.771561172376096e-16,
+      "max_tolerance_ratio": 2.442035805555944e-06,
+      "comparisons": 132
+    },
+    "NumPy: MDH vs URDF link positions": {
+      "passed": true,
+      "atol": 1e-10,
+      "rtol": 1e-09,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "max_tolerance_ratio": 5.006575911046164e-07,
+      "comparisons": 924
+    },
+    "NumPy: MDH vs URDF link rotations": {
+      "passed": true,
+      "atol": 1e-10,
+      "rtol": 1e-09,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 924
+    },
+    "MuJoCo: link positions": {
+      "passed": true,
+      "atol": 1e-10,
+      "rtol": 1e-09,
+      "max_absolute_error": 5.551115123125783e-16,
+      "max_tolerance_ratio": 3.2811672569576227e-06,
+      "comparisons": 924
+    },
+    "MuJoCo: link rotations": {
+      "passed": true,
+      "atol": 1e-10,
+      "rtol": 1e-09,
+      "max_absolute_error": 1.6653345369377348e-15,
+      "max_tolerance_ratio": 5.6377490395032536e-06,
+      "comparisons": 924
+    },
+    "CasADi vs NumPy flange": {
+      "passed": true,
+      "atol": 1e-10,
+      "rtol": 1e-09,
+      "max_absolute_error": 2.220446049250313e-16,
+      "max_tolerance_ratio": 5.110521323012821e-07,
+      "comparisons": 132
+    },
+    "MuJoCo: full inverse dynamics including Gaz friction": {
+      "passed": true,
+      "atol": 1e-08,
+      "rtol": 1e-09,
+      "max_absolute_error": 5.684341886080802e-14,
+      "max_tolerance_ratio": 1.4834989820249885e-06,
+      "comparisons": 132
+    },
+    "MuJoCo: gravity independently isolated": {
+      "passed": true,
+      "atol": 1e-08,
+      "rtol": 1e-09,
+      "max_absolute_error": 4.263256414560601e-14,
+      "max_tolerance_ratio": 1.7377050343101684e-06,
+      "comparisons": 132
+    },
+    "MuJoCo: forward dynamics": {
+      "passed": true,
+      "atol": 1e-08,
+      "rtol": 1e-09,
+      "max_absolute_error": 3.3573144264664734e-13,
+      "max_tolerance_ratio": 2.7820387584860905e-05,
+      "comparisons": 132
+    },
+    "Finite differences: dM tensor layout and values": {
+      "passed": true,
+      "atol": 5e-08,
+      "rtol": 0.0,
+      "max_absolute_error": 5.551115833865127e-10,
+      "max_tolerance_ratio": 0.011102231667730254,
+      "comparisons": 16
+    },
+    "Finite differences: gravity potential gradient": {
+      "passed": true,
+      "atol": 5e-08,
+      "rtol": 0.0,
+      "max_absolute_error": 8.092570169537794e-09,
+      "max_tolerance_ratio": 0.16185140339075588,
+      "comparisons": 16
+    },
+    "Sampled M positive definite (not global certificate)": {
+      "passed": true,
+      "min_sampled_eigenvalue": 0.003529787299975644,
+      "max_sampled_eigenvalue": 3.810366548140565,
+      "states": 132
+    },
+    "Friction at zero": {
+      "passed": true,
+      "atol": 1e-15,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 1
+    },
+    "Friction vs author logistic formula": {
+      "passed": true,
+      "atol": 1e-14,
+      "rtol": 0.0,
+      "max_absolute_error": 2.220446049250313e-16,
+      "max_tolerance_ratio": 0.02220446049250313,
+      "comparisons": 1001
+    },
+    "Component friction dissipation on velocity grid": {
+      "passed": true,
+      "minimum": 0.0
+    },
+    "Disturbance bounds corroboration at amplitude 0.0": {
+      "passed": true
+    },
+    "Disturbance bounds corroboration at amplitude 0.01": {
+      "passed": true
+    },
+    "Disturbance bounds corroboration at amplitude 0.02": {
+      "passed": true
+    },
+    "Disturbance bounds corroboration at amplitude 0.04": {
+      "passed": true
+    },
+    "Static gravity equilibrium": {
+      "passed": true,
+      "atol": 1e-12,
+      "rtol": 0.0,
+      "max_absolute_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "comparisons": 1
+    },
+    "Plant-only integration succeeds at h=0.001": {
+      "passed": true
+    },
+    "Integrated plant work-energy balance at h=0.001": {
+      "passed": true,
+      "atol": 1e-08,
+      "rtol": 0.0,
+      "max_absolute_error": 8.631984016460592e-15,
+      "max_tolerance_ratio": 8.631984016460592e-07,
+      "comparisons": 1
+    },
+    "Plant-only integration succeeds at h=0.0005": {
+      "passed": true
+    },
+    "Integrated plant work-energy balance at h=0.0005": {
+      "passed": true,
+      "atol": 1e-08,
+      "rtol": 0.0,
+      "max_absolute_error": 6.494804694057166e-15,
+      "max_tolerance_ratio": 6.494804694057166e-07,
+      "comparisons": 1
+    },
+    "Plant smoke h/h2 final-state convergence": {
+      "passed": true,
+      "atol": 1e-08,
+      "rtol": 1e-07,
+      "max_absolute_error": 2.1371793224034263e-15,
+      "max_tolerance_ratio": 8.71447651340572e-08,
+      "comparisons": 1
+    }
+  },
+  "original_api_defects": {
+    "column_velocity_acceleration": {
+      "returned_shape": [
+        7,
+        7
+      ],
+      "expected_shape": [
+        7
+      ]
+    },
+    "column_torque_acceleration": {
+      "returned_shape": [
+        7,
+        7
+      ],
+      "expected_shape": [
+        7
+      ]
+    },
+    "column_disturbance_acceleration": {
+      "returned_shape": [
+        7,
+        7
+      ],
+      "expected_shape": [
+        7
+      ]
+    },
+    "column_velocity_friction": {
+      "returned_shape": [
+        7,
+        7
+      ],
+      "expected_shape": [
+        7
+      ]
+    },
+    "negative_amplitude_bounds": [
+      [
+        -1.74,
+        -1.74,
+        -1.74,
+        -1.74,
+        -0.24,
+        -0.24,
+        -0.24
+      ],
+      [
+        -2.436,
+        -2.436,
+        -2.436,
+        -2.436,
+        -0.33599999999999997,
+        -0.33599999999999997,
+        -0.33599999999999997
+      ]
+    ]
+  },
+  "disturbance_checks": [
+    {
+      "amplitude": 0.0,
+      "bounds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rate_bounds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sampled_magnitudes": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sampled_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "amplitude": 0.01,
+      "bounds": [
+        0.87,
+        0.87,
+        0.87,
+        0.87,
+        0.12,
+        0.12,
+        0.12
+      ],
+      "rate_bounds": [
+        1.218,
+        1.218,
+        1.218,
+        1.218,
+        0.16799999999999998,
+        0.16799999999999998,
+        0.16799999999999998
+      ],
+      "sampled_magnitudes": [
+        0.87,
+        0.832063633211476,
+        0.7854827937812372,
+        0.8604602254732768,
+        0.11868416903079682,
+        0.1083424543146534,
+        0.11476739768434152
+      ],
+      "sampled_rates": [
+        1.0867038664328004,
+        1.1932420561276167,
+        1.2152329320903843,
+        1.1499412741457593,
+        0.1586125895373461,
+        0.16761833546074265,
+        0.1645851111900161
+      ]
+    },
+    {
+      "amplitude": 0.02,
+      "bounds": [
+        1.74,
+        1.74,
+        1.74,
+        1.74,
+        0.24,
+        0.24,
+        0.24
+      ],
+      "rate_bounds": [
+        2.436,
+        2.436,
+        2.436,
+        2.436,
+        0.33599999999999997,
+        0.33599999999999997,
+        0.33599999999999997
+      ],
+      "sampled_magnitudes": [
+        1.74,
+        1.664127266422952,
+        1.5709655875624744,
+        1.7209204509465537,
+        0.23736833806159363,
+        0.2166849086293068,
+        0.22953479536868304
+      ],
+      "sampled_rates": [
+        2.1734077328656007,
+        2.3864841122552334,
+        2.4304658641807686,
+        2.2998825482915186,
+        0.3172251790746922,
+        0.3352366709214853,
+        0.3291702223800322
+      ]
+    },
+    {
+      "amplitude": 0.04,
+      "bounds": [
+        3.48,
+        3.48,
+        3.48,
+        3.48,
+        0.48,
+        0.48,
+        0.48
+      ],
+      "rate_bounds": [
+        4.872,
+        4.872,
+        4.872,
+        4.872,
+        0.6719999999999999,
+        0.6719999999999999,
+        0.6719999999999999
+      ],
+      "sampled_magnitudes": [
+        3.48,
+        3.328254532845904,
+        3.141931175124949,
+        3.4418409018931073,
+        0.47473667612318726,
+        0.4333698172586136,
+        0.4590695907373661
+      ],
+      "sampled_rates": [
+        4.3468154657312015,
+        4.772968224510467,
+        4.860931728361537,
+        4.599765096583037,
+        0.6344503581493844,
+        0.6704733418429706,
+        0.6583404447600644
+      ]
+    }
+  ],
+  "reference_import_diagnostic": {
+    "direct_fullinertia_import_max_body_errors_kg_m2": [
+      4.569767472969999e-07,
+      4.593514197487325e-10,
+      2.1009739087363144e-12,
+      2.310634125007871e-09,
+      6.302611985911297e-11,
+      4.1801536841343245e-11,
+      2.5356046038857438e-11
+    ],
+    "method_used": "explicit NumPy eigh of independent XML tensors, then diaginertia/quat; compiled tensors rechecked",
+    "production_model_or_tolerances_changed": false
+  },
+  "plant_smoke": [
+    {
+      "max_step_s": 0.001,
+      "duration_s": 0.25,
+      "nfev": 3752,
+      "energy_balance_error_J": -8.631984016460592e-15,
+      "final_state_and_work": [
+        0.021673972289891753,
+        0.020115601025547034,
+        -0.008280956535721227,
+        -1.5491679284117825,
+        -0.019863362480424255,
+        1.837069947765869,
+        -0.003369464276914564,
+        0.284903056810082,
+        0.15242820439770535,
+        -0.16149696332530278,
+        0.09596091372196104,
+        -0.0773784317336084,
+        -0.05606481962211309,
+        0.0031503424165072805,
+        -0.15516198212137614
+      ]
+    },
+    {
+      "max_step_s": 0.0005,
+      "duration_s": 0.25,
+      "nfev": 7502,
+      "energy_balance_error_J": -6.494804694057166e-15,
+      "final_state_and_work": [
+        0.021673972289891805,
+        0.02011560102554706,
+        -0.008280956535721282,
+        -1.549167928411783,
+        -0.01986336248042423,
+        1.8370699477658705,
+        -0.003369464276914709,
+        0.2849030568100817,
+        0.15242820439770624,
+        -0.16149696332530264,
+        0.09596091372196165,
+        -0.07737843173360849,
+        -0.05606481962211445,
+        0.0031503424165072453,
+        -0.15516198212137827
+      ]
+    }
+  ],
+  "mean_evaluate_ms_diagnostic": 0.35862900000211084,
+  "elapsed_seconds": 5.991616199997225,
+  "hashes": {
+    "panda_dynamics.py": "458ba89e7ecd3abfb7257cb03216f55e8acd408a6a9cd00aba51edcc392203fe",
+    "original_panda_dynamics.py": "698a92efd624b603133cd5ea5a3fe31d0752d210ffe4291a02bab64a0d3cba1c",
+    "reference_model.xml": "6dcd82db2c9688b839d1307fffe84f81cc7e982180c36819c03caa6cb5148b2f",
+    "reference_model_precise.xml": "160fc93752aecea236f0b3b588cc2098eb1c3b7730c985ca0186f5014910bba9",
+    "review_checks.py": "e41502da67184b8a42dfbedf4d22ec7d10fbe954226517038ec8cc52d129e42a",
+    "requirements.txt": "9442aa54811acaf9506fcbcaae8dcf7225a94da27000c1d64cf518dec171286f"
+  },
+  "not_validated": [
+    "paper closed-loop observer/controller/HOCBF QP",
+    "planner and comparative scenarios",
+    "certified whole-domain m1",
+    "interval bounds and all-time residuals",
+    "sample-and-hold safety",
+    "hardware model fidelity or physical electrical energy"
+  ]
+}

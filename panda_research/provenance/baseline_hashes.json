@@ -1,0 +1,75 @@
+{
+  "uploaded_inputs": [
+    {
+      "name": "IC2AI_2027_Codex_Handoff_and_Reviewer_Remediation_Prompt.txt",
+      "path": "/workspace/attachments/1c26df90-2b6c-426e-9ccc-9f386f365514/IC2AI_2027_Codex_Handoff_and_Reviewer_Remediation_Prompt.txt",
+      "bytes": 20606,
+      "sha256": "a6f457a4e2427b7eecb1bf79e830b4446a7e6fd11481e80bb5ac0311d0b97205"
+    },
+    {
+      "name": "IC2AI_2027_Phase1_Three_Actions_2026-11-01.zip",
+      "path": "/workspace/attachments/56ff6afe-1ea9-469b-bbe9-070c7bcefb28/IC2AI_2027_Phase1_Three_Actions_2026-11-01.zip",
+      "bytes": 52911,
+      "sha256": "1f7e2aa57859db9052f4188e6f84e17d304ef5cd3eb142cef52a54fa54346440"
+    },
+    {
+      "name": "Action_2026-10-31.docx",
+      "path": "/workspace/attachments/b6f5191e-08a9-40b0-bf7c-cedb763d01a4/Action_2026-10-31.docx",
+      "bytes": 34067,
+      "sha256": "bc0140524fc9331ea14298c4979f308edc7a29f4a3508da4d9a6ab87019a2b19"
+    },
+    {
+      "name": "Phase 1 Read-Only Verification Review (Full Package).docx",
+      "path": "/workspace/attachments/f29faf22-8d46-48f7-8b89-1f5b2a294fe8/Phase 1 Read-Only Verification Review (Full Package).docx",
+      "bytes": 8845,
+      "sha256": "1b7dec231f83ed6b2f8766130814e4f53be256735c4652284b70ad3933995547"
+    }
+  ],
+  "zip_members": [
+    {
+      "file": "Protocol_v1_1_DRAFT.docx",
+      "bytes": 35582,
+      "sha256": "df70db2398aa91f45a2701497faa7fe7d4e15621835850ae9563a1e73c391fd9"
+    },
+    {
+      "file": "Protocol_v1_1_DRAFT.txt",
+      "bytes": 6709,
+      "sha256": "3c9bd700a8d3b904a8d7a92e2287f015c270ec3d8f3143ef330b163863a59694"
+    },
+    {
+      "file": "README.md",
+      "bytes": 2970,
+      "sha256": "f8f0f20e0f404ee11ddb78eb2f6007ab0d559dd7ef53065bb4e9e6fe3727d372"
+    },
+    {
+      "file": "model_check_summary.txt",
+      "bytes": 2741,
+      "sha256": "9dd89076e7f063ba247ce27014b82ba42af1b3ce86b99a6dcbabd672ada39e61"
+    },
+    {
+      "file": "model_manifest_v1.json",
+      "bytes": 6151,
+      "sha256": "58ec25965324fb092b29d8f57a0fa7b19effe1b0f1a1ad6416563477fdcab4fb"
+    },
+    {
+      "file": "panda_dynamics.py",
+      "bytes": 6660,
+      "sha256": "698a92efd624b603133cd5ea5a3fe31d0752d210ffe4291a02bab64a0d3cba1c"
+    },
+    {
+      "file": "phase3a_console_log.txt",
+      "bytes": 1799,
+      "sha256": "671c891110c3bd583de875d28918bafc31192742ff5a6f27716eb24fcbee02c5"
+    },
+    {
+      "file": "phase3a_test_report.json",
+      "bytes": 4823,
+      "sha256": "f272b6f54660ee3a87500c26318bf57316fcc9a5a8447610b3271452768d8262"
+    },
+    {
+      "file": "run_phase3a_tests.py",
+      "bytes": 6971,
+      "sha256": "3363b8de9558fcea94dfec7b1e031b3f523e202876c03c4f1a5893b9360a47c7"
+    }
+  ]
+}

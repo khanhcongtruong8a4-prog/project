@@ -1,0 +1,5 @@
+constraint_family,positive_row_scale_expression,units,source,original_T29_workbook_verified,status
+torque_rows,"tau_max,i",N m,Action_2026-10-31.docx §8.1,False,RECOVERED_FROM_PROTOCOL_NOT_APPROVED
+velocity_barrier_rows,"qdot_max,i / (1 s)",rad/s^2,Action_2026-10-31.docx §8.1,False,RECOVERED_FROM_PROTOCOL_NOT_APPROVED
+position_HOCBF_rows,"(q_max,i-q_min,i)/(1 s)^2",rad/s^2,Action_2026-10-31.docx §8.1,False,RECOVERED_FROM_PROTOCOL_NOT_APPROVED
+manipulability_HOCBF_rows,w_min^2/(1 s)^2,barrier unit/s^2,Action_2026-10-31.docx §8.1,False,RECOVERED_FROM_PROTOCOL_NOT_APPROVED

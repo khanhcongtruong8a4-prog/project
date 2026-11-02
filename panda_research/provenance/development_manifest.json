@@ -1,0 +1,19 @@
+{
+  "development_version": "1.2.0",
+  "status": "DEVELOPMENT_CODE_NOT_EXPERIMENT_FREEZE",
+  "selected_model_identity": "Original Gaz seven-body model_manifest_v1.json; physical constants and CasADi constructor unchanged",
+  "original_manifest_sha256": "58ec25965324fb092b29d8f57a0fa7b19effe1b0f1a1ad6416563477fdcab4fb",
+  "original_evaluator_sha256": "698a92efd624b603133cd5ea5a3fe31d0752d210ffe4291a02bab64a0d3cba1c",
+  "incoming_review_evaluator_sha256": "458ba89e7ecd3abfb7257cb03216f55e8acd408a6a9cd00aba51edcc392203fe",
+  "development_evaluator_sha256": "9a0f100459c93f59ba75133fc682f111505909627de3bf29bb0bf823b64f025d",
+  "incoming_archive_sha256": "563d663ac69ddb427d10fa3710c5caac7a97ea128685ffdaaa0b413eae01c3c0",
+  "proposed_protocol_approval": null,
+  "human_model_acceptance": null,
+  "runtime_changes": [
+    "single-vector normalization and finite-input guards from panda_review",
+    "corrected internal FK helper provenance descriptions"
+  ],
+  "physical_model_changed": false,
+  "test_thresholds_changed": false,
+  "new_algorithm_or_gains_selected": false
+}

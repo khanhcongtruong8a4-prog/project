@@ -1,0 +1,2670 @@
+{
+  "scope": "ACTION3_COMPONENT_TESTS_NOT_A2",
+  "overall_pass": true,
+  "tests_run": 14,
+  "checks": [
+    {
+      "test": "__main__.Action3Tests.test_all_43_affine_rows_against_independent_direct_equations",
+      "result": "PASS",
+      "seconds": 0.31109976199513767
+    },
+    {
+      "test": "__main__.Action3Tests.test_approved_panda_initial_component_is_infeasible_and_stops",
+      "result": "PASS",
+      "seconds": 0.46490837399323937
+    },
+    {
+      "test": "__main__.Action3Tests.test_approved_two_factor_grid_is_implemented_as_timing_fixture_only",
+      "result": "PASS",
+      "seconds": 0.038289877003990114
+    },
+    {
+      "test": "__main__.Action3Tests.test_canonical_velocity_cancellation_and_one_sided_allowances",
+      "result": "PASS",
+      "seconds": 0.0005296379968058318
+    },
+    {
+      "test": "__main__.Action3Tests.test_coupled_observer_rk4_against_independent_dhat_ode",
+      "result": "PASS",
+      "seconds": 0.010684706998290494
+    },
+    {
+      "test": "__main__.Action3Tests.test_entry_conditions_include_psi1_velocity_manipulability_and_torque",
+      "result": "PASS",
+      "seconds": 0.7799127590114949
+    },
+    {
+      "test": "__main__.Action3Tests.test_flange_jacobian_world_frame_and_manipulability_derivatives",
+      "result": "PASS",
+      "seconds": 4.78495579000446
+    },
+    {
+      "test": "__main__.Action3Tests.test_invalid_nonfinite_inputs_and_no_silent_defaults",
+      "result": "PASS",
+      "seconds": 0.0017963499994948506
+    },
+    {
+      "test": "__main__.Action3Tests.test_observer_identity_applied_torque_feedback_and_no_truth_argument",
+      "result": "PASS",
+      "seconds": 0.0070000700070522726
+    },
+    {
+      "test": "__main__.Action3Tests.test_observer_moving_initialization_bound_and_replan",
+      "result": "PASS",
+      "seconds": 0.0019784730102401227
+    },
+    {
+      "test": "__main__.Action3Tests.test_policy_byte_hash_units_and_source_cells",
+      "result": "PASS",
+      "seconds": 7.673300569877028e-05
+    },
+    {
+      "test": "__main__.Action3Tests.test_qp_feasible_zero_intervention_active_and_infeasible_fixtures",
+      "result": "PASS",
+      "seconds": 0.0016382250032620504
+    },
+    {
+      "test": "__main__.Action3Tests.test_tracking_sign_initialization_and_differential_identity",
+      "result": "PASS",
+      "seconds": 0.004803085001185536
+    },
+    {
+      "test": "__main__.Action3Tests.test_zoh_rk4_stage_times_applied_feedback_and_replan",
+      "result": "PASS",
+      "seconds": 0.004041942011099309
+    }
+  ],
+  "diagnostics": {
+    "affine_rows": {
+      "count": 43,
+      "max_torque_finite_difference_error": 7.30882021571233e-11,
+      "row_names": [
+        "q_upper_1",
+        "q_upper_2",
+        "q_upper_3",
+        "q_upper_4",
+        "q_upper_5",
+        "q_upper_6",
+        "q_upper_7",
+        "q_lower_1",
+        "q_lower_2",
+        "q_lower_3",
+        "q_lower_4",
+        "q_lower_5",
+        "q_lower_6",
+        "q_lower_7",
+        "manipulability",
+        "v_upper_1",
+        "v_upper_2",
+        "v_upper_3",
+        "v_upper_4",
+        "v_upper_5",
+        "v_upper_6",
+        "v_upper_7",
+        "v_lower_1",
+        "v_lower_2",
+        "v_lower_3",
+        "v_lower_4",
+        "v_lower_5",
+        "v_lower_6",
+        "v_lower_7",
+        "torque_upper_1",
+        "torque_upper_2",
+        "torque_upper_3",
+        "torque_upper_4",
+        "torque_upper_5",
+        "torque_upper_6",
+        "torque_upper_7",
+        "torque_lower_1",
+        "torque_lower_2",
+        "torque_lower_3",
+        "torque_lower_4",
+        "torque_lower_5",
+        "torque_lower_6",
+        "torque_lower_7"
+      ],
+      "row_units": [
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "m^6/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "rad/s^2",
+        "N m",
+        "N m",
+        "N m",
+        "N m",
+        "N m",
+        "N m",
+        "N m",
+        "N m",
+        "N m",
+        "N m",
+        "N m",
+        "N m",
+        "N m",
+        "N m"
+      ],
+      "planner_reserves": {
+        "joint_HOCBF_rad_s2": [
+          0.0005794600000000001,
+          0.00035256,
+          0.0005794600000000001,
+          0.00030020000000000003,
+          0.0005794600000000001,
+          0.000377,
+          0.0005794600000000001
+        ],
+        "manip_HOCBF_m6_s2": 2.251122308077076e-08,
+        "velocity_CBF_rad_s2": 0.0002175,
+        "velocity_rad_s": 0.0002175,
+        "torque_Nm": 0.0012
+      }
+    },
+    "PANDA_APPROVED_INITIAL_COMPONENT": {
+      "scope": "STATIC COMPONENT FIXTURE, NOT A2 AND NOT G2.5",
+      "feasibility": "FAIL_INFEASIBLE_WITH_APPROVED_INITIAL_VARPI",
+      "solver_status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+      "safe_stop_correct": true,
+      "alpha_v_vmax_rad_s2": [
+        10.875,
+        10.875,
+        10.875,
+        10.875,
+        13.049999999999999,
+        13.049999999999999,
+        13.049999999999999
+      ],
+      "abs_Minv_varpi_rad_s2": [
+        93.3247532427537,
+        5.910679601886102,
+        95.33567269811326,
+        15.707503020012258,
+        19.040510648507677,
+        38.10943171600375,
+        56.3781990491307
+      ],
+      "violating_joint_indices_1_based": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reason": "Sum of upper/lower speed rows requires abs(M^-1) varpi <= alpha_v vmax; independent of candidate torque. Point-specific, not an impossibility theorem.",
+      "no_gains_or_disturbance_changes": true
+    },
+    "two_factor_timing_fixture": {
+      "scope": "SYNTHETIC TIMING UNIT TEST ONLY; not A2 refinement or safety evidence",
+      "rows": [
+        {
+          "Delta_s": 0.001,
+          "h_s": 0.00025,
+          "controller_updates": 2,
+          "stage_count": 32,
+          "final_q": [
+            -3.8806609856277404e-05,
+            -2.430022294221052e-05,
+            -1.1676219138818258e-05,
+            -3.502574826173199e-07,
+            1.310199382095794e-05,
+            2.6476703749865507e-05,
+            4.0094862349166006e-05
+          ],
+          "final_qd": [
+            -0.018805915712693032,
+            -0.010967182899460264,
+            -0.005010612343111022,
+            -0.0003512858295032217,
+            0.006435296470617776,
+            0.013143473995566937,
+            0.020095022193783226
+          ]
+        },
+        {
+          "Delta_s": 0.001,
+          "h_s": 0.000125,
+          "controller_updates": 2,
+          "stage_count": 64,
+          "final_q": [
+            -3.880660985627742e-05,
+            -2.4300222942210484e-05,
+            -1.16762191388182e-05,
+            -3.5025748261728573e-07,
+            1.3101993820957936e-05,
+            2.6476703749865497e-05,
+            4.0094862349166e-05
+          ],
+          "final_qd": [
+            -0.018805915712693032,
+            -0.010967182899460267,
+            -0.005010612343111021,
+            -0.0003512858295032216,
+            0.006435296470617775,
+            0.013143473995566932,
+            0.020095022193783226
+          ]
+        },
+        {
+          "Delta_s": 0.0005,
+          "h_s": 0.00025,
+          "controller_updates": 4,
+          "stage_count": 32,
+          "final_q": [
+            -3.8806609856277404e-05,
+            -2.430022294221052e-05,
+            -1.1676219138818258e-05,
+            -3.502574826173199e-07,
+            1.310199382095794e-05,
+            2.6476703749865507e-05,
+            4.0094862349166006e-05
+          ],
+          "final_qd": [
+            -0.018805915712693032,
+            -0.010967182899460264,
+            -0.005010612343111022,
+            -0.0003512858295032217,
+            0.006435296470617776,
+            0.013143473995566937,
+            0.020095022193783226
+          ]
+        },
+        {
+          "Delta_s": 0.0005,
+          "h_s": 0.000125,
+          "controller_updates": 4,
+          "stage_count": 64,
+          "final_q": [
+            -3.880660985627742e-05,
+            -2.4300222942210484e-05,
+            -1.16762191388182e-05,
+            -3.5025748261728573e-07,
+            1.3101993820957936e-05,
+            2.6476703749865497e-05,
+            4.0094862349166e-05
+          ],
+          "final_qd": [
+            -0.018805915712693032,
+            -0.010967182899460267,
+            -0.005010612343111021,
+            -0.0003512858295032216,
+            0.006435296470617775,
+            0.013143473995566932,
+            0.020095022193783226
+          ]
+        }
+      ]
+    },
+    "observer_independent_reference": {
+      "scope": "SYNTHETIC FIXTURE with Delta=.04 s, not policy execution",
+      "h_s": [
+        0.01,
+        0.005
+      ],
+      "max_q_v_dhat_errors": [
+        7.232422539082961e-06,
+        4.1588454546825915e-07
+      ],
+      "reference": "independent dhat_dot=Ko(d-dhat), DOP853",
+      "rtol": 1e-12,
+      "atol": 1e-13
+    },
+    "geometry": [
+      {
+        "J_max_error": 1.3444106938820255e-16,
+        "gradient_error": 4.929855135227257e-12,
+        "hessian_error": 4.3132650229260605e-11
+      },
+      {
+        "J_max_error": 2.220446049250313e-16,
+        "gradient_error": 1.004812899552121e-11,
+        "hessian_error": 2.7442929873000566e-11
+      }
+    ],
+    "invalid_inputs": {
+      "rejected_calls": 35,
+      "no_missing_M1_zero_substitution": true
+    },
+    "source_audit": {
+      "policy_sha256": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530",
+      "policy_files": [
+        {
+          "file": "policy/v1.2.1/APPROVAL_RECORD.md",
+          "sha256": "eeddcaf7a402cbc13fff13b1223d95bc0c5cfb92869795f86613216cb6a98a3b",
+          "matches": true
+        },
+        {
+          "file": "policy/v1.2.1/APPROVED_POLICY_CONFIGURATION_v1.2.1.json",
+          "sha256": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530",
+          "matches": true
+        },
+        {
+          "file": "policy/v1.2.1/C1_C6_FINAL_DECISIONS.csv",
+          "sha256": "a0635b51e4633fbea90216990afaa66ac422867f1d94555cb87574cb4e38a48a",
+          "matches": true
+        },
+        {
+          "file": "policy/v1.2.1/PREVIOUS_AUTOMATED_EVIDENCE_SNAPSHOT.json",
+          "sha256": "ce210fd60db3a75c7ef9e53807aa2a829b8b438819e7ae217f468778554c6df7",
+          "matches": true
+        },
+        {
+          "file": "policy/v1.2.1/PROTOCOL_v1.2.1_PROJECT_OWNER_APPROVED_ADDENDUM.md",
+          "sha256": "d44f2412cd950c0501a3bb9e3c4d32bee886782d830e116eeb5df8f0e4e31c0d",
+          "matches": true
+        },
+        {
+          "file": "policy/v1.2.1/READINESS_AND_NEXT_STEPS.md",
+          "sha256": "ceff493db58df01792a78fb2f3f4bc49c0219d9c059fd20b92b811c200be7516",
+          "matches": true
+        },
+        {
+          "file": "policy/v1.2.1/Referenced_Inputs/Tasks_2026.xlsx",
+          "sha256": "bdddc29df8ca30514b9b6f31fc96372b5460a1bf22e5c40011979bb73d9ad77a",
+          "matches": true
+        },
+        {
+          "file": "policy/v1.2.1/Referenced_Inputs/previous_C1_C6_proposals.csv",
+          "sha256": "970ddfc521008b3d49553cc01f2592d54888c1e0c72e966f9a763fe1594e092c",
+          "matches": true
+        },
+        {
+          "file": "policy/v1.2.1/Referenced_Inputs/previous_unsigned_signoff_template.md",
+          "sha256": "b2f15af7e3c0f5e3d798a1425ded62d2876df837418fda5062377790522a8447",
+          "matches": true
+        },
+        {
+          "file": "policy/v1.2.1/T29_approved_protocol_row_scales.csv",
+          "sha256": "519bf38459cd8b2b485aed428d201640801333311fef9444adf6ffef27241a31",
+          "matches": true
+        },
+        {
+          "file": "policy/v1.2.1/manuscript_source_hashes.json",
+          "sha256": "5d438a95640f4766f2bc5486ab24232846cb58fcdc6281af3dba45551c038f2c",
+          "matches": true
+        },
+        {
+          "file": "policy/v1.2.1/original_Tasks_2026_provenance.csv",
+          "sha256": "529357e5e31a6c462749ceb4052aaecc23fffab41aa481fdab4641004c751c0f",
+          "matches": true
+        }
+      ],
+      "canonical_equations_match": true,
+      "manuscript": [
+        {
+          "file": "01_introduction.tex",
+          "expected_sha256": "f855b384a19c209c42248ca08768080338a81f51544bf461c36c9d779fc35a68",
+          "actual_sha256": "f855b384a19c209c42248ca08768080338a81f51544bf461c36c9d779fc35a68",
+          "matches": true
+        },
+        {
+          "file": "02_mm&nc.tex",
+          "expected_sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+          "actual_sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+          "matches": true
+        },
+        {
+          "file": "03_contribution.tex",
+          "expected_sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+          "actual_sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+          "matches": true
+        },
+        {
+          "file": "main.tex",
+          "expected_sha256": "58515900e7ef23b3c13279d046fd2406a16b7c580471206a30b03df95399e53a",
+          "actual_sha256": "58c77edb80d60c98254cbdbdb22e01432c9b1accd8b144d370ded1d76d0fe199",
+          "matches": false
+        },
+        {
+          "file": "Project.rar",
+          "expected_sha256": "9a5364a1101d69e9cccc2475f460f4fa070124b3bd47c3a87bf498a3c51f3e85",
+          "actual_sha256": "28115fbf95860a6618e9bf0017b9bebef87557102f1c17d02876e5169a5099bb",
+          "matches": false
+        }
+      ],
+      "workbook_cell_audit": [
+        {
+          "key": "gains.K_o_s_inverse",
+          "worksheet": "T10 Observer gain rule",
+          "cell": "B12",
+          "recorded": "diag(20, 20, 20, 20, 20, 20, 20)",
+          "actual": "diag(20, 20, 20, 20, 20, 20, 20)",
+          "matches": true
+        },
+        {
+          "key": "gains.Lambda",
+          "worksheet": "T11 Tracking gain rule",
+          "cell": "B9",
+          "recorded": "diag(5, 5, 5, 5, 5, 5, 5)",
+          "actual": "diag(5, 5, 5, 5, 5, 5, 5)",
+          "matches": true
+        },
+        {
+          "key": "gains.kappa",
+          "worksheet": "T11 Tracking gain rule",
+          "cell": "B10",
+          "recorded": "10",
+          "actual": "10",
+          "matches": true
+        },
+        {
+          "key": "gains.alpha_1_and_alpha_2",
+          "worksheet": "T14 CBF gains and cancellation",
+          "cell": "B9",
+          "recorded": "alpha1=5, alpha2=5.",
+          "actual": "alpha1=5, alpha2=5.",
+          "matches": true
+        },
+        {
+          "key": "gains.alpha_v",
+          "worksheet": "T14 CBF gains and cancellation",
+          "cell": "B10",
+          "recorded": "5",
+          "actual": "5",
+          "matches": true
+        },
+        {
+          "key": "physical_parameters.w_min",
+          "worksheet": "T15 Manipulability floor",
+          "cell": "B10",
+          "recorded": "w_min=0.10*w(q0). Equivalently W_floor=0.01*W(q0).",
+          "actual": "w_min=0.10*w(q0). Equivalently W_floor=0.01*W(q0).",
+          "matches": true
+        },
+        {
+          "key": "physical_parameters.q0",
+          "worksheet": "T15 Manipulability floor",
+          "cell": "B11",
+          "recorded": "[0, 0, 0, -1.5708, 0, 1.8675, 0]",
+          "actual": "[0, 0, 0, -1.5708, 0, 1.8675, 0]",
+          "matches": true
+        },
+        {
+          "key": "physical_parameters.torque_reserve_Nm",
+          "worksheet": "T16 Dimensioned reserves",
+          "cell": "B11",
+          "recorded": "delta_tau=eta_delta*min_i tau_max, i=0.0012.",
+          "actual": "delta_tau=eta_delta*min_i tau_max, i=0.0012.",
+          "matches": true
+        },
+        {
+          "key": "physical_parameters.velocity_reserve_rad_s",
+          "worksheet": "T16 Dimensioned reserves",
+          "cell": "B12",
+          "recorded": "delta_v=eta_delta*min_i qdot_max, i=0.0002175.",
+          "actual": "delta_v=eta_delta*min_i qdot_max, i=0.0002175.",
+          "matches": true
+        },
+        {
+          "key": "physical_parameters.joint_HOCBF_reserves",
+          "worksheet": "T16 Dimensioned reserves",
+          "cell": "B13",
+          "recorded": "delta_h, i=eta_delta*(q_max, i-q_min, i)/(1s)\u00b2.",
+          "actual": "delta_h, i=eta_delta*(q_max, i-q_min, i)/(1s)\u00b2.",
+          "matches": true
+        },
+        {
+          "key": "physical_parameters.manip_HOCBF_reserve",
+          "worksheet": "T16 Dimensioned reserves",
+          "cell": "B14",
+          "recorded": "delta_h, man=eta_delta*W_floor/(1s)\u00b2.",
+          "actual": "delta_h, man=eta_delta*W_floor/(1s)\u00b2.",
+          "matches": true
+        },
+        {
+          "key": "physical_parameters.velocity_CBF_reserve",
+          "worksheet": "T16 Dimensioned reserves",
+          "cell": "B15",
+          "recorded": "delta_vB=eta_delta*min_i qdot_max, i/(1s)=0.0002175.",
+          "actual": "delta_vB=eta_delta*min_i qdot_max, i/(1s)=0.0002175.",
+          "matches": true
+        },
+        {
+          "key": "energy.k_r",
+          "worksheet": "T09 Energy wording and sensitiv",
+          "cell": "B10",
+          "recorded": "[0.001, 0.001, 0.001, 0.001, 0.003, 0.003, 0.003]",
+          "actual": "[0.001, 0.001, 0.001, 0.001, 0.003, 0.003, 0.003]",
+          "matches": true
+        },
+        {
+          "key": "energy.sensitivity",
+          "worksheet": "T09 Energy wording and sensitiv",
+          "cell": "B11",
+          "recorded": "0, 0.5, 1, 2 applied to the complete vector.",
+          "actual": "0, 0.5, 1, 2 applied to the complete vector.",
+          "matches": true
+        },
+        {
+          "key": "energy.w_t_W",
+          "worksheet": "T09 Energy wording and sensitiv",
+          "cell": "B12",
+          "recorded": "1",
+          "actual": "1",
+          "matches": true
+        },
+        {
+          "key": "energy.smoothing_epsilon_W",
+          "worksheet": "T09 Energy wording and sensitiv",
+          "cell": "B13",
+          "recorded": "0.01",
+          "actual": "0.01",
+          "matches": true
+        },
+        {
+          "key": "energy.bus_objective",
+          "worksheet": "T09 Energy wording and sensitiv",
+          "cell": "B14",
+          "recorded": "E_el=integral phi_epsilon(sum_i[tau_i*qdot_i+kr_i*tau_i\u00b2]) dt.",
+          "actual": "E_el=integral phi_epsilon(sum_i[tau_i*qdot_i+kr_i*tau_i\u00b2]) dt.",
+          "matches": true
+        },
+        {
+          "key": "solver.degree",
+          "worksheet": "T25 Planner configuration",
+          "cell": "B9",
+          "recorded": "5",
+          "actual": "5",
+          "matches": true
+        },
+        {
+          "key": "solver.control_points",
+          "worksheet": "T25 Planner configuration",
+          "cell": "B10",
+          "recorded": "12",
+          "actual": "12",
+          "matches": true
+        },
+        {
+          "key": "solver.knots",
+          "worksheet": "T25 Planner configuration",
+          "cell": "B11",
+          "recorded": "[0, 0, 0, 0, 0, 0, 1/7, 2/7, 3/7, 4/7, 5/7, 6/7, 1, 1, 1, 1, 1, 1]",
+          "actual": "[0, 0, 0, 0, 0, 0, 1/7, 2/7, 3/7, 4/7, 5/7, 6/7, 1, 1, 1, 1, 1, 1]",
+          "matches": true
+        },
+        {
+          "key": "solver.duration",
+          "worksheet": "T25 Planner configuration",
+          "cell": "B12",
+          "recorded": "0.5<=T<=10.0",
+          "actual": "0.5<=T<=10.0",
+          "matches": true
+        },
+        {
+          "key": "solver.NLP",
+          "worksheet": "T25 Planner configuration",
+          "cell": "B14",
+          "recorded": "CasADi with IPOPT and the MUMPS linear solver.",
+          "actual": "CasADi with IPOPT and the MUMPS linear solver.",
+          "matches": true
+        },
+        {
+          "key": "solver.NLP_settings",
+          "worksheet": "T25 Planner configuration",
+          "cell": "B15",
+          "recorded": "tol=1e-8, constr_viol_tol=1e-8, dual_inf_tol=1e-6, compl_inf_tol=1e-6, acceptable_iter=0, max_iter=2000, max_wall_time=600, linear_solver=mumps.",
+          "actual": "tol=1e-8, constr_viol_tol=1e-8, dual_inf_tol=1e-6, compl_inf_tol=1e-6, acceptable_iter=0, max_iter=2000, max_wall_time=600, linear_solver=mumps.",
+          "matches": true
+        },
+        {
+          "key": "solver.grid",
+          "worksheet": "T25 Planner configuration",
+          "cell": "B17",
+          "recorded": "Initial max physical gap0.01s plus all knots and endpoints. T20 cell bisection limit20.",
+          "actual": "Initial max physical gap0.01s plus all knots and endpoints. T20 cell bisection limit20.",
+          "matches": true
+        },
+        {
+          "key": "solver.energy_quadrature",
+          "worksheet": "T25 Planner configuration",
+          "cell": "B18",
+          "recorded": "For future NLP evaluation, use16-point Gauss-Legendre quadrature per spline span and repeat with32 points per span.",
+          "actual": "For future NLP evaluation, use16-point Gauss-Legendre quadrature per spline span and repeat with32 points per span.",
+          "matches": true
+        },
+        {
+          "key": "integration.primary",
+          "worksheet": "T25 Planner configuration",
+          "cell": "B19",
+          "recorded": "h_control=0.001s with zero-order hold. Primary fixed plant integrator RK4 with h_plant=0.00025s, 4 plant substeps per control update.",
+          "actual": "h_control=0.001s with zero-order hold. Primary fixed plant integrator RK4 with h_plant=0.00025s, 4 plant substeps per control update.",
+          "matches": true
+        },
+        {
+          "key": "integration.refinement",
+          "worksheet": "T25 Planner configuration",
+          "cell": "B20",
+          "recorded": "Compare plant steps0.00025 and0.000125s at unchanged control period. A separate sampling comparison uses0.001 and0.0005s with h_plant=h_control/4.",
+          "actual": "Compare plant steps0.00025 and0.000125s at unchanged control period. A separate sampling comparison uses0.001 and0.0005s with h_plant=h_control/4.",
+          "matches": true
+        },
+        {
+          "key": "solver.QP",
+          "worksheet": "T27 QP solver and accuracy",
+          "cell": "B10",
+          "recorded": "ProxQP dense. eps_abs=1e-10, eps_rel=0, max_iter=10000, check_duality_gap=True, eps_duality_gap_abs=1e-12, eps_duality_gap_rel=0.",
+          "actual": "ProxQP dense. eps_abs=1e-10, eps_rel=0, max_iter=10000, check_duality_gap=True, eps_duality_gap_abs=1e-12, eps_duality_gap_rel=0.",
+          "matches": true
+        },
+        {
+          "key": "solver.QP_acceptance",
+          "worksheet": "T27 QP solver and accuracy",
+          "cell": "B16",
+          "recorded": "Test zero-correction strict-feasible QPs, active constraints, near-boundary rows, known infeasible rows, scaling extremes, and repeated warm starts. Log residuals, correction norms, status and runtime.",
+          "actual": "Test zero-correction strict-feasible QPs, active constraints, near-boundary rows, known infeasible rows, scaling extremes, and repeated warm starts. Log residuals, correction norms, status and runtime.",
+          "matches": true
+        },
+        {
+          "key": "scenario_B.common_starts",
+          "worksheet": "T30 Multistart and warm starts",
+          "cell": "B9",
+          "recorded": "Durations[1, 2, 4, 6, 8]s times two joint-path seeds produce10 common starts per planner.",
+          "actual": "Durations[1, 2, 4, 6, 8]s times two joint-path seeds produce10 common starts per planner.",
+          "matches": true
+        },
+        {
+          "key": "scenario_B.cross_seeds",
+          "worksheet": "T30 Multistart and warm starts",
+          "cell": "B13",
+          "recorded": "After all cold starts, snapshot the best finite cold incumbent from A, B and C into a common ordered three-seed pool. Replace a missing slot by the common T4s base seed. Every method solves from all three frozen seeds.",
+          "actual": "After all cold starts, snapshot the best finite cold incumbent from A, B and C into a common ordered three-seed pool. Replace a missing slot by the common T4s base seed. Every method solves from all three frozen seeds.",
+          "matches": true
+        },
+        {
+          "key": "margin.T23_candidate_maxima",
+          "worksheet": "T23 Constant margin baseline",
+          "cell": "B11",
+          "recorded": "mbar_a(theta)>=sup_(t in[t0, t0+T]) m_a(theta, t), for every listed tightening.",
+          "actual": "mbar_a(theta)>=sup_(t in[t0, t0+T]) m_a(theta, t), for every listed tightening.",
+          "matches": true
+        },
+        {
+          "key": "margin.T23_envelope_list",
+          "worksheet": "T23 Constant margin baseline",
+          "cell": "B10",
+          "recorded": "m(theta, t) contains both signed torque margins if one-sided notation is used, or b_tau, i in the symmetric notation, chi_v, i, b_h, j and b_vB, i.",
+          "actual": "m(theta, t) contains both signed torque margins if one-sided notation is used, or b_tau, i in the symmetric notation, chi_v, i, b_h, j and b_vB, i.",
+          "matches": true
+        }
+      ],
+      "workbook_sha256": "bdddc29df8ca30514b9b6f31fc96372b5460a1bf22e5c40011979bb73d9ad77a",
+      "owner_approval": "RECORDED_IN_SUPPLIED_POLICY; NOT AN INDEPENDENT SIGNATURE",
+      "T29_csv_legacy_status_note": "CSV still says RECOVERED_FROM_PROTOCOL_NOT_APPROVED; supplied v1.2.1 C6 explicitly approves the protocol rule. Original CSV preserved.",
+      "human_signatures": {
+        "project_owner": {
+          "status": "APPROVED_VIA_CHAT",
+          "date": "2026-11-01",
+          "scope": "T04b T06a T02 independent dynamics evidence; C1-C6; proposed config/protocol"
+        },
+        "independent_T04b_reviewer_signature": null,
+        "independent_T06a_reviewer_signature": null,
+        "independent_T02_reviewer_signature": null,
+        "independent_dynamics_reviewer_signature": null,
+        "controls_reviewer_signature": null,
+        "theory_reviewer_signature": null,
+        "T29_standalone_signature": null
+      }
+    },
+    "QP_synthetic_fixtures": {
+      "zero": {
+        "solver": "ProxQP 0.7.2",
+        "settings": {
+          "dense": true,
+          "eps_abs_proposed": 1e-10,
+          "complete_T27_validation": "NOT_RUN",
+          "eps_rel": 0,
+          "max_iter": 10000,
+          "check_duality_gap": true,
+          "eps_duality_gap_abs": 1e-12,
+          "eps_duality_gap_rel": 0
+        },
+        "row_names": [
+          "fixture_row_0",
+          "fixture_row_1",
+          "fixture_row_2",
+          "fixture_row_3",
+          "fixture_row_4",
+          "fixture_row_5",
+          "fixture_row_6",
+          "fixture_row_7",
+          "fixture_row_8",
+          "fixture_row_9",
+          "fixture_row_10",
+          "fixture_row_11",
+          "fixture_row_12",
+          "fixture_row_13"
+        ],
+        "row_units": [
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI"
+        ],
+        "row_scales": [
+          87.0,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0,
+          87.0,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "recovery": "DISABLED: K_b/gamma and recovery semantics not supplied",
+        "replan_requested": false,
+        "tau_candidate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_slacks": [
+          87.0,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0,
+          87.0,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "normalized_slacks": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "normalized_primal": 0.0,
+        "scaled_stationarity": 0.0,
+        "complementarity": 0.0,
+        "negative_upper_dual": 0.0,
+        "iterations": 0,
+        "duality_gap": 0.0,
+        "intervention_Nm": 0.0,
+        "torque_upper_slack": [
+          87.0,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "torque_lower_slack": [
+          87.0,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0
+        ]
+      },
+      "active": {
+        "solver": "ProxQP 0.7.2",
+        "settings": {
+          "dense": true,
+          "eps_abs_proposed": 1e-10,
+          "complete_T27_validation": "NOT_RUN",
+          "eps_rel": 0,
+          "max_iter": 10000,
+          "check_duality_gap": true,
+          "eps_duality_gap_abs": 1e-12,
+          "eps_duality_gap_rel": 0
+        },
+        "row_names": [
+          "fixture_row_0",
+          "fixture_row_1",
+          "fixture_row_2",
+          "fixture_row_3",
+          "fixture_row_4",
+          "fixture_row_5",
+          "fixture_row_6",
+          "fixture_row_7",
+          "fixture_row_8",
+          "fixture_row_9",
+          "fixture_row_10",
+          "fixture_row_11",
+          "fixture_row_12",
+          "fixture_row_13",
+          "fixture_row_14"
+        ],
+        "row_units": [
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI",
+          "fixture SI"
+        ],
+        "row_scales": [
+          87.0,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0,
+          87.0,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0,
+          1.0
+        ],
+        "recovery": "DISABLED: K_b/gamma and recovery semantics not supplied",
+        "replan_requested": false,
+        "tau_candidate": [
+          1.0000000000027047,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_slacks": [
+          85.9999999999973,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0,
+          88.0000000000027,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0,
+          -2.7047253325918064e-12
+        ],
+        "normalized_slacks": [
+          0.9885057471264057,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0114942528735942,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          -2.7047253325918064e-12
+        ],
+        "normalized_primal": 2.7047253325918064e-12,
+        "scaled_stationarity": 2.5604518505417673e-15,
+        "complementarity": 7.146849868115867e-16,
+        "negative_upper_dual": 0.0,
+        "iterations": 4,
+        "duality_gap": -6.851615629022145e-16,
+        "intervention_Nm": 1.9999999999972953,
+        "torque_upper_slack": [
+          85.9999999999973,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "torque_lower_slack": [
+          88.0000000000027,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0
+        ]
+      },
+      "infeasible_status": "QPSolverOutput.PROXQP_PRIMAL_INFEASIBLE",
+      "scope": "COMPONENT NUMERICS ONLY, not full T27"
+    },
+    "held_torque_fixture": {
+      "scope": "COMPONENT_FIXTURE_NOT_A2",
+      "t0": 0.0,
+      "t1": 0.001,
+      "q0": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "qd0": [
+        -0.02,
+        -0.013333333333333332,
+        -0.006666666666666666,
+        0.0,
+        0.006666666666666668,
+        0.013333333333333332,
+        0.02
+      ],
+      "q1": [
+        -1.970182611600868e-05,
+        -1.2741649185753569e-05,
+        -6.2521231666591485e-06,
+        -8.730719815478164e-08,
+        6.608839476501485e-06,
+        1.3285816718754381e-05,
+        2.002367562082361e-05
+      ],
+      "qd1": [
+        -0.019403478464043406,
+        -0.012150038148428544,
+        -0.005837844601622067,
+        -0.0001748716545592665,
+        0.006551004581395634,
+        0.013238325980168079,
+        0.02004739121342295
+      ],
+      "z1": [
+        0.40186165417126324,
+        0.26775165146876784,
+        0.13382866027567702,
+        3.4691389694889595e-05,
+        -0.13397040011314526,
+        -0.26796787456408805,
+        -0.401989540123512
+      ],
+      "u_nom": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tau_applied": [
+        -0.1,
+        -0.06666666666666668,
+        -0.03333333333333334,
+        0.0,
+        0.033333333333333326,
+        0.06666666666666665,
+        0.1
+      ],
+      "dhat0": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dhat1": [
+        0.013792084890395129,
+        0.024750888500196966,
+        0.017071768243235683,
+        -0.00346274170149044,
+        -0.002950308485232589,
+        -0.003201354960726488,
+        -0.001041715855053027
+      ],
+      "truth_post_run_only": [
+        0.697042607826464,
+        1.2497423083233843,
+        0.8613605605555823,
+        -0.17564325786392887,
+        -0.1490184993989502,
+        -0.16159637306998095,
+        -0.05248888185403455
+      ],
+      "observer_error": [
+        0.6832505229360688,
+        1.2249914198231873,
+        0.8442887923123467,
+        -0.17218051616243843,
+        -0.14606819091371762,
+        -0.15839501810925447,
+        -0.051447165998981526
+      ],
+      "analytic_varpi": [
+        1.7079574931449912,
+        1.7079574931449912,
+        1.7079574931449912,
+        1.7079574931449912,
+        0.23558034388206775,
+        0.23558034388206775,
+        0.23558034388206775
+      ],
+      "observer_envelope_slack": [
+        1.0247069702089224,
+        0.48296607332180397,
+        0.8636687008326446,
+        1.5357769769825529,
+        0.08951215296835013,
+        0.07718532577281328,
+        0.18413317788308622
+      ],
+      "tracking_errors_at_update": {
+        "e": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "edot": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "s": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "qr_dot": [
+          -0.02,
+          -0.013333333333333332,
+          -0.006666666666666666,
+          0.0,
+          0.006666666666666668,
+          0.013333333333333332,
+          0.02
+        ],
+        "qr_ddot": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "initial_conditions": {
+        "position_and_manip_h": [
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          0.99
+        ],
+        "psi1": [
+          10.02,
+          10.013333333333334,
+          10.006666666666666,
+          10.0,
+          9.993333333333334,
+          9.986666666666666,
+          9.98,
+          9.98,
+          9.986666666666666,
+          9.993333333333334,
+          10.0,
+          10.006666666666666,
+          10.013333333333334,
+          10.02,
+          4.942
+        ],
+        "speed_upper": [
+          2.195,
+          2.188333333333333,
+          2.1816666666666666,
+          2.175,
+          2.603333333333333,
+          2.5966666666666667,
+          2.59
+        ],
+        "speed_lower": [
+          2.155,
+          2.1616666666666666,
+          2.168333333333333,
+          2.175,
+          2.6166666666666667,
+          2.623333333333333,
+          2.63
+        ],
+        "passed": true
+      },
+      "stage_physical_slacks": [
+        {
+          "position_and_manip_h": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            0.99
+          ],
+          "psi1": [
+            10.02,
+            10.013333333333334,
+            10.006666666666666,
+            10.0,
+            9.993333333333334,
+            9.986666666666666,
+            9.98,
+            9.98,
+            9.986666666666666,
+            9.993333333333334,
+            10.0,
+            10.006666666666666,
+            10.013333333333334,
+            10.02,
+            4.942
+          ],
+          "speed_upper": [
+            2.195,
+            2.188333333333333,
+            2.1816666666666666,
+            2.175,
+            2.603333333333333,
+            2.5966666666666667,
+            2.59
+          ],
+          "speed_lower": [
+            2.155,
+            2.1616666666666666,
+            2.168333333333333,
+            2.175,
+            2.6166666666666667,
+            2.623333333333333,
+            2.63
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.0000025,
+            2.0000016666666665,
+            2.0000008333333334,
+            2.0,
+            1.9999991666666668,
+            1.9999983333333333,
+            1.9999975,
+            1.9999975,
+            1.9999983333333333,
+            1.9999991666666668,
+            2.0,
+            2.0000008333333334,
+            2.0000016666666665,
+            2.0000025,
+            0.9899990000002501
+          ],
+          "psi1": [
+            10.019938,
+            10.013193727378775,
+            10.006567131228715,
+            10.000021762463552,
+            9.993343621533718,
+            9.986670218953627,
+            9.979981591089063,
+            9.980062,
+            9.986806272621223,
+            9.993432868771285,
+            9.999978237536448,
+            10.006656378466282,
+            10.013329781046371,
+            10.020018408910937,
+            4.94202480398635
+          ],
+          "speed_upper": [
+            2.1949254999999996,
+            2.1881853940454428,
+            2.1815629645620476,
+            2.1750217624635524,
+            2.6033477882003857,
+            2.59667855228696,
+            2.589994091089062
+          ],
+          "speed_lower": [
+            2.1550745,
+            2.161814605954557,
+            2.168437035437952,
+            2.1749782375364473,
+            2.616652211799614,
+            2.6233214477130398,
+            2.6300059089109378
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.0000024906875,
+            2.0000016481742557,
+            2.00000082037057,
+            2.000000002720308,
+            1.999999168473525,
+            1.9999983348190358,
+            1.999997499261386,
+            1.9999975093125,
+            1.9999983518257443,
+            1.9999991796294296,
+            1.999999997279692,
+            2.000000831526475,
+            2.0000016651809642,
+            2.000002500738614,
+            0.9899990037252481
+          ],
+          "psi1": [
+            10.019937937127718,
+            10.01319364175337,
+            10.006567091249842,
+            10.00002180019711,
+            9.99334363129314,
+            9.986670223957807,
+            9.97998158364777,
+            9.98006206287228,
+            9.98680635824663,
+            9.993432908750156,
+            9.99997819980289,
+            10.006656368706858,
+            10.013329776042193,
+            10.02001841635223,
+            4.942024829120405
+          ],
+          "speed_upper": [
+            2.1949254836902186,
+            2.1881854008820922,
+            2.181562989396991,
+            2.175021786595571,
+            2.6033477889255154,
+            2.5966785498626277,
+            2.5899940873408394
+          ],
+          "speed_lower": [
+            2.155074516309781,
+            2.1618145991179074,
+            2.1684370106030086,
+            2.1749782134044287,
+            2.6166522110744843,
+            2.623321450137372,
+            2.6300059126591604
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.0000049813709224,
+            2.0000032963502203,
+            2.000001640747349,
+            2.000000005446649,
+            1.9999983369472314,
+            1.9999966696374656,
+            1.9999949985218353,
+            1.9999950186290774,
+            1.9999967036497794,
+            1.9999983592526507,
+            1.999999994553351,
+            2.000001663052769,
+            2.000003330362534,
+            2.000005001478165,
+            0.9899980074526236
+          ],
+          "psi1": [
+            10.01987587423505,
+            10.013053950181954,
+            10.006467515864061,
+            10.000043600424387,
+            9.993353929253855,
+            9.986673781245917,
+            9.979963167290856,
+            9.98012412576495,
+            9.986946049818044,
+            9.993532484135939,
+            9.999956399575613,
+            10.006646070746147,
+            10.013326218754083,
+            10.020036832709145,
+            4.9420496582217455
+          ],
+          "speed_upper": [
+            2.1948509673804373,
+            2.188037468430851,
+            2.181459312127316,
+            2.1750435731911426,
+            2.6033622445176974,
+            2.596690433058589,
+            2.589988174681679
+          ],
+          "speed_lower": [
+            2.1551490326195624,
+            2.1619625315691486,
+            2.168540687872684,
+            2.174956426808857,
+            2.6166377554823024,
+            2.6233095669414106,
+            2.630011825318321
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.0000049813722818,
+            2.000003296349651,
+            2.0000016407452796,
+            2.000000005444638,
+            1.999998336947171,
+            1.9999966696376676,
+            1.9999949985221475,
+            1.9999950186277182,
+            1.9999967036503492,
+            1.9999983592547204,
+            1.9999999945553621,
+            2.0000016630528292,
+            2.000003330362332,
+            2.0000050014778523,
+            0.9899980074520798
+          ],
+          "psi1": [
+            10.01987587424366,
+            10.013053950180767,
+            10.006467515853974,
+            10.000043600412996,
+            9.993353929253287,
+            9.98667378124678,
+            9.979963167292498,
+            9.98012412575634,
+            9.986946049819233,
+            9.993532484146026,
+            9.999956399587006,
+            10.006646070746715,
+            10.01332621875322,
+            10.0200368327075,
+            4.942049658218304
+          ],
+          "speed_upper": [
+            2.19485096738225,
+            2.1880374684325123,
+            2.1814593121275747,
+            2.175043573189804,
+            2.603362244517432,
+            2.596690433058442,
+            2.5899881746817615
+          ],
+          "speed_lower": [
+            2.1551490326177496,
+            2.1619625315674873,
+            2.168540687872425,
+            2.1749564268101955,
+            2.616637755482568,
+            2.6233095669415576,
+            2.6300118253182383
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.0000074627432043,
+            2.000004926033205,
+            2.0000024481592957,
+            2.0000000108912865,
+            1.9999975072277356,
+            1.9999950059418,
+            1.9999924970439829,
+            1.9999925372567955,
+            1.999995073966795,
+            1.9999975518407045,
+            1.9999999891087135,
+            2.000002492772264,
+            2.0000049940582,
+            2.0000075029560174,
+            0.9899970149049458
+          ],
+          "psi1": [
+            10.019813748484147,
+            10.012914172988928,
+            10.0063679004901,
+            10.00006543836981,
+            9.993364236972623,
+            9.986677343538629,
+            9.97994474349454,
+            9.980186251515851,
+            9.987085827011072,
+            9.993632099509902,
+            9.99993456163019,
+            10.006635763027376,
+            10.01332265646137,
+            10.02005525650546,
+            4.942074512424395
+          ],
+          "speed_upper": [
+            2.194776434768125,
+            2.187889542822904,
+            2.1813556596936197,
+            2.1750653839133793,
+            2.603376700833946,
+            2.5967023138296303,
+            2.589982258274626
+          ],
+          "speed_lower": [
+            2.1552235652318745,
+            2.1621104571770955,
+            2.16864434030638,
+            2.1749346160866203,
+            2.616623299166054,
+            2.6232976861703694,
+            2.6300177417253736
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.000007453426628,
+            2.0000049075425035,
+            2.0000024352027412,
+            2.000000013617627,
+            1.9999975090347752,
+            1.9999950074268964,
+            1.999992496304432,
+            1.9999925465733723,
+            1.9999950924574963,
+            1.9999975647972585,
+            1.999999986382373,
+            2.0000024909652248,
+            2.000004992573104,
+            2.000007503695568,
+            0.9899970186315711
+          ],
+          "psi1": [
+            10.01981368560236,
+            10.012914087382038,
+            10.006367860543822,
+            10.000065476125501,
+            9.993364246731357,
+            9.986677348538898,
+            9.979944736049061,
+            9.980186314397642,
+            9.987085912617962,
+            9.993632139456178,
+            9.999934523874499,
+            10.006635753268643,
+            10.013322651461102,
+            10.020055263950939,
+            4.942074537562334
+          ],
+          "speed_upper": [
+            2.19477641846922,
+            2.18788954966952,
+            2.181355684530115,
+            2.1750654080373666,
+            2.6033767015574805,
+            2.5967023114044165,
+            2.5899822545268996
+          ],
+          "speed_lower": [
+            2.15522358153078,
+            2.1621104503304798,
+            2.1686443154698845,
+            2.174934591962633,
+            2.6166232984425193,
+            2.623297688595583,
+            2.6300177454731
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.000009925476899,
+            2.0000065187370684,
+            2.000003229666412,
+            2.000000021796647,
+            1.9999966811225602,
+            1.9999933452155187,
+            1.9999899940857793,
+            1.999990074523101,
+            1.9999934812629319,
+            1.9999967703335877,
+            1.9999999782033528,
+            2.0000033188774395,
+            2.0000066547844813,
+            2.0000100059142207,
+            0.9899960298131809
+          ],
+          "psi1": [
+            10.019751496940685,
+            10.012774224591869,
+            10.006268205264716,
+            10.000087351868165,
+            9.99337456421033,
+            9.986680915827984,
+            9.979926304800935,
+            9.980248503059315,
+            9.987225775408133,
+            9.993731794735282,
+            9.999912648131835,
+            10.006625435789669,
+            10.013319084172016,
+            10.020073695199065,
+            4.942099416887465
+          ],
+          "speed_upper": [
+            2.19470186955619,
+            2.187741630906527,
+            2.1812520569326552,
+            2.1750872428849295,
+            2.603391158597529,
+            2.596714189750391,
+            2.5899763343720377
+          ],
+          "speed_lower": [
+            2.1552981304438097,
+            2.1622583690934727,
+            2.1687479430673444,
+            2.17491275711507,
+            2.6166088414024706,
+            2.623285810249609,
+            2.630023665627962
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.000009925478257,
+            2.0000065187364977,
+            2.0000032296643426,
+            2.0000000217946368,
+            1.9999966811225,
+            1.9999933452157208,
+            1.9999899940860917,
+            1.9999900745217427,
+            1.9999934812635023,
+            1.9999967703356576,
+            1.999999978205363,
+            2.0000033188775,
+            2.000006654784279,
+            2.0000100059139085,
+            0.9899960298126378
+          ],
+          "psi1": [
+            10.019751496949286,
+            10.012774224590677,
+            10.006268205254626,
+            10.000087351856775,
+            9.993374564209764,
+            9.986680915828849,
+            9.979926304802579,
+            9.980248503050712,
+            9.987225775409323,
+            9.993731794745374,
+            9.999912648143225,
+            10.006625435790236,
+            10.013319084171151,
+            10.020073695197423,
+            4.942099416884026
+          ],
+          "speed_upper": [
+            2.1947018695580027,
+            2.187741630908188,
+            2.1812520569329132,
+            2.1750872428835906,
+            2.6033911585972636,
+            2.596714189750244,
+            2.5899763343721207
+          ],
+          "speed_lower": [
+            2.155298130441997,
+            2.162258369091812,
+            2.1687479430670864,
+            2.174912757116409,
+            2.616608841402736,
+            2.623285810249756,
+            2.630023665627879
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.000012388211952,
+            2.000008111440361,
+            2.000004011171459,
+            2.0000000326999974,
+            1.9999958550173247,
+            1.9999916844894396,
+            1.999987491127888,
+            1.999987611788048,
+            1.9999918885596388,
+            1.9999959888285408,
+            1.9999999673000026,
+            2.0000041449826753,
+            2.00000831551056,
+            2.000012508872112,
+            0.989995044721358
+          ],
+          "psi1": [
+            10.019689245411264,
+            10.0126342761986,
+            10.006168510030019,
+            10.00010926535111,
+            9.993384891446672,
+            9.986684488117763,
+            9.97990786610922,
+            9.980310754588734,
+            9.9873657238014,
+            9.99383148996998,
+            9.99989073464889,
+            10.006615108553328,
+            10.013315511882235,
+            10.02009213389078,
+            4.942124321317965
+          ],
+          "speed_upper": [
+            2.1946273043515054,
+            2.1875937189967924,
+            2.181148454172723,
+            2.175109101851124,
+            2.603405616360049,
+            2.596726065670564,
+            2.5899704104697805
+          ],
+          "speed_lower": [
+            2.155372695648494,
+            2.162406281003207,
+            2.168851545827277,
+            2.1748908981488757,
+            2.6165943836399506,
+            2.623273934329436,
+            2.6300295895302193
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.0000123788913013,
+            2.000008092951372,
+            2.000003998221114,
+            2.000000035432368,
+            1.999995856824545,
+            1.9999916859739297,
+            1.9999874903874004,
+            1.9999876211086989,
+            1.9999919070486278,
+            1.9999960017788858,
+            1.9999999645676316,
+            2.000004143175455,
+            2.0000083140260703,
+            2.0000125096125996,
+            0.9899950484496088
+          ],
+          "psi1": [
+            10.019689182519985,
+            10.012634190610232,
+            10.006168470116336,
+            10.000109303128918,
+            9.993384901204713,
+            9.986684493114119,
+            9.979907858659553,
+            9.980310817480017,
+            9.987365809389768,
+            9.993831529883664,
+            9.99989069687108,
+            10.006615098795288,
+            10.013315506885881,
+            10.020092141340447,
+            4.942124346459779
+          ],
+          "speed_upper": [
+            2.1946272880634767,
+            2.1875937258533704,
+            2.1811484790107647,
+            2.175109125967077,
+            2.6034056170819886,
+            2.5967260632444695,
+            2.5899704067225504
+          ],
+          "speed_lower": [
+            2.155372711936523,
+            2.1624062741466292,
+            2.168851520989235,
+            2.1748908740329225,
+            2.616594382918011,
+            2.6232739367555302,
+            2.6300295932774493
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.0000148323002733,
+            2.000009667167961,
+            2.000004766784095,
+            2.0000000490761285,
+            1.9999950325267706,
+            1.999990026731532,
+            1.9999849866877721,
+            1.999985167699727,
+            1.999990332832039,
+            1.9999952332159048,
+            1.9999999509238713,
+            2.0000049674732296,
+            2.000009973268468,
+            2.0000150133122276,
+            0.9899940670886906
+          ],
+          "psi1": [
+            10.019626868070317,
+            10.012494156638358,
+            10.00606873500909,
+            10.000131254431206,
+            9.993395238200566,
+            9.986688070396355,
+            9.97988941251184,
+            9.980373131929685,
+            9.98750584336164,
+            9.993931264990907,
+            9.999868745568792,
+            10.006604761799434,
+            10.013311929603645,
+            10.020110587488158,
+            4.942149276016802
+          ],
+          "speed_upper": [
+            2.1945527065689507,
+            2.1874458207985534,
+            2.1810449010886157,
+            2.175131009050564,
+            2.6034200755667136,
+            2.5967379367386947,
+            2.58996447907298
+          ],
+          "speed_lower": [
+            2.155447293431049,
+            2.162554179201446,
+            2.168955098911384,
+            2.174868990949436,
+            2.616579924433286,
+            2.623262063261305,
+            2.6300355209270196
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.0000148323016305,
+            2.0000096671673897,
+            2.0000047667820255,
+            2.000000049074119,
+            1.9999950325267104,
+            1.999990026731734,
+            1.9999849866880846,
+            1.9999851676983695,
+            1.9999903328326105,
+            1.9999952332179747,
+            1.999999950925881,
+            2.0000049674732896,
+            2.000009973268266,
+            2.0000150133119154,
+            0.9899940670881477
+          ],
+          "psi1": [
+            10.019626868078916,
+            10.012494156637162,
+            10.006068734999001,
+            10.00013125441982,
+            9.9933952382,
+            9.986688070397218,
+            9.979889412513485,
+            9.980373131921084,
+            9.98750584336284,
+            9.993931265000999,
+            9.99986874558018,
+            10.0066047618,
+            10.013311929602782,
+            10.020110587486515,
+            4.942149276013365
+          ],
+          "speed_upper": [
+            2.1945527065707635,
+            2.1874458208002134,
+            2.181044901088873,
+            2.1751310090492244,
+            2.6034200755664476,
+            2.5967379367385477,
+            2.5899644790730627
+          ],
+          "speed_lower": [
+            2.155447293429236,
+            2.162554179199786,
+            2.168955098911127,
+            2.1748689909507752,
+            2.616579924433552,
+            2.623262063261452,
+            2.630035520926937
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.000017276389952,
+            2.00001122289499,
+            2.0000055223946616,
+            2.00000006545025,
+            1.999994210036156,
+            1.9999883689738265,
+            1.9999824822479686,
+            1.9999827236100483,
+            1.9999887771050104,
+            1.9999944776053384,
+            1.99999993454975,
+            2.000005789963844,
+            2.0000116310261733,
+            2.000017517752031,
+            0.9899930894559581
+          ],
+          "psi1": [
+            10.019564490743408,
+            10.012354037081904,
+            10.005968959978846,
+            10.000153243495896,
+            9.993405584953095,
+            9.98669165267537,
+            9.979870958916354,
+            9.980435509256594,
+            9.987645962918098,
+            9.994031040021154,
+            9.999846756504104,
+            10.006594415046905,
+            10.013308347324628,
+            10.020129041083644,
+            4.942174230683244
+          ],
+          "speed_upper": [
+            2.1944781087936476,
+            2.187297922606954,
+            2.180941348005537,
+            2.175152916244646,
+            2.6034345347723145,
+            2.5967498078062383,
+            2.589958547676511
+          ],
+          "speed_lower": [
+            2.155521891206352,
+            2.1627020773930457,
+            2.1690586519944626,
+            2.1748470837553535,
+            2.6165654652276853,
+            2.6232501921937614,
+            2.6300414523234887
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.0000172670652296,
+            2.0000112044077154,
+            2.000005509450526,
+            2.0000000681886494,
+            1.999994211843557,
+            1.99998837045771,
+            1.9999824815065441,
+            1.9999827329347704,
+            1.9999887955922846,
+            1.999994490549474,
+            1.9999999318113504,
+            2.000005788156443,
+            2.00001162954229,
+            2.000017518493456,
+            0.9899930931858341
+          ],
+          "psi1": [
+            10.019564427842646,
+            10.01235395151207,
+            10.00596892009775,
+            10.000153281295809,
+            9.993405594710444,
+            9.986691657667814,
+            9.9798709514625,
+            9.980435572157354,
+            9.98764604848793,
+            9.99403107990225,
+            9.99984671870419,
+            10.006594405289556,
+            10.013308342332186,
+            10.0201290485375,
+            4.942174255828931
+          ],
+          "speed_upper": [
+            2.194478092516497,
+            2.187297929473491,
+            2.1809413728451195,
+            2.175152940352562,
+            2.6034345354926587,
+            2.5967498053792633,
+            2.5899585439297783
+          ],
+          "speed_lower": [
+            2.155521907483503,
+            2.1627020705265085,
+            2.16905862715488,
+            2.174847059647438,
+            2.616565464507341,
+            2.6232501946207365,
+            2.6300414560702214
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        },
+        {
+          "position_and_manip_h": [
+            2.0000197018247596,
+            2.000012741649758,
+            2.0000062521252366,
+            2.000000087309207,
+            1.9999933911605836,
+            1.999986714183079,
+            1.9999799763240669,
+            1.9999802981752404,
+            1.999987258350242,
+            1.9999937478747634,
+            1.9999999126907928,
+            2.0000066088394166,
+            2.000013285816921,
+            2.000020023675933,
+            0.9899921192856227
+          ],
+          "psi1": [
+            10.019501987586029,
+            10.01221374639556,
+            10.00586910522755,
+            10.000175308201934,
+            9.993415951221788,
+            9.986695244935374,
+            9.979852490406829,
+            9.980498012413971,
+            9.98778625360444,
+            9.99413089477245,
+            9.999824691798064,
+            10.006584048778214,
+            10.013304755064626,
+            10.020147509593171,
+            4.942199235625935
+          ],
+          "speed_upper": [
+            2.19440347846223,
+            2.187150038146769,
+            2.1808378446013656,
+            2.175174871655899,
+            2.60344899541887,
+            2.5967616740199784,
+            2.589952608786494
+          ],
+          "speed_lower": [
+            2.1555965215377695,
+            2.162849961853231,
+            2.169162155398634,
+            2.1748251283441005,
+            2.6165510045811295,
+            2.6232383259800214,
+            2.630047391213506
+          ],
+          "torque_upper": [
+            87.1,
+            87.06666666666666,
+            87.03333333333333,
+            87.0,
+            11.966666666666667,
+            11.933333333333334,
+            11.9
+          ],
+          "torque_lower": [
+            86.9,
+            86.93333333333334,
+            86.96666666666667,
+            87.0,
+            12.033333333333333,
+            12.066666666666666,
+            12.1
+          ],
+          "passed": true
+        }
+      ],
+      "final_conditions": {
+        "position_and_manip_h": [
+          2.000019701826116,
+          2.000012741649186,
+          2.0000062521231667,
+          2.0000000873071984,
+          1.9999933911605234,
+          1.9999867141832812,
+          1.999979976324379,
+          1.999980298173884,
+          1.9999872583508143,
+          1.9999937478768333,
+          1.9999999126928019,
+          2.0000066088394766,
+          2.0000132858167188,
+          2.0000200236756207,
+          0.98999211928508
+        ],
+        "psi1": [
+          10.019501987594623,
+          10.012213746394359,
+          10.005869105217457,
+          10.000175308190551,
+          9.993415951221222,
+          9.986695244936238,
+          9.979852490408472,
+          9.980498012405375,
+          9.987786253605643,
+          9.994130894782543,
+          9.999824691809449,
+          10.006584048778778,
+          10.013304755063762,
+          10.020147509591526,
+          4.9421992356225
+        ],
+        "speed_upper": [
+          2.1944034784640434,
+          2.1871500381484283,
+          2.180837844601622,
+          2.175174871654559,
+          2.603448995418604,
+          2.596761674019832,
+          2.589952608786577
+        ],
+        "speed_lower": [
+          2.1555965215359563,
+          2.1628499618515713,
+          2.1691621553983778,
+          2.1748251283454407,
+          2.6165510045813956,
+          2.623238325980168,
+          2.630047391213423
+        ],
+        "torque_upper": [
+          87.1,
+          87.06666666666666,
+          87.03333333333333,
+          87.0,
+          11.966666666666667,
+          11.933333333333334,
+          11.9
+        ],
+        "torque_lower": [
+          86.9,
+          86.93333333333334,
+          86.96666666666667,
+          87.0,
+          12.033333333333333,
+          12.066666666666666,
+          12.1
+        ],
+        "passed": true
+      },
+      "terminal_reference_error_m": 7.815647145516581e-07,
+      "QP": {
+        "intervention_Nm": 0.17638342073763938
+      },
+      "intervention_Nm": 0.17638342073763938,
+      "rk4_stages": [
+        {
+          "t": 0.0,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.000125,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.000125,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.00025,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.00025,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.000375,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.000375,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.0005,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.0005,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.000625,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.000625,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.00075,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.00075,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.000875,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.000875,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        },
+        {
+          "t": 0.001,
+          "applied_tau": [
+            -0.1,
+            -0.06666666666666668,
+            -0.03333333333333334,
+            0.0,
+            0.033333333333333326,
+            0.06666666666666665,
+            0.1
+          ]
+        }
+      ],
+      "observer_semantics": "COUPLED_RK4_MEASURED_STAGE_STATES_AND_HELD_APPLIED_TORQUE; COMPONENT_TEST_CONVENTION_NOT_POLICY_APPROVED",
+      "all_checked_physical_slacks_nonnegative": true,
+      "uncomputed_tracking_tube_slacks": "BLOCKED: M1 constants not supplied; no zero substitution"
+    }
+  }
+}

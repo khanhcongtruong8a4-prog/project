@@ -1,0 +1,5 @@
+{
+  "test": "read-only simulated hash mismatch; no evidence file altered",
+  "passed": true,
+  "rejection": "Current evidence hash mismatch: gate.json"
+}

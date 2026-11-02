@@ -1,0 +1,381 @@
+{
+  "policy_sha256": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530",
+  "policy_files": [
+    {
+      "file": "policy/v1.2.1/APPROVAL_RECORD.md",
+      "sha256": "eeddcaf7a402cbc13fff13b1223d95bc0c5cfb92869795f86613216cb6a98a3b",
+      "matches": true
+    },
+    {
+      "file": "policy/v1.2.1/APPROVED_POLICY_CONFIGURATION_v1.2.1.json",
+      "sha256": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530",
+      "matches": true
+    },
+    {
+      "file": "policy/v1.2.1/C1_C6_FINAL_DECISIONS.csv",
+      "sha256": "a0635b51e4633fbea90216990afaa66ac422867f1d94555cb87574cb4e38a48a",
+      "matches": true
+    },
+    {
+      "file": "policy/v1.2.1/PREVIOUS_AUTOMATED_EVIDENCE_SNAPSHOT.json",
+      "sha256": "ce210fd60db3a75c7ef9e53807aa2a829b8b438819e7ae217f468778554c6df7",
+      "matches": true
+    },
+    {
+      "file": "policy/v1.2.1/PROTOCOL_v1.2.1_PROJECT_OWNER_APPROVED_ADDENDUM.md",
+      "sha256": "d44f2412cd950c0501a3bb9e3c4d32bee886782d830e116eeb5df8f0e4e31c0d",
+      "matches": true
+    },
+    {
+      "file": "policy/v1.2.1/READINESS_AND_NEXT_STEPS.md",
+      "sha256": "ceff493db58df01792a78fb2f3f4bc49c0219d9c059fd20b92b811c200be7516",
+      "matches": true
+    },
+    {
+      "file": "policy/v1.2.1/Referenced_Inputs/Tasks_2026.xlsx",
+      "sha256": "bdddc29df8ca30514b9b6f31fc96372b5460a1bf22e5c40011979bb73d9ad77a",
+      "matches": true
+    },
+    {
+      "file": "policy/v1.2.1/Referenced_Inputs/previous_C1_C6_proposals.csv",
+      "sha256": "970ddfc521008b3d49553cc01f2592d54888c1e0c72e966f9a763fe1594e092c",
+      "matches": true
+    },
+    {
+      "file": "policy/v1.2.1/Referenced_Inputs/previous_unsigned_signoff_template.md",
+      "sha256": "b2f15af7e3c0f5e3d798a1425ded62d2876df837418fda5062377790522a8447",
+      "matches": true
+    },
+    {
+      "file": "policy/v1.2.1/T29_approved_protocol_row_scales.csv",
+      "sha256": "519bf38459cd8b2b485aed428d201640801333311fef9444adf6ffef27241a31",
+      "matches": true
+    },
+    {
+      "file": "policy/v1.2.1/manuscript_source_hashes.json",
+      "sha256": "5d438a95640f4766f2bc5486ab24232846cb58fcdc6281af3dba45551c038f2c",
+      "matches": true
+    },
+    {
+      "file": "policy/v1.2.1/original_Tasks_2026_provenance.csv",
+      "sha256": "529357e5e31a6c462749ceb4052aaecc23fffab41aa481fdab4641004c751c0f",
+      "matches": true
+    }
+  ],
+  "canonical_equations_match": true,
+  "manuscript": [
+    {
+      "file": "01_introduction.tex",
+      "expected_sha256": "f855b384a19c209c42248ca08768080338a81f51544bf461c36c9d779fc35a68",
+      "actual_sha256": "f855b384a19c209c42248ca08768080338a81f51544bf461c36c9d779fc35a68",
+      "matches": true
+    },
+    {
+      "file": "02_mm&nc.tex",
+      "expected_sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+      "actual_sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+      "matches": true
+    },
+    {
+      "file": "03_contribution.tex",
+      "expected_sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+      "actual_sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+      "matches": true
+    },
+    {
+      "file": "main.tex",
+      "expected_sha256": "58515900e7ef23b3c13279d046fd2406a16b7c580471206a30b03df95399e53a",
+      "actual_sha256": "58c77edb80d60c98254cbdbdb22e01432c9b1accd8b144d370ded1d76d0fe199",
+      "matches": false
+    },
+    {
+      "file": "Project.rar",
+      "expected_sha256": "9a5364a1101d69e9cccc2475f460f4fa070124b3bd47c3a87bf498a3c51f3e85",
+      "actual_sha256": "28115fbf95860a6618e9bf0017b9bebef87557102f1c17d02876e5169a5099bb",
+      "matches": false
+    }
+  ],
+  "workbook_cell_audit": [
+    {
+      "key": "gains.K_o_s_inverse",
+      "worksheet": "T10 Observer gain rule",
+      "cell": "B12",
+      "recorded": "diag(20, 20, 20, 20, 20, 20, 20)",
+      "actual": "diag(20, 20, 20, 20, 20, 20, 20)",
+      "matches": true
+    },
+    {
+      "key": "gains.Lambda",
+      "worksheet": "T11 Tracking gain rule",
+      "cell": "B9",
+      "recorded": "diag(5, 5, 5, 5, 5, 5, 5)",
+      "actual": "diag(5, 5, 5, 5, 5, 5, 5)",
+      "matches": true
+    },
+    {
+      "key": "gains.kappa",
+      "worksheet": "T11 Tracking gain rule",
+      "cell": "B10",
+      "recorded": "10",
+      "actual": "10",
+      "matches": true
+    },
+    {
+      "key": "gains.alpha_1_and_alpha_2",
+      "worksheet": "T14 CBF gains and cancellation",
+      "cell": "B9",
+      "recorded": "alpha1=5, alpha2=5.",
+      "actual": "alpha1=5, alpha2=5.",
+      "matches": true
+    },
+    {
+      "key": "gains.alpha_v",
+      "worksheet": "T14 CBF gains and cancellation",
+      "cell": "B10",
+      "recorded": "5",
+      "actual": "5",
+      "matches": true
+    },
+    {
+      "key": "physical_parameters.w_min",
+      "worksheet": "T15 Manipulability floor",
+      "cell": "B10",
+      "recorded": "w_min=0.10*w(q0). Equivalently W_floor=0.01*W(q0).",
+      "actual": "w_min=0.10*w(q0). Equivalently W_floor=0.01*W(q0).",
+      "matches": true
+    },
+    {
+      "key": "physical_parameters.q0",
+      "worksheet": "T15 Manipulability floor",
+      "cell": "B11",
+      "recorded": "[0, 0, 0, -1.5708, 0, 1.8675, 0]",
+      "actual": "[0, 0, 0, -1.5708, 0, 1.8675, 0]",
+      "matches": true
+    },
+    {
+      "key": "physical_parameters.torque_reserve_Nm",
+      "worksheet": "T16 Dimensioned reserves",
+      "cell": "B11",
+      "recorded": "delta_tau=eta_delta*min_i tau_max, i=0.0012.",
+      "actual": "delta_tau=eta_delta*min_i tau_max, i=0.0012.",
+      "matches": true
+    },
+    {
+      "key": "physical_parameters.velocity_reserve_rad_s",
+      "worksheet": "T16 Dimensioned reserves",
+      "cell": "B12",
+      "recorded": "delta_v=eta_delta*min_i qdot_max, i=0.0002175.",
+      "actual": "delta_v=eta_delta*min_i qdot_max, i=0.0002175.",
+      "matches": true
+    },
+    {
+      "key": "physical_parameters.joint_HOCBF_reserves",
+      "worksheet": "T16 Dimensioned reserves",
+      "cell": "B13",
+      "recorded": "delta_h, i=eta_delta*(q_max, i-q_min, i)/(1s)\u00b2.",
+      "actual": "delta_h, i=eta_delta*(q_max, i-q_min, i)/(1s)\u00b2.",
+      "matches": true
+    },
+    {
+      "key": "physical_parameters.manip_HOCBF_reserve",
+      "worksheet": "T16 Dimensioned reserves",
+      "cell": "B14",
+      "recorded": "delta_h, man=eta_delta*W_floor/(1s)\u00b2.",
+      "actual": "delta_h, man=eta_delta*W_floor/(1s)\u00b2.",
+      "matches": true
+    },
+    {
+      "key": "physical_parameters.velocity_CBF_reserve",
+      "worksheet": "T16 Dimensioned reserves",
+      "cell": "B15",
+      "recorded": "delta_vB=eta_delta*min_i qdot_max, i/(1s)=0.0002175.",
+      "actual": "delta_vB=eta_delta*min_i qdot_max, i/(1s)=0.0002175.",
+      "matches": true
+    },
+    {
+      "key": "energy.k_r",
+      "worksheet": "T09 Energy wording and sensitiv",
+      "cell": "B10",
+      "recorded": "[0.001, 0.001, 0.001, 0.001, 0.003, 0.003, 0.003]",
+      "actual": "[0.001, 0.001, 0.001, 0.001, 0.003, 0.003, 0.003]",
+      "matches": true
+    },
+    {
+      "key": "energy.sensitivity",
+      "worksheet": "T09 Energy wording and sensitiv",
+      "cell": "B11",
+      "recorded": "0, 0.5, 1, 2 applied to the complete vector.",
+      "actual": "0, 0.5, 1, 2 applied to the complete vector.",
+      "matches": true
+    },
+    {
+      "key": "energy.w_t_W",
+      "worksheet": "T09 Energy wording and sensitiv",
+      "cell": "B12",
+      "recorded": "1",
+      "actual": "1",
+      "matches": true
+    },
+    {
+      "key": "energy.smoothing_epsilon_W",
+      "worksheet": "T09 Energy wording and sensitiv",
+      "cell": "B13",
+      "recorded": "0.01",
+      "actual": "0.01",
+      "matches": true
+    },
+    {
+      "key": "energy.bus_objective",
+      "worksheet": "T09 Energy wording and sensitiv",
+      "cell": "B14",
+      "recorded": "E_el=integral phi_epsilon(sum_i[tau_i*qdot_i+kr_i*tau_i\u00b2]) dt.",
+      "actual": "E_el=integral phi_epsilon(sum_i[tau_i*qdot_i+kr_i*tau_i\u00b2]) dt.",
+      "matches": true
+    },
+    {
+      "key": "solver.degree",
+      "worksheet": "T25 Planner configuration",
+      "cell": "B9",
+      "recorded": "5",
+      "actual": "5",
+      "matches": true
+    },
+    {
+      "key": "solver.control_points",
+      "worksheet": "T25 Planner configuration",
+      "cell": "B10",
+      "recorded": "12",
+      "actual": "12",
+      "matches": true
+    },
+    {
+      "key": "solver.knots",
+      "worksheet": "T25 Planner configuration",
+      "cell": "B11",
+      "recorded": "[0, 0, 0, 0, 0, 0, 1/7, 2/7, 3/7, 4/7, 5/7, 6/7, 1, 1, 1, 1, 1, 1]",
+      "actual": "[0, 0, 0, 0, 0, 0, 1/7, 2/7, 3/7, 4/7, 5/7, 6/7, 1, 1, 1, 1, 1, 1]",
+      "matches": true
+    },
+    {
+      "key": "solver.duration",
+      "worksheet": "T25 Planner configuration",
+      "cell": "B12",
+      "recorded": "0.5<=T<=10.0",
+      "actual": "0.5<=T<=10.0",
+      "matches": true
+    },
+    {
+      "key": "solver.NLP",
+      "worksheet": "T25 Planner configuration",
+      "cell": "B14",
+      "recorded": "CasADi with IPOPT and the MUMPS linear solver.",
+      "actual": "CasADi with IPOPT and the MUMPS linear solver.",
+      "matches": true
+    },
+    {
+      "key": "solver.NLP_settings",
+      "worksheet": "T25 Planner configuration",
+      "cell": "B15",
+      "recorded": "tol=1e-8, constr_viol_tol=1e-8, dual_inf_tol=1e-6, compl_inf_tol=1e-6, acceptable_iter=0, max_iter=2000, max_wall_time=600, linear_solver=mumps.",
+      "actual": "tol=1e-8, constr_viol_tol=1e-8, dual_inf_tol=1e-6, compl_inf_tol=1e-6, acceptable_iter=0, max_iter=2000, max_wall_time=600, linear_solver=mumps.",
+      "matches": true
+    },
+    {
+      "key": "solver.grid",
+      "worksheet": "T25 Planner configuration",
+      "cell": "B17",
+      "recorded": "Initial max physical gap0.01s plus all knots and endpoints. T20 cell bisection limit20.",
+      "actual": "Initial max physical gap0.01s plus all knots and endpoints. T20 cell bisection limit20.",
+      "matches": true
+    },
+    {
+      "key": "solver.energy_quadrature",
+      "worksheet": "T25 Planner configuration",
+      "cell": "B18",
+      "recorded": "For future NLP evaluation, use16-point Gauss-Legendre quadrature per spline span and repeat with32 points per span.",
+      "actual": "For future NLP evaluation, use16-point Gauss-Legendre quadrature per spline span and repeat with32 points per span.",
+      "matches": true
+    },
+    {
+      "key": "integration.primary",
+      "worksheet": "T25 Planner configuration",
+      "cell": "B19",
+      "recorded": "h_control=0.001s with zero-order hold. Primary fixed plant integrator RK4 with h_plant=0.00025s, 4 plant substeps per control update.",
+      "actual": "h_control=0.001s with zero-order hold. Primary fixed plant integrator RK4 with h_plant=0.00025s, 4 plant substeps per control update.",
+      "matches": true
+    },
+    {
+      "key": "integration.refinement",
+      "worksheet": "T25 Planner configuration",
+      "cell": "B20",
+      "recorded": "Compare plant steps0.00025 and0.000125s at unchanged control period. A separate sampling comparison uses0.001 and0.0005s with h_plant=h_control/4.",
+      "actual": "Compare plant steps0.00025 and0.000125s at unchanged control period. A separate sampling comparison uses0.001 and0.0005s with h_plant=h_control/4.",
+      "matches": true
+    },
+    {
+      "key": "solver.QP",
+      "worksheet": "T27 QP solver and accuracy",
+      "cell": "B10",
+      "recorded": "ProxQP dense. eps_abs=1e-10, eps_rel=0, max_iter=10000, check_duality_gap=True, eps_duality_gap_abs=1e-12, eps_duality_gap_rel=0.",
+      "actual": "ProxQP dense. eps_abs=1e-10, eps_rel=0, max_iter=10000, check_duality_gap=True, eps_duality_gap_abs=1e-12, eps_duality_gap_rel=0.",
+      "matches": true
+    },
+    {
+      "key": "solver.QP_acceptance",
+      "worksheet": "T27 QP solver and accuracy",
+      "cell": "B16",
+      "recorded": "Test zero-correction strict-feasible QPs, active constraints, near-boundary rows, known infeasible rows, scaling extremes, and repeated warm starts. Log residuals, correction norms, status and runtime.",
+      "actual": "Test zero-correction strict-feasible QPs, active constraints, near-boundary rows, known infeasible rows, scaling extremes, and repeated warm starts. Log residuals, correction norms, status and runtime.",
+      "matches": true
+    },
+    {
+      "key": "scenario_B.common_starts",
+      "worksheet": "T30 Multistart and warm starts",
+      "cell": "B9",
+      "recorded": "Durations[1, 2, 4, 6, 8]s times two joint-path seeds produce10 common starts per planner.",
+      "actual": "Durations[1, 2, 4, 6, 8]s times two joint-path seeds produce10 common starts per planner.",
+      "matches": true
+    },
+    {
+      "key": "scenario_B.cross_seeds",
+      "worksheet": "T30 Multistart and warm starts",
+      "cell": "B13",
+      "recorded": "After all cold starts, snapshot the best finite cold incumbent from A, B and C into a common ordered three-seed pool. Replace a missing slot by the common T4s base seed. Every method solves from all three frozen seeds.",
+      "actual": "After all cold starts, snapshot the best finite cold incumbent from A, B and C into a common ordered three-seed pool. Replace a missing slot by the common T4s base seed. Every method solves from all three frozen seeds.",
+      "matches": true
+    },
+    {
+      "key": "margin.T23_candidate_maxima",
+      "worksheet": "T23 Constant margin baseline",
+      "cell": "B11",
+      "recorded": "mbar_a(theta)>=sup_(t in[t0, t0+T]) m_a(theta, t), for every listed tightening.",
+      "actual": "mbar_a(theta)>=sup_(t in[t0, t0+T]) m_a(theta, t), for every listed tightening.",
+      "matches": true
+    },
+    {
+      "key": "margin.T23_envelope_list",
+      "worksheet": "T23 Constant margin baseline",
+      "cell": "B10",
+      "recorded": "m(theta, t) contains both signed torque margins if one-sided notation is used, or b_tau, i in the symmetric notation, chi_v, i, b_h, j and b_vB, i.",
+      "actual": "m(theta, t) contains both signed torque margins if one-sided notation is used, or b_tau, i in the symmetric notation, chi_v, i, b_h, j and b_vB, i.",
+      "matches": true
+    }
+  ],
+  "workbook_sha256": "bdddc29df8ca30514b9b6f31fc96372b5460a1bf22e5c40011979bb73d9ad77a",
+  "owner_approval": "RECORDED_IN_SUPPLIED_POLICY; NOT AN INDEPENDENT SIGNATURE",
+  "T29_csv_legacy_status_note": "CSV still says RECOVERED_FROM_PROTOCOL_NOT_APPROVED; supplied v1.2.1 C6 explicitly approves the protocol rule. Original CSV preserved.",
+  "human_signatures": {
+    "project_owner": {
+      "status": "APPROVED_VIA_CHAT",
+      "date": "2026-11-01",
+      "scope": "T04b T06a T02 independent dynamics evidence; C1-C6; proposed config/protocol"
+    },
+    "independent_T04b_reviewer_signature": null,
+    "independent_T06a_reviewer_signature": null,
+    "independent_T02_reviewer_signature": null,
+    "independent_dynamics_reviewer_signature": null,
+    "controls_reviewer_signature": null,
+    "theory_reviewer_signature": null,
+    "T29_standalone_signature": null
+  }
+}

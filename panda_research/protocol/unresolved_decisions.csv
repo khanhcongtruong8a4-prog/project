@@ -1,0 +1,18 @@
+id,topic,state,owner_role,required_action
+D01,M1 versus M2,M1 common constants proposed; not team-approved,Team lead/controls,Approve M1 and obtain exact envelope/dependency equations
+D02,Missing mathematical framework,OPEN,Controls/theory owner,Supply earlier senior-engineer framework and decision brief; manuscript if available
+D03,Frozen domain/constants,OPEN,Dynamics/controls,"Select speed/acceleration/tube domains, estimator grid/seed/budget and every constant/formula/unit"
+D04,DOB K_o (T10),UNSELECTED,Controls,"Choose positive 7-vector gains, units s^-1"
+D05,Tracking Lambda/kappa (T11),UNSELECTED,Controls,Choose gains and units consistent with manuscript
+D06,HOCBF gains (T14),UNSELECTED,Controls,Choose alpha_1/alpha_2/alpha_v and initial conditions
+D07,w_min and physical reserves,UNSELECTED,Controls,"Choose w_min>0, all signed margins/reserves and row scales"
+D08,Electrical coefficients/objective (T08/T09),UNSELECTED,Energy/model owner,"Supply representative k_r, smoothing, w_t, durations, sensitivity multipliers; do not claim calibration"
+D09,T22 Scenario A,PENDING APPROVAL/SELECTION,Team lead,Approve retained selection rule; freeze selected index/task/plan before baselines
+D10,Scenario B target suite,PROPOSED FIXED LIST,Team lead,Approve the 64-target file and its hash before either method runs
+D11,Solver/transcription/T23/T30,UNSELECTED,Optimization lead,"Freeze NLP/QP solver versions, settings, grid, T23 maximum construction, derivatives, warm starts, seeds, multistarts and budgets"
+D12,Integrator/control period T29,PROPOSED METHOD / VALUES UNSELECTED,Controls,"Approve RK4/refinement proposal; select Delta, m, validation grid and exact update/hold semantics"
+D13,Source/frame/dynamics acceptance,PENDING SIGNATURE,Qualified independent dynamics reviewer,Review and sign T04b/T06a and external dynamics evidence
+D14,Research master workbook,MISSING,Research owner,Supply read-only registry to reconcile all frozen values and tracker IDs
+D15,A2/T27/G2.5,NOT_RUN,Engineering after prerequisites,"Authorize A2 only after review/settings; run refinement, solver accuracy and frozen tightening screen"
+D16,Signed protocol/manifest,PENDING SIGNATURE,Team lead/controls,Complete all values then sign/date/hash actual approved artifacts
+D17,Level 1 m1 and theorem conditions,NOT_RUN,Verification/theory reviewer,Outward-rounded global m1>0 and all other required verified bounds

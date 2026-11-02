@@ -1,0 +1,219 @@
+{
+  "name": "zero_normal_constant_1.0",
+  "G": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "c": [
+    1.0
+  ],
+  "scales": [
+    1.0
+  ],
+  "row_names": [
+    "zero"
+  ],
+  "nominal": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "oracle": {
+    "feasible": true,
+    "passed": true,
+    "separate_algorithm": "SLSQP, zero initialization, never given an exact witness",
+    "SLSQP_status": 0,
+    "SLSQP_success": true,
+    "SLSQP_scaled_primal": 0.0,
+    "SLSQP_error_vs_exact": 0.0,
+    "exact_certificate": {
+      "passed": true,
+      "checks": {
+        "all_inequalities_exact_nonnegative": true,
+        "all_duals_exact_nonnegative": true,
+        "stationarity_exact_zero": true,
+        "complementarity_exact_zero": true
+      },
+      "active_indices": [],
+      "unique_optimum_y_float_display_only": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_optimum_y": [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        }
+      ],
+      "exact_dual": [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        }
+      ],
+      "exact_scaled_slacks": [
+        {
+          "numerator": "9007199164668999",
+          "denominator": "9007199254740992"
+        }
+      ],
+      "scope": "EXACT_RECORDED_BINARY64_SCALED_STRICTLY_CONVEX_QP_ONLY; NOT_EXACT_ROBOT_MODEL_OR_LEVEL1",
+      "hypothesis_selection": "Supplied indices; all KKT sufficiency conditions independently verified in rational arithmetic"
+    }
+  },
+  "query": {
+    "applied": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "status": "QPSolverOutput.PROXQP_SOLVED",
+    "stop_requested": false,
+    "diagnostics": {
+      "solver": "ProxQP 0.7.2+guarded-support-sign-v1",
+      "settings": {
+        "version": "A2_QP_NUMERICS_V2",
+        "variable": "y=tau/87 N m; isotropic Hessian I",
+        "constraint_scaling": "Euclidean unit normal in y, positive row scaling only",
+        "inward_guard_original_row_scale": 1e-08,
+        "guard_rule": "G tau+c >= 1e-8 * original row scale",
+        "eps_abs": 1e-12,
+        "eps_rel": 0.0,
+        "max_iter": 10000,
+        "check_duality_gap": true,
+        "eps_duality_gap_abs": 1e-12,
+        "eps_duality_gap_rel": 0.0,
+        "original_normalized_primal_target": 1e-09,
+        "original_scaled_stationarity_target": 1e-09,
+        "wall_budget_s": 15.0,
+        "retry": false,
+        "post_QP_projection": false
+      },
+      "backend_correction": {
+        "version": "GUARDED_QP_RELIABILITY_V1",
+        "library_sha256": "3370c29e2c3e42db44bc7cfed1d385ebc6680a519a1501693c223575122fc8c1",
+        "patch_sha256": "17bfb8591a02d624f870cb8766ac0d36040649ad3f75f05855814c06cf5913a5",
+        "settings_and_initialization_unchanged": true
+      },
+      "row_names": [
+        "zero"
+      ],
+      "row_units": [
+        "test"
+      ],
+      "row_scales": [
+        1.0
+      ],
+      "row_scaling_denominator": [
+        1.0
+      ],
+      "inward_guard_raw": [
+        1e-08
+      ],
+      "recovery": "DISABLED",
+      "replan_requested": false,
+      "cold_solves": 1,
+      "post_solve_repair": false,
+      "iterations": 0,
+      "duality_gap": 0.0,
+      "tau_candidate": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dual_original": [
+        0.0
+      ],
+      "dual_scaled": [
+        0.0
+      ],
+      "raw_slacks": [
+        1.0
+      ],
+      "normalized_slacks": [
+        1.0
+      ],
+      "exact_all_rows_nonnegative": true,
+      "negative_raw_row_count": 0,
+      "normalized_primal": 0.0,
+      "scaled_stationarity": 0.0,
+      "guarded_normalized_primal": 0.0,
+      "guarded_scaled_stationarity": 0.0,
+      "complementarity": 0.0,
+      "guarded_complementarity": 0.0,
+      "negative_upper_dual": 0.0,
+      "intervention_Nm": 0.0,
+      "torque_upper_slack": [
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "torque_lower_slack": [
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "numerical_solver_acceptance_not_invariance_proof": true
+    }
+  },
+  "physical_error_vs_exact_Nm": 0.0,
+  "passed": true,
+  "wall_s": 0.008516437002981547,
+  "torque_actuated": false
+}

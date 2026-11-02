@@ -1,0 +1,14 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Obtaining file:///workspace/a2-acceptance-clean/panda_research
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: ic2ai-panda-research
+  Building editable for ic2ai-panda-research (pyproject.toml): started
+  Building editable for ic2ai-panda-research (pyproject.toml): finished with status 'done'
+  Created wheel for ic2ai-panda-research: filename=ic2ai_panda_research-1.2.1-0.editable-py3-none-any.whl size=1473 sha256=71840fed7fd74bcebfb94d1650c498fa35b7dcfbbccd092945dada64fc030749
+  Stored in directory: /tmp/pip-ephem-wheel-cache-h2m0z8c7/wheels/7c/b1/4b/a415e2b4f2e057500831c56b5c17f3016adda7ba686a8287a4
+Successfully built ic2ai-panda-research
+Installing collected packages: ic2ai-panda-research
+Successfully installed ic2ai-panda-research-1.2.1

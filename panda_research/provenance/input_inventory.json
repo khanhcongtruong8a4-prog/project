@@ -1,0 +1,24 @@
+{
+  "supplied": [
+    "Handoff prompt TXT",
+    "Phase1 ZIP (9 members)",
+    "Full-package reviewer DOCX",
+    "Action_2026-10-31.docx"
+  ],
+  "missing_required_for_full_protocol_freeze": [
+    "IC2AI_2027_Simulation_Research_Master.xlsx (read-only)",
+    "IC2AI_2027_Senior_Engineer_Model_and_Verification_Prompt_2026-10-31.txt",
+    "IC2AI_2027_Simulation_Decision_Brief.docx"
+  ],
+  "missing_optional": [
+    "Project.rar manuscript sources/PDFs"
+  ],
+  "historical_not_supplied_not_merged": [
+    "IC2AI_2027_Section_IV_Action_Pack_2026-10-31.xlsx"
+  ],
+  "not_independently_retrieved": [
+    "Gaz main-paper institutional PDF",
+    "Author erratum webpage"
+  ],
+  "impact": "P0/source-table/external numerical checks complete without these; exact equation-level planner mapping, registry reconciliation, hardware identification claims and signed protocol freeze remain unavailable"
+}

@@ -1,0 +1,12 @@
+{
+  "command": "python scripts/a3_qp_bounds_tables.py <retained-run>",
+  "scope": "READ_ONLY_DERIVED_TABLES_NO_NEW_SOLVE",
+  "inputs": {
+    "t27_fixtures.json": "e7fba850f83d28bb198ad38cb31f2939c8254a8e3c35ba4b22e3403a50651fcb",
+    "g25_screens.json": "cbe5fd1b34c561858bfaa00438a1fe7532e5780c1eac452f880e3863d653b3a2"
+  },
+  "outputs": {
+    "T27_FIXTURE_SUMMARY.csv": "f448a1521e30e1da1ebf7aa73a694652e174d9be7588f418c119d8ace53199bd",
+    "G2_5_POINT_SUMMARY.csv": "9cc2efd827819e90e50eab8a9737eb8e0a6b39b1b09daedcfc937216f171c459"
+  }
+}

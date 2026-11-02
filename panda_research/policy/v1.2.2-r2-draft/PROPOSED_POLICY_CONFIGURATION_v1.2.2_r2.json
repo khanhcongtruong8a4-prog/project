@@ -1,0 +1,586 @@
+{
+  "schema_version": "IC2AI-2027-policy-v1.2.2-DRAFT",
+  "prepared_date": "2026-11-01",
+  "status": "DRAFT / OWNER APPROVAL PENDING",
+  "baseline_model_manifest_sha256": "58ec25965324fb092b29d8f57a0fa7b19effe1b0f1a1ad6416563477fdcab4fb",
+  "baseline_evaluator_sha256": "698a92efd624b603133cd5ea5a3fe31d0752d210ffe4291a02bab64a0d3cba1c",
+  "working_evaluator_sha256": "9a0f100459c93f59ba75133fc682f111505909627de3bf29bb0bf823b64f025d",
+  "model_identity": "Unchanged seven Gaz moving bodies; c1z author zero; signed COM tensors; smooth author friction; no hand/payload/rotor/elastic states",
+  "gravity_world_m_s2": [
+    0,
+    0,
+    -9.80665
+  ],
+  "base_transform": "identity",
+  "joint_zero_offsets_rad": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "fixed_flange_z_m": 0.107,
+  "tcp": "panda_link8 flange",
+  "task_orientation": "free",
+  "technical_external_validation": "Prior numerical comparisons report a pass; project owner accepts evidence; not a fresh reproduction",
+  "human_dynamics_acceptance": "PROJECT_OWNER_ACCEPTED_EVIDENCE_VIA_CHAT; independent signer not recorded",
+  "proposed_comparison_evidence_level": "Level 2 NUMERICAL/SAMPLED \u2014 POLICY APPROVED; no actual comparison computed",
+  "margin_mode": {
+    "proposed": "M1 common frozen domain/tube constants",
+    "approved": "M1_COMMON_FROZEN_DOMAIN_CONSTANTS",
+    "constant_values": null,
+    "equation_map": null,
+    "position_domain_extension_rad": 0.01,
+    "speed_domain": null,
+    "acceleration_domain": null,
+    "tube_extension": null,
+    "estimator_grid": null,
+    "estimator_seed": null,
+    "estimator_budget": null,
+    "update_frequency": "Once per frozen configuration; identical across candidates/methods",
+    "evidence_level": "LEVEL_2_SAMPLED_ESTIMATES_ONLY",
+    "constant_update_policy": "Compute once per fully specified pre-experiment configuration; never adapt after candidate screening; same for all methods",
+    "global_bound_certified": false,
+    "exact_formula_gate": "Trace every constant and margin back to hashed manuscript before implementation"
+  },
+  "disturbance": {
+    "status": "APPROVED STUDY CHOICE; NOT MEASURED",
+    "type": "dual harmonic",
+    "amplitude_fraction": 0.02,
+    "omega_rad_s": 1,
+    "t_ref_s": 0,
+    "phase_i": "2*pi*(i-1)/7",
+    "dbar_i": "0.02*tau_max_i",
+    "dbar1_i": "1.4*dbar_i*omega",
+    "global_clock": true
+  },
+  "observer_initialization": {
+    "dhat0": 0,
+    "z0": "-K_o*M(q0)*qd0",
+    "varpi0": "dbar",
+    "replan": "retain observer and propagated bound"
+  },
+  "gains": {
+    "K_o_s_inverse": [
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "Lambda": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "kappa": 10,
+    "alpha_1": 5,
+    "alpha_2": 5,
+    "alpha_v": 5
+  },
+  "physical_parameters": {
+    "w_min": "0.1 * manipulability(q0); q0 frozen midpoint of physical joint box",
+    "position_reserve_rad": null,
+    "velocity_reserve_rad_s": 0.0002175,
+    "torque_reserve_Nm": 0.0012,
+    "barrier_reserves": {
+      "policy": "T16 barrier-specific, not one shared unit-bearing scalar",
+      "joint_HOCBF_delta_h_i_rad_s2": "1e-4*(q_max_i-q_min_i)/(1 s)^2",
+      "manip_HOCBF_delta_h_man_m6_s2": "1e-4*w_min^2/(1 s)^2",
+      "velocity_CBF_delta_vB_rad_s2": 0.0002175,
+      "execution_gate": "Map every j-index barrier to its correct reserve before planner use"
+    },
+    "position_reserve_note": "No new position reserve authorized; preserve native position HOCBF and T16 per-barrier acceleration-unit reserves",
+    "eta_delta": 0.0001,
+    "normalization_time_s": 1.0
+  },
+  "energy": {
+    "wording": "MODELED non-regenerative electrical energy",
+    "k_r": [
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.003,
+      0.003,
+      0.003
+    ],
+    "w_t_W": 1,
+    "nonregenerative_smoothing": {
+      "epsilon_W": 0.01,
+      "functional_form": "phi_epsilon(z)=0.5*(z+sqrt(z*z+epsilon*epsilon))",
+      "z": "sum_i(tau_i*qdot_i+k_r_i*tau_i^2)",
+      "scope": "shared-bus aggregate, apply smoothing once AFTER joint sum",
+      "source": "03_contribution.tex in uploaded Project.rar, E_el definition; T09!B13:B14",
+      "status": "FORMULA_SOURCE_CONFIRMED; NOT NUMERICALLY_TESTED"
+    },
+    "sensitivity_protocol": {
+      "k_r_multipliers_proposed": [
+        0,
+        0.5,
+        1,
+        2
+      ]
+    },
+    "T_min_s": 0.5,
+    "T_max_s": 10
+  },
+  "scenario_A_T22": {
+    "rule": "Original protocol section 7 retained; proposal-conditioned",
+    "approval": "TASK_SELECTION_POLICY_APPROVED; no task selected and checked yet",
+    "selected_index": null,
+    "target": null,
+    "plan_hash": null,
+    "configuration_hash": null
+  },
+  "scenario_B": {
+    "file": "protocol/scenario_b_target_suite_PROPOSED.json",
+    "sha256": "413b320b5987fcb6040018bd006541b96fdff5ff15285cc9f3b7079e9d7b044a",
+    "seed": 20261102,
+    "target_count": 64,
+    "approval": "SCENARIO_B_SUITE_POLICY_APPROVED; no baseline executed",
+    "multistart_seed": null,
+    "multistart_count": "10 common cold starts for main A/B/C comparison; 3 shared cross seeds in labeled supplementary sensitivity only",
+    "all_initial_guesses": null,
+    "aggregation_plan": "Compare matched per-task computed objectives with failures disclosed; no global-optimality claims",
+    "include_all_failures": true
+  },
+  "solver": {
+    "NLP": "IPOPT (proposal)",
+    "NLP_version": null,
+    "NLP_settings": {
+      "tol": 1e-08,
+      "constr_viol_tol": 1e-08,
+      "dual_inf_tol": 1e-06,
+      "compl_inf_tol": 1e-06,
+      "acceptable_iter": 0,
+      "max_iter": 2000,
+      "max_wall_time_s": 600,
+      "linear_solver": "mumps",
+      "validation_status": "UNTESTED"
+    },
+    "QP": "ProxQP (proposal)",
+    "QP_version": null,
+    "QP_settings": {
+      "dense": true,
+      "eps_abs_proposed": 1e-10,
+      "complete_T27_validation": "NOT_RUN",
+      "eps_rel": 0,
+      "max_iter": 10000,
+      "check_duality_gap": true,
+      "eps_duality_gap_abs": 1e-12,
+      "eps_duality_gap_rel": 0
+    },
+    "transcription": "Quintic B-spline, 12 control points x 7 joints + free T = 85 vars; details/policy T25 pending",
+    "grid": "NOT_FINALIZED",
+    "budgets": null,
+    "warm_start_policy": null,
+    "T23_constant_maximum_formula": "Each candidate independently replaces each dynamic-envelope component, including chi_v, by its candidate-horizon maximum; Level 2 numerical maxima are sampled approximations, not certified suprema",
+    "nonsmooth_derivative_policy": "NOT_SELECTED; must be preapproved before implementing NLP of candidate-wise maxima",
+    "NLP_quintic_knots_normalized": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.14285714285714285,
+      0.2857142857142857,
+      0.42857142857142855,
+      0.5714285714285714,
+      0.7142857142857143,
+      0.8571428571428571,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "NLP_grid": {
+      "initial_max_gap_s": 0.01,
+      "cell_bisection_limit": 20,
+      "include_spline_knots_and_endpoints": true,
+      "validation_status": "UNTESTED"
+    },
+    "NLP_energy_quadrature": {
+      "Gauss_Legendre_points_per_span_primary": 16,
+      "refinement": 32
+    }
+  },
+  "integration": {
+    "proposed_method": "fixed-step RK4",
+    "approved_method": "FIXED_STEP_RK4 with zero-order-held torque for selected baseline; subject to A2 test",
+    "control_period_s": 0.001,
+    "substeps_m": 4,
+    "h_s": 0.00025,
+    "validation_grid": [
+      {
+        "control_period_s": 0.001,
+        "rk4_step_s": 0.00025
+      },
+      {
+        "control_period_s": 0.001,
+        "rk4_step_s": 0.000125
+      },
+      {
+        "control_period_s": 0.0005,
+        "rk4_step_s": 0.00025
+      },
+      {
+        "control_period_s": 0.0005,
+        "rk4_step_s": 0.000125
+      }
+    ],
+    "observer_update_semantics": "PROPOSED_COUPLED_CONTINUOUS_Q_QD_Z_RK4; OWNER/CONTROLS APPROVAL PENDING",
+    "max_refinement_rounds_proposed": 3,
+    "refinement_approval": "POLICY_APPROVED_BY_PROJECT_OWNER; NOT_EXECUTED",
+    "A2_executed": false,
+    "C4_precedence_note": "The approved full 2x2 grid supersedes workbook T25 h=Delta/4 for the Delta=.5 ms,h=.25 ms (m=2) cell."
+  },
+  "fixed_acceptance_thresholds": {
+    "relative_refinement": 0.0001,
+    "energy_abs_J": 1e-06,
+    "duration_abs_s": 1e-06,
+    "intervention_difference_abs_Nm": 1e-07,
+    "normalized_slack_difference_abs": 1e-06,
+    "zero_intervention_Nm": 1e-06,
+    "QP_normalized_primal": 1e-09,
+    "QP_scaled_stationarity": 1e-09,
+    "minimum_reserve_to_row_scale_strictly_greater_than": 1e-07,
+    "planned_terminal_error_m": 1e-06,
+    "actual_terminal_error_m": 0.001,
+    "raw_negative_slack": "FAIL even near numerical resolution",
+    "zero_intervention_kind": "APPROVED NUMERICAL DIAGNOSTIC ONLY; not certified solver error",
+    "T29_source": "Action_2026-10-31.docx Protocol v1.0 \u00a78.1; no original T29 worksheet present in Tasks_2026.xlsx"
+  },
+  "approvals": {
+    "owner": null,
+    "controls_lead": null,
+    "controls_reviewer_signature": null,
+    "theory_reviewer_signature": null,
+    "build_revision_confirmation": null,
+    "written_A2_authorization": null,
+    "project_owner": null,
+    "independent_dynamics_reviewer_signature": null,
+    "T29_standalone_signature": null
+  },
+  "gates": {
+    "A1": "GO, component development only",
+    "A2": "NO-GO, startup fails and independent human/build/policy gates remain",
+    "A3": "NO-GO, A2/T27/G2.5/M1/frozen tasks outstanding",
+    "Level_1": "NO-GO",
+    "publication": "NO-GO",
+    "P1": "FAIL, frozen development torque hold rejected; verified startup NOT APPROVED"
+  },
+  "development_version": "1.2.2-draft",
+  "technical_validation": "See reports/latest.json and its run; both engines validate identical cases; no human acceptance inferred",
+  "prior_remediation_evaluator_sha256": "6d2c381ad278493fe941cd18df9fbebba9909e06dc90a14e6a41132c72239cf0",
+  "missing_original_task_workbook": null,
+  "source_data_technical_check": "91 Gaz parameters and 28 manufacturer limits are source-check results in earlier package; no new re-run in this approval revision",
+  "model_acceptance_gate": "PROJECT_OWNER ACCEPTED EVIDENCE; independent qualified reviewer signature and proof level not inferred",
+  "provenance_file": "original_Tasks_2026_provenance.csv",
+  "unresolved_conflicts": "P1 frozen holding tolerance failed. Replacement startup decision, independent human review and manuscript build confirmation remain pending; planner M1/floor issue remains separate.",
+  "A2_test_executed": false,
+  "A3_comparisons_authorized": false,
+  "team_approval": null,
+  "configuration_freeze_approval": null,
+  "approval_scope": null,
+  "manuscript": {
+    "canonical_archive": "Project.rar as uploaded",
+    "source_hash_file": "manuscript_source_hashes.json",
+    "canonical_03_contribution_sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+    "velocity_margin": "abs(alpha_v-lambda_i)*chi_v as in canonical 03_contribution.tex",
+    "barrier_reserve_interpretation": "delta_h,j with T16 physical units; manuscript scalar notation unchanged",
+    "source_edited": false,
+    "remaining_theory_review": "Barrier notation reconciliation before formal theorem/certification claims"
+  },
+  "source_workbook": {
+    "filename": "Tasks_2026.xlsx",
+    "sha256": "bdddc29df8ca30514b9b6f31fc96372b5460a1bf22e5c40011979bb73d9ad77a",
+    "status": "READ_DIRECTLY",
+    "cell_mapping": "original_Tasks_2026_provenance.csv",
+    "missing_sheets": "T02, T12, T13, T22, T29 not present in supplied Tasks_2026.xlsx; T29 rules from v1.0 protocol"
+  },
+  "approval_scope_note": "v1.2.1 decisions are inherited only for unchanged fields. This file has no approval or execution authority.",
+  "baseline_approval_record": {
+    "path": "policy/v1.2.1/APPROVED_POLICY_CONFIGURATION_v1.2.1.json",
+    "sha256": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530",
+    "commit": "cea93d667350d56df7f7de2426f3679ee6eacce0",
+    "release_sha256": "7b96c24e6a56dfbde805ba610d1564b4128c20fe291b01dce4663e2696122292",
+    "status": "IMMUTABLE OWNER-APPROVED DESIGN BASELINE, NOT AN A2 RUN AUTHORIZATION"
+  },
+  "A2_execution_reference": {
+    "kind": "nonoptimized_measured_state",
+    "duration_s": 0.25,
+    "joint_offset_rad": [
+      0.01,
+      0.0,
+      -0.01,
+      0.0,
+      0.01,
+      0.0,
+      0.0
+    ],
+    "formula": "quintic Hermite in s=t/T: c0=q_start,c1=T*qd_start,c2=0,c3=10*dq-6*T*qd_start,c4=-15*dq+8*T*qd_start,c5=6*dq-3*T*qd_start",
+    "initial_rule": "measured P1 endpoint q,qd; qdd_ref(0)=0 proposed",
+    "endpoint_rule": "q_start+dq, qd_ref(T)=qdd_ref(T)=0",
+    "actual_terminal_position_error_m": 0.001,
+    "planned_terminal_position_error_m": 1e-06,
+    "not_stage1_optimized": true,
+    "approval": null,
+    "actual_zero_endpoint_available": false,
+    "motion_reference_coefficients": null
+  },
+  "observer_proposal": {
+    "method": "coupled continuous z,q,qd RK4 with held applied torque",
+    "discrete_observer_sensitivity": "separate sampled update sensitivity, not a physical sampled-observer certificate",
+    "signed_preparation_clock_execution_support": "IMPLEMENTED_AND_CONTRACT_TESTED_IN_DEVELOPMENT; APPROVAL_PENDING",
+    "approval": null,
+    "sampled_sensitivity_definition": {
+      "update": "Forward Euler z[k+1]=z[k]+Delta*zdot(q[k],qd[k],z[k],tau_applied[k]); dhat at control instants is z[k]+Ko*M(q[k])*qd[k]",
+      "cadence": "One z update per control period for each of the same four C4 cells; no retuning",
+      "plant_state_rule": "During each held-torque plant RK4 step use the sampled observer convention; do not silently couple a continuous z into this sensitivity",
+      "acceptance": "Report full metrics and any violation of the unchanged analytic envelope. A violation FAILS the sampled convention and requires separate theory/discrete-error review. Never enlarge varpi from these results.",
+      "implementation_status": "NOT_IMPLEMENTED_OR_EXECUTED; proposal only",
+      "approval": null
+    }
+  },
+  "failure_semantics": {
+    "hard_qp_infeasibility": "A2_FAIL_NO_ADVANCE_NO_TORQUE_IN_DEVELOPMENT; not a hardware-safe zero torque claim",
+    "recovery_enabled": false,
+    "Kb": null,
+    "gamma": null,
+    "approval": null
+  },
+  "P1_preparation_proposal": {
+    "clock_start": "-T_pre",
+    "clock_A2_start_s": 0.0,
+    "clock_not_restarted": true,
+    "observer_initial_dhat": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "observer_z_init": "-Ko*M(q_start)*qd_start",
+    "holding_policy_proposed": "project_torque_box(SlotineLi(q_ref=q_mid, qd_ref=0, qdd_ref=0, dhat), tau_max); DOB uses actually applied saturated torque",
+    "kinematic_clamp_or_reaction_torque_allowed": false,
+    "maximum_hold_deviation_rad": [
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01
+    ],
+    "maximum_hold_velocity_rad_s": [
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02
+    ],
+    "end_state_rule": "Measured q,qd within declared neighborhood; never assert exact midpoint/zero. Recheck full rows on measured state.",
+    "outside_A2_safety_claim": true,
+    "physical_hold_executed": false,
+    "duration_rule": "Analytic common-Ko exponential threshold over the fixed q sample set for BOTH pair families; round UP to control-period grid and add one period when settling is required; no trial/post-hoc retuning",
+    "T_pre_s": 0.156,
+    "analytical_duration_evidence": "reports/p1_v1.2.2/evidence/static_screen/screen.json#duration_analysis",
+    "screen": {
+      "q_center": "physical_joint_box_midpoint",
+      "q_radius_rad": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "qd_radius_rad_s": [
+        0.02,
+        0.02,
+        0.02,
+        0.02,
+        0.02,
+        0.02,
+        0.02
+      ],
+      "q_sample_rule": "center then all 128 lexicographic sign corners; deterministic, no random selection",
+      "a2_window_s": [
+        0.0,
+        0.25
+      ],
+      "report_times_s": [
+        0.0,
+        0.125,
+        0.25
+      ],
+      "continuous_box_enclosure": "NOT_ESTABLISHED; nodes are numerical point checks only",
+      "complete_qp_fixture_q": "midpoint",
+      "complete_qp_fixture_qd": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "complete_qp_estimate_rule": "zero plus all 128 corners of [-dbar-varpi(0),+dbar+varpi(0)]; no disturbance truth",
+      "complete_qp_policy": "Evaluate only after both pair families pass at prescribed q. Do not adjust duration on a QP failure."
+    },
+    "status": "FAIL_PREDECLARED_DEVELOPMENT_HOLD",
+    "signed_clock_execution_support": "IMPLEMENTED_IN_DEVELOPMENT_ADAPTER; NOT_POLICY_APPROVAL",
+    "holding_dynamics": "M(q)*qdd+C(q,qd)*qd+g(q)+F(qd)=tau_hold+d(t); zdot=-Ko*z-Ko*(Ko*M(q)*qd+tau_hold+C(q,qd).T*qd-g(q)-F(qd))",
+    "hold_integrator_proposed": "Same held applied torque and coupled continuous q,qd,z RK4 as A2 primary; C4 grid; never reset at physical time zero",
+    "torque_rule": "Componentwise torque-box projection is part of the proposed prehold controller only; online hard-QP torque must never be clipped after solving",
+    "validity_requirements": [
+      "Physical hold meets the declared position and velocity tolerance throughout [-T_pre,0]",
+      "DOB uses exactly the torque actually applied after prehold saturation",
+      "One physical disturbance clock including negative t, fixed t_ref=0; no phase restart",
+      "Do not reset z, dhat or varpi at physical time zero",
+      "Measure q(0),qd(0),z(0); verify h>=0,psi1>=0,speed limits and complete 43-row QP at that endpoint",
+      "Verify sampled-data/numerical observer error; analytic continuous envelope alone does not certify an RK4 or sampled observer",
+      "No coverage of the continuous q neighborhood is established by the 129 static nodes"
+    ],
+    "development_model_prehold_executed": true,
+    "physical_hardware_prehold_executed": false,
+    "result": "All four frozen C4 preparation cells violate qd tolerance for joints 3,7 by elapsed 0.00125 s; stopped. No completed zero endpoint.",
+    "evidence": "reports/p1_v1.2.2_r2/evidence/prehold/summary.json"
+  },
+  "A2_acceptance_proposal": {
+    "physical_state": {
+      "criterion": "q_min<=q<=q_max; abs(qd)<=vmax; W>=w_min^2; h>=0; initial psi1>=0; report raw physical slacks",
+      "evaluation": "control instants and retained plant RK4 stages; sampled evidence only, no between-sample certification"
+    },
+    "raw_CBF_rows": {
+      "criterion": "All original 43 raw slacks >=0 at every QP application; any negative raw slack is FAIL even near numerical resolution",
+      "scope": "QP satisfaction at updates is not a continuous-time invariance proof"
+    },
+    "applied_torque": {
+      "criterion": "abs(tau_applied)<=tau_max at all retained stages; no post-QP clipping or fabricated fallback",
+      "on_failure": "Record A2 FAIL and stop development state advance before actuation"
+    },
+    "observer_envelope": {
+      "criterion": "abs(dhat_i-d_i)<=varpi_i(physical_t+T_pre); maximum signed excess <=0 N m for every joint",
+      "truth_access": "post-control diagnostic only; never used for command, observer, time selection or precondition",
+      "numerical_error_allowance_Nm": 0.0,
+      "scope": "Strict proposed numerical diagnostic; no sampled-observer certificate; continuous ideal envelope may fail under discretization"
+    },
+    "QP": {
+      "normalized_primal_max": 1e-09,
+      "scaled_stationarity_max": 1e-09,
+      "additional": "Log status, iterations, complementarity, duality gap, correction and runtime; all complete rows and torque box must pass; full T27 remains open"
+    },
+    "refinement": {
+      "grid": "integration.validation_grid, exactly the four approved C4 cells",
+      "metrics": [
+        "modeled non-regenerative electrical energy J",
+        "run duration s",
+        "max torque correction N m",
+        "minimum normalized raw slack"
+      ],
+      "comparison_rule": "For each factor compare adjacent cells at fixed other factor. Each metric difference must be <= max(approved absolute tolerance, approved relative_refinement*max(abs(values))). Also disclose cross-diagonal differences.",
+      "thresholds": {
+        "relative_refinement": 0.0001,
+        "energy_abs_J": 1e-06,
+        "duration_abs_s": 1e-06,
+        "intervention_difference_abs_Nm": 1e-07,
+        "normalized_slack_difference_abs": 1e-06,
+        "zero_intervention_Nm": 1e-06,
+        "QP_normalized_primal": 1e-09,
+        "QP_scaled_stationarity": 1e-09,
+        "minimum_reserve_to_row_scale_strictly_greater_than": 1e-07,
+        "planned_terminal_error_m": 1e-06,
+        "actual_terminal_error_m": 0.001,
+        "raw_negative_slack": "FAIL even near numerical resolution",
+        "zero_intervention_kind": "APPROVED NUMERICAL DIAGNOSTIC ONLY; not certified solver error",
+        "T29_source": "Action_2026-10-31.docx Protocol v1.0 \u00a78.1; no original T29 worksheet present in Tasks_2026.xlsx"
+      },
+      "additional": "Report terminal errors and envelope excess for every cell. Reuse physical clock, T_pre and declared reference rule; no gain or threshold retuning. Fixed task duration is not a free-time planning result.",
+      "failure": "Any missing/failed cell or criterion keeps A2 FAIL/NO-GO. No automatic refinement or modified policy authorized by this draft."
+    },
+    "terminal_task": {
+      "target": "FK_flange(q_start+predeclared_offset), free orientation",
+      "planned_position_error_m_max": 1e-06,
+      "actual_position_error_m_max": 0.001,
+      "duration_s": 0.25,
+      "prehold_endpoint_rule": "Do not substitute midpoint for measured endpoint; record each C4 endpoint and reference coefficients, disclose any target differences before comparison"
+    },
+    "evidence_level": "DEVELOPMENT, then separately authorized LEVEL_2_SAMPLED only; no LEVEL_1, no paper experiment",
+    "approval": null
+  },
+  "A2_M1_scope": {
+    "reference_kind": "nonoptimized_measured_state",
+    "planner_M1_required_for_this_proposal": false,
+    "online_requirements": "Validated runtime model and geometry, legitimate propagated observer bound, valid measured state, full hard QP, frozen approved execution definition",
+    "stage1_reference": "All actually used planner M1 domain/tube constants and equations required if reference changes to Stage-1",
+    "A3": "Full M1 registry remains OPEN; no invented zeros or point upper bounds"
+  },
+  "source_build_review": {
+    "canonical_equations_match": true,
+    "manuscript_rows": [
+      {
+        "file": "01_introduction.tex",
+        "expected_sha256": "f855b384a19c209c42248ca08768080338a81f51544bf461c36c9d779fc35a68",
+        "actual_sha256": "f855b384a19c209c42248ca08768080338a81f51544bf461c36c9d779fc35a68",
+        "matches": true
+      },
+      {
+        "file": "02_mm&nc.tex",
+        "expected_sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+        "actual_sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+        "matches": true
+      },
+      {
+        "file": "03_contribution.tex",
+        "expected_sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "actual_sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+        "matches": true
+      },
+      {
+        "file": "main.tex",
+        "expected_sha256": "58515900e7ef23b3c13279d046fd2406a16b7c580471206a30b03df95399e53a",
+        "actual_sha256": "58c77edb80d60c98254cbdbdb22e01432c9b1accd8b144d370ded1d76d0fe199",
+        "matches": false
+      },
+      {
+        "file": "Project.rar",
+        "expected_sha256": "9a5364a1101d69e9cccc2475f460f4fa070124b3bd47c3a87bf498a3c51f3e85",
+        "actual_sha256": "28115fbf95860a6618e9bf0017b9bebef87557102f1c17d02876e5169a5099bb",
+        "matches": false
+      }
+    ],
+    "main_tex_and_archive_confirmation": null,
+    "source_files_edited": false
+  },
+  "A2_execution_authorized": false,
+  "development_revision": "v1.2.2-r2",
+  "P1_failure_disposition": {
+    "status": "FROZEN_CANDIDATE_REJECTED_BY_DEVELOPMENT_COUNTEREXAMPLE",
+    "human_replacement_decision": null,
+    "new_controller_or_thresholds_selected": false,
+    "actual_abort_QP": "FULL_43_ROWS_EVALUATED; PRIMAL_INFEASIBLE IN ALL FOUR CELLS",
+    "completed_zero_endpoint": false,
+    "no_retuning": true,
+    "no_motion_after_hold": true,
+    "continuous_true_ODE_neighborhood_certified": false,
+    "interpretation": "A finite violating sampled state rejects the declared tolerance. Dense numerical interpolation and refinement are not a certified continuous-time invariant-region proof."
+  }
+}

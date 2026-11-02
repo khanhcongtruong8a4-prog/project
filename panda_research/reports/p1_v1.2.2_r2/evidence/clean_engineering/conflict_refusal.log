@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/tmp/p1-r2-clean-replay-i1njqwm3/package/IC2AI_Panda_P1_Review_Remediation_v1.2.2_DRAFT_2026-11-02_r2/APPLY_OVERLAY.py", line 60, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/tmp/p1-r2-clean-replay-i1njqwm3/package/IC2AI_Panda_P1_Review_Remediation_v1.2.2_DRAFT_2026-11-02_r2/APPLY_OVERLAY.py", line 42, in main
+    raise ValueError('Local file differs; nothing was written: '+row['target'])
+ValueError: Local file differs; nothing was written: README.md

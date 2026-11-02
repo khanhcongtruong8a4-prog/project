@@ -1,0 +1,226 @@
+{
+  "schema": "IC2AI-P1-r3-A2-numerical-predeclaration-v1",
+  "status": "FROZEN_BEFORE_TESTING_USER_AUTHORIZED_NUMERICAL_ONLY",
+  "declared_utc": "2026-11-02T04:29:06.440494+00:00",
+  "base_commit": "9eb1cba3d7dd850eacf2787c616f3d3e85273fcc",
+  "authorization": {
+    "user_request": "Continue from commit `9eb1cba` on branch `p1-v1.2.2`. Read `panda_research/reports/p1_v1.2.2_r2/REVIEW_REMEDIATION.md`. I authorize simulation development, versioned policy changes, and P1/A2 numerical testing. Implement and freeze the proposed sampled computed-torque P1-r3 controller before testing. Preserve previous failures and approved model parameters. Verify the actual endpoint QP and all four A2 cells; report results honestly without inventing independent signatures.",
+    "P1_A2_numerical_testing": true,
+    "scope": "Simulation development and versioned P1/A2 numerical execution. This records the user instruction, not an independent reviewer signature or a hardware authorization.",
+    "controls_reviewer_signature": null,
+    "theory_reviewer_signature": null,
+    "build_revision_confirmation": null
+  },
+  "approved_base_policy": "policy/v1.2.1/APPROVED_POLICY_CONFIGURATION_v1.2.1.json",
+  "prior_failed_candidate": "policy/v1.2.2-r2-draft/PREDECLARED_DEVELOPMENT_PREHOLD.json",
+  "prior_failure_disposition": "Retain r2 1.25 ms rejection in all four cells without any reinterpretation. r3 changes the startup controller alone; no retrospective tolerance or duration change.",
+  "startup_controller": {
+    "name": "P1-r3 sampled computed-torque static-midpoint startup only",
+    "formula": "u[k]=M(q[k])*(Kp*(qmid-q[k])-Kd*qd[k])+C(q[k],qd[k])*qd[k]+g(q[k])+F(qd[k])-dhat[k]; tau[k]=physical_torque_box_projection(u[k]); ZOH on [t_k,t_k+Delta)",
+    "kp_s_inverse_squared": [
+      562500.0,
+      562500.0,
+      562500.0,
+      562500.0,
+      562500.0,
+      562500.0,
+      562500.0
+    ],
+    "kd_s_inverse": [
+      1218.75,
+      1218.75,
+      1218.75,
+      1218.75,
+      1218.75,
+      1218.75,
+      1218.75
+    ],
+    "design_period_s": 0.001,
+    "design_pole": 0.25,
+    "design_derivation": "Nominal frozen inverse-dynamics double-integrator ZOH: Kp=(1-r)^2/Delta0^2, Kd=(3-2r-r^2)/(2*Delta0), r=0.25, Delta0=1 ms. Fixed same gains in every cell. These poles are a nominal design rationale, not a nonlinear/sample-hold stability certificate.",
+    "implementation": "src/panda_closed_loop/p1_r3.py:SampledComputedTorque",
+    "gain_selection": "New startup-only engineering choice frozen before any r3 test; r2 contains no numerical computed-torque proposal. No gain sweep or pass-conditioned selection.",
+    "execution_controller": "Unchanged approved Slotine-Li Lambda=5/s and kappa=10/s; startup law ends at measured t=0."
+  },
+  "T_pre_s": 0.156,
+  "physical_prehold_interval_s": [
+    -0.156,
+    0.0
+  ],
+  "initial_state": "physical joint midpoint; qd=0; z=-Ko*M(q)*qd; dhat=0 at physical time -0.156",
+  "q_radius_rad": [
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01
+  ],
+  "qd_radius_rad_s": [
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.02
+  ],
+  "C4_grid": [
+    {
+      "control_period_s": 0.001,
+      "rk4_step_s": 0.00025
+    },
+    {
+      "control_period_s": 0.001,
+      "rk4_step_s": 0.000125
+    },
+    {
+      "control_period_s": 0.0005,
+      "rk4_step_s": 0.00025
+    },
+    {
+      "control_period_s": 0.0005,
+      "rk4_step_s": 0.000125
+    }
+  ],
+  "prehold_stop_criteria": {
+    "position": "abs(q-qmid)<=0.01 rad per joint throughout attempted hold",
+    "velocity": "abs(qd)<=0.02 rad/s per joint throughout attempted hold",
+    "torque": "abs(actual held tau)<=tau_max; no ideal clamp or reaction torque",
+    "state": "finite state and original physical h,psi1,speed,manipulability checks at retained stage/end samples",
+    "observer": "post-control diagnostic excess max(abs(d-dhat)-varpi)<=0 Nm at retained stages/end samples; no enlarged bounds",
+    "on_first_failure": "Stop that cell after retaining the first failed substep and dense-interpolant diagnostics; apply no additional torque or state update. Other predeclared C4 cells are independent numerical comparisons, never retuning.",
+    "duration_or_parameter_retry": false
+  },
+  "prehold_continuous_check": {
+    "method": "For every attempted RK4 substep, find all component extrema of its standard cubic continuous extension on theta in [0,1]; check q deviation and qd limits at endpoints and stationary roots. Also check RK4 stage samples.",
+    "claim": "Extrema of a numerical interpolant only. No verified ODE error enclosure, interval state box or continuous-time safety proof is inferred. An observed violation suffices to reject this development candidate."
+  },
+  "observer_semantics": "Coupled continuous q,qd,z RK4 using measured stage states and exact actually applied held torque. No reset at zero. Plant disturbance uses signed physical time; envelope elapsed=t+T_pre.",
+  "sampled_observer_sensitivity": "Outside this frozen coupled-observer candidate. Not run; no physical sampled/delayed observer guarantee is inferred.",
+  "A2_reference": {
+    "kind": "nonoptimized_measured_state",
+    "duration_s": 0.25,
+    "joint_offset_rad": [
+      0.01,
+      0.0,
+      -0.01,
+      0.0,
+      0.01,
+      0.0,
+      0.0
+    ],
+    "formula": "quintic Hermite in s=t/T: c0=q_start,c1=T*qd_start,c2=0,c3=10*dq-6*T*qd_start,c4=-15*dq+8*T*qd_start,c5=6*dq-3*T*qd_start",
+    "initial_rule": "measured P1 endpoint q,qd; qdd_ref(0)=0 proposed",
+    "endpoint_rule": "q_start+dq, qd_ref(T)=qdd_ref(T)=0",
+    "actual_terminal_position_error_m": 0.001,
+    "planned_terminal_position_error_m": 1e-06,
+    "not_stage1_optimized": true
+  },
+  "endpoint": "Actual measured completed prehold q,qd,z at physical t=0 only. Instantiate the frozen Hermite rule, preserve propagated varpi, check previous torque and physical h/psi1/speed/manipulability, solve full original 43-row QP with the actual execution controller and reference at zero. Reuse this solve for first applied input; no second favorable fixture.",
+  "A2_acceptance": {
+    "physical_state": {
+      "criterion": "q_min<=q<=q_max; abs(qd)<=vmax; W>=w_min^2; h>=0; initial psi1>=0; report raw physical slacks",
+      "evaluation": "control instants and retained plant RK4 stages; sampled evidence only, no between-sample certification"
+    },
+    "raw_CBF_rows": {
+      "criterion": "All original 43 raw slacks >=0 at every QP application; any negative raw slack is FAIL even near numerical resolution",
+      "scope": "QP satisfaction at updates is not a continuous-time invariance proof"
+    },
+    "applied_torque": {
+      "criterion": "abs(tau_applied)<=tau_max at all retained stages; no post-QP clipping or fabricated fallback",
+      "on_failure": "Record A2 FAIL and stop development state advance before actuation"
+    },
+    "observer_envelope": {
+      "criterion": "abs(dhat_i-d_i)<=varpi_i(physical_t+T_pre); maximum signed excess <=0 N m for every joint",
+      "truth_access": "post-control diagnostic only; never used for command, observer, time selection or precondition",
+      "numerical_error_allowance_Nm": 0.0,
+      "scope": "Strict proposed numerical diagnostic; no sampled-observer certificate; continuous ideal envelope may fail under discretization"
+    },
+    "QP": {
+      "normalized_primal_max": 1e-09,
+      "scaled_stationarity_max": 1e-09,
+      "additional": "Log status, iterations, complementarity, duality gap, correction and runtime; all complete rows and torque box must pass; full T27 remains open"
+    },
+    "refinement": {
+      "grid": "integration.validation_grid, exactly the four approved C4 cells",
+      "metrics": [
+        "modeled non-regenerative electrical energy J",
+        "run duration s",
+        "max torque correction N m",
+        "minimum normalized raw slack"
+      ],
+      "comparison_rule": "For each factor compare adjacent cells at fixed other factor. Each metric difference must be <= max(approved absolute tolerance, approved relative_refinement*max(abs(values))). Also disclose cross-diagonal differences.",
+      "thresholds": {
+        "relative_refinement": 0.0001,
+        "energy_abs_J": 1e-06,
+        "duration_abs_s": 1e-06,
+        "intervention_difference_abs_Nm": 1e-07,
+        "normalized_slack_difference_abs": 1e-06,
+        "zero_intervention_Nm": 1e-06,
+        "QP_normalized_primal": 1e-09,
+        "QP_scaled_stationarity": 1e-09,
+        "minimum_reserve_to_row_scale_strictly_greater_than": 1e-07,
+        "planned_terminal_error_m": 1e-06,
+        "actual_terminal_error_m": 0.001,
+        "raw_negative_slack": "FAIL even near numerical resolution",
+        "zero_intervention_kind": "APPROVED NUMERICAL DIAGNOSTIC ONLY; not certified solver error",
+        "T29_source": "Action_2026-10-31.docx Protocol v1.0 \u00a78.1; no original T29 worksheet present in Tasks_2026.xlsx"
+      },
+      "additional": "Report terminal errors and envelope excess for every cell. Reuse physical clock, T_pre and declared reference rule; no gain or threshold retuning. Fixed task duration is not a free-time planning result.",
+      "failure": "Any failed/missing cell or criterion means A2 numerical FAIL. No automatic retuning or refinement in r3."
+    },
+    "terminal_task": {
+      "target": "FK_flange(q_start+predeclared_offset), free orientation",
+      "planned_position_error_m_max": 1e-06,
+      "actual_position_error_m_max": 0.001,
+      "duration_s": 0.25,
+      "prehold_endpoint_rule": "Do not substitute midpoint for measured endpoint; record each C4 endpoint and reference coefficients, disclose any target differences before comparison"
+    },
+    "evidence_level": "USER_AUTHORIZED_LEVEL_2_NUMERICAL_SAMPLED_ONLY; no independent review, hardware or publication claim",
+    "approval": "Execution scope supplied by the user instruction recorded above; independent signatures remain null"
+  },
+  "strict_actuation": "Cold ProxQP 0.7.2 with unchanged approved settings. Reject any negative raw row even if normalized T29 residual passes. No post-QP clipping, solver retries, softened rows, fallback or recovery. Stop before additional torque/state advance; preserve attempted step on a diagnostic failure.",
+  "energy_quadrature": "Execution-only modeled non-regenerative shared-bus electrical energy: integrate phi_epsilon(sum_i(tau_i*qd_i+k_r_i*tau_i^2)) with same RK4 stage quadrature. Excludes prehold and w_t*T objective term; fixed .25 s is not an optimized duration.",
+  "refinement_min_slack_definition": "Minimum raw 43-row slack divided by its approved row scale over accepted QP applications on the execution horizon. Failed solve/candidate rows are retained separately and cause failure, never zeroed. Physical and observer sample slacks also checked separately.",
+  "fixed_acceptance_thresholds": {
+    "relative_refinement": 0.0001,
+    "energy_abs_J": 1e-06,
+    "duration_abs_s": 1e-06,
+    "intervention_difference_abs_Nm": 1e-07,
+    "normalized_slack_difference_abs": 1e-06,
+    "zero_intervention_Nm": 1e-06,
+    "QP_normalized_primal": 1e-09,
+    "QP_scaled_stationarity": 1e-09,
+    "minimum_reserve_to_row_scale_strictly_greater_than": 1e-07,
+    "planned_terminal_error_m": 1e-06,
+    "actual_terminal_error_m": 0.001,
+    "raw_negative_slack": "FAIL even near numerical resolution",
+    "zero_intervention_kind": "APPROVED NUMERICAL DIAGNOSTIC ONLY; not certified solver error",
+    "T29_source": "Action_2026-10-31.docx Protocol v1.0 \u00a78.1; no original T29 worksheet present in Tasks_2026.xlsx"
+  },
+  "failure_reporting": "Each C4 cell is attempted independently. A failed prehold or endpoint prevents that cell motion; failed or incomplete horizons cannot pass refinement. Scientific rejection exits 3; engineering errors exit 1. No automatic refinement, retuning or new candidate.",
+  "protected_parameters": [
+    "approved Gaz model and its exact evaluator bytes",
+    "gravity, frame, COM/tensors, friction",
+    "K_o, Lambda, kappa, alpha_1, alpha_2, alpha_v",
+    "disturbance amplitude, phase, signed global clock",
+    "T_pre, hold tolerances",
+    "physical limits/reserves, w_min",
+    "QP settings and raw-negative rule",
+    "energy model",
+    "C4 grid and fixed acceptance thresholds",
+    "manuscript, workbook, prior policy/evidence/signatures"
+  ],
+  "later_gates": {
+    "independent_signatures": null,
+    "build_revision": "OPEN_UNCHANGED",
+    "M1": "OPEN_UNCHANGED",
+    "A3": "NO-GO",
+    "T27_complete": "NOT_RUN",
+    "G2.5": "NOT_RUN",
+    "Level_1": "NO-GO",
+    "publication": "NO-GO"
+  }
+}

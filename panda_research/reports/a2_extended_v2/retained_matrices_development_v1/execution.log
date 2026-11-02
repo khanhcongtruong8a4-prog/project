@@ -1,0 +1,5 @@
+{'case': 'E1_cell_1', 'pass': True, 'status': 'QPSolverOutput.PROXQP_SOLVED', 'min_raw': 0.5604171505550154}
+{'case': 'E3_cell_0', 'pass': True, 'status': 'QPSolverOutput.PROXQP_SOLVED', 'min_raw': 2.1760225621392237e-08}
+{'case': 'E3_cell_1', 'pass': True, 'status': 'QPSolverOutput.PROXQP_SOLVED', 'min_raw': 2.213965366593129e-08}
+{'case': 'E3_cell_2', 'pass': True, 'status': 'QPSolverOutput.PROXQP_SOLVED', 'min_raw': 2.171410073970037e-08}
+{'case': 'E3_cell_3', 'pass': True, 'status': 'QPSolverOutput.PROXQP_SOLVED', 'min_raw': 2.069218574263232e-08}

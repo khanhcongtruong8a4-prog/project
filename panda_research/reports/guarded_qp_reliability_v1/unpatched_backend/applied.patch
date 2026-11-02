@@ -1,0 +1,17 @@
+--- ProxQP-0.7.2/utils.hpp
++++ guarded-QP-reliability-v1/utils.hpp
+@@ -320,6 +320,14 @@
+   T lower_bound_2 = infty_norm(ATdy.to_eigen() + CTdz.to_eigen());
+ 
+   res = lower_bound_2 <= upper_bound && lower_bound_1 <= -upper_bound;
++  if (res) {
++    std::cerr << std::setprecision(17) << "FARKAS_TRIGGER lower_support=" << lower_bound_1
++      << " transpose_norm=" << lower_bound_2 << " threshold=" << upper_bound
++      << " dz_norm=" << infty_norm(dz.to_eigen())
++      << " dz_negative_count=" << (dz.to_eigen().array()<0).count()
++      << " dz=" << dz.to_eigen().transpose() << std::endl;
++  }
++
+   return res;
+ }
+ 

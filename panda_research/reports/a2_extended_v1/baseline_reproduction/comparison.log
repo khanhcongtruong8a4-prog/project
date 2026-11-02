@@ -1,0 +1,12 @@
+{
+  "fresh_gate": "GO",
+  "all_seven_exact": true,
+  "preserved_tracked_files": 1236,
+  "changed": [],
+  "package_inventory_differences": {
+    "pybullet": {
+      "recorded": "3.2.7",
+      "fresh": null
+    }
+  }
+}

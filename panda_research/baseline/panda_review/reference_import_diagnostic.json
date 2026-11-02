@@ -1,0 +1,48 @@
+{
+  "scope": "Initial reference import diagnostic, superseded by compiled-tensor-validated reference import",
+  "production_model_changed": false,
+  "tolerances_changed": false,
+  "failed_initial_comparisons": {
+    "MuJoCo: mass matrix": {
+      "passed": false,
+      "atol": 1e-09,
+      "rtol": 1e-09,
+      "max_absolute_error": 2.8298594023645762e-08,
+      "max_tolerance_ratio": 22.345254949397482,
+      "comparisons": 132
+    },
+    "MuJoCo: kinetic energy": {
+      "passed": false,
+      "atol": 1e-09,
+      "rtol": 1e-09,
+      "max_absolute_error": 7.151647096748093e-08,
+      "max_tolerance_ratio": 22.10208379812353,
+      "comparisons": 132
+    },
+    "MuJoCo: Coriolis-centrifugal plus gravity": {
+      "passed": false,
+      "atol": 1e-08,
+      "rtol": 1e-09,
+      "max_absolute_error": 4.333734082706542e-08,
+      "max_tolerance_ratio": 2.7960179968389576,
+      "comparisons": 132
+    },
+    "MuJoCo: full inverse dynamics including Gaz friction": {
+      "passed": false,
+      "atol": 1e-08,
+      "rtol": 1e-09,
+      "max_absolute_error": 9.032416947718502e-08,
+      "max_tolerance_ratio": 8.237878111165903,
+      "comparisons": 132
+    },
+    "MuJoCo: forward dynamics": {
+      "passed": false,
+      "atol": 1e-08,
+      "rtol": 1e-09,
+      "max_absolute_error": 1.8112282837989824e-06,
+      "max_tolerance_ratio": 164.7432159002299,
+      "comparisons": 132
+    }
+  },
+  "resolution": "Explicit principal inertias and quaternions derived from independent XML tensors; reconstructed compiled tensors verified to 5e-15 absolute tolerance."
+}

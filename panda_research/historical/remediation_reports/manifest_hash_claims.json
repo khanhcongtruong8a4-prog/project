@@ -1,0 +1,25 @@
+[
+  {
+    "field": "module_sha256",
+    "expected": "698a92efd624b603133cd5ea5a3fe31d0752d210ffe4291a02bab64a0d3cba1c",
+    "actual": "698a92efd624b603133cd5ea5a3fe31d0752d210ffe4291a02bab64a0d3cba1c",
+    "result": "PASS"
+  },
+  {
+    "field": "test_script_sha256",
+    "expected": "3363b8de9558fcea94dfec7b1e031b3f523e202876c03c4f1a5893b9360a47c7",
+    "actual": "3363b8de9558fcea94dfec7b1e031b3f523e202876c03c4f1a5893b9360a47c7",
+    "result": "PASS"
+  },
+  {
+    "field": "numerical_report_sha256",
+    "expected": "f272b6f54660ee3a87500c26318bf57316fcc9a5a8447610b3271452768d8262",
+    "actual": "f272b6f54660ee3a87500c26318bf57316fcc9a5a8447610b3271452768d8262",
+    "result": "PASS"
+  },
+  {
+    "field": "canonical_config_sha256",
+    "result": "NOT_RECOMPUTED",
+    "reason": "Original canonical serialization/artifact not supplied; this digest is not treated as an independently reproduced experiment freeze"
+  }
+]

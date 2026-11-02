@@ -1,0 +1,115 @@
+{
+  "status": "HOLD",
+  "stage1_scaffold": "IMPLEMENTED_DEVELOPMENT_ONLY",
+  "M1": {
+    "status": "INCOMPLETE",
+    "missing": [
+      "m1",
+      "mbar_i",
+      "Nbar_Q_il",
+      "nu_and_yb",
+      "chi_s_e_v",
+      "Tube_T_and_K",
+      "Cbar_li",
+      "rho_r_i",
+      "Abar_jl",
+      "Nbar_il",
+      "Bbar_il",
+      "Dbar_jl",
+      "L_u_q",
+      "L_u_qd",
+      "L_u_qdd",
+      "L_h_q",
+      "L_h_qd",
+      "L_h_qdd",
+      "beta_u_and_beta_h",
+      "b_u_plus_minus_h_vB",
+      "residual_Lipschitz_La"
+    ]
+  },
+  "blockers": [
+    "OFFICIAL_A3_COMPARISONS_NOT_AUTHORIZED",
+    "INDEPENDENT_A2_ACCEPTANCE_NOT_RECORDED",
+    "DIGITAL_SAMPLER_THEORY_REVIEW_NOT_RECORDED",
+    "OFFICIAL_T27_ACCEPTANCE_NOT_RECORDED",
+    "POSITIVE_G2_5_NOT_ESTABLISHED",
+    "DYNAMIC_M1_SYMBOLIC_MARGIN_PROVIDER_NOT_VALIDATED",
+    "STAGE1_SOLVER_AND_GRID_VALIDATION_INCOMPLETE",
+    "T22_TASK_FREEZE_NOT_AVAILABLE",
+    "10_COMMON_COLD_START_INPUTS_NOT_FROZEN",
+    "SIGNED_HASHED_COMPARISON_MANIFEST_MISSING",
+    "M1_NUMERICAL_BOUND_REGISTRY_INCOMPLETE"
+  ],
+  "approved_solver_settings_proposal": {
+    "tol": 1e-08,
+    "constr_viol_tol": 1e-08,
+    "dual_inf_tol": 1e-06,
+    "compl_inf_tol": 1e-06,
+    "acceptable_iter": 0,
+    "max_iter": 2000,
+    "max_wall_time_s": 600,
+    "linear_solver": "mumps",
+    "validation_status": "UNTESTED"
+  },
+  "NLP_version": null,
+  "source_map": {
+    "eq_tau_p": {
+      "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+      "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+      "label": "eq_tau_p",
+      "line_start": 51,
+      "line_end": 56
+    },
+    "eq_envelopes": {
+      "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+      "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+      "label": "eq_envelopes",
+      "line_start": 14,
+      "line_end": 21
+    },
+    "eq_beta_bounds": {
+      "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+      "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+      "label": "eq_beta_bounds",
+      "line_start": 65,
+      "line_end": 74
+    },
+    "eq_margins": {
+      "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+      "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+      "label": "eq_margins",
+      "line_start": 82,
+      "line_end": 92
+    },
+    "eq_planner": {
+      "file": "sources/manuscript_v1.2.1/03_contribution.tex",
+      "sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+      "label": "eq_planner",
+      "line_start": 95,
+      "line_end": 108
+    }
+  },
+  "human_signatures": null,
+  "official_solve_executed": false,
+  "recorded_utc": "2026-11-02T08:31:49.558472+00:00",
+  "git_head": "45d1adae85f4f2484202792041e080fa54e23962",
+  "source_sha256": "bdfc73a136c70d8139bef2dd20abef1a8bb4d9ae1ef45a77f0b21d540aa3d1a6",
+  "test_sha256": "7a8c4a7b7ebc3e98ac20f2668f6bd947062f7f08d70d24966eaa6bc38c53db5a",
+  "approved_model_sha256": "9a0f100459c93f59ba75133fc682f111505909627de3bf29bb0bf823b64f025d",
+  "policy_sha256": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "casadi": "3.7.2"
+  },
+  "command": [
+    "/workspace/panda-venv/bin/python",
+    "scripts/stage1_scaffold_check.py",
+    "--report",
+    "reports/a2_extended_v1/stage1/readiness_final.json"
+  ],
+  "cwd": "/workspace/a2-extended/panda_research",
+  "verification_status": "STATICALLY_CHECKED_AND_UNIT_TESTED_SCAFFOLD; OFFICIAL_SOLVE_NOT_VERIFIED"
+}

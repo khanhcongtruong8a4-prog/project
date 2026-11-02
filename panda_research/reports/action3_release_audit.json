@@ -1,0 +1,18 @@
+{
+  "status": "PASS_REPRODUCIBLE_COMPONENT_PACKAGE_A2_HOLD",
+  "audit_utc": "2026-11-01T15:38:57.894454+00:00",
+  "run": "runs/action3/20261101T153729647277Z",
+  "component_tests": 19,
+  "T28_pose_step_comparisons": 66,
+  "original_dynamics_tests": 19,
+  "current_internal_tests": 19,
+  "Pinocchio_states": 154,
+  "MuJoCo_states": 154,
+  "initial_point_filter_feasibility": "FAIL_INFEASIBLE; stopped before advancing",
+  "official_A2": "NOT_RUN; entry command refused with exit 2",
+  "A3": "NOT_RUN",
+  "complete_T27": "NOT_RUN",
+  "G2.5": "NOT_RUN",
+  "Level_1": "NOT_RUN",
+  "preserved_source_policy_and_human_records": true
+}

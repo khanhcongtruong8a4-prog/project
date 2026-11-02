@@ -1,0 +1,7 @@
+{
+  "status": "MISLOCATED_REGRESSION_PARENT_INTERRUPTED_NOT_A_COMPLETED_ACTION3_RUN",
+  "reason": "Initial regression was launched from the checkout rather than the disposable source copy. Parent process was stopped. Child legacy validation completed and wrote two generated report pointers; those originals were restored from 9eb1cba. All new outputs remain retained.",
+  "counted_as_full_regression": false,
+  "completed_full_rerun": "reports/p1_v1.2.2_r3/engineering/action3/run.json",
+  "related_child_legacy_run": "runs/20261102T043035475108Z"
+}

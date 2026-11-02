@@ -1,0 +1,15 @@
+{
+  "source_archive": "Project.rar uploaded in this conversation",
+  "archive_sha256": "9a5364a1101d69e9cccc2475f460f4fa070124b3bd47c3a87bf498a3c51f3e85",
+  "source_status": "UPLOADED_VERSION_HASHED; not confirmed approved manuscript revision",
+  "files": {
+    "01_introduction.tex": "f855b384a19c209c42248ca08768080338a81f51544bf461c36c9d779fc35a68",
+    "02_mm&nc.tex": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+    "03_contribution.tex": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+    "main.tex": "58515900e7ef23b3c13279d046fd2406a16b7c580471206a30b03df95399e53a"
+  },
+  "observations": {
+    "02_mm&nc.tex": "velocity term must be interpreted consistently with updated 03_contribution.tex; no text modified",
+    "03_contribution.tex": "line containing |alpha_v-lambda_i| chi_v exists; scalar delta_h appears in planned and theorem conditions; Remark 1 presence should be confirmed in actual paper build"
+  }
+}

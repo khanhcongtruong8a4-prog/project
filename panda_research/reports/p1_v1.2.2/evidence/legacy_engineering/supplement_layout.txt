@@ -1,0 +1,799 @@
+      Dynamic Identification of the Franka Emika Panda Robot
+With Retrieval of Feasible Parameters Using Penalty-Based Optimization
+   – Supplementary material (revised version: October 15th , 2019) –
+Claudio Gaz1                    Marco Cognetti2                         Alexander Oliva3                   Paolo Robuffo Giordano2                  Alessandro De Luca1
+
+                                                                                                                                      TABLE II
+  Abstract— In this document, we report a number of supple-
+                                                                                                              T RAJECTORY PARAMETERS FOR MODEL IDENTIFICATION OF THE
+mentary materials to our RA-L paper [1].
+                                                                                                                            F RANKA E MIKA PANDA ROBOT.
+             I. J OINT FRICTION PARAMETERS                                                                  Joint j        1         2         3         4         5         6         7
+   Table I provides the numerical values of the parameters                                                   a1,j     -0.2031   -0.0699   0.3076    0.1269    -0.2773   0.2100    -0.2273
+obtained with the fitting procedure described in Sec. IV.B                                                   a2,j     0.1295    -0.5380   0.5864    -0.0253   -0.0857   -0.1194   -0.5636
+of [1]. These parameters refer to the equations                                                              a3,j     -0.0090   -0.2015   -0.4813   -0.2405   0.4810    -0.0950   -0.2099
+               ϕ1,j                      ϕ1,j                                                                a4,j     0.2319    -0.5535   -0.1228   0.2178    0.5311    -0.0964   0.5725
+τf,j =                            −                 , j ∈ [1, . . . , 7],
+        1+e  −ϕ 2,j ( q̇j +ϕ3,j )   1 + e−ϕ2,j ϕ3,j                                                          a5,j     -0.7598   0.2352    -0.5273   0.6984    -0.1639   -0.0399   -0.3748
+which model the friction acting at the robot joints.
+                                                                                                              b1,j    -0.1136   -0.2437   0.3898    0.0401    0.5491    0.0692    0.2023
+                                              TABLE I                                                         b2,j    0.6600    0.1820    -0.0268   -0.1503   0.1046    -0.6946   -0.2570
+                   E STIMATED JOINT FRICTION PARAMETERS .                                                     b3,j    -0.1858   -0.2390   0.0179    0.2359    0.0407    -0.4442   -0.5010
+       Joint 1      Joint 2       Joint 3      Joint 4      Joint 5       Joint 6      Joint 7     units      b4,j    0.1867    -0.2647   0.4767    -0.2022   -0.0432   -0.5749   0.0774
+ ϕ1   5.4615e-01    0.87224     6.4068e-01    1.2794e+00   8.3904e-01   3.0301e-01    5.6489e-01   N·m        b5,j    0.2357    0.4252    0.2726    0.3693    0.2448    -0.0698   -0.4833
+ ϕ2   5.1181e+00   9.0657e+00   1.0136e+01    5.5903e+00   8.3469e+00   1.7133e+01    1.0336e+01   s/rad
+ ϕ3   3.9533e-02   2.5882e-02   -4.6070e-02   3.6194e-02   2.6226e-02   -2.1047e-02   3.5526e-03   rad/s
+                                                                                                              q0,j    -0.5850   -0.1744   -0.3373   -1.8767   -1.0631   1.7917    -0.7284
+
+
+                                                                                                              Since we noticed already that joint friction is not negligible
+       II. C OMPARISON OF DYNAMIC COEFFICIENTS                                                             for the robot under study, we added in the robot dynamic
+   The manufacturer does not provide any information on                                                    model suitable friction functions to each joint j ∈ {1, 7},
+the dynamic parameters of the Panda robot, and we have no                                                  which are linear in the three parameters fv,j , fc,j , and fo,j
+ground truth values at our disposal for the dynamic coeffi-                                                – see eq. (8) in [1]:
+cients (a.k.a., base parameters) that have to be estimated.
+   Nevertheless, we have compared the dynamic coefficients                                                             τf,j (q̇j ) = fv,j q̇j + fc,j sign(q̇j ) + fo,j .
+obtained with the reverse engineering approach in [1] with                                                 These functions may suffer from sudden discontinuities in
+those of a classical identification method [2] that uses mea-                                              the neighbourhood of q̇j = 0, j = 1, . . . , 7, but are adopted
+surements of the joint positions and joint torques only. In                                                here because of their linearity in the defining parameters.
+this case, static positioning is no longer sufficient and the                                                 The results of the identification process is summarized in
+robot must execute sufficiently exciting trajectories in order                                             Table III. The first column provides the symbolic expressions
+to allow a reliable estimation of the dynamic coefficients. In                                             of the dynamic coefficients. The second and third columns
+particular, following [3], we designed the reference trajecto-                                             show the values of the coefficients π̂ R−E identified using the
+ries for the joints j ∈ {1, 7} as                                                                          reverse engineering approach and, respectively, their standard
+                   L                                                                                       deviations %σ(π̂ R−E ). The regressor condition number is
+                   X al,j                                  bl,j
+      qj (t) =                    sin (lωf t) −                 cos (lωf t) + q0,j ,                       48.9, while the relative error percentage is 0.0315%. The
+                          lωf                              lωf
+                   l=1                                                                                     fifth and sixth columns show the values of the coefficients
+where L = 5 is the number of harmonics, ωf = 0.15π, and                                                    π̂ CLS identified through the classical method with excit-
+the coefficients al,j , bl,j and q0,j are reported in Table II.                                            ing trajectories and, respectively, their standard deviations
+These trajectories have been commanded to the robot joints                                                 %σ(π̂ CLS ). In this case, the regressor condition number is
+during 21 s, collecting a total of 20544 samples of positions                                              121.88, while the relative error percentage is 1.41%. Finally,
+and torques per joint.                                                                                     the fourth column reports the numerical value of the dynamic
+  1 Dipartimento di Ingegneria Informatica, Automatica e Gestionale,                                       coefficients π(p̂) computed by substituting the values of the
+Sapienza Università di Roma, via Ariosto 25, 00185 Roma, Italy. E-mail:                                    dynamic parameters retrieved with our framework [1] in their
+{gaz,deluca}@diag.uniroma1.it.                                                                             symbolic expressions. It can be noted that these values are
+  2 CNRS, Univ Rennes, Inria, IRISA, Rennes, France, E-mail:
+                                                                                                           slightly different from the original ones, showing that the
+{marco.cognetti,prg}@irisa.fr.
+  3 Inria, Univ Rennes, CNRS, IRISA, Rennes, France, E-mail: alexan-                                       ordinary least squares solutions π̂ R−E and π̂ CLS are usually
+der.oliva@inria.fr.                                                                                        not physically consistent [3].
+                                                            TABLE III
+DYNAMIC COEFFICIENTS IDENTIFIED USING OUR REVERSE ENGINEERING APPROACH (π̂ R−E ) AND USING A CLASSICAL APPROACH (π̂ CLS ), WITH
+ THEIR STANDARD DEVIATIONS ( IN PERCENTAGE ). T HE COEFFICIENTS π(p̂) ARE COMPUTED FROM THE RETRIEVED DYNAMIC PARAMETERS p̂.
+                    DYNAMIC COEFFICIENTS π̂ OSI ARE OBTAINED FROM A ONE - STEP IDENTIFICATION PROCEDURE .
+
+                                                     Dynamic coefficients   π̂ R−E           %σ(π̂ R−E )   π(p̂)     π̂ CLS    %σ(π̂ CLS )   π̂ OSI
+
+                                                            J2yy + J1zz      0.0292              0.3735     0.0373    0.0204      2.3609      0.0132
+J2xx −J2yy +J3yy +0.0998m3 +0.632c3z m3 +0.1067(m3 +m4 +m5 +m6 +m7 )         0.9818              0.0176     0.9896    0.9188      0.1202      0.9485
+                                                                    J2xy    −0.0052              1.5625    −0.0040   −0.0033     11.0392      0.0014
+                                                                    J2xz     0.0284              0.2698     0.0103    0.0042     14.3570      7.4640 × 10−4
+                                                                    J2yz    −0.0035              2.3330     0.0008   −0.0155      2.3054     −0.0113
+  J3yy + J2zz + 0.09985 m3 + 0.632 c3z m3 + 0.1067 (m4 + m5 + m6 + m7 )      1.0428              0.0091     1.0358    0.9346      0.0973      0.9491
+                                         J3xx − J3yy + J4yy − 0.0068 m4      0.0106              1.2664     0.0116    0.0149      5.8149     −0.0164
+                                                   J3xy + 0.0825 c4z m4     −0.0002            30.3622      ----      0.0127      3.5669     −0.0020
+                                                                    J3xz    −0.0104              0.4874    −0.0055   −0.0061      5.2129      0.0021
+                                                                    J3yz    −0.0048              1.2379    −0.0044   −0.0138      2.3907     −0.0055
+            J4yy + J3zz + 0.0068 m4 + 0.0136 m5 + 0.0136 m6 + 0.0136 m7      0.1169              0.0691     0.1245    0.0825      0.5394      0.0922
+              J4xx − J4yy + J5yy + 0.768 c5z m5 + 0.1406 (m5 + m6 + m7 )     0.5324              0.0202     0.5408    0.5462      0.0951      0.5381
+               J4xy + 0.0317 m5 + 0.0317 m6 + 0.0317 m7 + 0.0825 c5z m5      0.1501              0.0274     0.1388    0.1202      0.1665      0.1255
+                                                                    Jxz4     0.0048              0.9079     0.0039    0.0040      6.5285     −0.0020
+                                                                    J4yz    −0.0027              1.6177    −0.0016    0.0078      3.4723      1.8047 × 10−4
+         J5yy + J4zz + 0.1543 m5 + 0.1543 m6 + 0.1543 m7 + 0.768 c5z m5      0.6369              0.0103     0.6325    0.6196      0.0829      0.6089
+                                         J5xx − J5yy + J6yy + 0.0077 m7      0.0322              0.2739    −0.0075    0.0114      3.9131      0.0137
+                                                                    J5xy    −0.0037              0.9578    −0.0015    0.0036      5.7718      2.3992 × 10−4
+                                                                    J5xz    −0.0061              0.4932    −0.0046   −0.0102      1.6764     −0.0117
+                                                                    J5yz     0.0077              0.4345     0.0022    0.0080      2.7133      0.0077
+                                                J6yy + J5zz + 0.0077 m7      0.0181              0.3169     0.0276    0.0216      1.6395      0.0210
+                                         J6xx − J6yy + J7yy − 0.0077 m7     −0.0065              1.0591    −0.0009   −0.0157      1.8290     −0.0097
+                                                    J6xy + 0.088 c7z m7      0.0054              0.5331     0.0055    0.0014      8.9602      0.0032
+                                                                    J6xz    −1.2901 × 10−5    218.6430      ----      0.0047      3.8644      0.0039
+                                                                    J6yz     0.0008              3.3084    −0.0001    0.0006     27.1286     −1.0794 × 10−4
+                                                J7yy + J6zz + 0.0077 m7      0.0250              0.1773     0.0304    0.0145      1.8227      0.0204
+                                                            J7xx − J7yy     −0.0018              2.7378     0.0024    0.0024      7.3234      2.6087 × 10−4
+                                                                    J7xy     0.0012              2.0320    −0.0004    0.0049      1.8700      0.0011
+                                                                    J7xz     0.0018              1.2299    −0.0017    0.0023      4.8889      0.0013
+                                                                    J7yz    −0.0006              3.6756    −0.0005   −0.0027      4.7174     −0.0016
+                                                                    J7zz     0.0013              2.6129     0.0049   −0.0043      4.4680      0.0022
+                                                                 c2x m2     −0.0054              0.1551    −0.0020    0.0288      1.8926      0.0280
+ c2y m2 − 0.316 m4 − 0.316 m5 − 0.316 m6 − 0.316 m7 − 0.316 m3 − c3z m3     −3.1026              0.0003    −3.1043   −3.1363      0.0105     −3.1353
+                0.0825 m4 + 0.0825 m5 + 0.0825 m6 + 0.0825 m7 + c3x m3       0.6874              0.0014     0.6842    0.6803      0.0481      0.6814
+                                                        c3y m3 − c4z m4      0.0234              0.0353     0.0282   −0.0121      1.2201     −0.0103
+                            c4x m4 − 0.0825 m6 − 0.0825 m7 − 0.0825 m5      −0.4888              0.0016    −0.4901   −0.4726      0.0368     −0.4742
+                      0.384 m5 + 0.384 m6 + 0.384 m7 + c4y m4 + c5z m5       1.7185              0.0005     1.7207    1.7517      0.0193      1.7525
+                                                                 c5x m5     −0.0100              0.0644    −0.0147   −0.0005     26.5699      0.0015
+                                                        c5y m5 − c6z m6      0.0771              0.0074     0.0824    0.0817      0.1362      0.0815
+                                                      0.088 m7 + c6x m6      0.1657              0.0034     0.1650    0.1637      0.0744      0.1639
+                                                        c6y m6 − c7z m7     −0.0677              0.0083    −0.0688   −0.0623      0.1527     −0.0613
+                                                                 c7x m7      0.0062              0.0744     0.0077    0.0013      6.5781      6.3142 × 10−4
+                                                                 c7y m7     −0.0005              0.9490    −0.0031    0.0048      1.6783      0.0033
+                                                                    fv,1                                              0.0665      1.9658      0.0628
+                                                                    fv,2                                              0.1987      0.9615      0.2088
+                                                                    fv,3                                              0.0399      3.4971      0.0361
+                                                                    fv,4                                              0.2257      0.9124      0.2174
+                                                                    fv,5                                              0.1023      1.5868      0.1021
+                                                                    fv,6                                             −0.0132     12.2607      1.6128 × 10−4
+                                                                    fv,7                                              0.0638      2.1388      0.0632
+                                                                     fc,1                                             0.2450      0.5889      0.2549
+                                                                     fc,2                                             0.1523      0.9602      0.1413
+                                                                     fc,3                                             0.1827      0.7324      0.1879
+                                                                     fc,4                                             0.3591      0.4152      0.3625
+                                                                     fc,5                                             0.2669      0.4668      0.2728
+                                                                     fc,6                                             0.1658      0.8077      0.1529
+                                                                     fc,7                                             0.2109      0.7055      0.2097
+                                                                     fo,1                                            −0.1073      0.6932     −0.1069
+                                                                     fo,2                                            −0.1566      2.9549     −0.1601
+                                                                     fo,3                                            −0.0686      1.1566     −0.0718
+                                                                     fo,4                                            −0.2522      0.9563     −0.2562
+                                                                     fo,5                                             0.0045     19.4633      0.0079
+                                                                     fo,6                                             0.0910      0.8390      0.0935
+                                                                     fo,7                                            −0.0127      6.2628     −0.0070
+  On the other hand, in order to estimate a set of dynamic          and the δ parameters. In order to further validate the pa-
+coefficients which are physically consistent, the following         rameter sets p̂ and δ, we also designed 10 new validation
+one-step approach can be used. It is possible, indeed, to           trajectories (each lasting for 10 seconds), performing the
+change the term φ(pk ) of the cost function in the Parameters       same joint torque comparisons and then computing the mean
+Retrieval algorithm (29) in [1], as:                                square error (MSE) for each trajectory. The concatenated
+                                            2                       joint trajectories are reported in Fig. 2, the concatenated
+                 φ(pk ) = Y π(pk ) − τ          ,                   joint torques in Fig. 3, and the total MSE in Table IV. These
+                                                                    results confirm that both estimates are reliable and consistent.
+where Y is the stacked regressor, τ is the stacked measure-
+ments vector and π(pk ) is the coefficients vector computed
+from the current parameters vector pk . The drawback of the
+use of this function φ (with respect to the one reported in [1])
+is that it is computed from the cumbersome stacked regressor,
+thus affecting the computational time. The identified dynamic
+coefficients π̂ OSI obtained from the previously described
+one-step identification procedure are reported in the seventh
+column of Tab. III.
+   Note that the fourth column of Table III has two missing
+entries for the eight and twenty-fourth dynamic coefficients:
+these small coefficients are in fact discarded due to their large
+standard deviations (see the corresponding second column in
+the table).
+   In conclusion, the similarity between the results obtained
+with the classical method and with our approach indirectly
+confirms the validity of the set of dynamic coefficients in
+Table III for the Panda robot.
+
+      III. C OMPARISON OF DYNAMIC PARAMETERS
+   The dynamic parameters of the Panda robot, i.e., the
+mass, center of mass, and inertia tensor of each link, have         Fig. 1. Comparison between measured joint torques during a validation
+been retrieved by solving the nonlinear optimization problem        trajectory (blue solid lines) and estimated torques generated from a N-E
+                                                                    routine using the p̂ parameters from our parameter retrieval method in [1]
+presented in Sec. V of [1] as well as by using the LMI-SDP          (solid red lines) and the parameters δ from the LMI-SDP framework in [3]
+framework presented in [3], based on the Python code avail-         (solid yellow lines). The torque errors are reported as well.
+able at https://github.com/cdsousa/wam7_dyn_ident. This
+code has been slightly modified in order to include the
+                                                                                               TABLE IV
+triangular inequalities on the inertia tensors, according to [4].
+                                                                       M EAN S QUARE E RROR (MSE) [(N M )2 ] OF TORQUE PREDICTIONS
+The results are reported in the two Tables VIII and IX.
+                                                                    USING THE PARAMETERS p̂ OF OUR METHOD [1] AND THE PARAMETERS
+   In Tab. VIII, the value of c1z is reported as “∗” (don’t
+                                                                    δ OF LMI-SDP APPROACH [3] IN VALIDATION EXPERIMENTS OF F IG . 2.
+care) since it does not have any influence on the dynamics
+(i.e., it does not appear in the E-L model, and can take any
+value).                                                                        Joint 1   Joint 2   Joint 3   Joint 4   Joint 5   Joint 6   Joint 7
+
+   The used lower (LB) and upper (UB) bounds and the final            MSE p̂   0.4068    1.0282    0.5951    0.4231    0.1749    0.0403    0.0267
+value p̂ obtained with our optimization algorithm are shown           MSE δ    0.4955    1.0155    0.2751    0.6627    0.0828    0.0508    0.0284
+in the second to fourth columns. The final parameters δ (in-
+cluding 21 friction parameters) obtained with the LMI-SDP
+method are reported in the fifth columns. In particular, these
+latter values were retrieved from the dynamic coefficients                               IV. VALIDATION IN V-REP
+β ?e by means of eq. (49) in [3], using the same bounds                In order to validate the set of identified parameters re-
+(properly manipulated) that we adopted for our algorithm.           ported in Tables VIII and IX, we built a robot model in V-
+The resulting δ set was then slightly manipulated, in order         REP [5], as shown in Figure 4. We adjusted the parameters
+to obtain for each link the center of mass from the its first       for each link, in order to be compatible with the V-REP
+moment of inertia and the barycentric inertia tensor from the       interface (e.g., for each link, the inertia tensor in V-REP has
+inertia tensors w.r.t. the link frame.                              to be expressed w.r.t. the given CoM reference frame).
+   Figure 1 shows a comparison between the torques mea-                The validation process follows the idea that if the identi-
+sured by the joint torque sensors of the Panda robot during         fication of the robot dynamic parameters is satisfactory, the
+a validation trajectory and the estimated torques generated         measured torques on the real robot, apart from friction which
+from a Newton-Euler (N-E) routine using the p̂ parameters           is not simulated in V-REP, should match the ones provided
+              2                                                                                                      2
+
+              1                                                                                                      1
+   q1 [rad]
+
+
+
+
+                                                                                                         q2 [rad]
+              0                                                                                                      0
+              -1
+                                                                                                                    -1
+              -2
+                                                                                                                    -2
+                   0    10      20     30    40     50         60    70     80    90   100                               0   10   20   30   40     50       60   70   80   90   100
+
+
+                                                                                                                     0
+              2
+
+              1                                                                                                     -1
+   q3 [rad]
+
+
+
+
+                                                                                                         q4 [rad]
+              0
+                                                                                                                    -2
+              -1
+
+              -2                                                                                                    -3
+                   0    10      20     30    40     50         60    70     80    90   100                               0   10   20   30   40     50       60   70   80   90   100
+
+
+                                                                                                                     4
+              2
+                                                                                                                     3
+   q5 [rad]
+
+
+
+
+                                                                                                          q6 [rad]
+              1
+                                                                                                                     2
+              0
+
+              -1                                                                                                     1
+
+              -2                                                                                                     0
+                   0    10      20     30    40     50         60    70     80    90   100                               0   10   20   30   40     50       60   70   80   90   100
+                                                                                                                                                 time [s]
+
+              2
+              1
+   q7 [rad]
+
+
+
+
+              0
+              -1
+              -2
+
+                   0    10      20     30    40     50         60    70     80    90   100
+                                                  time [s]
+
+
+
+
+              Fig. 2.        Joint positions recorded during 10 validation trajectories (10 seconds each). The associated joint torques are reported in Fig. 3.
+
+
+
+
+              10                                                                                                    50
+
+              5
+ [Nm]
+
+
+
+
+                                                                                                       [Nm]
+
+
+
+
+              0                                                                                                      0
+   1
+
+
+
+
+                                                                                                         2
+
+
+
+
+              -5
+
+          -10                                                                                                   -50
+                   0    10      20     30    40     50         60    70     80    90   100                               0   10   20   30   40     50       60   70   80   90   100
+
+
+              40                                                                                                    20
+
+              20                                                                                                    10
+ [Nm]
+
+
+
+
+                                                                                                       [Nm]
+
+
+
+
+                                                                                                                     0
+              0
+   3
+
+
+
+
+                                                                                                         4
+
+
+
+
+                                                                                                                -10
+          -20
+                                                                                                                -20
+                   0    10      20     30    40     50         60    70     80    90   100                               0   10   20   30   40     50       60   70   80   90   100
+
+
+              2                                                                                                      2
+
+              1                                                                                                      1
+   [Nm]
+
+
+
+
+                                                                                                         [Nm]
+
+
+
+
+              0                                                                                                      0
+        5
+
+
+
+
+                                                                                                              6
+
+
+
+
+              -1                                                                                                    -1
+
+                                                                                                                    -2
+              -2
+                   0    10      20     30    40     50         60    70     80    90   100                               0   10   20   30   40     50       60   70   80   90   100
+                                                                                                                                                 time [s]
+          0.4
+
+          0.2
+[Nm]
+
+
+
+
+              0
+  7
+
+
+
+
+        -0.2
+
+        -0.4
+                   0    10      20     30    40     50         60    70     80    90   100
+                                                  time [s]
+
+
+
+
+                                             Fig. 3.         Joint torques recorded during the 10 validation trajectories reported in Fig. 2.
+                                                                                                 In order to confirm the quality of the proposed solution,
+                                                                                              we analyzed the performance also in Cartesian space. To this
+                                                                                              aim, we compared the 3D pose (as obtained from V-REP) of
+                                                                                              the end-effector of the simulated robot with the correspond-
+                                                                                              ing pose obtained by reading the joint positions from the real
+                                                                                              robot and passing them to the direct kinematics module. We
+                                                                                              defined then a position and an orientation error (following the
+                                                                                              Roll-Pitch-Yaw convention), whose mean values are reported
+                                                                                              in Fig, 7 for all physics engines available in V-REP. This
+                                                                                              comparison is shown also in the video accompanying [1].
+                                                                                                 The results support once again the quality of the estimated
+                                                                                              dynamic parameters, since the mean position error is below
+                                                                                              1.5 cm and the mean orientation error is below 3 degrees for
+                                                                                              all the engines. Particularly good results are obtained with the
+                                                                                              ODE engine, with mean errors of less than 5 mm in position
+                                                                                              and below 1.2 deg in orientation. Moreover, the maximum
+                                                                                              errors for the worst performing physics engine (Bullet 2.78)
+                                                                                              are 9.13 cm in position and 3.14 deg in orientation.
+               Fig. 4.    The Franka Emika Panda robot in V-REP.
+                                                                                                   V. U SE OF OUR METHOD WITH NONLINEAR AND
+                                                                                                              CONDITIONAL CONSTRAINTS
+
+by the physics engines of the simulator when performing the                                      In order to retrieve a feasible set of dynamic parameters p̂
+same trajectory.                                                                              for the Panda robot, only linear constraints were used, since
+   In particular, V-REP provides four different free licence                                  the non-convex shapes of the links would allow their centers
+physics engines. A performance comparison of these engines                                    of mass to be located even outside the link themselves.
+is reported in Figs. 5 and 6. Both the real and the simulated                                 We present here a simple example of retrieval of dynamic
+robot are commanded through sinusoidal joint velocity inputs                                  parameters where the use of nonlinear constraints would
+(spanning their maximum available range). Figure 5 shows,                                     be preferable, and which fits then in the framework of our
+for each joint, a filtered version of the measured torques of                                 method [1].
+the real robot (solid blue lines) vs. those provided by the                                      Consider the spatial 2R robot with orthogonal joint axes
+different physics engines (light blue: Bullet 2.78, orange:                                   in Fig. 8. Its (standard) Denavit-Hartenberg kinematic pa-
+Bullet 2.83, yellow: ODE, and purple: Newton). As it can                                      rameters are reported in Table VI. The robot body consists
+be seen, the simulated torques for all engines have a good                                    of two links: link 1 is a cylinder of height l1 = 1.5 m and
+overlap with the measured ones. Figure 6 shows the mean                                       radius r1 = 0.15 m; link 2 has a total length of l2 = 0.8 m
+and the standard deviation of the torque errors for each joint.                               and is composed by a cylinder of length l2 − l20 and radius
+This error is defined as the difference between the measured                                  r2 = 0.08 m, connected at the end with a truncated cone
+torque on the real robot and the one generated from the                                       of length l20 = 0.2 m and with radius r3 = 0.02 m for its
+simulation. We can notice that the mean torque errors are                                     smaller base.
+close to zero while the peaks of the standard deviations are                                                           TABLE VI
+due to measurement noise on the real robot torque readings                                                  DH TABLE OF THE SPATIAL 2R ROBOT.
+and to numerical inaccuracies of the physics engines. In our
+                                                                                                                  i   ai    αi   di    θi
+experiments, all engines showed a good numerical perfor-
+                                                                                                                  1    0   π/2    l1   q1
+mance, as confirmed by the values in Table V, and looking                                                         2   l2     0     0   q2
+at the results in joint space, ODE (although it is the most
+noisy among the engines) and Bullet 2.83 seem to be the
+best performing engines in V-REP.                                                                The assumed ground truth values of the dynamic param-
+                                                                                              eters preal are given in the fourth column of Table VII.
+                          TABLE V                                                                The symbolic form of the dynamic coefficients π 2R ∈ R8
+  M EAN VALUES OF THE TORQUE ERRORS AT THE ROBOT JOINTS FOR                                   of this robot is:
+           EACH PHYSICS ENGINE AVAILABLE IN V-REP.
+                                                                                                                    J1yy + J2yy − 0.64m2
+                                                                                                                                           
+                                                                                                                   2xx − J2yy + 0.64m2 
+                                                                                                                    J
+                Joint 1   Joint 2   Joint 3   Joint 4   Joint 5   Joint 6   Joint 7   units                       
+                                                                                                                           J2xy         
+                                                                                                                                         
+ Bullet 2.78    0.0554    1.7616    -0.7363   -0.0111   0.0735    0.0970    -0.0372   N·m                            J2xz − 0.8c2z m2   
+ Bullet 2.83    0.0508    0.5735    -0.2617   -0.0844   0.0698    0.0628    -0.0386   N·m
+                                                                                                           π 2R = 
+                                                                                                                            J2yz
+                                                                                                                                         .
+                                                                                                                                         
+                                                                                                                                        
+    ODE         0.0474    0.1782    -0.0986   -0.1493   0.0795    0.0397    -0.0386   N·m                              J2zz − 0.8m2     
+  Newton        0.1091    -0.8096   -0.1440   -1.4133   0.0989    0.0027    -0.0255   N·m                              0.8m2 + c2x m2
+                                                                                                                                        
+                                                                                                                           c2y m2
+Fig. 5. Comparison between the torques generated by the real robot during an experiment (blue) and those obtained from the simulated Panda robot in
+V-REP using different physics engines (Bullet 2.78, Bullet 2.83, ODE, Newton).
+
+                                                                                                                                                Errors between Real and V-REP Joint Torque
+                                                                       10
+                                                                                                                                                                                                                     bullet2.78
+                                                                        8                                                                                                                                            bullet2.83
+                                                                                                                                                                                                                     ODE
+                                                                        6                                                                                                                                            Newton
+
+
+                                                                        4
+                                                  Torque errors [Nm]
+
+
+
+
+                                                                        2
+
+                                                                        0
+
+                                                                       -2
+
+                                                                       -4
+
+                                                                       -6
+
+                                                                       -8
+
+
+                                                                            1                                                           2       3                      4                     5         6              7
+
+
+
+
+Fig. 6. Torque errors (w.r.t. the real robot) of the physics engines Bullet 2.78, Bullet 2.83, ODE, and Newton in V-REP during an experiment with the
+Panda robot for each of its 7 joints. The boxes indicate mean values of the errors while the bars denote their standard deviations.
+                                          0.014                                                                                             3
+                                                                                bullet2.78
+                                                                                bullet2.83
+                                                                                                                                                    bullet2.78
+                                                                                                                                                    bullet2.83             the joint torques are recorded during an exciting motion.
+                                                                                ODE                                                                 ODE
+                                          0.012
+                                                                                Newton                                                  2.5         Newton                 Then the dynamic coefficients are properly estimated with
+                                                                                             Mean L-2 norm on orientation error [deg]
+
+
+
+
+                                                                                                                                                                           an ordinary least squares method.
+    Mean L-2 norm of position error [m]
+
+
+
+
+                                           0.01
+                                                                                                                                            2
+
+                                          0.008
+                                                                                                                                                                              At this stage, the algorithm for the retrieval of the dynamic
+                                                                                                                                        1.5
+
+                                          0.006
+                                                                                                                                                                           parameters p̂ is launched, using the bounds on physical
+                                                                                                                                            1
+                                                                                                                                                                           feasibility reported in Table VII, upper and lower bounds
+                                          0.004
+                                                                                                                                                                           on the total mass, 1 ≤ m1 + m2 ≤ 15, and linear constraints
+                                          0.002
+                                                                                                                                        0.5                                on the inertia tensors (exploiting the triangular inequality).
+                                                                                                                                                                           When using box constraints on the position of the center
+                                              0                                                                                             0
+                                                                                                                                                                           of mass of each of the two links, the solution would be
+                                                                                                                                                                           searched in an extra volume (i.e., a parallelepiped) which is
+Fig. 7. The position (left) and orientation (right) mean error for the different                                                                                           Vlink1 = 4/π ≃ 1.27 times larger than the volume of the
+physics engines available in V-REP. While all the physics engines show a
+good performance, ODE seems to outperform the others.                                                                                                                      cylindric link 1 and Vlink2 = 4/π (1 + 2l20 /l2 ) ≃ 2 times
+                                                                                                                                                                           larger than the one of link 2. On the other hand, considering
+   In order to estimate the values of the dynamic coefficients                                                                                                             that the distance of the center of mass from the major link
+π 2R , a numerical simulation is performed using preal and                                                                                                                 axis must be less than its radius, the previous (approximate)
+                                                                       core optimization Algorithm 1 in [1]:
+                                                                                 q
+                                                                       α1 = r1 − c21y + c21z ,
+                                                                                  q
+                                                                             r2 − c22y + c22z ,
+                                                                                                                     if c2x < −l20
+                                                                       α2 =                              q
+                                                                             r2 + r3 −r
+                                                                            
+                                                                                         0
+                                                                                           2
+                                                                                             (l 0
+                                                                                                2 + c        2   2
+                                                                                                     2x − c2y + c2z , otherwise,
+                                                                                                       )
+                                                                                       l              2
+
+
+                                                                          gCoM1 = − min{0, α1 },                  gCoM2 = − min{0, α2 }.
+
+                                                                       Taking advantage of the knowledge of the link shapes, these
+                                                                       nonlinear constraints ensure that each center of mass will
+                                                                       lie inside the corresponding link shape but that no feasible
+                                                                       position is being excluded, thus yielding a complete solution.
+                                                                       A validation test was finally performed, comparing the joint
+                                                                       torques on sinusoidal trajectories that are computed using the
+                                                                       real parameters with the joint torques estimated by means of
+     Fig. 8.   A spatial 2R robot with joints along axes z0 and z1 .   a N-E routine fed with the parameters p̂ reported in the fifth
+                                                                       column of Table VII. The retrieved solution generates just
+                                                                       the same dynamics as obtained with the real parameters.
+                                                                          Another interesting quantity that can be estimated only
+                         TABLE VII                                     when using the N-E inverse dynamics algorithm is the
+ L OWER AND UPPER BOUNDS FOR THE DYNAMIC PARAMETERS OF THE             wrench acting at the robot joint level, i.e., the exchanged
+  2R ROBOT IN F IG . 8, WITH REAL preal AND ESTIMATED p̂ VALUES .      forces/moments between two successive links connected by
+                                                                       a joint. To this aim, it is very important to retrieve a set
+     parameter       LB      UB      preal         p̂         units    of dynamic parameters that is as close as possible to the
+                                                                       real one. To show this, we relaxed the constraints in order
+         m1           0       10       8        4.5788         kg
+                                                                       to obtain a second solution set of dynamic parameters p̂0 ,
+         m2           0       5        3        3.7828         kg
+                                                                       which, however, contains also non-feasible parameters (i.e.,
+         c1x        −∞        ∞      0.01     -0.016124        m       parameters that have no physical meaning).
+         c1y        -1.42    0.08    -0.75     -0.74408        m
+                                                                                      6
+         c1z        −∞        ∞      -0.02     -3.8e-04        m
+                                                                                      4
+         c2x         -0.8     0      -0.1      -0.24487        m
+                                                                                      2
+                                                                            [Nm]
+
+
+
+
+         c2y        −∞        ∞        0       6.16e-06        m                      0
+                                                                                 1
+
+
+
+
+         c2z        −∞        ∞        0       -3.66e-03       m                     -2
+
+        I1xx          0       1      0.03      0.61296       kg·m2                   -4
+
+                                                                                     -6                                           actual torques
+        I1xy          -1      1        0       0.071738      kg·m2                        0   2   4       6   8      10      12   14 torque16
+                                                                                                                                  est.                   18 pars 20
+                                                                                                                                               with feasible
+                                                                                                                  time [s]        est. torque with unfeasible pars
+        I1xz          -1      1        0      -0.0099797     kg·m2                                                                error (fesible pars)
+                                                                                                                                  error (unfeasible pars)
+                                                                                     20
+        I1yy          0       1      0.03      0.022982      kg·m2
+        I1yz          -1      1        0       0.031154      kg·m2                   10
+                                                                          [Nm]
+
+
+
+
+        I1zz          0       1      0.01       0.6172       kg·m2                    0
+                                                                            2
+
+
+
+
+        I2xx          0       1      0.01      0.019819      kg·m2                 -10
+
+        I2xy          -1      1        0      -4.525e-06     kg·m2
+                                                                                   -20
+                                                                                          0   2   4       6   8      10      12   14        16        18        20
+        I2xz          -1      1        0      -0.0077412     kg·m2                                                time [s]
+
+        I2yy          0       1      0.04      0.35386       kg·m2
+        I2yz          -1      1        0      -5.9342e-05    kg·m2     Fig. 9. Validation of estimated parameters in Table VII. A N-E routine
+                                                                       fed with the feasible parameters p̂ and with some unfeasible parameters
+        I2zz          0       1      0.04      0.34412       kg·m2     p̂0 returns similar estimated torques (respectively, red and yellow lines)
+                                                                       along the motion. When comparing these estimates with the actual torques
+                                                                       recorded along a sinusoidal joint trajectory (blue lines, almost overlapped
+                                                                       by the red line), we notice that both sets provide a good torque estimation.
+                                                                           In Fig. 9, the yellow lines represent the estimated joint
+                                                                       torques during a validation experiment coming from a N-
+box constraints on the center of mass of the two links can be          E routine that is being fed with the unfeasible parameters
+replaced by the following (exact) nonlinear and conditional            p̂0 . Despite of this, reliable motion torque estimations can
+(if-else) constraints gCoM1 and gCoM2 , to be used within our          still be appreciated. On the contrary, a strong inconsistency
+                                        180
+
+
+                                        160
+   Force acting on joint 1 (norm) [N]
+
+
+
+
+                                        140
+
+
+                                        120
+
+
+                                        100
+
+
+                                         80
+
+
+                                         60
+                                              0   2   4   6     8      10          12        14         16         18        20
+
+                                                                               real force
+                                                                               est. force with feasible pars.
+                                                                               (   10 6 ) est. force with unfeasible pars.
+                                        180
+
+
+                                        160
+   Force acting on joint 2 (norm) [N]
+
+
+
+
+                                        140
+
+
+                                        120
+
+
+                                        100
+
+
+                                         80
+
+
+                                         60
+                                              0   2   4   6     8      10          12        14         16         18        20
+                                                                    Time [s]
+
+
+
+Fig. 10. Internal forces acting on the joints of the simulated 2R robot during
+a sinusoidal joint trajectory. Estimates of the internal forces obtained from
+a N-E routine are significantly closer to the real internal forces (blue lines)
+if feasible (i.e., physically consistent) dynamic parameters are provided to
+the routine, while estimates obtained from an unfeasible set p̂0 can be even
+106 times larger (!) than real internal forces (note that the yellow line was
+scaled for the ease of reading).
+
+
+may be observed when estimating the internal forces acting
+on the joints, obtained as a byproduct of the standard N-
+E algorithm. As shown by the values of these estimated
+forces in Fig. 10, it can be seen that estimations obtained
+from the feasible parameters p̂ (red lines) are close to the
+real forces (blue lines), while estimations retrieved from the
+unfeasible parameters p̂0 (yellow lines) are almost 106 times
+larger than the real values “felt” at the joints. This confirms
+that a physically-consistent solution which is close to the real
+one is mandatory for estimating the joint wrenches.
+                                                              R EFERENCES
+[1] C. Gaz, M. Cognetti, A. Oliva, P. Robuffo Giordano, and A. De
+    Luca, “Dynamic identification of the Franka Emika Panda robot with
+    retrieval of feasible parameters using penalty-based optimization,” IEEE
+    Robotics and Automation Lett., 2019.
+[2] M. Gautier and W. Khalil, “Direct calculation of minimum set of inertial
+    parameters of serial robots,” IEEE Trans. on Robotics and Automation,
+    vol. 6, no. 3, pp. 368–373, 1990.
+[3] C. Sousa and R. Cortesão, “Physical feasibility of robot base inertial
+    parameter identification: A linear matrix inequality approach,” Int. J.
+    of Robotics Research, vol. 33, no. 6, pp. 931–944, 2014. [Online].
+    Available: https://doi.org/10.1177/0278364913514870
+[4] ——, “Inertia tensor properties in robot dynamics identification: A lin-
+    ear matrix inequality approach,” IEEE/ASME Transactions on Mecha-
+    tronics, vol. PP, pp. 1–1, 01 2019.
+[5] Coppelia Robotics. (2015) V-REP virtual robot experimentation
+    platform. [Online]. Available: http://www.coppeliarobotics.com
+                                                                                               TABLE IX
+                                                                      L OWER AND UPPER BOUNDS FOR THE INERTIA TENSOR ELEMENTS OF
+                                                                      THE PANDA ROBOT AND THEIR CORRESPONDING ESTIMATED VALUES
+                                                                              USING OUR APPROACH (p̂) AND THE ONE IN [3] (δ).
+
+
+
+                                                                        parameter   LB   UB        p̂        δ (from [3])   units
+
+                                                                          I1xx      0     1    7.0337e-01        0.6        kg·m2
+                                                                          I1xy      -1    1    -1.3900e-04   -3.2497e-14    kg·m2
+
+                               TABLE VIII                                 I1xz      -1    1    6.7720e-03    -6.4280e-09    kg·m2
+L OWER AND UPPER BOUNDS FOR MASSES AND CENTERS OF MASS OF                 I1yy      0     1    7.0661e-01        0.6        kg·m2
+THE PANDA ROBOT AND THEIR CORRESPONDING ESTIMATED VALUES                  I1yz      -1    1    1.9169e-02    -6.4280e-09    kg·m2
+          USING OUR APPROACH (p̂) AND THE ONE IN [3] (δ).
+                                                                          I1zz      0     1    9.1170e-03    2.0353e-06     kg·m2
+ parameter      LB      UB            p̂       δ (from [3])   units       I2xx      0     1    7.9620e-03       0.028       kg·m2
+
+    m1           0      10        4.970684     2.0643e-05      kg         I2xy      -1    1    -3.9250e-03   5.5650e-05     kg·m2
+    m2           0      10        0.646926       9.2017        kg         I2xz      -1    1    1.0254e-02      0.0056       kg·m2
+    m3           0      10        3.228604       1.4575        kg         I2yy      0     1    2.8110e-02      0.0291       kg·m2
+    m4           0      10        3.587895       4.5856        kg         I2yz      -1    1    7.0400e-04    -2.7636e-04    kg·m2
+    m5           0      10        1.225946       0.5231        kg         I2zz      0     1    2.5995e-02      0.0011       kg·m2
+    m6           0      10        1.666555       2.0604        kg         I3xx      0     1    3.7242e-02    2.0154e-06     kg·m2
+    m7           0      10       7.35522e-01     0.1718        kg         I3xy      -1    1    -4.7610e-03   -5.9144e-09    kg·m2
+   c1x          -0.05   0.05      3.875e-03     5.202e-08      m          I3xz      -1    1    -1.1396e-02   1.1523e-08     kg·m2
+    c1y         -0.05   0.05      2.081e-03     5.202e-08      m          I3yy      0     1    3.6155e-02    2.0243e-06     kg·m2
+    c1z         -0.4    0.05          *          -0.1750       m          I3yz      -1    1    -1.2805e-02   6.0956e-09     kg·m2
+   c2x          -0.05   0.05      -3.141e-03     0.0015        m          I3zz      0     1    1.0830e-02    2.0164e-06     kg·m2
+    c2y         -0.15   0.05      -2.872e-02     -0.0578       m          I4xx      0     1    2.5853e-02    2.0242e-06     kg·m2
+    c2z         -0.05   0.05      3.495e-03      -0.0384       m          I4xy      -1    1    7.7960e-03    7.1405e-09     kg·m2
+   c3x          -0.05   0.15      2.7518e-02     0.1096        m          I4xz      -1    1    -1.3320e-03   8.8917e-10     kg·m2
+    c3y         -0.05   0.05      3.9252e-02       0.05        m          I4yy      0     1    1.9552e-02    2.0036e-06     kg·m2
+    c3z         -0.1    0.05     -6.6502e-02       -0.1        m
+                                                                          I4yz      -1    1    8.6410e-03    -2.2039e-09    kg·m2
+   c4x          -0.15   0.05      -5.317e-02     -0.0485       m
+                                                                          I4zz      0     1    2.8323e-02    2.0260e-06     kg·m2
+    c4y         -0.05   0.15     1.04419e-01       0.15        m
+                                                                          I5xx      0     1    3.5549e-02    2.0057e-06     kg·m2
+    c4z         -0.05   0.05      2.7454e-02     0.0147        m
+                                                                          I5xy      -1    1    -2.1170e-03   1.6453e-10     kg·m2
+   c5x          -0.05   0.05     -1.1953e-02      -0.004       m
+                                                                          I5xz      -1    1    -4.0370e-03   -3.6824e-10    kg·m2
+    c5y         -0.05   0.05      4.1065e-02      0.045        m
+                                                                          I5yy      0     1    2.9474e-02    2.0037e-06     kg·m2
+    c5z         -0.05   0.05     -3.8437e-02      -0.05        m
+                                                                          I5yz      -1    1    2.2900e-04    2.3080e-09     kg·m2
+   c6x          -0.05   0.15      6.0149e-02     0.0732        m
+                                                                          I5zz      0     1    8.6270e-03    2.0028e-06     kg·m2
+    c6y         -0.05   0.05     -1.4117e-02     -0.0251       m
+                                                                          I6xx      0     1    1.9640e-03    2.0026e-06     kg·m2
+    c6z         -0.05   0.05     -1.0517e-02     -0.0276       m
+                                                                          I6xy      -1    1    1.0900e-04    1.5823e-09     kg·m2
+   c7x          -0.05   0.05      1.0517e-02     -0.0326       m
+                                                                          I6xz      -1    1    -1.1580e-03   2.0530e-09     kg·m2
+    c7y         -0.05   0.05      -4.252e-03     0.0087        m
+                                                                          I6yy      0     1    4.3540e-03    2.0070e-06     kg·m2
+    c7z         0.04    0.15      6.1597e-02     0.0396        m
+                                                                          I6yz      -1    1    3.4100e-04    -4.9387e-10    kg·m2
+                                                                          I6zz      0     1    5.4330e-03    2.0073e-06     kg·m2
+                                                                          I7xx      0     1    1.2516e-02    2.0026e-06     kg·m2
+                                                                          I7xy      -1    1    -4.2800e-04   2.6159e-10     kg·m2
+                                                                          I7xz      -1    1    -1.1960e-03   1.4055e-09     kg·m2
+                                                                          I7yy      0     1    1.0027e-02    2.0037e-06     kg·m2
+                                                                          I7yz      -1    1    -7.4100e-04   -4.2047e-10    kg·m2
+                                                                          I7zz      0     1    4.8150e-03    2.0020e-06     kg·m2
+

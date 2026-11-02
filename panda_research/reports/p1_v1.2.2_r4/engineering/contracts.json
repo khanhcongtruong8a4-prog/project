@@ -1,0 +1,59 @@
+{
+  "scope": "R4_ENGINEERING_CONTRACTS_NOT_INDEPENDENT_SIGNOFF",
+  "tests_run": 12,
+  "overall_pass": false,
+  "checks": [
+    {
+      "test": "__main__.R4Tests.test_GO_has_explicit_numerical_scope_and_never_manufactures_signatures",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R4Tests.test_GO_requires_both_complete_cohorts_and_no_missing_engineering_fields",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R4Tests.test_QP_failure_stops_without_retry_or_extra_state_advance",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R4Tests.test_affine_torque_request_integral_is_exact_after_bootstrap",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R4Tests.test_bootstrap_uses_only_current_request_and_fresh_cells_have_no_history",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R4Tests.test_completed_prehold_without_endpoint_or_execution_cannot_be_GO",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R4Tests.test_endpoint_QP_is_not_recomputed_or_consumed_twice",
+      "result": "FAIL",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/project/panda_research/tests/test_p1_r4.py\", line 104, in test_endpoint_QP_is_not_recomputed_or_consumed_twice\n    self.assertTrue(out['passed'])\nAssertionError: False is not true\n"
+    },
+    {
+      "test": "__main__.R4Tests.test_four_individual_passes_cannot_hide_refinement_failure",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R4Tests.test_history_copies_inputs_and_diagnostics",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R4Tests.test_invalid_request_does_not_consume_history",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R4Tests.test_original_C4_thresholds_and_passing_startup_are_preserved",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R4Tests.test_sampled_linear_feedback_converges_to_analytic_solution_at_second_order",
+      "result": "PASS"
+    }
+  ],
+  "source_sha256": "27d25158bee9aeeb93a016337489562311aef7f99b1f400b448a3567070f3c77",
+  "test_sha256": "e9e4f4aca0e82b9d79ccc7e88530bf966d676958635d11d825b6667ed165ff4a",
+  "plan_sha256": "57eeab27c2d0c9b0ec3bf7f90abce1ecad8a0479688842d379ed0936412c99eb"
+}

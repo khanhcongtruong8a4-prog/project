@@ -1,0 +1,55 @@
+{
+  "scope": "ENGINEERING_CONTRACTS_NOT_INDEPENDENT_REVIEW",
+  "tests_run": 12,
+  "overall_pass": true,
+  "checks": [
+    {
+      "test": "__main__.R3Tests.test_computed_torque_has_correct_inverse_dynamics_and_feedback_signs",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R3Tests.test_exact_zero_transfer_no_observer_or_clock_reinitialization",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R3Tests.test_failed_endpoint_cannot_advance_or_receive_torque",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R3Tests.test_held_torque_plant_and_dob_share_exact_input_for_every_stage",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R3Tests.test_later_qp_failure_stops_before_next_period_actuation",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R3Tests.test_nominal_sampled_poles_derive_frozen_gains_and_both_c4_periods_stable",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R3Tests.test_observer_envelope_violation_is_retained_without_bound_enlargement",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R3Tests.test_quintic_matches_measured_initial_and_terminal_conditions",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R3Tests.test_refinement_checks_all_edges_and_never_passes_missing_or_failed_cells",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R3Tests.test_shared_bus_power_and_rk4_quadrature_do_not_sum_per_joint_smoothing",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R3Tests.test_startup_rejects_moving_reference_and_nonfinite_or_nonpositive_gains",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.R3Tests.test_strict_full_qp_rejects_negative_raw_row_even_when_solver_accepts",
+      "result": "PASS"
+    }
+  ]
+}

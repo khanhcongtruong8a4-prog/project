@@ -1,0 +1,9 @@
+E2 cell 0: P1 starts
+E2 cell 0: PASS_NUMERICAL_CELL; t=1.000000; audit=True
+E2 cell 1: P1 starts
+E2 cell 1: PASS_NUMERICAL_CELL; t=1.000000; audit=True
+E2 cell 2: P1 starts
+E2 cell 2: PASS_NUMERICAL_CELL; t=1.000000; audit=True
+E2 cell 3: P1 starts
+E2 cell 3: PASS_NUMERICAL_CELL; t=1.000000; audit=True
+Evidence: /workspace/a2-extended/panda_research/runs/a2_extended_v4/E2_c02f908

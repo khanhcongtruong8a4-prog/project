@@ -1,0 +1,18 @@
+test_clamped_quintic_partition_and_endpoint_basis (__main__.ScaffoldTests.test_clamped_quintic_partition_and_endpoint_basis) ... ok
+test_decision_layout_is_84_coefficients_plus_free_time (__main__.ScaffoldTests.test_decision_layout_is_84_coefficients_plus_free_time) ... ok
+test_free_time_scaling_matches_exact_linear_bspline_curve (__main__.ScaffoldTests.test_free_time_scaling_matches_exact_linear_bspline_curve) ... ok
+test_gauss_quadrature_integrates_over_all_nonzero_spans (__main__.ScaffoldTests.test_gauss_quadrature_integrates_over_all_nonzero_spans) ... ok
+test_general_hermite_matches_all_six_boundary_conditions (__main__.ScaffoldTests.test_general_hermite_matches_all_six_boundary_conditions) ... ok
+test_invalid_curves_and_mutation_are_rejected (__main__.ScaffoldTests.test_invalid_curves_and_mutation_are_rejected) ... ok
+test_missing_or_invalid_m1_cannot_be_silently_zeroed (__main__.ScaffoldTests.test_missing_or_invalid_m1_cannot_be_silently_zeroed) ... ok
+test_numerical_static_objective_has_correct_free_duration_and_task_constraints (__main__.ScaffoldTests.test_numerical_static_objective_has_correct_free_duration_and_task_constraints) ... ok
+test_official_solver_is_blocked_with_missing_inputs_and_no_signature_invention (__main__.ScaffoldTests.test_official_solver_is_blocked_with_missing_inputs_and_no_signature_invention) ... ok
+test_planned_torque_minus_initial_dhat_and_signed_reserves (__main__.ScaffoldTests.test_planned_torque_minus_initial_dhat_and_signed_reserves) ... ok
+test_shared_bus_smoothing_is_after_sum_and_includes_copper_losses (__main__.ScaffoldTests.test_shared_bus_smoothing_is_after_sum_and_includes_copper_losses) ... ok
+test_symbolic_nlp_graph_matches_numerical_values_without_calling_optimizer (__main__.ScaffoldTests.test_symbolic_nlp_graph_matches_numerical_values_without_calling_optimizer) ... ok
+test_symbolic_source_adapter_matches_frozen_numeric_model_at_154_cases (__main__.ScaffoldTests.test_symbolic_source_adapter_matches_frozen_numeric_model_at_154_cases) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 9.194s
+
+OK

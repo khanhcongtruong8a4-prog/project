@@ -1,0 +1,95 @@
+{
+  "schema": "IC2AI_2027_VERIFIED_A2_POLICY_V1",
+  "version": "A2-verified-1.0.0",
+  "finalized_utc": "2026-11-02T12:59:09.488678+00:00",
+  "status": "FROZEN_SCOPED_NUMERICAL_ACCEPTANCE_GO",
+  "numerical_gate": "GO",
+  "acceptance_scope": "ONLY_ORIGINAL_R4_SEVEN_CELLS_AND_A2_EXTENDED_V4_THREE_FIXED_REFERENCES_ORIGINAL_C4",
+  "authority": {
+    "source": "DIRECT_USER_CONSULTATION_AND_PROCEED_AUTHORIZATION",
+    "additional_administrative_approval_required": false,
+    "consultation_status": "USER_REPORTED",
+    "external_reviewer_identity": null,
+    "external_signature_artifact": null,
+    "interpretation": "User authorizes proceeding and scoped release after mathematical/technical verification; no outside verification or signature is invented."
+  },
+  "protocols": {
+    "original_A2_r4": {
+      "source_commit": "45d1adae85f4f2484202792041e080fa54e23962",
+      "predeclaration_sha256": "57eeab27c2d0c9b0ec3bf7f90abce1ecad8a0479688842d379ed0936412c99eb",
+      "alpha_v_s_inverse": 5.0,
+      "solver": "ORIGINAL_HARD_QP_UNCHANGED",
+      "duration_s": 0.25,
+      "cells": 7,
+      "cohorts": [
+        "original_C4",
+        "finer_confirmation"
+      ]
+    },
+    "A2_Extended_v4": {
+      "control_freeze_commit": "c02f9083de6b81b8d7cc66ec4b0dd2f010abf7cb",
+      "predeclaration_sha256": "f4f6466db39758f6256303bd609afd6480e8e4534216e8811b420a72b03ac591",
+      "amended_configuration_sha256": "aa9261cb37f1402f7ea2a6c7557215be9502bc66904495b2d46fb09859844374",
+      "alpha_v_s_inverse": 10.0,
+      "nominal_sampler": "u0=r0; uk=1.5*rk-0.5*r_previous",
+      "solver": "V2_CURRENT_STATE_GUARDED_QP",
+      "roundoff_guard_in_original_row_scale": 1e-08,
+      "duration_s": 1.0,
+      "references": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "cells": 12,
+      "all_refinement_pairs": 18,
+      "all_metric_comparisons": 72
+    }
+  },
+  "acceptance_checks": {
+    "complete_recovery_of_prior_118_traces": true,
+    "fresh_replay_finished_without_error": true,
+    "all_four_selected_replay_processes_exit0": true,
+    "all_19_cells_and_complete_scientific_traces_exact": true,
+    "original_two_cohorts_and_all_v4_pairs_pass": true,
+    "all_applicable_frozen_contracts_pass": true,
+    "all_2018_prior_source_files_unchanged": true,
+    "all_verification_code_still_frozen": true,
+    "replay_self_report_matches_derived_checks": true
+  },
+  "all_parameters_and_original_sources_preserved": true,
+  "exact_replay": {
+    "cells": 19,
+    "excluded_fields": [
+      "solve_runtime_s"
+    ],
+    "exclusion_reason": "Measured solver wall time only. No scientific field excluded.",
+    "all_metrics_states_and_full_scientific_traces_equal": true
+  },
+  "verification_level": "SOURCE_VERIFIED_AND_EXECUTED_LOCALLY_FRESH_CHECKOUT_FRESH_PINNED_ENVIRONMENT_ON_SAME_HOST",
+  "new_machine_or_independent_human_reproduction_claimed": false,
+  "all_development_tests_pass": false,
+  "failed_diagnostic_test_count": 1,
+  "failed_diagnostic_tests": [
+    {
+      "test": "__main__.AcceptanceMath.test_exact_recorded_QP_optimum_on_preserved_real_43_row_active_fixture",
+      "result": "FAIL",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/a2-acceptance-clean/panda_research/tests/test_a2_acceptance_math.py\", line 100, in test_exact_recorded_QP_optimum_on_preserved_real_43_row_active_fixture\n    self.assertFalse(r.stop_requested)\nAssertionError: True is not false\n"
+    }
+  ],
+  "guarded_QP_general_qualification": "HOLD_CONFIRMED_COUNTEREXAMPLE",
+  "active_v4_recorded_QP_exact_certificate_pass": true,
+  "continuous_sampled_data_theorem_transfer": "NOT_PROVED_OR_CLAIMED",
+  "original_manuscript_or_theorem_rewritten": false,
+  "official_A3_comparisons": "NOT_STARTED_NOT_AUTHORIZED",
+  "Level1_certification": "NOT_ESTABLISHED_NO_GO",
+  "previous_failed_experiments": "PRESERVED_UNCHANGED",
+  "independent_controls_signature": null,
+  "independent_theory_signature": null,
+  "evidence": {
+    "replay_report": "reports/a2_acceptance_v1/acceptance_v1_fresh/REPLAY_COMPARISON.json",
+    "replay_report_sha256": "e70fe644b8e14af96af99e2a26ea202dc1e2e388740126df5e8c5c09ccd792bd",
+    "recovery_proof_sha256": "5c4e6ec778013f071263af256e22be9951f3b667bce334262b9f6016d8861563",
+    "math_contract_report_sha256": "e74910b345aeae41cc511e38d645c3f2aef388d23f2c330c4c7feb3afe01925b",
+    "mathematical_scope_sha256": "2706014f9a6360c661fdf9bc80cc641bda1ed9435749365e8ebeaba47a9d7c03"
+  }
+}

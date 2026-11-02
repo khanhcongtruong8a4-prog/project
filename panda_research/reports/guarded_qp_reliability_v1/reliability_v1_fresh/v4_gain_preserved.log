@@ -1,0 +1,15 @@
+test_actual_G_and_nonvelocity_c_identical (__main__.PolicyV4Tests.test_actual_G_and_nonvelocity_c_identical) ... ok
+test_all_other_controller_observer_and_barrier_gains_unchanged (__main__.PolicyV4Tests.test_all_other_controller_observer_and_barrier_gains_unchanged) ... ok
+test_old_active_request_has_full_new_QP_and_positive_raw_rows (__main__.PolicyV4Tests.test_old_active_request_has_full_new_QP_and_positive_raw_rows) ... ok
+test_only_gain_schema_and_honest_status_change (__main__.PolicyV4Tests.test_only_gain_schema_and_honest_status_change) ... ok
+test_original_alpha5_negatives_are_shadowed_explicitly (__main__.PolicyV4Tests.test_original_alpha5_negatives_are_shadowed_explicitly) ... ok
+test_original_configuration_bytes_unchanged (__main__.PolicyV4Tests.test_original_configuration_bytes_unchanged) ... ok
+test_physical_entry_limits_not_relaxed (__main__.PolicyV4Tests.test_physical_entry_limits_not_relaxed) ... ok
+test_physical_parameters_and_all_acceptance_tolerances_identical (__main__.PolicyV4Tests.test_physical_parameters_and_all_acceptance_tolerances_identical) ... ok
+test_references_grid_thresholds_and_nominal_sampler_remain_frozen (__main__.PolicyV4Tests.test_references_grid_thresholds_and_nominal_sampler_remain_frozen) ... ok
+test_velocity_c_change_is_exact_declared_design_equation (__main__.PolicyV4Tests.test_velocity_c_change_is_exact_declared_design_equation) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 23.718s
+
+OK

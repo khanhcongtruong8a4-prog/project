@@ -1,0 +1,277 @@
+{
+  "freeze_commit": "9c94b0651766f88a625f4977a6a7b79dd1c6cbce",
+  "plan_sha256": "57eeab27c2d0c9b0ec3bf7f90abce1ecad8a0479688842d379ed0936412c99eb",
+  "cells": [
+    {
+      "cell": 0,
+      "grid": {
+        "control_period_s": 0.001,
+        "rk4_step_s": 0.00025
+      },
+      "engineering_error": "Traceback (most recent call last):\n  File \"/workspace/project/panda_research/scripts/p1_r4.py\", line 118, in main\n    cell['audit'] = audit_cell(cell, out, system, plan)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/p1_r4.py\", line 83, in audit_cell\n    hold[-1]['state_after'] == endpoint['state'] == prep['state']\nValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\n",
+      "a2": {
+        "completed": false,
+        "passed": false
+      },
+      "audit": {
+        "passed": false
+      }
+    },
+    {
+      "cell": 1,
+      "grid": {
+        "control_period_s": 0.001,
+        "rk4_step_s": 0.000125
+      },
+      "engineering_error": "Traceback (most recent call last):\n  File \"/workspace/project/panda_research/scripts/p1_r4.py\", line 118, in main\n    cell['audit'] = audit_cell(cell, out, system, plan)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/p1_r4.py\", line 83, in audit_cell\n    hold[-1]['state_after'] == endpoint['state'] == prep['state']\nValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\n",
+      "a2": {
+        "completed": false,
+        "passed": false
+      },
+      "audit": {
+        "passed": false
+      }
+    },
+    {
+      "cell": 2,
+      "grid": {
+        "control_period_s": 0.0005,
+        "rk4_step_s": 0.00025
+      },
+      "engineering_error": "Traceback (most recent call last):\n  File \"/workspace/project/panda_research/scripts/p1_r4.py\", line 118, in main\n    cell['audit'] = audit_cell(cell, out, system, plan)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/p1_r4.py\", line 83, in audit_cell\n    hold[-1]['state_after'] == endpoint['state'] == prep['state']\nValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\n",
+      "a2": {
+        "completed": false,
+        "passed": false
+      },
+      "audit": {
+        "passed": false
+      }
+    },
+    {
+      "cell": 3,
+      "grid": {
+        "control_period_s": 0.0005,
+        "rk4_step_s": 0.000125
+      },
+      "engineering_error": "Traceback (most recent call last):\n  File \"/workspace/project/panda_research/scripts/p1_r4.py\", line 118, in main\n    cell['audit'] = audit_cell(cell, out, system, plan)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/p1_r4.py\", line 83, in audit_cell\n    hold[-1]['state_after'] == endpoint['state'] == prep['state']\nValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\n",
+      "a2": {
+        "completed": false,
+        "passed": false
+      },
+      "audit": {
+        "passed": false
+      }
+    },
+    {
+      "cell": 4,
+      "grid": {
+        "control_period_s": 0.0005,
+        "rk4_step_s": 6.25e-05
+      },
+      "engineering_error": "Traceback (most recent call last):\n  File \"/workspace/project/panda_research/scripts/p1_r4.py\", line 118, in main\n    cell['audit'] = audit_cell(cell, out, system, plan)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/p1_r4.py\", line 83, in audit_cell\n    hold[-1]['state_after'] == endpoint['state'] == prep['state']\nValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\n",
+      "a2": {
+        "completed": false,
+        "passed": false
+      },
+      "audit": {
+        "passed": false
+      }
+    },
+    {
+      "cell": 5,
+      "grid": {
+        "control_period_s": 0.00025,
+        "rk4_step_s": 0.000125
+      },
+      "engineering_error": "Traceback (most recent call last):\n  File \"/workspace/project/panda_research/scripts/p1_r4.py\", line 118, in main\n    cell['audit'] = audit_cell(cell, out, system, plan)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/p1_r4.py\", line 83, in audit_cell\n    hold[-1]['state_after'] == endpoint['state'] == prep['state']\nValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\n",
+      "a2": {
+        "completed": false,
+        "passed": false
+      },
+      "audit": {
+        "passed": false
+      }
+    },
+    {
+      "cell": 6,
+      "grid": {
+        "control_period_s": 0.00025,
+        "rk4_step_s": 6.25e-05
+      },
+      "engineering_error": "Traceback (most recent call last):\n  File \"/workspace/project/panda_research/scripts/p1_r4.py\", line 118, in main\n    cell['audit'] = audit_cell(cell, out, system, plan)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/p1_r4.py\", line 83, in audit_cell\n    hold[-1]['state_after'] == endpoint['state'] == prep['state']\nValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()\n",
+      "a2": {
+        "completed": false,
+        "passed": false
+      },
+      "audit": {
+        "passed": false
+      }
+    }
+  ],
+  "engineering": {
+    "frozen_inputs_unchanged": true,
+    "contracts_pass": true,
+    "base_regressions_match_current_inputs": true,
+    "geometry_equivalence_pass": true,
+    "pinned_versions_match": true,
+    "canonical_model_audit_pass": true
+  },
+  "gate": {
+    "status": "HOLD",
+    "A2_numerical": "FAIL",
+    "scope": "USER_AUTHORIZED_LEVEL_2_A2_SIMULATION_ONLY",
+    "checks": {
+      "explicit_numerical_authority": true,
+      "exact_grid_coverage": true,
+      "every_prehold_and_endpoint": false,
+      "every_full_A2_cell": false,
+      "every_trace_audited": false,
+      "two_declared_cohorts": true,
+      "engineering_prerequisites": true,
+      "original_C4_all_refinements": false,
+      "finer_confirmation_all_refinements": false
+    },
+    "cohorts": {
+      "original_C4": {
+        "passed": false,
+        "comparisons": [
+          {
+            "cells": [
+              0,
+              1
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          },
+          {
+            "cells": [
+              2,
+              3
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          },
+          {
+            "cells": [
+              0,
+              2
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          },
+          {
+            "cells": [
+              1,
+              3
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          },
+          {
+            "cells": [
+              0,
+              3
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          },
+          {
+            "cells": [
+              1,
+              2
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          }
+        ],
+        "rule": "Each fixed-factor edge; max(absolute, relative*max(abs(values))). Diagonals disclosed separately."
+      },
+      "finer_confirmation": {
+        "passed": false,
+        "comparisons": [
+          {
+            "cells": [
+              0,
+              1
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          },
+          {
+            "cells": [
+              2,
+              3
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          },
+          {
+            "cells": [
+              0,
+              2
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          },
+          {
+            "cells": [
+              1,
+              3
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          },
+          {
+            "cells": [
+              0,
+              3
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          },
+          {
+            "cells": [
+              1,
+              2
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "NOT_COMPARABLE_INCOMPLETE_HORIZON",
+            "metrics": {}
+          }
+        ],
+        "rule": "Each fixed-factor edge; max(absolute, relative*max(abs(values))). Diagonals disclosed separately."
+      }
+    },
+    "independent_controls_signature": null,
+    "independent_theory_signature": null,
+    "independently_approved_experiment": "NOT_CLAIMED",
+    "hardware_real_time": "NOT_VALIDATED",
+    "A3": "NO-GO",
+    "publication": "NO-GO"
+  },
+  "previous_r3_A2_result": "FAIL_PRESERVED",
+  "retuning_performed": false
+}

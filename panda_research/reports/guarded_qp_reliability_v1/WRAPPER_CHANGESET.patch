@@ -1,0 +1,43 @@
+--- preserved_a2_qp_v2.py
++++ a2_qp_reliable_v1.py
+@@ -1,4 +1,7 @@
+-"""Versioned numerical hard-QP realization; original model/rows are untouched.
++"""Versioned support-sign correction of the preserved v2 implementation.
++
++Derived from immutable a2_qp_v2.py; all QP data and settings unchanged.
++Original model/rows are untouched.
+ 
+ Solve the same physical least-squares objective with a declared inward
+ roundoff guard on every original row. A single cold ProxQP solve is used.
+@@ -7,7 +10,8 @@
+ """
+ import multiprocessing as mp
+ import numpy as np
+-import proxsuite
++from .guarded_qp_native_v1 import corrected_proxsuite as proxsuite
++from .guarded_qp_native_v1 import backend_record
+ from .contracts import vector
+ from .barriers import AffineRows
+ from .qp import QPResult
+@@ -56,6 +60,10 @@
+             setattr(solver.settings, k, NUMERICAL_POLICY[k])
+         diagnostics = {
+             'solver': 'ProxQP '+proxsuite.__version__, 'settings': self.settings,
++            'backend_correction': {'version': 'GUARDED_QP_RELIABILITY_V1',
++                'library_sha256': backend_record()['library_sha256'],
++                'patch_sha256': backend_record()['applied_patch_sha256'],
++                'settings_and_initialization_unchanged': True},
+             'row_names': rows.names, 'row_units': rows.units,
+             'row_scales': rows.scales.tolist(), 'row_scaling_denominator': den.tolist(),
+             'inward_guard_raw': guard.tolist(),
+@@ -108,7 +116,9 @@
+             numerical_solver_acceptance_not_invariance_proof=True)
+         accepted = bool(primal <= 1e-9 and stationarity <= 1e-9
+                         and guarded_primal <= 1e-9 and guarded_stationarity <= 1e-9
+-                        and np.all(raw >= 0) and np.all(self.taumax-abs(tau) >= 0))
++                        and np.all(raw >= 0) and np.all(self.taumax-abs(tau) >= 0)
++                        and np.all(dual >= -1e-9)
++                        and diagnostics['guarded_complementarity'] <= 1e-9)
+         diagnostics['replan_requested'] = not accepted
+         return QPResult(tau if accepted else None,
+                         status if accepted else 'NUMERICAL_OR_RAW_ROW_REJECTION', not accepted, diagnostics)

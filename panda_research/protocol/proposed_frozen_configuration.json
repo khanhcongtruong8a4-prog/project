@@ -1,0 +1,163 @@
+{
+  "schema_version": "combined-proposal-1.1-R2",
+  "prepared_date": "2026-11-01",
+  "status": "INCOMPLETE_PROPOSAL_NOT_APPROVED_NOT_EXPERIMENT_FROZEN",
+  "baseline_model_manifest_sha256": "58ec25965324fb092b29d8f57a0fa7b19effe1b0f1a1ad6416563477fdcab4fb",
+  "baseline_evaluator_sha256": "698a92efd624b603133cd5ea5a3fe31d0752d210ffe4291a02bab64a0d3cba1c",
+  "working_evaluator_sha256": "9a0f100459c93f59ba75133fc682f111505909627de3bf29bb0bf823b64f025d",
+  "model_identity": "Unchanged seven Gaz moving bodies; c1z author zero; signed COM tensors; smooth author friction; no hand/payload/rotor/elastic states",
+  "gravity_world_m_s2": [
+    0,
+    0,
+    -9.80665
+  ],
+  "base_transform": "identity",
+  "joint_zero_offsets_rad": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "fixed_flange_z_m": 0.107,
+  "tcp": "panda_link8 flange",
+  "task_orientation": "free",
+  "technical_external_validation": "PASS numerical evidence only; see current run for actual results",
+  "human_dynamics_acceptance": null,
+  "proposed_comparison_evidence_level": "Level 2 NUMERICAL/SAMPLED, not approved",
+  "margin_mode": {
+    "proposed": "M1",
+    "approved": null,
+    "constant_values": null,
+    "equation_map": null,
+    "position_domain_extension_rad": 0.01,
+    "speed_domain": null,
+    "acceleration_domain": null,
+    "tube_extension": null,
+    "estimator_grid": null,
+    "estimator_seed": null,
+    "estimator_budget": null,
+    "update_frequency": "Once per frozen configuration; identical across candidates/methods"
+  },
+  "disturbance": {
+    "status": "Retained study proposal; team approval pending",
+    "type": "dual harmonic",
+    "amplitude_fraction": 0.02,
+    "omega_rad_s": 1,
+    "t_ref_s": 0,
+    "phase_i": "2*pi*(i-1)/7",
+    "dbar_i": "0.02*tau_max_i",
+    "dbar1_i": "1.4*dbar_i*omega",
+    "global_clock": true
+  },
+  "observer_initialization": {
+    "dhat0": 0,
+    "z0": "-K_o*M(q0)*qd0",
+    "varpi0": "dbar",
+    "replan": "retain observer and propagated bound"
+  },
+  "gains": {
+    "K_o_s_inverse": null,
+    "Lambda": null,
+    "kappa": null,
+    "alpha_1": null,
+    "alpha_2": null,
+    "alpha_v": null
+  },
+  "physical_parameters": {
+    "w_min": null,
+    "position_reserve_rad": null,
+    "velocity_reserve_rad_s": null,
+    "torque_reserve_Nm": null,
+    "barrier_reserves": null
+  },
+  "energy": {
+    "wording": "MODELED non-regenerative electrical energy",
+    "k_r": null,
+    "w_t_W": null,
+    "nonregenerative_smoothing": null,
+    "sensitivity_protocol": null,
+    "T_min_s": null,
+    "T_max_s": null
+  },
+  "scenario_A_T22": {
+    "rule": "Original protocol section 7 retained; proposal-conditioned",
+    "approval": null,
+    "selected_index": null,
+    "target": null,
+    "plan_hash": null,
+    "configuration_hash": null
+  },
+  "scenario_B": {
+    "file": "protocol/scenario_b_target_suite_PROPOSED.json",
+    "sha256": "413b320b5987fcb6040018bd006541b96fdff5ff15285cc9f3b7079e9d7b044a",
+    "seed": 20261102,
+    "target_count": 64,
+    "approval": null,
+    "multistart_seed": null,
+    "multistart_count": null,
+    "all_initial_guesses": null,
+    "aggregation_plan": null,
+    "include_all_failures": true
+  },
+  "solver": {
+    "NLP": null,
+    "NLP_version": null,
+    "NLP_settings": null,
+    "QP": null,
+    "QP_version": null,
+    "QP_settings": null,
+    "transcription": null,
+    "grid": null,
+    "budgets": null,
+    "warm_start_policy": null,
+    "T23_constant_maximum_formula": null,
+    "nonsmooth_derivative_policy": null
+  },
+  "integration": {
+    "proposed_method": "fixed-step RK4",
+    "approved_method": null,
+    "control_period_s": null,
+    "substeps_m": null,
+    "h_s": null,
+    "validation_grid": null,
+    "observer_update_semantics": null,
+    "max_refinement_rounds_proposed": 3,
+    "refinement_approval": null,
+    "A2_executed": false
+  },
+  "fixed_acceptance_thresholds": {
+    "relative_refinement": 0.0001,
+    "energy_abs_J": 1e-06,
+    "duration_abs_s": 1e-06,
+    "intervention_difference_abs_Nm": 1e-07,
+    "normalized_slack_difference_abs": 1e-06,
+    "zero_intervention_Nm": 1e-06,
+    "QP_normalized_primal": 1e-09,
+    "QP_scaled_stationarity": 1e-09,
+    "minimum_reserve_to_row_scale_strictly_greater_than": 1e-07,
+    "planned_terminal_error_m": 1e-06,
+    "actual_terminal_error_m": 0.001,
+    "raw_negative_slack": "FAIL even near numerical resolution"
+  },
+  "approvals": {
+    "T04b_second_reviewer": null,
+    "T06a_second_reviewer": null,
+    "team_lead": null,
+    "controls_reviewer": null,
+    "T22": null,
+    "T29": null,
+    "protocol_v1_1": null
+  },
+  "gates": {
+    "A2": "BLOCKED",
+    "A3": "NO-GO",
+    "Level_1": "NO-GO",
+    "publication": "NO-GO"
+  },
+  "development_version": "1.2.0",
+  "technical_validation": "See reports/latest.json and its run; both engines validate identical cases; no human acceptance inferred",
+  "prior_remediation_evaluator_sha256": "6d2c381ad278493fe941cd18df9fbebba9909e06dc90a14e6a41132c72239cf0"
+}

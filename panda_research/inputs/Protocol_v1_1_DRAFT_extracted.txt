@@ -1,0 +1,439 @@
+Panda model and certification preparation
+Requested tasks T04 T06 T17 T12 T13 T07 T22 and T29
+1 November 2026 — Draft v1.1 (historical v1.0 preparation dated 31 October 2026)
+This note supplies the extracted Panda data, the frame-mapping and inertia-certification procedures, and a dated disturbance and comparison protocol. It accompanies the updated research workbook. The preparation is complete to the extent shown below. No controller, planner, simulation, or interval-certification implementation was performed. Static source transcription and ordinary numerical checks of the supplied body inertias were performed.
+This document is draft Protocol v1.1, incorporating the original 31 October 2026 research protocol and the 1 November 2026 implementation amendment in Section 10. Preparation dates do not constitute team approval. T06 second review, T17 review, T22/T29 approval and overall protocol sign-off remain pending. No signature or certified result is implied.
+Task
+Deliverable prepared
+Current acceptance state
+T04
+Exact mass, COM, COM-inertia, and smooth-friction tables with provenance
+Completed with the explicit COM convention below
+T06
+Frame transformations, identity-map cross-check, and validation procedure
+Prepared, second review pending
+T17
+Verified branch-and-bound procedure and Level 1 gate
+Prepared, review pending and computation not run
+T12
+Fixed smooth disturbance and analytic magnitude and rate bounds
+Completed specification
+T13
+Observer state initialization and initial error envelope
+Completed specification
+T07
+Bounded source search with partial positive result and explicit null findings
+Completed search record
+T22
+Dated deterministic task-selection rule
+Prepared, team approval pending
+T29
+Dated success criteria, thresholds, metrics, and failure reporting
+Prepared, sign-off pending
+1 Gaz parameter extraction
+1.1 Source identity and model scope
+The source is C. Gaz, M. Cognetti, A. Oliva, P. Robuffo Giordano, and A. De Luca, “Dynamic Identification of the Franka Emika Panda Robot With Retrieval of Feasible Parameters Using Penalty-Based Optimization,” IEEE Robotics and Automation Letters, 4(4), 4147–4154, 2019. The numerical source is the revised supplement dated 15 October 2019. Use the retrieved feasible parameter column, denoted by a hatted p in Tables VIII and IX. Do not substitute the alternative delta column or the parameter bounds. [S03, S04]
+The prepared nominal plant is the seven published moving rigid bodies, fixed base, with the smooth friction below. There is no additional hand, payload body, reflected rotor term, or elastic joint state in this selected model. This is a study model choice. It is not a claim that the authors identified a bare arm. The attachment/payload condition of their identification was not established from the available paper and supplement and remains an explicit T03/T05 issue. The main paper distinguishes link-side rigid-body dynamics and excludes motor inertia from the identified vector on p. 4150 near Eq. (17).
+1.2 Mass and center of mass
+Every mass and COM entry below comes from Table VIII on supplement PDF page 9, except the explicitly marked first-link z coordinate. Coordinates are in the Gaz modified-DH link frames. Mass units are kg and coordinate units are m.
+Link
+Mass
+COM x
+COM y
+COM z used
+1
+4.970684
+0.003875
+0.002081
+0 by author code
+2
+0.646926
+-0.003141
+-0.028720
+0.003495
+3
+3.228604
+0.027518
+0.039252
+-0.066502
+4
+3.587895
+-0.053170
+0.104419
+0.027454
+5
+1.225946
+-0.011953
+0.041065
+-0.038437
+6
+1.666555
+0.060149
+-0.014117
+-0.010517
+7
+0.735522
+0.010517
+-0.004252
+0.061597
+Table VIII prints an asterisk for the first-link COM z coordinate. The authors’ conversion script assigns zero. The model therefore uses that exact author-code convention and records the table entry separately as an asterisk. Zero must not be presented as a measured or table-printed value. The older official franka_ros inertial YAML instead has a first-link z coordinate of −0.04762 m. Mixing that coordinate into the selected set would make the provenance inconsistent. [S24, S25]
+1.3 Inertia about each center of mass
+Table IX on supplement PDF page 9 supplies these tensors. The entries are components of the COM tensor in link-aligned axes, with units kg m². The main paper defines the barycentric tensor I separately from the origin tensor J on p. 4149. The authors’ conversion code confirms the COM interpretation. The symmetric tensor is assembled as
+IC,i=IxxIxyIxzIxyIyyIyzIxzIyzIzz∈R3×3.
+Link
+xx
+xy
+xz
+yy
+yz
+zz
+1
+0.703370
+-0.000139
+0.006772
+0.706610
+0.019169
+0.009117
+2
+0.007962
+-0.003925
+0.010254
+0.028110
+0.000704
+0.025995
+3
+0.037242
+-0.004761
+-0.011396
+0.036155
+-0.012805
+0.010830
+4
+0.025853
+0.007796
+-0.001332
+0.019552
+0.008641
+0.028323
+5
+0.035549
+-0.002117
+-0.004037
+0.029474
+0.000229
+0.008627
+6
+0.001964
+0.000109
+-0.001158
+0.004354
+0.000341
+0.005433
+7
+0.012516
+-0.000428
+-0.001196
+0.010027
+-0.000741
+0.004815
+The off-diagonal entries above are matrix entries, not unsigned products of inertia. Do not reverse their signs. Do not apply a parallel-axis shift when the target library already expects a COM tensor.
+An ordinary floating-point transcription check found all seven tensors positive definite and satisfying the principal-moment triangle inequalities. The smallest numerical eigenvalue among these body tensors was approximately 0.00124635 kg m². Link 2 has a small triangle slack of approximately 0.000001715 kg m². Preserve all published digits. These checks concern individual body tensors. They are not a verified certificate for the joint-space mass matrix M and do not supply m1.
+1.4 Smooth joint friction
+Use the formula immediately preceding Table I on supplement PDF page 1. For joint speed v in rad/s,
+Fiv=ϕ1,iσϕ2,iv+ϕ3,i−σϕ2,iϕ3,i,  σz=11+e−z.
+Here F_i is in N m, phi1 is in N m, phi2 is in s/rad, and phi3 is in rad/s. The vector F belongs to R⁷.
+Joint
+phi1 N m
+phi2 s/rad
+phi3 rad/s
+1
+0.54615
+5.1181
+0.039533
+2
+0.87224
+9.0657
+0.025882
+3
+0.64068
+10.136
+-0.04607
+4
+1.2794
+5.5903
+0.036194
+5
+0.83904
+8.3469
+0.026226
+6
+0.30301
+17.133
+-0.021047
+7
+0.56489
+10.336
+0.0035526
+Joint 2 uses phi1 = 0.87224 N m. The authors’ page explicitly corrects the older 8722.4 entry, and the revised supplement and author friction code agree with 0.87224. [S04, S24]
+This function is infinitely differentiable. Its derivative satisfies
+0≤Fi′v=ϕ1,iϕ2,iσϕ2,iv+ϕ3,i1−σϕ2,iv+ϕ3,i≤ϕ1,iϕ2,i4.
+Also F_i(0) = 0. The selected positive phi1 and phi2 imply v F_i(v) ≥ 0. This establishes the smoothness needed for model-variation bounds, without establishing an entire manuscript assumption whose other conditions must be checked separately. The sign-based identification model elsewhere in the supplement is not selected.
+2 Frame mapping procedure for T06
+2.1 Fix the transform convention
+Use n = 7 joint coordinates q in R⁷. Denote the transform from frame i to frame i−1 by T_(i−1,i). The modified-DH transform for row i is explicitly
+Ti−1,i=RxαiTxaiRzθiTzdi∈SE3.
+This explicit product is authoritative for the extraction. DH row-index naming alone is not sufficient. The data below are from main-paper Fig. 1 on p. 4148, PDF page 2. The eighth row is the fixed flange, not an eighth moving inertial body. Translations a and d are in m and angles are in rad.
+Row
+a
+alpha
+d
+theta
+1
+0
+0
+0.333
+q1
+2
+0
+-pi/2
+0
+q2
+3
+0
+pi/2
+0.316
+q3
+4
+0.0825
+pi/2
+0
+q4
+5
+-0.0825
+-pi/2
+0.384
+q5
+6
+0
+pi/2
+0
+q6
+7
+0.088
+pi/2
+0
+q7
+8
+0
+0
+0.107
+0 fixed
+The older official franka_ros arm Xacro has origin translations listed below, zero pitch and yaw, and local +z axes for joints 1–7. Its fixed joint 8 is a 0.107 m z translation. [S25]
+Joint
+URDF origin xyz m
+URDF roll rad
+1
+0, 0, 0.333
+0
+2
+0, 0, 0
+-pi/2
+3
+0, -0.316, 0
+pi/2
+4
+0.0825, 0, 0
+pi/2
+5
+-0.0825, 0.384, 0
+-pi/2
+6
+0, 0, 0
+pi/2
+7
+0.088, 0, 0
+pi/2
+8
+0, 0, 0.107
+0
+Indeed the DH product equals an origin transform with translation (a, −d sin alpha, d cos alpha), followed by Rz(theta). Thus these seven named arm frames agree algebraically with the Gaz frames when the world/base frames, joint zero offsets, and joint ordering agree. Under exactly these choices, every arm-link mapping is the identity. A hand rotation or TCP offset is a separate fixed frame and must not be applied to all arm inertias. This is a source-level equivalence. The eventual generated model still needs the checks in Section 2.3.
+2.2 Transform COM and inertia if frames differ
+Let G_i denote a Gaz link frame and L_i a target library link frame. Define the fixed coordinate map from G_i to L_i by
+TLiGi=Riti01, Ri∈SO3, ti∈R3.
+For mass m_i in R, COM c_i in R³, and COM tensor I_C,i in R³ˣ³,
+miL=miG,  ciL=RiciG+ti,  IC,iL=RiIC,iGRi⊤.
+Only if the target convention requires inertia about its link origin should one form
+IO,iL=IC,iL+miciL⊤ciLI3−ciLciL⊤.
+If a source tensor were instead supplied about its link origin, subtract that source parallel-axis term before rotating the COM tensor. That subtraction is not needed for Table IX. Standard URDF inertial data locate an inertial frame at the COM. Choose its axes parallel to the library link axes and store the rotated COM tensor there. Confirm the constructor contract of the selected dynamics library before entering the data. Do not copy a six-entry spatial-inertia ordering without checking its linear/angular ordering.
+For a different link convention, compute the candidate map at a common configuration as T_LG = inverse(T_WL) T_WG. Prove it is configuration-independent by comparing the joint-axis and origin transforms. A match at one pose alone is insufficient. Kinetic energy is preserved because a rotation preserves the norm of the COM velocity and transforms angular velocity and COM inertia consistently. The translation changes c but not I_C. Consequently the same physical body gives the same translational and rotational kinetic energy under this mapping.
+2.3 Acceptance procedure for the later conversion
+Record joint ordering, zero offsets, base pose, gravity vector, COM convention, tensor reference point, fixed flange, and hand/payload policy in the model manifest. Give each link a row containing its source frame, target frame, R, t, and all transformed parameters. A second team member must check these rows before T06 is marked completed.
+The later implementation must compare source and target forward kinematics, kinetic energy, potential-energy gradients, and inverse dynamics at zero, the joint-box midpoint, and 20 fixed-seed interior configurations. A zero configuration may be outside physical joint limits and is used only as an algebraic model check. Use absolute-plus-relative tolerances of 1e−10 m for translation, 1e−10 for rotation matrices, 1e−9 kg m² for M, and 1e−8 N m for inverse dynamics, each plus 1e−9 times the relevant reference magnitude. These are prespecified diagnostic thresholds, not present results. Check the full C matrix convention separately in T28. Agreement of C qdot alone does not prove Mdot = C + Cᵀ for an arbitrarily returned C.
+3 Inertia certification procedure for T17
+3.1 Domain and inputs
+Use the exact selected seven-body rigid model, with the printed decimals treated as the nominal model constants and with the first-link COM convention above. Set the compact operating box to Q = product_i [qmin,i − 0.01, qmax,i + 0.01] rad, using the workbook Panda limits. The 0.01 rad enlargement is a protocol design choice. It puts the physical joint box in the interior of Q. This certification would apply to that nominal model. Unknown physical parameter error would require a separate parameter-interval model.
+For this fixed-base serial rigid-body model, M is independent of q1. Changing q1 rotates all moving bodies together about the fixed first axis. At fixed joint rates, every body COM velocity and angular velocity rotates by the same orthogonal transformation, while each body inertia rotates with it. Each kinetic-energy contribution, and therefore qdotᵀ M(q) qdot for every qdot, is unchanged. Equality of the symmetric quadratic forms establishes independence of q1. This argument justifies a six-dimensional search for this model. Retain the full seven-dimensional box if the eventual model adds terms that invalidate the argument.
+The verification implementation must use outward-rounded interval arithmetic for all interval entries, trigonometric functions, and norm bounds. A dense sample, an automatic-differentiation value, or an unguarded floating-point eigenvalue is not a lower certificate. Precommit the stop target m_goal = 0.0001 kg m², a maximum of 500000 processed boxes, depth 64, and 8 hours of wall time for the first probe. These are resource and stopping choices, not a prediction of runtime or feasibility.
+3.2 Lower bound on one subbox
+For each closed subbox B, enclose every entry of the symmetric 7 by 7 matrix M(q) for all q in B. If entries i,j and j,i were computed separately, use a symmetric enclosure containing both. Choose an exactly represented symmetric reference matrix H_B, for example a symmetrized rounded center evaluation. Certify a scalar a_B such that
+λminHB≥aB.
+One valid implementation uses outward-rounded, pivot-validated interval LDLᵀ factorization of the point matrix H_B − a_B I and proves every pivot strictly positive. Candidate values of a_B may come from ordinary eigenvalues, but only the verified positive-definiteness test accepts them. Factorization failure is inconclusive. A small negative a_B can always be certified by a sufficiently conservative Gershgorin bound if needed.
+If the interval entry bounds are L_ij and U_ij, form nonnegative outward-rounded numbers
+Dij=max{Lij−HBij,Uij−HBij},  ρB=maxij​Dij.
+Use the symmetric D. For every q in B, the symmetric error matrix E = M(q) − H_B has spectral norm at most rho_B. This follows from the entry bounds and the maximum absolute row-sum bound for a symmetric matrix. Weyl’s inequality gives the certified, downward-rounded bound
+λminMq≥aB−ρB=ℓB for every q∈B.
+3.3 Branch and bound and the decision
+Start with a queue containing the entire search box. Accept B when ell_B is at least m_goal. Otherwise bisect its longest normalized coordinate, with lowest joint index breaking ties, and enqueue both closed children. The children must cover the parent, including their shared boundary. Never discard an unresolved box because sampled values look safe. Keep all accepted and unresolved boxes, enclosure data, a_B verification records, and the subdivision tree.
+If every box is accepted, take m1 to be a downward-rounded minimum of all accepted ell_B. Then M(q) is at least m1 I on Q. The proof consists of the verified entry and point-matrix certificates, the perturbation inequality, and complete coverage of Q. A separate checker should validate the final cover and every box certificate from the saved record.
+The decision is GO for the remaining Level 1 work only if this entire-domain proof gives m1 > 0. It is NO GO for claiming Level 1 at the present stage if the budget is exhausted or any box remains unresolved. An unresolved result does not show that M is indefinite. A separately verified nonpositive eigenvalue at an actual configuration would instead challenge the selected model. Do not infer that conclusion from a negative lower bound alone.
+After a pass, usable conservative inverse bounds are
+(Mq−1)ii≤1m1,  (Mq−1)ij≤∥Mq−1∥2≤1m1.
+Round the reciprocal upward. These bounds may be too conservative for a feasible tightened plan. A pass is the first gate, not a full Level 1 certificate. All other rows in Certification Requirements, all-time trajectory residual checks, initial barrier conditions, and the theorem’s execution and regularity hypotheses must still be verified. Passing this continuous-time mathematical gate does not prove sampled-controller safety. If the probe is inconclusive, sampled bounds may support Level 2 numerical consistency only, with that wording retained.
+4 Fixed disturbance specification for T12
+Use an additive joint torque d on the right side of M qddot + C qdot + g + F = tau + d. The primary signal is time-only and infinitely differentiable. Each independent run starts with simulation time zero, and every compared method receives the same signal on the common part of its time horizon. Replanning does not restart the signal clock.
+Let omega = 1 s⁻¹, t_ref = 0 s, phi_i = 2 pi (i−1)/7, and a_i = 0.02 tau_max,i. Fix
+dit=ai0.6sinωt−tref+ϕi+0.4cos2ωt−tref+ϕi.
+The coefficient 0.02 is a declared study choice, not a manufacturer disturbance level or a proven feasible setting. The controller receives only the stated bounds, not the injected waveform or true disturbance values. No measurement noise, payload mismatch, or state-dependent unmodeled term is silently added to this certified scenario.
+Triangle inequalities applied to the signal and its derivative give, for every real time,
+dit≤ai=di,  dit≤0.6+0.8ωai=1.4ωai=d1,i.
+These are valid analytic bounds, not claims of tight attained maxima.
+Joints
+tau max N m
+a and d bar N m
+d rate bar N m/s
+1–4
+87
+1.74
+2.436
+5–7
+12
+0.24
+0.336
+An ideal step disturbance is excluded because it lacks the finite derivative bound used by the observer envelope. A later recovery test may intentionally leave this class, but it must be labeled outside the certificate. If sensitivity is performed, use only the prespecified multipliers 0.5, 1, and 2 on a and its derived rate bound. Report infeasibility rather than reducing the primary amplitude until a run succeeds.
+5 Observer initialization for T13
+Let p = M(q) qdot in R⁷ be joint momentum with units N m s. Let K_o = diag(k_i) in R⁷ˣ⁷, where every k_i > 0 has units s⁻¹. For observer state z in R⁷ with units N m, the estimate is d_hat = z + K_o p. Choose
+dt0=0,  zt0=−KoMqt0qt0,  ϖi0=di.
+This initialization works at rest and at a moving start. Setting z to zero at a moving start would generally not set d_hat to zero. Since the true initial disturbance is not used, |d_i(t0) − d_hat_i(t0)| ≤ d_bar_i justifies varpi_i0 without privileged information.
+For a consistent Coriolis representation with Mdot = C + Cᵀ, momentum obeys pdot = tau + d + Cᵀ qdot − g − F. The continuous-time observer equation compatible with the stated estimate is
+z=−Koz+Kop+τ+C⊤q−g−F.
+It uses the applied torque tau, including any safety-filter correction. It follows that d_hat_dot = K_o(d − d_hat). Thus tilde_d = d − d_hat satisfies
+di=−kidi+di,  dit≤e−kit−t0di+d1,iki1−e−kit−t0=ϖit.
+Positive gains are required but their numerical tuning remains T10, outside these requested tasks. Perfect state and applied-torque availability are the declared initial model conditions. Noise, numerical differentiation, saturation mismatch, and delay require their own bounds before this exact envelope can cover them.
+Initialize the reference with the measured q and qdot. Then e0 = edot0 = s0 = 0 for s = edot + Lambda e. For the residual r = kappa M s + tilde_d, a valid initial component bound is r_i0_plus = varpi_i0. This does not imply zero observer error.
+At replanning time t_r, preserve z, d_hat, and the disturbance clock. Restart reference errors only by matching the measured state, and use the propagated varpi_i(t_r) as the new initial observer envelope. Do not reset it to zero. If the observer itself is deliberately reset, prove a new initial bound. The general valid choice is d_bar_i + |d_hat_i(t_r)|. Any controller-state or reference jump needs the manuscript’s transition conditions separately. Terminal hold and fallback are not automatically certified by a finite-horizon plan.
+6 Panda motor search for T07
+6.1 Search result and data policy
+The bounded search was completed on 31 October 2026. It covered official Franka specifications, SDK state documentation, both official description repositories, Gaz’s model and supplement, and the targeted queries recorded in the workbook. The result is partial, not a blanket null result.
+The official franka_description repository identifies FER as the former Panda. Its robots/fer/dynamics.yaml supplies the following model entries. Its README also says FER is shipped but unsupported. Treat these as manufacturer-published software-model parameters. The retrieved files do not establish their calibration uncertainty or their match to a particular physical Panda serial number. [S26, S27]
+Joints
+Gear ratio
+Motor inertia kg m²
+Resistance
+Torque constant
+1–2
+120
+4.206399e-05
+Not located
+Not located
+3–4
+120
+3.211626e-05
+Not located
+Not located
+5–7
+80
+3.211626e-05
+Not located
+Not located
+No verified per-joint Panda winding-resistance or torque-constant set was located in the checked sources. Consequently no complete physical coefficient set k_r,i = R_i/(k_t,i N_i)² can be derived. This is a scoped null finding, not proof that such data do not exist. A ratio alone cannot determine copper loss. Do not use the motor inertia as a proxy for R or k_t. Do not add these rotor inertias to Gaz’s link-side model without deriving and selecting the resulting different model.
+The quoted k_r formula also presumes compatible current and resistance conventions and an ideal torque transmission. A three-phase winding convention, gearbox efficiency, temperature-dependent resistance, and link-side versus motor-side torque must be reconciled before claiming physical electrical energy. Retain E01 as representative modeled coefficients with the T08 electrical-source audit and T09 representative-coefficient sensitivity protocol. Do not invent numerical k_r values in this preparation.
+6.2 Search audit
+Record
+Source checked
+Outcome
+M01
+Official FCI specifications and SDK state documentation
+Limits and motor angle signals found. No per-joint R or kt set located.
+M02
+FCI docs index and robot specifications
+Panda/FER distinguished from FR3. No R or kt table located.
+M03
+libfranka RobotState reference
+Motor angle/velocity are signals, not calibrated electrical parameters.
+M04
+Official franka_description robots/fer/dynamics.yaml
+N = [120,120,120,120,80,80,80]. Rotor inertias also listed. R and kt absent from this file.
+M05
+Official model identity and release history
+README identifies fer as former Panda, still shipped but unsupported. Changelog records motor inertia/gear-ratio addition. Model entries are not a calibrated electrical-data claim.
+M06
+Gaz paper and revised supplement, plus author model repository
+Rigid-link data and friction available. Main paper p.4150 excludes motor inertia from identified parameter vector. No R, kt, N set in these sources.
+M07
+Panda-class actuator worked example
+ILM 70x18 motor and gear entries explicitly called sourced stand-ins. Not Panda electrical data.
+M08
+TUM thesis with mixed model sources
+Text states gear ratio set to 100, and motor model taken from LOLA with links from UR10. This is a modeling choice, not verified Panda motor constants.
+M09
+https://support.franka.de/docs/control_parameters.html
+Legacy address returned 404. Current robot_specifications page used instead.
+The Excel search table contains the exact query strings and source URLs. The Panda-class ILM worked example is explicitly a stand-in and is excluded. The TUM thesis mixes robot sources and sets a gear ratio of 100, so that number is not substituted for the official model entries. FR3-specific manuals and Westwood Panda BEAR actuators are not Panda motor evidence. Gaz’s 2019 statement that manufacturer dynamic data were unavailable is historical and must not override newer published model files.
+7 Dated task selection rule for T22
+Protocol v1.0 was written on 31 October 2026 before any implementation in this task. Use the following paragraph as the task-selection rule.
+For the primary position-only task, use the Panda flange as the TCP, orientation free, and fix the initial joint position to the midpoint of each workbook Panda joint interval with zero initial velocity. Reject the study setup if this initial state fails any initial position, speed, manipulability, first HOCBF, or torque-feasibility condition. Enumerate target seed configurations in lexicographic order from the joint fractions {0.25, 0.50, 0.75} of each physical joint interval, with joint 7 varying fastest, and set x_des to the flange forward kinematics of each seed. Skip targets closer than 0.10 m to the initial flange or within 0.000001 m of an earlier target. Using the frozen primary parameters and solver settings, select the first candidate for which the proposed tightened planner produces an admissible plan that passes its required continuous-time residual check and meets the pressure condition below. Freeze its index, target, complete configuration file, and plan before running either baseline. Log every skipped, infeasible, timed-out, or rejected candidate with its reason. Never screen candidates using baseline intervention or failure. If no candidate qualifies, report that outcome and issue a dated protocol amendment before a new search rather than altering the task silently.
+The initial midpoint is a rule, not a claim of present feasibility. The target seed generates a reachable kinematic point but does not constrain the planner’s terminal configuration. A different terminal configuration remains available to exploit redundancy. The selected no-extra-body model and flange TCP must be confirmed under T03/T05 before execution.
+Let U_tau,i be the larger of the two signed tightened torque left-hand sides divided by tau_max,i. Use the workbook/manuscript’s one-sided margins b_u,i_plus and b_u,i_minus, including delta_tau. Let U_v,i = (|qdot_p,i| + chi_v,i + delta_v)/qdot_max,i. Both are dimensionless. The candidate is constraint-active for this protocol when either max over time and joints of U_tau or U_v is at least 0.90, or min_t w_p(t)² is at most w_min²/0.90. Here w_p² = det(J_v(q_p) J_v(q_p)ᵀ), J_v is 3 by 7, and w_min > 0 is the frozen manipulability floor. All tightened constraints must still pass. The threshold measures pressure on available headroom. It does not require the unreserved baseline to fail.
+In Level 1, qualification needs verified residual bounds between nodes. In a declared Level 2 study, use the same ordered rule with the explicitly numerical residual check, and label the selected task numerical rather than certified. Do not change from Level 1 to Level 2 without recording that evidence-level decision. Duration limits, energy weights, gains, barrier rates, reserves, multistarts, and solver budgets remain dependent preparation tasks. They must be frozen before candidate screening and cannot be selected from A–C comparison outcomes.
+8 Dated success criteria for T29
+8.1 Numerical definitions and thresholds
+For every run report planned modeled energy, executed modeled energy, duration T, and J = planned E_el + w_t T. Use exactly the same coefficient set and non-regenerative smoothing in planned and executed energy. Executed energy uses the applied torque tau_star and actual joint velocity. Energy remains a modeled quantity while E01 lacks a physical calibration. Use joules for E and J, seconds for T, and watts for w_t.
+Define intervention I(t) = norm_2(tau_star − u_nom) in N m. The numerical zero-intervention threshold is max_t I(t) ≤ 0.000001 N m. This is an operational numerical threshold, not exact mathematical equality.
+To make solver residuals meaningful, define dimensionless torque theta = diag(tau_max)⁻¹ tau, scale the QP objective by (87 N m)², and divide every inequality row by a fixed positive row scale in its own units. Use tau_max for torque rows, qdot_max/(1 s) for velocity-barrier rows, joint range/(1 s)² for position HOCBF rows, and w_min²/(1 s)² for manipulability HOCBF rows. Fix all scales before implementation. Require maximum normalized primal violation and scaled stationarity residual at most 1e−9. Require a certified-optimal or solver-success status consistent with those measured residuals, and record the residual definitions and solver version. A solver setting alone is not evidence that the residual was met. F07’s former universal N m unit is incorrect for mixed barrier residuals and is replaced by dimensionless scaled residuals.
+With this scaling, 1e−9 times norm_2(tau_max) is about 1.75e−7 N m, below the 1e−6 N m intervention threshold. This is a resolution comparison, not a proof of QP solution error from KKT residuals. The numerical validation in T27 must show the chosen solver can meet the threshold. Require each fixed physical reserve divided by its row scale to exceed 1e−7 before runs. If these accuracy conditions cannot be met, record an accuracy failure. Do not enlarge the zero threshold after inspecting intervention traces.
+Physical safety slacks are q−qmin, qmax−q, qdot_max−qdot, qdot_max+qdot, tau_max−tau_star, tau_max+tau_star, and det(J_v J_vᵀ)−w_min². Normalize them respectively by joint range, joint-speed limit, joint-torque limit, and w_min². The minimum of every unnormalized signed slack must be nonnegative for a safety pass. Report raw negative minima as violations, including tiny negatives near numerical resolution. Include initial h and psi1 conditions separately.
+Report observer, position, velocity, sliding-error, and residual envelope slacks in the form bound − |actual quantity|. Normalize only by fixed positive scales. Use d_bar for observer torque, joint range for position, qdot_max for velocity, qdot_max + lambda_i joint_range for s, and 1 N m for the residual r unless a different physical scale is frozen in advance. Never divide by an envelope that may vanish at t0. A negative envelope slack fails the envelope test and triggers diagnosis rather than deletion of that time sample.
+Terminal planned position error must be at most 1e−6 m. Report actual terminal Cartesian error separately, with a prespecified task-accuracy target of 1e−3 m. Missing that target is a task-accuracy failure even if safety and filter consistency pass. It does not by itself refute the conditional zero-intervention theorem. Do not turn this accuracy target into an unproved all-time terminal-hold guarantee.
+8.2 Scenario decisions
+Scenario A passes the numerical consistency tests only when its plan passes the selected residual checks, the QP meets the stated accuracy tests at every update, intervention is below its fixed threshold, all physical safety and envelope slacks remain nonnegative over the checked interval, and the terminal task-accuracy target is met. Report each criterion separately as well as the aggregate result. Level 1 additionally needs verified model and trajectory bounds and the full theorem hypotheses. Sampled traces alone give Level 2 evidence even if all displayed values pass.
+Scenario B compares dynamic envelopes with the manuscript’s candidate-wise constant-envelope construction under the same task, disturbance, objective, gains, discretization, solver, and multistart policy. For finite reported objectives, use delta_J = J_dynamic − J_constant and epsilon_J = 1e−6 J + 1e−4 max(|J_dynamic|, |J_constant|). Label lower, indistinguishable, or higher computed objective using −epsilon_J and +epsilon_J. If either method is infeasible, report feasibility instead of fabricating an objective. Do not claim strict improvement or global optimality. Feasible-set inclusion does not guarantee numerical solver dominance. T23 must still define the exact constant construction, and T30 must freeze initialization and warm-start policy before comparison.
+Scenario C sets the unreserved planner’s margins and reserves to zero while retaining the same online filter and otherwise shared settings. Report intervention, trajectory deviation, modeled energy discrepancy, and every hard-QP infeasibility. A safe run with no intervention is a valid result. Do not replace the task to obtain a dramatic failure. Optional recovery tests outside the disturbance class are reported separately and do not count as failures of an in-scope theorem.
+Use an h and h/2 integration comparison as a numerical consistency check. For J, T, and energy, require differences no larger than 1e−6 in their respective physical units plus 1e−4 times the larger absolute value. For intervention require a difference no larger than 1e−7 N m plus 1e−4 times the larger maximum. For normalized slack minima use 1e−6 absolute plus 1e−4 times the larger absolute minimum. If this check fails, refine under a recorded rule and retain all versions. Such convergence evidence does not certify safety between samples or remove sampling-delay hypotheses.
+Freeze a manifest containing the model version, data provenance, model scope, all registry values, gains, bounds, solver versions/settings, seeds, budgets, target rule, thresholds, evidence level, and output definitions before implementation of comparative runs. Preserve candidate logs and failed runs. Any change after that freeze creates a new dated protocol version and a fresh comparison set. The date here does not assert that such a manifest has already been populated or approved.
+8.3 Review record
+T06 second reviewer and review date remain unassigned. T17 mathematical reviewer and review date remain unassigned. T22 task-rule approver and approval date remain unassigned. T29 criteria approver and sign-off date remain unassigned. These fields are intentionally pending. Preparation dates must not be substituted for approval dates.
+9 Sources and reproducibility record
+All sources were accessed for this preparation dated 31 October 2026. Repository data are pinned below so later edits of a branch cannot silently alter this protocol. Existing manuscript citation keys are not remapped.
+S03. Gaz et al. main paper. Fig. 1 p.4148 for kinematics. Model and tensor definitions p.4149. Parameter-vector scope p.4150. Open institutional copy https://mural.maynoothuniversity.ie/15321/1/MC_dynamic.pdf .
+https://doi.org/10.1109/LRA.2019.2931248
+S04. Revised supplement. Table I PDF p.1. Tables VIII and IX PDF p.9.
+https://github.com/marcocognetti/FrankaEmikaPandaDynModel/blob/24d85ce4e648e2e894c832bfeee9b16711eb1a1a/pdf/RA-L_2019_PandaDynIdent_SUPPLEMENTARY_MATERIAL.pdf
+S24. Author conversion script for mass, COM and tensor cross-check, including first-link COM z = 0. Friction-code cross-check is also linked below.
+https://github.com/marcocognetti/FrankaEmikaPandaDynModel/blob/24d85ce4e648e2e894c832bfeee9b16711eb1a1a/matlab/ConvertDynPars2VREP/DynPars2VREP.m
+S25. Official older franka_ros arm kinematics. Compare with its inertial YAML only to identify differing conventions, not to merge data.
+https://github.com/frankarobotics/franka_ros/blob/ddd2fffd9de44b02ad15b4bbb2bfa2cec4d60d98/franka_description/robots/common/franka_arm.xacro
+S26. Official FER dynamics model. Per-joint gear ratios and motor inertias. Software-model provenance, not electrical calibration.
+https://github.com/frankarobotics/franka_description/blob/7aeeddc449edf8d62b594f9e36a81da53e7796f9/robots/fer/dynamics.yaml
+S27. Official README identifies FER as former Panda and explains current support status.
+https://github.com/frankarobotics/franka_description/blob/7aeeddc449edf8d62b594f9e36a81da53e7796f9/README.rst
+S01. Current official robot specifications. Use the FER/Panda table, not FR3. Legacy workbook URL returned 404.
+https://frankarobotics.github.io/docs/robot_specifications.html
+Additional author friction code
+https://github.com/marcocognetti/FrankaEmikaPandaDynModel/blob/24d85ce4e648e2e894c832bfeee9b16711eb1a1a/matlab/dyn_model_panda/get_FrictionTorque.m
+Author project page and erratum
+https://diag.uniroma1.it/gaz/panda2019.html
+Gaz repository commit 24d85ce4e648e2e894c832bfeee9b16711eb1a1a. Older franka_ros commit ddd2fffd9de44b02ad15b4bbb2bfa2cec4d60d98. New official description commit 7aeeddc449edf8d62b594f9e36a81da53e7796f9. The downloaded supplement, conversion script and friction code were checked against their Git blob hashes and matched the pinned Gaz tree.
+Downloaded supplement SHA256 c42b37a03d7ce748723504215977b8a0e239cdb46b2900c29db3bd7723d90964. Main paper SHA256 b08c68967de1854712d9c0a8a5872843eda5a80296a462b33458985e240a79e1. These hashes identify source bytes, not mathematical correctness.
+10 Protocol v1.1 amendment and implementation status
+Prepared 1 November 2026. This section makes explicit which choices are defaults for engineering development and which still require formal team approval. It does not modify the existing theorem or the original T17 certification procedure.
+10.1 Disturbance: primary proposed selection
+For model development, retain Section 4's dual-harmonic time-only signal with a_i = 0.02 tau_max,i, omega = 1 rad/s, t_ref = 0, and phi_i = 2 pi (i−1)/7. Its analytic bounds are dbar_i = a_i and dbar1_i = 1.4 a_i omega. No independent or alternate single-frequency waveform is substituted. Apply the same disturbance and global clock to all comparison methods. Approval for comparative experiments remains pending.
+10.2 Margin evidence modes: provisional policy
+G2.5 screening: point-evaluated constants are optimistic and strictly diagnostic; they are never a certificate. Level 2: time-varying envelopes and tube constants obtained numerically, with sampling/interpolation and all evidence limitations disclosed. Level 1: outward-rounded verified interval enclosures, a positive independently checked m1 certificate, verified derivative/grid bounds and every theorem condition. Never silently switch methods or conflate a sampled Level 2 bound with verified Level 1. The candidate-wise constant-envelope baseline uses maxima of every corresponding dynamic envelope, including velocity envelopes, under the same candidate and solver settings.
+10.3 Task-ID cross-reference corrections
+T10: disturbance-observer gain K_o and bandwidth policy; T11: tracking Lambda and kappa; T14: HOCBF alpha gains. Section 5's former T14 observer-gain reference is corrected to T10. T08: literature audit of modeled copper losses; T09: representative k_r wording and sensitivity protocol. Section 6.1's former T08-only reference is corrected to T08 then T09. T07 retains the motor-source search role.
+10.4 Completed model-only engineering checks
+The companion Phase 1 package implements a shared seven-link Gaz model using CasADi automatic differentiation for M(q), dM/dq, gravity and potential energy; Christoffel C is assembled from these derivatives. The independently coded MDH and older-Panda-Xacro forward kinematics agree on 22 fixed poses. Floating-point tests of inertia symmetry and sampled positivity, the skew property, gravity gradient, friction and Coriolis construction passed. Full results and tolerances are recorded in phase3a_test_report.json. This is NOT an external Pinocchio/RNEA validation, a closed-loop test or a global m1 certificate.
+10.5 Blocking checks and sign-offs
+Complete the second T06 model conversion review, independently compare full inverse dynamics with a trusted reference, and record the link/payload policy. Then run A2 closed-loop smoke testing, T27 numerical QP accuracy review, and G2.5 feasibility screening. A3 also requires a signed complete comparison manifest. Level 1 additionally requires verified interval bounds and all-time theorem hypotheses. A1 coding is CONDITIONAL GO; A2 is not run; A3 and Level 1 remain NO-GO.
+T06 independent reviewer: __________________  Date: ________T17 mathematical reviewer: __________________  Date: ________Disturbance/margin decision approver: __________  Date: ________T22/T29 protocol approver: __________________  Date: ________
