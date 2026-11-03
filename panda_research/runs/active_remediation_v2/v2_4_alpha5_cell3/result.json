@@ -1,0 +1,61 @@
+{
+  "case": "alpha5",
+  "cell": 3,
+  "grid": {
+    "control_period_s": 0.0005,
+    "rk4_step_s": 0.000125
+  },
+  "a2": {
+    "completed": true,
+    "passed": false,
+    "failure": null,
+    "metrics": {
+      "modeled_electrical_energy_J": 1.172025459036652,
+      "duration_s": 1.0,
+      "maximum_intervention_Nm": 0.12769355269213814,
+      "minimum_normalized_raw_slack": 9.999054132330877e-09,
+      "actual_terminal_error_m": 0.0005233557885758282,
+      "planned_terminal_error_m": 5.940386319393238e-17
+    },
+    "trace": {
+      "file": "execution.ctz",
+      "sha256": "ff368cee9b6a4f237de72a178d842164c30e99ceae409349fa94138fecab2121",
+      "canonical_json_sha256": "07842ab6fd498147805264223e23cc9875b9fe20a19eeff399fd30d89d2afc8c",
+      "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+    }
+  },
+  "prehold": {
+    "passed": true,
+    "trace": {
+      "file": "prehold.ctz",
+      "sha256": "016e82dc615000b70d834c4e7b7b9966189b761c87363b77d43495b1fe2b923b",
+      "canonical_json_sha256": "60b3c7d966a3d831a6e2435b0fdd9afc491bf252aaf561a3337a01594c297704",
+      "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+    },
+    "reused_evidence": {
+      "source": "/workspace/project/panda_research/runs/active_remediation_v2/v2_3_alpha5_cell3",
+      "result_sha256": "446fe12fd56dd18a055ea82fc893dc9445c7630f2ba9546187c5399f0c902598",
+      "trace_sha256": "5a2ae8aaa144aec95a81b05ffae4887522ef253dd67819c32c37f5d880d4c641",
+      "scope": "REUSE_OF_FRESH_CURRENT_SESSION_UNCHANGED_STARTUP_NOT_PREVIOUS_CONVERSATION_PASS"
+    }
+  },
+  "audit": {
+    "passed": false,
+    "checks": {
+      "nonempty": true,
+      "projection_raw_and_KKT": true,
+      "completion_full_guarded_KKT": true,
+      "same_torque_to_plant_and_DOB": false,
+      "gauss_stage_residual": true,
+      "all_sampled_physical_observer_and_dense_checks": true
+    },
+    "maxima": {
+      "completion_primal": 9.458676691241877e-13,
+      "completion_stationarity": 1.3291960730992026e-14,
+      "completion_complementarity": 1.5843898477077415e-24,
+      "stage_residual": 4.262146191535976e-16
+    },
+    "scope": "FINITE_GRID_AND_NUMERICAL_COLLOCATION_NOT_TRUE_ODE_CERTIFICATION",
+    "lossless_roundtrip_verified": true
+  }
+}

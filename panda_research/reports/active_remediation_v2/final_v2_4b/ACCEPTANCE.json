@@ -1,0 +1,3059 @@
+{
+  "requested_checkpoint_recovered": false,
+  "source_freeze_commit": "55bc0feb58bc58f0a11a028708b45449c77cc400",
+  "pending": [],
+  "candidate": {
+    "alpha5": {
+      "passed": true,
+      "cells": [
+        {
+          "case": "alpha5",
+          "cell": 0,
+          "grid": {
+            "control_period_s": 0.001,
+            "rk4_step_s": 0.00025
+          },
+          "a2": {
+            "completed": true,
+            "passed": true,
+            "failure": null,
+            "metrics": {
+              "modeled_electrical_energy_J": 1.1720249093530677,
+              "duration_s": 1.0,
+              "maximum_intervention_Nm": 0.1276935808650245,
+              "minimum_normalized_raw_slack": 9.999003624182625e-09,
+              "actual_terminal_error_m": 0.0005233556326187745,
+              "planned_terminal_error_m": 5.224785754028713e-17
+            },
+            "trace": {
+              "file": "execution.ctz",
+              "sha256": "a1697e3915653a86bc825775eccc9150b21e64d642d0925d9ee6e95d442a9375",
+              "canonical_json_sha256": "3062386de813251bb93185c86a95cc3453558f501e43ae3da4d3c182ea33b3bf",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            }
+          },
+          "prehold": {
+            "passed": true,
+            "trace": {
+              "file": "prehold.ctz",
+              "sha256": "6a34e119cc28a7e5fd5eda875f3060f65a23e9708e36a6965777d6bc80d68191",
+              "canonical_json_sha256": "fc9c0eb1d33a69d29719f2014f4fe5824eebda8e8d9accf65a00bcf5dd81b4ec",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            },
+            "reused_evidence": {
+              "source": "runs/active_remediation_v2/v2_2_alpha5_cell0",
+              "result_sha256": "69f18c0d8617a94a532195aadf99e99e1e968e988f3462ab7298e47f934e6e72",
+              "trace_sha256": "f46d1dd501195e9a38a0f1e89bab5083449aa6630565455e8b14281c681147c8",
+              "scope": "REUSE_OF_FRESH_CURRENT_SESSION_UNCHANGED_STARTUP_NOT_PREVIOUS_CONVERSATION_PASS"
+            }
+          },
+          "audit": {
+            "passed": true,
+            "checks": {
+              "nonempty": true,
+              "projection_raw_and_KKT": true,
+              "completion_full_guarded_KKT": true,
+              "same_torque_to_plant_and_DOB": false,
+              "gauss_stage_residual": true,
+              "all_sampled_physical_observer_and_dense_checks": true
+            },
+            "maxima": {
+              "completion_primal": 9.96375817376226e-13,
+              "completion_stationarity": 3.6297357002423807e-14,
+              "completion_complementarity": 4.057467381332344e-22,
+              "stage_residual": 3.4983127505938684e-15
+            },
+            "scope": "FINITE_GRID_AND_NUMERICAL_COLLOCATION_NOT_TRUE_ODE_CERTIFICATION",
+            "lossless_roundtrip_verified": true
+          },
+          "original_runtime_result_passed": false,
+          "verification_correction": {
+            "version": "GL_EXECUTION_VERIFICATION_V2_4A",
+            "passed": true,
+            "original_result_sha256": "478eb615245b32ee8dd145387e16dc05b14f5a1468c49f5b7258d5a2c7b59a58",
+            "trace_sha256": "a1697e3915653a86bc825775eccc9150b21e64d642d0925d9ee6e95d442a9375",
+            "original_result_passed": false,
+            "original_failed_checks": [
+              "same_torque_to_plant_and_DOB"
+            ],
+            "trajectory_resimulated_or_changed": false,
+            "complete_counts": true,
+            "original_terminal_thresholds_passed": true,
+            "substeps_audited": 4000,
+            "maxima": {
+              "h_scaled_full_RHS_defect": 3.4983127505938684e-15,
+              "stage_equation_defect": 0.0,
+              "endpoint_equation_defect": 0.0
+            },
+            "failed_steps": [],
+            "criterion": 1e-13,
+            "criterion_frozen_before_motion": true,
+            "scope": "RECOMPUTED_IDENTICAL_ACTUAL_TORQUE_AND_FULL_PLANT_DOB_POWER_STAGE_EQUATIONS_NOT_CERTIFIED_ODE_BOUNDS",
+            "audit_policy_sha256": "bda5e9f293ccadf7325cc0c8e54ea9b2f2ad5179a88265ee78d13bfaa5deec0c",
+            "utc": "2026-11-03T09:57:51.455775+00:00"
+          }
+        },
+        {
+          "case": "alpha5",
+          "cell": 1,
+          "grid": {
+            "control_period_s": 0.001,
+            "rk4_step_s": 0.000125
+          },
+          "a2": {
+            "completed": true,
+            "passed": true,
+            "failure": null,
+            "metrics": {
+              "modeled_electrical_energy_J": 1.1720249092957913,
+              "duration_s": 1.0,
+              "maximum_intervention_Nm": 0.12769358086881263,
+              "minimum_normalized_raw_slack": 9.999035313252819e-09,
+              "actual_terminal_error_m": 0.0005233556325807103,
+              "planned_terminal_error_m": 5.963569214112894e-17
+            },
+            "trace": {
+              "file": "execution.ctz",
+              "sha256": "8cc5ccbe5ea03727031940df2b0a859bf5d5e18459469e72645444e178b2c279",
+              "canonical_json_sha256": "bf58ea854e3a0421da21743decfed6b29d567bc68088317cd1cb626c3c8d5d14",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            }
+          },
+          "prehold": {
+            "passed": true,
+            "trace": {
+              "file": "prehold.ctz",
+              "sha256": "98f79ce16f5f4e1e0fc10bc2b1f767b8553b40039aadf0649dbc0414efcdd5b4",
+              "canonical_json_sha256": "96053a9246d64765b631a3a34e5c34074e5db24de6436e901c246d7e643c41f2",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            },
+            "reused_evidence": {
+              "source": "/workspace/project/panda_research/runs/active_remediation_v2/v2_3_alpha5_cell1",
+              "result_sha256": "70abcc96261557c307ea1be463de694fd8b6eaa6d1bb2de22971e72d75a2cc69",
+              "trace_sha256": "81f71517dd89ce4d7ad00251b2519b628dfc391f8776e5c33f8ac948832a9b90",
+              "scope": "REUSE_OF_FRESH_CURRENT_SESSION_UNCHANGED_STARTUP_NOT_PREVIOUS_CONVERSATION_PASS"
+            }
+          },
+          "audit": {
+            "passed": true,
+            "checks": {
+              "nonempty": true,
+              "projection_raw_and_KKT": true,
+              "completion_full_guarded_KKT": true,
+              "same_torque_to_plant_and_DOB": false,
+              "gauss_stage_residual": true,
+              "all_sampled_physical_observer_and_dense_checks": true
+            },
+            "maxima": {
+              "completion_primal": 9.646867471810736e-13,
+              "completion_stationarity": 3.629735349517801e-14,
+              "completion_complementarity": 4.05746655827416e-22,
+              "stage_residual": 4.838907052828745e-16
+            },
+            "scope": "FINITE_GRID_AND_NUMERICAL_COLLOCATION_NOT_TRUE_ODE_CERTIFICATION",
+            "lossless_roundtrip_verified": true
+          },
+          "original_runtime_result_passed": false,
+          "verification_correction": {
+            "version": "GL_EXECUTION_VERIFICATION_V2_4A",
+            "passed": true,
+            "original_result_sha256": "637af03f5c799227765262a3d1ec2d692213f1dd2a56e69bf82ec1583f7a7f51",
+            "trace_sha256": "8cc5ccbe5ea03727031940df2b0a859bf5d5e18459469e72645444e178b2c279",
+            "original_result_passed": false,
+            "original_failed_checks": [
+              "same_torque_to_plant_and_DOB"
+            ],
+            "trajectory_resimulated_or_changed": false,
+            "complete_counts": true,
+            "original_terminal_thresholds_passed": true,
+            "substeps_audited": 8000,
+            "maxima": {
+              "h_scaled_full_RHS_defect": 4.838907052828749e-16,
+              "stage_equation_defect": 0.0,
+              "endpoint_equation_defect": 0.0
+            },
+            "failed_steps": [],
+            "criterion": 1e-13,
+            "criterion_frozen_before_motion": true,
+            "scope": "RECOMPUTED_IDENTICAL_ACTUAL_TORQUE_AND_FULL_PLANT_DOB_POWER_STAGE_EQUATIONS_NOT_CERTIFIED_ODE_BOUNDS",
+            "audit_policy_sha256": "bda5e9f293ccadf7325cc0c8e54ea9b2f2ad5179a88265ee78d13bfaa5deec0c"
+          }
+        },
+        {
+          "case": "alpha5",
+          "cell": 2,
+          "grid": {
+            "control_period_s": 0.0005,
+            "rk4_step_s": 0.00025
+          },
+          "a2": {
+            "completed": true,
+            "passed": true,
+            "failure": null,
+            "metrics": {
+              "modeled_electrical_energy_J": 1.1720254591127246,
+              "duration_s": 1.0,
+              "maximum_intervention_Nm": 0.12769355270949606,
+              "minimum_normalized_raw_slack": 9.999026491536782e-09,
+              "actual_terminal_error_m": 0.0005233557886307033,
+              "planned_terminal_error_m": 5.442142349228047e-17
+            },
+            "trace": {
+              "file": "execution.ctz",
+              "sha256": "f15a2a6533fc84639ee058fac722e81d9006ae165d61070566e5eb04235ca3c9",
+              "canonical_json_sha256": "dfd5cd2b0a422d56d2144b40da650bdcf3beca815788661492f6a11c12238141",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            }
+          },
+          "prehold": {
+            "passed": true,
+            "trace": {
+              "file": "prehold.ctz",
+              "sha256": "6f3c2bc5e7bd55ebfa9cdc106c8c545fd78d45159a98e6ded3486dc901fbb231",
+              "canonical_json_sha256": "cc053112eae0f59284edad51408f5fbd37f4f6216029cac0740c621af4341119",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            },
+            "reused_evidence": {
+              "source": "/workspace/project/panda_research/runs/active_remediation_v2/v2_3_alpha5_cell2",
+              "result_sha256": "08cc5883cf653779e816204cc8fba32f2908f335763379f8f0fd9160f93536bd",
+              "trace_sha256": "e8a515365e11bfa6379f7576588d566b036dd51a332067fc84b29b87ff06c0db",
+              "scope": "REUSE_OF_FRESH_CURRENT_SESSION_UNCHANGED_STARTUP_NOT_PREVIOUS_CONVERSATION_PASS"
+            }
+          },
+          "audit": {
+            "passed": true,
+            "checks": {
+              "nonempty": true,
+              "projection_raw_and_KKT": true,
+              "completion_full_guarded_KKT": true,
+              "same_torque_to_plant_and_DOB": false,
+              "gauss_stage_residual": true,
+              "all_sampled_physical_observer_and_dense_checks": true
+            },
+            "maxima": {
+              "completion_primal": 9.735084632180217e-13,
+              "completion_stationarity": 1.3291962399415321e-14,
+              "completion_complementarity": 1.563006256733258e-24,
+              "stage_residual": 3.0401792194822976e-15
+            },
+            "scope": "FINITE_GRID_AND_NUMERICAL_COLLOCATION_NOT_TRUE_ODE_CERTIFICATION",
+            "lossless_roundtrip_verified": true
+          },
+          "original_runtime_result_passed": false,
+          "verification_correction": {
+            "version": "GL_EXECUTION_VERIFICATION_V2_4A",
+            "passed": true,
+            "original_result_sha256": "f00ac61b32c98d93034ada480ffe2ee646c3404a413abe0a95101b7d594ca50b",
+            "trace_sha256": "f15a2a6533fc84639ee058fac722e81d9006ae165d61070566e5eb04235ca3c9",
+            "original_result_passed": false,
+            "original_failed_checks": [
+              "same_torque_to_plant_and_DOB"
+            ],
+            "trajectory_resimulated_or_changed": false,
+            "complete_counts": true,
+            "original_terminal_thresholds_passed": true,
+            "substeps_audited": 4000,
+            "maxima": {
+              "h_scaled_full_RHS_defect": 3.0401792194822976e-15,
+              "stage_equation_defect": 0.0,
+              "endpoint_equation_defect": 0.0
+            },
+            "failed_steps": [],
+            "criterion": 1e-13,
+            "criterion_frozen_before_motion": true,
+            "scope": "RECOMPUTED_IDENTICAL_ACTUAL_TORQUE_AND_FULL_PLANT_DOB_POWER_STAGE_EQUATIONS_NOT_CERTIFIED_ODE_BOUNDS",
+            "audit_policy_sha256": "bda5e9f293ccadf7325cc0c8e54ea9b2f2ad5179a88265ee78d13bfaa5deec0c"
+          }
+        },
+        {
+          "case": "alpha5",
+          "cell": 3,
+          "grid": {
+            "control_period_s": 0.0005,
+            "rk4_step_s": 0.000125
+          },
+          "a2": {
+            "completed": true,
+            "passed": true,
+            "failure": null,
+            "metrics": {
+              "modeled_electrical_energy_J": 1.172025459036652,
+              "duration_s": 1.0,
+              "maximum_intervention_Nm": 0.12769355269213814,
+              "minimum_normalized_raw_slack": 9.999054132330877e-09,
+              "actual_terminal_error_m": 0.0005233557885758282,
+              "planned_terminal_error_m": 5.940386319393238e-17
+            },
+            "trace": {
+              "file": "execution.ctz",
+              "sha256": "ff368cee9b6a4f237de72a178d842164c30e99ceae409349fa94138fecab2121",
+              "canonical_json_sha256": "07842ab6fd498147805264223e23cc9875b9fe20a19eeff399fd30d89d2afc8c",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            }
+          },
+          "prehold": {
+            "passed": true,
+            "trace": {
+              "file": "prehold.ctz",
+              "sha256": "016e82dc615000b70d834c4e7b7b9966189b761c87363b77d43495b1fe2b923b",
+              "canonical_json_sha256": "60b3c7d966a3d831a6e2435b0fdd9afc491bf252aaf561a3337a01594c297704",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            },
+            "reused_evidence": {
+              "source": "/workspace/project/panda_research/runs/active_remediation_v2/v2_3_alpha5_cell3",
+              "result_sha256": "446fe12fd56dd18a055ea82fc893dc9445c7630f2ba9546187c5399f0c902598",
+              "trace_sha256": "5a2ae8aaa144aec95a81b05ffae4887522ef253dd67819c32c37f5d880d4c641",
+              "scope": "REUSE_OF_FRESH_CURRENT_SESSION_UNCHANGED_STARTUP_NOT_PREVIOUS_CONVERSATION_PASS"
+            }
+          },
+          "audit": {
+            "passed": true,
+            "checks": {
+              "nonempty": true,
+              "projection_raw_and_KKT": true,
+              "completion_full_guarded_KKT": true,
+              "same_torque_to_plant_and_DOB": false,
+              "gauss_stage_residual": true,
+              "all_sampled_physical_observer_and_dense_checks": true
+            },
+            "maxima": {
+              "completion_primal": 9.458676691241877e-13,
+              "completion_stationarity": 1.3291960730992026e-14,
+              "completion_complementarity": 1.5843898477077415e-24,
+              "stage_residual": 4.262146191535976e-16
+            },
+            "scope": "FINITE_GRID_AND_NUMERICAL_COLLOCATION_NOT_TRUE_ODE_CERTIFICATION",
+            "lossless_roundtrip_verified": true
+          },
+          "original_runtime_result_passed": false,
+          "verification_correction": {
+            "version": "GL_EXECUTION_VERIFICATION_V2_4A",
+            "passed": true,
+            "original_result_sha256": "ea0015ee65d897b8a6f8b207377a95c2ce2468ff21063d18967bf8d768f2a11b",
+            "trace_sha256": "ff368cee9b6a4f237de72a178d842164c30e99ceae409349fa94138fecab2121",
+            "original_result_passed": false,
+            "original_failed_checks": [
+              "same_torque_to_plant_and_DOB"
+            ],
+            "trajectory_resimulated_or_changed": false,
+            "complete_counts": true,
+            "original_terminal_thresholds_passed": true,
+            "substeps_audited": 8000,
+            "maxima": {
+              "h_scaled_full_RHS_defect": 4.262146191535976e-16,
+              "stage_equation_defect": 0.0,
+              "endpoint_equation_defect": 0.0
+            },
+            "failed_steps": [],
+            "criterion": 1e-13,
+            "criterion_frozen_before_motion": true,
+            "scope": "RECOMPUTED_IDENTICAL_ACTUAL_TORQUE_AND_FULL_PLANT_DOB_POWER_STAGE_EQUATIONS_NOT_CERTIFIED_ODE_BOUNDS",
+            "audit_policy_sha256": "bda5e9f293ccadf7325cc0c8e54ea9b2f2ad5179a88265ee78d13bfaa5deec0c"
+          }
+        }
+      ],
+      "independent_audits": [
+        {
+          "passed": true,
+          "checks": {
+            "nonempty": true,
+            "full_completion_KKT": true,
+            "point_projection_KKT": true,
+            "identical_accepted_polynomial_torques": true,
+            "physical_and_observer": true,
+            "complete_counts": true,
+            "metrics_recomputed": true
+          },
+          "maxima": {
+            "point_primal": 8.330966125291717e-13,
+            "point_stationarity": 9.9920272793666e-13,
+            "point_complementarity": 2.6704455638680613e-14,
+            "completion_primal": 9.96375817376226e-13,
+            "completion_stationarity": 3.6297357002423807e-14,
+            "completion_complementarity": 4.057467381332344e-22,
+            "stage_residual": 3.4983127505938684e-15
+          },
+          "hold_count": 1000,
+          "substep_count": 4000,
+          "peak_digital_intervention_Nm": 0.1276935808650245,
+          "duration_above_0p001_Nm_s": 0.37430468046086035,
+          "genuine_activity_passed": true,
+          "minimum_recomputed_raw_normalized_slack": 9.999003624182624e-09,
+          "query_wall_time_s": {
+            "median": 0.1269231749993196,
+            "p95": 0.249825787298141,
+            "p99": 0.4368597442994356,
+            "maximum": 1.9672424190030142
+          },
+          "trace_sha256": "a1697e3915653a86bc825775eccc9150b21e64d642d0925d9ee6e95d442a9375",
+          "scope": "NUMERICAL_FULL_FINITE_GRID_KKT_AND_RECORDED_TRAJECTORY_AUDIT_NOT_INTERVAL_CERTIFICATE"
+        },
+        {
+          "passed": true,
+          "checks": {
+            "nonempty": true,
+            "full_completion_KKT": true,
+            "point_projection_KKT": true,
+            "identical_accepted_polynomial_torques": true,
+            "physical_and_observer": true,
+            "complete_counts": true,
+            "metrics_recomputed": true
+          },
+          "maxima": {
+            "point_primal": 8.330949862259129e-13,
+            "point_stationarity": 9.992072815857844e-13,
+            "point_complementarity": 2.6704452275671743e-14,
+            "completion_primal": 9.646867471810736e-13,
+            "completion_stationarity": 3.629735349517801e-14,
+            "completion_complementarity": 4.05746655827416e-22,
+            "stage_residual": 4.838907052828745e-16
+          },
+          "hold_count": 1000,
+          "substep_count": 8000,
+          "peak_digital_intervention_Nm": 0.12769358086881263,
+          "duration_above_0p001_Nm_s": 0.37430468047913923,
+          "genuine_activity_passed": true,
+          "minimum_recomputed_raw_normalized_slack": 9.999035313252819e-09,
+          "query_wall_time_s": {
+            "median": 0.0982565695012454,
+            "p95": 0.23712396749888284,
+            "p99": 0.5573243251401799,
+            "maximum": 1.4470021840024856
+          },
+          "trace_sha256": "8cc5ccbe5ea03727031940df2b0a859bf5d5e18459469e72645444e178b2c279",
+          "scope": "NUMERICAL_FULL_FINITE_GRID_KKT_AND_RECORDED_TRAJECTORY_AUDIT_NOT_INTERVAL_CERTIFICATE"
+        },
+        {
+          "passed": true,
+          "checks": {
+            "nonempty": true,
+            "full_completion_KKT": true,
+            "point_projection_KKT": true,
+            "identical_accepted_polynomial_torques": true,
+            "physical_and_observer": true,
+            "complete_counts": true,
+            "metrics_recomputed": true
+          },
+          "maxima": {
+            "point_primal": 8.337198119379163e-13,
+            "point_stationarity": 9.960057680957063e-13,
+            "point_complementarity": 2.6702572589452724e-14,
+            "completion_primal": 9.735084632180217e-13,
+            "completion_stationarity": 1.3291962399415321e-14,
+            "completion_complementarity": 1.563006256733258e-24,
+            "stage_residual": 3.0401792194822976e-15
+          },
+          "hold_count": 2000,
+          "substep_count": 4000,
+          "peak_digital_intervention_Nm": 0.12769355270949606,
+          "duration_above_0p001_Nm_s": 0.37430808618442213,
+          "genuine_activity_passed": true,
+          "minimum_recomputed_raw_normalized_slack": 9.999026491536782e-09,
+          "query_wall_time_s": {
+            "median": 0.1532172539991734,
+            "p95": 0.23987119634912227,
+            "p99": 0.39394990828899573,
+            "maximum": 1.6380130190009368
+          },
+          "trace_sha256": "f15a2a6533fc84639ee058fac722e81d9006ae165d61070566e5eb04235ca3c9",
+          "scope": "NUMERICAL_FULL_FINITE_GRID_KKT_AND_RECORDED_TRAJECTORY_AUDIT_NOT_INTERVAL_CERTIFICATE"
+        },
+        {
+          "passed": true,
+          "checks": {
+            "nonempty": true,
+            "full_completion_KKT": true,
+            "point_projection_KKT": true,
+            "identical_accepted_polynomial_torques": true,
+            "physical_and_observer": true,
+            "complete_counts": true,
+            "metrics_recomputed": true
+          },
+          "maxima": {
+            "point_primal": 8.337185108953094e-13,
+            "point_stationarity": 9.959998591938662e-13,
+            "point_complementarity": 2.6702569007945935e-14,
+            "completion_primal": 9.458676691241877e-13,
+            "completion_stationarity": 1.3291960730992026e-14,
+            "completion_complementarity": 1.5843898477077415e-24,
+            "stage_residual": 4.262146191535976e-16
+          },
+          "hold_count": 2000,
+          "substep_count": 8000,
+          "peak_digital_intervention_Nm": 0.12769355269213814,
+          "duration_above_0p001_Nm_s": 0.374308086103164,
+          "genuine_activity_passed": true,
+          "minimum_recomputed_raw_normalized_slack": 9.999054132330877e-09,
+          "query_wall_time_s": {
+            "median": 0.06650921600157744,
+            "p95": 0.1071730943993316,
+            "p99": 0.20541632242795457,
+            "maximum": 0.7627468699974997
+          },
+          "trace_sha256": "ff368cee9b6a4f237de72a178d842164c30e99ceae409349fa94138fecab2121",
+          "scope": "NUMERICAL_FULL_FINITE_GRID_KKT_AND_RECORDED_TRAJECTORY_AUDIT_NOT_INTERVAL_CERTIFICATE"
+        }
+      ],
+      "refinement": {
+        "passed": true,
+        "comparisons": [
+          {
+            "cells": [
+              0,
+              1
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.1720249093530677,
+                  1.1720249092957913
+                ],
+                "absolute_difference": 5.7276405840411826e-11,
+                "tolerance": 0.00011720249093530678,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.1276935808650245,
+                  0.12769358086881263
+                ],
+                "absolute_difference": 3.788136471172265e-12,
+                "tolerance": 1.2769358086881264e-05,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999003624182625e-09,
+                  9.999035313252819e-09
+                ],
+                "absolute_difference": 3.168907019308434e-14,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              2,
+              3
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.1720254591127246,
+                  1.172025459036652
+                ],
+                "absolute_difference": 7.607270369192065e-11,
+                "tolerance": 0.00011720254591127247,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.12769355270949606,
+                  0.12769355269213814
+                ],
+                "absolute_difference": 1.7357920656380088e-11,
+                "tolerance": 1.2769355270949606e-05,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999026491536782e-09,
+                  9.999054132330877e-09
+                ],
+                "absolute_difference": 2.76407940949197e-14,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              0,
+              2
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.1720249093530677,
+                  1.1720254591127246
+                ],
+                "absolute_difference": 5.497596569092877e-07,
+                "tolerance": 0.00011720254591127247,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.1276935808650245,
+                  0.12769355270949606
+                ],
+                "absolute_difference": 2.815552843649094e-08,
+                "tolerance": 1.276935808650245e-05,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999003624182625e-09,
+                  9.999026491536782e-09
+                ],
+                "absolute_difference": 2.2867354156446432e-14,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              1,
+              3
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.1720249092957913,
+                  1.172025459036652
+                ],
+                "absolute_difference": 5.497408606114362e-07,
+                "tolerance": 0.00011720254590366519,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.12769358086881263,
+                  0.12769355269213814
+                ],
+                "absolute_difference": 2.8176674493618492e-08,
+                "tolerance": 1.2769358086881264e-05,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999035313252819e-09,
+                  9.999054132330877e-09
+                ],
+                "absolute_difference": 1.8819078058281792e-14,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              0,
+              3
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.1720249093530677,
+                  1.172025459036652
+                ],
+                "absolute_difference": 5.496835842055958e-07,
+                "tolerance": 0.00011720254590366519,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.1276935808650245,
+                  0.12769355269213814
+                ],
+                "absolute_difference": 2.817288635714732e-08,
+                "tolerance": 1.276935808650245e-05,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999003624182625e-09,
+                  9.999054132330877e-09
+                ],
+                "absolute_difference": 5.050814825136613e-14,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              1,
+              2
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.1720249092957913,
+                  1.1720254591127246
+                ],
+                "absolute_difference": 5.498169333151282e-07,
+                "tolerance": 0.00011720254591127247,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.12769358086881263,
+                  0.12769355270949606
+                ],
+                "absolute_difference": 2.8159316572962112e-08,
+                "tolerance": 1.2769358086881264e-05,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999035313252819e-09,
+                  9.999026491536782e-09
+                ],
+                "absolute_difference": 8.821716036637907e-15,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          }
+        ],
+        "rule": "Each fixed-factor edge; max(absolute, relative*max(abs(values))). Diagonals disclosed separately."
+      }
+    },
+    "alpha10": {
+      "passed": true,
+      "cells": [
+        {
+          "case": "alpha10",
+          "cell": 0,
+          "grid": {
+            "control_period_s": 0.001,
+            "rk4_step_s": 0.00025
+          },
+          "a2": {
+            "completed": true,
+            "passed": true,
+            "failure": null,
+            "metrics": {
+              "modeled_electrical_energy_J": 1.2845345170034619,
+              "duration_s": 0.5,
+              "maximum_intervention_Nm": 0.06692375099245694,
+              "minimum_normalized_raw_slack": 9.999827516495598e-09,
+              "actual_terminal_error_m": 0.000724711218411868,
+              "planned_terminal_error_m": 5.224785754028713e-17
+            },
+            "trace": {
+              "file": "execution.ctz",
+              "sha256": "dccc308ca6163fb815a17c69fcbdb19b093c4c32fd46dc22179baf0a4034f369",
+              "canonical_json_sha256": "844ae96c8da72708a9bb1c7ab264b448e5e2c7c56b3b39ea4cf4133b81893538",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            }
+          },
+          "prehold": {
+            "passed": true,
+            "trace": {
+              "file": "prehold.ctz",
+              "sha256": "e3d29e32495aa3ba8b719f86dfc0ae24adb0348d44ce716991190a7df685286f",
+              "canonical_json_sha256": "fc9c0eb1d33a69d29719f2014f4fe5824eebda8e8d9accf65a00bcf5dd81b4ec",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            },
+            "reused_evidence": null
+          },
+          "audit": {
+            "passed": true,
+            "checks": {
+              "nonempty": true,
+              "projection_raw_and_KKT": true,
+              "completion_full_guarded_KKT": true,
+              "same_torque_to_plant_and_DOB": false,
+              "gauss_stage_residual": true,
+              "all_sampled_physical_observer_and_dense_checks": true
+            },
+            "maxima": {
+              "completion_primal": 1.7248350440432326e-13,
+              "completion_stationarity": 1.9033342409160303e-13,
+              "completion_complementarity": 7.461796202474998e-21,
+              "stage_residual": 3.5090819139327322e-15
+            },
+            "scope": "FINITE_GRID_AND_NUMERICAL_COLLOCATION_NOT_TRUE_ODE_CERTIFICATION",
+            "lossless_roundtrip_verified": true
+          },
+          "original_runtime_result_passed": false,
+          "verification_correction": {
+            "version": "GL_EXECUTION_VERIFICATION_V2_4A",
+            "passed": true,
+            "original_result_sha256": "ce2287f6b68bda41d4f2cf4c4ad62a7484036de35a7e7c6c2f858bf5abb37b8e",
+            "trace_sha256": "dccc308ca6163fb815a17c69fcbdb19b093c4c32fd46dc22179baf0a4034f369",
+            "original_result_passed": false,
+            "original_failed_checks": [
+              "same_torque_to_plant_and_DOB"
+            ],
+            "trajectory_resimulated_or_changed": false,
+            "complete_counts": true,
+            "original_terminal_thresholds_passed": true,
+            "substeps_audited": 2000,
+            "maxima": {
+              "h_scaled_full_RHS_defect": 3.5090819139327322e-15,
+              "stage_equation_defect": 0.0,
+              "endpoint_equation_defect": 0.0
+            },
+            "failed_steps": [],
+            "criterion": 1e-13,
+            "criterion_frozen_before_motion": true,
+            "scope": "RECOMPUTED_IDENTICAL_ACTUAL_TORQUE_AND_FULL_PLANT_DOB_POWER_STAGE_EQUATIONS_NOT_CERTIFIED_ODE_BOUNDS",
+            "audit_policy_sha256": "bda5e9f293ccadf7325cc0c8e54ea9b2f2ad5179a88265ee78d13bfaa5deec0c"
+          }
+        },
+        {
+          "case": "alpha10",
+          "cell": 1,
+          "grid": {
+            "control_period_s": 0.001,
+            "rk4_step_s": 0.000125
+          },
+          "a2": {
+            "completed": true,
+            "passed": true,
+            "failure": null,
+            "metrics": {
+              "modeled_electrical_energy_J": 1.2845346142997025,
+              "duration_s": 0.5,
+              "maximum_intervention_Nm": 0.0669237509920597,
+              "minimum_normalized_raw_slack": 9.999827515187357e-09,
+              "actual_terminal_error_m": 0.0007247112184180752,
+              "planned_terminal_error_m": 5.963569214112894e-17
+            },
+            "trace": {
+              "file": "execution.ctz",
+              "sha256": "8fe60badd19a0eb9d07e5ea795ab23fa5a38bfd78c310bcead6cb48a1bd3ce08",
+              "canonical_json_sha256": "47c7306b9aa295eede3ea2b000288ac1e508cca01e41fb9500296801741f5316",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            }
+          },
+          "prehold": {
+            "passed": true,
+            "trace": {
+              "file": "prehold.ctz",
+              "sha256": "7addab06af390df5dd32eab6d2c96e12d2ec473d82ce971eb7a015c21d073033",
+              "canonical_json_sha256": "96053a9246d64765b631a3a34e5c34074e5db24de6436e901c246d7e643c41f2",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            },
+            "reused_evidence": null
+          },
+          "audit": {
+            "passed": true,
+            "checks": {
+              "nonempty": true,
+              "projection_raw_and_KKT": true,
+              "completion_full_guarded_KKT": true,
+              "same_torque_to_plant_and_DOB": false,
+              "gauss_stage_residual": true,
+              "all_sampled_physical_observer_and_dense_checks": true
+            },
+            "maxima": {
+              "completion_primal": 1.7248481264340157e-13,
+              "completion_stationarity": 1.9033342456805906e-13,
+              "completion_complementarity": 7.461796225804091e-21,
+              "stage_residual": 4.853895063661184e-16
+            },
+            "scope": "FINITE_GRID_AND_NUMERICAL_COLLOCATION_NOT_TRUE_ODE_CERTIFICATION",
+            "lossless_roundtrip_verified": true
+          },
+          "original_runtime_result_passed": false,
+          "verification_correction": {
+            "version": "GL_EXECUTION_VERIFICATION_V2_4A",
+            "passed": true,
+            "original_result_sha256": "ec4f9df178b8c66d5c3760e6ed57bdd3e7339304417c21621f12d3cb2d30cc65",
+            "trace_sha256": "8fe60badd19a0eb9d07e5ea795ab23fa5a38bfd78c310bcead6cb48a1bd3ce08",
+            "original_result_passed": false,
+            "original_failed_checks": [
+              "same_torque_to_plant_and_DOB"
+            ],
+            "trajectory_resimulated_or_changed": false,
+            "complete_counts": true,
+            "original_terminal_thresholds_passed": true,
+            "substeps_audited": 4000,
+            "maxima": {
+              "h_scaled_full_RHS_defect": 4.853895063661188e-16,
+              "stage_equation_defect": 0.0,
+              "endpoint_equation_defect": 0.0
+            },
+            "failed_steps": [],
+            "criterion": 1e-13,
+            "criterion_frozen_before_motion": true,
+            "scope": "RECOMPUTED_IDENTICAL_ACTUAL_TORQUE_AND_FULL_PLANT_DOB_POWER_STAGE_EQUATIONS_NOT_CERTIFIED_ODE_BOUNDS",
+            "audit_policy_sha256": "bda5e9f293ccadf7325cc0c8e54ea9b2f2ad5179a88265ee78d13bfaa5deec0c"
+          }
+        },
+        {
+          "case": "alpha10",
+          "cell": 2,
+          "grid": {
+            "control_period_s": 0.0005,
+            "rk4_step_s": 0.00025
+          },
+          "a2": {
+            "completed": true,
+            "passed": true,
+            "failure": null,
+            "metrics": {
+              "modeled_electrical_energy_J": 1.2845347661429471,
+              "duration_s": 0.5,
+              "maximum_intervention_Nm": 0.0669227221167637,
+              "minimum_normalized_raw_slack": 9.999057481036425e-09,
+              "actual_terminal_error_m": 0.0007247139535519703,
+              "planned_terminal_error_m": 5.442142349228047e-17
+            },
+            "trace": {
+              "file": "execution.ctz",
+              "sha256": "8afa39d99286d6affb74e53731b4169a06d6df99d2d499afa574b3234c9272fb",
+              "canonical_json_sha256": "4ea53e2cab81f652b63d9260f8c6550905d0d13af208e391756a66ca2bcde46e",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            }
+          },
+          "prehold": {
+            "passed": true,
+            "trace": {
+              "file": "prehold.ctz",
+              "sha256": "853b5a033646291f93cb3ddc3a0eba754141eec6f32939a959e3ce30dbe97055",
+              "canonical_json_sha256": "cc053112eae0f59284edad51408f5fbd37f4f6216029cac0740c621af4341119",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            },
+            "reused_evidence": null
+          },
+          "audit": {
+            "passed": true,
+            "checks": {
+              "nonempty": true,
+              "projection_raw_and_KKT": true,
+              "completion_full_guarded_KKT": true,
+              "same_torque_to_plant_and_DOB": false,
+              "gauss_stage_residual": true,
+              "all_sampled_physical_observer_and_dense_checks": true
+            },
+            "maxima": {
+              "completion_primal": 9.425189635757986e-13,
+              "completion_stationarity": 5.78324332420712e-15,
+              "completion_complementarity": 2.2032581033403825e-24,
+              "stage_residual": 3.0452862453955732e-15
+            },
+            "scope": "FINITE_GRID_AND_NUMERICAL_COLLOCATION_NOT_TRUE_ODE_CERTIFICATION",
+            "lossless_roundtrip_verified": true
+          },
+          "original_runtime_result_passed": false,
+          "verification_correction": {
+            "version": "GL_EXECUTION_VERIFICATION_V2_4A",
+            "passed": true,
+            "original_result_sha256": "d80aebf1e724c3a5ff18d19933d7a0a8b7367fa89f05c4ff1f79a161b8616ac9",
+            "trace_sha256": "8afa39d99286d6affb74e53731b4169a06d6df99d2d499afa574b3234c9272fb",
+            "original_result_passed": false,
+            "original_failed_checks": [
+              "same_torque_to_plant_and_DOB"
+            ],
+            "trajectory_resimulated_or_changed": false,
+            "complete_counts": true,
+            "original_terminal_thresholds_passed": true,
+            "substeps_audited": 2000,
+            "maxima": {
+              "h_scaled_full_RHS_defect": 3.0452862453955732e-15,
+              "stage_equation_defect": 0.0,
+              "endpoint_equation_defect": 0.0
+            },
+            "failed_steps": [],
+            "criterion": 1e-13,
+            "criterion_frozen_before_motion": true,
+            "scope": "RECOMPUTED_IDENTICAL_ACTUAL_TORQUE_AND_FULL_PLANT_DOB_POWER_STAGE_EQUATIONS_NOT_CERTIFIED_ODE_BOUNDS",
+            "audit_policy_sha256": "bda5e9f293ccadf7325cc0c8e54ea9b2f2ad5179a88265ee78d13bfaa5deec0c"
+          }
+        },
+        {
+          "case": "alpha10",
+          "cell": 3,
+          "grid": {
+            "control_period_s": 0.0005,
+            "rk4_step_s": 0.000125
+          },
+          "a2": {
+            "completed": true,
+            "passed": true,
+            "failure": null,
+            "metrics": {
+              "modeled_electrical_energy_J": 1.2845348634289746,
+              "duration_s": 0.5,
+              "maximum_intervention_Nm": 0.06692272210373687,
+              "minimum_normalized_raw_slack": 9.999063646731883e-09,
+              "actual_terminal_error_m": 0.0007247139535527512,
+              "planned_terminal_error_m": 5.940386319393238e-17
+            },
+            "trace": {
+              "file": "execution.ctz",
+              "sha256": "cc658c23b99d7faac062c33c8a10a5d64a117addc16ddf26a6606eb9ea0512f3",
+              "canonical_json_sha256": "b4e036a96365bb25aa8a7e455663b89844001c42dc68f0daea3a259c3312c996",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            }
+          },
+          "prehold": {
+            "passed": true,
+            "trace": {
+              "file": "prehold.ctz",
+              "sha256": "98022cec61d4c4cf0ee0ad61f546b002f5cef40c298875eb2ccff436e15fc703",
+              "canonical_json_sha256": "60b3c7d966a3d831a6e2435b0fdd9afc491bf252aaf561a3337a01594c297704",
+              "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+            },
+            "reused_evidence": null
+          },
+          "audit": {
+            "passed": true,
+            "checks": {
+              "nonempty": true,
+              "projection_raw_and_KKT": true,
+              "completion_full_guarded_KKT": true,
+              "same_torque_to_plant_and_DOB": false,
+              "gauss_stage_residual": true,
+              "all_sampled_physical_observer_and_dense_checks": true
+            },
+            "maxima": {
+              "completion_primal": 9.363532681194224e-13,
+              "completion_stationarity": 5.783395172662343e-15,
+              "completion_complementarity": 2.1938959489656025e-24,
+              "stage_residual": 4.2665870836344766e-16
+            },
+            "scope": "FINITE_GRID_AND_NUMERICAL_COLLOCATION_NOT_TRUE_ODE_CERTIFICATION",
+            "lossless_roundtrip_verified": true
+          },
+          "original_runtime_result_passed": false,
+          "verification_correction": {
+            "version": "GL_EXECUTION_VERIFICATION_V2_4A",
+            "passed": true,
+            "original_result_sha256": "4c141e2b42de71e9c54b9fbfe848150eb157cb2d8d02f394f0e5cf03dcd30b64",
+            "trace_sha256": "cc658c23b99d7faac062c33c8a10a5d64a117addc16ddf26a6606eb9ea0512f3",
+            "original_result_passed": false,
+            "original_failed_checks": [
+              "same_torque_to_plant_and_DOB"
+            ],
+            "trajectory_resimulated_or_changed": false,
+            "complete_counts": true,
+            "original_terminal_thresholds_passed": true,
+            "substeps_audited": 4000,
+            "maxima": {
+              "h_scaled_full_RHS_defect": 4.2665870836344766e-16,
+              "stage_equation_defect": 0.0,
+              "endpoint_equation_defect": 0.0
+            },
+            "failed_steps": [],
+            "criterion": 1e-13,
+            "criterion_frozen_before_motion": true,
+            "scope": "RECOMPUTED_IDENTICAL_ACTUAL_TORQUE_AND_FULL_PLANT_DOB_POWER_STAGE_EQUATIONS_NOT_CERTIFIED_ODE_BOUNDS",
+            "audit_policy_sha256": "bda5e9f293ccadf7325cc0c8e54ea9b2f2ad5179a88265ee78d13bfaa5deec0c"
+          }
+        }
+      ],
+      "independent_audits": [
+        {
+          "passed": true,
+          "checks": {
+            "nonempty": true,
+            "full_completion_KKT": true,
+            "point_projection_KKT": true,
+            "identical_accepted_polynomial_torques": true,
+            "physical_and_observer": true,
+            "complete_counts": true,
+            "metrics_recomputed": true
+          },
+          "maxima": {
+            "point_primal": 1.3816552069112475e-13,
+            "point_stationarity": 9.8541303155536e-13,
+            "point_complementarity": 2.324332287344079e-14,
+            "completion_primal": 1.7248350440432326e-13,
+            "completion_stationarity": 1.9033342409160303e-13,
+            "completion_complementarity": 7.461796202474998e-21,
+            "stage_residual": 3.5090819139327322e-15
+          },
+          "hold_count": 500,
+          "substep_count": 2000,
+          "peak_digital_intervention_Nm": 0.06692375099245694,
+          "duration_above_0p001_Nm_s": 0.06252443629508482,
+          "genuine_activity_passed": true,
+          "minimum_recomputed_raw_normalized_slack": 9.999827516495596e-09,
+          "query_wall_time_s": {
+            "median": 0.07761463150018244,
+            "p95": 0.1142027597001288,
+            "p99": 0.2116393201806204,
+            "maximum": 0.4085518530009722
+          },
+          "trace_sha256": "dccc308ca6163fb815a17c69fcbdb19b093c4c32fd46dc22179baf0a4034f369",
+          "scope": "NUMERICAL_FULL_FINITE_GRID_KKT_AND_RECORDED_TRAJECTORY_AUDIT_NOT_INTERVAL_CERTIFICATE"
+        },
+        {
+          "passed": true,
+          "checks": {
+            "nonempty": true,
+            "full_completion_KKT": true,
+            "point_projection_KKT": true,
+            "identical_accepted_polynomial_torques": true,
+            "physical_and_observer": true,
+            "complete_counts": true,
+            "metrics_recomputed": true
+          },
+          "maxima": {
+            "point_primal": 1.381325609450812e-13,
+            "point_stationarity": 9.854024063740696e-13,
+            "point_complementarity": 2.3243343154069146e-14,
+            "completion_primal": 1.7248481264340157e-13,
+            "completion_stationarity": 1.9033342456805906e-13,
+            "completion_complementarity": 7.461796225804091e-21,
+            "stage_residual": 4.853895063661184e-16
+          },
+          "hold_count": 500,
+          "substep_count": 4000,
+          "peak_digital_intervention_Nm": 0.0669237509920597,
+          "duration_above_0p001_Nm_s": 0.06252443629453287,
+          "genuine_activity_passed": true,
+          "minimum_recomputed_raw_normalized_slack": 9.999827515187357e-09,
+          "query_wall_time_s": {
+            "median": 0.05565322250004101,
+            "p95": 0.09360732985041954,
+            "p99": 0.18261720243837767,
+            "maximum": 0.3762990110008104
+          },
+          "trace_sha256": "8fe60badd19a0eb9d07e5ea795ab23fa5a38bfd78c310bcead6cb48a1bd3ce08",
+          "scope": "NUMERICAL_FULL_FINITE_GRID_KKT_AND_RECORDED_TRAJECTORY_AUDIT_NOT_INTERVAL_CERTIFICATE"
+        },
+        {
+          "passed": true,
+          "checks": {
+            "nonempty": true,
+            "full_completion_KKT": true,
+            "point_projection_KKT": true,
+            "identical_accepted_polynomial_torques": true,
+            "physical_and_observer": true,
+            "complete_counts": true,
+            "metrics_recomputed": true
+          },
+          "maxima": {
+            "point_primal": 1.3877180654597865e-13,
+            "point_stationarity": 9.85958710508772e-13,
+            "point_complementarity": 2.3242643182167144e-14,
+            "completion_primal": 9.425189635757986e-13,
+            "completion_stationarity": 5.78324332420712e-15,
+            "completion_complementarity": 2.2032581033403825e-24,
+            "stage_residual": 3.0452862453955732e-15
+          },
+          "hold_count": 1000,
+          "substep_count": 2000,
+          "peak_digital_intervention_Nm": 0.0669227221167637,
+          "duration_above_0p001_Nm_s": 0.06252368678543173,
+          "genuine_activity_passed": true,
+          "minimum_recomputed_raw_normalized_slack": 9.999057481036424e-09,
+          "query_wall_time_s": {
+            "median": 0.07939246249952703,
+            "p95": 0.17123812459867618,
+            "p99": 0.2548709600905931,
+            "maximum": 0.7088037850007822
+          },
+          "trace_sha256": "8afa39d99286d6affb74e53731b4169a06d6df99d2d499afa574b3234c9272fb",
+          "scope": "NUMERICAL_FULL_FINITE_GRID_KKT_AND_RECORDED_TRAJECTORY_AUDIT_NOT_INTERVAL_CERTIFICATE"
+        },
+        {
+          "passed": true,
+          "checks": {
+            "nonempty": true,
+            "full_completion_KKT": true,
+            "point_projection_KKT": true,
+            "identical_accepted_polynomial_torques": true,
+            "physical_and_observer": true,
+            "complete_counts": true,
+            "metrics_recomputed": true
+          },
+          "maxima": {
+            "point_primal": 1.3876660237555072e-13,
+            "point_stationarity": 9.859293286298976e-13,
+            "point_complementarity": 2.3242641843282404e-14,
+            "completion_primal": 9.363532681194224e-13,
+            "completion_stationarity": 5.783395172662343e-15,
+            "completion_complementarity": 2.1938959489656025e-24,
+            "stage_residual": 4.2665870836344766e-16
+          },
+          "hold_count": 1000,
+          "substep_count": 4000,
+          "peak_digital_intervention_Nm": 0.06692272210373687,
+          "duration_above_0p001_Nm_s": 0.06252368678184268,
+          "genuine_activity_passed": true,
+          "minimum_recomputed_raw_normalized_slack": 9.999063646731881e-09,
+          "query_wall_time_s": {
+            "median": 0.051310423001268646,
+            "p95": 0.12774888714720864,
+            "p99": 0.202493027817909,
+            "maximum": 0.4178579319996061
+          },
+          "trace_sha256": "cc658c23b99d7faac062c33c8a10a5d64a117addc16ddf26a6606eb9ea0512f3",
+          "scope": "NUMERICAL_FULL_FINITE_GRID_KKT_AND_RECORDED_TRAJECTORY_AUDIT_NOT_INTERVAL_CERTIFICATE"
+        }
+      ],
+      "refinement": {
+        "passed": true,
+        "comparisons": [
+          {
+            "cells": [
+              0,
+              1
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.2845345170034619,
+                  1.2845346142997025
+                ],
+                "absolute_difference": 9.729624061982634e-08,
+                "tolerance": 0.00012845346142997027,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  0.5,
+                  0.5
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 5e-05,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.06692375099245694,
+                  0.0669237509920597
+                ],
+                "absolute_difference": 3.97237798210881e-13,
+                "tolerance": 6.692375099245695e-06,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999827516495598e-09,
+                  9.999827515187357e-09
+                ],
+                "absolute_difference": 1.3082407326730418e-18,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              2,
+              3
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.2845347661429471,
+                  1.2845348634289746
+                ],
+                "absolute_difference": 9.72860274561782e-08,
+                "tolerance": 0.00012845348634289746,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  0.5,
+                  0.5
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 5e-05,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.0669227221167637,
+                  0.06692272210373687
+                ],
+                "absolute_difference": 1.302682961501489e-11,
+                "tolerance": 6.692272211676371e-06,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999057481036425e-09,
+                  9.999063646731883e-09
+                ],
+                "absolute_difference": 6.165695457125797e-15,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              0,
+              2
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.2845345170034619,
+                  1.2845347661429471
+                ],
+                "absolute_difference": 2.4913948526439356e-07,
+                "tolerance": 0.00012845347661429471,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  0.5,
+                  0.5
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 5e-05,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.06692375099245694,
+                  0.0669227221167637
+                ],
+                "absolute_difference": 1.0288756932402832e-06,
+                "tolerance": 6.692375099245695e-06,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999827516495598e-09,
+                  9.999057481036425e-09
+                ],
+                "absolute_difference": 7.700354591721345e-13,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              1,
+              3
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.2845346142997025,
+                  1.2845348634289746
+                ],
+                "absolute_difference": 2.491292721007454e-07,
+                "tolerance": 0.00012845348634289746,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  0.5,
+                  0.5
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 5e-05,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.0669237509920597,
+                  0.06692272210373687
+                ],
+                "absolute_difference": 1.0288883228321e-06,
+                "tolerance": 6.6923750992059705e-06,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999827515187357e-09,
+                  9.999063646731883e-09
+                ],
+                "absolute_difference": 7.63868455474276e-13,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              0,
+              3
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.2845345170034619,
+                  1.2845348634289746
+                ],
+                "absolute_difference": 3.4642551272057176e-07,
+                "tolerance": 0.00012845348634289746,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  0.5,
+                  0.5
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 5e-05,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.06692375099245694,
+                  0.06692272210373687
+                ],
+                "absolute_difference": 1.0288887200698982e-06,
+                "tolerance": 6.692375099245695e-06,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999827516495598e-09,
+                  9.999063646731883e-09
+                ],
+                "absolute_difference": 7.638697637150087e-13,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              1,
+              2
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.2845346142997025,
+                  1.2845347661429471
+                ],
+                "absolute_difference": 1.5184324464456722e-07,
+                "tolerance": 0.00012845347661429471,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  0.5,
+                  0.5
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 5e-05,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  0.0669237509920597,
+                  0.0669227221167637
+                ],
+                "absolute_difference": 1.028875296002485e-06,
+                "tolerance": 6.6923750992059705e-06,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  9.999827515187357e-09,
+                  9.999057481036425e-09
+                ],
+                "absolute_difference": 7.700341509314018e-13,
+                "tolerance": 1e-06,
+                "passed": true
+              }
+            }
+          }
+        ],
+        "rule": "Each fixed-factor edge; max(absolute, relative*max(abs(values))). Diagonals disclosed separately."
+      }
+    }
+  },
+  "regressions": {
+    "original_7": {
+      "cell_count": 7,
+      "passed": true,
+      "summary_sha256": "48d77af4b2f54b38afc45d80f1489ab1318a4e57df308f29728a89b31869942f",
+      "gate": {
+        "status": "GO",
+        "A2_numerical": "PASS",
+        "scope": "USER_AUTHORIZED_LEVEL_2_A2_SIMULATION_ONLY",
+        "checks": {
+          "explicit_numerical_authority": true,
+          "exact_grid_coverage": true,
+          "every_prehold_and_endpoint": true,
+          "every_full_A2_cell": true,
+          "every_trace_audited": true,
+          "two_declared_cohorts": true,
+          "engineering_prerequisites": true,
+          "original_C4_all_refinements": true,
+          "finer_confirmation_all_refinements": true
+        },
+        "cohorts": {
+          "original_C4": {
+            "passed": true,
+            "comparisons": [
+              {
+                "cells": [
+                  0,
+                  1
+                ],
+                "factor": "h",
+                "required": true,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.27079301298024966,
+                      0.2707930131220146
+                    ],
+                    "absolute_difference": 1.4176493312589855e-10,
+                    "tolerance": 2.707930131220146e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.791655212028185e-09,
+                      3.803895642919271e-09
+                    ],
+                    "absolute_difference": 1.2240430891085695e-11,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.1316134200816205,
+                      0.13161342009721486
+                    ],
+                    "absolute_difference": 1.5594359137338643e-11,
+                    "tolerance": 1.3161342009721486e-05,
+                    "passed": true
+                  }
+                }
+              },
+              {
+                "cells": [
+                  2,
+                  3
+                ],
+                "factor": "h",
+                "required": true,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.27079486609751224,
+                      0.27079486623971266
+                    ],
+                    "absolute_difference": 1.4220041810730777e-10,
+                    "tolerance": 2.7079486623971268e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.793145575416441e-09,
+                      3.793145797459379e-09
+                    ],
+                    "absolute_difference": 2.2204293815609701e-16,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.13162364553924402,
+                      0.13162364555491024
+                    ],
+                    "absolute_difference": 1.5666218322607506e-11,
+                    "tolerance": 1.3162364555491025e-05,
+                    "passed": true
+                  }
+                }
+              },
+              {
+                "cells": [
+                  0,
+                  2
+                ],
+                "factor": "Delta",
+                "required": true,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.27079301298024966,
+                      0.27079486609751224
+                    ],
+                    "absolute_difference": 1.853117262584636e-06,
+                    "tolerance": 2.7079486609751225e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.791655212028185e-09,
+                      3.793145575416441e-09
+                    ],
+                    "absolute_difference": 1.490363388255983e-12,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.1316134200816205,
+                      0.13162364553924402
+                    ],
+                    "absolute_difference": 1.0225457623525003e-05,
+                    "tolerance": 1.3162364553924404e-05,
+                    "passed": true
+                  }
+                }
+              },
+              {
+                "cells": [
+                  1,
+                  3
+                ],
+                "factor": "Delta",
+                "required": true,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.2707930131220146,
+                      0.27079486623971266
+                    ],
+                    "absolute_difference": 1.8531176980696173e-06,
+                    "tolerance": 2.7079486623971268e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.803895642919271e-09,
+                      3.793145797459379e-09
+                    ],
+                    "absolute_difference": 1.0749845459891556e-11,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.13161342009721486,
+                      0.13162364555491024
+                    ],
+                    "absolute_difference": 1.0225457695384188e-05,
+                    "tolerance": 1.3162364555491025e-05,
+                    "passed": true
+                  }
+                }
+              },
+              {
+                "cells": [
+                  0,
+                  3
+                ],
+                "factor": "cross_diagonal",
+                "required": false,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.27079301298024966,
+                      0.27079486623971266
+                    ],
+                    "absolute_difference": 1.8532594630027432e-06,
+                    "tolerance": 2.7079486623971268e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.791655212028185e-09,
+                      3.793145797459379e-09
+                    ],
+                    "absolute_difference": 1.490585431194139e-12,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.1316134200816205,
+                      0.13162364555491024
+                    ],
+                    "absolute_difference": 1.0225473289743325e-05,
+                    "tolerance": 1.3162364555491025e-05,
+                    "passed": true
+                  }
+                }
+              },
+              {
+                "cells": [
+                  1,
+                  2
+                ],
+                "factor": "cross_diagonal",
+                "required": false,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.2707930131220146,
+                      0.27079486609751224
+                    ],
+                    "absolute_difference": 1.85297549765151e-06,
+                    "tolerance": 2.7079486609751225e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.803895642919271e-09,
+                      3.793145575416441e-09
+                    ],
+                    "absolute_difference": 1.0750067502829712e-11,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.13161342009721486,
+                      0.13162364553924402
+                    ],
+                    "absolute_difference": 1.0225442029165865e-05,
+                    "tolerance": 1.3162364553924404e-05,
+                    "passed": true
+                  }
+                }
+              }
+            ],
+            "rule": "Each fixed-factor edge; max(absolute, relative*max(abs(values))). Diagonals disclosed separately."
+          },
+          "finer_confirmation": {
+            "passed": true,
+            "comparisons": [
+              {
+                "cells": [
+                  0,
+                  1
+                ],
+                "factor": "h",
+                "required": true,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.27079486623971266,
+                      0.27079486624830224
+                    ],
+                    "absolute_difference": 8.589573496919911e-12,
+                    "tolerance": 2.7079486624830224e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.793145797459379e-09,
+                      3.803624526458318e-09
+                    ],
+                    "absolute_difference": 1.0478728998939072e-11,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.13162364555491024,
+                      0.13162364555582212
+                    ],
+                    "absolute_difference": 9.118816812758723e-13,
+                    "tolerance": 1.3162364555582213e-05,
+                    "passed": true
+                  }
+                }
+              },
+              {
+                "cells": [
+                  2,
+                  3
+                ],
+                "factor": "h",
+                "required": true,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.27079532613878127,
+                      0.27079532614699336
+                    ],
+                    "absolute_difference": 8.212097668547358e-12,
+                    "tolerance": 2.7079532614699336e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.804380588338087e-09,
+                      3.8043808103793725e-09
+                    ],
+                    "absolute_difference": 2.2204128544923313e-16,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.13162617993046535,
+                      0.1316261799313772
+                    ],
+                    "absolute_difference": 9.118539257002567e-13,
+                    "tolerance": 1.3162617993137721e-05,
+                    "passed": true
+                  }
+                }
+              },
+              {
+                "cells": [
+                  0,
+                  2
+                ],
+                "factor": "Delta",
+                "required": true,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.27079486623971266,
+                      0.27079532613878127
+                    ],
+                    "absolute_difference": 4.598990686055515e-07,
+                    "tolerance": 2.7079532613878128e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.793145797459379e-09,
+                      3.804380588338087e-09
+                    ],
+                    "absolute_difference": 1.1234790878707976e-11,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.13162364555491024,
+                      0.13162617993046535
+                    ],
+                    "absolute_difference": 2.5343755551132663e-06,
+                    "tolerance": 1.3162617993046536e-05,
+                    "passed": true
+                  }
+                }
+              },
+              {
+                "cells": [
+                  1,
+                  3
+                ],
+                "factor": "Delta",
+                "required": true,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.27079486624830224,
+                      0.27079532614699336
+                    ],
+                    "absolute_difference": 4.5989869112972315e-07,
+                    "tolerance": 2.7079532614699336e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.803624526458318e-09,
+                      3.8043808103793725e-09
+                    ],
+                    "absolute_difference": 7.562839210543537e-13,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.13162364555582212,
+                      0.1316261799313772
+                    ],
+                    "absolute_difference": 2.5343755550855107e-06,
+                    "tolerance": 1.3162617993137721e-05,
+                    "passed": true
+                  }
+                }
+              },
+              {
+                "cells": [
+                  0,
+                  3
+                ],
+                "factor": "cross_diagonal",
+                "required": false,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.27079486623971266,
+                      0.27079532614699336
+                    ],
+                    "absolute_difference": 4.5990728070322007e-07,
+                    "tolerance": 2.7079532614699336e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.793145797459379e-09,
+                      3.8043808103793725e-09
+                    ],
+                    "absolute_difference": 1.1235012919993425e-11,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.13162364555491024,
+                      0.1316261799313772
+                    ],
+                    "absolute_difference": 2.534376466967192e-06,
+                    "tolerance": 1.3162617993137721e-05,
+                    "passed": true
+                  }
+                }
+              },
+              {
+                "cells": [
+                  1,
+                  2
+                ],
+                "factor": "cross_diagonal",
+                "required": false,
+                "status": "PASS",
+                "metrics": {
+                  "modeled_electrical_energy_J": {
+                    "values": [
+                      0.27079486624830224,
+                      0.27079532613878127
+                    ],
+                    "absolute_difference": 4.598904790320546e-07,
+                    "tolerance": 2.7079532613878128e-05,
+                    "passed": true
+                  },
+                  "duration_s": {
+                    "values": [
+                      0.25,
+                      0.25
+                    ],
+                    "absolute_difference": 0.0,
+                    "tolerance": 2.5e-05,
+                    "passed": true
+                  },
+                  "maximum_intervention_Nm": {
+                    "values": [
+                      3.803624526458318e-09,
+                      3.804380588338087e-09
+                    ],
+                    "absolute_difference": 7.560618797689044e-13,
+                    "tolerance": 1e-07,
+                    "passed": true
+                  },
+                  "minimum_normalized_raw_slack": {
+                    "values": [
+                      0.13162364555582212,
+                      0.13162617993046535
+                    ],
+                    "absolute_difference": 2.534374643231585e-06,
+                    "tolerance": 1.3162617993046536e-05,
+                    "passed": true
+                  }
+                }
+              }
+            ],
+            "rule": "Each fixed-factor edge; max(absolute, relative*max(abs(values))). Diagonals disclosed separately."
+          }
+        },
+        "independent_controls_signature": null,
+        "independent_theory_signature": null,
+        "independently_approved_experiment": "NOT_CLAIMED",
+        "hardware_real_time": "NOT_VALIDATED",
+        "A3": "NO-GO",
+        "publication": "NO-GO"
+      }
+    },
+    "E1": {
+      "cell_count": 4,
+      "passed": true,
+      "summary_sha256": "597e1751767fe3ce1b354ec2e15e9023d19d8c5d6ab00666629675793ea14be3",
+      "refinement": {
+        "passed": true,
+        "comparisons": [
+          {
+            "cells": [
+              0,
+              1
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.26300455104422144,
+                  0.26300455111664206
+                ],
+                "absolute_difference": 7.24206250524162e-11,
+                "tolerance": 2.6300455111664208e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.339806316113818e-14,
+                  5.3385394783292225e-14
+                ],
+                "absolute_difference": 1.26683778459559e-17,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6664638290348036,
+                  0.6664638290346431
+                ],
+                "absolute_difference": 1.6053824936079764e-13,
+                "tolerance": 6.664638290348036e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              2,
+              3
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.2630036964539578,
+                  0.26300369652670225
+                ],
+                "absolute_difference": 7.274442159754813e-11,
+                "tolerance": 2.6300369652670224e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.6275940525191424e-14,
+                  5.837189580964561e-14
+                ],
+                "absolute_difference": 2.0959552844541874e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.666463803640428,
+                  0.6664638036402724
+                ],
+                "absolute_difference": 1.5565326805244695e-13,
+                "tolerance": 6.66463803640428e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              0,
+              2
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.26300455104422144,
+                  0.2630036964539578
+                ],
+                "absolute_difference": 8.545902636103442e-07,
+                "tolerance": 2.6300455104422144e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.339806316113818e-14,
+                  5.6275940525191424e-14
+                ],
+                "absolute_difference": 2.877877364053243e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6664638290348036,
+                  0.666463803640428
+                ],
+                "absolute_difference": 2.5394375602338926e-08,
+                "tolerance": 6.664638290348036e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              1,
+              3
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.26300455111664206,
+                  0.26300369652670225
+                ],
+                "absolute_difference": 8.54589939813799e-07,
+                "tolerance": 2.6300455111664208e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.3385394783292225e-14,
+                  5.837189580964561e-14
+                ],
+                "absolute_difference": 4.986501026353386e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6664638290346431,
+                  0.6664638036402724
+                ],
+                "absolute_difference": 2.5394370717357617e-08,
+                "tolerance": 6.66463829034643e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              0,
+              3
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.26300455104422144,
+                  0.26300369652670225
+                ],
+                "absolute_difference": 8.545175191887466e-07,
+                "tolerance": 2.6300455104422144e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.339806316113818e-14,
+                  5.837189580964561e-14
+                ],
+                "absolute_difference": 4.97383264850743e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6664638290348036,
+                  0.6664638036402724
+                ],
+                "absolute_difference": 2.5394531255606978e-08,
+                "tolerance": 6.664638290348036e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              1,
+              2
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.26300455111664206,
+                  0.2630036964539578
+                ],
+                "absolute_difference": 8.546626842353966e-07,
+                "tolerance": 2.6300455111664208e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.3385394783292225e-14,
+                  5.6275940525191424e-14
+                ],
+                "absolute_difference": 2.8905457418991988e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6664638290346431,
+                  0.666463803640428
+                ],
+                "absolute_difference": 2.5394215064089565e-08,
+                "tolerance": 6.66463829034643e-05,
+                "passed": true
+              }
+            }
+          }
+        ],
+        "rule": "Each fixed-factor edge; max(absolute, relative*max(abs(values))). Diagonals disclosed separately."
+      }
+    },
+    "E2": {
+      "cell_count": 4,
+      "passed": true,
+      "summary_sha256": "1b506d6bcb7f1c1566b0c53108775ce4bdf7a1668e1acef6d66058132847d9ce",
+      "refinement": {
+        "passed": true,
+        "comparisons": [
+          {
+            "cells": [
+              0,
+              1
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.20961129706917775,
+                  0.20961129715571789
+                ],
+                "absolute_difference": 8.654013616826717e-11,
+                "tolerance": 2.0961129715571788e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.626435827954071e-14,
+                  5.3384321512371715e-14
+                ],
+                "absolute_difference": 2.8800367671689935e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6607650533155863,
+                  0.6607650533154731
+                ],
+                "absolute_difference": 1.1324274851176597e-13,
+                "tolerance": 6.607650533155863e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              2,
+              3
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.20961059806011195,
+                  0.20961059814604738
+                ],
+                "absolute_difference": 8.593542544232946e-11,
+                "tolerance": 2.0961059814604738e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.338652034171636e-14,
+                  5.132256048154649e-14
+                ],
+                "absolute_difference": 2.0639598601698667e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6607650174027276,
+                  0.6607650174026205
+                ],
+                "absolute_difference": 1.071365218763276e-13,
+                "tolerance": 6.607650174027276e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              0,
+              2
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.20961129706917775,
+                  0.20961059806011195
+                ],
+                "absolute_difference": 6.990090657965631e-07,
+                "tolerance": 2.0961129706917775e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.626435827954071e-14,
+                  5.338652034171636e-14
+                ],
+                "absolute_difference": 2.8778379378243506e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6607650533155863,
+                  0.6607650174027276
+                ],
+                "absolute_difference": 3.5912858686870663e-08,
+                "tolerance": 6.607650533155863e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              1,
+              3
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.20961129715571789,
+                  0.20961059814604738
+                ],
+                "absolute_difference": 6.99009670507289e-07,
+                "tolerance": 2.0961129715571788e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.3384321512371715e-14,
+                  5.132256048154649e-14
+                ],
+                "absolute_difference": 2.061761030825224e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6607650533154731,
+                  0.6607650174026205
+                ],
+                "absolute_difference": 3.591285258064403e-08,
+                "tolerance": 6.607650533154731e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              0,
+              3
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.20961129706917775,
+                  0.20961059814604738
+                ],
+                "absolute_difference": 6.989231303711207e-07,
+                "tolerance": 2.0961129706917775e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.626435827954071e-14,
+                  5.132256048154649e-14
+                ],
+                "absolute_difference": 4.941797797994217e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6607650533155863,
+                  0.6607650174026205
+                ],
+                "absolute_difference": 3.591296582339254e-08,
+                "tolerance": 6.607650533155863e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              1,
+              2
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  0.20961129715571789,
+                  0.20961059806011195
+                ],
+                "absolute_difference": 6.990956059327313e-07,
+                "tolerance": 2.0961129715571788e-05,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  5.3384321512371715e-14,
+                  5.338652034171636e-14
+                ],
+                "absolute_difference": 2.198829344642887e-18,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6607650533154731,
+                  0.6607650174027276
+                ],
+                "absolute_difference": 3.591274544412215e-08,
+                "tolerance": 6.607650533154731e-05,
+                "passed": true
+              }
+            }
+          }
+        ],
+        "rule": "Each fixed-factor edge; max(absolute, relative*max(abs(values))). Diagonals disclosed separately."
+      }
+    },
+    "E3": {
+      "cell_count": 4,
+      "passed": true,
+      "summary_sha256": "3dddb5a9cbbeac70405cbae00cc5d45741c7377ae46a1864050bab5357f3adb9",
+      "refinement": {
+        "passed": true,
+        "comparisons": [
+          {
+            "cells": [
+              0,
+              1
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.1559066120913069,
+                  1.1559066120406534
+                ],
+                "absolute_difference": 5.065348140931292e-11,
+                "tolerance": 0.00011559066120913068,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  4.5817452869826785e-14,
+                  4.8538748754374865e-14
+                ],
+                "absolute_difference": 2.72129588454808e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6933560624738984,
+                  0.6933560624739621
+                ],
+                "absolute_difference": 6.372680161348399e-14,
+                "tolerance": 6.933560624739621e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              2,
+              3
+            ],
+            "factor": "h",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.155896739312037,
+                  1.1558967392603634
+                ],
+                "absolute_difference": 5.167355432433851e-11,
+                "tolerance": 0.0001155896739312037,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  4.574186228861533e-14,
+                  4.5878757522414185e-14
+                ],
+                "absolute_difference": 1.368952337988563e-16,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.693356111980168,
+                  0.6933561119802142
+                ],
+                "absolute_difference": 4.618527782440651e-14,
+                "tolerance": 6.933561119802142e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              0,
+              2
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.1559066120913069,
+                  1.155896739312037
+                ],
+                "absolute_difference": 9.872779269892717e-06,
+                "tolerance": 0.00011559066120913068,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  4.5817452869826785e-14,
+                  4.574186228861533e-14
+                ],
+                "absolute_difference": 7.559058121145685e-17,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6933560624738984,
+                  0.693356111980168
+                ],
+                "absolute_difference": 4.9506269639287837e-08,
+                "tolerance": 6.93356111980168e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              1,
+              3
+            ],
+            "factor": "Delta",
+            "required": true,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.1559066120406534,
+                  1.1558967392603634
+                ],
+                "absolute_difference": 9.872780289965633e-06,
+                "tolerance": 0.00011559066120406535,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  4.8538748754374865e-14,
+                  4.5878757522414185e-14
+                ],
+                "absolute_difference": 2.6599912319606805e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6933560624739621,
+                  0.6933561119802142
+                ],
+                "absolute_difference": 4.950625209776405e-08,
+                "tolerance": 6.933561119802142e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              0,
+              3
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.1559066120913069,
+                  1.1558967392603634
+                ],
+                "absolute_difference": 9.872830943447042e-06,
+                "tolerance": 0.00011559066120913068,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  4.5817452869826785e-14,
+                  4.5878757522414185e-14
+                ],
+                "absolute_difference": 6.130465258739946e-17,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6933560624738984,
+                  0.6933561119802142
+                ],
+                "absolute_difference": 4.950631582456566e-08,
+                "tolerance": 6.933561119802142e-05,
+                "passed": true
+              }
+            }
+          },
+          {
+            "cells": [
+              1,
+              2
+            ],
+            "factor": "cross_diagonal",
+            "required": false,
+            "status": "PASS",
+            "metrics": {
+              "modeled_electrical_energy_J": {
+                "values": [
+                  1.1559066120406534,
+                  1.155896739312037
+                ],
+                "absolute_difference": 9.872728616411308e-06,
+                "tolerance": 0.00011559066120406535,
+                "passed": true
+              },
+              "duration_s": {
+                "values": [
+                  1.0,
+                  1.0
+                ],
+                "absolute_difference": 0.0,
+                "tolerance": 0.0001,
+                "passed": true
+              },
+              "maximum_intervention_Nm": {
+                "values": [
+                  4.8538748754374865e-14,
+                  4.574186228861533e-14
+                ],
+                "absolute_difference": 2.7968864657595368e-15,
+                "tolerance": 1e-07,
+                "passed": true
+              },
+              "minimum_normalized_raw_slack": {
+                "values": [
+                  0.6933560624739621,
+                  0.693356111980168
+                ],
+                "absolute_difference": 4.950620591248622e-08,
+                "tolerance": 6.93356111980168e-05,
+                "passed": true
+              }
+            }
+          }
+        ],
+        "rule": "Each fixed-factor edge; max(absolute, relative*max(abs(values))). Diagonals disclosed separately."
+      }
+    }
+  },
+  "candidate_refinement_fields": {
+    "passed": 48,
+    "total": 48
+  },
+  "frozen_regression_refinement_fields": {
+    "passed": 120,
+    "total": 120
+  },
+  "T27": {
+    "passed": true,
+    "fixture_count": 39,
+    "summary_sha256": "c5b9c909df0125caad6a4736bebcc139e132e6e7bbbbf4ad772e5ab9fa7ef09e"
+  },
+  "separate_acceptance_decisions": {
+    "eight_candidate_cells_and_refinements": "GO_NUMERICAL",
+    "original_7_plus_extended_12": "GO_NUMERICAL",
+    "T27_39_finite_fixtures": "GO_FINITE_TESTED_SCOPE",
+    "A2_full_requested_numerical_campaign": "GO_NUMERICAL",
+    "hardware_real_time_deadline": "NOT_QUALIFIED_OFFLINE_SIMULATION",
+    "true_ODE_interval_safety": "NOT_CERTIFIED",
+    "certified_global_bounds": "NOT_ESTABLISHED",
+    "official_A3": "NOT_RUN_NO_GO",
+    "Level1": "NOT_CLAIMED_NO_GO"
+  },
+  "historical_failures_reclassified": false,
+  "stored_witness_runtime_fallback": false,
+  "official_A3_executed": false
+}

@@ -1,0 +1,61 @@
+{
+  "case": "alpha5",
+  "cell": 0,
+  "grid": {
+    "control_period_s": 0.001,
+    "rk4_step_s": 0.00025
+  },
+  "a2": {
+    "completed": true,
+    "passed": false,
+    "failure": null,
+    "metrics": {
+      "modeled_electrical_energy_J": 1.1720249093530677,
+      "duration_s": 1.0,
+      "maximum_intervention_Nm": 0.1276935808650245,
+      "minimum_normalized_raw_slack": 9.999003624182625e-09,
+      "actual_terminal_error_m": 0.0005233556326187745,
+      "planned_terminal_error_m": 5.224785754028713e-17
+    },
+    "trace": {
+      "file": "execution.ctz",
+      "sha256": "a1697e3915653a86bc825775eccc9150b21e64d642d0925d9ee6e95d442a9375",
+      "canonical_json_sha256": "3062386de813251bb93185c86a95cc3453558f501e43ae3da4d3c182ea33b3bf",
+      "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+    }
+  },
+  "prehold": {
+    "passed": true,
+    "trace": {
+      "file": "prehold.ctz",
+      "sha256": "6a34e119cc28a7e5fd5eda875f3060f65a23e9708e36a6965777d6bc80d68191",
+      "canonical_json_sha256": "fc9c0eb1d33a69d29719f2014f4fe5824eebda8e8d9accf65a00bcf5dd81b4ec",
+      "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+    },
+    "reused_evidence": {
+      "source": "runs/active_remediation_v2/v2_2_alpha5_cell0",
+      "result_sha256": "69f18c0d8617a94a532195aadf99e99e1e968e988f3462ab7298e47f934e6e72",
+      "trace_sha256": "f46d1dd501195e9a38a0f1e89bab5083449aa6630565455e8b14281c681147c8",
+      "scope": "REUSE_OF_FRESH_CURRENT_SESSION_UNCHANGED_STARTUP_NOT_PREVIOUS_CONVERSATION_PASS"
+    }
+  },
+  "audit": {
+    "passed": false,
+    "checks": {
+      "nonempty": true,
+      "projection_raw_and_KKT": true,
+      "completion_full_guarded_KKT": true,
+      "same_torque_to_plant_and_DOB": false,
+      "gauss_stage_residual": true,
+      "all_sampled_physical_observer_and_dense_checks": true
+    },
+    "maxima": {
+      "completion_primal": 9.96375817376226e-13,
+      "completion_stationarity": 3.6297357002423807e-14,
+      "completion_complementarity": 4.057467381332344e-22,
+      "stage_residual": 3.4983127505938684e-15
+    },
+    "scope": "FINITE_GRID_AND_NUMERICAL_COLLOCATION_NOT_TRUE_ODE_CERTIFICATION",
+    "lossless_roundtrip_verified": true
+  }
+}

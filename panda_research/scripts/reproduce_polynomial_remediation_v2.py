@@ -41,7 +41,8 @@ def main():
         if records[-1]['exit_code']:write(out/'summary.json',{'passed':False,'commands':records});return 3
     records.append(run('contracts',[sys.executable,'tests/test_polynomial_hold_v2_4.py']))
     records.append(run('audit_contracts',[sys.executable,'tests/test_gauss_execution_audit_v2_4a.py']))
-    if records[-1]['exit_code']:write(out/'summary.json',{'passed':False,'commands':records});return 3
+    records.append(run('slack_representation_contracts',[sys.executable,'tests/test_slack_audit_v2_4b.py']))
+    if any(r['exit_code'] for r in records):write(out/'summary.json',{'passed':False,'commands':records});return 3
     if not a.candidate_only:
         records.append(run('T27_39',[sys.executable,'scripts/qualify_guarded_qp_strict_v1_1.py','--output',str(out/'T27')]))
         # This historical runner includes a deliberately preserved four-cell old
@@ -54,6 +55,9 @@ def main():
     with ThreadPoolExecutor(max_workers=a.workers) as pool:records.extend(pool.map(candidate,pairs))
     from panda_closed_loop.p1_r3 import compare_refinement
     from audit_gauss_execution_v2_4a import audit_cell
+    from summarize_polynomial_remediation_v2_4b import independent_trace_audit
+    bf=json.loads((ROOT/'policy/active_remediation_v2/AUDIT_CORRECTION_V2_4B.json').read_text())
+    if any(sha(ROOT/n)!=h for n,h in bf['source_sha256'].items()):raise ValueError('Full KKT/representation audit source differs')
     from panda_closed_loop.assembly import build_components
     from panda_closed_loop.a2_policy_v4 import build_amended_system
     policy=ROOT/'policy/active_remediation_v2/AUDIT_CORRECTION_V2_4A.json';af=json.loads(policy.read_text())
@@ -66,6 +70,9 @@ def main():
         for i in range(4):
             folder=ROOT/'runs/active_remediation_v2'/f'{a.prefix}_{case}_cell{i}';c=json.loads((folder/'result.json').read_text())
             verification=audit_cell(folder,system,case);verification['audit_policy_sha256']=sha(policy)
+            full_audit=independent_trace_audit(folder,c,case) if verification['passed'] else {'passed':False}
+            verification['independent_full_KKT_and_trace']=full_audit
+            verification['passed']=bool(verification['passed'] and full_audit['passed'] and full_audit['genuine_activity_passed'])
             write(folder/'AUDIT_V2_4A.json',verification)
             c['original_runtime_result_passed']=c['a2']['passed'];c['verification_correction']=verification
             c['a2']['passed']=verification['passed'];c['audit']['passed']=verification['passed'];cells.append(c)
@@ -77,6 +84,6 @@ def main():
         t27=json.loads((out/'T27/SUMMARY.json').read_text())
         regression=json.loads((ROOT/'reports/guarded_qp_reliability_v1'/a.prefix/'run_completed.json').read_text())
         passed=bool(passed and t27['overall_pass'] and t27['fixture_count']==39 and regression['A2_selected_cells_passed'] and regression['protected_inputs_unchanged'])
-    write(out/'summary.json',{'overall_numerical_passed':passed,'frozen_regression':regression,'T27':t27,'candidates':result,'commands':records,'official_A3':False,'Level1':False,'certified_bound_claim':False})
+    write(out/'summary.json',{'overall_numerical_passed':passed,'scope':'CANDIDATE_ONLY' if a.candidate_only else 'FULL_REQUESTED_CAMPAIGN','all_requested_stage_gates_qualified':bool(passed and not a.candidate_only),'frozen_regression':regression,'T27':t27,'candidates':result,'commands':records,'official_A3':False,'Level1':False,'certified_bound_claim':False})
     return 0 if passed else 3
 if __name__=='__main__':raise SystemExit(main())

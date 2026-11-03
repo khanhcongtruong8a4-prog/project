@@ -1,0 +1,8 @@
+test_corrupted_positive_value_rejected (__main__.Contracts.test_corrupted_positive_value_rejected) ... ok
+test_negative_sign_never_waived (__main__.Contracts.test_negative_sign_never_waived) ... ok
+test_one_ulp_large_positive_identity (__main__.Contracts.test_one_ulp_large_positive_identity) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

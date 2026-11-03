@@ -1,0 +1,29 @@
+{
+  "reason": "Original 19-cell replay finished; use freed CPU slots. No running physical cell is interrupted or repeated.",
+  "active_unchanged": [
+    [
+      "alpha5",
+      3
+    ],
+    [
+      "alpha10",
+      0
+    ]
+  ],
+  "pending_unchanged_commands": [
+    [
+      "alpha10",
+      1
+    ],
+    [
+      "alpha10",
+      2
+    ],
+    [
+      "alpha10",
+      3
+    ]
+  ],
+  "available_cores": 5,
+  "workers_for_pending": 3
+}

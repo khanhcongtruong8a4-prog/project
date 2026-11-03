@@ -3,7 +3,8 @@ from pathlib import Path
 import sys
 sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'scripts'))
-import argparse,copy,csv,hashlib,json
+import argparse,copy,csv,hashlib,json,multiprocessing
+from concurrent.futures import ProcessPoolExecutor
 import numpy as np
 from panda_closed_loop.p1_r3 import compare_refinement
 from panda_closed_loop.trace_archive import read_trace
@@ -54,13 +55,13 @@ def independent_trace_audit(path,cell,case):
     return {'passed':all(checks.values()),'checks':checks,'maxima':maximum,'hold_count':len(holds),'substep_count':len(steps),
             'peak_digital_intervention_Nm':peak,'duration_above_0p001_Nm_s':active_duration,
             'genuine_activity_passed':peak>.01 and active_duration>=.005,'minimum_recomputed_raw_normalized_slack':minraw,
-            'trace_sha256':tr['sha256'],'scope':'NUMERICAL_FULL_FINITE_GRID_KKT_AND_RECORDED_TRAJECTORY_AUDIT_NOT_INTERVAL_CERTIFICATE'}
+            'query_wall_time_s':{k:float(v) for k,v in zip(['median','p95','p99','maximum'],[np.median([h['wall_s'] for h in holds]),*np.quantile([h['wall_s'] for h in holds],[.95,.99]),max(h['wall_s'] for h in holds)])},'trace_sha256':tr['sha256'],'scope':'NUMERICAL_FULL_FINITE_GRID_KKT_AND_RECORDED_TRAJECTORY_AUDIT_NOT_INTERVAL_CERTIFICATE'}
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--candidate-prefix',default='v2_4');p.add_argument('--regression-prefix',default='correction_v2_fresh');p.add_argument('--output',type=Path,required=True);a=p.parse_args()
     frozen,commit=verify();out=a.output;out.mkdir(parents=True,exist_ok=False);pending=[];result={};rows=[]
     for case in ['alpha5','alpha10']:
-        cells=[];audits=[]
+        cells=[];audits=[];jobs=[]
         for i in range(4):
             path=ROOT/'runs/active_remediation_v2'/f'{a.candidate_prefix}_{case}_cell{i}';file=path/'result.json'
             if not file.exists():pending.append(str(file.relative_to(ROOT)));continue
@@ -72,8 +73,13 @@ def main():
                     c=copy.deepcopy(c);c['original_runtime_result_passed']=c['a2']['passed'];c['verification_correction']=correction
                     c['a2']['passed']=True;c['audit']['passed']=True
             cells.append(c)
-            if c['a2']['completed'] and c['a2']['passed']:audits.append(independent_trace_audit(path,c,case))
+            if c['a2']['completed'] and c['a2']['passed']:
+                jobs.append((len(audits),path,c,case));audits.append(None)
             else:audits.append({'passed':False,'failure':c['a2']['failure']})
+        if jobs:
+            with ProcessPoolExecutor(max_workers=2,mp_context=multiprocessing.get_context('spawn')) as pool:
+                submitted=[(index,pool.submit(independent_trace_audit,path,c,kind)) for index,path,c,kind in jobs]
+                for index,future in submitted:audits[index]=future.result()
         refinement=compare_refinement(cells,plan_for(case)['fixed_acceptance_thresholds'])
         passed=len(cells)==4 and all(c['a2']['passed'] and c['audit']['passed'] for c in cells) and all(r['passed'] and r.get('genuine_activity_passed',False) for r in audits) and all(v['status']=='PASS' for v in refinement['comparisons'])
         result[case]={'passed':bool(passed),'cells':cells,'independent_audits':audits,'refinement':refinement}
@@ -103,7 +109,7 @@ def main():
            'separate_acceptance_decisions':{'eight_candidate_cells_and_refinements':'GO_NUMERICAL' if candidatepass else 'NOT_GO',
               'original_7_plus_extended_12':'GO_NUMERICAL' if regressionpass else 'NOT_GO','T27_39_finite_fixtures':'GO_FINITE_TESTED_SCOPE' if t27pass else 'NOT_GO',
               'A2_full_requested_numerical_campaign':'GO_NUMERICAL' if candidatepass and regressionpass and t27pass and not pending else 'NOT_GO',
-              'true_ODE_interval_safety':'NOT_CERTIFIED','certified_global_bounds':'NOT_ESTABLISHED','official_A3':'NOT_RUN_NO_GO','Level1':'NOT_CLAIMED_NO_GO'},
+              'hardware_real_time_deadline':'NOT_QUALIFIED_OFFLINE_SIMULATION','true_ODE_interval_safety':'NOT_CERTIFIED','certified_global_bounds':'NOT_ESTABLISHED','official_A3':'NOT_RUN_NO_GO','Level1':'NOT_CLAIMED_NO_GO'},
            'historical_failures_reclassified':False,'stored_witness_runtime_fallback':False,'official_A3_executed':False}
     with (out/'ACCEPTANCE.json').open('x') as f:json.dump(scope,f,indent=2,allow_nan=False);f.write('\n')
     with (out/'ALL_CANDIDATE_REFINEMENTS.csv').open('x',newline='') as f:

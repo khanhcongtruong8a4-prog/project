@@ -1,0 +1,47 @@
+[
+  {
+    "case": "alpha10",
+    "cell": 1,
+    "exit_code": 3,
+    "command": [
+      "/workspace/panda-venv/bin/python",
+      "scripts/run_polynomial_hold_v2_4.py",
+      "--case",
+      "alpha10",
+      "--cell",
+      "1",
+      "--output",
+      "runs/active_remediation_v2/v2_4_alpha10_cell1"
+    ]
+  },
+  {
+    "case": "alpha10",
+    "cell": 2,
+    "exit_code": 3,
+    "command": [
+      "/workspace/panda-venv/bin/python",
+      "scripts/run_polynomial_hold_v2_4.py",
+      "--case",
+      "alpha10",
+      "--cell",
+      "2",
+      "--output",
+      "runs/active_remediation_v2/v2_4_alpha10_cell2"
+    ]
+  },
+  {
+    "case": "alpha10",
+    "cell": 3,
+    "exit_code": 3,
+    "command": [
+      "/workspace/panda-venv/bin/python",
+      "scripts/run_polynomial_hold_v2_4.py",
+      "--case",
+      "alpha10",
+      "--cell",
+      "3",
+      "--output",
+      "runs/active_remediation_v2/v2_4_alpha10_cell3"
+    ]
+  }
+]

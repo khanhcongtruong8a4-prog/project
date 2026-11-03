@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "maxima": {
+    "h_scaled_full_RHS_defect": 3.4983127505938684e-15,
+    "stage_equation_defect": 0.0,
+    "endpoint_equation_defect": 0.0
+  },
+  "substeps_audited": 4000
+}

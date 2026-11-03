@@ -1,0 +1,24 @@
+{
+  "version": "GL_EXECUTION_VERIFICATION_V2_4A",
+  "passed": true,
+  "original_result_sha256": "ce2287f6b68bda41d4f2cf4c4ad62a7484036de35a7e7c6c2f858bf5abb37b8e",
+  "trace_sha256": "dccc308ca6163fb815a17c69fcbdb19b093c4c32fd46dc22179baf0a4034f369",
+  "original_result_passed": false,
+  "original_failed_checks": [
+    "same_torque_to_plant_and_DOB"
+  ],
+  "trajectory_resimulated_or_changed": false,
+  "complete_counts": true,
+  "original_terminal_thresholds_passed": true,
+  "substeps_audited": 2000,
+  "maxima": {
+    "h_scaled_full_RHS_defect": 3.5090819139327322e-15,
+    "stage_equation_defect": 0.0,
+    "endpoint_equation_defect": 0.0
+  },
+  "failed_steps": [],
+  "criterion": 1e-13,
+  "criterion_frozen_before_motion": true,
+  "scope": "RECOMPUTED_IDENTICAL_ACTUAL_TORQUE_AND_FULL_PLANT_DOB_POWER_STAGE_EQUATIONS_NOT_CERTIFIED_ODE_BOUNDS",
+  "audit_policy_sha256": "bda5e9f293ccadf7325cc0c8e54ea9b2f2ad5179a88265ee78d13bfaa5deec0c"
+}

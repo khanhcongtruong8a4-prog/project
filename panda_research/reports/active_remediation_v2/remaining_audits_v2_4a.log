@@ -1,0 +1,7 @@
+alpha5 1 True {'h_scaled_full_RHS_defect': 4.838907052828749e-16, 'stage_equation_defect': 0.0, 'endpoint_equation_defect': 0.0}
+alpha5 2 True {'h_scaled_full_RHS_defect': 3.0401792194822976e-15, 'stage_equation_defect': 0.0, 'endpoint_equation_defect': 0.0}
+alpha5 3 True {'h_scaled_full_RHS_defect': 4.262146191535976e-16, 'stage_equation_defect': 0.0, 'endpoint_equation_defect': 0.0}
+alpha10 0 True {'h_scaled_full_RHS_defect': 3.5090819139327322e-15, 'stage_equation_defect': 0.0, 'endpoint_equation_defect': 0.0}
+alpha10 1 True {'h_scaled_full_RHS_defect': 4.853895063661188e-16, 'stage_equation_defect': 0.0, 'endpoint_equation_defect': 0.0}
+alpha10 2 True {'h_scaled_full_RHS_defect': 3.0452862453955732e-15, 'stage_equation_defect': 0.0, 'endpoint_equation_defect': 0.0}
+alpha10 3 True {'h_scaled_full_RHS_defect': 4.2665870836344766e-16, 'stage_equation_defect': 0.0, 'endpoint_equation_defect': 0.0}

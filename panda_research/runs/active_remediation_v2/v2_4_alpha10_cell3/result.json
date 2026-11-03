@@ -1,0 +1,56 @@
+{
+  "case": "alpha10",
+  "cell": 3,
+  "grid": {
+    "control_period_s": 0.0005,
+    "rk4_step_s": 0.000125
+  },
+  "a2": {
+    "completed": true,
+    "passed": false,
+    "failure": null,
+    "metrics": {
+      "modeled_electrical_energy_J": 1.2845348634289746,
+      "duration_s": 0.5,
+      "maximum_intervention_Nm": 0.06692272210373687,
+      "minimum_normalized_raw_slack": 9.999063646731883e-09,
+      "actual_terminal_error_m": 0.0007247139535527512,
+      "planned_terminal_error_m": 5.940386319393238e-17
+    },
+    "trace": {
+      "file": "execution.ctz",
+      "sha256": "cc658c23b99d7faac062c33c8a10a5d64a117addc16ddf26a6606eb9ea0512f3",
+      "canonical_json_sha256": "b4e036a96365bb25aa8a7e455663b89844001c42dc68f0daea3a259c3312c996",
+      "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+    }
+  },
+  "prehold": {
+    "passed": true,
+    "trace": {
+      "file": "prehold.ctz",
+      "sha256": "98022cec61d4c4cf0ee0ad61f546b002f5cef40c298875eb2ccff436e15fc703",
+      "canonical_json_sha256": "60b3c7d966a3d831a6e2435b0fdd9afc491bf252aaf561a3337a01594c297704",
+      "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+    },
+    "reused_evidence": null
+  },
+  "audit": {
+    "passed": false,
+    "checks": {
+      "nonempty": true,
+      "projection_raw_and_KKT": true,
+      "completion_full_guarded_KKT": true,
+      "same_torque_to_plant_and_DOB": false,
+      "gauss_stage_residual": true,
+      "all_sampled_physical_observer_and_dense_checks": true
+    },
+    "maxima": {
+      "completion_primal": 9.363532681194224e-13,
+      "completion_stationarity": 5.783395172662343e-15,
+      "completion_complementarity": 2.1938959489656025e-24,
+      "stage_residual": 4.2665870836344766e-16
+    },
+    "scope": "FINITE_GRID_AND_NUMERICAL_COLLOCATION_NOT_TRUE_ODE_CERTIFICATION",
+    "lossless_roundtrip_verified": true
+  }
+}
