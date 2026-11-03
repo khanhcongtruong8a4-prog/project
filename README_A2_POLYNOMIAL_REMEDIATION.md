@@ -1,5 +1,7 @@
 # IC2AI 2027 Panda A2 polynomial-hold remediation v2.4b
 
+For the GitHub-generated source ZIP, verify the included per-file manifest with `python VERIFY_A2_POLYNOMIAL_PACKAGE.py`. Its outer ZIP checksum differs from the separately built deterministic local release ZIP recorded in `panda_research/reports/active_remediation_v2/DELIVERY_VERIFICATION.json`; that record identifies the exact archive it tested. Both contain the qualified source and complete scientific evidence. The complete history makes the download large (about 3.4 GiB).
+
 The requested unpublished checkpoint f9278f2 was not recovered. This is a new
 versioned reconstruction from published 4e6335d, with every earlier source and
 failure preserved. Read panda_research/reports/active_remediation_v2/final_v2_4b/
