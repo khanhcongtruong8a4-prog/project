@@ -1,0 +1,12 @@
+{
+  "version": "READ_ONLY_ANALYSIS_V1_1",
+  "parent_freeze_commit": "389585e",
+  "preserved_failed_script": "scripts/analyze_active_sampled_v1.py",
+  "corrected_script": "scripts/analyze_active_sampled_v1_1.py",
+  "corrected_sha256": "de544b331d50b0cf2d4d06ec4b574ff5dcbd6642345c2f226ce7ed3e80c7e9e8",
+  "reason": "Policy.ko is an immutable tuple; numpy conversion needed before unary negation in offline envelope directional derivative. V1 analysis raises TypeError before derivative evaluation.",
+  "mathematics_or_experimental_parameters_changed": false,
+  "production_code_changed": false,
+  "new_outputs": "baseline_operators_v1_1 and alpha10_operators_v1_1",
+  "original_failed_runs_preserved": true
+}
