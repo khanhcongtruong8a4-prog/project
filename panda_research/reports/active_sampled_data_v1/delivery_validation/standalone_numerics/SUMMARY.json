@@ -1,0 +1,12 @@
+{
+  "reproduction_passed": true,
+  "exit_codes": {
+    "six_analysis_contracts": 0,
+    "three_clock_contracts": 0,
+    "T27_39": 0
+  },
+  "failed_active_refinement_remains_failed": true,
+  "gate_promoted_by_reproduction": false,
+  "A3": false,
+  "Level1": false
+}

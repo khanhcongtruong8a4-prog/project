@@ -1,0 +1,15 @@
+{
+  "start_utc": "2026-11-03T01:58:29.077013+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "command": [
+    "/workspace/a2-verification-venv/bin/python",
+    "RUN_ACTIVE_FILTER.py",
+    "--analyze-traces",
+    "--prefix",
+    "standalone_trace_proof"
+  ],
+  "scope": "LOCAL_REPRODUCTION_NOT_EXTERNAL_OR_INDEPENDENT_VERIFICATION",
+  "official_A3": false,
+  "Level1": false,
+  "signatures": null
+}

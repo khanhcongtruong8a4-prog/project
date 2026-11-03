@@ -1,0 +1,9 @@
+{
+  "package_verified": true,
+  "model_assembly_passed": true,
+  "alpha_v": 10.0,
+  "native_library_sha256": "3370c29e2c3e42db44bc7cfed1d385ebc6680a519a1501693c223575122fc8c1",
+  "new_motion": false,
+  "A3": false,
+  "Level1": false
+}

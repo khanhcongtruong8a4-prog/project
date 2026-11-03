@@ -1,0 +1,12 @@
+{
+  "reproduction_passed": true,
+  "exit_codes": {
+    "baseline": 0,
+    "alpha10": 0,
+    "modified_equation": 0
+  },
+  "failed_active_refinement_remains_failed": true,
+  "gate_promoted_by_reproduction": false,
+  "A3": false,
+  "Level1": false
+}
