@@ -1,0 +1,10 @@
+{
+  "version": "READ_ONLY_ANALYSIS_V1_3",
+  "source_sha256": "445a798d81f18d4dd00e95938de9d7b2bf281bab655db73a50228b815d20af0c",
+  "reason": "Energy cross-diagonal pair cell1-to-cell2 has the first RK4 clock finer than the second. Match only shared physical endpoints in either direction; no interpolation or frozen metric replacement.",
+  "per_cell_v1_2_mathematics_data_unchanged": true,
+  "preserved_failed_aggregations": true,
+  "new_fresh_reproduction_uses_fixed_aggregation": true,
+  "production_changes": false,
+  "clock_regression_tests": 3
+}
