@@ -1,0 +1,102 @@
+IC2AI 2027 — CODEX HANDOFF: ACTIVE-FILTER SAMPLED-DATA REFINEMENT
+Independent development workstream; preserve frozen A2 and T27 evidence.
+Issued: 2026-11-03
+
+ROLE AND IMMEDIATE OBJECTIVE
+You are the implementation and numerical-analysis engineer for the 7-DOF Gaz-model Panda research project. Investigate and, if mathematically defensible, remedy the eight *preserved* active-filter refinement failures that currently block general active-filter qualification and A3 readiness. The central research question is:
+
+  Can a causal, constraint-preserving sampled-data realization of the existing
+  Slotine–Li + momentum DOB + 43-row robust HOCBF-QP framework satisfy the
+  original frozen active-filter refinement tests? If not, rigorously identify
+  the convergence limitation, its assumptions, and the required versioned
+  policy change; do not label failed historical checks as PASS.
+
+You are AUTHORIZED to write code, run offline diagnostic simulations, prove conditional analytical statements, add unit tests, and develop separately versioned candidates. You are NOT authorized to alter frozen A2 data, relax an existing threshold, re-label a failure, conduct official A3 comparison experiments, or claim Level 1 certification. Do not ask for fresh administrative approval merely to run diagnostic work. If a *material policy change* is needed, document it separately and leave its adoption contingent on project-owner authorization.
+
+PRIMARY SOURCE MATERIAL — READ BEFORE CHANGING CODE
+1. Uploaded NUMERICAL_REPRODUCTION.zip, including:
+   - panda_research/reports/pre_a3_blockers_v1/ISSUE_RESOLUTION_REPORT.md
+   - panda_research/reports/pre_a3_blockers_v1/active_filter_diagnosis/SUMMARY.json and cell_*.json
+   - panda_research/reports/pre_a3_blockers_v1/final_analysis/CONTROL_PERIOD_LADDER.csv
+   - panda_research/policy/pre_a3_blockers_v1/TECHNICAL_DISPOSITION.json
+   - panda_research/policy/pre_a3_blockers_v1/PROTECTED_INPUTS.json
+   - panda_research/reports/pre_a3_blockers_v1/candidate_contracts.json
+   - related source, tests, and process_logs.
+2. Exact committed source report:
+   https://github.com/khanhcongtruong8a4-prog/project/blob/f6d5a18d9046d4a814e480498f916f92b4396287/panda_research/reports/pre_a3_blockers_v1/ISSUE_RESOLUTION_REPORT.md
+3. Earlier immutable historical experiments and reviewer evidence as referenced in the repository and source manifests. If unavailable, report a missing-input blocker instead of fabricating it.
+
+BASELINE FACTS TO PRESERVE AND VERIFY
+- Frozen A2 retains its 19 recorded successful physical cells (seven original + twelve A2-Extended v4) and 120 refinement metrics, unchanged; the latest task reaudited them, not freshly reran all 19.
+- T27 corrected ProxQP is GO only over 39 tested fixtures (34 feasible exact-KKT / five infeasible exact-witness); the corrected solver and status classifier are not the general refinement problem.
+- Intended current A3 development controller uses alpha_v=10, alpha_1=alpha_2=5, Lambda=5I, kappa=10, K_o=20I; the original seven A2 cases retain their separately frozen alpha_v=5 policy. Keep the source Gaz dynamics, observer, disturbance, control gains, HOCBF inequalities, solver guard, motor/energy model, and protected start data unchanged during baseline reproduction.
+- Current original sampled nominal request: r_k = paper's continuous Slotine–Li request evaluated at the sampled state; u_0=r_0, u_k=r_k + 0.5(r_k-r_{k-1}); tau_k = P_{C_k}(u_k); actual tau_k is zero-order held and used consistently for RK4 plant and DOB. P_{C_k} denotes the exactly specified guarded-QP projection, not an abstract Euclidean projection if the implementation metric differs. Verify the QP objective and units before using projection identities.
+- Legacy active E3 C4 test includes Delta=0.001/0.0005 s and RK4 h=0.00025/0.000125 s. Changing h alone gives negligible differences (~2e-11 J energy, ~3e-11 Nm intervention). Changing Delta yields ~4.20e-4 J modeled energy and ~1.51e-3 Nm peak intervention differences: eight frozen energy/intervention control-period/cross-diagonal checks fail.
+- Reported original control-period ladder (diagnostic; not a replacement gate):
+    Delta=0.001    h=0.00025   E=1.172860159355944 J  peak ||tau-u||=0.130720578804632 Nm
+    Delta=0.0005   h=0.00025   E=1.172440490690066 J  peak ||tau-u||=0.129210306666044 Nm
+    Delta=0.00025  h=0.000125  E=1.172232173519377 J  peak ||tau-u||=0.128452721746830 Nm
+    Delta=0.000125 h=0.0000625 E=1.172128773519081 J  peak ||tau-u||=0.128073293212051 Nm
+  Observed rates ~1.01 (energy) and ~1.00 (intervention) over these grids. These do NOT alone prove a global first-order lower bound or impossibility of passing finite tolerances.
+- Active rows in recorded E3: v_upper_3 then v_lower_1; switches about t=0.020, 0.330, 0.406 s at 1 ms, with differences at 0.5 ms including a brief two-face interval. Sampled minimum normalized raw slack ~8.74e-9 in one recorded case; this is not a between-sample certificate.
+- Direct AB2 extrapolation of already projected torque was infeasible in 386/386 active coarse updates and 765/765 active fine updates; NO such torques were applied. The frozen projected-feedback candidate sigma_k=P_Ck(r_k); u_k=r_k+0.5(sigma_k-sigma_{k-1}); tau_k=P_Ck(u_k) passed local per-cell audit but FAILED the same eight refinement checks. It is NOT adopted; preserve the failed candidate and its source hash/commit 2ca4de7.
+- G2.5 start infeasibility and M1 bound qualification are independent NO-GO workstreams. Do not claim this assignment resolves them or proceed to official Stage 1/A3.
+
+PHASE 0 — RECOVER, FREEZE, REPRODUCE
+A. Identify the authoritative repository commit, native solver library hash, dependency versions, the archived exact E3 reference/disturbance/initial condition, and all frozen tolerances. Verify manifests and all material file hashes. State which historical traces are actually accessible and which are merely linked.
+B. On an unmodified checkout, run the original C4 active-filter tests using exactly the historical grids; compare every original metric and all eight failures. Preserve full per-control-period histories with common-time alignment.
+C. Store raw baseline traces, console logs, failures, environment, hashes, controller/QP policy IDs, and tolerances under a new versioned directory. Never overwrite any existing historical artefact.
+D. Before attempting a correction, write an immutable baseline hypothesis/acceptance contract (JSON + MD) and record a commit hash. Do not tune based on later outcomes while pretending the predeclaration preceded them.
+
+PHASE 1 — DERIVE THE ERROR MECHANISM, NOT JUST THE EMPIRICAL RATE
+1. Explicitly write the continuous-time target, the sampling map, the digital request, the time-varying QP feasible set C(t,x,hat_d), and the held-input plant/DOB dynamics. Separate errors due to (i) request extrapolation, (ii) ZOH, (iii) moving constraints/active-set switching, (iv) observer update/estimation, (v) finite QP solver error, (vi) integration, and (vii) nonsmooth maximum-intervention measurement.
+2. Where regularity permits, derive a local leading-order error expansion for fixed-active-face intervals; state all assumptions (LICQ/strict complementarity, solution-map differentiability, bound regularity, and denominator/conditioning hypotheses). Handle switching events separately, without implicitly assuming the same derivative formulas through nonsmooth transitions.
+3. Quantify the active-set transition times at each grid; distinguish changes in active faces, tiny guard-induced activity, and numerical dual threshold definitions. Compare r, u, tau, sigma=P_C(r), tau-u, tau-r, raw/guarded slack, KKT residual, duals, actual state, observer and energy at matched physical times.
+4. Independently reconstruct the discrete electrical-energy quadrature from actual applied held tau/current/bus input, using the existing non-regenerative model. Do not substitute squared torque or regenerative energy. Analyze peak-intervention timing, taking account of changing sample grids. Interpolation is DIAGNOSTIC ONLY and cannot replace the frozen metric.
+5. Use controlled ablations only as labelled read-only/diagnostic counterfactuals: original AB2, an explicitly first-order hold/request, projection-before/after extrapolation, fixed-feasible-set surrogate, and a moving-face analytical test. Unsafe counterfactual torques must NEVER be applied as plant inputs in a safety-claimed run. Any relaxed/altered constraint experiment is diagnostic only and cannot count toward PASS.
+6. Determine whether the historical acceptance tolerances demand a certain convergence order or merely small finite-grid differences. Do not infer that first-order error is fundamentally incompatible unless the requisite lower-bound/proof and exact acceptance conditions establish it.
+7. Deliver a traceable explanation for the eight failures, or explicitly label the root cause UNRESOLVED if evidence is insufficient.
+
+PHASE 2 — THEORY-GUIDED, SAFETY-PRESERVING DESIGN OPTIONS
+Analyze at least these possibilities before selecting a candidate:
+A. An interval-aware zero-order-hold QP: enforce a sufficient bound on each robust HOCBF row throughout [t_k,t_k+Delta] using justified derivative/remainder enclosures over the reachable state/observer tube. Provide units, uncertainty and feasibility effects. The online QP must remain solvable or stop safely; a bound that is only sampled is NOT a verified between-sample guarantee.
+B. A causal moving-active-face-aware digital realization: derive the effect of active-set changes on requests and the resulting held torque. Investigate whether an event-aware update, predictor/corrector with a certified final QP, or another scheme can reduce control-period sensitivity without violating original raw rows. State exactly whether it changes the sample-and-hold model or demands additional model assumptions or control updates.
+C. A theoretically justified first-order sampled-data policy if the original finite-grid gate cannot be met without a material architecture change. Derive a finite-Delta error bound and/or empirically predeclared rate-validation protocol; distinguish analytical proof, numerical evidence, and hardware infeasibility. This is a PROPOSAL, not authorization to relax the frozen eight thresholds or retroactively pass them.
+
+Do not implement the already rejected post-filter AB2 or projected-feedback AB2 as though novel. If they are used as baselines, cite their retained failures. Prefer the SMALLEST correction whose invariants and causal timing can be precisely explained; never change gains, alpha_v, disturbances, QP guard, original C4 tolerances, or the reference trajectory to make the test easier. If a new scheme necessarily changes a frozen assumption, version it and show the exact theory/manuscript consequence; do not quietly change the formal stability or nonintervention claims.
+
+PHASE 3 — SEPARATE VERSION, FROZEN TEST, ACCEPTANCE
+1. Predeclare ONE primary candidate, code/config freeze point, objective, equations, all parameter values and units, expected improvement, new assumptions, failure criteria, computational budget, and exact acceptance checks BEFORE its decisive tests. Further candidates require separate versions and transparent failures.
+2. Implement the candidate behind an opt-in feature flag / isolated class. Keep the selected production A2 controller and guarded_qp_final_v1 untouched. Safeguard against history update on failed QP, stale state or invalid observer, wrong active-set history, and hidden torque fallbacks.
+3. All torque actually passed to the plant and observer must be the identical verified held torque. If any QP returns unqualified status, primal/dual check fails, an interval/tube certificate fails, or no safe torque exists: STOP WITHOUT ACTUATION. A stored exact witness, secondary SLSQP, unverified retry, or post-solve torque repair is not a runtime fallback.
+4. Replay the exact four original C4 grid cells and assess ALL eight existing energy and intervention refinement comparisons with ORIGINAL thresholds, plus each existing physical, observer, raw barrier, KKT, hold-input and energy audit. Report predeclared metrics even if the run aborts. If a new rule adds constraints, confirm all original constraints remain enforced.
+5. Separately test the candidate on a predeclared ACTIVE-FILTER case using the intended alpha_v=10 final policy. Ensure it actually generates nontrivial verified QP intervention on the fixed horizon; do not declare success from an inactive-filter case. Define the nontriviality measure and threshold before the run, without weakening physics or risk.
+6. Also inspect event-local and across-interval safety, control-period convergence, wall-clock cost relative to 1-ms sampling and robustness of initial/prehold entry. Report offline numerical performance separately from real-time feasibility; no hardware claims.
+7. After ANY solver, dynamics, controller or sampling-code modifications, run 39 T27 fixture checks and replay the seven original and twelve A2-Extended frozen regressions in their OWN historical policies (alpha_v=5 and alpha_v=10, respectively). If a full rerun is unavailable, say so and report a weaker re-audit; never silently substitute the latter.
+8. Preserve exact raw data for all passed/failed tests, complete timeseries, hashes, seeds, dependency locks, scripts and unmodified historical evidence. Use no post-hoc deletion, selective case reporting, or threshold revisions.
+
+MANDATORY SCIENTIFIC/SAFETY DISTINCTIONS
+- Sampled raw HOCBF row satisfaction does NOT imply constraint satisfaction between updates. Call any between-sample claim 'unverified' absent a valid enclosure argument and evidence.
+- tau-u is filter intervention relative to the *declared digital request*; tau-r measures total deviation from the original continuous nominal request. Report BOTH. Do not use tau-u≈0 to prove continuous-time nominal law nonintervention.
+- Numerical convergence on finite grids is NOT a universal convergence theorem. A formal theorem needs clearly stated assumptions and proof; an impossibility claim needs a genuine lower-bound or counterexample with the intended scope.
+- Do not call an active-QP run a zero-intervention result. Inactive-filter A2 evidence must not be presented as validation of an actively intervening QP.
+- Keep numerical Level 2 evidence separate from Level 1 and from the paper's continuous-time stability proof.
+- M1 bound qualification and G2.5 initial planner feasibility remain separate NO-GO gates even if this task succeeds.
+- The user has authorized continuing engineering without a new administrative signature cycle, but do not invent third-party signatures or independent reproductions.
+
+MINIMUM OUTPUTS
+- ACTIVE_FILTER_REFINEMENT_ROOT_CAUSE.md — derivation with assumptions, error split, event analysis, evidence citations, precise diagnosed versus unresolved mechanisms.
+- ACTIVE_FILTER_HISTORICAL_REPRODUCTION.json + baseline CSV/traces — same original eight failures and four C4 cells, precise policy/hash.
+- ACTIVE_FILTER_COMPARISON_TABLE.csv — Delta/h grid, energy, peak ||tau-u||, ||tau-r||, sampled/barrier minima, QP/observer residual, event times, all original pass/fail gates.
+- SAMPLED_DATA_SAFETY_AND_ORDER_ANALYSIS.md — fixed-face analysis, moving-boundary/switching analysis, ZOH interval sufficiency, and honest limitations.
+- ACTIVE_FILTER_CANDIDATE_PREDECLARATION.json + versioned code/tests (only if a defensible candidate exists).
+- ACTIVE_FILTER_CANDIDATE_VALIDATION.md and raw traces — ALL original criteria; separate alpha_v=10 active-case validation.
+- T27_AND_A2_REGRESSION_REPORT.md — exact reruns or transparent limitations.
+- ACTIVE_FILTER_GATE_DECISION.md — separate decisions for (i) historical reproduction, (ii) root-cause confidence, (iii) candidate safety, (iv) original eight-check refinement gate, (v) alpha_v=10 active filtering, (vi) A2 preservation, (vii) T27 tested scope, and (viii) A3 readiness.
+- A reproducible versioned ZIP containing code, configurations, scripts, logs, full new raw evidence, dependency lock, SHA-256 manifest and links to retained immutable history.
+
+FINAL DECISION RULE
+A candidate earns ACTIVE-FILTER REFINEMENT GO only if it passes every original frozen C4 comparison and all physics, observer, safety, QP, electrical-energy and reproducibility checks, with no unacknowledged policy change. If impossible/not established, say NO-GO and provide a concrete design/policy decision memo: mathematical cause, smallest feasible changes, their theorem consequences, and next experimental tests. A successful active-filter gate does NOT by itself authorize A3 while M1 and G2.5 are NO-GO.
+
+WORKING STYLE
+Investigate and implement now. Prioritize sharp evidence over another sprawling experiment campaign. Preserve failures, label estimates honestly, do not manufacture formal proofs or test outcomes, and finish with (a) a succinct executive finding, (b) a gate matrix, (c) the best justified next action, and (d) reproducible artifact paths.
