@@ -1,0 +1,36 @@
+{
+  "case": "alpha5",
+  "cell": 0,
+  "grid": {
+    "control_period_s": 0.001,
+    "rk4_step_s": 0.00025
+  },
+  "a2": {
+    "completed": false,
+    "passed": false,
+    "failure": {
+      "engineering_error": "Traceback (most recent call last):\n  File \"/workspace/project/panda_research/scripts/run_polynomial_hold_v2.py\", line 100, in cell\n    state,step=integrate(system,state,hold,schedule.h,end_t,runner.envelope,waveform)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/polynomial_hold_v2.py\", line 182, in integrate\n    dense=component_extrema(densecoef)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project/panda_research/src/panda_closed_loop/preparation.py\", line 67, in component_extrema\n    if c.ndim!=2 or c.shape[0]!=4 or not np.all(np.isfinite(c)):raise ValueError('Expected finite cubic coefficients')\n                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Expected finite cubic coefficients\n",
+      "no_further_actuation": true
+    },
+    "metrics": {},
+    "trace": {
+      "file": "execution.ctz",
+      "sha256": "98e822082c4cc35411a7215a7786057a0f0471254204bc83ad18472654161bdc",
+      "canonical_json_sha256": "36ecdb4483430c4cf5170379c89d7d0ce57075847f4f06efe245a74a6f2b61d5",
+      "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+    }
+  },
+  "prehold": {
+    "passed": true,
+    "trace": {
+      "file": "prehold.ctz",
+      "sha256": "236fb244be1dc9e1beac9154caa67ba4659cc09c3595f92d58c175ed1c6e01ae",
+      "canonical_json_sha256": "fc9c0eb1d33a69d29719f2014f4fe5824eebda8e8d9accf65a00bcf5dd81b4ec",
+      "codec": "CTZ_COLUMNAR_SHUFFLED_NPY_V1"
+    }
+  },
+  "audit": {
+    "passed": false,
+    "lossless_roundtrip_verified": true
+  }
+}
