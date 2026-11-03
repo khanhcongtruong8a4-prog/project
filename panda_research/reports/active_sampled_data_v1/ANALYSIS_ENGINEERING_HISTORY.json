@@ -1,0 +1,75 @@
+{
+  "offline_analysis_attempts": [
+    {
+      "version": "V1",
+      "status": "ERROR",
+      "cause": "TypeError unary minus on immutable tuple in offline envelope derivative; no actuation",
+      "preserved_script": "scripts/analyze_active_sampled_v1.py"
+    },
+    {
+      "version": "V1_1",
+      "status": "ERROR",
+      "cause": "Same tuple conversion missed in independent finite difference envelope check; no actuation",
+      "preserved_script": "scripts/analyze_active_sampled_v1_1.py"
+    },
+    {
+      "version": "V1_2",
+      "status": "PER_CELL_COMPLETE_AGGREGATION_ERROR",
+      "cause": "Last cross-diagonal energy grid was finer-to-coarser; initial aggregate incorrectly expected every first-grid node to be shared. No raw data changed.",
+      "preserved_script": "scripts/analyze_active_sampled_v1_2.py"
+    },
+    {
+      "version": "V1_3",
+      "status": "PASS",
+      "cause": "Uses validated gain arrays and both exact shared RK4 endpoint subsets. Reuses unchanged completed V1_2 per-cell operators with declared provenance.",
+      "script": "scripts/analyze_active_sampled_v1_3.py"
+    }
+  ],
+  "modified_equation_attempts": [
+    {
+      "directory": "modified_equation",
+      "status": "WAITING_JOB_CANCELLED_WITHOUT_COMPUTATION",
+      "reason": "Upstream analysis failed; new exclusive run uses corrected upstream"
+    },
+    {
+      "directory": "modified_equation_v1_1",
+      "status": "WAITING_JOB_CANCELLED_WITHOUT_COMPUTATION",
+      "reason": "Upstream analysis failed; new exclusive run uses corrected upstream"
+    },
+    {
+      "directory": "modified_equation_v1_2",
+      "status": "WAITING_JOB_CANCELLED_WITHOUT_COMPUTATION",
+      "reason": "Upstream analysis failed; new exclusive run uses corrected upstream"
+    }
+  ],
+  "final_modified_equation": "modified_equation_v1_3",
+  "frozen_C4_and_alpha10_physical_runs_not_retried_or_changed": true,
+  "parameters_thresholds_or_production_sources_changed": false,
+  "log_hashes": {
+    "active_sd_aggregation_alpha10_v1_3.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "active_sd_aggregation_baseline_v1_3.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "active_sd_alpha10.log": "132a1bd5e64ee43eea12ea9ea8593e91566f7d4226bc080da63cdaf61e733370",
+    "active_sd_alpha10_operators.log": "233b753effc8973f1e9a4e83d375880d029f7a3bd51d15402c7631c8278cdd4d",
+    "active_sd_alpha10_operators_v1_1.log": "620a7358bac69926c56a9141cc72acb262f6eaea13858dc2e00e0a47aeabf054",
+    "active_sd_alpha10_operators_v1_2.log": "3456d8133dfcc0ecba41c85ef3085fe70743f1759addcf4901dde865ff7403c4",
+    "active_sd_analysis_tests.log": "04e160947ae442164067103353d6760bd86c92c74a7b240c9c1b9833a0fd3e21",
+    "active_sd_analysis_tests_v1.log": "ec13750efb472eaf1931672d85ad7c53614cb954413596415b72bfb1c3a19dbb",
+    "active_sd_clock_tests.log": "f51aeaa10fae985603330efd210407ee8a0bb358182eb293248e220599d4542c",
+    "active_sd_clone.log": "d3144e71c10640375a18cd73ad8e0ac1b66a0bb7848b4b621095819f90b623ca",
+    "active_sd_final_report.log": "c5e4b2556b52c38005136f2b5e5ce8c4189e7010ce05e795ca25b1ca4809fea7",
+    "active_sd_fresh_baseline.log": "bd05966f40533babece23abc74779222f11f64dd581ee54fd7293872142974e8",
+    "active_sd_fresh_equivalence.log": "e4a9f437e50646896dbf64eaaac23c7a126c8042caffbc5cbd3589649c2a0916",
+    "active_sd_history_comparison.log": "42c2d382903cebb4464f2220fe3a94b0b8db532e24ec33ab6b193e5a5bcf2e1c",
+    "active_sd_modified_equation.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "active_sd_modified_equation_v1_1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "active_sd_modified_equation_v1_2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "active_sd_modified_equation_v1_3.log": "6071a52ebfefb2b7f450c3d6a95d972c33d714f15ea7cd01126625d09a22685f",
+    "active_sd_operators.log": "233b753effc8973f1e9a4e83d375880d029f7a3bd51d15402c7631c8278cdd4d",
+    "active_sd_operators_v1_1.log": "620a7358bac69926c56a9141cc72acb262f6eaea13858dc2e00e0a47aeabf054",
+    "active_sd_operators_v1_2.log": "75fd90e104b558406ca58ce988f58565926d84c7b1c4a1d2d353b07c002aba42",
+    "active_sd_pack_ctz.log": "e1d29c045201df5906b999b84a9cfd7ab49a23bf5f60dd9ad211c3bceee77793",
+    "active_sd_pack_gzip.log": "1ad87ef5db29224a87c60d1e855f2de94252ca15f45dcb157d4015330fc2c658",
+    "active_sd_pack_operators.log": "130bb082fa23fdf98938d36f1d2b285d3db11b1325d91b6a4181e8478f05db36",
+    "active_sd_t27.log": "9e3245d61eda1322de33b389b93eb057c43401c2fa7417a593a22d2eb1ae0ef4"
+  }
+}

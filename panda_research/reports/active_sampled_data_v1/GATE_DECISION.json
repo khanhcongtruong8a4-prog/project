@@ -1,0 +1,53 @@
+{
+  "gates": [
+    {
+      "stage": "Historical reproduction",
+      "decision": "GO",
+      "scope": "Four freshly simulated cells; full scientific histories and all eight failed metrics exactly reproduced."
+    },
+    {
+      "stage": "Root-cause confidence",
+      "decision": "SUPPORTED, CONDITIONAL",
+      "scope": "Differentiated KKT defect, independent directional checks and modified-equation propagation; no universal Panda impossibility theorem."
+    },
+    {
+      "stage": "New candidate safety",
+      "decision": "NOT ESTABLISHED",
+      "scope": "No defensible new runtime candidate selected; interval-aware/FOH proposals need tube and hybrid safety qualification."
+    },
+    {
+      "stage": "Original eight-check active refinement",
+      "decision": "NO-GO",
+      "scope": "8 original energy/intervention checks fail; thresholds unchanged."
+    },
+    {
+      "stage": "Intended alpha10 active filtering",
+      "decision": "NO-GO FOR REFINEMENT",
+      "scope": "Four genuinely active, physically audited cells; 4 peak comparisons fail in separately declared harder case."
+    },
+    {
+      "stage": "A2 selected frozen scope",
+      "decision": "GO",
+      "scope": "Fresh seven original alpha5 plus twelve v4 alpha10; 120/120 refinement fields pass."
+    },
+    {
+      "stage": "T27 finite tested scope",
+      "decision": "GO",
+      "scope": "39 fixtures: 34 exact-KKT feasible and five exact-witness infeasible."
+    },
+    {
+      "stage": "A3 readiness",
+      "decision": "NO-GO",
+      "scope": "Active-filter qualification, complete M1 bounds and G2.5 start feasibility remain blockers. Official comparisons not run."
+    }
+  ],
+  "all_original_tracked_files_preserved": true,
+  "selected_A2_refinement_metrics": {
+    "total": 120,
+    "passed": 120
+  },
+  "new_runtime_candidate": null,
+  "Level1": false,
+  "official_A3": false,
+  "external_signatures": null
+}

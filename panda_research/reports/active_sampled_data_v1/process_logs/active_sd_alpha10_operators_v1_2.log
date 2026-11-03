@@ -1,0 +1,14 @@
+analyzed 0 regular 58 stage-negative 0
+analyzed 1 regular 58 stage-negative 0
+analyzed 2 regular 120 stage-negative 0
+analyzed 3 regular 120 stage-negative 0
+Traceback (most recent call last):
+  File "/workspace/a2-extended/panda_research/scripts/analyze_active_sampled_v1_2.py", line 220, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/a2-extended/panda_research/scripts/analyze_active_sampled_v1_2.py", line 218, in main
+    aggregate(a.output,results)
+  File "/workspace/a2-extended/panda_research/scripts/analyze_active_sampled_v1_2.py", line 198, in aggregate
+    if not np.allclose(et,y['energy_t'][idx],rtol=0,atol=1e-14):raise ValueError('Not aligned energy quadrature')
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Not aligned energy quadrature

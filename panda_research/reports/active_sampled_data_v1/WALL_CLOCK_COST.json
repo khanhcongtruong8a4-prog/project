@@ -1,0 +1,109 @@
+{
+  "records": [
+    {
+      "case": "legacy_alpha5_original_AB2",
+      "cell": 0,
+      "updates": 1000,
+      "median_s": 0.002551252007833682,
+      "p95_s": 0.021834411963209274,
+      "p99_s": 0.026297397198359246,
+      "max_s": 0.045245790999615565,
+      "updates_exceeding_1ms": 1000,
+      "offline_timeout_s": 15.0,
+      "under_shared_cloud_load": true,
+      "hardware_deadline_qualified": false
+    },
+    {
+      "case": "legacy_alpha5_original_AB2",
+      "cell": 1,
+      "updates": 1000,
+      "median_s": 0.0024483045053784736,
+      "p95_s": 0.020211016849498258,
+      "p99_s": 0.02457636485574767,
+      "max_s": 0.030029068002477288,
+      "updates_exceeding_1ms": 1000,
+      "offline_timeout_s": 15.0,
+      "under_shared_cloud_load": true,
+      "hardware_deadline_qualified": false
+    },
+    {
+      "case": "legacy_alpha5_original_AB2",
+      "cell": 2,
+      "updates": 2000,
+      "median_s": 0.002467663500283379,
+      "p95_s": 0.012367772410652825,
+      "p99_s": 0.02837467899240437,
+      "max_s": 0.041457736006123014,
+      "updates_exceeding_1ms": 2000,
+      "offline_timeout_s": 15.0,
+      "under_shared_cloud_load": true,
+      "hardware_deadline_qualified": false
+    },
+    {
+      "case": "legacy_alpha5_original_AB2",
+      "cell": 3,
+      "updates": 2000,
+      "median_s": 0.0022900765034137294,
+      "p95_s": 0.008717836353025631,
+      "p99_s": 0.025514375520433532,
+      "max_s": 0.0331950880063232,
+      "updates_exceeding_1ms": 2000,
+      "offline_timeout_s": 15.0,
+      "under_shared_cloud_load": true,
+      "hardware_deadline_qualified": false
+    },
+    {
+      "case": "separate_active_alpha10_challenge",
+      "cell": 0,
+      "updates": 500,
+      "median_s": 0.002608972994494252,
+      "p95_s": 0.02156581250092131,
+      "p99_s": 0.02513164264542865,
+      "max_s": 0.02614547300618142,
+      "updates_exceeding_1ms": 500,
+      "offline_timeout_s": 15.0,
+      "under_shared_cloud_load": true,
+      "hardware_deadline_qualified": false
+    },
+    {
+      "case": "separate_active_alpha10_challenge",
+      "cell": 1,
+      "updates": 500,
+      "median_s": 0.002702241501538083,
+      "p95_s": 0.022354275389807263,
+      "p99_s": 0.02954411943763261,
+      "max_s": 0.03713835099188145,
+      "updates_exceeding_1ms": 500,
+      "offline_timeout_s": 15.0,
+      "under_shared_cloud_load": true,
+      "hardware_deadline_qualified": false
+    },
+    {
+      "case": "separate_active_alpha10_challenge",
+      "cell": 2,
+      "updates": 1000,
+      "median_s": 0.002667693996045273,
+      "p95_s": 0.02490675605804426,
+      "p99_s": 0.029897605184378333,
+      "max_s": 0.03160151399788447,
+      "updates_exceeding_1ms": 1000,
+      "offline_timeout_s": 15.0,
+      "under_shared_cloud_load": true,
+      "hardware_deadline_qualified": false
+    },
+    {
+      "case": "separate_active_alpha10_challenge",
+      "cell": 3,
+      "updates": 1000,
+      "median_s": 0.002872487501008436,
+      "p95_s": 0.0255780201536254,
+      "p99_s": 0.029854081327939635,
+      "max_s": 0.03326987900072709,
+      "updates_exceeding_1ms": 1000,
+      "offline_timeout_s": 15.0,
+      "under_shared_cloud_load": true,
+      "hardware_deadline_qualified": false
+    }
+  ],
+  "scope": "OFFLINE_CLOUD_MEASUREMENTS_NOT_REAL_TIME_OR_HARDWARE_QUALIFICATION"
+}
