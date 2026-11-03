@@ -1,0 +1,14 @@
+{
+  "version": "READ_ONLY_ANALYSIS_FREEZE_V1",
+  "not_a_runtime_candidate": true,
+  "sources_sha256": {
+    "scripts/analyze_active_sampled_v1.py": "8e52b48c33bff25bae10b2eefeaf0b6bef790f1084aaa964e05dd4bb395c397d",
+    "src/panda_closed_loop/active_sampled_analysis_v1.py": "ee5414c48b4392236b42c874e0163c9f1b2bad5e0eef0b833e1e3210a855c2b9",
+    "tests/test_active_sampled_analysis_v1.py": "12b435b6bf44992b97096ee46c3938f8949ca1ad3f5833d3c696ff87c35058ef",
+    "reports/active_sampled_data_v1/SAMPLED_DATA_SAFETY_AND_ORDER_ANALYSIS.md": "0ce50178bd7a5c6b8de6ce299c06686d723ea1a3ba1ace0a950c4e6122bc021e",
+    "policy/active_sampled_data_v1/FIRST_ORDER_POLICY_PROPOSAL.json": "6021fac2e43a9dddc3f6f779539b161f8f77ff141492981153782f049fc304da"
+  },
+  "unit_tests_run": 6,
+  "unit_tests_passed": 6,
+  "QP_or_plant_inputs_actuated_by_analysis": false
+}

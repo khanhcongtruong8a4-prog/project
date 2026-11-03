@@ -1,0 +1,33 @@
+{
+  "version": "FIRST_ORDER_SAMPLED_DATA_POLICY_PROPOSAL_V1",
+  "status": "PROPOSAL_ONLY_NOT_ADOPTED",
+  "original_eight_failures_relabelled": false,
+  "original_thresholds_changed": false,
+  "production_controller_changed": false,
+  "objective": "A separately justified finite-Delta accuracy budget for a causal guarded ZOH controller, if the original gate remains unestablished.",
+  "conditional_bound": "Equation (4) in SAMPLED_DATA_SAFETY_AND_ORDER_ANALYSIS.md; augmented energy and intervention bounds additionally required.",
+  "missing_proof_inputs": [
+    "Uniform reachable-domain regularity, Lipschitz and local-defect enclosures",
+    "Finite switch count or validated hybrid error treatment",
+    "A certified torque-error bound from residuals/conditioning",
+    "Augmented electrical-energy and peak-intervention functional bounds",
+    "A verified intersample robust-row enclosure"
+  ],
+  "future_empirical_protocol": {
+    "not_executed_as_policy_acceptance_here": true,
+    "retain_all_training_and_failed_grids": true,
+    "declare_before_execution": [
+      "Actual update period, RK4 steps, horizon, all cases and held-out grids",
+      "Rate interval, absolute functional accuracy budgets and reference-error estimator",
+      "Nontrivial active alpha10 case, all physics/QP/observer/energy checks",
+      "Independent RK4 h-only refinement and full raw histories",
+      "Wall-time distribution versus actual deadline, not just 15s offline timeout"
+    ],
+    "rate_does_not_replace_finite_accuracy_budget": true,
+    "numerical_estimates_are_not_certified_bounds": true
+  },
+  "adoption": "Contingent on project-owner authorization of the explicit material policy/manuscript change; current diagnostic authorization already sufficient for this work.",
+  "A2_historical_scope": "Preserved original seven and v4 twelve under their own policies, separate from active-filter qualification.",
+  "A3": false,
+  "Level1": false
+}
