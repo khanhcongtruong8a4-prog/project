@@ -1,0 +1,165 @@
+{
+  "package": "IC2AI_Panda_A2_v2.4b_RUNTIME.zip",
+  "bytes": 23528309,
+  "sha256": "e9856de1e71b04c8689bd783ea52af30bb11aeb9cb492491f91d3b5e636ecbd7",
+  "zip_crc_verified": true,
+  "all_included_files_byte_verified": true,
+  "source_manifest_entries": 441,
+  "clean_minimal_venv": true,
+  "installed_distributions": [
+    {
+      "name": "casadi",
+      "version": "3.7.2"
+    },
+    {
+      "name": "cmeel",
+      "version": "0.61.0"
+    },
+    {
+      "name": "numpy",
+      "version": "2.3.5"
+    },
+    {
+      "name": "pip",
+      "version": "25.0.1"
+    },
+    {
+      "name": "proxsuite",
+      "version": "0.7.2"
+    },
+    {
+      "name": "scipy",
+      "version": "1.17.0"
+    }
+  ],
+  "contract_and_T27_test_results": {
+    "passed": true,
+    "suites": [
+      {
+        "suite": "completion",
+        "passed": true,
+        "tests_run": 9
+      },
+      {
+        "suite": "GL_audit",
+        "passed": true,
+        "tests_run": 3
+      },
+      {
+        "suite": "slack_identity",
+        "passed": true,
+        "tests_run": 3
+      },
+      {
+        "suite": "original_r4",
+        "passed": true,
+        "tests_run": 14
+      },
+      {
+        "suite": "preserved_QP",
+        "passed": true,
+        "tests_run": 14
+      },
+      {
+        "suite": "v4_gain",
+        "passed": true,
+        "tests_run": 10
+      },
+      {
+        "suite": "corrected_QP_math",
+        "passed": true,
+        "tests_run": 12
+      },
+      {
+        "suite": "T27",
+        "passed": true,
+        "tests_run": 39
+      }
+    ],
+    "tests_executed": 104
+  },
+  "fresh_active_cell": {
+    "case": "alpha10",
+    "cell": 0,
+    "passed": true,
+    "duration_s": 0.5,
+    "stage_audit": {
+      "version": "GL_EXECUTION_VERIFICATION_V2_4A",
+      "passed": true,
+      "original_result_sha256": "1a61a4fc6473dfa94ed8023966e1182274f16e96949f826721439789493371dd",
+      "trace_sha256": "9c44836c5d8f99a1a50ba663e2c2571a235ea419264a3322d4db0dbee02a5fa8",
+      "original_result_passed": false,
+      "original_failed_checks": [
+        "same_torque_to_plant_and_DOB"
+      ],
+      "trajectory_resimulated_or_changed": false,
+      "complete_counts": true,
+      "original_terminal_thresholds_passed": true,
+      "substeps_audited": 2000,
+      "maxima": {
+        "h_scaled_full_RHS_defect": 3.5090819139327322e-15,
+        "stage_equation_defect": 0.0,
+        "endpoint_equation_defect": 0.0
+      },
+      "failed_steps": [],
+      "criterion": 1e-13,
+      "criterion_frozen_before_motion": true,
+      "scope": "RECOMPUTED_IDENTICAL_ACTUAL_TORQUE_AND_FULL_PLANT_DOB_POWER_STAGE_EQUATIONS_NOT_CERTIFIED_ODE_BOUNDS",
+      "audit_policy_sha256": "bda5e9f293ccadf7325cc0c8e54ea9b2f2ad5179a88265ee78d13bfaa5deec0c"
+    },
+    "independent_full_KKT": {
+      "passed": true,
+      "checks": {
+        "nonempty": true,
+        "full_completion_KKT": true,
+        "point_projection_KKT": true,
+        "identical_accepted_polynomial_torques": true,
+        "physical_and_observer": true,
+        "complete_counts": true,
+        "metrics_recomputed": true
+      },
+      "maxima": {
+        "point_primal": 1.3816552069112475e-13,
+        "point_stationarity": 9.8541303155536e-13,
+        "point_complementarity": 2.324332287344079e-14,
+        "completion_primal": 1.7248350440432326e-13,
+        "completion_stationarity": 1.9033342409160303e-13,
+        "completion_complementarity": 7.461796202474998e-21,
+        "stage_residual": 3.5090819139327322e-15
+      },
+      "hold_count": 500,
+      "substep_count": 2000,
+      "peak_digital_intervention_Nm": 0.06692375099245694,
+      "duration_above_0p001_Nm_s": 0.06252443629508482,
+      "genuine_activity_passed": true,
+      "minimum_recomputed_raw_normalized_slack": 9.999827516495596e-09,
+      "query_wall_time_s": {
+        "median": 0.05596616649995667,
+        "p95": 0.1339777784000944,
+        "p99": 0.375793594499787,
+        "maximum": 1.7359755409997888
+      },
+      "trace_sha256": "9c44836c5d8f99a1a50ba663e2c2571a235ea419264a3322d4db0dbee02a5fa8",
+      "scope": "NUMERICAL_FULL_FINITE_GRID_KKT_AND_RECORDED_TRAJECTORY_AUDIT_NOT_INTERVAL_CERTIFICATE"
+    },
+    "metric_differences_from_qualified_full_release": {
+      "modeled_electrical_energy_J": 0.0,
+      "duration_s": 0.0,
+      "maximum_intervention_Nm": 0.0,
+      "minimum_normalized_raw_slack": 0.0,
+      "actual_terminal_error_m": 0.0,
+      "planned_terminal_error_m": 0.0
+    }
+  },
+  "normative_plan_equivalence": {
+    "alpha5": true,
+    "alpha10": true,
+    "candidate_execution_bytecode_identical": true
+  },
+  "full_27_cell_campaign_reexecuted_for_packaging": false,
+  "runtime_mathematics_or_thresholds_changed": false,
+  "archive_integrity_scope": "All included files verified; omitted old bulk-history bytes NOT CHECKED and NOT represented as passing.",
+  "full_history_preserved_at_commit": "c1d0fd2eb7ac05a955b2d75ce6ff01ea45f543c8",
+  "official_A3": false,
+  "Level1": false
+}

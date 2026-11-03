@@ -1,0 +1,5 @@
+numpy==2.3.5
+scipy==1.17.0
+casadi==3.7.2
+proxsuite==0.7.2
+cmeel==0.61.0
