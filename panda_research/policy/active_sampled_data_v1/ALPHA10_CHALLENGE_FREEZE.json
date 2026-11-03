@@ -1,0 +1,23 @@
+{
+  "version": "ALPHA10_ACTIVE_CHALLENGE_V1",
+  "kind": "PREDECLARED_BASELINE_CHALLENGE_NOT_CONTROLLER_CANDIDATE",
+  "implementation_sha256": {
+    "scripts/run_active_sampled_challenge_v1.py": "25954597269b5ae918e0c04eb094dc0da08416094c947d1fb8b7dc0f00501ee7",
+    "scripts/a2_extended_v4.py": "3712791f7b1d3602ca779abb0771995c9fe3962f720b22522f067d1a4afe2f87",
+    "src/panda_closed_loop/p1_r3.py": "42faec3b7ed312a845b5e42f670a2dae47bb794cf5a516ad0d3e1f033b5b0a9d",
+    "src/panda_closed_loop/p1_r4.py": "27d25158bee9aeeb93a016337489562311aef7f99b1f400b448a3567070f3c77",
+    "src/panda_closed_loop/guarded_qp_final_v1.py": "4efdc8aa5235f6e5a0c465f28d0debda40a28e93f2fffc58e90f436de86b8925",
+    "policy/active_sampled_data_v1/BASELINE_HYPOTHESIS_CONTRACT.json": "3061cea73e73815169a32a59304102dc346d09835c4932add32bc22770d1b48f"
+  },
+  "changes_only_in_new_challenge": [
+    "E3 duration 1s to .5s",
+    "A2_reference audit horizon .5s",
+    "reference screen nodes scaled to .5s"
+  ],
+  "original_cases_modified": false,
+  "unverified_fallback": false,
+  "nontriviality_peak_Nm": 0.01,
+  "nontriviality_duration_above_0p001_Nm_s": 0.005,
+  "runtime_QP_budget_s": 15.0,
+  "A3": false
+}
