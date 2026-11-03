@@ -1,0 +1,13 @@
+{
+  "version": "AUDIT_CORRECTION_V2_4A",
+  "runtime_changed": false,
+  "prior_failure": "v2.4 alpha5 cell0 full horizon completed; all physical/observer/guarded/terminal checks passed; exact binary comparison of recomputed implicit RHS with last iteration K failed. Its maximum declared h-scaled stage residual was 3.498312751e-15, below predeclared 1e-13.",
+  "correction": "Independently recompute accepted polynomial torque and complete plant/DOB/power RHS, stage equations and endpoints, using exactly the original 1e-13 implicit-stage criterion. Never rewrite original result or trajectory. Permit correction only for this single diagnostic failure and otherwise completed passing cells.",
+  "criterion": 1e-13,
+  "thresholds_changed": false,
+  "source_sha256": {
+    "src/panda_closed_loop/gauss_execution_audit_v2_4a.py": "358c78d24ae9756b180d69304ae45443879119112b75555e82c6123680321253",
+    "scripts/audit_gauss_execution_v2_4a.py": "cc9b557650a7abcb22571ac702240e6090a3d99c22c2d7737cb6125ecadd5564",
+    "tests/test_gauss_execution_audit_v2_4a.py": "2f0510f7a426125a58b749ce9d2162a18a15fc6f308788aaa7ee2a64b158fb4a"
+  }
+}
