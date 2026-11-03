@@ -1,0 +1,69 @@
+{
+  "zip_crc_verified": true,
+  "zip_source_commit": "295c5ae602387a4b9d19c9e143512613cab11b41",
+  "zip_size_bytes": 3662078435,
+  "zip_sha256": "ff3768168c25f0fdf7a829ae04561465d1059baa1b40c73c5306d9c2440c2e19",
+  "exact_extracted_files_verified": 3366,
+  "restored_source_bootstrap_verified": true,
+  "restored_mathematical_contracts_passed": 15,
+  "restored_fresh_T27_cases_passed": 39,
+  "native_libraries_selected_from_extracted_archive": true,
+  "runtime": "Existing pinned Python 3.12.14 environment; not a claimed fresh machine/dependency installation",
+  "physical_campaign_repeated_after_unpacking": false,
+  "physical_evidence": "All required eight candidate and nineteen regression cells freshly executed before packaging; exact code/data verified after extraction",
+  "commands": [
+    {
+      "name": "file_manifest",
+      "exit_code": 0,
+      "executed_test_count": null,
+      "log_sha256": "f46f318f25f51acd2671b0a0b70878b5c7c51f7409d0e46171d9e4e27c540242"
+    },
+    {
+      "name": "local_metadata_and_original_freeze_bootstrap",
+      "exit_code": 0,
+      "executed_test_count": null,
+      "log_sha256": "808d352238faea88b30270b1120f8d38a6570e856dc76ac1290093dba1b26ca8"
+    },
+    {
+      "name": "completion_contracts",
+      "exit_code": 0,
+      "executed_test_count": 9,
+      "log_sha256": "09c44f2e9c5c69ea18a8bb6fb2dc9defa3fb0ea3ac563eddbb38f10d6a009896"
+    },
+    {
+      "name": "gauss_audit_contracts",
+      "exit_code": 0,
+      "executed_test_count": 3,
+      "log_sha256": "df6025964ca43650ce63041e3d1ebef246e05546e6761ea807fdba604543e51f"
+    },
+    {
+      "name": "slack_audit_contracts",
+      "exit_code": 0,
+      "executed_test_count": 3,
+      "log_sha256": "89581ba10e27cc5dd86e1c91f8bb81d8adcad93b690fe5638d3c55f88d487d9e"
+    },
+    {
+      "name": "fresh_restored_T27_39",
+      "exit_code": 0,
+      "executed_test_count": null,
+      "log_sha256": "9e3245d61eda1322de33b389b93eb057c43401c2fa7417a593a22d2eb1ae0ef4"
+    }
+  ],
+  "archive_downloadable_source_branch": "active-filter-remediation-v2",
+  "checkpoint_f9278f2_recovered": false,
+  "official_A3": false,
+  "Level1": false,
+  "hosted_zip_endpoint_statuses": [
+    "HTTP/1.1 200 OK",
+    "HTTP/2 302 ",
+    "HTTP/1.1 200 OK",
+    "HTTP/2 200 "
+  ],
+  "hosted_zip_content_types": [
+    "content-type: text/html; charset=utf-8",
+    "content-type: application/zip"
+  ],
+  "published_scientific_source_commit": "295c5ae602387a4b9d19c9e143512613cab11b41",
+  "hosted_archive_full_payload_downloaded_and_crc_checked": false,
+  "hosted_archive_verification_scope": "Git ref verified and HTTP ZIP endpoint confirmed; the complete separate local release ZIP was CRC/extraction/byte/native-test verified."
+}

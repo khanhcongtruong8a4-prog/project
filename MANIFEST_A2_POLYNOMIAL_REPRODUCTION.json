@@ -2112,6 +2112,10 @@
       "sha256": "07ee160788f6c436a9ade1940123f675f20d247a08b586ae0a72079d577d5119",
       "size": 950
     },
+    "panda_research/reports/active_remediation_v2/DELIVERY_VERIFICATION.json": {
+      "sha256": "97471430368b3bf4bfbf9e165ec75c90c0ec73a335e228d315fb4ed77c2f102d",
+      "size": 2709
+    },
     "panda_research/reports/active_remediation_v2/FAILURE_HISTORY.json": {
       "sha256": "9fa8e685a5254d7aafb662526f28608b991ef5fe16ebb03da87c2f9dec795327",
       "size": 3658039
