@@ -1,0 +1,14 @@
+{
+  "version": "READ_ONLY_ANALYSIS_V1_2",
+  "parent_freeze_commit": "08b7cce",
+  "preserved_failed_scripts": [
+    "scripts/analyze_active_sampled_v1.py",
+    "scripts/analyze_active_sampled_v1_1.py"
+  ],
+  "source_sha256": "b72ecd3558166796ed19b81a58b68b707b47a4bcaa549661ab4007c1cd4e9146",
+  "reason": "V1.1 missed the same tuple conversion in the offline finite-difference envelope evaluation. V1.2 uses the already validated identical numpy observer.gains for every bound expression.",
+  "gain_values_changed": false,
+  "production_controller_or_solver_changed": false,
+  "all_failed_outputs_and_logs_preserved": true,
+  "not_a_runtime_candidate": true
+}
