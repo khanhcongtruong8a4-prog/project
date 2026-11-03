@@ -12,6 +12,10 @@
       "sha256": "a44cb9dd14552469eb7f930c4c18b021658590ccaf4c2d604bd13ef323bfcf7d",
       "size": 4466
     },
+    "README_COMPACT_A2.md": {
+      "sha256": "e694c3662a23ab41825f855862407b488e9afc63fb3e63c5f4b72012de211750",
+      "size": 1339
+    },
     "RUN_A2_POLYNOMIAL_REPRODUCTION.py": {
       "sha256": "e2a50b39206d36a818667086f6d4dc81f48669722b2712a7483305169e22085c",
       "size": 224
@@ -23,6 +27,14 @@
     "VERIFY_A2_POLYNOMIAL_PACKAGE.py": {
       "sha256": "f574adaad19adfcf644834b929a0a114b871bdd61c4eab0a7f66b815b9cd0d65",
       "size": 573
+    },
+    "downloads/IC2AI_Panda_A2_v2.4b_RUNTIME.zip": {
+      "sha256": "e9856de1e71b04c8689bd783ea52af30bb11aeb9cb492491f91d3b5e636ecbd7",
+      "size": 23528309
+    },
+    "downloads/IC2AI_Panda_A2_v2.4b_RUNTIME.zip.sha256": {
+      "sha256": "8da17295ecd72e21c37188cf0ceb3ce573adc3e4ea7541e8cfb972f802c81434",
+      "size": 99
     },
     "downloads/IC2AI_Panda_Action3_v1.2.1_2026-11-01.zip": {
       "sha256": "d5111459b8a6cf5d1d73400bba75498b678b34f5417c5469beab053a79db0f47",
@@ -3336,6 +3348,10 @@
       "sha256": "66f432479207073a08fc88fd00f771669b57adcd796b5377f6074606d083f825",
       "size": 36434
     },
+    "panda_research/reports/compact_delivery/VALIDATION.json": {
+      "sha256": "b3e968e89ddaf74a378adee7ebb33402eca8388dd08c0e35dbfcd7332c1a7749",
+      "size": 4940
+    },
     "panda_research/reports/dependency_install.log": {
       "sha256": "77a8e0b239ab77547032f467c7de2c1f79727a2efd02539eecc2a7d8082c3924",
       "size": 7377
@@ -5239,6 +5255,10 @@
     "panda_research/reports/release_audit.json": {
       "sha256": "64a40d822835900ff1b1a3bbc7627d7eddb29a9651fbae52f5f51eab812fb217",
       "size": 18804
+    },
+    "panda_research/requirements-compact.lock.txt": {
+      "sha256": "c23a40d8d4029d687668afe9c80f89cfaf8faf6e2b9ceefb0dc53cb92fe6f407",
+      "size": 72
     },
     "panda_research/requirements-docs.txt": {
       "sha256": "deedabb4d330d1bf0a213c0bc594ad765f91248be7e7ed0d3cae8f8a80286db5",
@@ -12860,6 +12880,10 @@
       "sha256": "387d2f63ac8b75fbd55feb1029d777c00832054ce193067678f46f49ffd2edd5",
       "size": 2615
     },
+    "panda_research/scripts/compact_a2_runtime.py": {
+      "sha256": "d3a0ade262682be32a2a1be1e6946664a5bfc4555250971caa3b9e6a9a00874d",
+      "size": 11963
+    },
     "panda_research/scripts/compare_active_history_v1.py": {
       "sha256": "75b1f24ee94bd570e2afce3f92144617ba524ab3aea06b2b706e2056d1b8c160",
       "size": 2910
@@ -12919,6 +12943,10 @@
     "panda_research/scripts/package_active_sampled_v1.py": {
       "sha256": "8244c36cd56b737d151332a43827996950c8817c0e2e2fab5afc4cbc1cd5800c",
       "size": 11755
+    },
+    "panda_research/scripts/package_compact_a2.py": {
+      "sha256": "de197b441e42b7c285c740cd772b53814ee01426872fd67ac8a3f48d4e0d8a47",
+      "size": 7185
     },
     "panda_research/scripts/package_extended_delivery.py": {
       "sha256": "230675e6b1fb35bd399f4f4288ab7bcd4798fb1295440245d70d3ddb40436278",
