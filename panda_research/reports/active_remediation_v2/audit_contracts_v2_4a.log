@@ -1,0 +1,8 @@
+test_implicit_residual_is_the_declared_contract (__main__.AuditContracts.test_implicit_residual_is_the_declared_contract) ... ok
+test_wrong_DOB_torque_is_detected (__main__.AuditContracts.test_wrong_DOB_torque_is_detected) ... ok
+test_wrong_polynomial_stage_torque_is_detected (__main__.AuditContracts.test_wrong_polynomial_stage_torque_is_detected) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.060s
+
+OK

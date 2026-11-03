@@ -1,0 +1,656 @@
+{
+  "name": "redundant_active_faces",
+  "G": [
+    [
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      2.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "c": [
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0,
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0,
+    0.0,
+    0.0
+  ],
+  "scales": [
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0,
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0,
+    1.0,
+    2.0
+  ],
+  "row_names": [
+    "box_upper_1",
+    "box_upper_2",
+    "box_upper_3",
+    "box_upper_4",
+    "box_upper_5",
+    "box_upper_6",
+    "box_upper_7",
+    "box_lower_1",
+    "box_lower_2",
+    "box_lower_3",
+    "box_lower_4",
+    "box_lower_5",
+    "box_lower_6",
+    "box_lower_7",
+    "synthetic_0",
+    "synthetic_1"
+  ],
+  "nominal": [
+    -3.0,
+    -3.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "oracle": {
+    "feasible": true,
+    "passed": true,
+    "separate_algorithm": "SLSQP, zero initialization, never given an exact witness",
+    "SLSQP_status": 8,
+    "SLSQP_success": false,
+    "SLSQP_scaled_primal": 6.09574778869639e-11,
+    "SLSQP_error_vs_exact": 4.3103445977901234e-11,
+    "exact_certificate": {
+      "passed": true,
+      "checks": {
+        "all_inequalities_exact_nonnegative": true,
+        "all_duals_exact_nonnegative": true,
+        "stationarity_exact_zero": true,
+        "complementarity_exact_zero": true
+      },
+      "active_indices": [
+        14
+      ],
+      "unique_optimum_y_float_display_only": [
+        5.747126436781609e-11,
+        5.747126436781609e-11,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_optimum_y": [
+        {
+          "numerator": "6288475549432711",
+          "denominator": "109419474560129169828610048"
+        },
+        {
+          "numerator": "6288475549432711",
+          "denominator": "109419474560129169828610048"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        }
+      ],
+      "exact_dual": [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "3956366729227117047719943733681",
+          "denominator": "81129638414606667311316008391968"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        }
+      ],
+      "exact_scaled_slacks": [
+        {
+          "numerator": "1792728653162839332091042883851",
+          "denominator": "1792728671193156318471947026432"
+        },
+        {
+          "numerator": "1792728653162839332091042883851",
+          "denominator": "1792728671193156318471947026432"
+        },
+        {
+          "numerator": "1125899895583625",
+          "denominator": "1125899906842624"
+        },
+        {
+          "numerator": "1125899895583625",
+          "denominator": "1125899906842624"
+        },
+        {
+          "numerator": "2484744597150069",
+          "denominator": "18014398509481984"
+        },
+        {
+          "numerator": "2484744597150069",
+          "denominator": "18014398509481984"
+        },
+        {
+          "numerator": "2484744597150069",
+          "denominator": "18014398509481984"
+        },
+        {
+          "numerator": "1792728653368900098894853957899",
+          "denominator": "1792728671193156318471947026432"
+        },
+        {
+          "numerator": "1792728653368900098894853957899",
+          "denominator": "1792728671193156318471947026432"
+        },
+        {
+          "numerator": "1125899895583625",
+          "denominator": "1125899906842624"
+        },
+        {
+          "numerator": "1125899895583625",
+          "denominator": "1125899906842624"
+        },
+        {
+          "numerator": "2484744597150069",
+          "denominator": "18014398509481984"
+        },
+        {
+          "numerator": "2484744597150069",
+          "denominator": "18014398509481984"
+        },
+        {
+          "numerator": "2484744597150069",
+          "denominator": "18014398509481984"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        }
+      ],
+      "scope": "EXACT_RECORDED_BINARY64_SCALED_STRICTLY_CONVEX_QP_ONLY; NOT_EXACT_ROBOT_MODEL_OR_LEVEL1",
+      "hypothesis_selection": "Supplied indices; all KKT sufficiency conditions independently verified in rational arithmetic"
+    }
+  },
+  "query": {
+    "applied": [
+      4.984466174280834e-09,
+      4.984466174280834e-09,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "status": "QPSolverOutput.PROXQP_SOLVED",
+    "stop_requested": false,
+    "diagnostics": {
+      "solver": "ProxQP 0.7.2+guarded-support-sign-v1",
+      "settings": {
+        "version": "A2_QP_NUMERICS_V2",
+        "variable": "y=tau/87 N m; isotropic Hessian I",
+        "constraint_scaling": "Euclidean unit normal in y, positive row scaling only",
+        "inward_guard_original_row_scale": 1e-08,
+        "guard_rule": "G tau+c >= 1e-8 * original row scale",
+        "eps_abs": 1e-12,
+        "eps_rel": 0.0,
+        "max_iter": 10000,
+        "check_duality_gap": true,
+        "eps_duality_gap_abs": 1e-12,
+        "eps_duality_gap_rel": 0.0,
+        "original_normalized_primal_target": 1e-09,
+        "original_scaled_stationarity_target": 1e-09,
+        "wall_budget_s": 15.0,
+        "retry": false,
+        "post_QP_projection": false
+      },
+      "backend_correction": {
+        "version": "GUARDED_QP_RELIABILITY_V1",
+        "library_sha256": "3370c29e2c3e42db44bc7cfed1d385ebc6680a519a1501693c223575122fc8c1",
+        "patch_sha256": "17bfb8591a02d624f870cb8766ac0d36040649ad3f75f05855814c06cf5913a5",
+        "settings_and_initialization_unchanged": true
+      },
+      "row_names": [
+        "box_upper_1",
+        "box_upper_2",
+        "box_upper_3",
+        "box_upper_4",
+        "box_upper_5",
+        "box_upper_6",
+        "box_upper_7",
+        "box_lower_1",
+        "box_lower_2",
+        "box_lower_3",
+        "box_lower_4",
+        "box_lower_5",
+        "box_lower_6",
+        "box_lower_7",
+        "synthetic_0",
+        "synthetic_1"
+      ],
+      "row_units": [
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI"
+      ],
+      "row_scales": [
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0,
+        1.0,
+        2.0
+      ],
+      "row_scaling_denominator": [
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        123.03657992645928,
+        246.07315985291856
+      ],
+      "inward_guard_raw": [
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07,
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07,
+        1e-08,
+        2e-08
+      ],
+      "recovery": "DISABLED",
+      "replan_requested": false,
+      "cold_solves": 1,
+      "post_solve_repair": false,
+      "iterations": 7,
+      "duality_gap": -1.2313773876320105e-14,
+      "tau_candidate": [
+        4.984466174280834e-09,
+        4.984466174280834e-09,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dual_original": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0001981767740113923,
+        0.00019817677401139376
+      ],
+      "dual_scaled": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.024382992495220527,
+        0.024382992495220707
+      ],
+      "raw_slacks": [
+        86.99999999501553,
+        86.99999999501553,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0,
+        87.00000000498447,
+        87.00000000498447,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0,
+        9.968932348561667e-09,
+        1.9937864697123335e-08
+      ],
+      "normalized_slacks": [
+        0.9999999999427073,
+        0.9999999999427073,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0000000000572928,
+        1.0000000000572928,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        9.968932348561667e-09,
+        9.968932348561667e-09
+      ],
+      "exact_all_rows_nonnegative": true,
+      "negative_raw_row_count": 0,
+      "normalized_primal": 0.0,
+      "scaled_stationarity": 2.0816681711721685e-17,
+      "guarded_normalized_primal": 2.5250743686878954e-13,
+      "guarded_scaled_stationarity": 2.0816681711721685e-17,
+      "complementarity": 1.9756108531757786e-12,
+      "guarded_complementarity": 6.156886938159112e-15,
+      "negative_upper_dual": 0.0,
+      "intervention_Nm": 4.242640694168385,
+      "torque_upper_slack": [
+        86.99999999501553,
+        86.99999999501553,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "torque_lower_slack": [
+        87.00000000498447,
+        87.00000000498447,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "numerical_solver_acceptance_not_invariance_proof": true
+    }
+  },
+  "physical_error_vs_exact_Nm": 1.553382571916636e-11,
+  "passed": true,
+  "wall_s": 0.011213764000785886,
+  "torque_actuated": false
+}

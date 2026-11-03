@@ -1,0 +1,23 @@
+cell 0: starting frozen P1-r3
+cell 0: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 0: evidence audit PASS
+cell 1: starting frozen P1-r3
+cell 1: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 1: evidence audit PASS
+cell 2: starting frozen P1-r3
+cell 2: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 2: evidence audit PASS
+cell 3: starting frozen P1-r3
+cell 3: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 3: evidence audit PASS
+cell 4: starting frozen P1-r3
+cell 4: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 4: evidence audit PASS
+cell 5: starting frozen P1-r3
+cell 5: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 5: evidence audit PASS
+cell 6: starting frozen P1-r3
+cell 6: P1 PASS_NUMERICAL_HOLD_ONLY; A2 PASS_NUMERICAL_CELL
+cell 6: evidence audit PASS
+Numerical A2 gate: GO
+Evidence: /workspace/project/panda_research/runs/p1_r4/correction_v2_fresh_original_r4

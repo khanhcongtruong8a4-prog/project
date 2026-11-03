@@ -1,0 +1,596 @@
+{
+  "name": "box_interior",
+  "G": [
+    [
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0,
+      -0.0
+    ],
+    [
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      -1.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "c": [
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0,
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0
+  ],
+  "scales": [
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0,
+    87.0,
+    87.0,
+    87.0,
+    87.0,
+    12.0,
+    12.0,
+    12.0
+  ],
+  "row_names": [
+    "box_upper_1",
+    "box_upper_2",
+    "box_upper_3",
+    "box_upper_4",
+    "box_upper_5",
+    "box_upper_6",
+    "box_upper_7",
+    "box_lower_1",
+    "box_lower_2",
+    "box_lower_3",
+    "box_lower_4",
+    "box_lower_5",
+    "box_lower_6",
+    "box_lower_7"
+  ],
+  "nominal": [
+    1.0,
+    -2.0,
+    3.0,
+    -4.0,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "oracle": {
+    "feasible": true,
+    "passed": true,
+    "separate_algorithm": "SLSQP, zero initialization, never given an exact witness",
+    "SLSQP_status": 0,
+    "SLSQP_success": true,
+    "SLSQP_scaled_primal": 0.0,
+    "SLSQP_error_vs_exact": 0.0,
+    "exact_certificate": {
+      "passed": true,
+      "checks": {
+        "all_inequalities_exact_nonnegative": true,
+        "all_duals_exact_nonnegative": true,
+        "stationarity_exact_zero": true,
+        "complementarity_exact_zero": true
+      },
+      "active_indices": [],
+      "unique_optimum_y_float_display_only": [
+        0.011494252873563218,
+        -0.022988505747126436,
+        0.034482758620689655,
+        -0.04597701149425287,
+        0.0011494252873563218,
+        0.0022988505747126436,
+        0.0034482758620689655
+      ],
+      "exact_optimum_y": [
+        {
+          "numerator": "828248207332505",
+          "denominator": "72057594037927936"
+        },
+        {
+          "numerator": "-828248207332505",
+          "denominator": "36028797018963968"
+        },
+        {
+          "numerator": "2484744621997515",
+          "denominator": "72057594037927936"
+        },
+        {
+          "numerator": "-828248207332505",
+          "denominator": "18014398509481984"
+        },
+        {
+          "numerator": "165649641466501",
+          "denominator": "144115188075855872"
+        },
+        {
+          "numerator": "165649641466501",
+          "denominator": "72057594037927936"
+        },
+        {
+          "numerator": "496948924399503",
+          "denominator": "144115188075855872"
+        }
+      ],
+      "exact_dual": [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        }
+      ],
+      "exact_scaled_slacks": [
+        {
+          "numerator": "71229345110019495",
+          "denominator": "72057594037927936"
+        },
+        {
+          "numerator": "36857044866008505",
+          "denominator": "36028797018963968"
+        },
+        {
+          "numerator": "69572848695354485",
+          "denominator": "72057594037927936"
+        },
+        {
+          "numerator": "18842646536670505",
+          "denominator": "18014398509481984"
+        },
+        {
+          "numerator": "19712307135734051",
+          "denominator": "144115188075855872"
+        },
+        {
+          "numerator": "9773328747133775",
+          "denominator": "72057594037927936"
+        },
+        {
+          "numerator": "19381007852801049",
+          "denominator": "144115188075855872"
+        },
+        {
+          "numerator": "72885841524684505",
+          "denominator": "72057594037927936"
+        },
+        {
+          "numerator": "35200548451343495",
+          "denominator": "36028797018963968"
+        },
+        {
+          "numerator": "74542337939349515",
+          "denominator": "72057594037927936"
+        },
+        {
+          "numerator": "17186150122005495",
+          "denominator": "18014398509481984"
+        },
+        {
+          "numerator": "20043606418667053",
+          "denominator": "144115188075855872"
+        },
+        {
+          "numerator": "10104628030066777",
+          "denominator": "72057594037927936"
+        },
+        {
+          "numerator": "20374905701600055",
+          "denominator": "144115188075855872"
+        }
+      ],
+      "scope": "EXACT_RECORDED_BINARY64_SCALED_STRICTLY_CONVEX_QP_ONLY; NOT_EXACT_ROBOT_MODEL_OR_LEVEL1",
+      "hypothesis_selection": "Supplied indices; all KKT sufficiency conditions independently verified in rational arithmetic"
+    }
+  },
+  "query": {
+    "applied": [
+      0.9999999999990001,
+      -1.9999999999980003,
+      2.9999999999969997,
+      -3.9999999999960005,
+      0.09999999999989999,
+      0.19999999999979998,
+      0.29999999999969995
+    ],
+    "status": "QPSolverOutput.PROXQP_SOLVED",
+    "stop_requested": false,
+    "diagnostics": {
+      "solver": "ProxQP 0.7.2+guarded-support-sign-v1",
+      "settings": {
+        "version": "A2_QP_NUMERICS_V2",
+        "variable": "y=tau/87 N m; isotropic Hessian I",
+        "constraint_scaling": "Euclidean unit normal in y, positive row scaling only",
+        "inward_guard_original_row_scale": 1e-08,
+        "guard_rule": "G tau+c >= 1e-8 * original row scale",
+        "eps_abs": 1e-12,
+        "eps_rel": 0.0,
+        "max_iter": 10000,
+        "check_duality_gap": true,
+        "eps_duality_gap_abs": 1e-12,
+        "eps_duality_gap_rel": 0.0,
+        "original_normalized_primal_target": 1e-09,
+        "original_scaled_stationarity_target": 1e-09,
+        "wall_budget_s": 15.0,
+        "retry": false,
+        "post_QP_projection": false
+      },
+      "backend_correction": {
+        "version": "GUARDED_QP_RELIABILITY_V1",
+        "library_sha256": "3370c29e2c3e42db44bc7cfed1d385ebc6680a519a1501693c223575122fc8c1",
+        "patch_sha256": "17bfb8591a02d624f870cb8766ac0d36040649ad3f75f05855814c06cf5913a5",
+        "settings_and_initialization_unchanged": true
+      },
+      "row_names": [
+        "box_upper_1",
+        "box_upper_2",
+        "box_upper_3",
+        "box_upper_4",
+        "box_upper_5",
+        "box_upper_6",
+        "box_upper_7",
+        "box_lower_1",
+        "box_lower_2",
+        "box_lower_3",
+        "box_lower_4",
+        "box_lower_5",
+        "box_lower_6",
+        "box_lower_7"
+      ],
+      "row_units": [
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI",
+        "synthetic SI"
+      ],
+      "row_scales": [
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "row_scaling_denominator": [
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        87.0
+      ],
+      "inward_guard_raw": [
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07,
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        8.7e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07,
+        1.2000000000000002e-07
+      ],
+      "recovery": "DISABLED",
+      "replan_requested": false,
+      "cold_solves": 1,
+      "post_solve_repair": false,
+      "iterations": 1,
+      "duality_gap": -3.982925100842749e-15,
+      "tau_candidate": [
+        0.9999999999990001,
+        -1.9999999999980003,
+        2.9999999999969997,
+        -3.9999999999960005,
+        0.09999999999989999,
+        0.19999999999979998,
+        0.29999999999969995
+      ],
+      "dual_original": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dual_scaled": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_slacks": [
+        86.000000000001,
+        88.999999999998,
+        84.000000000003,
+        90.999999999996,
+        11.9000000000001,
+        11.8000000000002,
+        11.7000000000003,
+        87.999999999999,
+        85.000000000002,
+        89.999999999997,
+        83.000000000004,
+        12.0999999999999,
+        12.1999999999998,
+        12.2999999999997
+      ],
+      "normalized_slacks": [
+        0.9885057471264482,
+        1.0229885057471033,
+        0.9655172413793448,
+        1.045977011494207,
+        0.991666666666675,
+        0.9833333333333499,
+        0.975000000000025,
+        1.0114942528735518,
+        0.9770114942528966,
+        1.034482758620655,
+        0.954022988505793,
+        1.008333333333325,
+        1.01666666666665,
+        1.024999999999975
+      ],
+      "exact_all_rows_nonnegative": true,
+      "negative_raw_row_count": 0,
+      "normalized_primal": 0.0,
+      "scaled_stationarity": 4.597017211338539e-14,
+      "guarded_normalized_primal": 0.0,
+      "guarded_scaled_stationarity": 4.597017211338539e-14,
+      "complementarity": 0.0,
+      "guarded_complementarity": 0.0,
+      "negative_upper_dual": 0.0,
+      "intervention_Nm": 5.489630997436904e-12,
+      "torque_upper_slack": [
+        86.000000000001,
+        88.999999999998,
+        84.000000000003,
+        90.999999999996,
+        11.9000000000001,
+        11.8000000000002,
+        11.7000000000003
+      ],
+      "torque_lower_slack": [
+        87.999999999999,
+        85.000000000002,
+        89.999999999997,
+        83.000000000004,
+        12.0999999999999,
+        12.1999999999998,
+        12.2999999999997
+      ],
+      "numerical_solver_acceptance_not_invariance_proof": true
+    }
+  },
+  "physical_error_vs_exact_Nm": 3.999467423909664e-12,
+  "passed": true,
+  "wall_s": 0.0232860209998762,
+  "torque_actuated": false
+}

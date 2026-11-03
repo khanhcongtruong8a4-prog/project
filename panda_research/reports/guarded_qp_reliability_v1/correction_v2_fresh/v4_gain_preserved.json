@@ -1,0 +1,54 @@
+{
+  "scope": "PRE_MOTION_GAIN_AMENDMENT_CONTRACTS_NO_V4_MOTION",
+  "tests_run": 10,
+  "overall_pass": true,
+  "checks": [
+    {
+      "test": "__main__.PolicyV4Tests.test_actual_G_and_nonvelocity_c_identical",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.PolicyV4Tests.test_all_other_controller_observer_and_barrier_gains_unchanged",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.PolicyV4Tests.test_old_active_request_has_full_new_QP_and_positive_raw_rows",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.PolicyV4Tests.test_only_gain_schema_and_honest_status_change",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.PolicyV4Tests.test_original_alpha5_negatives_are_shadowed_explicitly",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.PolicyV4Tests.test_original_configuration_bytes_unchanged",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.PolicyV4Tests.test_physical_entry_limits_not_relaxed",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.PolicyV4Tests.test_physical_parameters_and_all_acceptance_tolerances_identical",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.PolicyV4Tests.test_references_grid_thresholds_and_nominal_sampler_remain_frozen",
+      "result": "PASS"
+    },
+    {
+      "test": "__main__.PolicyV4Tests.test_velocity_c_change_is_exact_declared_design_equation",
+      "result": "PASS"
+    }
+  ],
+  "source_hashes": {
+    "src/panda_closed_loop/a2_policy_v4.py": "5fc5236559621fa7c8f1992bf24a0c54f6931a4b31e46bbb325c290edcfda6b7",
+    "tests/test_a2_policy_v4.py": "294a2b5befc45343ccfa46467be1df34482d709ef2a622393cdc3c0a7466bcbb",
+    "scripts/a2_extended_v4.py": "3712791f7b1d3602ca779abb0771995c9fe3962f720b22522f067d1a4afe2f87",
+    "policy/a2_extended_v4/A2_EXTENDED_PREDECLARATION.json": "f4f6466db39758f6256303bd609afd6480e8e4534216e8811b420a72b03ac591",
+    "policy/a2_extended_v4/AMENDED_POLICY_CONFIGURATION.json": "aa9261cb37f1402f7ea2a6c7557215be9502bc66904495b2d46fb09859844374"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "original_A2": [
+    "/workspace/panda-venv/bin/python",
+    "scripts/p1_r4.py",
+    "--contracts",
+    "/workspace/project/panda_research/reports/guarded_qp_reliability_v1/correction_v2_fresh/original_r4.json",
+    "--output",
+    "runs/p1_r4/correction_v2_fresh_original_r4"
+  ],
+  "v4_E1": [
+    "/workspace/panda-venv/bin/python",
+    "scripts/replay_guarded_qp_reliability.py",
+    "--prefix",
+    "correction_v2_fresh",
+    "--scenario",
+    "v4_E1"
+  ],
+  "v4_E2": [
+    "/workspace/panda-venv/bin/python",
+    "scripts/replay_guarded_qp_reliability.py",
+    "--prefix",
+    "correction_v2_fresh",
+    "--scenario",
+    "v4_E2"
+  ],
+  "v4_E3": [
+    "/workspace/panda-venv/bin/python",
+    "scripts/replay_guarded_qp_reliability.py",
+    "--prefix",
+    "correction_v2_fresh",
+    "--scenario",
+    "v4_E3"
+  ],
+  "active_E3": [
+    "/workspace/panda-venv/bin/python",
+    "scripts/replay_guarded_qp_reliability.py",
+    "--prefix",
+    "correction_v2_fresh",
+    "--scenario",
+    "active_E3"
+  ]
+}

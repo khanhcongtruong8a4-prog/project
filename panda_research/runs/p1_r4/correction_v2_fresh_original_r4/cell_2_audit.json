@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "checks": {
+    "full_horizon_counts": true,
+    "actual_zero_state_and_first_QP_reuse": true,
+    "hold_windows_and_checks": true,
+    "hold_peaks": true,
+    "causal_controller_history": true,
+    "recomputed_all_43_QP_rows": true,
+    "strict_nonnegative_rows_and_T29": true,
+    "physical_samples": true,
+    "exact_ZOH_input": true,
+    "original_observer_bound": true,
+    "RK4_energy_recalculation": true,
+    "recomputed_metrics": true,
+    "terminal_task": true
+  },
+  "QP_updates": 500,
+  "stage_and_endpoint_samples": 5000,
+  "maximum_sampling_correction_Nm": 0.0014211271973889523,
+  "maximum_QP_correction_Nm": 3.793145575416441e-09,
+  "maximum_normalized_primal": 0.0,
+  "maximum_scaled_stationarity": 6.013707327251483e-12,
+  "scope": "ENGINEERING_RECOMPUTATION_NOT_INDEPENDENT_HUMAN_REVIEW"
+}

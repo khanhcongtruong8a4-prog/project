@@ -1,0 +1,13 @@
+{
+  "requested_unpublished_checkpoint": "f9278f2",
+  "checkpoint_recovered": false,
+  "evidence": ["git cat-file reported Not a valid object before and after fetching published refs", "local reflogs and fsck contained no checkpoint", "git fetch origin f9278f2 reported no such remote ref"],
+  "published_reconstruction_base": "4e6335dbdfac4473ebd01f4d134da098a54fb563",
+  "current_branch": "active-filter-remediation-v2",
+  "reconstruction_status": "NEW_VERSIONED_CORRECTION_NOT_RECOVERED_CHECKPOINT",
+  "source_files_changed_from_published_base": false,
+  "policy": "All corrections are additive versioned modules, policies, tests and evidence. Published source and historical failures are preserved.",
+  "previous_conversation_passes_used_for_acceptance": false,
+  "official_A3_comparisons_executed": false,
+  "Level1_claimed": false
+}
