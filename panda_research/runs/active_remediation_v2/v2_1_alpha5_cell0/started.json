@@ -1,0 +1,385 @@
+{
+  "utc": "2026-11-03T09:26:19.192597+00:00",
+  "case": "alpha5",
+  "cell": 0,
+  "freeze_commit": "e2b325a5c71dab42e88d4168862fc6efcf07d5fd",
+  "grid": {
+    "control_period_s": 0.001,
+    "rk4_step_s": 0.00025
+  },
+  "plan": {
+    "schema": "A2_EXTENDED_V2_NUMERICAL_QP_AMENDMENT",
+    "status": "USER_AUTHORIZED_NUMERICAL_AMENDMENT_PENDING_FROZEN_TESTS",
+    "declared_utc": "2026-11-02T09:17:37.523788+00:00",
+    "baseline_commit": "45d1adae85f4f2484202792041e080fa54e23962",
+    "authority": {
+      "user_request": "continue, I want E1, E2 and E3 all passes, make A2 a solid GO.",
+      "user_acceptance_statement": "We need a numerical GO for A2 which requires every cell and refinement check to pass, you have the independent acceptance up till now.",
+      "scope": "User-authorized versioned numerical solver correction and full fixed-suite testing. No fabricated independent identity/signature or A3/publication authority.",
+      "external_signature_artifacts_supplied": false
+    },
+    "selection_rule": {
+      "initial_pose": "unchanged physical joint-box midpoint for P1; actual P1 endpoint for each trajectory",
+      "joint_range_rad": [
+        5.7946,
+        3.5256,
+        5.7946,
+        3.0020000000000002,
+        5.7946,
+        3.77,
+        5.7946
+      ],
+      "amplitude_formula": "a_i=min(0.02*(QMAX_i-QMIN_i),0.12 rad), no result-guided changes",
+      "amplitude_rad": [
+        0.115892,
+        0.070512,
+        0.115892,
+        0.06004,
+        0.115892,
+        0.07540000000000001,
+        0.115892
+      ],
+      "geometry": "Original flange Jacobian at frozen midpoint",
+      "midpoint_Jv_column_norm_m_per_rad": [
+        0.5819384364698765,
+        0.6650362713168511,
+        0.5819384364698765,
+        0.49947330803628825,
+        0.07659616433874228,
+        0.13853880322855397,
+        0.0
+      ],
+      "E1_joint_selection": "First argmax translational Jacobian column norm at midpoint => joint2",
+      "E2_joint_selection": "Fixed even serial-chain joints2,4,6 with signs+,-,+",
+      "E3_joint_selection": "Fixed odd moving joints3,5 with signs+,- and a fixed return atT=1",
+      "feasibility_claim": "No feasibility is inferred from this rule; failures retained unchanged."
+    },
+    "references": {
+      "E1": {
+        "duration_s": 1.0,
+        "normalized_boundaries": [
+          0.0,
+          1.0
+        ],
+        "waypoint_offsets_rad": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.070512,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "description": "Single commanded net transfer in joint2, the unique largest translational Jacobian-column norm at the frozen midpoint. All coordinates match actual initial velocity."
+      },
+      "E2": {
+        "duration_s": 1.0,
+        "normalized_boundaries": [
+          0.0,
+          1.0
+        ],
+        "waypoint_offsets_rad": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.070512,
+            0.0,
+            -0.06004,
+            0.0,
+            0.07540000000000001,
+            0.0
+          ]
+        ],
+        "description": "Coordinated j2(+),j4(-),j6(+) transfer through the serial chain, testing coupling."
+      },
+      "E3": {
+        "duration_s": 1.0,
+        "normalized_boundaries": [
+          0.0,
+          0.5,
+          1.0
+        ],
+        "waypoint_offsets_rad": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.115892,
+            0.0,
+            -0.115892,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "description": "j3(+) andj5(-) outbound followed by a return to actual initial q; zero reference velocity/acceleration at the fixed .5s turning point; mathematically C2."
+      }
+    },
+    "reference_factory": "panda_closed_loop.a2_extended.ExtendedReference",
+    "A2_reference": {
+      "duration_s": 1.0,
+      "kind": "nonoptimized_actual_measured_state_piecewise_quintic"
+    },
+    "reference_screen_times_s": [
+      0.0,
+      0.01,
+      0.02,
+      0.03,
+      0.04,
+      0.05,
+      0.06,
+      0.07,
+      0.08,
+      0.09,
+      0.1,
+      0.11,
+      0.12,
+      0.13,
+      0.14,
+      0.15,
+      0.16,
+      0.17,
+      0.18,
+      0.19,
+      0.2,
+      0.21,
+      0.22,
+      0.23,
+      0.24,
+      0.25,
+      0.26,
+      0.27,
+      0.28,
+      0.29,
+      0.3,
+      0.31,
+      0.32,
+      0.33,
+      0.34,
+      0.35,
+      0.36,
+      0.37,
+      0.38,
+      0.39,
+      0.4,
+      0.41,
+      0.42,
+      0.43,
+      0.44,
+      0.45,
+      0.46,
+      0.47,
+      0.48,
+      0.49,
+      0.5,
+      0.51,
+      0.52,
+      0.53,
+      0.54,
+      0.55,
+      0.56,
+      0.57,
+      0.58,
+      0.59,
+      0.6,
+      0.61,
+      0.62,
+      0.63,
+      0.64,
+      0.65,
+      0.66,
+      0.67,
+      0.68,
+      0.69,
+      0.7,
+      0.71,
+      0.72,
+      0.73,
+      0.74,
+      0.75,
+      0.76,
+      0.77,
+      0.78,
+      0.79,
+      0.8,
+      0.81,
+      0.82,
+      0.83,
+      0.84,
+      0.85,
+      0.86,
+      0.87,
+      0.88,
+      0.89,
+      0.9,
+      0.91,
+      0.92,
+      0.93,
+      0.94,
+      0.95,
+      0.96,
+      0.97,
+      0.98,
+      0.99,
+      1.0
+    ],
+    "reference_screen": "After each actual P1 endpoint, fixed101 nodes including phasejoin; reference physical q/v/h/psi1/manip checks. This is not a Stage1 or full-torque certificate. Screen failure retainsFAIL and prevents motion.",
+    "C4_grid": [
+      {
+        "control_period_s": 0.001,
+        "rk4_step_s": 0.00025
+      },
+      {
+        "control_period_s": 0.001,
+        "rk4_step_s": 0.000125
+      },
+      {
+        "control_period_s": 0.0005,
+        "rk4_step_s": 0.00025
+      },
+      {
+        "control_period_s": 0.0005,
+        "rk4_step_s": 0.000125
+      }
+    ],
+    "finer_cohort_selected": false,
+    "motion_cell_count": 12,
+    "startup_controller": {
+      "name": "P1-r3 sampled computed-torque static-midpoint startup only",
+      "formula": "u[k]=M(q[k])*(Kp*(qmid-q[k])-Kd*qd[k])+C(q[k],qd[k])*qd[k]+g(q[k])+F(qd[k])-dhat[k]; tau[k]=physical_torque_box_projection(u[k]); ZOH on [t_k,t_k+Delta)",
+      "kp_s_inverse_squared": [
+        562500.0,
+        562500.0,
+        562500.0,
+        562500.0,
+        562500.0,
+        562500.0,
+        562500.0
+      ],
+      "kd_s_inverse": [
+        1218.75,
+        1218.75,
+        1218.75,
+        1218.75,
+        1218.75,
+        1218.75,
+        1218.75
+      ],
+      "design_period_s": 0.001,
+      "design_pole": 0.25,
+      "design_derivation": "Nominal frozen inverse-dynamics double-integrator ZOH: Kp=(1-r)^2/Delta0^2, Kd=(3-2r-r^2)/(2*Delta0), r=0.25, Delta0=1 ms. Fixed same gains in every cell. These poles are a nominal design rationale, not a nonlinear/sample-hold stability certificate.",
+      "implementation": "src/panda_closed_loop/p1_r3.py:SampledComputedTorque",
+      "gain_selection": "New startup-only engineering choice frozen before any r3 test; r2 contains no numerical computed-torque proposal. No gain sweep or pass-conditioned selection.",
+      "execution_controller": "Unchanged approved Slotine-Li Lambda=5/s and kappa=10/s; startup law ends at measured t=0."
+    },
+    "T_pre_s": 0.156,
+    "q_radius_rad": [
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01
+    ],
+    "qd_radius_rad_s": [
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02
+    ],
+    "execution_sampling": {
+      "version": "AB2_CAUSAL_INTERVAL_AVERAGE",
+      "formula": "r_k=unchanged Slotine-Li request(q_k,qd_k,reference(t_k),dhat_k). u_0=r_0; u_k=r_k+0.5*(r_k-r_{k-1}) for k>=1. The complete current-state hard QP filters u_k; actual QP torque is ZOH.",
+      "rationale": "The r3 request frozen at the start of each interval has first-order control-period error. The two-step causal quadrature approximates the interval-average request with second-order consistency for smooth requests; bootstrap contributes an O(Delta^2) global error. This is not a nonlinear stability proof.",
+      "history": "Fresh execution instance in each cell; no preparation-controller history, no future reference sample/state/estimate or true disturbance. One proposal per attempted QP. Endpoint solve reused for first torque. Failure ends cell, no retry or reused history.",
+      "diagnostics": "Log original continuous request, previous request, sampling correction and update index. QP intervention measured against the actual AB2 request; sampling correction separately reported to avoid hiding the controller change.",
+      "additional_criterion": "Both original C4 and finer-confirmation cohorts must pass all four fixed-factor comparisons and both disclosed diagonals. This strengthens rather than relaxes the old refinement rule."
+    },
+    "observer_semantics": "Coupled continuous q,qd,z RK4 using measured stage states and exact actually applied held torque. No reset at zero. Plant disturbance uses signed physical time; envelope elapsed=t+T_pre.",
+    "fixed_acceptance_thresholds": {
+      "relative_refinement": 0.0001,
+      "energy_abs_J": 1e-06,
+      "duration_abs_s": 1e-06,
+      "intervention_difference_abs_Nm": 1e-07,
+      "normalized_slack_difference_abs": 1e-06,
+      "zero_intervention_Nm": 1e-06,
+      "QP_normalized_primal": 1e-09,
+      "QP_scaled_stationarity": 1e-09,
+      "minimum_reserve_to_row_scale_strictly_greater_than": 1e-07,
+      "planned_terminal_error_m": 1e-06,
+      "actual_terminal_error_m": 0.001,
+      "raw_negative_slack": "FAIL even near numerical resolution",
+      "zero_intervention_kind": "APPROVED NUMERICAL DIAGNOSTIC ONLY; not certified solver error",
+      "T29_source": "Action_2026-10-31.docx Protocol v1.0 \u00a78.1; no original T29 worksheet present in Tasks_2026.xlsx"
+    },
+    "entrance_gate": "Actual post-P1 h/psi1/speed/manip/lasttau, legitimate varpi(t+Tpre), necessary joint-position and speed pairs, full43-row strict QP. No truth input for control. Endpoint solve reused for first actual torque.",
+    "acceptance": "All four complete cells and raw strictstate/observer/QP/terminal checks, original four refinementmetrics on all4 edges plus2 diagonals, original thresholds, lossless trace roundtrip and unchanged r4 mathematical auditor with codec-only loader. No zero-test/missing-cell GO.",
+    "failure_semantics": "Retain original v1 failures byte-identically. New v2 still stops on any raw negative, non-solved status, T29 failure, physical or observer failure. No retry, clipping or replacement of reference/duration/amplitude/gains/acceptance thresholds.",
+    "sampler_reporting": "Per applied update retain r,u,tau, u-r,tau-u,tau-r; max/RMS Euclidean and component norms, RMS at constantDelta is time-weighted over the reported executed horizon. No zero-continuous-intervention inference from small tau-u.",
+    "data_codec": "Lossless typed columnar ZIP trace archive with canonical JSON SHA256 and documented decoder; original scientific scalar values retained. No pickle/lossy rounding.",
+    "evidence_level": "EXECUTED LOCALLY / LEVEL2_NUMERICAL only when actually run; no trueODE or sampled-delay certificate; signaturesblank",
+    "A3": "PREPARATION_ONLY_NO_OFFICIAL_COMPARISONS",
+    "seed": 20261102,
+    "QP_wall_time_budget_s": 15.0,
+    "QP_time_budget_scope": "One cold versioned GuardedHardQP query per update in isolated per-cell worker; timeout UNKNOWN/no actuation/no retry. Numerical changes explicitly declared above, not an unchanged original solver claim.",
+    "parent_predeclaration_sha256": "14c0e0e3e2c42461c36dc2aa0aea5b2f25d174c42cf6f350cad9aa53d659e9e9",
+    "numerical_QP_amendment": {
+      "version": "A2_QP_NUMERICS_V2",
+      "variable": "y=tau/87 N m; isotropic Hessian I",
+      "constraint_scaling": "Euclidean unit normal in y, positive row scaling only",
+      "inward_guard_original_row_scale": 1e-08,
+      "guard_rule": "G tau+c >= 1e-8 * original row scale",
+      "eps_abs": 1e-12,
+      "eps_rel": 0.0,
+      "max_iter": 10000,
+      "check_duality_gap": true,
+      "eps_duality_gap_abs": 1e-12,
+      "eps_duality_gap_rel": 0.0,
+      "original_normalized_primal_target": 1e-09,
+      "original_scaled_stationarity_target": 1e-09,
+      "wall_budget_s": 15.0,
+      "retry": false,
+      "post_QP_projection": false
+    }
+  },
+  "scope": "NEW_NUMERICAL_CANDIDATE_NOT_OFFICIAL_A3"
+}

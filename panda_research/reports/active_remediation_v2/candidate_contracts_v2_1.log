@@ -1,0 +1,11 @@
+test_expired_query_stops (__main__.Contracts.test_expired_query_stops) ... ok
+test_full_polytope_kkt (__main__.Contracts.test_full_polytope_kkt) ... ok
+test_gauss_constant_acceleration_and_quadratic_dense_adapter (__main__.Contracts.test_gauss_constant_acceleration_and_quadratic_dense_adapter) ... ok
+test_inconsistent_constant_stops (__main__.Contracts.test_inconsistent_constant_stops) ... ok
+test_interior_polynomial_peak (__main__.Contracts.test_interior_polynomial_peak) ... ok
+test_measured_cubic_predictor (__main__.Contracts.test_measured_cubic_predictor) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.057s
+
+OK
