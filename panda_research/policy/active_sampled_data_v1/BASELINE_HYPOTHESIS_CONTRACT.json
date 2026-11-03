@@ -1,0 +1,137 @@
+{
+  "version": "ACTIVE_SAMPLED_DATA_BASELINE_CONTRACT_V1",
+  "stage": "FROZEN_BEFORE_NEW_BASELINE_AND_DECISIVE_DIAGNOSTICS",
+  "authoritative_source_commit": "f6d5a18d9046d4a814e480498f916f92b4396287",
+  "native_solver_sha256": "3370c29e2c3e42db44bc7cfed1d385ebc6680a519a1501693c223575122fc8c1",
+  "runtime_QP_metric": "Physical unweighted Euclidean torque projection; y=tau/87, H=I; positive constraint normalization only.",
+  "original_C4": [
+    {
+      "control_period_s": 0.001,
+      "rk4_step_s": 0.00025
+    },
+    {
+      "control_period_s": 0.001,
+      "rk4_step_s": 0.000125
+    },
+    {
+      "control_period_s": 0.0005,
+      "rk4_step_s": 0.00025
+    },
+    {
+      "control_period_s": 0.0005,
+      "rk4_step_s": 0.000125
+    }
+  ],
+  "original_fixed_acceptance_thresholds": {
+    "relative_refinement": 0.0001,
+    "energy_abs_J": 1e-06,
+    "duration_abs_s": 1e-06,
+    "intervention_difference_abs_Nm": 1e-07,
+    "normalized_slack_difference_abs": 1e-06,
+    "zero_intervention_Nm": 1e-06,
+    "QP_normalized_primal": 1e-09,
+    "QP_scaled_stationarity": 1e-09,
+    "minimum_reserve_to_row_scale_strictly_greater_than": 1e-07,
+    "planned_terminal_error_m": 1e-06,
+    "actual_terminal_error_m": 0.001,
+    "raw_negative_slack": "FAIL even near numerical resolution",
+    "zero_intervention_kind": "APPROVED NUMERICAL DIAGNOSTIC ONLY; not certified solver error",
+    "T29_source": "Action_2026-10-31.docx Protocol v1.0 \u00a78.1; no original T29 worksheet present in Tasks_2026.xlsx"
+  },
+  "baseline_reference": {
+    "duration_s": 1.0,
+    "normalized_boundaries": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "waypoint_offsets_rad": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.115892,
+        0.0,
+        -0.115892,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "description": "j3(+) andj5(-) outbound followed by a return to actual initial q; zero reference velocity/acceleration at the fixed .5s turning point; mathematically C2."
+  },
+  "baseline_Tpre_s": 0.156,
+  "baseline_alpha_v": 5,
+  "baseline_hypothesis": "On regular fixed-active-face intervals, AB2 of r cancels the smooth request/ZOH defect only for fixed constraints. Moving-face normal/rotation terms can produce an O(Delta^2) local state defect, consistent with observed first-order accumulation. It is not a universal impossibility proof for the finite energy/intervention thresholds.",
+  "baseline_fresh_runs": "Run unchanged replay_guarded_qp_reliability.py on an unmodified clean clone: exact C4 active E3 plus seven original and twelve v4 A2 cells. Retain aggregate exit3 if legacy refinement fails.",
+  "T27": "Fresh unchanged strict39 fixture regression; exact KKT/Farkas witnesses retained.",
+  "operator_analysis": {
+    "physical_normalization": "A=-G/norm(G), b=(c-guard)/norm(G), lambda_phys=87*dual_scaled",
+    "dual_activity_thresholds": [
+      1e-10,
+      1e-08
+    ],
+    "smooth_analysis_exclusions": "LICQ condition number>=1e6, raw-projection dual_phys<=1e-6 Nm, differing raw/digital active faces, within2Delta of active/reference events; exclusions apply only to differentiability analysis, never to safety or metric reporting.",
+    "event_and_safety_analysis": "Retain all event brackets; evaluate robust rows on recorded RK4 stages and integrated nodes. Sample results never become interval certificates.",
+    "unknown_disturbance_in_derivative_analysis": "Actual waveform may be used only in read-only material-derivative attribution; no runtime predictor or actuation uses truth."
+  },
+  "primary_point_ZOH_runtime_candidate": "NONE_SELECTED_BEFORE_DERIVATION. Already rejected candidates will not be reintroduced as novel. Any defensible new candidate needs its own committed predeclaration before tests.",
+  "intended_alpha10_active_challenge": {
+    "alpha_v": 10,
+    "reference_path": "Identical E3 waypoint offsets and measured-start Hermite construction",
+    "duration_s": 0.5,
+    "reason": "Separately declared harder, time-compressed challenge; not a replacement or modification of the historical1s E3 test. Reference/gain/constraints in historical reproduction remain unchanged.",
+    "grid": [
+      {
+        "control_period_s": 0.001,
+        "rk4_step_s": 0.00025
+      },
+      {
+        "control_period_s": 0.001,
+        "rk4_step_s": 0.000125
+      },
+      {
+        "control_period_s": 0.0005,
+        "rk4_step_s": 0.00025
+      },
+      {
+        "control_period_s": 0.0005,
+        "rk4_step_s": 0.000125
+      }
+    ],
+    "nontriviality": "max norm(tau-u)>0.01 Nm AND at least0.005s of updates with norm(tau-u)>0.001 Nm, per cell; thresholds fixed before runs.",
+    "same_original_physics_observer_KKT_energy_terminal_thresholds": true,
+    "not_original_frozen_A2": true
+  },
+  "first_order_policy_proposal": "Analyze a conditional finite-Delta bound and a separately versioned rate/accuracy-budget proposal. No original threshold relaxation or adoption is authorized.",
+  "official_A3": false,
+  "Level1": false,
+  "independent_human_signatures": null,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "casadi": "3.7.2",
+      "proxsuite": "0.7.2",
+      "pin": "3.8.0",
+      "mujoco": "3.3.7"
+    }
+  }
+}

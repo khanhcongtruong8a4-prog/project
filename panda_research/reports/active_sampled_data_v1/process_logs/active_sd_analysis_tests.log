@@ -1,0 +1,10 @@
+test_expanding_face_exact_first_order_lower_bound (__main__.AnalysisTests.test_expanding_face_exact_first_order_lower_bound) ... ok
+test_fixed_face_ab2_leading_defect_cancels (__main__.AnalysisTests.test_fixed_face_ab2_leading_defect_cancels) ... ok
+test_rank_deficiency_rejected (__main__.AnalysisTests.test_rank_deficiency_rejected) ... ok
+test_rotating_face_derivative_against_closed_form (__main__.AnalysisTests.test_rotating_face_derivative_against_closed_form) ... ok
+test_shared_bus_nonregenerative_not_per_joint_rectification (__main__.AnalysisTests.test_shared_bus_nonregenerative_not_per_joint_rectification) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.092s
+
+OK

@@ -1,0 +1,22 @@
+{
+  "original_r4": {
+    "exit_code": 0,
+    "tests": 14,
+    "passed": true
+  },
+  "guarded_v2_preserved": {
+    "exit_code": 0,
+    "tests": 14,
+    "passed": true
+  },
+  "v4_gain_preserved": {
+    "exit_code": 0,
+    "tests": 10,
+    "passed": true
+  },
+  "corrected_math": {
+    "exit_code": 0,
+    "tests": 12,
+    "passed": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "trace_files": 62,
+  "new_simulation_cells": 27,
+  "older_trace_inputs": 8,
+  "analysis_array_archives": 39,
+  "total_exact_encoded_files": 101,
+  "segment_parts": [
+    {
+      "index": "active_sd_traces_v1.index.json",
+      "parts": 10,
+      "compressed_bytes": 205653380
+    },
+    {
+      "index": "operator_arrays_v1.regular.json",
+      "parts": 5,
+      "compressed_bytes": 95215780
+    },
+    {
+      "index": "original_7_fresh_v1.regular.json",
+      "parts": 4,
+      "compressed_bytes": 78647788
+    }
+  ],
+  "maximum_individual_binary_part_bytes": 20971520,
+  "numeric_values_changed": false,
+  "older_complete_history_linked_separately": true
+}

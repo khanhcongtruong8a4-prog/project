@@ -1,0 +1,565 @@
+{
+  "historical_reproduction_passed": true,
+  "fresh_simulations_executed": true,
+  "cell_comparisons": [
+    {
+      "cell": 0,
+      "passed": true,
+      "checks": {
+        "grid_exact": true,
+        "metrics_exact": true,
+        "post_P1_state_exact": true,
+        "final_state_exact": true,
+        "new_P1_completed": true,
+        "new_endpoint_QP_pass": true,
+        "new_motion_completed": true,
+        "new_cell_pass": true,
+        "new_full_audit_pass": true,
+        "prehold_full_scientific_trace_exact": true,
+        "a2_full_scientific_trace_exact": true
+      },
+      "trace_comparison": {
+        "prehold": {
+          "recorded_scientific_sha256": "fc9c0eb1d33a69d29719f2014f4fe5824eebda8e8d9accf65a00bcf5dd81b4ec",
+          "replay_scientific_sha256": "fc9c0eb1d33a69d29719f2014f4fe5824eebda8e8d9accf65a00bcf5dd81b4ec",
+          "exact": true,
+          "first_differences": []
+        },
+        "a2": {
+          "recorded_scientific_sha256": "9c46e31da1bc6535972ca131b2d95ad5bf5053720d04e71901a391a16ce728d4",
+          "replay_scientific_sha256": "9c46e31da1bc6535972ca131b2d95ad5bf5053720d04e71901a391a16ce728d4",
+          "exact": true,
+          "first_differences": []
+        }
+      },
+      "ignored_trace_fields": [
+        "solve_runtime_s"
+      ],
+      "ignored_field_scope": "Measured solver wall time only; no model/state/control/constraint/solver-result field excluded."
+    },
+    {
+      "cell": 1,
+      "passed": true,
+      "checks": {
+        "grid_exact": true,
+        "metrics_exact": true,
+        "post_P1_state_exact": true,
+        "final_state_exact": true,
+        "new_P1_completed": true,
+        "new_endpoint_QP_pass": true,
+        "new_motion_completed": true,
+        "new_cell_pass": true,
+        "new_full_audit_pass": true,
+        "prehold_full_scientific_trace_exact": true,
+        "a2_full_scientific_trace_exact": true
+      },
+      "trace_comparison": {
+        "prehold": {
+          "recorded_scientific_sha256": "96053a9246d64765b631a3a34e5c34074e5db24de6436e901c246d7e643c41f2",
+          "replay_scientific_sha256": "96053a9246d64765b631a3a34e5c34074e5db24de6436e901c246d7e643c41f2",
+          "exact": true,
+          "first_differences": []
+        },
+        "a2": {
+          "recorded_scientific_sha256": "30be5a26fd596fc0fe14c83f6f4c98d1e9c3371f879848df3d221965cd732f8c",
+          "replay_scientific_sha256": "30be5a26fd596fc0fe14c83f6f4c98d1e9c3371f879848df3d221965cd732f8c",
+          "exact": true,
+          "first_differences": []
+        }
+      },
+      "ignored_trace_fields": [
+        "solve_runtime_s"
+      ],
+      "ignored_field_scope": "Measured solver wall time only; no model/state/control/constraint/solver-result field excluded."
+    },
+    {
+      "cell": 2,
+      "passed": true,
+      "checks": {
+        "grid_exact": true,
+        "metrics_exact": true,
+        "post_P1_state_exact": true,
+        "final_state_exact": true,
+        "new_P1_completed": true,
+        "new_endpoint_QP_pass": true,
+        "new_motion_completed": true,
+        "new_cell_pass": true,
+        "new_full_audit_pass": true,
+        "prehold_full_scientific_trace_exact": true,
+        "a2_full_scientific_trace_exact": true
+      },
+      "trace_comparison": {
+        "prehold": {
+          "recorded_scientific_sha256": "cc053112eae0f59284edad51408f5fbd37f4f6216029cac0740c621af4341119",
+          "replay_scientific_sha256": "cc053112eae0f59284edad51408f5fbd37f4f6216029cac0740c621af4341119",
+          "exact": true,
+          "first_differences": []
+        },
+        "a2": {
+          "recorded_scientific_sha256": "ea04fd531120de9a69cf592803de43da9fcf75aa80db71916f1d22432f5a3c4c",
+          "replay_scientific_sha256": "ea04fd531120de9a69cf592803de43da9fcf75aa80db71916f1d22432f5a3c4c",
+          "exact": true,
+          "first_differences": []
+        }
+      },
+      "ignored_trace_fields": [
+        "solve_runtime_s"
+      ],
+      "ignored_field_scope": "Measured solver wall time only; no model/state/control/constraint/solver-result field excluded."
+    },
+    {
+      "cell": 3,
+      "passed": true,
+      "checks": {
+        "grid_exact": true,
+        "metrics_exact": true,
+        "post_P1_state_exact": true,
+        "final_state_exact": true,
+        "new_P1_completed": true,
+        "new_endpoint_QP_pass": true,
+        "new_motion_completed": true,
+        "new_cell_pass": true,
+        "new_full_audit_pass": true,
+        "prehold_full_scientific_trace_exact": true,
+        "a2_full_scientific_trace_exact": true
+      },
+      "trace_comparison": {
+        "prehold": {
+          "recorded_scientific_sha256": "60b3c7d966a3d831a6e2435b0fdd9afc491bf252aaf561a3337a01594c297704",
+          "replay_scientific_sha256": "60b3c7d966a3d831a6e2435b0fdd9afc491bf252aaf561a3337a01594c297704",
+          "exact": true,
+          "first_differences": []
+        },
+        "a2": {
+          "recorded_scientific_sha256": "d95e09ca28dcd6b5af126abf9a0034622fd066a72e0f9fb9b84403deaf88260b",
+          "replay_scientific_sha256": "d95e09ca28dcd6b5af126abf9a0034622fd066a72e0f9fb9b84403deaf88260b",
+          "exact": true,
+          "first_differences": []
+        }
+      },
+      "ignored_trace_fields": [
+        "solve_runtime_s"
+      ],
+      "ignored_field_scope": "Measured solver wall time only; no model/state/control/constraint/solver-result field excluded."
+    }
+  ],
+  "all_refinement_comparisons_exact": true,
+  "eight_failed_metrics_preserved": [
+    {
+      "cells": [
+        0,
+        2
+      ],
+      "factor": "Delta",
+      "metric": "modeled_electrical_energy_J",
+      "values": [
+        1.1728601593559442,
+        1.1724404906900665
+      ],
+      "absolute_difference": 0.000419668665877726,
+      "tolerance": 0.00011728601593559443,
+      "passed": false
+    },
+    {
+      "cells": [
+        0,
+        2
+      ],
+      "factor": "Delta",
+      "metric": "maximum_intervention_Nm",
+      "values": [
+        0.1307205788046316,
+        0.12921030666604402
+      ],
+      "absolute_difference": 0.001510272138587565,
+      "tolerance": 1.307205788046316e-05,
+      "passed": false
+    },
+    {
+      "cells": [
+        1,
+        3
+      ],
+      "factor": "Delta",
+      "metric": "modeled_electrical_energy_J",
+      "values": [
+        1.1728601593759285,
+        1.172440490707468
+      ],
+      "absolute_difference": 0.00041966866846054884,
+      "tolerance": 0.00011728601593759285,
+      "passed": false
+    },
+    {
+      "cells": [
+        1,
+        3
+      ],
+      "factor": "Delta",
+      "metric": "maximum_intervention_Nm",
+      "values": [
+        0.13072057877262977,
+        0.1292103066362374
+      ],
+      "absolute_difference": 0.0015102721363923766,
+      "tolerance": 1.3072057877262978e-05,
+      "passed": false
+    },
+    {
+      "cells": [
+        0,
+        3
+      ],
+      "factor": "cross_diagonal",
+      "metric": "modeled_electrical_energy_J",
+      "values": [
+        1.1728601593559442,
+        1.172440490707468
+      ],
+      "absolute_difference": 0.00041966864847631236,
+      "tolerance": 0.00011728601593559443,
+      "passed": false
+    },
+    {
+      "cells": [
+        0,
+        3
+      ],
+      "factor": "cross_diagonal",
+      "metric": "maximum_intervention_Nm",
+      "values": [
+        0.1307205788046316,
+        0.1292103066362374
+      ],
+      "absolute_difference": 0.0015102721683941944,
+      "tolerance": 1.307205788046316e-05,
+      "passed": false
+    },
+    {
+      "cells": [
+        1,
+        2
+      ],
+      "factor": "cross_diagonal",
+      "metric": "modeled_electrical_energy_J",
+      "values": [
+        1.1728601593759285,
+        1.1724404906900665
+      ],
+      "absolute_difference": 0.0004196686858619625,
+      "tolerance": 0.00011728601593759285,
+      "passed": false
+    },
+    {
+      "cells": [
+        1,
+        2
+      ],
+      "factor": "cross_diagonal",
+      "metric": "maximum_intervention_Nm",
+      "values": [
+        0.13072057877262977,
+        0.12921030666604402
+      ],
+      "absolute_difference": 0.0015102721065857472,
+      "tolerance": 1.3072057877262978e-05,
+      "passed": false
+    }
+  ],
+  "failed_refinement_count": 8,
+  "original_outcome": "FAIL",
+  "fresh_outcome": "FAIL",
+  "refinement": {
+    "passed": false,
+    "comparisons": [
+      {
+        "cells": [
+          0,
+          1
+        ],
+        "factor": "h",
+        "required": true,
+        "status": "PASS",
+        "metrics": {
+          "modeled_electrical_energy_J": {
+            "values": [
+              1.1728601593559442,
+              1.1728601593759285
+            ],
+            "absolute_difference": 1.9984236487857743e-11,
+            "tolerance": 0.00011728601593759285,
+            "passed": true
+          },
+          "duration_s": {
+            "values": [
+              1.0,
+              1.0
+            ],
+            "absolute_difference": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "maximum_intervention_Nm": {
+            "values": [
+              0.1307205788046316,
+              0.13072057877262977
+            ],
+            "absolute_difference": 3.2001817862337134e-11,
+            "tolerance": 1.307205788046316e-05,
+            "passed": true
+          },
+          "minimum_normalized_raw_slack": {
+            "values": [
+              8.73546384652933e-09,
+              8.735467930108271e-09
+            ],
+            "absolute_difference": 4.083578940826735e-15,
+            "tolerance": 1e-06,
+            "passed": true
+          }
+        }
+      },
+      {
+        "cells": [
+          2,
+          3
+        ],
+        "factor": "h",
+        "required": true,
+        "status": "PASS",
+        "metrics": {
+          "modeled_electrical_energy_J": {
+            "values": [
+              1.1724404906900665,
+              1.172440490707468
+            ],
+            "absolute_difference": 1.740141364336978e-11,
+            "tolerance": 0.00011724404907074679,
+            "passed": true
+          },
+          "duration_s": {
+            "values": [
+              1.0,
+              1.0
+            ],
+            "absolute_difference": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "maximum_intervention_Nm": {
+            "values": [
+              0.12921030666604402,
+              0.1292103066362374
+            ],
+            "absolute_difference": 2.9806629386897043e-11,
+            "tolerance": 1.2921030666604403e-05,
+            "passed": true
+          },
+          "minimum_normalized_raw_slack": {
+            "values": [
+              8.819601907032785e-09,
+              8.81960435718015e-09
+            ],
+            "absolute_difference": 2.4501473654886578e-15,
+            "tolerance": 1e-06,
+            "passed": true
+          }
+        }
+      },
+      {
+        "cells": [
+          0,
+          2
+        ],
+        "factor": "Delta",
+        "required": true,
+        "status": "FAIL",
+        "metrics": {
+          "modeled_electrical_energy_J": {
+            "values": [
+              1.1728601593559442,
+              1.1724404906900665
+            ],
+            "absolute_difference": 0.000419668665877726,
+            "tolerance": 0.00011728601593559443,
+            "passed": false
+          },
+          "duration_s": {
+            "values": [
+              1.0,
+              1.0
+            ],
+            "absolute_difference": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "maximum_intervention_Nm": {
+            "values": [
+              0.1307205788046316,
+              0.12921030666604402
+            ],
+            "absolute_difference": 0.001510272138587565,
+            "tolerance": 1.307205788046316e-05,
+            "passed": false
+          },
+          "minimum_normalized_raw_slack": {
+            "values": [
+              8.73546384652933e-09,
+              8.819601907032785e-09
+            ],
+            "absolute_difference": 8.413806050345451e-11,
+            "tolerance": 1e-06,
+            "passed": true
+          }
+        }
+      },
+      {
+        "cells": [
+          1,
+          3
+        ],
+        "factor": "Delta",
+        "required": true,
+        "status": "FAIL",
+        "metrics": {
+          "modeled_electrical_energy_J": {
+            "values": [
+              1.1728601593759285,
+              1.172440490707468
+            ],
+            "absolute_difference": 0.00041966866846054884,
+            "tolerance": 0.00011728601593759285,
+            "passed": false
+          },
+          "duration_s": {
+            "values": [
+              1.0,
+              1.0
+            ],
+            "absolute_difference": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "maximum_intervention_Nm": {
+            "values": [
+              0.13072057877262977,
+              0.1292103066362374
+            ],
+            "absolute_difference": 0.0015102721363923766,
+            "tolerance": 1.3072057877262978e-05,
+            "passed": false
+          },
+          "minimum_normalized_raw_slack": {
+            "values": [
+              8.735467930108271e-09,
+              8.81960435718015e-09
+            ],
+            "absolute_difference": 8.413642707187917e-11,
+            "tolerance": 1e-06,
+            "passed": true
+          }
+        }
+      },
+      {
+        "cells": [
+          0,
+          3
+        ],
+        "factor": "cross_diagonal",
+        "required": false,
+        "status": "FAIL",
+        "metrics": {
+          "modeled_electrical_energy_J": {
+            "values": [
+              1.1728601593559442,
+              1.172440490707468
+            ],
+            "absolute_difference": 0.00041966864847631236,
+            "tolerance": 0.00011728601593559443,
+            "passed": false
+          },
+          "duration_s": {
+            "values": [
+              1.0,
+              1.0
+            ],
+            "absolute_difference": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "maximum_intervention_Nm": {
+            "values": [
+              0.1307205788046316,
+              0.1292103066362374
+            ],
+            "absolute_difference": 0.0015102721683941944,
+            "tolerance": 1.307205788046316e-05,
+            "passed": false
+          },
+          "minimum_normalized_raw_slack": {
+            "values": [
+              8.73546384652933e-09,
+              8.81960435718015e-09
+            ],
+            "absolute_difference": 8.414051065082e-11,
+            "tolerance": 1e-06,
+            "passed": true
+          }
+        }
+      },
+      {
+        "cells": [
+          1,
+          2
+        ],
+        "factor": "cross_diagonal",
+        "required": false,
+        "status": "FAIL",
+        "metrics": {
+          "modeled_electrical_energy_J": {
+            "values": [
+              1.1728601593759285,
+              1.1724404906900665
+            ],
+            "absolute_difference": 0.0004196686858619625,
+            "tolerance": 0.00011728601593759285,
+            "passed": false
+          },
+          "duration_s": {
+            "values": [
+              1.0,
+              1.0
+            ],
+            "absolute_difference": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "maximum_intervention_Nm": {
+            "values": [
+              0.13072057877262977,
+              0.12921030666604402
+            ],
+            "absolute_difference": 0.0015102721065857472,
+            "tolerance": 1.3072057877262978e-05,
+            "passed": false
+          },
+          "minimum_normalized_raw_slack": {
+            "values": [
+              8.735467930108271e-09,
+              8.819601907032785e-09
+            ],
+            "absolute_difference": 8.413397692451368e-11,
+            "tolerance": 1e-06,
+            "passed": true
+          }
+        }
+      }
+    ],
+    "rule": "Each fixed-factor edge; max(absolute, relative*max(abs(values))). Diagonals disclosed separately."
+  },
+  "authoritative_source_commit": "f6d5a18d9046d4a814e480498f916f92b4396287",
+  "native_solver_sha256": "3370c29e2c3e42db44bc7cfed1d385ebc6680a519a1501693c223575122fc8c1",
+  "same_original_thresholds": true,
+  "no_failed_gate_promoted": true,
+  "external_signatures": null
+}

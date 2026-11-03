@@ -1,0 +1,7 @@
+{
+  "input": "/workspace/a2-extended/panda_research/runs/active_sampled_data_v1/alpha10_active_challenge",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "no_actuation": true,
+  "analysis_source_sha256": "445a798d81f18d4dd00e95938de9d7b2bf281bab655db73a50228b815d20af0c",
+  "module_sha256": "ee5414c48b4392236b42c874e0163c9f1b2bad5e0eef0b833e1e3210a855c2b9"
+}

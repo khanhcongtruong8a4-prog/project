@@ -1,0 +1,8 @@
+test_both_cross_diagonal_directions (__main__.ClockTests.test_both_cross_diagonal_directions) ... ok
+test_irregular_and_mismatched_horizon_rejected (__main__.ClockTests.test_irregular_and_mismatched_horizon_rejected) ... ok
+test_same_clock (__main__.ClockTests.test_same_clock) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.039s
+
+OK

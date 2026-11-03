@@ -1,0 +1,16 @@
+{
+  "unmodified_checkout_commit": "f6d5a18d9046d4a814e480498f916f92b4396287",
+  "tracked_diff_before_run": "clean at creation",
+  "tracked_diff_after_run": "clean verified by git diff and cached diff",
+  "copied_exact_bytes_to_current_tree": [
+    "reports/guarded_qp_reliability_v1/sd_v1_fresh",
+    "runs/p1_r4/sd_v1_fresh_original_r4",
+    "runs/guarded_qp_reliability_v1/sd_v1_fresh_active_E3",
+    "runs/guarded_qp_reliability_v1/sd_v1_fresh_v4_E1",
+    "runs/guarded_qp_reliability_v1/sd_v1_fresh_v4_E2",
+    "runs/guarded_qp_reliability_v1/sd_v1_fresh_v4_E3"
+  ],
+  "new_runs_not_prior_reaudit": true,
+  "A3": false,
+  "signatures": null
+}

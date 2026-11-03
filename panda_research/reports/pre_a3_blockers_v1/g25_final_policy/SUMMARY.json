@@ -1,0 +1,90 @@
+{
+  "intended_policy": "UNCHANGED_ALPHA_V10_AB2_GUARDED_QP_FINAL_A2_POLICY",
+  "G2_5_decision": "NO-GO",
+  "initial_exact_represented_pair_obstruction": true,
+  "results": [
+    {
+      "cell": 0,
+      "reference": "E1",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    },
+    {
+      "cell": 0,
+      "reference": "E2",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    },
+    {
+      "cell": 0,
+      "reference": "E3",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    },
+    {
+      "cell": 1,
+      "reference": "E1",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    },
+    {
+      "cell": 1,
+      "reference": "E2",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    },
+    {
+      "cell": 1,
+      "reference": "E3",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    },
+    {
+      "cell": 2,
+      "reference": "E1",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    },
+    {
+      "cell": 2,
+      "reference": "E2",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    },
+    {
+      "cell": 2,
+      "reference": "E3",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    },
+    {
+      "cell": 3,
+      "reference": "E1",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    },
+    {
+      "cell": 3,
+      "reference": "E2",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    },
+    {
+      "cell": 3,
+      "reference": "E3",
+      "all_full_margin_nodes_nonnegative": false,
+      "filter_point_QPs_passed": 101
+    }
+  ],
+  "planned_points_screened": 1212,
+  "M1_core_table_complete": true,
+  "M1_domain_upper_bound_certification": false,
+  "residual_Lipschitz_tables_present": true,
+  "factor_two_retained_and_nonzero_rho_initial_included": true,
+  "full_torque_speed_position_manipulability_and_HOCBF_constraints_screened": true,
+  "new_torque_actuated": false,
+  "official_A3_comparisons": false,
+  "Level1": false,
+  "external_signatures": null,
+  "registry_sha256": "bd75d3969e5482308b86d1c95d1ceca5235677340f08f4dc9412799772d7bb7a"
+}

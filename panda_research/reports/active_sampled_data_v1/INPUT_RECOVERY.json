@@ -1,0 +1,2114 @@
+{
+  "source_commit": "f6d5a18d9046d4a814e480498f916f92b4396287",
+  "baseline_freeze_commit": "db0125e",
+  "zip_sha256": "34f1d0ec59990d52b38abaf16a5acce3334a9f98b7761172c30d4557fd504112",
+  "zip_bytes": 11029144,
+  "entries": [
+    {
+      "zip_entry": "HISTORICAL_ANNEX.json",
+      "local_accessible": false
+    },
+    {
+      "zip_entry": "PRE_A3_PACKAGE_MANIFEST.json",
+      "local_accessible": false
+    },
+    {
+      "zip_entry": "PRE_A3_README.md",
+      "local_accessible": false
+    },
+    {
+      "zip_entry": "PRE_A3_SOURCE_MANIFEST.json",
+      "local_accessible": false
+    },
+    {
+      "zip_entry": "RUN_PRE_A3.py",
+      "local_accessible": false
+    },
+    {
+      "zip_entry": "panda_research/baseline/model_manifest_v1.json",
+      "local_accessible": true,
+      "zip_sha256": "58ec25965324fb092b29d8f57a0fa7b19effe1b0f1a1ad6416563477fdcab4fb",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/baseline/panda_dynamics.py",
+      "local_accessible": true,
+      "zip_sha256": "698a92efd624b603133cd5ea5a3fe31d0752d210ffe4291a02bab64a0d3cba1c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/inputs/action3/Project.rar",
+      "local_accessible": true,
+      "zip_sha256": "28115fbf95860a6618e9bf0017b9bebef87557102f1c17d02876e5169a5099bb",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/inputs/pre_a3_blockers_v1/USER_NEXT_ACTIONS.md",
+      "local_accessible": true,
+      "zip_sha256": "b2fa2d47b94f0328704365ec4a2addbeb65fd45e08c144223c7b55dcfd59484f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/native/LICENSE_ProxSuite",
+      "local_accessible": true,
+      "zip_sha256": "1ee924b875b4d9804a934792fc1a312977d833bb5a710bbd2c40909b17eb30cf",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/native/build_guarded_qp_v1/BUILD.json",
+      "local_accessible": true,
+      "zip_sha256": "cda8d29f54f2223824551a077f8a159ef323a8d26ab5b1854977de70e12928e7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/native/build_guarded_qp_v1/applied.patch",
+      "local_accessible": true,
+      "zip_sha256": "17bfb8591a02d624f870cb8766ac0d36040649ad3f75f05855814c06cf5913a5",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/native/build_guarded_qp_v1/libpanda_guarded_qp.so",
+      "local_accessible": true,
+      "zip_sha256": "3370c29e2c3e42db44bc7cfed1d385ebc6680a519a1501693c223575122fc8c1",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/native/guarded_qp_reliability_v1.cpp",
+      "local_accessible": true,
+      "zip_sha256": "d1ae06f55bb24e5ebdddc7a17cc1a0e65c43a1027d9e45cb3f6df36f66dbc1e4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_acceptance_v1/MATHEMATICAL_CONSISTENCY.md",
+      "local_accessible": true,
+      "zip_sha256": "2706014f9a6360c661fdf9bc80cc641bda1ed9435749365e8ebeaba47a9d7c03",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_acceptance_v1/PREDECLARATION.json",
+      "local_accessible": true,
+      "zip_sha256": "c4458eba15f8dee1fa7be227c9d56b997fe2f53e3698e349112abf3ae2dee58e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_acceptance_v1/PREDECLARATION.json.sha256",
+      "local_accessible": true,
+      "zip_sha256": "526dc57c7a08f87780104cb48c0fa5a7f1ca1dadde64097966655fcbc9c8e293",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v1/A2_EXTENDED_PREDECLARATION.json",
+      "local_accessible": true,
+      "zip_sha256": "14c0e0e3e2c42461c36dc2aa0aea5b2f25d174c42cf6f350cad9aa53d659e9e9",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v1/A2_EXTENDED_PREDECLARATION.json.sha256",
+      "local_accessible": true,
+      "zip_sha256": "228cbceb7c660aea2ada03964de67c149d9afde00d6d969c4c051814deef20bc",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v1/DESIGN.md",
+      "local_accessible": true,
+      "zip_sha256": "7d4bcba25e146ff3e16e4cbdf46ca0ba1ba178753ada9efe85f5d18b9b5bfd8a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v1/FROZEN_INPUTS.json",
+      "local_accessible": true,
+      "zip_sha256": "66a3f211453f584d2e60dcf01ffa7f48952b40568e4e8e6a2045bef7649752c6",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v2/A2_EXTENDED_PREDECLARATION.json",
+      "local_accessible": true,
+      "zip_sha256": "a8b05048bc1cf1032bd31c5c0a2a73b0e7d1b7297746390673acc093f2f0aae4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v2/A2_EXTENDED_PREDECLARATION.json.sha256",
+      "local_accessible": true,
+      "zip_sha256": "7939aa23275a374074c864ef137966ef112250e86b9eb4aef02b343f2ad72581",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v2/DESIGN.md",
+      "local_accessible": true,
+      "zip_sha256": "e2a1086981e93b7d523de17fe8e314ae0ab4ef9d598e7dfb5497c547583b6c48",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v2/DESIGN.md.sha256",
+      "local_accessible": true,
+      "zip_sha256": "8be37818c21f6c8be9b9110848b40cb6797e666df38ee2c03f434080626bee53",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v2/FROZEN_INPUTS.json",
+      "local_accessible": true,
+      "zip_sha256": "5af2f4d785a78433b40d0a36f0f980ec219302542ae2b3eda47e213281f6e0f6",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v3/A2_EXTENDED_PREDECLARATION.json",
+      "local_accessible": true,
+      "zip_sha256": "fdf300e88b14e4e02802c7e2406928a801c2bf77f3af877359a2a5e9cf54f650",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v3/A2_EXTENDED_PREDECLARATION.json.sha256",
+      "local_accessible": true,
+      "zip_sha256": "e03dd5221f2bd43fafbac13bc72d96cdf7fb08ba3d96246d71893f7397c149c5",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v3/DESIGN.md",
+      "local_accessible": true,
+      "zip_sha256": "16010f053f7bf06bf9fd472c8a08ddd0008a26ddb3147dbeff5af91894eaed38",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v3/DESIGN.md.sha256",
+      "local_accessible": true,
+      "zip_sha256": "67d0fd22a4c87d475ff11e156869eece92e41137f947a3805738ebea7ca48e50",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v3/FROZEN_INPUTS.json",
+      "local_accessible": true,
+      "zip_sha256": "44e43861290674d4f0ba49ce2d27e2e71078cacc44d4955d0dd2274336030000",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v4/A2_EXTENDED_PREDECLARATION.json",
+      "local_accessible": true,
+      "zip_sha256": "f4f6466db39758f6256303bd609afd6480e8e4534216e8811b420a72b03ac591",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v4/A2_EXTENDED_PREDECLARATION.json.sha256",
+      "local_accessible": true,
+      "zip_sha256": "c7d655d1ae738b00c5fe3eac71bb576a93eba96535785287e0e6a9709ece0c01",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v4/AMENDED_POLICY_CONFIGURATION.json",
+      "local_accessible": true,
+      "zip_sha256": "aa9261cb37f1402f7ea2a6c7557215be9502bc66904495b2d46fb09859844374",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v4/DESIGN.md",
+      "local_accessible": true,
+      "zip_sha256": "c73730a7308d5543159b23ce8953f6b02289e119fabd06614a8a271188be6656",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v4/DESIGN.md.sha256",
+      "local_accessible": true,
+      "zip_sha256": "be0017e9c1176ed9f42592c35e63b2db6d9c2529a949a5133fe69e10f3e7a912",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_extended_v4/FROZEN_INPUTS.json",
+      "local_accessible": true,
+      "zip_sha256": "ae3d4017ebac28a912f796a8610d558b05db7f749dc257f2b3b5e80d05d3ebc8",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_verified_v1/FINAL_A2_POLICY.json",
+      "local_accessible": true,
+      "zip_sha256": "2bf1fa6cd6f0deb15ae7e72f1b12c5cd8cbd832aeb7a74a89452ef8f756fe6a2",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/a2_verified_v1/FINAL_A2_POLICY.json.sha256",
+      "local_accessible": true,
+      "zip_sha256": "a61285990619e1fdeb3b632205bdb29576803782fb94e512e50e42f319391b3a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/guarded_qp_reliability_v1/ACCEPTANCE_DECISIONS.json",
+      "local_accessible": true,
+      "zip_sha256": "b7d3f406154b536f1ed9cb30e767a7a717843a39cd61450d9b1e6f448652dbba",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/guarded_qp_reliability_v1/ACCEPTANCE_DECISIONS.json.sha256",
+      "local_accessible": true,
+      "zip_sha256": "b16c20fa75027248c87cc3c16e5643e3247d515629127d0028070e409b063938",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/guarded_qp_reliability_v1/CLASSIFICATION_EXTENSION_V1_1.json",
+      "local_accessible": true,
+      "zip_sha256": "c7fda222f0018640b25db0c5143124e0737e64e2bd20284c5b09aab4d2a437a0",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/guarded_qp_reliability_v1/PREDECLARATION.json",
+      "local_accessible": true,
+      "zip_sha256": "713b72bb1e3cf515e6f08ea2c1ac17449ce69c5e62a11624f89122864d85fcc6",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/guarded_qp_reliability_v1/PREDECLARATION.json.sha256",
+      "local_accessible": true,
+      "zip_sha256": "0c3dbf0028eb1aa2fa1cf94d02264fd7fae7ef24dbba3f1ff6eb478bfaecf4c2",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/guarded_qp_reliability_v1/PROTECTED_INPUTS.json",
+      "local_accessible": true,
+      "zip_sha256": "4b53329036c65ace4a0a32ca2890c50ea24804ad6da03279a76cdb7da160384c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/pre_a3_blockers_v1/DEVELOPMENT_PREDECLARATION.json",
+      "local_accessible": true,
+      "zip_sha256": "3339a2db984925c7e3600ba0bdbda2706d62b73ce4e754cc152ec3b6f1abe47e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/pre_a3_blockers_v1/M1_PREDECLARATION.json",
+      "local_accessible": true,
+      "zip_sha256": "e577094d70ffbcd7efee15506e80622d5b49f343a910858c94bd5666f089d728",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/pre_a3_blockers_v1/PROTECTED_INPUTS.json",
+      "local_accessible": true,
+      "zip_sha256": "cea4618ffb74d001b98e873155786774d792fcde7f329a9dd4b7bdf1a512aef7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/pre_a3_blockers_v1/TECHNICAL_DISPOSITION.json",
+      "local_accessible": true,
+      "zip_sha256": "3013cf9f0b0e7a071dda3732f4a8ce10042e6ad832cdd91357139e4376eddd64",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/pre_a3_blockers_v1/TECHNICAL_DISPOSITION.json.sha256",
+      "local_accessible": true,
+      "zip_sha256": "807bc4f78ede57d3967951d3c6d988102dc819ea34bb00ae6593b3ec40bf5e36",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/APPROVAL_RECORD.md",
+      "local_accessible": true,
+      "zip_sha256": "eeddcaf7a402cbc13fff13b1223d95bc0c5cfb92869795f86613216cb6a98a3b",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/APPROVED_POLICY_CONFIGURATION_v1.2.1.json",
+      "local_accessible": true,
+      "zip_sha256": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/C1_C6_FINAL_DECISIONS.csv",
+      "local_accessible": true,
+      "zip_sha256": "a0635b51e4633fbea90216990afaa66ac422867f1d94555cb87574cb4e38a48a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/FILE_SHA256_MANIFEST.json",
+      "local_accessible": true,
+      "zip_sha256": "ba566d1c9e3b028205cb41ad34771c2ac6aaba2a18b7606a8f74dbaa2911c76d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/PREVIOUS_AUTOMATED_EVIDENCE_SNAPSHOT.json",
+      "local_accessible": true,
+      "zip_sha256": "ce210fd60db3a75c7ef9e53807aa2a829b8b438819e7ae217f468778554c6df7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/PROTOCOL_v1.2.1_PROJECT_OWNER_APPROVED_ADDENDUM.md",
+      "local_accessible": true,
+      "zip_sha256": "d44f2412cd950c0501a3bb9e3c4d32bee886782d830e116eeb5df8f0e4e31c0d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/READINESS_AND_NEXT_STEPS.md",
+      "local_accessible": true,
+      "zip_sha256": "ceff493db58df01792a78fb2f3f4bc49c0219d9c059fd20b92b811c200be7516",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/Referenced_Inputs/Tasks_2026.xlsx",
+      "local_accessible": true,
+      "zip_sha256": "bdddc29df8ca30514b9b6f31fc96372b5460a1bf22e5c40011979bb73d9ad77a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/Referenced_Inputs/previous_C1_C6_proposals.csv",
+      "local_accessible": true,
+      "zip_sha256": "970ddfc521008b3d49553cc01f2592d54888c1e0c72e966f9a763fe1594e092c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/Referenced_Inputs/previous_unsigned_signoff_template.md",
+      "local_accessible": true,
+      "zip_sha256": "b2f15af7e3c0f5e3d798a1425ded62d2876df837418fda5062377790522a8447",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/T29_approved_protocol_row_scales.csv",
+      "local_accessible": true,
+      "zip_sha256": "519bf38459cd8b2b485aed428d201640801333311fef9444adf6ffef27241a31",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/manuscript_source_hashes.json",
+      "local_accessible": true,
+      "zip_sha256": "5d438a95640f4766f2bc5486ab24232846cb58fcdc6281af3dba45551c038f2c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.1/original_Tasks_2026_provenance.csv",
+      "local_accessible": true,
+      "zip_sha256": "529357e5e31a6c462749ceb4052aaecc23fffab41aa481fdab4641004c751c0f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-draft/APPROVED_v121_TO_DRAFT_v122.diff",
+      "local_accessible": true,
+      "zip_sha256": "b6da03f4ccb687b987da229a7b2bbe56424224d199e5934394555dfa40075218",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-draft/PREDECLARED_P1_DESIGN.json",
+      "local_accessible": true,
+      "zip_sha256": "4f59db4cd77376ed78978fa2c0b5c0ab9644cf7b672ceff031fb3a76eeb9d936",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-draft/PROPOSED_POLICY_CONFIGURATION_v1.2.2.json",
+      "local_accessible": true,
+      "zip_sha256": "e665f6bf076f68e5463c5bdf56810c9714265b4699a7246fe780712e7b66d6d2",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-draft/PROTOCOL_v1.2.2_DRAFT_ADDENDUM.md",
+      "local_accessible": true,
+      "zip_sha256": "35dd1a071fb1ab752615aec61ee76f664de935086a861c29810103a219ce1177",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-draft/SHA256_MANIFEST.json",
+      "local_accessible": true,
+      "zip_sha256": "8665609013c221db77f8af65f7ca08c69944f7ce11d044b8b889e378094a3202",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r2-draft/APPROVED_v121_TO_DRAFT_R2.diff",
+      "local_accessible": true,
+      "zip_sha256": "157d73ba52665da7cd1668735dae6a7d2f0bfbbf4252b9cc2dc95c71e8f5bdb9",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r2-draft/DRAFT_R1_TO_R2.diff",
+      "local_accessible": true,
+      "zip_sha256": "200941b5fa0ef602b8f462cde7e15710cf6e95394c8fd42e4ae1341659d2244c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r2-draft/PREDECLARED_DEVELOPMENT_PREHOLD.json",
+      "local_accessible": true,
+      "zip_sha256": "11590d10a554d88907095d15a3fb13d0872d29c534eeffe70e0da2788b0d36d4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r2-draft/PROPOSED_POLICY_CONFIGURATION_v1.2.2_r2.json",
+      "local_accessible": true,
+      "zip_sha256": "a793644457096aaeaaf940c80e5cfedcbfb35d1a543feee80624ff7a9e891449",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r2-draft/PROTOCOL_v1.2.2_r2_DRAFT_ADDENDUM.md",
+      "local_accessible": true,
+      "zip_sha256": "f787b38e799af06ce6e7e9f7cf40e2e7812cbf8288107605c86e0e0fa05b2e58",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r2-draft/SHA256_MANIFEST.json",
+      "local_accessible": true,
+      "zip_sha256": "52034024bb74621c6b92fa41d1592dad893b2588093774c1f974e87a708481c6",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r3/BACKEND_AMENDMENT.md",
+      "local_accessible": true,
+      "zip_sha256": "f25a5cfc22dc15b0abde0fa0d3d704644a584a04b585181749c8424e29856a9b",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r3/BACKEND_FROZEN_INPUTS.json",
+      "local_accessible": true,
+      "zip_sha256": "9ab74b7268f119600379f2f2024a90fa4e6249a87e6340549164c79ffe3a91ec",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r3/DESIGN.md",
+      "local_accessible": true,
+      "zip_sha256": "26c237945f475dcecfbad3a822ac71a87659666d66aa7c39c635baf30d5d3f56",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r3/FROZEN_INPUTS.json",
+      "local_accessible": true,
+      "zip_sha256": "459e9f346bb4b9fdb0b7196bf59b17bde4cb3c31622d43246742df60c23886aa",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r3/POLICY_AMENDMENT_P1_R3.json",
+      "local_accessible": true,
+      "zip_sha256": "dfe9603534efa7be655c87b7708a872ad288d96a039a0b9737249d92c1154190",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r3/PREDECLARED_P1_R3_A2.json",
+      "local_accessible": true,
+      "zip_sha256": "c126b5014c3caa4a69bf4e10e7d091eb8a368aa67286875c8017c1dc9eb70aca",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r4/DESIGN.md",
+      "local_accessible": true,
+      "zip_sha256": "ace35825646705c8f586d78440970aefa905bf1d6998ee7738dba7a8158fdde4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r4/EVIDENCE_INTERFACE_AMENDMENT.md",
+      "local_accessible": true,
+      "zip_sha256": "6eb146025ca10e151e431730a47dbad0bd2b63e6c6b78aad38a9a167b65f9e89",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r4/FROZEN_INPUTS.json",
+      "local_accessible": true,
+      "zip_sha256": "ad2d505edc0743efd62815148b31a41d02a36de7d43bf0913af71107593ca41d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r4/PREDECLARED_A2_R4.json",
+      "local_accessible": true,
+      "zip_sha256": "57eeab27c2d0c9b0ec3bf7f90abce1ecad8a0479688842d379ed0936412c99eb",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/policy/v1.2.2-r4/TEST_FIXTURE_AMENDMENT.md",
+      "local_accessible": true,
+      "zip_sha256": "ffb07d103cd259a853145b534741e673d698c57a1f22c657c0baea3c589ce17a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/pyproject.toml",
+      "local_accessible": true,
+      "zip_sha256": "6a7fae573fc9e8e6205533021edb8c787a1a61f146e3dffb44bdfb56d1b81d72",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_00.json",
+      "local_accessible": true,
+      "zip_sha256": "2aff69489ac8024aafd503b51ad5596b8b71f67f71ff595de3edd2b20ba7e70d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_01.json",
+      "local_accessible": true,
+      "zip_sha256": "69d3af1e257693d5d7e4d734f722d819f6d2e84365a86fce7d30635e051a465c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_02.json",
+      "local_accessible": true,
+      "zip_sha256": "2ac5a23b851ecbaa2963118682162922a5d7a8cd57b7f55c281d1de95c2718e5",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_03.json",
+      "local_accessible": true,
+      "zip_sha256": "4bf0103a8a3f234ce36eb8973f3fcac6ffb1f4d8dedfb14a723275e89d916672",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_04.json",
+      "local_accessible": true,
+      "zip_sha256": "713366bd8d7aae3f9ee179dbc1969f301a4cefbc966338079fd496aa7b6439d7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_05.json",
+      "local_accessible": true,
+      "zip_sha256": "97b1c42bd18c6be539b68a10bfede662e15b4100dd1cf77b75d28a577baa0373",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_06.json",
+      "local_accessible": true,
+      "zip_sha256": "283c70e8b7f0c4120d7abcc183a3977757fa812e6c2a3758d3c65ceba2144e9f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_07.json",
+      "local_accessible": true,
+      "zip_sha256": "6ed52c3a5cf7ea56aff5bbc7630c9418ae1c6a8e7852cb649c9ecb209083b094",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_08.json",
+      "local_accessible": true,
+      "zip_sha256": "57a4ad96ab7c72c97a8a7918ee8b4dd5515df8bb0fa399f5e4c09a124d80dff0",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_09.json",
+      "local_accessible": true,
+      "zip_sha256": "ed74fb3193d4014dd239d7370e5149d8823bc48e58f063ee2c3b97cb6a222c92",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_10.json",
+      "local_accessible": true,
+      "zip_sha256": "adb5bcabafe7e57062eb1551c6e583fc41334cda852302f90e5828067efadfc3",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_11.json",
+      "local_accessible": true,
+      "zip_sha256": "f0b7913928649dc9e3ed99d1348eae152991cb9cccffb9aaac0ebc235eafb553",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_12.json",
+      "local_accessible": true,
+      "zip_sha256": "ba0b8fede73a3a5a8dfc3d385543d5c0e4e39ec460619762b7911b6bb378116d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_13.json",
+      "local_accessible": true,
+      "zip_sha256": "e90a8eeb07b07b2b3c5004b4ab3f32ca04a88404ed58f8df05f723446d1a144a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_14.json",
+      "local_accessible": true,
+      "zip_sha256": "497f06c10bf908e8d501cbcee43228677c9b73fcd5c658a50fe5421d8c78a7e7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_15.json",
+      "local_accessible": true,
+      "zip_sha256": "4523f9527190d1a2a9cb98f9d68d1febf040f03588943433042af613996a1727",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_16.json",
+      "local_accessible": true,
+      "zip_sha256": "5894c5b8ed0e86ec27ad650394cd05684286df8f3fc05d084e434888e04090ae",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/fixture_17.json",
+      "local_accessible": true,
+      "zip_sha256": "a4e45281b9124b57ddf0f85e970bea785a891721d8cb4359ed795160b4bc1018",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/a2_extended_v1/qp_bounds_evidence/run_v2/t27_fixtures.json",
+      "local_accessible": true,
+      "zip_sha256": "e7fba850f83d28bb198ad38cb31f2939c8254a8e3c35ba4b22e3403a50651fcb",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/guarded_qp_reliability_v1/COUNTEREXAMPLE_DIAGNOSIS.json",
+      "local_accessible": true,
+      "zip_sha256": "bcdfd5542a9d14bf2b1effa5054108c07e7f5d72780c8f4ec291578ab842556a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/guarded_qp_reliability_v1/DOWNLOAD_AND_RESTORATION_PROOF.json",
+      "local_accessible": true,
+      "zip_sha256": "1d3110ccde20a4ed35110dfacea5e4c45b8230a01534b3a14fab8cc243247df1",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/guarded_qp_reliability_v1/ROOT_CAUSE.md",
+      "local_accessible": true,
+      "zip_sha256": "fe09170fbf1ae10956a94b8abeb93feb23c6e09de2bb4010f773a02190970609",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/CONSOLIDATION_AND_PRESERVATION.json",
+      "local_accessible": true,
+      "zip_sha256": "40105a11065cb5aabb1422545e3470aa67404956c4288dfd97dcde05abadf313",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/ENTRY_GATE_CONTRACTS.json",
+      "local_accessible": true,
+      "zip_sha256": "b7687ac67c5c422d816e35e81966b9fe9365d33f6d58e5cb28bdc9e52fa95b31",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/INITIAL_POINT_LOWER_WITNESS.json",
+      "local_accessible": true,
+      "zip_sha256": "b84fc1f55803a0743154b0e21d5810e5a63a71330a77ec407905cabacdba4152",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/ISSUE_RESOLUTION_REPORT.md",
+      "local_accessible": true,
+      "zip_sha256": "2b03ac9953dc6003e8358bbdc20f6efad11adf89be15efc913b772ba87a21aa7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/M1_CONTRACTS.json",
+      "local_accessible": true,
+      "zip_sha256": "ee1204414e35ae02c94ee3a6f308efdda96381a23161148757e221b5983184bf",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/UNCHANGED_A2_REAUDIT.json",
+      "local_accessible": true,
+      "zip_sha256": "b043585850056dc5d6c62e14b71daeecd7801abfa06ee2128f3f20c1ac39c05b",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/active_filter_diagnosis/SUMMARY.json",
+      "local_accessible": true,
+      "zip_sha256": "a9865edf8bf90bd17f151cee076599c6ee2c61833008227f0a7d4ab77cd50e5d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/active_filter_diagnosis/cell_0.json",
+      "local_accessible": true,
+      "zip_sha256": "28669c37acef366bc82d37465559d0d21ff3e28f27e4d5883181d29ed4410da9",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/active_filter_diagnosis/cell_1.json",
+      "local_accessible": true,
+      "zip_sha256": "8429011142601988e761ef0cb83bce93f7c1f633f346b8542545fc1506c66c67",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/active_filter_diagnosis/cell_2.json",
+      "local_accessible": true,
+      "zip_sha256": "401a9fa9ecd7ef9650b1b54d64bfb4a6f255187233443b339485dc3f4255b416",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/active_filter_diagnosis/cell_3.json",
+      "local_accessible": true,
+      "zip_sha256": "d0907c5cbfdf6cf8ccb69db691bd3c0d33d8562a81bcbe7aeba74d82791fd6f2",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/candidate_contracts.json",
+      "local_accessible": true,
+      "zip_sha256": "218d6c55d82cb58238c6b1ec1a7b3e37d247efc2c1fd8ae4fd61581218f77939",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/final_analysis/CONTROL_PERIOD_LADDER.csv",
+      "local_accessible": true,
+      "zip_sha256": "c4d47e1b9867a1ce5abf417bdd8911adefaa60b406a0c382d85015b0ccdb9db4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/final_analysis/DECISIONS_AND_EVIDENCE.json",
+      "local_accessible": true,
+      "zip_sha256": "ff0fa4b398ce8e5e4e3a0e3d16f88dfe5b81477e6f27f273a961b0488f1bd0a4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/final_analysis/M1_BOUND_STATUS.csv",
+      "local_accessible": true,
+      "zip_sha256": "0051437802e36298ac602c93dd26ca79671384cf7b28c180c7fb8dd97f413b20",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/G2_5_NODE_SUMMARY.csv",
+      "local_accessible": true,
+      "zip_sha256": "332f360e9b54193d09da115639981404abb81a41308fbb4aecf07ece16f36593",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/SUMMARY.json",
+      "local_accessible": true,
+      "zip_sha256": "151b3c4c9eccd014ed499dbb8b3b5962c312ba525c040f02421acdd599a8bb3d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_0_E1.json",
+      "local_accessible": true,
+      "zip_sha256": "9e4a88cc8cb9ae9049ca91d30f8eaf2932cde7c917c3799ba9abae7561edd5d1",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_0_E2.json",
+      "local_accessible": true,
+      "zip_sha256": "3afe3557461c985e7f45e6029d9ee595c14105b82eeb7115298793a5e7f01113",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_0_E3.json",
+      "local_accessible": true,
+      "zip_sha256": "67d1d6cfdef52006f52d2b6401bd145028c3703b1228f545c9b4447152d4a204",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_1_E1.json",
+      "local_accessible": true,
+      "zip_sha256": "dcbc5e602a1696d5c21beabcd93faa4ed2b3a305bf11515fb08ce0afe078570c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_1_E2.json",
+      "local_accessible": true,
+      "zip_sha256": "e563ffbe700990773a5014a674ef9c8d452e644ab1f97b1fb0ba2ba34a63a581",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_1_E3.json",
+      "local_accessible": true,
+      "zip_sha256": "ef6ab761c58ef8036fcee6f508acbc09f72f2d96562ad6411d60204dd7bbe443",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_2_E1.json",
+      "local_accessible": true,
+      "zip_sha256": "3098f7b5e0b5869d6b7a02b7231eb8bae13b473ed139493692bbca6282b13b63",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_2_E2.json",
+      "local_accessible": true,
+      "zip_sha256": "24432877ad6f89a3778fb87969d29572ab4c528aa8abb3494934d18dcac0128f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_2_E3.json",
+      "local_accessible": true,
+      "zip_sha256": "30190c5a11c0b768bf4a9f615a97e08c7cbf8fa9fa4af120c4a470af999d2b27",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_3_E1.json",
+      "local_accessible": true,
+      "zip_sha256": "c22db88e3305d599fbc1cd3ca12159f7669644336e503a756953b29dfeae5ff4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_3_E2.json",
+      "local_accessible": true,
+      "zip_sha256": "c3b591ec921f8ffa12e789e8a220c527c82c902521bc564cb18742aaae6726a9",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/cell_3_E3.json",
+      "local_accessible": true,
+      "zip_sha256": "fe326f1a634f41c7f1f3e1604457240dfa9ae5d44f4fe9abebc8a7d010e131e8",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/common_factor_two_necessary_ESTIMATE_0.json",
+      "local_accessible": true,
+      "zip_sha256": "4347a6e19bf0124aac3e9f50bf65ed7d041c8c9f4ada7728a9d018375b15fe4f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/common_factor_two_necessary_ESTIMATE_1.json",
+      "local_accessible": true,
+      "zip_sha256": "4347a6e19bf0124aac3e9f50bf65ed7d041c8c9f4ada7728a9d018375b15fe4f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/common_factor_two_necessary_ESTIMATE_2.json",
+      "local_accessible": true,
+      "zip_sha256": "4347a6e19bf0124aac3e9f50bf65ed7d041c8c9f4ada7728a9d018375b15fe4f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/common_factor_two_necessary_ESTIMATE_3.json",
+      "local_accessible": true,
+      "zip_sha256": "4347a6e19bf0124aac3e9f50bf65ed7d041c8c9f4ada7728a9d018375b15fe4f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/initial_pair_witness_0.json",
+      "local_accessible": true,
+      "zip_sha256": "ba98eb401e4c9a4adac1e3f19e98d238a9518f81d3e1dbb51cd05fafde311d58",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/initial_pair_witness_1.json",
+      "local_accessible": true,
+      "zip_sha256": "e2e4118a1b163975cd2f0db26c0cc4c84de02300fd3a3d99acd14f4b7abf83a9",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/initial_pair_witness_2.json",
+      "local_accessible": true,
+      "zip_sha256": "fee00bb27f5c00470a200310cf98bdc1502e078048180f4de10a1bd2b3226d92",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/initial_pair_witness_3.json",
+      "local_accessible": true,
+      "zip_sha256": "d8189ed541aa93aa5057a6223f95a419491a5fcf6f116c523ea94d174bed5471",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/residual_Lipschitz_ESTIMATES_0.json",
+      "local_accessible": true,
+      "zip_sha256": "8b8e26969c8c9140065b475bd51bade6be7dede820d099a22d743a3e6b1a7a32",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/residual_Lipschitz_ESTIMATES_1.json",
+      "local_accessible": true,
+      "zip_sha256": "8b8e26969c8c9140065b475bd51bade6be7dede820d099a22d743a3e6b1a7a32",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/residual_Lipschitz_ESTIMATES_2.json",
+      "local_accessible": true,
+      "zip_sha256": "8b8e26969c8c9140065b475bd51bade6be7dede820d099a22d743a3e6b1a7a32",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/g25_final_policy/residual_Lipschitz_ESTIMATES_3.json",
+      "local_accessible": true,
+      "zip_sha256": "8b8e26969c8c9140065b475bd51bade6be7dede820d099a22d743a3e6b1a7a32",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/m1_registry/M1_REGISTRY.json",
+      "local_accessible": true,
+      "zip_sha256": "bd75d3969e5482308b86d1c95d1ceca5235677340f08f4dc9412799772d7bb7a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/m1_registry/RAW_M1_SAMPLES.npz",
+      "local_accessible": true,
+      "zip_sha256": "310b3bcf2bc5a36241521c2654cad686fe2cf2750401aa0f79004bb1c03e5ac7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/process_logs/a2_reaudit.log",
+      "local_accessible": true,
+      "zip_sha256": "e4a9f437e50646896dbf64eaaac23c7a126c8042caffbc5cbd3589649c2a0916",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/process_logs/g25.log",
+      "local_accessible": true,
+      "zip_sha256": "2ebe6f287076f74753ee46130c6eee28079d34487f8b0d132471f2a33830cad4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/process_logs/m1_contracts.log",
+      "local_accessible": true,
+      "zip_sha256": "5fb7fde3696ea8dbf0d1b8f35e034cfd09604f13833a0f1045c4c5f80e32da09",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/process_logs/m1_registry.log",
+      "local_accessible": true,
+      "zip_sha256": "7a2992498e83d9d4cd5ea5bf7a70a9f11a0eb5a8403497ed621a230d86d49e86",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/process_logs/original_ladder.log",
+      "local_accessible": true,
+      "zip_sha256": "bbb5360157d5ba340f62f505e8ddd0a014838185635c751a4fef08efb350cae5",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/process_logs/projected_candidate.log",
+      "local_accessible": true,
+      "zip_sha256": "e2ca08b55970b3266eafd3d46cbd3175f8e5fa04ff624c24bc330034605e6e1f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/process_logs/t27.log",
+      "local_accessible": true,
+      "zip_sha256": "9e3245d61eda1322de33b389b93eb057c43401c2fa7417a593a22d2eb1ae0ef4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/SUMMARY.json",
+      "local_accessible": true,
+      "zip_sha256": "8a8849ca65dabdd488cd6ba383ac30dfce165706d921da6ae8a5cc7f3333db49",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_00.json",
+      "local_accessible": true,
+      "zip_sha256": "bf5a7fc68470e30562cae6ffd828290861cbf0b0f824674a247c135bedcf2129",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_01.json",
+      "local_accessible": true,
+      "zip_sha256": "9b42931ce8943b8cc0fa36398d22796c8abd84b5131f4df1571ced5ff773f56a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_02.json",
+      "local_accessible": true,
+      "zip_sha256": "9503f7af1fd9168498e1fd162a252025e811a41d82d0b6ee5d1ce42407e1d910",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_03.json",
+      "local_accessible": true,
+      "zip_sha256": "396ef349ffdcd10dba8b57a21226209b5de3ed96397b20bb978a6d68b03a0d2a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_04.json",
+      "local_accessible": true,
+      "zip_sha256": "ec4990895d785afc74153e03eefba5594b07fff0c128505de97f634f1bf10583",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_05.json",
+      "local_accessible": true,
+      "zip_sha256": "d376f56263eb0b82802ce9391237dd7e21b17364b69e3e03aea6af80c0513835",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_06.json",
+      "local_accessible": true,
+      "zip_sha256": "91f104b77ec87f9ee2cbcd412354050d28a99152da8107759cbe43fd44f8ce3e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_07.json",
+      "local_accessible": true,
+      "zip_sha256": "c106f23c2d3346457c50e6967f0d4657e6c5df90a55aa0938de480608702e24b",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_08.json",
+      "local_accessible": true,
+      "zip_sha256": "8cebb522a3af06283d00101237563642353d0f67490c097cef1413ee9c65b264",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_09.json",
+      "local_accessible": true,
+      "zip_sha256": "846e659a2dd98530ac440419b0382c81950feee9bac19bb35c6fc37d6f035f71",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_10.json",
+      "local_accessible": true,
+      "zip_sha256": "efb49dccbb893601c8fea0ed424f2cf61e0f379cedb9430da5b386b177bf444e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_11.json",
+      "local_accessible": true,
+      "zip_sha256": "0c61ee72a6cc33fc9c3fd5d556598f2e772c136d9b54f69c30a8b6fdcf2873b1",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_12.json",
+      "local_accessible": true,
+      "zip_sha256": "af4e40585c66b3f2147ebda2a97f47555b3532a900c9c65201259512b60197c2",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_13.json",
+      "local_accessible": true,
+      "zip_sha256": "3461bf5da7ab68402892addd238d2c1a099ea300eaf16bf050c300a331031b7c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_14.json",
+      "local_accessible": true,
+      "zip_sha256": "40b69ffa88063b9034d5e0aeb90613e29190d46a529d78459494c5c50c242ee0",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_15.json",
+      "local_accessible": true,
+      "zip_sha256": "090504354c3e491018d40b898098e38ba89c1e76eb8eda90292d395371de8f3d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_16.json",
+      "local_accessible": true,
+      "zip_sha256": "bdd0a507fef597104397752176a0bc218484a27ccf5f06d3a05b4e803178169e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_17.json",
+      "local_accessible": true,
+      "zip_sha256": "e9ec55be3b07dc3f603fa616fb17f42b39459250e9595938d043f9aa22388b9b",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_18.json",
+      "local_accessible": true,
+      "zip_sha256": "1d31156bf7b9619a1083e65d662d652560877fe87c586bc5dd163acf6dfcb99a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_19.json",
+      "local_accessible": true,
+      "zip_sha256": "e814c184cf8f848fa077aa9273776410cc9df0e54b95a25dec410dee6d6142e1",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_20.json",
+      "local_accessible": true,
+      "zip_sha256": "99b7354168a50845439b406f3c4d97f04a3b43d0b37142bdb1d6f8f3e6d333b0",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_21.json",
+      "local_accessible": true,
+      "zip_sha256": "dac7d4c8dd5e69e696086ac92926d7091d7c4b190e30a48e20189875ea9fcbd7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_22.json",
+      "local_accessible": true,
+      "zip_sha256": "c3d2566ae610b7f7976fc2782505d069b1bb93c0e38888d1922698e60b7521be",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_23.json",
+      "local_accessible": true,
+      "zip_sha256": "b70c1757f46833a2833c84ba0119e58592474d65b076954a6ed000c53926ec85",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_24.json",
+      "local_accessible": true,
+      "zip_sha256": "7e350671e56135f25d0a32e942a13284b9b8a4cecb46b23a95df115c32d55876",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_25.json",
+      "local_accessible": true,
+      "zip_sha256": "2d34a62b56a4320f8a38cd3d7d8b6e412e67b4556a4de865ad80009469d1cf3f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_26.json",
+      "local_accessible": true,
+      "zip_sha256": "eb494ea72488525016e5ff8be371ac2ae7d0dfaabd3021017e14ca2d0c890792",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_27.json",
+      "local_accessible": true,
+      "zip_sha256": "86282a211945050a375c06f086092c3d9cfeb7c6f7d7589a3394ffdbc9828f12",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_28.json",
+      "local_accessible": true,
+      "zip_sha256": "bcc189abb98d249d668931efeb32bbf8011fd2a9019c32372bbcd991afd237f9",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_29.json",
+      "local_accessible": true,
+      "zip_sha256": "9df87df9ae434d5e1affb57e238bf7d1c7e800aca5a4d1e3da7c6e243572d8cd",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_30.json",
+      "local_accessible": true,
+      "zip_sha256": "b20e73ae9b762cd82c42ee0f16d13b8d323d6c9de0bb782df6cd7c4bef161bb2",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_31.json",
+      "local_accessible": true,
+      "zip_sha256": "0f2b78d5402d5405690688b365b22240fa7baef0211c537fabac2beb66ae6c6a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_32.json",
+      "local_accessible": true,
+      "zip_sha256": "bf3d2faafad66e096facc78b19b8a174dca2b303c6ad7aa3587919f485b7d962",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_33.json",
+      "local_accessible": true,
+      "zip_sha256": "79f9d0e0b37d802636e67512904ac3ef26145b3462f8d77940ed079669a2c353",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_34.json",
+      "local_accessible": true,
+      "zip_sha256": "45f3932c9775988be6b97de33a92b9873ba009b51767b3f0bdf1f7c8fb82e637",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_35.json",
+      "local_accessible": true,
+      "zip_sha256": "970a47475064da87bca42df9f24e052272ddd6433c8031d36976950bbf8348da",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_36.json",
+      "local_accessible": true,
+      "zip_sha256": "717ee9e658321041bcda231becbce96694a16b45f0d7be983dd93a536592ae75",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_37.json",
+      "local_accessible": true,
+      "zip_sha256": "9ad7d8946a14963a8f8f9be89f94bb65d701f683acc3430673a44a4b469a5c74",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/reports/pre_a3_blockers_v1/t27_regression/fixture_38.json",
+      "local_accessible": true,
+      "zip_sha256": "a432bea46dd15fc758232070efbfcab991643a4b11b983faeab52adb4a27922c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/requirements.lock.txt",
+      "local_accessible": true,
+      "zip_sha256": "312700548aee329f09ac6bc6984624f336986c42230da93dae34cdfe938bf1b8",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/guarded_qp_reliability_v1/reliability_v1_fresh_active_E3/cell_0.json",
+      "local_accessible": true,
+      "zip_sha256": "b5d286470f5dc7dae3077366cf8897e5de8a0ff87d78e9458dd557d8a1bd8dcc",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/guarded_qp_reliability_v1/reliability_v1_fresh_active_E3/cell_1.json",
+      "local_accessible": true,
+      "zip_sha256": "f404a345fc4cb093b129327403167966b9344969985f6bbdc9c8f5401c4a96c9",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/guarded_qp_reliability_v1/reliability_v1_fresh_active_E3/cell_2.json",
+      "local_accessible": true,
+      "zip_sha256": "eb1afa49e957db56afd6c029dc3615545d1fca85bde86d5f281c179cfea08cf3",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/guarded_qp_reliability_v1/reliability_v1_fresh_active_E3/cell_3.json",
+      "local_accessible": true,
+      "zip_sha256": "af6c379f5dea41e62eb607d04763bd446ef8bec1898fea7091a1803ab50c5fe7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/guarded_qp_reliability_v1/reliability_v1_fresh_active_E3/summary.json",
+      "local_accessible": true,
+      "zip_sha256": "64927d4d2f2ff0fc3653420937ff71ae547c6db1b3581edaad2eb8280b869ec4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/guarded_qp_reliability_v1/reliability_v1_fresh_v4_E3/cell_0.json",
+      "local_accessible": true,
+      "zip_sha256": "7d6cde4207b6285c22b8d8760394c90386fb400cc29903d0ce7b7a8c260a2614",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/guarded_qp_reliability_v1/reliability_v1_fresh_v4_E3/cell_1.json",
+      "local_accessible": true,
+      "zip_sha256": "9592dfa17217a2174be647cffcf7e5c8c3917517b99ddb6fa6f3cbb871c1be4b",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/guarded_qp_reliability_v1/reliability_v1_fresh_v4_E3/cell_2.json",
+      "local_accessible": true,
+      "zip_sha256": "60d536180f48b57edde38ad25af500e4e587c0b57e9c74b34d99dcac5899e3cc",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/guarded_qp_reliability_v1/reliability_v1_fresh_v4_E3/cell_3.json",
+      "local_accessible": true,
+      "zip_sha256": "ab88bafe847748ccae1b87d8d812d443c532026f3e9967a15cd81c545837d86b",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/original_AB2_delta_ladder/cell_0.json",
+      "local_accessible": true,
+      "zip_sha256": "2999858bb347a60b31c8f0491cf3c1c1db4129b9a54f7e501a70bf2a19a7bd1a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/original_AB2_delta_ladder/cell_1.json",
+      "local_accessible": true,
+      "zip_sha256": "1e6763fe3650f7564235934f45be5d39e93e69de90d25c7622f3fdcee8b5529a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/original_AB2_delta_ladder/run_completed.json",
+      "local_accessible": true,
+      "zip_sha256": "029084a0248c444e21b1db7003e92d202ae3d716780e4c9a9c3aee45b94edc07",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/original_AB2_delta_ladder/run_started.json",
+      "local_accessible": true,
+      "zip_sha256": "efdc90d21cb4b929d02999f66253b384e8fe87da13ac1d536c5e802d73490070",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/original_AB2_delta_ladder/summary.json",
+      "local_accessible": true,
+      "zip_sha256": "067ede01243769ded0b6e9d1779436f2e2936c5d286acf507186027f1fb08e63",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/projected_feedback_candidate/cell_0.json",
+      "local_accessible": true,
+      "zip_sha256": "80c586edcf081f5496f729bc1e3cc33b484a5647c78a437e724ea91813de7189",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/projected_feedback_candidate/cell_1.json",
+      "local_accessible": true,
+      "zip_sha256": "a00b94ad9dcab46799bc135672403cc5e7a9cccfca69b56258bbdf270ca65151",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/projected_feedback_candidate/cell_2.json",
+      "local_accessible": true,
+      "zip_sha256": "727c437fbc19259306dbc3c420f39f4f4f3fb7d41feb5146eb6271e083327d13",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/projected_feedback_candidate/cell_3.json",
+      "local_accessible": true,
+      "zip_sha256": "3bd1a3580cfc9dac3562a5d310146336180df0f2a156c50069e2e5cc7f17f0df",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/projected_feedback_candidate/run_completed.json",
+      "local_accessible": true,
+      "zip_sha256": "746c02eb2ba28c42383eb1470462824b938638795971c29eb33651a303aa597c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/projected_feedback_candidate/run_started.json",
+      "local_accessible": true,
+      "zip_sha256": "ae449728d7977959a65a9a5277055bc7067fccd245835180ac247be16d85553f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/runs/pre_a3_blockers_v1/projected_feedback_candidate/summary.json",
+      "local_accessible": true,
+      "zip_sha256": "dde1579a9f78c4d13d760d966d888a51548dcf1aa90b8dfad1752c5b60631cf4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/a2_extended.py",
+      "local_accessible": true,
+      "zip_sha256": "62941d000a2538811170396a497127e60d75149b739b02ae82ac640ed23a657e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/a2_extended_v2.py",
+      "local_accessible": true,
+      "zip_sha256": "102a55fc29036aff65d9b3c6c48dd71bd9d7181d571af164da414b74ed1aa9e8",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/a2_extended_v3.py",
+      "local_accessible": true,
+      "zip_sha256": "80a3f57a2b2eaf2a300e8936eabf98a31a368b6c6d765b30d84dbb9aec988ae2",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/a2_extended_v4.py",
+      "local_accessible": true,
+      "zip_sha256": "3712791f7b1d3602ca779abb0771995c9fe3962f720b22522f067d1a4afe2f87",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/a2_policy_v4_development.py",
+      "local_accessible": true,
+      "zip_sha256": "143b76866935b420796d9d71c255453eae9dba7b56089a82fe1a3938dd9f4546",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/a2_qp_v2_development.py",
+      "local_accessible": true,
+      "zip_sha256": "63f96217c0ac2d4505decda0e5b8be106dc647ff6fac49e4c0b8d52789f7df11",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/a2_qp_v3_development.py",
+      "local_accessible": true,
+      "zip_sha256": "611cddb521bd6d142a6b2a019de86ccefff0748580f40abf530440e983565bae",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/a2_status.py",
+      "local_accessible": true,
+      "zip_sha256": "6b9f0669eef9da18d75c9307b0fc9a0e12e3f8023f8f6e6bb0aa2c83ce9a0cda",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/a3_qp_bounds.py",
+      "local_accessible": true,
+      "zip_sha256": "efadabf048b28033a23f0dca52727c0340f5b891f2e3e6ed99650fcdde919979",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/a3_qp_bounds_tables.py",
+      "local_accessible": true,
+      "zip_sha256": "c4f26f6a7ed24cba06dd6eae8d429fe19284c17ae8c0ad1b1151465f44673df9",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/action3.py",
+      "local_accessible": true,
+      "zip_sha256": "a2740c6aa70431b3e6a0a7ff47fc07fa51368b16fa9d8f639cf5c6451afbbb2e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/actual_extended_qp_diagnostics.py",
+      "local_accessible": true,
+      "zip_sha256": "d047071efd9123b4fdad69752f3a2d45766a683f0d64743f4f8f11de8e34e0de",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/analyze_guarded_qp_reliability.py",
+      "local_accessible": true,
+      "zip_sha256": "6376913867afd131074bbd2a24f51988a2358e879e3a0ea5ff552bf02212f133",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/analyze_pre_a3_results_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "79ec2fea5df332fb66a0f2d4be39ec293deba957675382c81dbdd0f1e2656f1c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/archive_evidence.py",
+      "local_accessible": true,
+      "zip_sha256": "39b001e79c1c29d73941d3c9c251299825f9ab0ee5b1141c6016f1c2236c54c0",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/archive_regular_evidence.py",
+      "local_accessible": true,
+      "zip_sha256": "eb6e8dc8c135cfe1b9f03332d1ea066b2fe6177854cee849741486e4fb28af81",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/audit_extended_prefix.py",
+      "local_accessible": true,
+      "zip_sha256": "88f5e492eadacb7da04b0c337241e78ea696c953220553e54dbdf28682208875",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/audit_p1_r3.py",
+      "local_accessible": true,
+      "zip_sha256": "3ce1892c732ad36e0193e996483710d8c4a5eb886529b2b563470a8dfd2e3246",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/audit_saved_extended_v4.py",
+      "local_accessible": true,
+      "zip_sha256": "a5fc039d0abc852baba192bca95dcb63e09e5aaead0070192cfcf467ae2fe138",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/bootstrap_guarded_qp_reliability.py",
+      "local_accessible": true,
+      "zip_sha256": "85f276cc96bf5bd8cf9224f3849ab77fd9c0e309f84ec60d8436bf457dedeaad",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/build_a2_r4_report.py",
+      "local_accessible": true,
+      "zip_sha256": "f74659d62212ad79f049b67995153eea65c8e2d705c35674ec28f3cf4913b2bf",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/build_documents.py",
+      "local_accessible": true,
+      "zip_sha256": "d0ecacab9f5f198a0850ce8ccabace01d855e6ce533103d3046975a2e36e9bd4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/build_extended_delivery.py",
+      "local_accessible": true,
+      "zip_sha256": "ffb40509f318fabdf8c09af5bccc3c4d6adf0397314e74194b5c8acf1e70dcd2",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/build_extended_results.py",
+      "local_accessible": true,
+      "zip_sha256": "4dad8e096d00e453e871fe2f59d7be1138c4f6c4414fccf0ea343995ee023169",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/build_guarded_qp_reliability.py",
+      "local_accessible": true,
+      "zip_sha256": "58fde0b3d3a05227d0bb5c0e7b56022ef3a246495f802fe6771fb81e3c68ddcc",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/build_m1_registry_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "4b6e8fad8f909a332129a63d24319cb9b9c1929844a7a1fdf0383783afc7ceba",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/build_p1_r3_report.py",
+      "local_accessible": true,
+      "zip_sha256": "59afed1c5055da4c2ff7240a3ffb57141ec2de6c6e890ee8400fe1668c43092c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/build_p1_remediation.py",
+      "local_accessible": true,
+      "zip_sha256": "a9d0818604edcb891362010ecf41c89aee3a24d56aaeea4f867cf82d74ff4951",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/build_p1_review.py",
+      "local_accessible": true,
+      "zip_sha256": "efebd8350f3d543b49fdf69e8d3c9bf0d2f43779cf853ffc6fbefbe88d196f22",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/check_a2_plan.py",
+      "local_accessible": true,
+      "zip_sha256": "387d2f63ac8b75fbd55feb1029d777c00832054ce193067678f46f49ffd2edd5",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/diagnose_active_filter_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "3f00b8eebddaff3a84120fe1fa0534c7f2ad5b945b9d6431cb9fed79f17b56ed",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/diagnose_guarded_qp_reliability.py",
+      "local_accessible": true,
+      "zip_sha256": "c0f58226978d86f2ec773de335eb38a483325233613abd2a099cd6b40fdc97b6",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/fetch_sources.py",
+      "local_accessible": true,
+      "zip_sha256": "39be29d9dd7c0241123197fa0922b19a5e91ee3e135854fed8aaffaf03265d60",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/finalize_a2_acceptance.py",
+      "local_accessible": true,
+      "zip_sha256": "5028974595cc492c3e4c1a35e99ea53dc9d0945b4be566814bc11f356c0d0445",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/p1_feasibility.py",
+      "local_accessible": true,
+      "zip_sha256": "4680b0421ada32c77c1cd08877b9b976ff11d136ad3794009147eef5f6c7648a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/p1_overlay_install.py",
+      "local_accessible": true,
+      "zip_sha256": "40f8c16c29d055fb9a3f26cc83a0f465260aa719a7a41648bc2cbe80dfc81f80",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/p1_prehold.py",
+      "local_accessible": true,
+      "zip_sha256": "b3bc12bb1dcc704bc4d698eabb03ccdce73b965607c273fe5706706d2d3be683",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/p1_r3.py",
+      "local_accessible": true,
+      "zip_sha256": "e25095c1ff0ea9fbb36ffaf98fbeec952d9c938ff56208591a79d478fa9b9d3f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/p1_r3_expanded.py",
+      "local_accessible": true,
+      "zip_sha256": "01b08f32c11822dd5ed98e69eaa1d875dc6e4b6699f693d6adb3a4dca59fb459",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/p1_r4.py",
+      "local_accessible": true,
+      "zip_sha256": "277e31b6bdfb6be9cd7717fb39530f42d530319d865c98d39a0c88e1cf06476b",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/package_a2_acceptance.py",
+      "local_accessible": true,
+      "zip_sha256": "33d36c88bf7affd24f31b8f0e6f56c2b1aefa2444a65e8e6685d7d7f2ef240e8",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/package_action3.py",
+      "local_accessible": true,
+      "zip_sha256": "8ffce5e02317fc7a8fff770a4aade62a8f384e35fa5591f71e1730cd5a67da23",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/package_extended_delivery.py",
+      "local_accessible": true,
+      "zip_sha256": "230675e6b1fb35bd399f4f4288ab7bcd4798fb1295440245d70d3ddb40436278",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/package_guarded_qp_reliability.py",
+      "local_accessible": true,
+      "zip_sha256": "43c8b9e7191555685017136d29c7debd7071fd0f4690705c19bbd2485fe55451",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/package_p1_remediation.py",
+      "local_accessible": true,
+      "zip_sha256": "27b65fdbc34589ad631444d66e4c9f4535c4a3f4393aad12e81ab42ee085a92e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/package_p1_review.py",
+      "local_accessible": true,
+      "zip_sha256": "f9374f9cf716ce81a4d3321880380a12d3b73283a895f2ab0a385248bef891d2",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/package_pre_a3_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "63e424e19a35fa23b4a3dcb2126ebe5291166e5428395b0eb9658f66b2ca0003",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/package_release.py",
+      "local_accessible": true,
+      "zip_sha256": "dfb8550b99f174b7f445da29130750779d122e1e286271b9d4ed268b7405b612",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/qualify_guarded_qp_reliability.py",
+      "local_accessible": true,
+      "zip_sha256": "51acd61a0df463bb2cf537477bee233cd6b735fe2dd07a3430e8db9f9b6cced7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/qualify_guarded_qp_strict_v1_1.py",
+      "local_accessible": true,
+      "zip_sha256": "24a0167aa167c25e6454c30b5a53d37da500c33503ba2ca94ade0c2cd632edf4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/replay_guarded_qp_reliability.py",
+      "local_accessible": true,
+      "zip_sha256": "9e1e4f049d56845f45920327fa1eac1563d2acba2835591a33a7ed6efcb09ad7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/reproduce_a2_acceptance.py",
+      "local_accessible": true,
+      "zip_sha256": "89a999a22abe43b6ffa28c5f7d6c0f815e83a480764247685b3937e67fcabeb6",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/reproduce_pre_a3_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "04e9c7af886f1e4a79aa9f62c66cd692a1c98a8c4d2cc1f2b2aa18bcda3d4659",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/run_projected_feedback_development_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "2985b412dc3d584efc8a0d427712652e26930c0a903a869a59ce30f4d493892e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/run_validation.py",
+      "local_accessible": true,
+      "zip_sha256": "be492a8173a6e7822335ca0a048478781a21787814c2228070ddfbb727dd4fac",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/screen_g25_final_policy_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "7a1cc40e35ba4444331b17e69e0ce300a86dc21566eca462c54fc1fefd924079",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/stage1_scaffold_check.py",
+      "local_accessible": true,
+      "zip_sha256": "8bec28a8cf2fc6692ba96382ee8792cf16f7525ef74b6f99985032706124b37c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/verify_git_sources.py",
+      "local_accessible": true,
+      "zip_sha256": "6452e05276969df020f279986640ac12cadc4949c00911d1d97391cc6652514f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/verify_p1.py",
+      "local_accessible": true,
+      "zip_sha256": "63dffa496219b5065dc0c6f81769687e88e0979e91c5584bedadf6db98691b88",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/scripts/verify_pre_a3_consolidation_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "e70c6a93f3278f0539959f16e663eb084863a2367a1bac6828d0e100d0e88bfa",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/sources/manuscript_v1.2.1/01_introduction.tex",
+      "local_accessible": true,
+      "zip_sha256": "f855b384a19c209c42248ca08768080338a81f51544bf461c36c9d779fc35a68",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/sources/manuscript_v1.2.1/02_mm&nc.tex",
+      "local_accessible": true,
+      "zip_sha256": "ff279984015a061104398baca1191b13994330738c01a33e0514f5fb94bb35da",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/sources/manuscript_v1.2.1/03_contribution.tex",
+      "local_accessible": true,
+      "zip_sha256": "335529cadf55a4d1825a0294420157ea8fd78ce43e60932a2a541bed3d2462ba",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/sources/manuscript_v1.2.1/main.tex",
+      "local_accessible": true,
+      "zip_sha256": "58c77edb80d60c98254cbdbdb22e01432c9b1accd8b144d370ded1d76d0fe199",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/evidence_paths.py",
+      "local_accessible": true,
+      "zip_sha256": "bda16536c2694ced468bf1be27c3ae4b7ed47ffc6dfa197ea0378a1530694e23",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/__init__.py",
+      "local_accessible": true,
+      "zip_sha256": "2bcef4d1ef5e93d814ea0dc19dd5d5f5ecbaae476cf167f5b5d6aa85e6100c6f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/a2_acceptance.py",
+      "local_accessible": true,
+      "zip_sha256": "03ca3404094902c90f401a08d4636dd0692161ae328bcf8531295efd60fd8ddc",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/a2_extended.py",
+      "local_accessible": true,
+      "zip_sha256": "482c3e225d99aea599cc48d466d7d644020e8ffc987259198d49c8c166b3ac5f",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/a2_plan.py",
+      "local_accessible": true,
+      "zip_sha256": "59c3fd7aacd310bc60fa07ba419a84c2fb1b583c9fa5899fd8a79e585625ac5b",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/a2_policy_v4.py",
+      "local_accessible": true,
+      "zip_sha256": "5fc5236559621fa7c8f1992bf24a0c54f6931a4b31e46bbb325c290edcfda6b7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/a2_qp_reliable_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "981260f6648cd2d30d094554579d1c104407c51b61da9f8e6e5d0343cde94cb7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/a2_qp_reliable_v1_1.py",
+      "local_accessible": true,
+      "zip_sha256": "339d3aaa2bed617dc82c623842df745d63539be38eab2422cef87ba96c7f74a6",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/a2_qp_v2.py",
+      "local_accessible": true,
+      "zip_sha256": "6f64ce0de290117b6fc50bff88cc7f301d94cbce9c1893f0be21e81eb87f8e9d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/a2_qp_v3.py",
+      "local_accessible": true,
+      "zip_sha256": "a6f9436da88156f5b3c97e4b9be796f7849e3600ef9c8c328d786c8db9a6e6b8",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/a3_qp_bounds.py",
+      "local_accessible": true,
+      "zip_sha256": "326acd8a9f7b20a06ba1f8d6d6b5fda2b362a4a4dd01228130fe0cc70cb20fd8",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/assembly.py",
+      "local_accessible": true,
+      "zip_sha256": "456c44ea8f916273012cd596ce73248d3e7f3215475bc98472e53e665265ed2e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/barriers.py",
+      "local_accessible": true,
+      "zip_sha256": "9ba94ab3ea4003971060a3b2dda0a5b07b626ff66ad851d7ae2e468fc759055e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/config.py",
+      "local_accessible": true,
+      "zip_sha256": "a358d917a833bc1fc6eb2b49e1b193e3248b02169ef8f8c42fb000a3df222a2d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/contracts.py",
+      "local_accessible": true,
+      "zip_sha256": "02a2f207c90b73b1d0beb0b87472cda6932dac871bdd8c5f9c7da37a74cbb755",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/controller.py",
+      "local_accessible": true,
+      "zip_sha256": "2a54e64c98c2b99ef3c3a65f59aece0a969c42176d9529a5c1bc6abfbf168285",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/feasibility.py",
+      "local_accessible": true,
+      "zip_sha256": "097c624ed99167eda18892460ea0f348f46b051319870e978cfd2c40ad30354a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/geometry.py",
+      "local_accessible": true,
+      "zip_sha256": "b9849240516e2abb051834c6a79af1989af3387b199d54f6b804cbcc9a8e4676",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/guarded_qp_final_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "4efdc8aa5235f6e5a0c465f28d0debda40a28e93f2fffc58e90f436de86b8925",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/guarded_qp_native_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "4b68680ebc8bc262c16df174763ac79d67e36e10a7472bc31fdb0e10596ffa2d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/guarded_qp_qualification_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "9f70f4f92dbc26cb8e798db7e7a0a49dce4d4c88e3e6d5802f82168ecacd88bb",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/logging.py",
+      "local_accessible": true,
+      "zip_sha256": "2c367f3cb33db16250b767aba5402c2e838a1df8646c426f8066ab340b549fa7",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/m1_common_domain_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "f394d234717cdde415fa404d863e7cb73569316d8df259508183dcb604e4e5ca",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/m1_margins_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "c73e023d9ff7982aadd919fcbfdc3a3e9b6a886b2f167f999eaa9d48862258af",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/margins.py",
+      "local_accessible": true,
+      "zip_sha256": "254e71b0cefa6780493fb78007b8764a13c38d098af1d520cd062eb45a8df928",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/observer.py",
+      "local_accessible": true,
+      "zip_sha256": "3b9169493434a6d53f52e2a6552cfe7fca27a88dcb47be67c2e9109b8c3cdb48",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/p1_r3.py",
+      "local_accessible": true,
+      "zip_sha256": "42faec3b7ed312a845b5e42f670a2dae47bb794cf5a516ad0d3e1f033b5b0a9d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/p1_r4.py",
+      "local_accessible": true,
+      "zip_sha256": "27d25158bee9aeeb93a016337489562311aef7f99b1f400b448a3567070f3c77",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/pre_a3_entry_gate_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "7b34f45d32dd00d6b5d23082ecf255e0774e353c9fb77b86f0841b9eb309d871",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/preparation.py",
+      "local_accessible": true,
+      "zip_sha256": "1f1ceaeeac9a8d186caed313f153e3e1692c3650de79b417b258ed6a0f6b7f22",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/projected_feedback_ab2_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "353f4f917304439cb555ae4a737143bf677322ff1011143c19ac3df9b2987caf",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/projected_feedback_audit_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "0097a998c4c56abc9c604dd2f325a35cc23f7da77634d1009625dbfb1c76c22c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/qp.py",
+      "local_accessible": true,
+      "zip_sha256": "e38299c944a2828318bca756ae3fd18582914348307825acfd842c0c551706c6",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/readiness.py",
+      "local_accessible": true,
+      "zip_sha256": "86976257c70a98b15c7636cf574c6a87005f0e91b8a305b134d3def0533a85be",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/reference.py",
+      "local_accessible": true,
+      "zip_sha256": "35017bc577309e3c46190972a8a69ff29baad49429964cbafd8277288497b141",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/stage1_scaffold.py",
+      "local_accessible": true,
+      "zip_sha256": "bdfc73a136c70d8139bef2dd20abef1a8bb4d9ae1ef45a77f0b21d540aa3d1a6",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/stepper.py",
+      "local_accessible": true,
+      "zip_sha256": "0005b4bc0d985fb251671a0d967fdf6be293fc96cbc481cace14a36eb9fb5276",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_closed_loop/trace_archive.py",
+      "local_accessible": true,
+      "zip_sha256": "716004a277c19eb3e63439217b214b862cc56a3114340b66abb7c95493590ba3",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/panda_dynamics.py",
+      "local_accessible": true,
+      "zip_sha256": "9a0f100459c93f59ba75133fc682f111505909627de3bf29bb0bf823b64f025d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/src/reference_model.py",
+      "local_accessible": true,
+      "zip_sha256": "4f572a96fcb426c48cb08a9524d823721eba1f38da39da61291877af1c8277e0",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/case_sets.py",
+      "local_accessible": true,
+      "zip_sha256": "26e1803b97c4a861e417304c550a2629dd8e5ca4cdf605181d9bc21c3c39f4cb",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/compare_external_dynamics.py",
+      "local_accessible": true,
+      "zip_sha256": "e34c8970c434ad4f4515c59d4e9df083554febd01c0d8af26bcd371dff4f7b25",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/review_checks.py",
+      "local_accessible": true,
+      "zip_sha256": "cc0947b821bf9f556a860b442e9000d282653f76db0919b2083e54854c38fc92",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/run_phase3a_tests.py",
+      "local_accessible": true,
+      "zip_sha256": "9090fa325fef2a3b6d17e98fbf4d64b8068c2675f5a4c8ec65295c6240e7af6d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/run_reproduction.py",
+      "local_accessible": true,
+      "zip_sha256": "a7b726c833e5010faef02a9111a32d4819f067e3ac33844b40558732a488c8db",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_a2_acceptance_math.py",
+      "local_accessible": true,
+      "zip_sha256": "0dc58a7711975a7fcc4d487608a8c41e18dd532c6d2206bf77ea24ef49fee390",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_a2_extended.py",
+      "local_accessible": true,
+      "zip_sha256": "8b6bea88e5dad812d941ee21cfc6711185938b6164707d4770116f804ac0ed57",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_a2_policy_v4.py",
+      "local_accessible": true,
+      "zip_sha256": "294a2b5befc45343ccfa46467be1df34482d709ef2a622393cdc3c0a7466bcbb",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_a2_qp_v2.py",
+      "local_accessible": true,
+      "zip_sha256": "c8f5a3b8c20f59299eaff0a89886f542e1f384b5986b839f6db4d32dd1503e60",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_a2_qp_v3.py",
+      "local_accessible": true,
+      "zip_sha256": "37c4f22a4a4c879225451074c7a40f539bf732b0d30a99995b1d9e54f80f5455",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_a3_qp_bounds.py",
+      "local_accessible": true,
+      "zip_sha256": "1bccb4f650e9bc09d80a4db63b1173e21596be55180e133230b46cca4347267c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_action3.py",
+      "local_accessible": true,
+      "zip_sha256": "c7e83e264370ba7bb8c762b588a82eadf151feaeab8c1498357c3801f66ac495",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_evidence_archive.py",
+      "local_accessible": true,
+      "zip_sha256": "8e8f450a0ec54ccd250baacdd30fd1a143122ac203f69efaf0297bb34ae10e4e",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_guarded_qp_reliable_math.py",
+      "local_accessible": true,
+      "zip_sha256": "ae65c0e76428cade1ad83a373e6b9d9a637fb03dec1c003512303be99ae3f1e4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_m1_common_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "155b6cfe989f41a4589f5e485a0afaffe89221f4fda1eb7d83026cf2ab63e617",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_p1_feasibility.py",
+      "local_accessible": true,
+      "zip_sha256": "3c339728d7febe21e5f8472e1de182776a30613ce3e9a7ac14d032819ea238e4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_p1_r3.py",
+      "local_accessible": true,
+      "zip_sha256": "3c011180015a1125057f102d04673028493aaba426c2662c8c94ca87667c5082",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_p1_r4.py",
+      "local_accessible": true,
+      "zip_sha256": "07d6e9ca440226f39d0f631cd455ecb040ad4ceecb7d366798e3297a86a9ff84",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_pre_a3_entry_gate_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "c194e08db07cb3a61ca31a13bdeec374385f9494c0c37f91d1a5858ddff1bfbb",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_preparation.py",
+      "local_accessible": true,
+      "zip_sha256": "97ced1d6bbd9038e2a8a96570e8c77129971c944f07fc477004a19a3802d05f0",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_projected_feedback_v1.py",
+      "local_accessible": true,
+      "zip_sha256": "9d4e9ed449f35263246b38955e8333690b71204af918be3ee82d139ceca08e8c",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_reference_sensitivity.py",
+      "local_accessible": true,
+      "zip_sha256": "62852157b45ccdf33baf1a654ed2b83bffaea47172ea37b9e6acc756b958eef4",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_regular_evidence_archive.py",
+      "local_accessible": true,
+      "zip_sha256": "acee69b476ae3833fb12be8dce532125fd7463e51132f8efbfe516bc9e48c386",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_stage1_scaffold.py",
+      "local_accessible": true,
+      "zip_sha256": "7a8c4a7b7ebc3e98ac20f2668f6bd947062f7f08d70d24966eaa6bc38c53db5a",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_t28_raw_c.py",
+      "local_accessible": true,
+      "zip_sha256": "e2fcd776217dee530ae756e28727af999366797e32acf3e1f9c9041556872ca0",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/test_trace_archive.py",
+      "local_accessible": true,
+      "zip_sha256": "54e512f408fa76ac93f0f0ea97dd207d7be8cb5cee09b5f48bcf71dac5317d39",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/verify_integration.py",
+      "local_accessible": true,
+      "zip_sha256": "9a870c2a03f834bbff96ee9918acfab19aac8d9093892da8638a617e31c3c81d",
+      "local_same": true
+    },
+    {
+      "zip_entry": "panda_research/tests/verify_primary_sources.py",
+      "local_accessible": true,
+      "zip_sha256": "a2a6aeaacc8174ec1dacc051d174bd39dbfb00590f386bd5890476936c887e6d",
+      "local_same": true
+    }
+  ],
+  "all_accessible_entries_match": true,
+  "historical_raw_archive_locally_accessible": true,
+  "older_immutable_complete_history_annex": "https://github.com/khanhcongtruong8a4-prog/project/archive/c271e443d33fe2a9f77a40eea9c79173c5609655.zip",
+  "independent_signatures": null
+}

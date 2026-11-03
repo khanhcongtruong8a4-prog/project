@@ -1,0 +1,12 @@
+{
+  "version": "MODIFIED_EQUATION_ATTRIBUTION_V1",
+  "purpose": "Read-only quantitative mechanism check; neither candidate acceptance nor certified bound",
+  "source_sha256": "0ac224e11ceca4d27dda2db42dfa78755f720041bef739ef0a27f9b6689ef5d8",
+  "evaluation_cell": 2,
+  "coarse_comparison_cell": 0,
+  "initial_state_bias_from_actual_P1": true,
+  "energy_or_peak_coefficient_fitted_from_results": false,
+  "expected_mechanism": "Moving normal face plus rotation drives energy state bias; peak also has explicit digital request term",
+  "not_a_runtime_candidate": true,
+  "thresholds_changed": false
+}

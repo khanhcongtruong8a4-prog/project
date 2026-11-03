@@ -1,0 +1,27 @@
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/process.py", line 264, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/a2-extended/panda_research/scripts/analyze_active_sampled_v1_1.py", line 112, in cell_analysis
+    vp=np.exp(-sys.policy.ko*(tt+.156))*sys.bounds.magnitude-np.expm1(-sys.policy.ko*(tt+.156))*sys.bounds.rate/sys.policy.ko
+              ^^^^^^^^^^^^^^
+TypeError: bad operand type for unary -: 'tuple'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/a2-extended/panda_research/scripts/analyze_active_sampled_v1_1.py", line 220, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/a2-extended/panda_research/scripts/analyze_active_sampled_v1_1.py", line 217, in main
+    results=[f.result() for f in futures]
+             ^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+TypeError: bad operand type for unary -: 'tuple'

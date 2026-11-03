@@ -1,0 +1,70 @@
+{
+  "name": "zero_normal_constant_0.0",
+  "G": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "c": [
+    0.0
+  ],
+  "scales": [
+    1.0
+  ],
+  "row_names": [
+    "zero"
+  ],
+  "nominal": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "oracle": {
+    "feasible": false,
+    "passed": true,
+    "LP_status": 2,
+    "exact_certificate": {
+      "passed": true,
+      "support_indices": [
+        0
+      ],
+      "exact_dual": [
+        "1"
+      ],
+      "exact_support": "-3022314549036573/302231454903657293676544",
+      "scope": "EXACT_BINARY64_GUARDED_QP_FARKAS_CERTIFICATE"
+    }
+  },
+  "query": {
+    "applied": null,
+    "status": "EXACT_CONSTANT_ROW_INFEASIBLE",
+    "stop_requested": true,
+    "diagnostics": {
+      "classification_version": "GUARDED_QP_RELIABILITY_V1_1",
+      "row_index": 0,
+      "row_name": "zero",
+      "guarded_affine_constant": -1e-08,
+      "exact_certificate": "All seven coefficients equal binary zero; guarded constant is strictly negative.",
+      "replan_requested": true,
+      "torque_applied": false,
+      "cold_solves": 0,
+      "retry": false,
+      "post_solve_repair": false,
+      "witness_fallback": false
+    }
+  },
+  "physical_error_vs_exact_Nm": null,
+  "passed": true,
+  "wall_s": 0.0028767079929821193,
+  "torque_actuated": false
+}

@@ -1,0 +1,14 @@
+{
+  "previous_new_work_complete_evidence": {
+    "artifact_commit": "a17e7c4f2f3f00a7030e2a09f235e534840b39d6",
+    "url": "https://github.com/khanhcongtruong8a4-prog/project/archive/a17e7c4f2f3f00a7030e2a09f235e534840b39d6.zip",
+    "sha256": "9738d83e7c9915d7f840b7313f5c94279a31cdd678a7a95fe552264ffebd35b6"
+  },
+  "older_complete_history": {
+    "artifact_commit": "c271e443d33fe2a9f77a40eea9c79173c5609655",
+    "url": "https://github.com/khanhcongtruong8a4-prog/project/archive/c271e443d33fe2a9f77a40eea9c79173c5609655.zip",
+    "sha256": "65f808db22ec0be1e34854345cb17fdd8c129378ba276b3fd8ee99f59e65cbbc"
+  },
+  "linked_not_duplicated": true,
+  "all_locally_accessible_during_this_task": true
+}

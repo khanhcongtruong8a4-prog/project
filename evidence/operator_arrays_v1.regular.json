@@ -1,0 +1,395 @@
+{
+  "format": "A2_EXACT_REGULAR_FILES_XZ_V1",
+  "segment": "operator_arrays_v1",
+  "files": {
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_2/aligned_0_1.npz": {
+      "size": 116779,
+      "sha256": "5b4cd31d5ba36137bc29898213586f07284e5634de36f1d11a939c15b46a85e6",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "5b4cd31d5ba36137bc29898213586f07284e5634de36f1d11a939c15b46a85e6"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_2/aligned_0_2.npz": {
+      "size": 187909,
+      "sha256": "37b4382166356cf699dd0602247054dbc4dce270d01fba59beb50ceabe04d483",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "37b4382166356cf699dd0602247054dbc4dce270d01fba59beb50ceabe04d483"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_2/aligned_0_3.npz": {
+      "size": 191879,
+      "sha256": "dbe520d699d58377b2422b1f37ab3d50d57fb6deb3d3e13095f018222d02610a",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "dbe520d699d58377b2422b1f37ab3d50d57fb6deb3d3e13095f018222d02610a"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_2/aligned_1_3.npz": {
+      "size": 202289,
+      "sha256": "882d888670971bf415cd9f5e25319a678a7e728376a7b616b8172f6ee8944dba",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "882d888670971bf415cd9f5e25319a678a7e728376a7b616b8172f6ee8944dba"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_2/aligned_2_3.npz": {
+      "size": 213147,
+      "sha256": "7de9c244a9e933033348c7e154fefec4ea5dda67675f2a0a12947fbce751916b",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "7de9c244a9e933033348c7e154fefec4ea5dda67675f2a0a12947fbce751916b"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_2/cell_0_operators.npz": {
+      "size": 4900055,
+      "sha256": "eb0e2a17a2d32616580483fa3468acc99440712ccc5867a0a9cb49f7e7b34a08",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "eb0e2a17a2d32616580483fa3468acc99440712ccc5867a0a9cb49f7e7b34a08"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_2/cell_1_operators.npz": {
+      "size": 8276318,
+      "sha256": "05e034cbbbb8a3b2ff4e0751bc1da7299eedd90c8c3b734e32b3074f15a2c1fc",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "05e034cbbbb8a3b2ff4e0751bc1da7299eedd90c8c3b734e32b3074f15a2c1fc"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_2/cell_2_operators.npz": {
+      "size": 6090591,
+      "sha256": "3793b81eca0c2857e7ef1eec4b0fdce7e372a4722c32263996f8c37a974ac961",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "3793b81eca0c2857e7ef1eec4b0fdce7e372a4722c32263996f8c37a974ac961"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_2/cell_3_operators.npz": {
+      "size": 9504370,
+      "sha256": "7976494ada6925d1f0f9b7f1c4e31da5019799226dce738e6b55ec071d578f9e",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "7976494ada6925d1f0f9b7f1c4e31da5019799226dce738e6b55ec071d578f9e"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_3/aligned_0_1.npz": {
+      "size": 116779,
+      "sha256": "5b4cd31d5ba36137bc29898213586f07284e5634de36f1d11a939c15b46a85e6",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "5b4cd31d5ba36137bc29898213586f07284e5634de36f1d11a939c15b46a85e6"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_3/aligned_0_2.npz": {
+      "size": 187909,
+      "sha256": "37b4382166356cf699dd0602247054dbc4dce270d01fba59beb50ceabe04d483",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "37b4382166356cf699dd0602247054dbc4dce270d01fba59beb50ceabe04d483"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_3/aligned_0_3.npz": {
+      "size": 191879,
+      "sha256": "dbe520d699d58377b2422b1f37ab3d50d57fb6deb3d3e13095f018222d02610a",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "dbe520d699d58377b2422b1f37ab3d50d57fb6deb3d3e13095f018222d02610a"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_3/aligned_1_2.npz": {
+      "size": 191910,
+      "sha256": "0d9ff69cf575e6ee27ff2db2da8a79fd1d9ba9956d9c88108ee2c48861b4584b",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "0d9ff69cf575e6ee27ff2db2da8a79fd1d9ba9956d9c88108ee2c48861b4584b"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_3/aligned_1_3.npz": {
+      "size": 202289,
+      "sha256": "882d888670971bf415cd9f5e25319a678a7e728376a7b616b8172f6ee8944dba",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "882d888670971bf415cd9f5e25319a678a7e728376a7b616b8172f6ee8944dba"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_3/aligned_2_3.npz": {
+      "size": 213147,
+      "sha256": "7de9c244a9e933033348c7e154fefec4ea5dda67675f2a0a12947fbce751916b",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "7de9c244a9e933033348c7e154fefec4ea5dda67675f2a0a12947fbce751916b"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_3/cell_0_operators.npz": {
+      "size": 4900055,
+      "sha256": "eb0e2a17a2d32616580483fa3468acc99440712ccc5867a0a9cb49f7e7b34a08",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "eb0e2a17a2d32616580483fa3468acc99440712ccc5867a0a9cb49f7e7b34a08"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_3/cell_1_operators.npz": {
+      "size": 8276318,
+      "sha256": "05e034cbbbb8a3b2ff4e0751bc1da7299eedd90c8c3b734e32b3074f15a2c1fc",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "05e034cbbbb8a3b2ff4e0751bc1da7299eedd90c8c3b734e32b3074f15a2c1fc"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_3/cell_2_operators.npz": {
+      "size": 6090591,
+      "sha256": "3793b81eca0c2857e7ef1eec4b0fdce7e372a4722c32263996f8c37a974ac961",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "3793b81eca0c2857e7ef1eec4b0fdce7e372a4722c32263996f8c37a974ac961"
+    },
+    "panda_research/reports/active_sampled_data_v1/alpha10_operators_v1_3/cell_3_operators.npz": {
+      "size": 9504370,
+      "sha256": "7976494ada6925d1f0f9b7f1c4e31da5019799226dce738e6b55ec071d578f9e",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "7976494ada6925d1f0f9b7f1c4e31da5019799226dce738e6b55ec071d578f9e"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_2/aligned_0_1.npz": {
+      "size": 226763,
+      "sha256": "a84c09ad1f8d8635dec5223a45ca1bc1f01bd36141493524bbe905d6fdd7ee3d",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "a84c09ad1f8d8635dec5223a45ca1bc1f01bd36141493524bbe905d6fdd7ee3d"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_2/aligned_0_2.npz": {
+      "size": 367483,
+      "sha256": "3b2827ea732afc24f5ed630a8e987353a24ff3fb13d980dcf4389d82245b880c",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "3b2827ea732afc24f5ed630a8e987353a24ff3fb13d980dcf4389d82245b880c"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_2/aligned_0_3.npz": {
+      "size": 373043,
+      "sha256": "c213e1be36e18d3cbf2b3ba3bc163e1da987a618b6c3b13efd72a8decf31a5a8",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "c213e1be36e18d3cbf2b3ba3bc163e1da987a618b6c3b13efd72a8decf31a5a8"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_2/aligned_1_3.npz": {
+      "size": 399925,
+      "sha256": "44c94ee11a887ef0becb7afebb51253acfa7d538665c3d2b91b23cefb22df742",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "44c94ee11a887ef0becb7afebb51253acfa7d538665c3d2b91b23cefb22df742"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_2/aligned_2_3.npz": {
+      "size": 413075,
+      "sha256": "504ab7387a9c29f62ede9c43578acc8bb3d8b5fa516ba76030d808ed5f4c1892",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "504ab7387a9c29f62ede9c43578acc8bb3d8b5fa516ba76030d808ed5f4c1892"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_2/cell_0_operators.npz": {
+      "size": 9818737,
+      "sha256": "16953fdf322b90524d8deabf61b813691ab0481a9645a2215aa31e569d5dfdd5",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "16953fdf322b90524d8deabf61b813691ab0481a9645a2215aa31e569d5dfdd5"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_2/cell_1_operators.npz": {
+      "size": 16529991,
+      "sha256": "489fbe6f7854e03cd7ce400e0ad95c254224fba1256edc1c1d99a6d80a1719f1",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "489fbe6f7854e03cd7ce400e0ad95c254224fba1256edc1c1d99a6d80a1719f1"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_2/cell_2_operators.npz": {
+      "size": 12269350,
+      "sha256": "5b0e83d9675cd5059a3a4f089bdf3bb7a3f34d3288180223fcfc60c056437c96",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "5b0e83d9675cd5059a3a4f089bdf3bb7a3f34d3288180223fcfc60c056437c96"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_2/cell_3_operators.npz": {
+      "size": 19035895,
+      "sha256": "b71d93da801e7483e87195f9a54b818c08656734257ae6adaf27702d559c55db",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "b71d93da801e7483e87195f9a54b818c08656734257ae6adaf27702d559c55db"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_3/aligned_0_1.npz": {
+      "size": 226763,
+      "sha256": "a84c09ad1f8d8635dec5223a45ca1bc1f01bd36141493524bbe905d6fdd7ee3d",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "a84c09ad1f8d8635dec5223a45ca1bc1f01bd36141493524bbe905d6fdd7ee3d"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_3/aligned_0_2.npz": {
+      "size": 367483,
+      "sha256": "3b2827ea732afc24f5ed630a8e987353a24ff3fb13d980dcf4389d82245b880c",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "3b2827ea732afc24f5ed630a8e987353a24ff3fb13d980dcf4389d82245b880c"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_3/aligned_0_3.npz": {
+      "size": 373043,
+      "sha256": "c213e1be36e18d3cbf2b3ba3bc163e1da987a618b6c3b13efd72a8decf31a5a8",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "c213e1be36e18d3cbf2b3ba3bc163e1da987a618b6c3b13efd72a8decf31a5a8"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_3/aligned_1_2.npz": {
+      "size": 373052,
+      "sha256": "547caf8bed42e56807463695e6a5754064116d247519a1b6291db5c8acee12cb",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "547caf8bed42e56807463695e6a5754064116d247519a1b6291db5c8acee12cb"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_3/aligned_1_3.npz": {
+      "size": 399925,
+      "sha256": "44c94ee11a887ef0becb7afebb51253acfa7d538665c3d2b91b23cefb22df742",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "44c94ee11a887ef0becb7afebb51253acfa7d538665c3d2b91b23cefb22df742"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_3/aligned_2_3.npz": {
+      "size": 413075,
+      "sha256": "504ab7387a9c29f62ede9c43578acc8bb3d8b5fa516ba76030d808ed5f4c1892",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "504ab7387a9c29f62ede9c43578acc8bb3d8b5fa516ba76030d808ed5f4c1892"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_3/cell_0_operators.npz": {
+      "size": 9818737,
+      "sha256": "16953fdf322b90524d8deabf61b813691ab0481a9645a2215aa31e569d5dfdd5",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "16953fdf322b90524d8deabf61b813691ab0481a9645a2215aa31e569d5dfdd5"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_3/cell_1_operators.npz": {
+      "size": 16529991,
+      "sha256": "489fbe6f7854e03cd7ce400e0ad95c254224fba1256edc1c1d99a6d80a1719f1",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "489fbe6f7854e03cd7ce400e0ad95c254224fba1256edc1c1d99a6d80a1719f1"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_3/cell_2_operators.npz": {
+      "size": 12269350,
+      "sha256": "5b0e83d9675cd5059a3a4f089bdf3bb7a3f34d3288180223fcfc60c056437c96",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "5b0e83d9675cd5059a3a4f089bdf3bb7a3f34d3288180223fcfc60c056437c96"
+    },
+    "panda_research/reports/active_sampled_data_v1/baseline_operators_v1_3/cell_3_operators.npz": {
+      "size": 19035895,
+      "sha256": "b71d93da801e7483e87195f9a54b818c08656734257ae6adaf27702d559c55db",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "b71d93da801e7483e87195f9a54b818c08656734257ae6adaf27702d559c55db"
+    },
+    "panda_research/reports/active_sampled_data_v1/modified_equation_v1_3/first_order_bias.npz": {
+      "size": 8173299,
+      "sha256": "39528423546667ef8a446e0c23ed4af1b97ee59e3f5924eeee123546dae31bfb",
+      "mode": 384,
+      "encoding": "RAW",
+      "block_sha256": "39528423546667ef8a446e0c23ed4af1b97ee59e3f5924eeee123546dae31bfb"
+    }
+  },
+  "new_blocks": {
+    "5b4cd31d5ba36137bc29898213586f07284e5634de36f1d11a939c15b46a85e6": {
+      "size": 116779,
+      "encoding": "RAW"
+    },
+    "37b4382166356cf699dd0602247054dbc4dce270d01fba59beb50ceabe04d483": {
+      "size": 187909,
+      "encoding": "RAW"
+    },
+    "dbe520d699d58377b2422b1f37ab3d50d57fb6deb3d3e13095f018222d02610a": {
+      "size": 191879,
+      "encoding": "RAW"
+    },
+    "882d888670971bf415cd9f5e25319a678a7e728376a7b616b8172f6ee8944dba": {
+      "size": 202289,
+      "encoding": "RAW"
+    },
+    "7de9c244a9e933033348c7e154fefec4ea5dda67675f2a0a12947fbce751916b": {
+      "size": 213147,
+      "encoding": "RAW"
+    },
+    "eb0e2a17a2d32616580483fa3468acc99440712ccc5867a0a9cb49f7e7b34a08": {
+      "size": 4900055,
+      "encoding": "RAW"
+    },
+    "05e034cbbbb8a3b2ff4e0751bc1da7299eedd90c8c3b734e32b3074f15a2c1fc": {
+      "size": 8276318,
+      "encoding": "RAW"
+    },
+    "3793b81eca0c2857e7ef1eec4b0fdce7e372a4722c32263996f8c37a974ac961": {
+      "size": 6090591,
+      "encoding": "RAW"
+    },
+    "7976494ada6925d1f0f9b7f1c4e31da5019799226dce738e6b55ec071d578f9e": {
+      "size": 9504370,
+      "encoding": "RAW"
+    },
+    "0d9ff69cf575e6ee27ff2db2da8a79fd1d9ba9956d9c88108ee2c48861b4584b": {
+      "size": 191910,
+      "encoding": "RAW"
+    },
+    "a84c09ad1f8d8635dec5223a45ca1bc1f01bd36141493524bbe905d6fdd7ee3d": {
+      "size": 226763,
+      "encoding": "RAW"
+    },
+    "3b2827ea732afc24f5ed630a8e987353a24ff3fb13d980dcf4389d82245b880c": {
+      "size": 367483,
+      "encoding": "RAW"
+    },
+    "c213e1be36e18d3cbf2b3ba3bc163e1da987a618b6c3b13efd72a8decf31a5a8": {
+      "size": 373043,
+      "encoding": "RAW"
+    },
+    "44c94ee11a887ef0becb7afebb51253acfa7d538665c3d2b91b23cefb22df742": {
+      "size": 399925,
+      "encoding": "RAW"
+    },
+    "504ab7387a9c29f62ede9c43578acc8bb3d8b5fa516ba76030d808ed5f4c1892": {
+      "size": 413075,
+      "encoding": "RAW"
+    },
+    "16953fdf322b90524d8deabf61b813691ab0481a9645a2215aa31e569d5dfdd5": {
+      "size": 9818737,
+      "encoding": "RAW"
+    },
+    "489fbe6f7854e03cd7ce400e0ad95c254224fba1256edc1c1d99a6d80a1719f1": {
+      "size": 16529991,
+      "encoding": "RAW"
+    },
+    "5b0e83d9675cd5059a3a4f089bdf3bb7a3f34d3288180223fcfc60c056437c96": {
+      "size": 12269350,
+      "encoding": "RAW"
+    },
+    "b71d93da801e7483e87195f9a54b818c08656734257ae6adaf27702d559c55db": {
+      "size": 19035895,
+      "encoding": "RAW"
+    },
+    "547caf8bed42e56807463695e6a5754064116d247519a1b6291db5c8acee12cb": {
+      "size": 373052,
+      "encoding": "RAW"
+    },
+    "39528423546667ef8a446e0c23ed4af1b97ee59e3f5924eeee123546dae31bfb": {
+      "size": 8173299,
+      "encoding": "RAW"
+    }
+  },
+  "parts": [
+    {
+      "file": "operator_arrays_v1.data.001",
+      "size": 20971520,
+      "sha256": "78aec0afb7570103b20b26602c22fe4ee188000814fedd6f031cedf1b5495708"
+    },
+    {
+      "file": "operator_arrays_v1.data.002",
+      "size": 20971520,
+      "sha256": "6ac652c982076e4b6fcffccc7cd6046ba9910a9d89e47a5d8586e994420ab035"
+    },
+    {
+      "file": "operator_arrays_v1.data.003",
+      "size": 20971520,
+      "sha256": "69d480e20b455c12b56c28764245e7b23d2cd14923d298ff41f5d749b072d880"
+    },
+    {
+      "file": "operator_arrays_v1.data.004",
+      "size": 20971520,
+      "sha256": "59a0ecfaad641b4b5f758a3b31ee0e81474d24cd04b4a168ea9afffda242bdd3"
+    },
+    {
+      "file": "operator_arrays_v1.data.005",
+      "size": 11329700,
+      "sha256": "2af74131f932bf6ccb5475dc9ea746729a94ebb042c23d01be0d2fed0a7e26fb"
+    }
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "zlib": "1.3.2",
+  "numeric_parsing_or_rounding_performed": false
+}

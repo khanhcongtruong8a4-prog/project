@@ -1,0 +1,17 @@
+{
+  "version": "GUARDED_QP_CLASSIFICATION_V1_1",
+  "status": "FROZEN_BEFORE_STRICT_RERUN",
+  "source_sha256": {
+    "src/panda_closed_loop/a2_qp_reliable_v1_1.py": "339d3aaa2bed617dc82c623842df745d63539be38eab2422cef87ba96c7f74a6",
+    "scripts/qualify_guarded_qp_strict_v1_1.py": "24a0167aa167c25e6454c30b5a53d37da500c33503ba2ca94ade0c2cd632edf4"
+  },
+  "reason": "The sign-corrected v1 stops safely at MAX_ITER for the zero-normal/zero-constant fixture after the unchanged guard makes it infeasible. Preserve this result and classify an impossible constant inequality analytically.",
+  "changes": "If all seven coefficients are exactly zero and the represented guarded constant is negative, return infeasible with no torque and the constant-row certificate. All other problems call unchanged v1 solve.",
+  "original_T27_fixture_count": 39,
+  "same_fixture_data_and_oracle_and_thresholds": true,
+  "strict_classification_required": true,
+  "native_sign_patch_or_any_experimental_parameter_changed": false,
+  "motion_scope": "The already frozen 23-cell v1 replay continues unchanged. V1.1 is a separately qualified classification extension; all nonzero-normal solves are identical by direct delegation.",
+  "previous_MAX_ITER_evidence_preserved": "reports/guarded_qp_reliability_v1/t27_fresh/fixture_37.json",
+  "external_signatures": null
+}

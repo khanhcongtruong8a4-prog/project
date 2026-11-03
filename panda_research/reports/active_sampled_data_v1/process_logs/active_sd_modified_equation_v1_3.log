@@ -1,0 +1,22 @@
+{
+  "energy": {
+    "observed_difference_J": 0.000419668665877726,
+    "first_order_prediction_J": 0.00041889632799047623,
+    "prediction_to_observed_ratio": 0.9981596484320924,
+    "contribution_J": {
+      "initial_state": 6.367606235937027e-07,
+      "face_rotation_state": -2.8240321756106447e-07,
+      "face_normal_state": 0.0003937931054581993,
+      "face_rotation_direct_power": -1.668007282198651e-08,
+      "face_normal_direct_power": 2.4765545199066246e-05
+    }
+  },
+  "peak": {
+    "fine_peak_t_s": 0.20600000000000002,
+    "observed_difference_Nm": 0.001510272138587565,
+    "first_order_prediction_Nm": 0.001527927317670155,
+    "prediction_to_observed_ratio": 1.0116900647449547,
+    "state_contribution_Nm": 0.0009013110099864566,
+    "digital_request_direct_contribution_Nm": 0.0006266163076836986
+  }
+}

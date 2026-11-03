@@ -1,0 +1,134 @@
+{
+  "status": "DRAFT_OWNER_APPROVAL_PENDING_NOT_A2_AUTHORIZATION",
+  "declared_utc_before_new_screens": "2026-11-01T16:57:42.949507+00:00",
+  "baseline_commit": "cea93d667350d56df7f7de2426f3679ee6eacce0",
+  "baseline_release_sha256": "7b96c24e6a56dfbde805ba610d1564b4128c20fe291b01dce4663e2696122292",
+  "policy_v121_sha256": "fd4ebc5ace393a5278877434e394295c74bc54e4c305ecdd103b768123dea530",
+  "candidate": "P1_PHYSICAL_OBSERVER_PRE_SETTLING_PROPOSAL",
+  "preserved_choices": "All v1.2.1 model, gains, disturbance, reserves, solver and recovery choices unchanged",
+  "screen": {
+    "q_center": "physical_joint_box_midpoint",
+    "q_radius_rad": [
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01
+    ],
+    "qd_radius_rad_s": [
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02
+    ],
+    "q_sample_rule": "center then all 128 lexicographic sign corners; deterministic, no random selection",
+    "a2_window_s": [
+      0.0,
+      0.25
+    ],
+    "report_times_s": [
+      0.0,
+      0.125,
+      0.25
+    ],
+    "continuous_box_enclosure": "NOT_ESTABLISHED; nodes are numerical point checks only",
+    "complete_qp_fixture_q": "midpoint",
+    "complete_qp_fixture_qd": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "complete_qp_estimate_rule": "zero plus all 128 corners of [-dbar-varpi(0),+dbar+varpi(0)]; no disturbance truth",
+    "complete_qp_policy": "Evaluate only after both pair families pass at prescribed q. Do not adjust duration on a QP failure."
+  },
+  "preparation": {
+    "clock_start": "-T_pre",
+    "clock_A2_start_s": 0.0,
+    "clock_not_restarted": true,
+    "observer_initial_dhat": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "observer_z_init": "-Ko*M(q_start)*qd_start",
+    "holding_policy_proposed": "project_torque_box(SlotineLi(q_ref=q_mid, qd_ref=0, qdd_ref=0, dhat), tau_max); DOB uses actually applied saturated torque",
+    "kinematic_clamp_or_reaction_torque_allowed": false,
+    "maximum_hold_deviation_rad": [
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01
+    ],
+    "maximum_hold_velocity_rad_s": [
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02
+    ],
+    "end_state_rule": "Measured q,qd within declared neighborhood; never assert exact midpoint/zero. Recheck full rows on measured state.",
+    "outside_A2_safety_claim": true,
+    "physical_hold_executed": false,
+    "duration_rule": "Analytic common-Ko exponential threshold over the fixed q sample set for BOTH pair families; round UP to control-period grid and add one period when settling is required; no trial/post-hoc retuning"
+  },
+  "reference_proposal": {
+    "kind": "nonoptimized_measured_state",
+    "duration_s": 0.25,
+    "joint_offset_rad": [
+      0.01,
+      0.0,
+      -0.01,
+      0.0,
+      0.01,
+      0.0,
+      0.0
+    ],
+    "formula": "quintic Hermite in s=t/T: c0=q_start,c1=T*qd_start,c2=0,c3=10*dq-6*T*qd_start,c4=-15*dq+8*T*qd_start,c5=6*dq-3*T*qd_start",
+    "initial_rule": "measured P1 endpoint q,qd; qdd_ref(0)=0 proposed",
+    "endpoint_rule": "q_start+dq, qd_ref(T)=qdd_ref(T)=0",
+    "actual_terminal_position_error_m": 0.001,
+    "planned_terminal_position_error_m": 1e-06,
+    "not_stage1_optimized": true,
+    "approval": null
+  },
+  "observer_proposal": {
+    "method": "coupled continuous z,q,qd RK4 with held applied torque",
+    "discrete_observer_sensitivity": "separate sampled update sensitivity, not a physical sampled-observer certificate",
+    "signed_preparation_clock_execution_support": "NOT_IMPLEMENTED; existing state/epoch contracts require review before prehold execution",
+    "approval": null
+  },
+  "failure_semantics": {
+    "hard_qp_infeasibility": "A2_FAIL_NO_ADVANCE_NO_TORQUE_IN_DEVELOPMENT; not a hardware-safe zero torque claim",
+    "recovery_enabled": false,
+    "Kb": null,
+    "gamma": null,
+    "approval": null
+  },
+  "approvals": {
+    "owner": null,
+    "controls_lead": null,
+    "controls_reviewer_signature": null,
+    "theory_reviewer_signature": null,
+    "build_revision_confirmation": null,
+    "written_A2_authorization": null
+  },
+  "execution_authorized": false
+}
