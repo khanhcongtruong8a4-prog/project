@@ -1,0 +1,13 @@
+{
+  "version": "SLACK_REPRESENTATION_AUDIT_V2_4B",
+  "runtime_or_trajectories_changed": false,
+  "prior_audit_preserved": "reports/active_remediation_v2/final/ACCEPTANCE.json",
+  "prior_outcome": "All 48 refinement fields passed, but an extra absolute 1e-13 logging-identity check rejected two equivalent values 2377.6314952351495 and 2377.631495235149 (one binary64 ULP). All feasibility and KKT checks passed.",
+  "correction": "Compare equivalent normalized slack evaluation paths with 2*gamma_40*(abs(C)@abs(x)+abs(b)+guard), gamma_40=40u/(1-40u), u=2^-53. This is only an arithmetic representation consistency check; strict nonnegative raw signs and all original guard/primal/stationarity/dual/complementarity thresholds are unchanged. Never use this bound to waive a negative slack or failed KKT test.",
+  "formal_scope": "Standard normal binary64 floating-point dot/add/divide roundoff model for the finite retained QP data. Not a certified physical model/trajectory bound.",
+  "source_sha256": {
+    "src/panda_closed_loop/slack_audit_v2_4b.py": "0e0cd9a621fe8cebe99e2eab0becf6b29d359e81f73e7a7d960d3e2f689c3248",
+    "tests/test_slack_audit_v2_4b.py": "a3eb9f3f4d1ba84d6524ac8a760f4fd4050933ef7028a925921140b9e0a8158c",
+    "scripts/summarize_polynomial_remediation_v2_4b.py": "e9cb31859afbf53ae101fe939460e1b103e27e77f42f2c4d4b0036dbd6f2f5ca"
+  }
+}
